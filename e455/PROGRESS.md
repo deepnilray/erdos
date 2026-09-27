@@ -107,3 +107,25 @@ Next step: avoid per-window counting entirely. Candidate: use that the T/L windo
 the path-existence problem with an arithmetic invariant carried along the path (e.g. the discriminant-like
 quantity Phi_a(k) = (d_k - a)^2 - 4 a q_k, which is constant on quadratic stretches and changes by
 2 d_k (e_k - 2a) + e_k^2 - 2a e_k per step) combined with character sums in the Linnik–Vinogradov style.
+
+## Round 4 (2026-09-27): arithmetic invariant along the path
+Step attacked: carry an arithmetic invariant along the chain to force a hit mod some prime without counting.
+- [PROVED] Identity: for any integer a >= 1 and every k, 4a q_k = (d_k - a)^2 - Phi_a(k) with
+  Phi_a(k) := (d_k - a)^2 - 4a q_k, and Phi_a(k+1) - Phi_a(k) = 2 d_k (e_k - 2a) + e_k^2 - 2a e_k.
+  Hence for p odd, p not dividing a: p | q_k  <=>  (d_k - a)^2 == Phi_a(k) (mod p). If Phi_a(k) is a
+  non-residue mod p the step is automatically safe at p. Phi_a is constant exactly on stretches with e = 2a.
+- [PROVED] Turning-point description: for p in [X,2X] the chain's gap crosses p; for |d_k - p| <= R the walk
+  mod p is s* + sum of (d_j - p), a slowly varying quadratic-like path around s* = q_{k(p)} mod p. A hit at p
+  occurring near the turning point is equivalent to q_k having a prime divisor within R of its own gap d_k.
+- DEAD D10: Phi_a as a global invariant. Off the e = 2a stretches it jumps by ~2 d_k |e_k - 2a| ~ X per step,
+  so modulo any p <= X it is effectively re-randomised every step; no character-sum (Linnik–Vinogradov/Burgess)
+  argument applies beyond a single constant-curvature stretch, which is already covered by the periodic lemma.
+- DEAD D11: turning-point forcing for p ~ gap. Near the turning point the chain visits O(R/e) residues out of p,
+  so each prime p in [X,2X] contributes expected hits O(1/log X · local density); nothing is forced for any
+  individual p, and summing over p reproduces the counting problem of D9.
+
+Next step: test the weaker target limsup q_n/n^2 = infinity (implied by the conjecture), under the
+all-scales hypothesis d_k <= K k for every k >= k_0, looking for a cross-scale obstruction: the same chain must
+be cheap at scales X and X^2 simultaneously, and primes p ~ X act at scale X (as small primes relative to gaps
+~X^2) and at scale ~p (turning points). Compute, for the exact extremal chains, whether scale-uniform cheapness
+is harder than the liminf version (compare longest chains with d_k <= K k enforced for all k).
