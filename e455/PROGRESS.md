@@ -166,3 +166,27 @@ Assessment of the route map after 6 rounds: every mechanism tried reduces to one
   (a) an unconditional upper bound for prime L-tuples uniform in L ~ log X/log log X without the L! loss, or
   (b) Brun–Titchmarsh along convex chains (R2),
 neither of which is available; all other ideas collapsed to them (D8–D13).
+
+## Round 7 (2026-09-27): direct attack on statement (b) (Brun–Titchmarsh along convex chains)
+(b): for a convex prime chain at scale X (gaps in [X,2X], T ~ X/K steps) and fixed E,
+     #{k : q_{k+1} - 2q_k + q_{k-1} <= E} <= C(E+1) T/log X + o(T).
+- [PROVED] Graph form: vertices = prime pairs (a,b), b-a in [X,2X]; cheap edge (a,b)->(b,c) iff c prime in
+  [2b-a, 2b-a+E]. (b) says every convex path of length T uses <= C(E+1)T/log X cheap edges.
+- [PROVED] (b) is strictly stronger than what #455 needs: #455 only needs mean curvature -> infinity, while (b)
+  also bounds the number of zero-curvature (3-AP) steps. A chain whose gaps are all multiples of 30 (runs of
+  <= 3 equal gaps, jumps of 30) has mean curvature 7.5 and zero-step fraction 3/4; (b) with E=0 asserts such
+  chains cannot exist at large X, which is an extra statement about 4-term prime APs along the chain.
+  => the right target is the weighted form (b'): sum_k e_k >= omega(X) T, not a count of cheap steps.
+- DEAD D14: (b) for E=0 via counting 3-APs of primes with difference in [X,2X]: there are ~Y X/log^3 Y of them
+  (Y ~ X^2), far more than T; linkage lost (same obstruction as D6).
+- DEAD D15: (b) via Green–Tao–Ziegler "linear equations in primes": asymptotics hold only for a FIXED system;
+  fixed-length windows are not rare (D9), and the windows here are progressions of length ~ L sqrt(Y) at height Y,
+  i.e. short intervals of exponent 1/2, below the 5/8 threshold of the known short-interval Gowers-uniformity
+  results for primes (Matomäki–Radziwiłł–Shao–Tao–Teräväinen).
+- DEAD D16: buying a cheap step by first paying for a good vertex: heuristically costs ~log^2 Y/(E+1) per cheap
+  step (worse than greedy ~log Y), but turning this into a proof is again the adversarial-path existence problem.
+
+Result of round 7: (b) not proved. (b) as stated is stronger than needed and should be replaced by (b').
+Both (b) and (b') are statements about one adversarially chosen path; every available tool (sieve, large sieve,
+exponential sums, GTZ counting, character sums) controls counts of configurations, and all such counts exceed the
+chain length T. No step of the proof of #455 is closed by this round.
