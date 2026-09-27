@@ -258,3 +258,17 @@ Selberg sieve gives (C L/log Y)^L instead of (C_0/log Y)^L, which is too weak (D
 ### O3 — OPEN
 (b') for chains with unstructured curvature. Every tool tried controls counts of configurations among the
 primes, and each such count exceeds the chain length; closing O3 unconditionally amounts to proving #455.
+
+## Round 10 (2026-09-27): closing O2'
+- O2' CLOSED by citation: P. Pollack, "Bounds for the first several prime character nonresidues",
+  arXiv:1508.05035, Theorem (small residues): for eps, A > 0 and m > m_0(eps, A), every quadratic character
+  chi mod m has at least (log m)^A primes l <= m^{1/4+eps} with chi(l) = 1. (Read in the arXiv source.)
+- [PROVED] With this, O2(ii) needs no exceptional set: take chi = (Delta/.) as a character mod m = 4|Delta|
+  (nonprincipal because Delta is not a square). For an odd prime l with chi(l) = 1: if l does not divide A, the
+  polynomial A t^2 + B t + C' has two roots mod l; if l | A then l does not divide B (else l | Delta, so
+  chi(l) = 0), and the polynomial is linear with a root mod l. Pollack gives >= 2 such primes, so an odd one
+  with l << |Delta|^{1/4+eps} exists. Hence an exact quadratic stretch of primes Q(t), 0 <= t <= M, with
+  Q(t) > l forces M < l << |Delta|^{1/4+eps}. At scale X (|Delta| << pi^2 X^2 for the pi-step subsequence)
+  this bounds exact quadratic / periodic-curvature stretches by pi (pi X)^{1/2+eps}.
+- O2 is now fully CLOSED (AP runs: Richter's argument; quadratic and periodic stretches: above).
+- Remaining: O3 only (= #455 itself for unstructured curvature). Not closed.
