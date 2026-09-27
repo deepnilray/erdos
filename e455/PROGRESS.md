@@ -55,3 +55,30 @@ Method: pressure P(s) = growth rate of sum over paths of exp(-s*cost); h(K) <= m
 Next step: extract near-minimal-cost paths at y=11 (K about 1.6–2, where h is smallest) and test whether
 they are close to quadratic (curvature almost periodic). If yes, attack the lemma "low-entropy cheap
 y-rough chains have almost-periodic curvature", which would reduce to the periodic kill above.
+
+## Round 2 (2026-09-27): literature sweep II + structure of extremal chains
+Literature (GitHub code/repo search "erdos_455", "erdos 455"): google-deepmind/formal-conjectures lists
+erdos_455 as `research open` (only the Richter liminf variant marked solved); rjwalters/lean-genius stores the
+conjecture as an opaque axiom (no proof); conjectures-io: 0 contributions; vibemathing repo: candidate-only,
+no result. No claimed proof anywhere. Status unchanged: OPEN.
+
+Step attacked: Step B of the plan ("cheap chains are almost periodic, hence killed by the periodic/LV lemma"),
+tested on the true extremal objects.
+- [VERIFIED, exact DP with backtracking, e455/chain2.c] longest convex chain of odd primes <= N:
+    N=1.024e6: 683 (N/len^2=2.195)   N=2.048e6: 929 (2.373)   N=4.096e6: 1267 (2.552)
+    N=1e7: 1896 (2.782)  [gap cap G=12000 and G=15000 give the same answer; max gap used 11632]
+  Output chains re-checked independently (all prime, gaps nondecreasing). Chain for 1e7 saved in
+  e455/optimal_chain_1e7.txt. N/len^2 grows roughly like 0.25 ln N - 1.3 over 1e4..1e7.
+- [VERIFIED] structure of the optimal chains (second half, largest scale):
+    mean curvature 5.65 (1e6), 6.48 (4e6), 6.94 (1e7) — growing;
+    P(e=0) .206 -> .157 -> .147; P(e>=10) ~ .25; curvature autocorrelation at lags 1..6 all in [-0.12, 0.04];
+    ~59% of gaps divisible by 6, ~17% by 30.
+- DEAD D8: "extremal/cheap prime chains are near-quadratic or almost periodic, so reduce to Linnik–Vinogradov".
+  The actual extremal chains have essentially uncorrelated curvature and no quadratic structure; their cost
+  grows because they must dodge primes statistically, not because of an algebraic obstruction. A proof must
+  therefore handle random-like (high-entropy) chains, and the periodic/LV lemma only covers a measure-zero corner.
+
+Next step: find a deterministic lower bound on mean curvature for high-entropy chains. Candidate mechanism:
+e_k >= g(x_k) with x_k = 2q_k - q_{k-1} (distance to the next prime). Attack: show that the reflection points
+x_k of a convex prime chain cannot all lie within O(K) of a prime, using that x_k is determined by two chain primes
+(pair-correlation / sieve on the pairs (q_{k-1}, q_k) with the triple condition).
