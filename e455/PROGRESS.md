@@ -152,3 +152,17 @@ Next step: look for a mechanism that uses the monotonicity of gaps across two DI
 the pair (q_k mod p, d_k mod p) for p ~ sqrt(X) together with the exact integer d_k in [X,2X] (not just mod p).
 Concretely: for p in (sqrt X, 2 sqrt X], d_k determines d_k mod p AND floor(d_k/p) (the "lap number"), which is
 monotone in k. Test numerically on the exact 1e7 chain how hits/avoidance mod p correlate with lap changes.
+
+## Round 6 (2026-09-27): lap structure for p ~ sqrt(X) — analysed, dead
+Status re-check: erdosproblems.com/455 still OPEN, 0 comments, 0 proof claims, last edited 2025-10-07.
+- [PROVED] For p in (lambda sqrt X, 2 lambda sqrt X], write d_k = u_k p + r_k. The lap number u_k is nondecreasing
+  in k and takes ~sqrt(X)/lambda values; within one lap the step r_k mod p sweeps [0,p) with ~p/K steps and the
+  walk mod p is quadratic-like (positions s_0 + sum r_i). Each sweep visits ~p/K residues.
+- DEAD D13: per sweep, avoiding 0 mod p costs the chain at most one forbidden curvature value per step;
+  aggregated over p in (P,2P] the forbidden fraction of curvature choices is ~log 2/log P, and aggregated over
+  all p <= sqrt(Y) it becomes "x_k + e_k is prime" — i.e. exactly R2 / D9 / D12 again. No new leverage.
+
+Assessment of the route map after 6 rounds: every mechanism tried reduces to one of two statements,
+  (a) an unconditional upper bound for prime L-tuples uniform in L ~ log X/log log X without the L! loss, or
+  (b) Brun–Titchmarsh along convex chains (R2),
+neither of which is available; all other ideas collapsed to them (D8–D13).
