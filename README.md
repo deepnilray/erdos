@@ -1,5 +1,8 @@
 # Open-conjecture attempt log
 
+> **Next target:** Erdős #203 — can be settled outright by an explicit covering construction.
+> See [`e203/TARGET.md`](e203/TARGET.md) for the selection and prior-art check.
+
 Goal given: pick an important, genuinely open conjecture (no proof or proof claim, not reduced to a
 finite check) and prove it.
 
