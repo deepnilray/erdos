@@ -190,3 +190,24 @@ Result of round 7: (b) not proved. (b) as stated is stronger than needed and sho
 Both (b) and (b') are statements about one adversarially chosen path; every available tool (sieve, large sieve,
 exponential sums, GTZ counting, character sums) controls counts of configurations, and all such counts exceed the
 chain length T. No step of the proof of #455 is closed by this round.
+
+## Round 8 (2026-09-27): (b') — mean curvature -> infinity — via deterministic bounds and self-divisibility
+(b') is equivalent to U(x) = o(x), i.e. to #455 itself (R1).
+- Idea A: find a structured superset S of (part of) the chain with a deterministic sieve upper bound
+  #primes(S) <= C|S|/log|S| (Brun–Titchmarsh for intervals/APs, Selberg bound for polynomial value sets) and
+  |S| < T log T / C.
+  DEAD D17: the tightest structured supersets available are windows {q_k + j d_k + E : 0 <= E <= K j^2},
+  of size ~K w^3 for w chain terms; intervals/APs containing the chain have size >= T^2; polynomial value
+  sets only fit exactly-quadratic stretches (already covered). No superset within a log factor of T exists
+  for a chain with unstructured curvature.
+- Idea B (self-divisibility): chain terms must avoid multiples of earlier chain primes; mod q_i the walk
+  starts at 0. For exact quadratics q(t) = t^2+t+c this gives Pell-type equations
+  (2j+1)^2 - l (2i+1)^2 = (1-l)(1-4c), which, when solvable, have infinitely many solutions (a second,
+  algebraic way to kill quadratics besides Linnik–Vinogradov).  [PROVED for exact quadratics; conditional on
+  solvability of the norm equation for some l.]
+  DEAD D18 for general chains: multiples of chain primes are a subset of multiples of all primes, so this
+  constraint is weaker than primality itself; for unstructured curvature a hit on l*q_i is a probability
+  ~1/d event, nothing forces it.
+
+State after 8 rounds: (b') not proved. Closed steps toward #455: none beyond the standing reductions and the
+exact-quadratic/periodic cases. Open: (b') for chains with unstructured curvature.
