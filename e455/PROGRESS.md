@@ -129,3 +129,26 @@ all-scales hypothesis d_k <= K k for every k >= k_0, looking for a cross-scale o
 be cheap at scales X and X^2 simultaneously, and primes p ~ X act at scale X (as small primes relative to gaps
 ~X^2) and at scale ~p (turning points). Compute, for the exact extremal chains, whether scale-uniform cheapness
 is harder than the liminf version (compare longest chains with d_k <= K k enforced for all k).
+
+## Round 5 (2026-09-27): all-scales version and a Brun–Titchmarsh reduction
+- [VERIFIED, exact DP e455/allscale.c; N=6e6, gap cap 1e4 (C<=2.4), N=3e6 cap 6e3 (C=2)] n_C := largest n such
+  that some convex prime chain q_1<...<q_n (any start, index from 1) has q_k <= C k^2 for EVERY k <= n:
+      C=2.0: 495   2.1: 594   2.2: 704   2.3: 834   2.4: 987      (C<=1.5: no chain at all, since q_1 >= 2)
+  Each maximal chain ends well below N (0.49e6 ... 2.34e6), so N is not binding. ln n_C ~ 1.7 C + 2.8, i.e.
+  consistent with extremal chains obeying q_n ~ c n^2 ln n with c ~ 0.58 (compare Round 2 data).
+- [PROVED, reduction R2] "Brun–Titchmarsh along chains" implies the conjecture: if for every convex chain at
+  scale X (T ~ X/K steps) and every fixed E, #{k : [x_k, x_k+E] contains a prime} <= C(E+1) T/log X + o(T),
+  where x_k = 2q_k - q_{k-1}, then mean curvature >= E(1 - C(E+1)/log X) -> infinity (take E = log X/(2C)).
+  Steps with e_k = 0 are exactly those with x_k prime, so they are included.
+- DEAD D12: proving R2's hypothesis with the Selberg sieve by establishing a level of distribution for the
+  reflection points. (i) Large sieve: sum_{d<=D} d sum_a |A(d,a)-T/d|^2 <= (X^2+D^2) T, useless since T << X^2.
+  (ii) Kuzmin–Landau/van der Corput for sum_k e(h q_k/d): phase differences h d_k/d are monotone but cross
+  ~hX/d integers; summing over h gives deviation ~sqrt(XT) per modulus vs main term T/d, i.e. no level of
+  distribution even for d ~ 1. (iii) Quadratic chains with non-residue discriminants have degenerate local
+  densities (dimension ~0 if chi(p) = -1 for all p <= z), so any sieve route must also exclude Siegel-zero-like
+  behaviour, which for exact quadratics is Linnik–Vinogradov but for general chains has no analogue.
+
+Next step: look for a mechanism that uses the monotonicity of gaps across two DIFFERENT moduli simultaneously:
+the pair (q_k mod p, d_k mod p) for p ~ sqrt(X) together with the exact integer d_k in [X,2X] (not just mod p).
+Concretely: for p in (sqrt X, 2 sqrt X], d_k determines d_k mod p AND floor(d_k/p) (the "lap number"), which is
+monotone in k. Test numerically on the exact 1e7 chain how hits/avoidance mod p correlate with lap changes.
