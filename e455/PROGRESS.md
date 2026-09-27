@@ -82,3 +82,28 @@ Next step: find a deterministic lower bound on mean curvature for high-entropy c
 e_k >= g(x_k) with x_k = 2q_k - q_{k-1} (distance to the next prime). Attack: show that the reflection points
 x_k of a convex prime chain cannot all lie within O(K) of a prime, using that x_k is determined by two chain primes
 (pair-correlation / sieve on the pairs (q_{k-1}, q_k) with the triple condition).
+
+## Round 3 (2026-09-27): cheap windows via reflection points
+Step attacked: show a convex prime chain at scale X (gaps in [X,2X], terms <= A X^2, T ~ X/K steps)
+cannot keep mean curvature <= K, by proving that windows of L consecutive steps with total curvature
+<= 2KL do not exist once L = L(X) is large. (Reflection point x_k = 2q_k - q_{k-1}; e_k >= nextprime(x_k) - x_k.)
+- [PROVED] Window structure: a window of L+1 consecutive terms is q_k + j d_k + E_j with
+  0 <= E_j <= (sum of curvatures) * j, i.e. L+1 affine forms in (a,d) = (q_k,d_k) indexed by a curvature
+  pattern; #patterns with total <= 2KL is <= binom((2K+1)L, L) <= e^{c(K)L}.
+- [PROVED, reduction] If for L = C log X / log log X the number of pairs (a,d) in [1,AX^2] x [X,2X] making all
+  L+1 forms prime is <= (C_0)^L * S * X^3/(log X)^{L+1} (summed over patterns with average singular series
+  <= C_0^L), then no cheap window exists, hence mean curvature > K at scale X, hence U(x)=o(x) and #455 follows.
+  (Count: X^3 e^{c(K)L} (C_0/log X)^L < 1 for C large.) This is a CONDITIONAL route: the hypothesis is a uniform
+  Hardy–Littlewood-type upper bound for prime L-tuples with L ~ log X/log log X and constant exponential in L.
+- DEAD D9: making that bound unconditional with sieve methods. Selberg/Ankeny–Onishi in dimension L give
+  (C L/log X)^L instead of (C_0/log X)^L (dimension loss L!), and then X^3 e^{cL}(CL/log X)^L >= X^{-o(1)}·X^3
+  for every choice of L (optimum L ~ log X/log log X gives only X^{-O(1/log log log X)}). Also dead for
+  L = (log X)^{1/2} (needs L >= 4 log X/log log X). Literature check: uniform-in-k k-tuple upper bounds without
+  k! (Kuperberg et al., arXiv 2210.09775) are proved only assuming Hardy–Littlewood. Fixed-length windows are
+  NOT rare (count ~ X^3 (log X)^{-L} >> X), so some growth of L is unavoidable.
+
+Next step: avoid per-window counting entirely. Candidate: use that the T/L windows of ONE chain are nested/linked
+(consecutive windows share L terms), so the chain is a path in the de Bruijn-type graph of cheap windows; attack
+the path-existence problem with an arithmetic invariant carried along the path (e.g. the discriminant-like
+quantity Phi_a(k) = (d_k - a)^2 - 4 a q_k, which is constant on quadratic stretches and changes by
+2 d_k (e_k - 2a) + e_k^2 - 2a e_k per step) combined with character sums in the Linnik–Vinogradov style.
