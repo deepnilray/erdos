@@ -1,0 +1,6 @@
+brute_core
+ls25
+*.out
+*.err
+nohup.out
+__pycache__/

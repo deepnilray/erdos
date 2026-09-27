@@ -1,7 +1,8 @@
 # Open-conjecture attempt log
 
-> **Next target:** Erdős #203 — can be settled outright by an explicit covering construction.
-> See [`e203/TARGET.md`](e203/TARGET.md) for the selection and prior-art check.
+> **Erdős #203 (current).** No covering exists using only primes with lcm(e_p) dividing lcm(1..22) or
+> ten other large N (certified, all primes). See [`e203/RESULTS.md`](e203/RESULTS.md);
+> selection log in [`e203/TARGET.md`](e203/TARGET.md).
 
 Goal given: pick an important, genuinely open conjecture (no proof or proof claim, not reduced to a
 finite check) and prove it.

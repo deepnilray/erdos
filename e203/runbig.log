@@ -1,0 +1,10 @@
+N=36756720 primes=258 sum1/e=1.3471 COMPLETE=True (32s)
+poolN_36756720.jsonl: primes=258 sum1/e=1.3471 coverage <= 0.9654 -> NO COVERING POSSIBLE
+N=61261200 primes=281 sum1/e=1.3654 COMPLETE=True (65s)
+poolN_61261200.jsonl: primes=281 sum1/e=1.3654 coverage <= 0.9762 -> NO COVERING POSSIBLE
+N=73513440 primes=299 sum1/e=1.3636 COMPLETE=True (74s)
+poolN_73513440.jsonl: primes=299 sum1/e=1.3636 coverage <= 0.9763 -> NO COVERING POSSIBLE
+N=232792560 primes=322 sum1/e=1.3561 COMPLETE=True (283s)
+poolN_232792560.jsonl: primes=322 sum1/e=1.3561 coverage <= 0.9685 -> NO COVERING POSSIBLE
+N=367567200 primes=435 sum1/e=1.4142 COMPLETE=True (471s)
+poolN_367567200.jsonl: primes=435 sum1/e=1.4142 coverage <= 1.0088 -> inconclusive
