@@ -211,3 +211,50 @@ chain length T. No step of the proof of #455 is closed by this round.
 
 State after 8 rounds: (b') not proved. Closed steps toward #455: none beyond the standing reductions and the
 exact-quadratic/periodic cases. Open: (b') for chains with unstructured curvature.
+
+## Round 9 (2026-09-27): inventory of open items and closing what can be closed
+Status re-check: erdosproblems.com/455 OPEN, 0 proof claims. Nothing below is anyone else's proof
+presented as mine; Richter (1976), CoolRmal (0.864) and trureturing (0.543) are theirs and are only cited.
+
+### Open items and their status after this round
+| item | statement | status |
+|---|---|---|
+| O1 | #455 under a uniform prime-tuple upper bound | CLOSED (conditional theorem below) |
+| O2 | exact-quadratic / periodic-curvature chains | CLOSED for exact quadratics and AP runs; periodic case with small period reduces to O2' |
+| O2' | Linnik–Vinogradov with an exceptional set of small primes | cited from the literature, not re-proved here |
+| O3 | (b') mean curvature -> infinity for unstructured curvature | OPEN — this is #455 itself (R1); 18 routes dead (D1–D18) |
+
+### O1 — [PROVED, conditional] Theorem C
+Hypothesis U: there is an absolute C_0 such that for all large Y, every L <= 3 log Y/log log Y, and every
+curvature pattern (e_1..e_{L-1}) of nonnegative even integers, the number of pairs (a,d) with a <= Y,
+d <= Y^{1/2+o(1)} such that all L forms a + j d + E_j (E_j = sum_{i<j}(j-i)e_i) are prime is at most
+C_0^L · Y^{3/2+o(1)} / (log Y)^L.
+Theorem C: Hypothesis U implies q_n/n^2 -> infinity for every sequence of primes with nondecreasing gaps.
+Proof. Suppose q_n <= C n^2 for infinitely many n; fix such a large n and put Y = C n^2, D = 2Cn.
+For n/4 <= k <= n/2 we have d_k <= (q_n - q_k)/(n-k) <= D, so the total curvature over the n/4 steps of this
+window is <= D. Cut the window into floor(n/(4L)) blocks of L consecutive steps; at least half of them have
+curvature sum <= 2·4DL/n = 16CL. Each such block gives a pair (a,d) = (q_k, d_k) with a <= Y, d <= D and a
+pattern with sum <= 16CL; there are at most binom(16CL+L, L) <= (e(16C+1))^L patterns, and distinct blocks
+have distinct a. Hence, by U,
+    n/(8L) <= (e(16C+1) C_0)^L · Y^{3/2+o(1)} / (log Y)^L.
+With L = floor(3 log Y/log log Y) the right side is Y^{3/2+o(1)} · Y^{-3+o(1)} = Y^{-3/2+o(1)}, while the left
+side is >= Y^{1/2-o(1)}. Contradiction for n large. So for every C, q_n > C n^2 for all large n.  QED
+Remark: U is a uniform Hardy–Littlewood-type UPPER bound in dimension ~log Y/log log Y; unconditionally the
+Selberg sieve gives (C L/log Y)^L instead of (C_0/log Y)^L, which is too weak (D9). U is not known.
+
+### O2 — [PROVED] exact quadratic stretches and AP runs
+(i) AP runs: L+1 primes > L in arithmetic progression with difference d force every prime <= L+1 to divide d
+    (else the progression covers 0 mod that prime), so L+1 <= (1+o(1)) log d. (Richter's observation.)
+(ii) Exact quadratics: if q_{k0+t} = Q(t) for 0 <= t <= M with 2Q(t) = A t^2 + B t + C' in Z[t], A > 0, then
+    for every odd prime p > A with (Delta/p) != -1 (Delta = B^2 - 4AC') the polynomial has a root mod p, so
+    p | Q(t) for some t in any p consecutive values; since Q(t) > p this contradicts primality once M >= p.
+    If Delta is a square, 8A·Q(t) splits into two linear factors and Q(t) is composite for all t >= t_0(A,B,C').
+    If Delta is not a square, a prime p with (Delta/p) = 1 and A < p << |Delta|^{1/4+eps} exists by
+    Linnik–Vinogradov (Burgess + r(n) = sum_{d|n} chi(d) >= 0) provided the primes <= A may be excluded (O2');
+    |Delta| << X^2 at scale X, so M >= X^{1/2+eps} is impossible.
+(iii) Periodic curvature with period pi: the pi-step subsequence is an exact quadratic with A = pi·sigma
+    (sigma = curvature per period), so (ii) applies to stretches of length >= pi·(pi X)^{1/2+eps}.
+
+### O3 — OPEN
+(b') for chains with unstructured curvature. Every tool tried controls counts of configurations among the
+primes, and each such count exceeds the chain length; closing O3 unconditionally amounts to proving #455.
