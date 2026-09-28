@@ -1,7 +1,7 @@
 # Open-conjecture attempt log
 
 > **Erdős #203 (current).** No covering exists using only primes with e_p = |⟨2,3⟩ mod p| ≤ 2·10⁵, for any
-> lcm (2D distortion method, certified pools; exact-rational proof up to 2·10⁴). See
+> lcm (2D distortion method, certified pools, exact-rational independent verification). See
 > [`e203/DISTORTION.md`](e203/DISTORTION.md); earlier results in [`e203/RESULTS.md`](e203/RESULTS.md).
 
 Goal given: pick an important, genuinely open conjecture (no proof or proof claim, not reduced to a

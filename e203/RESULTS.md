@@ -1,8 +1,8 @@
 # Erdős #203: covering constructions
 
 > **Update: 2D distortion method ([`DISTORTION.md`](DISTORTION.md)).** No covering exists that uses only
-> primes with e_p ≤ 2·10⁵, **for any lcm** (bound 0.8677, 28164 primes, pool certified complete). The result
-> for e_p ≤ 20000 is proved in exact rational arithmetic by an independent verifier (bound 0.7349). This
+> primes with e_p ≤ 2·10⁵, **for any lcm** (bound 0.8677, 28164 primes, pool certified complete). Every bound
+> in the table, up to 2·10⁵, is proved in exact rational arithmetic by an independent verifier. This
 > replaces the lcm-restricted table below as the main result. It does **not** rule out every covering:
 > primes of large index ⟨2,3⟩ ⊂ (𝔽_p^×)^k are the open end, and DISTORTION.md explains why.
 

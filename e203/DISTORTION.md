@@ -13,8 +13,8 @@ second moments that are small *because the problem is two-dimensional*.
 | e_p ≤ 2000 | 442 | 1.973 | 0.5701 | [PROVED] exact rational arithmetic, independent verifier |
 | e_p ≤ 20000 | 3469 | 2.376 | **0.7349** | [PROVED] exact rational arithmetic, independent verifier |
 | e_p ≤ 50000 | 7871 | 2.511 | 0.8169 | float64, margin 0.18 |
-| e_p ≤ 100000 | 14856 | 2.608 | 0.8087 | float64, margin 0.19 (exact check running) |
-| e_p ≤ 200000 | 28164 | 2.701 | **0.8677** | float64, margin 0.13 (exact check running) |
+| e_p ≤ 100000 | 14856 | 2.608 | 0.8087 | [PROVED] exact rational arithmetic, independent verifier (0.808684) |
+| e_p ≤ 200000 | 28164 | 2.701 | **0.8677** | [PROVED] exact rational arithmetic, independent verifier (0.867666); with the tighter α*, 0.8290 (float64) |
 
 Every pool is **certified complete**: for each e ≤ E, dividing gcd(2^e − 1, 3^e − 1) by the pool primes
 with e_p | e leaves exactly 1 (`certify_pool.py`). The float results have margins of at least 0.13. All
@@ -99,7 +99,7 @@ offsets. If A reads neither x₂ nor x₃, then P₂₃(A) = u(A). α* ≥ α₂
   paths already guard with t ≥ 2δ).
 - **Independent verifiers** (`verify_distortion.py`, `verify_distortion23.py`). They share no code with the
   search: image sizes come from determinantal divisors, arithmetic is exact rational, and α* is re-derived
-  independently. They reproduce 0.791821, 0.570147, 0.769150 and 0.734931 exactly.
+  independently. They reproduce 0.791821, 0.570147, 0.769150, 0.734931, 0.808684 and 0.867666 exactly.
 
 ## What this does *not* do: all coverings
 
