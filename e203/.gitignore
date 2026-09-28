@@ -13,3 +13,5 @@ coupled_run.log
 poolrange.log
 poolE_200k_400k.jsonl
 d23r_*.log
+certify400000.log
+types_E400000.json
