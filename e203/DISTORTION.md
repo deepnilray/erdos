@@ -13,11 +13,11 @@ second moments that are small *because the problem is two-dimensional*.
 | e_p ≤ 2000 | 442 | 1.973 | 0.5701 [PROVED] | — |
 | e_p ≤ 20000 | 3469 | 2.376 | 0.7349 [PROVED] | **0.6334** [PROVED] |
 | e_p ≤ 100000 | 14856 | 2.608 | 0.8087 [PROVED] | — |
-| e_p ≤ 200000 | 28164 | 2.701 | 0.8677 [PROVED] | **0.7157** (exact check running) |
-| e_p ≤ 400000 | 53231 | 2.788 | **0.8854** [PROVED] | **0.7306** (exact check running) |
+| e_p ≤ 200000 | 28164 | 2.701 | 0.8677 [PROVED] | **0.7157** [PROVED] |
+| e_p ≤ 400000 | 53231 | 2.788 | **0.8854** [PROVED] | **0.7306** [PROVED] |
 
 [PROVED] means the bound is reproduced in exact rational arithmetic by an independent verifier
-(`verify_distortion23.py`): 0.570147, 0.734931, 0.808684, 0.867666, 0.885439 (L4′) and 0.633429 (L4″).
+(`verify_distortion23.py`): 0.570147, 0.734931, 0.808684, 0.867666, 0.885439 (L4′) and 0.633429, 0.715690, 0.730584 (L4″).
 Every pool is **certified complete**: for each e ≤ E, dividing gcd(2^e − 1, 3^e − 1) by the pool primes
 with e_p | e leaves exactly 1 (`certify_pool.py`).
 
