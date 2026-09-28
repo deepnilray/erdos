@@ -272,3 +272,20 @@ primes, and each such count exceeds the chain length; closing O3 unconditionally
   this bounds exact quadratic / periodic-curvature stretches by pi (pi X)^{1/2+eps}.
 - O2 is now fully CLOSED (AP runs: Richter's argument; quadratic and periodic stretches: above).
 - Remaining: O3 only (= #455 itself for unstructured curvature). Not closed.
+
+## Round 11 (2026-09-28): O3 via a limiting (Furstenberg/adelic) object
+Idea: take a chain with q_n <= C n^2 infinitely often, and pass to a limit of its windows to get a
+shift-invariant measure mu on sequences (curvature e_k, state (q_k, d_k) in Zhat^2), with mean curvature <= 8C
+and supported on states whose q-coordinate is a unit mod every prime. Then try to show no such mu exists.
+- [PROVED] Existence of the limit object: the window measures (1/W) sum_{k in window} delta_{shift^k(e, (q,d) mod m)}
+  are tight for each m (finitely many states), so a diagonal subsequence converges to a shift-invariant mu on
+  E^Z x Zhat^2 with the stated properties (compactness of Zhat and of bounded-curvature pattern space after
+  truncating the rare large curvatures, whose density is <= 8C/E).
+- DEAD D19: such mu EXISTS unconditionally. Example: the quadratic chain q(t) = t^2 + t + c with c in Zhat chosen
+  so that 1 - 4c is a non-residue at every odd prime (possible prime by prime), curvature constantly 2; its orbit
+  measure is shift-invariant, mean curvature 2, and every state is a unit at every prime. So the profinite
+  (non-archimedean) limit cannot contradict anything; the contradiction must use the archimedean size relation
+  q_k ~ d_k^2 (anchoring) jointly with primes growing with the scale — exactly what the limit discards.
+  This is the same obstruction as the Cap C1, now in structural form.
+
+Status: O3 open. No step of #455 closed this round.
