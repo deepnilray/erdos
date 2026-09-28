@@ -17,3 +17,5 @@ certify400000.log
 types_E400000.json
 distort23_400k.log
 delta23_E400000*.npy
+verify23_400000.log
+delta23_E400000.json
