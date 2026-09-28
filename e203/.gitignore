@@ -7,7 +7,6 @@ ls25
 *.err
 nohup.out
 __pycache__/
-coupled_full_E200000.txt
 coupled_E200000.txt
 coupled_run.log
 poolrange.log
@@ -19,3 +18,5 @@ distort23_400k.log
 delta23_E400000*.npy
 verify23_400000.log
 delta23_E400000.json
+d23r_final.log
+delta23r_E*.npy
