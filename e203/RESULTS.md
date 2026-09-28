@@ -22,7 +22,10 @@ certified complete.
 2. **The method has a ceiling.** The bound rises with Σ1/e_p, which grows like log log N. Near Σ ≈ 1.4 the
    one-layer bound reaches 1 and stops excluding anything. Pushing further needs a 2D version of the
    Balister–Bollobás–Morris–Sahasrabudhe–Tiba distortion method.
-3. **The core optimum is computed, not derived.** It rests on exhaustive enumeration (`brute_core.c`, all
+3. **698377680 has a weaker status than the theorem list.** It is excluded only with the 7-prime core, whose
+   optimum is certified by CP-SAT alone; with the brute-force 6-core the bound is 1.000077. An 8-prime
+   core (adding 31) did not finish: CP-SAT's bound after 4800 s was 0.996, which is useless.
+4. **The core optimum is computed, not derived.** It rests on exhaustive enumeration (`brute_core.c`, all
    207360 coset choices). CP-SAT agrees independently (4915/8640).
 
 ## The mechanism: why 2D coverings are starved
@@ -58,7 +61,9 @@ clear a fibre.
 | 61261200 | 2⁴3²5²·7·11·13·17 | 281 | 1.3654 | 0.9853 | 0.9762 |
 | 73513440 | 2⁵3³·5·7·11·13·17 | 299 | 1.3636 | 0.9854 | 0.9763 |
 | 232792560 | lcm(1..22) | 322 | 1.3561 | 0.9777 | 0.9685 |
+| 698377680 | 2⁴3³·5·7·11·13·17·19 | 449 | 1.3894 | 1.000077 (not proved) | **0.9909** [VERIFIED: relies on the CP-SAT-certified 7-core, 0.588575] |
 | 367567200 | 2⁵3³5²·7·11·13·17 | 435 | 1.4142 | — | 1.0088 **(inconclusive: ceiling reached)** |
+| 1163962800 | 2⁴3²5²·7·11·13·17·19 | 479 | 1.4071 | — | 1.0018 (inconclusive) |
 
 The 6-core column is reproduced end to end by `verify_exclusion.py` (output in `verify_all.log`). It uses
 exact rationals, computes kernel lines without discrete logs, and shares no code with the search.

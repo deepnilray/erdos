@@ -8,3 +8,7 @@ N=232792560 primes=322 sum1/e=1.3561 COMPLETE=True (283s)
 poolN_232792560.jsonl: primes=322 sum1/e=1.3561 coverage <= 0.9685 -> NO COVERING POSSIBLE
 N=367567200 primes=435 sum1/e=1.4142 COMPLETE=True (471s)
 poolN_367567200.jsonl: primes=435 sum1/e=1.4142 coverage <= 1.0088 -> inconclusive
+N=698377680 primes=449 sum1/e=1.3894 COMPLETE=True (1002s)
+poolN_698377680.jsonl: primes=449 sum1/e=1.3894 coverage <= 0.9909 -> NO COVERING POSSIBLE
+N=1163962800 primes=479 sum1/e=1.4071 COMPLETE=True (1831s)
+poolN_1163962800.jsonl: primes=479 sum1/e=1.4071 coverage <= 1.0018 -> inconclusive
