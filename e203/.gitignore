@@ -7,3 +7,6 @@ ls25
 *.err
 nohup.out
 __pycache__/
+verify23t_100000.log
+verify23_200000.log
+distort23_tight200k.log
