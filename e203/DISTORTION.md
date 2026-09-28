@@ -1,25 +1,25 @@
 # A 2D distortion method for Erdős #203
 
-**Theorem (computer-assisted).** Let P be any finite set of primes with e_p = |⟨2,3⟩ mod p| ≤ 2·10⁵ for
+**Theorem (computer-assisted).** Let P be any finite set of primes with e_p = |⟨2,3⟩ mod p| ≤ 4·10⁵ for
 every p ∈ P. Then for every m coprime to 6 there are k, l ≥ 0 such that no p ∈ P divides 2^k·3^l·m + 1.
 
 There is *no condition on lcm(e_p)*. Earlier exclusions needed lcm(e_p) to divide a fixed N ≤ 2.3·10⁸.
-Here the lcm may be as large as the product of all 28164 moduli. The pool of candidate primes has
-Σ1/e_p = 2.70, far beyond what density alone can rule out. The argument absorbs that excess through
+Here the lcm may be as large as the product of all 53231 moduli. The pool of candidate primes has
+Σ1/e_p = 2.79, far beyond what density alone can rule out. The argument absorbs that excess through
 second moments that are small *because the problem is two-dimensional*.
 
-| primes allowed | primes | Σ1/e_p | distortion bound | status |
+| primes allowed | primes | Σ1/e_p | bound, L4′ (Bonferroni price) | bound, L4″ (exact coupled price) |
 |---|---|---|---|---|
-| e_p ≤ 2000 | 442 | 1.973 | 0.5701 | [PROVED] exact rational arithmetic, independent verifier |
-| e_p ≤ 20000 | 3469 | 2.376 | **0.7349** | [PROVED] exact rational arithmetic, independent verifier |
-| e_p ≤ 50000 | 7871 | 2.511 | 0.8169 | float64, margin 0.18 |
-| e_p ≤ 100000 | 14856 | 2.608 | 0.8087 | [PROVED] exact rational arithmetic, independent verifier (0.808684) |
-| e_p ≤ 200000 | 28164 | 2.701 | **0.8677** | [PROVED] exact rational arithmetic, independent verifier (0.867666); with the tighter α*, 0.8290 (float64) |
+| e_p ≤ 2000 | 442 | 1.973 | 0.5701 [PROVED] | — |
+| e_p ≤ 20000 | 3469 | 2.376 | 0.7349 [PROVED] | **0.6334** [PROVED] |
+| e_p ≤ 100000 | 14856 | 2.608 | 0.8087 [PROVED] | — |
+| e_p ≤ 200000 | 28164 | 2.701 | 0.8677 [PROVED] | **0.7157** (exact check running) |
+| e_p ≤ 400000 | 53231 | 2.788 | **0.8854** [PROVED] | **0.7306** (exact check running) |
 
+[PROVED] means the bound is reproduced in exact rational arithmetic by an independent verifier
+(`verify_distortion23.py`): 0.570147, 0.734931, 0.808684, 0.867666, 0.885439 (L4′) and 0.633429 (L4″).
 Every pool is **certified complete**: for each e ≤ E, dividing gcd(2^e − 1, 3^e − 1) by the pool primes
-with e_p | e leaves exactly 1 (`certify_pool.py`). The float results have margins of at least 0.13. All
-terms are positive and there are at most about 10⁷ operations, so the relative rounding error is below
-10⁻⁸.
+with e_p | e leaves exactly 1 (`certify_pool.py`).
 
 How each refinement moves the bound at E = 20000:
 
@@ -29,7 +29,8 @@ How each refinement moves the bound at E = 20000:
 | distortion, moment bounds only | 1.088 |
 | + exact stage 2 with forced overlaps (L4) | 0.898 |
 | + merged exact {2,3} stage (L4′) | 0.769 |
-| + tighter α*_heavy (exact 6-core) | **0.735** |
+| + tighter α*_heavy (exact 6-core) | 0.735 |
+| + exact coupled removal price (L4″) | **0.633** |
 
 ## Setting
 
@@ -83,6 +84,26 @@ offsets. If A reads neither x₂ nor x₃, then P₂₃(A) = u(A). α* ≥ α₂
   and the raw torus (ℤ/144)²; CP-SAT's best feasible value, 0.569010, lies below it, as it must);
 - the light {2,3}-smooth primes add at most Σ1/e_p ≈ 0.048 (union bound).
 
+**(L4″) Exact coupled removal price [PROVED; computer-assisted].** The heavy sets read only x mod 144, and
+the uniform measure on a coset A pushes forward to the uniform measure on the image of L_A in (ℤ/144)².
+So, with one set of heavy offsets c for numerator and denominator,
+
+  P₂₃(A)/u(A) ≤ R(A) = max_c (1 − cov_A(c)) / (1 − cov_G(c) − λ),
+
+where cov_A is the covered fraction of the image of A, cov_G the global heavy coverage, and λ ≥ the light
+{2,3} mass. R depends only on the subgroup L_A + 144ℤ². Every single and pair term of the e_p ≤ 4·10⁵ pool
+falls into one of **1908** such subgroups (canonical HNF keys). R is computed exactly for all of them by
+branch and bound (`maxratio.c`), which is valid because both coverages only grow along a branch. Each
+value is stored as integer counts (bestA, n_A, bestG, n_G), so the verifier recomputes R as an exact
+rational. The decoupled bound (1 − minU(A))/(1 − α*), with minU the exact minimum coverage
+(`minunion.c`), is kept as a fallback. A side fact: the heavy family can never cover less than 48.12% of
+the torus. The table used λ = 0.0485. At E = 4·10⁵ the actual light mass is 0.0485017, and the rigorous
+correction factor (1 − OPT_h − λ)/(1 − OPT_h − λ′) (the ratio is increasing in the heavy coverage
+g ≤ OPT_h) is applied exactly.
+Checks: both B&B solvers match plain exhaustive enumeration to 10 digits on a reduced family; canonical
+keys match brute-force images 60/60; every certificate reproduces its value; 1 ≤ R ≤ decoupled for all
+1908 types. The weighted mean price drops from 1.936 (decoupled) to 1.707 (coupled).
+
 ## Controls
 
 - **Soundness [VERIFIED].** On 15 genuine coverings of ℤ² (synthetic ψ data, each checked to cover by brute
@@ -115,7 +136,10 @@ The obstruction is precise:
   over e ≤ 2·10⁵, and the index distribution decays like 1/k² (45% have k = 1, 10% have k ≥ 10). But this
   is not a proof.
 
-**Would the method reach E = ∞ if the tail were controlled? Unknown.** The bound grows slowly: 0.570
+**Would the method reach E = ∞ if the tail were controlled? Unknown, but the margin is now real.** With the
+exact coupled price, the bound is 0.6334 (2·10⁴), 0.7157 (2·10⁵) and 0.7306 (4·10⁵), a rise of 0.0149 for
+the last doubling. The L4′ series rose by 0.0295, 0.0212 and 0.0178 over its last three doublings. Earlier
+assessment, kept for the record: The bound grows slowly: 0.570
 (2·10³), 0.769 (2·10⁴), 0.817 (5·10⁴), 0.846 (10⁵), 0.868 (2·10⁵), with the α* = 0.5955 series. That is
 about 0.03 per doubling of E, and slowly decreasing. A heuristic extrapolation, whose per-stage masses
 match the data to within ±25%, **failed its back-test**. From E = 2·10⁴ it predicted B(10⁵) = 0.787, but

@@ -20,3 +20,5 @@ verify23_400000.log
 delta23_E400000.json
 d23r_final.log
 delta23r_E*.npy
+verify23r_*.log
+delta23r_E*.json
