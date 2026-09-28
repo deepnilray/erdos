@@ -289,3 +289,25 @@ and supported on states whose q-coordinate is a unit mod every prime. Then try t
   This is the same obstruction as the Cap C1, now in structural form.
 
 Status: O3 open. No step of #455 closed this round.
+
+## Round 12 (2026-09-28): technique search
+Searched for techniques that bound second differences / curvature of subsequences of primes.
+- FOUND T1: J. Brüdern, C. Elsholtz, "Local oscillations in moderately dense sequences of primes",
+  arXiv:1702.00289 (read in source). Theorem 2: if P is a delta-dense subset of the primes in a progression
+  (#P ∩ [1,x] >= delta(x)·pi(x;q,a), delta^2 log x -> infinity), then
+  sum_{N<n<=2N} |Delta_n|/p_n >= 1e-7 delta^3, where Delta_n = p_{n+2} - 2p_{n+1} + p_n.
+  Method: Selberg-sieve upper bound (with Gallagher's singular-series average) for prime triples near
+  3-progressions, plus the density hypothesis. This is exactly a lower bound on curvature for subsequences of
+  primes — the right kind of statement — but it needs density delta >= (log x)^{-1/2+o(1)}.
+  NOT APPLICABLE: a chain with q_n <= C n^2 has #chain ∩ [1,x] ~ sqrt(x/C), i.e. delta ~ x^{-1/2} log x.
+  The near-3AP triple count (~ x·X/log^3 x) then exceeds the chain's T triples (this is D6 again).
+- FOUND T2: Rényi (1950), Erdős–Rényi (1950): curvature of the full prime sequence ≍ log N, via the prime
+  number theorem. Applies only to all primes / dense sets.
+- T3 Piatetski-Shapiro sequences floor(n^c): convex sequences with prime asymptotics known for c < ~1.16;
+  our chains live at c = 2, where even existence of primes in n^2+1 is open. Not applicable.
+- DEAD D20 (container/tube version of D17): cover convex chains by tubes around piecewise-quadratic curves.
+  To make a tube's prime count (sieve) smaller than its share of the chain, the tolerance must be < log N/C,
+  which forces pieces of bounded length w = O(1) (curvature fluctuation over w steps is ~K w^{3/2}); tubes then
+  degenerate to intervals shorter than log N around each term, for which no upper bound below 1 prime exists.
+Result: no known technique covers sets of primes as sparse as x^{1/2}; the closest (T1) stops at density
+(log x)^{-1/2}. O3 open.
