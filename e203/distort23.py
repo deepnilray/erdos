@@ -14,7 +14,7 @@ from sympy import factorint
 import lattice as LT
 from distort2 import earlier_lattice, img, joint_img
 
-def build(pool, heavy_ps, astar):
+def build(pool, heavy_ps, astar, r_override=None):
     by = {}
     for p in pool:
         f = factorint(p['e']); by.setdefault(max(f), []).append((p, f))
@@ -29,7 +29,8 @@ def build(pool, heavy_ps, astar):
         forced = [p for p in heavy if img(p, H) == p['e']]
         LB = sum(1 / p['e'] for p in forced)
         for p, q in itertools.combinations(forced, 2): LB -= 1 / joint_img(p, q, H)
-        return max(0.0, 1 - LB) / (1 - astar)
+        rb = max(0.0, 1 - LB) / (1 - astar)
+        return r_override(H, True, rb) if r_override else rb
     T1, T2 = [], []; diag_rows = []; Acap = np.zeros(len(stage_ells))
     for l in stage_ells:
         s = sidx[l]; lst = by[l]; info = []

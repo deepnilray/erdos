@@ -7,3 +7,9 @@ ls25
 *.err
 nohup.out
 __pycache__/
+coupled_full_E200000.txt
+coupled_E200000.txt
+coupled_run.log
+poolrange.log
+poolE_200k_400k.jsonl
+d23r_*.log
