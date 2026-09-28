@@ -15,3 +15,5 @@ poolE_200k_400k.jsonl
 d23r_*.log
 certify400000.log
 types_E400000.json
+distort23_400k.log
+delta23_E400000*.npy
