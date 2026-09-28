@@ -311,3 +311,15 @@ Searched for techniques that bound second differences / curvature of subsequence
   degenerate to intervals shorter than log N around each term, for which no upper bound below 1 prime exists.
 Result: no known technique covers sets of primes as sparse as x^{1/2}; the closest (T1) stops at density
 (log x)^{-1/2}. O3 open.
+
+## Round 13 (2026-09-28): independent attempts to push T1 (Brüdern–Elsholtz) below density (log x)^{-1/2}
+- Attempt A: use many near-3APs per chain, (q_k, q_{k+j}, q_{k+2j}) for j <= J (second difference ~K j^2).
+  DEAD D21: chain supplies T·J triples; the sieve count of prime triples (a, a+h, a+2h+e) with h <= 2JX,
+  |e| <= K J^2 is ~ Y·JX·KJ^2/log^3 Y >> T·J for every J. Longer near-APs (r+1 points) multiply the count by
+  (KJ^2)^{r-1}/log Y per point, never below the chain count.
+- Attempt B: optimise the fundamental lemma for the window problem, using that L forms cover every nonzero
+  class mod p for p <= L (factor prod_{p<=L} 1/p = e^{-(1+o(1))L}) and sieving only to z = L.
+  DEAD D22: the fundamental lemma needs level D >= z^{c'L} = e^{c' L log L}; with D = Y^{3/2} this caps
+  L at ~1.5 log Y/(c' log log Y), and the resulting bound Y^{3/2} e^{c(K)L} e^{-L} exceeds the chain's
+  T/L ~ Y^{1/2} windows unless L >= log Y. Incompatible. (Whole-chain sieve: dimension T ~ sqrt Y forces z = O(1).)
+O3 open.
