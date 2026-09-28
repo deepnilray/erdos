@@ -1,4 +1,7 @@
 brute_core
+brute_bits
+brute_bits6
+brute_torus
 ls25
 *.out
 *.err

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/user/erdos/e203/verify_distortion23.py", line 80, in <module>
+    tot, astar = main(sys.argv[1], int(float(sys.argv[2])), heavy, sys.argv[4], core, cv)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/erdos/e203/verify_distortion23.py", line 28, in main
+    dl = {int(k): F(round(100 * v), 100) for k, v in json.load(open(delta_path)).items()}
+                                                               ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'delta23t_E100000.json'

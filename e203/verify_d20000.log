@@ -1,0 +1,8 @@
+alpha2max = 307/1024 = 0.299805
+  stage 3: n=28 delta=0.00 m1=0.4887 m2=0.3697 cost=0.4887
+  stage 5: n=49 delta=0.36 m1=0.2714 m2=0.1339 cost=0.1453
+  stage 7: n=75 delta=0.40 m1=0.2224 m2=0.0887 cost=0.0924
+  stage 11: n=80 delta=0.42 m1=0.1922 m2=0.0517 cost=0.0530
+  stage 13: n=94 delta=0.44 m1=0.1441 m2=0.0377 cost=0.0383
+  stage 17: n=92 delta=0.45 m1=0.1149 m2=0.0244 cost=0.0247
+EXACT RATIONAL BOUND = 0.898319  (< 1: True)
