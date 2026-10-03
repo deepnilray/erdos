@@ -1,10 +1,10 @@
 # A 2D distortion method for Erdős #203
 
-**Theorem (computer-assisted).** Let P be any finite set of primes with e_p = |⟨2,3⟩ mod p| ≤ 4·10⁵ for
-every p ∈ P. Then for every m coprime to 6 there are k, l ≥ 0 such that no p ∈ P divides 2^k·3^l·m + 1.
+**Theorem (computer-assisted).** Let P be any finite set of primes p ∤ 6 with e_p = |⟨2,3⟩ mod p| ≤ 4·10⁵
+for every p ∈ P. Then for every m coprime to 6 there are k, l ≥ 0 such that no p ∈ P divides 2^k·3^l·m + 1.
 
 There is *no condition on lcm(e_p)*. Earlier exclusions needed lcm(e_p) to divide a fixed N ≤ 2.3·10⁸.
-Here the lcm may be as large as the product of all 53231 moduli. The pool of candidate primes has
+Here lcm(e_p) is unrestricted. The pool of candidate primes has
 Σ1/e_p = 2.79, far beyond what density alone can rule out. The argument absorbs that excess through
 second moments that are small *because the problem is two-dimensional*.
 
@@ -31,6 +31,24 @@ How each refinement moves the bound at E = 20000:
 | + merged exact {2,3} stage (L4′) | 0.769 |
 | + tighter α*_heavy (exact 6-core) | 0.735 |
 | + exact coupled removal price (L4″) | **0.633** |
+
+**Scope.** A *covering* here is a certificate made of **prime divisors only**. Certificates that also use
+algebraic factorisations (m a perfect power) are treated in [`MIXED.md`](MIXED.md), Theorem E: they are
+also excluded for e_p ≤ 4·10⁵ (bound 0.953242).
+
+**Audit (2026-10-02/03).** Nine independent agents checked this work. Results:
+- *Mathematics:* every lemma GOOD (M1, L1–L4″), with a toy end-to-end check to 1e-16.
+- *Independent recomputation:* reproduces 0.570147, 0.769150 and 0.734931 exactly, and re-derives
+  e_p and the kernel lattice of all 3469 primes with e_p ≤ 20000.
+- *Red team:* found no unsound case in 4391 genuine coverings, the minimum bound being exactly 1. It also
+  checked each lemma inequality term by term on about 57k instances, with 0 violations.
+- *Prime data:* all 53231 forms (α, β) define the right lattice.
+- *Coupled prices:* an independent exact solver reproduces the R values (16 types, identical rationals).
+
+The audit raised two residuals:
+- `maxratio.c` prunes in double precision, so each certificate proves its R is attained, not that it is
+  the maximum. The possible effect is about 1e-14, against a margin of 0.27.
+- Forms must be primitive (gcd(α, β, e) = 1). All pool forms are, and `build` now asserts it.
 
 ## Setting
 
@@ -131,7 +149,9 @@ The obstruction is precise:
   Σ_n 2^{ω(n)}/(n·P⁺(n)) < ∞.
 - Primes of **large index** (2 and 3 both high-power residues mod p) would need log gcd(2^e − 1, 3^e − 1)
   to be e^{o(1)} on average over e with fixed P⁺(e). Bugeaud–Corvaja–Zannier (εe, ineffective) falls short
-  by a power of e, and GRH-Chebotarev is uniform only for index up to about √p.
+  by a power of e, and GRH-conditional Chebotarev results are uniform only up to index about √p for one generator. For
+the two generators ⟨2,3⟩ the expected range is p^{1/6} to p^{1/4}, and only x^{1/30} is published
+(Cangelmi–Pappalardi, JNT 75, 1999).
 - Empirically the large-index tail is thin: #{p : e_p = e} ≈ κ·(e/φ(e))/log e with κ = 0.78–0.82, stable
   over e ≤ 2·10⁵, and the index distribution decays like 1/k² (45% have k = 1, 10% have k ≥ 10). But this
   is not a proof.

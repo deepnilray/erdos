@@ -14,7 +14,13 @@ from sympy import factorint
 import lattice as LT
 from distort2 import earlier_lattice, img, joint_img
 
+def _check_primitive(pool):
+    import math
+    for p in pool:  # NONPRIMITIVE forms make the bound unsound (e.g. {2x=0 mod 4} u {2x=2 mod 4} covers)
+        assert math.gcd(math.gcd(p['alpha'], p['beta']), p['e']) == 1, ('non-primitive form', p)
+
 def build(pool, heavy_ps, astar, r_override=None):
+    _check_primitive(pool)
     by = {}
     for p in pool:
         f = factorint(p['e']); by.setdefault(max(f), []).append((p, f))

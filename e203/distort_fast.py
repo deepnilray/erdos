@@ -6,7 +6,13 @@ import numpy as np
 import scipy.sparse as sp
 from sympy import factorint
 
+def _check_primitive(pool):
+    import math
+    for p in pool:  # NONPRIMITIVE forms make the bound unsound (e.g. {2x=0 mod 4} u {2x=2 mod 4} covers)
+        assert math.gcd(math.gcd(p['alpha'], p['beta']), p['e']) == 1, ('non-primitive form', p)
+
 def build(pool):
+    _check_primitive(pool)
     ells = sorted({max(factorint(p['e'])) for p in pool} | {q for p in pool for q in factorint(p['e'])})
     idx = {l: i for i, l in enumerate(ells)}
     by = {}

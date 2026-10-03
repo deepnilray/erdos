@@ -35,6 +35,7 @@ it is a covering of a finite torus ℤ_N × ℤ_N.
 | veljjanoski (github.com/veljjanoski/erdos203) | greedy + local search on ℤ_N² | 71.7% covered at N = 5040, 76.0% at N = 55440; perfect-power m gives no help |
 | AnimishSharma (forum, 2026-06) | density-sum exclusion | no covering with lcm(e_p) < 5040 using p ≤ 5·10⁷ (computational, within that bound) |
 | the-omega-institute/trureturing issue #9414 (opened 2026-09-22) | congruence-family obstructions | "No such integer m … has been obtained"; research suspended |
+| Neo7672/erdos-203-covering-search (GitHub, 2026-09-16/17) | 105 primes with h(p) <= 400 | plateaus at 17–21% uncovered; no claim |
 | emil467q (forum) | direct search | no m in [10¹⁰, 10¹¹] (heuristic range only; a covering m would be far larger) |
 | Filaseta–Finch–Kozek | related: m with 2^k·m^i + 1 composite for 1 ≤ i ≤ l | not this problem |
 
