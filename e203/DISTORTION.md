@@ -43,6 +43,10 @@ also excluded for e_p ≤ 4·10⁵ (bound 0.953242).
 - *Red team:* found no unsound case in 4391 genuine coverings, the minimum bound being exactly 1. It also
   checked each lemma inequality term by term on about 57k instances, with 0 violations.
 - *Prime data:* all 53231 forms (α, β) define the right lattice.
+- *Pool completeness, second route* (`sieve_e.c`): an independent sieve computes e_p from scratch for
+  every prime p < 10⁸ (factoring p − 1 and taking exact orders). It finds exactly the pool's 53147 primes
+  below 10⁸ with e_p ≤ 4·10⁵, with 0 missing, 0 extra and 0 wrong e. The 84 pool primes above 10⁸ rest on
+  the gcd certificate.
 - *Coupled prices:* an independent exact solver reproduces the R values (16 types, identical rationals).
 
 The audit raised two residuals:
