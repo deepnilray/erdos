@@ -47,12 +47,16 @@ also excluded for e_p ≤ 4·10⁵ (bound 0.953242).
   every prime p < 10⁸ (factoring p − 1 and taking exact orders). It finds exactly the pool's 53147 primes
   below 10⁸ with e_p ≤ 4·10⁵, with 0 missing, 0 extra and 0 wrong e. The 84 pool primes above 10⁸ rest on
   the gcd certificate.
-- *Coupled prices:* an independent exact solver reproduces the R values (16 types, identical rationals).
+- *Coupled prices, second solver* (`myratio.c`, `verify_coupled_indep.py`): an independently written
+  integer-exact branch and bound (__int128 comparisons, no floating point, heavy forms re-derived and
+  checked against direct 2^k 3^l mod p) recomputes R(A) for **all 1908 types**. It gets the identical
+  rational in 1908/1908 cases and a larger value in 0 (`myratio_all_E200000.txt`).
 
-The audit raised two residuals:
-- `maxratio.c` prunes in double precision, so each certificate proves its R is attained, not that it is
-  the maximum. The possible effect is about 1e-14, against a margin of 0.27.
-- Forms must be primitive (gcd(α, β, e) = 1). All pool forms are, and `build` now asserts it.
+The audit raised two residuals. Both are now closed:
+- `maxratio.c` prunes in double precision, so on its own each certificate proves its R is attained, not
+  that it is the maximum. **Closed:** the integer-exact second solver above finds the same maximum for
+  every type.
+- Forms must be primitive (gcd(α, β, e) = 1). **Closed:** all pool forms are, and `build` now asserts it.
 
 ## Setting
 
@@ -115,7 +119,8 @@ So, with one set of heavy offsets c for numerator and denominator,
 where cov_A is the covered fraction of the image of A, cov_G the global heavy coverage, and λ ≥ the light
 {2,3} mass. R depends only on the subgroup L_A + 144ℤ². Every single and pair term of the e_p ≤ 4·10⁵ pool
 falls into one of **1908** such subgroups (canonical HNF keys). R is computed exactly for all of them by
-branch and bound (`maxratio.c`), which is valid because both coverages only grow along a branch. Each
+branch and bound (`maxratio.c`, confirmed type by type by the integer-exact `myratio.c`), which is valid
+because both coverages only grow along a branch. Each
 value is stored as integer counts (bestA, n_A, bestG, n_G), so the verifier recomputes R as an exact
 rational. The decoupled bound (1 − minU(A))/(1 − α*), with minU the exact minimum coverage
 (`minunion.c`), is kept as a fallback. A side fact: the heavy family can never cover less than 48.12% of
