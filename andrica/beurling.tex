@@ -1,0 +1,113 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+
+\begin{document}
+\title[Andrica and Beurling primes]{Andrica's conjecture is not a consequence of the Riemann hypothesis for Beurling primes}
+\author{}
+\date{}
+\begin{abstract}
+For every function $L(x)$ with $1\le L(x)\le \sqrt{x}\log x$ we construct a Beurling generalized prime system whose integers satisfy $N(x)=Ax+O_\varepsilon(x^{1/2+\varepsilon})$ and whose primes satisfy $\psi(x)=x+O(\sqrt{x}\log x)$, and which has infinitely many gaps between consecutive generalized primes $p<p'$ with $p'-p\ge L(p)$. Taking $L(x)=3\sqrt x$ gives a system satisfying the Riemann hypothesis in every analytic sense in which Andrica's inequality $\sqrt{p'}-\sqrt{p}<1$ fails infinitely often. Hence no proof of Andrica's conjecture can use only the analytic behaviour of the zeta function at the level of RH: it must use arithmetic specific to the rational integers. Taking $L(x)=\sqrt x\log x$ shows that RH-quality information permits gaps of size $\sqrt p\log p$ in the Beurling setting.
+\end{abstract}
+\maketitle
+
+\section{Setting}
+A Beurling system is a nondecreasing sequence $\mathcal P=(p_j)$ of reals $p_j>1$ tending to infinity (the generalized primes); the generalized integers are the finite products, counted with multiplicity, with counting function $N(x)$; $\pi(x)=\#\{p_j\le x\}$, $\psi(x)=\sum_{p_j^m\le x}\log p_j$, and $\zeta_{\mathcal P}(s)=\prod_j(1-p_j^{-s})^{-1}=\int_{1^-}^\infty u^{-s}\,dN(u)$ for $\sigma=\Re s>1$.
+
+We use the following theorem of Broucke and Vindas \cite[Theorem~1.2]{BV}.
+
+\begin{theorem}[Broucke--Vindas]\label{thm:BV}
+Let $F$ be continuous, nondecreasing, with $F(1)=0$, $F(x)\to\infty$ and $F(x)\ll x/\log x$. Then there is a strictly increasing sequence of generalized primes $\mathcal P$ with $|\pi_{\mathcal P}(x)-F(x)|\le1$ for all $x$, such that for all $x\ge1$ and real $t$
+\[
+\Big|\sum_{p_j\le x}p_j^{-it}-\int_1^x u^{-it}\,dF(u)\Big|\ll \sqrt x+\sqrt{\frac{x\log(|t|+1)}{\log(x+1)}} .
+\]
+Moreover each $p_j$ lies in the support of $dF$.
+\end{theorem}
+
+(The support property is part of the construction: $p_j$ is drawn from $dF$ restricted to $(q_{j-1},q_j]$, where $F(q_j)=j$.)
+
+\section{The construction}
+Let $1\le L(x)\le\sqrt{x}\log x$. Choose $x_1$ large and $x_{k+1}=x_k^2$. Put $W_k=(x_k,x_k+L_k]$ and $B_k=(x_k-L_k,x_k]$ with $L_k=L(x_k)$; these intervals are pairwise disjoint. Let
+\[
+f(u)=\frac{1-u^{-1}}{\log u}\Big(1+\sum_k \mathbf 1_{B_k}(u)-\sum_k\mathbf 1_{W_k}(u)\Big)\quad(u>1),\qquad F(x)=\int_1^x f(u)\,du .
+\]
+Then $f\ge0$, $f=0$ on each $W_k$, $f$ doubles on $B_k$, $F$ is continuous, nondecreasing and $F(x)\ll x/\log x$. Let $\mathcal P$ be given by Theorem~\ref{thm:BV}.
+
+\begin{lemma}[Gaps]\label{lem:gap}
+For each large $k$ there are consecutive generalized primes $p<p'$ with $p\le x_k$, $p'>x_k+L_k$ and $x_k-p\ll \log x_k$. In particular $p'-p\ge L_k-O(\log x_k)$.
+\end{lemma}
+\begin{proof}
+No $p_j$ lies in $W_k$, by the support property. Since $f\ge (1-u^{-1})/\log u$ on $(x_k-3\log x_k,x_k]$ (this interval avoids every $W_j$) and $|\pi-F|\le1$, the interval $(x_k-3\log x_k,x_k]$ contains at least $F(x_k)-F(x_k-3\log x_k)-2\ge 3-o(1)-2>0$ primes.
+\end{proof}
+
+\begin{lemma}[Primes]\label{lem:psi}
+$\psi(x)=x+O(\sqrt{x}\log x)$.
+\end{lemma}
+\begin{proof}
+Let $\psi_F(x)=\int_1^x\log u\,dF(u)$. Without the perturbation, $\int_1^x(1-u^{-1})\,du=x-1-\log x$. The $k$-th perturbation changes $\psi_F$ by $\int_{B_k\cap[1,x]}(1-u^{-1})du-\int_{W_k\cap[1,x]}(1-u^{-1})du$, which has absolute value at most $L_k$ and equals $O(L_k^2/x_k)=O(\log^2x_k)$ once $x\ge x_k+L_k$. Since $L_k\le\sqrt{x_k}\log x_k$ and $x_k$ grows doubly exponentially, $\psi_F(x)=x+O(\sqrt x\log x)$. By partial summation and $|\pi-F|\le1$, $\sum_{p_j\le x}\log p_j=\psi_F(x)+O(\log x)$, and prime powers contribute $\ll\pi(\sqrt x)\log x\ll\sqrt x$.
+\end{proof}
+
+\begin{lemma}[Zeta function]\label{lem:zeta}
+For every $\delta\in(0,1/2)$ and $\eta>0$, $\zeta_{\mathcal P}(s)(s-1)$ extends analytically to $\sigma>1/2$, $\zeta_{\mathcal P}(s)=A/(s-1)+O(1)$ near $s=1$ with $A>0$, and $|\zeta_{\mathcal P}(\sigma+it)|\ll_{\delta,\eta}(|t|+2)^{\eta}$ for $\sigma\ge 1/2+\delta$, $|t|\ge1$.
+\end{lemma}
+\begin{proof}
+For $\sigma>1$, $\log\zeta_{\mathcal P}(s)=\sum_j p_j^{-s}+Q(s)$ with $Q(s)=\sum_j\sum_{m\ge2}p_j^{-ms}/m$, which is analytic and bounded on $\sigma\ge1/2+\delta$ because $\pi(x)\ll x/\log x$. Next,
+\[
+\sum_j p_j^{-s}=\int_1^\infty u^{-s}dF(u)+H(s),\qquad H(s)=\int_1^\infty u^{-\sigma}\,dE_t(u),
+\]
+where $E_t(u)=\sum_{p_j\le u}p_j^{-it}-\int_1^uv^{-it}dF(v)$. Integrating by parts and using Theorem~\ref{thm:BV}, for $\sigma\ge1/2+\delta$,
+\[
+|H(s)|\le\sigma\int_1^\infty|E_t(u)|u^{-\sigma-1}du\ll_\delta 1+\sqrt{\log(|t|+2)},
+\]
+and $H$ is analytic there. Finally $\int_1^\infty u^{-s}dF(u)=\int_1^\infty u^{-s}\frac{1-u^{-1}}{\log u}du+G(s)$, where the first integral equals $\log\frac{s}{s-1}$ (differentiate in $s$), and
+\[
+|G(s)|\le\sum_k\int_{B_k\cup W_k}\frac{u^{-\sigma}}{\log u}du\ll\sum_k\frac{L_k\,x_k^{-1/2-\delta}}{\log x_k}\ll\sum_k x_k^{-\delta}<\infty,
+\]
+uniformly in $t$, with $G$ analytic on $\sigma>1/2$. Hence $\zeta_{\mathcal P}(s)=\frac{s}{s-1}\exp(G(s)+H(s)+Q(s))$, which gives every claim with $A=\exp(G(1)+H(1)+Q(1))$, because $\exp(C\sqrt{\log(|t|+2)})\ll_\eta(|t|+2)^\eta$.
+\end{proof}
+
+\begin{lemma}[Integers]\label{lem:N}
+$N(x)=Ax+O_\varepsilon(x^{1/2+\varepsilon})$ for every $\varepsilon>0$.
+\end{lemma}
+\begin{proof}
+Let $1\le y\le x$ and $c=2$. By Perron's formula for the Mellin--Stieltjes transform,
+\[
+\frac1y\int_x^{x+y}N(u)\,du=\frac1{2\pi i}\int_{c-i\infty}^{c+i\infty}\zeta_{\mathcal P}(s)\frac{(x+y)^{s+1}-x^{s+1}}{y\,s(s+1)}\,ds .
+\]
+Move the line to $\sigma_0=1/2+\delta$, picking up the residue at $s=1$, which is $A\frac{(x+y)^2-x^2}{2y}=A(x+y/2)$. The horizontal segments vanish by Lemma~\ref{lem:zeta}. On $\sigma=\sigma_0$ the kernel is $\ll x^{\sigma_0}\min(1/|s|,\ x/(y|s|^2))$, so the remaining integral is
+\[
+\ll x^{\sigma_0}\Big(\int_{1}^{x/y}t^{\eta-1}dt+\frac xy\int_{x/y}^\infty t^{\eta-2}dt+1\Big)\ll x^{1/2+\delta}(x/y)^{\eta}.
+\]
+Since $N$ is nondecreasing, $N(x)\le\frac1y\int_x^{x+y}N\le A(x+y/2)+O(x^{1/2+\delta}(x/y)^\eta)$, and the same argument on $[x-y,x]$ gives the lower bound. Take $y=x^{1/2+\delta}$ and $\delta,\eta$ small.
+\end{proof}
+
+\begin{theorem}\label{thm:main}
+For every $L$ with $1\le L(x)\le\sqrt x\log x$ there is a Beurling system with $N(x)=Ax+O_\varepsilon(x^{1/2+\varepsilon})$, $\psi(x)=x+O(\sqrt x\log x)$, $\zeta_{\mathcal P}(s)$ analytic and of growth $|t|^{o(1)}$ on $\sigma>1/2$ apart from the simple pole at $1$ (in particular nonvanishing there, being an exponential times $s/(s-1)$), and infinitely many consecutive generalized primes with $p'-p\ge L(p)-O(\log p)$.
+\end{theorem}
+\begin{proof}
+Lemmas~\ref{lem:gap}--\ref{lem:N}; note $L_k=L(x_k)$ and $p=x_k-O(\log x_k)$; for the two choices of $L$ used below, $L(x_k)\ge L(p)$.
+\end{proof}
+
+\begin{corollary}\label{cor}
+(i) With $L(x)=3\sqrt x$: a Beurling system satisfying the Riemann hypothesis for $\zeta_{\mathcal P}$, with $N(x)=Ax+O(x^{1/2+\varepsilon})$ and $\psi(x)=x+O(\sqrt x\log x)$, in which $\sqrt{p'}-\sqrt p\ge 1$ for infinitely many consecutive generalized primes. So Andrica's conjecture does not follow from these properties.
+
+(ii) With $L(x)=\sqrt x\log x$: even $\psi(x)=x+O(\sqrt x\log x)$ together with $N(x)=Ax+O(x^{1/2+\varepsilon})$ allows gaps $\ge(1-o(1))\sqrt p\log p$ infinitely often. So in this generality the size of the error term in $\psi$ is also the size of the largest guaranteed-prime-free gap, up to a constant.
+\end{corollary}
+\begin{proof}
+(i) $\sqrt{p'}-\sqrt p\ge (p'-p)/(2\sqrt{p'})\ge (3\sqrt p-O(\log p))/(2\sqrt{p}(1+O(p^{-1/2})))>1$. (ii) Immediate.
+\end{proof}
+
+\begin{remark}
+Every route to Andrica considered in the accompanying work (explicit formulae, zero-density and large-value estimates, mean values of Dirichlet polynomials applied to $\zeta$ alone) uses only properties of the kind listed in Theorem~\ref{thm:main}. Corollary~\ref{cor}(i) shows that such input is insufficient. A proof must use arithmetic of $\mathbb Z$ that Beurling systems lack, such as the additive structure of the integers or bilinear information about integers in short intervals. Sieve methods do use such information, but their Type II input collapses at length $\sqrt x$.
+\end{remark}
+
+\begin{thebibliography}{9}
+\bibitem{BV} F.~Broucke and J.~Vindas, \emph{A new generalized prime random approximation procedure and some of its applications}, Math. Z. (2024), arXiv:2102.08478v2.
+\bibitem{DZ} H.~G. Diamond and W.-B. Zhang, \emph{Beurling Generalized Numbers}, AMS Mathematical Surveys and Monographs 213, 2016.
+\end{thebibliography}
+\end{document}

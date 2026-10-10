@@ -1,0 +1,412 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm,booktabs,enumerate}
+\usepackage[margin=1.1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\rz}{\RZERO}
+\newcommand{\RZERO}{0.0575}
+\newcommand{\LOSS}{\LOSSVAL}
+\newcommand{\LOSSVAL}{0.99155}
+\newcommand{\all}{\lessapprox}
+\newcommand{\J}{\cite{J}}
+
+\begin{document}
+\title[Large prime gaps and Andrica's conjecture]{Sums of large prime gaps, the Guth--Maynard estimate, and Andrica's conjecture}
+\author{Deepnil Ray}
+\address{Ashoka University, Sonipat, Haryana, India}
+\subjclass[2020]{Primary 11N05; Secondary 11M26, 11N35, 11N80}
+\keywords{prime gaps, Andrica's conjecture, Harman's sieve, large values of Dirichlet polynomials, Beurling generalized primes}
+\date{}
+
+\begin{abstract}
+Let $g_n=p_{n+1}-p_n$. Combining Järviniemi's Harman-sieve refinement of Heath-Brown's method with the large values estimate of Guth and Maynard, together with a few sharpenings of the sieve bookkeeping, we prove
+\[
+\sum_{\substack{x\le p_n\le 2x\\ g_n\ge x^{1/2}}} g_n \ll x^{1/2+\rz+\varepsilon},
+\]
+improving the exponent $0.57=1/2+0.07$ of Järviniemi. Consequently the number of $n$ with $p_n\le X$ and $\sqrt{p_{n+1}}-\sqrt{p_n}\ge 1$ (failures of Andrica's conjecture) is $\ll X^{\rz+\varepsilon}$, and the number of $m\le N$ for which $(m^2,(m+1)^2)$ contains no prime is $\ll N^{0.115+\varepsilon}$. The admissible ranges of Dirichlet polynomial lengths are established by a branch-and-bound certificate over a linear model, with a fixed power margin far above floating-point error, and the sieve loss is bounded by computer. We also construct a Beurling generalized prime system whose zeta function is zero-free with growth $|t|^{o(1)}$ on $\sigma>1/2$ and whose integer and prime counting functions have error terms $O(x^{1/2+\varepsilon})$, yet which violates Andrica's inequality infinitely often, so that no argument using only these properties can prove Andrica's conjecture; the construction does not model zeros on the critical line. Finally we record a single-scale fourth-moment bound that would imply the conjecture.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Write $p_n$ for the $n$th prime and $g_n=p_{n+1}-p_n$. Heath-Brown \cite{HB-V} showed that
+\[\sum_{x\le p_n\le 2x,\ g_n\ge x^{1/2}} g_n\ll x^{3/5+\varepsilon},\] and Järviniemi \J{} improved this to $x^{0.57+\varepsilon}$ by inserting Harman's sieve into Heath-Brown's argument. Järviniemi remarks \cite[Remark~7.6]{J} that non-rigorous sampling indicates his method cannot go much below $0.57$, and that reaching $x^{0.56}$ ``would require new ideas''. The new idea used here is the large values estimate of Guth and Maynard \cite{GM}, which is strongest exactly when a Dirichlet polynomial of length $N$ takes values near $N^{3/4}$, the critical configuration in the relevant range.
+
+\begin{theorem}\label{thm:main}
+For every fixed $\varepsilon>0$,
+\[
+\sum_{\substack{p_n\in[x,2x]\\ g_n\ge x^{1/2}}} g_n\ll_\varepsilon x^{1/2+\rz+\varepsilon}.
+\]
+\end{theorem}
+
+\begin{corollary}\label{cor:andrica}
+The number of $n$ with $p_n\le X$ and $\sqrt{p_{n+1}}-\sqrt{p_n}\ge 1$ is $\ll_\varepsilon X^{\rz+\varepsilon}$.
+\end{corollary}
+
+\begin{proof}
+$\sqrt{p_{n+1}}-\sqrt{p_n}\ge1$ is equivalent to $g_n\ge 2\sqrt{p_n}+1$. If $p_n\in[x,2x]$ this forces $g_n\ge 2x^{1/2}$, so each such $n$ contributes at least $2x^{1/2}$ to the sum in Theorem~\ref{thm:main}. Hence there are $\ll x^{\rz+\varepsilon}$ such $n$ with $p_n\in[x,2x]$; summing over dyadic $x\le X$ gives the claim.
+\end{proof}
+
+\begin{corollary}\label{cor:legendre}
+The number of $m\le N$ such that the interval $(m^2,(m+1)^2)$ contains no prime is $\ll_\varepsilon N^{0.115+\varepsilon}$.
+\end{corollary}
+
+\begin{proof}
+Fix a dyadic range $m^2\in[x,2x]$. If $(m^2,(m+1)^2)$ has no prime, it lies inside a gap $(p_n,p_{n+1})$ with $g_n\ge 2m+1>x^{1/2}$; here $p_n<m^2\le 2x$, and $p_n>p_{n+1}/2>x/2$ by Bertrand's postulate. A gap of length $g$ contains at most $g/(2\sqrt{x})+1\le 2g/\sqrt x$ such intervals with $m^2\ge x$. Theorem~\ref{thm:main} (applied to the two dyadic ranges covering $[x/2,2x]$) bounds the count by $\ll x^{-1/2}x^{1/2+\rz+\varepsilon}=x^{\rz+\varepsilon}$. Summing over dyadic $x\le N^2$ gives the claim.
+\end{proof}
+
+Gafni and Tao \cite{GT} feed the Guth--Maynard estimate into bounds for the number of exceptional intervals for the prime number theorem in short intervals; at length $x^{1/2}$ their unconditional results do not bound the sum in Theorem~\ref{thm:main}. The exponent database of Tao, Trudgian and Yang \cite{ANTEDB} lists $0.57$ as the record for this sum. Corollary~\ref{cor:andrica} is of course far from Andrica's conjecture itself, which remains open; the conjecture is known numerically for $p<2^{64}$ \cite{Visser}. With Järviniemi's exponent the bound in Corollary~\ref{cor:andrica} was $X^{0.07+\varepsilon}$, and with Heath-Brown's $X^{0.1+\varepsilon}$.
+
+\subsection*{What is new}
+We follow \J{} line by line and change only the following.
+\begin{enumerate}[(1)]
+\item The parameter $R$ is $x^{r+\nu}$ for a general $r\in[\rz,\,0.07]$; all lemmas of \J{} that depend on $r$ are checked for general $r$ (Section~\ref{sec:r}). One region in \cite[Lemma~7.4]{J} needs an extra constraint when $r<1/16$.
+\item The admissible ranges for factorizations $F=ABC$ without zeta factors (\cite[Proposition~6.1(i),(ii)]{J}) are supplemented by a computer-certified admissible set, obtained from Huxley's large values estimate together with Theorem~\ref{thm:GM} (Section~\ref{sec:ranges}).
+\item In the sieve computation, sums with two prime variables are tested directly against the admissible set, the factorization search runs over all groupings, and one prime polynomial at a time may be split by the Heath-Brown identity (Section~\ref{sec:sieve}). The first two steps use only the reduction of \cite[Section~4]{J}, which applies to any number of prime variables and any grouping of the factors, and the third is permitted by \cite[Remark~4.10]{J}. A fourth step splits the remaining factor $W$ into two groups.
+\item Section~\ref{sec:limits} constructs a Beurling prime system whose zeta function is zero-free with growth $|t|^{o(1)}$ on $\sigma>1/2$, with error terms $O(x^{1/2+\varepsilon})$ for $N$ and $\psi$, that violates Andrica's inequality infinitely often, and proves that a fourth-moment bound for primes in intervals of length $\sqrt X$ implies Andrica's conjecture.
+\end{enumerate}
+
+\section{Notation and the input from Guth--Maynard}
+
+We keep the notation of \J{}: $c=1/2$, $T=x^{1/2}S^2$, $H'=x^{1/2}(\log\log x)^{-4}$, $L_\zeta=x^{1/4}$, $S=\exp((\log\log x)^{17})$, and $X\all Y$ means $S^{\epsilon}X\ll Y$ for some $\epsilon>0$. Now $R=x^{r+\nu}$. We work with logarithmic lengths: for a Dirichlet polynomial $P$ of length $P=x^{p+o(1)}$ we write $p=\log_x P$.
+
+The task (\cite[Claim~5.1]{J}) is: for every $F=ABC$ arising from the decomposition of \cite[Information~4.15]{J} and every $M(s)=\sum_{i\le R}\zeta_i m_i^{-s}$ as in \cite[Proposition~2.1]{J},
+\begin{equation}\label{eq:claim}
+\int_{T_1}^{2T_1}|F(it)M(it)|\,dt\all Rx\qquad([T_1,2T_1]\subset[T_0,T]).
+\end{equation}
+
+\begin{theorem}[Guth--Maynard {\cite[Theorem~1.1]{GM}}]\label{thm:GM}
+Let $|b_n|\le1$ and let $(t_r)_{r\le R_0}$ be $1$-separated points of $[0,T]$ with $|\sum_{N\le n\le 2N}b_nn^{it_r}|\ge V$ for all $r$. Then
+\[R_0\le T^{o(1)}\left(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\right).\]
+\end{theorem}
+
+\begin{lemma}\label{lem:GMmeasure}
+Let $P(s)$ be a product of factors of $F$, let $w\ge1$ be a fixed integer, and let $\sigma\le1$. Let $\mathcal T\subset[T_1,2T_1]$ be the set where $|P(it)|\sim P^{\sigma}$. Then for every fixed $\delta>0$,
+\[
+|\mathcal T|\ll x^{\delta}\left(P^{w(2-2\sigma)}+P^{w(18/5-4\sigma)}+T P^{w(12/5-4\sigma)}\right).
+\]
+\end{lemma}
+
+\begin{proof}
+Put $Q=P^w$. By \cite[Lemma~5.3]{J} and the fact that powers and products of prime polynomials have coefficients $O_w(1)$, the coefficients of $Q$ are bounded by $K=O_w(1)S^{o(1)}$ when no factor is a zeta sum, and by $K=x^{o(1)}$ in general (since $|\xi_0(h)|\le\tau(h)$), and $Q$ is supported on $[Q,QS^{o(1)}]$. Split the support into $O(\log S)$ dyadic blocks. If $|Q(it)|\ge V:=Q^{\sigma}/2$ then some block has absolute value $\ge V/O(\log S)$. Take a maximal $1$-separated subset of $\mathcal T$; $|\mathcal T|$ is at most twice its cardinality. Applying Theorem~\ref{thm:GM} to each block with coefficients divided by $K$ and with $V$ replaced by $V/(K\,O(\log S))$ gives the bound with an extra factor $K^{O(1)}S^{o(1)}T^{o(1)}\le x^{\delta}$, since $T_1\le T\le x$. (For blocks of length $N\ge T$ the classical mean value theorem already gives $\ll N^2V^{-2}\log x$, so the uniformity of the $o(1)$ in Theorem~\ref{thm:GM} is only needed for $N<T$.)
+\end{proof}
+
+The loss $x^{\delta}$ in Lemma~\ref{lem:GMmeasure} is not of size $S^{o(1)}$, so every use below is made with a fixed power margin (Definition~\ref{def:cert}).
+
+\section{The parameter \texorpdfstring{$r$}{r} in Järviniemi's lemmas}\label{sec:r}
+
+In \J{} the numbers $0.43$, $0.57$, $0.56$, $0.32$ and $0.07$ stand for $1/2-r$, $1/2+r$, $8r$, $1/4+r$ and $r$ with $r=0.07$. We record where $r$ enters.
+
+\begin{lemma}\label{lem:rcheck}
+For every $r\in(0,0.07]$ the following statements of \J{} hold with these substitutions: Proposition~6.1(i), (ii), (iii); Proposition~2.2 in the simplified form $R\le T^{1/3}$ (valid as $r<1/6$); Lemmas~5.8, 5.9, 7.1, 7.2, 7.3. Lemma~7.4 holds for the region
+\[
+\begin{aligned}B_1(r)=\{(\alpha,\beta):\ &\alpha>\beta>\tfrac14+\epsilon,\ \alpha+\beta<\tfrac12+r-\epsilon,\ \alpha+\beta>1-8r+\epsilon,\\ &\alpha+0.7\beta>\tfrac12-r+\epsilon,\ \alpha-3\beta>-8r+\epsilon\}\end{aligned}
+\]
+and $B_2(r)=\{(\alpha,\beta):(1-\alpha-\beta,\beta)\in B_1(r)\}$. For $r\ge1/16$ the added condition $\alpha+\beta>1-8r$ is implied by $\alpha>\beta>1/4$.
+\end{lemma}
+
+\begin{proof}
+Proposition~6.1(i): $A,B\ge x^{1/2-r}$ gives $AC\le xS^{\epsilon}/B\le H'R$; the rest of the argument does not involve $R$. Proposition~6.1(ii): the first case needs $A^{2-2\sigma_A}\le H'RA^{1-2\sigma_A}C^{1-2\sigma_C}$ with $\sigma_C\le 4/5$, i.e.\ $AC^{3/5}\le x^{1/2+r}$; the second case (with $w=4$) needs $T^{3/4}A^{1/8}C\le H'R$ and $TA^{1/8}\le H'R$, i.e.\ $a\le 1+8r-8c$ and $a\le 8r$, which is $A\le x^{8r}\min(1,x/C^8)$; and $AC\ge H'R$ follows from $B<x^{1/2-r}$. Proposition~6.1(iii) uses $T^{1/2}C<H'R$ and $T<H'R$, i.e.\ $c<1/4+r$ and $r>0$. Lemma~5.8 uses only $|M|\le R$ and large values of the factors, as noted in \J{}. In Lemma~5.9 the terms not involving $R$ are unchanged, and the two error terms $x^{2\epsilon}\sqrt R\,T\sqrt x$ and $x^{\epsilon}T\sqrt x\,R^{3/4}$ are $\ll Rx/S^{\epsilon}$ for every fixed $r>0$: since $T\sqrt x=xS^2$ and $R=x^{r+\nu}$, this amounts to $x^{2\epsilon}S^{3}\le R^{1/2}$ and $x^{\epsilon}S^{3}\le R^{1/4}$, which hold once $\epsilon<r/8$. In Lemma~7.1 the two constraints are: when $H>L_\zeta$, the impossibility of both $B_{i-1}R_i>x^{1/2}S^{-3}$ and $C_{i-1}R_i>x^{1/4+r}$ follows from $R_i\le z<x^{r}$, since otherwise $HB_{i-1}C_{i-1}R_i>x^{1/4+1/2+1/4+r}/R_i>x$; when $M\ge x^{1/2-r}$ the last factor satisfies $xS^{-\epsilon}/(MR_k)>x^{1/2-r}$ because $M<x^{1/2}$ and $R_k<x^r$; when $M<x^{1/2-r}$ one has $MNHR_k<x^{(1/2-r)+(1/4+r)+1/4}=x$. Lemmas~7.2 and~7.3 use the same inequalities. In Lemma~7.4 the conditions used are $C=P<x^{1/4+r}$ (from $\alpha+\beta<1/2+r$, $\beta>1/4$), $PQ^{7/10}>x^{1/2-r}$, $x/(PQ)<x^{8r}$ and $PQ^{-3}>x^{-8r}$. In \J{} the third was deduced from $PQ>x^{1/2}>x^{1-8r}$, which requires $r\ge1/16$; for smaller $r$ it is the added constraint $\alpha+\beta>1-8r$.
+\end{proof}
+
+\section{Admissible lengths via an exact certificate}\label{sec:ranges}
+
+Assume $F=ABC$ has no zeta factor. Following the end of \cite[Section~5]{J}, split $[T_1,2T_1]$ into $S^{o(1)}$ sets $\mathcal T_\sigma$ on which $|A(it)|\sim A^{\sigma_A}$, $|B(it)|\sim B^{\sigma_B}$, $|C(it)|\sim C^{\sigma_C}$; the set where some factor is below $x^{-1}$ is negligible, and $\sigma_A,\sigma_B,\sigma_C\le 4/5$ by \cite[Lemma~5.8]{J}. Write $a,b,c$ for the logarithmic lengths and $v_A=a\sigma_A$, etc., for the logarithmic sizes, and $\tau=\log_x|\mathcal T_\sigma|$. Then (up to $o(1)$) $a+b+c=1$ and
+\begin{equation}\label{eq:domain}
+-1\le v_Y\le \tfrac45\,y\qquad(Y\in\{A,B,C\}).
+\end{equation}
+
+\emph{Routes.} By \cite[(5.7), (5.8)]{J}, \eqref{eq:claim} holds on $\mathcal T_\sigma$ if $\tau\le \rho-\delta$ for some fixed $\delta>0$, where $\rho$ is one of
+\begin{align*}
+\rho_0&=\textstyle\sum_{Y}(y-v_Y),\\
+\rho_X&=\min\Big(\textstyle\sum_{Y\ne X}(2y-2v_Y),\ \tfrac12+r+\sum_{Y\ne X}(y-2v_Y)\Big)\qquad(X\in\{A,B,C\}).
+\end{align*}
+The first is the $L^1$ bound; $\rho_X$ comes from Cauchy--Schwarz and Heath-Brown's mean value theorem \cite{HB-MVT}, in the form \cite[Proposition~2.2]{J}, applied to $XM$. More generally, for $Q=A^{k_A}B^{k_B}C^{k_C}$ with $0\le k_Y\le 3$, the inequality $\int_{\mathcal T_\sigma}|FM|\le\sup_{\mathcal T_\sigma}|F/Q|\,|\mathcal T_\sigma|^{1/2}(\int_0^T|QM|^2)^{1/2}$ and \cite[Proposition~2.2]{J} (which places no restriction on the length of $Q$) give the routes
+\[
+\rho_Q=\min\big(2-2q-2v_F+2v_Q,\ \tfrac32+r-q-2v_F+2v_Q\big),\qquad q=\textstyle\sum k_Yy,\ v_Q=\sum k_Yv_Y,\ v_F=\sum v_Y;
+\]
+$k=e_X$ recovers $\rho_X$. The coefficients of $Q$ are bounded by $x^{o(1)}$, which the fixed margin below absorbs.
+
+\emph{Bounds for $\tau$.} For every $Y\in\{A,B,C\}$ and integer $1\le w\le 30$, Huxley's estimate (\cite[Lemma~5.10 and (5.9)]{J}) and Lemma~\ref{lem:GMmeasure} give, up to $x^{o(1)}$,
+\begin{align*}
+\tau&\le \tfrac12,\\
+\tau&\le \max\big(w(2y-2v_Y),\ \tfrac12+\min(w(y-2v_Y),\,w(4y-6v_Y))\big),\\
+\tau&\le \max\big(w(2y-2v_Y),\ w(\tfrac{18}{5}y-4v_Y),\ \tfrac12+w(\tfrac{12}{5}y-4v_Y)\big).
+\end{align*}
+The form \cite[(5.9)]{J} of Huxley's estimate needs $G\ll PS^{o(1)}$ for $P=Y^w$, where $G$ is the sum of the squared moduli of the coefficients. For factors shorter than $x^{1/4}$ this is \cite[Lemma~5.3(ii)]{J}. A factor longer than $x^{1/4}$ without a zeta sum is a prime polynomial, and an integer has at most $w!$ ordered factorizations into $w$ primes, so powers and products of prime polynomials and of factors shorter than $x^{1/4}$ have coefficients $O_w(1)S^{o(1)}$; hence $G\ll PS^{o(1)}$ in every case used here.
+
+\begin{remark}\label{rem:zetamain}
+The same argument applies when one group contains a zeta sum: its coefficients are bounded by $\tau(h)=x^{o(1)}$, Huxley's and the Guth--Maynard estimates apply to its powers after normalisation, and \cite[Lemma~5.8]{J} holds for any factorisation. All losses are $x^{o(1)}$ and are absorbed by the fixed margin $\delta$.
+\end{remark}
+
+\begin{definition}\label{def:cert}
+Fix $\delta=10^{-6}$. A point $(a,c,v_A,v_B,v_C)$ is \emph{certified} if some bound $\beta$ from the list above and some route $\rho$ satisfy $\beta\le\rho-\delta$ there. A closed cell $Q=[a_0,a_1]\times[c_0,c_1]$ is \emph{admissible} if every point with $(a,c)\in Q$, $b=1-a-c\ge0$ and $(v_A,v_B,v_C)$ satisfying \eqref{eq:domain} is certified.
+\end{definition}
+
+\begin{proposition}\label{prop:ranges}
+Let $F=ABC$ have no zeta factor, each of $A,B,C$ being either constant or of length at least $z_1$, and suppose $(\log_xA,\log_xC)$ lies, up to $o(1)$, in an admissible cell. Then \eqref{eq:claim} holds.
+\end{proposition}
+
+\begin{proof}
+If one group is constant, say $c=v_C=0$, the formulas remain valid with that group contributing nothing. For each of the $S^{o(1)}$ sets $\mathcal T_\sigma$ the point $(a,c,v_A,v_B,v_C)$ is certified, with margin $\delta$. The losses are $S^{o(1)}$ from Huxley's estimate and $x^{\delta/2}$ from Lemma~\ref{lem:GMmeasure}, and the $o(1)$ perturbation of $(a,b,c)$ moves the true point by $o(1)$; after clamping each $v_Y$ into $[-1,\frac45 y]$ for the cell point (another $o(1)$ move), each linear form changes by $o(1)$. Hence $|\mathcal T_\sigma|\le x^{\rho-\delta/3}$, which is \eqref{eq:claim} on $\mathcal T_\sigma$ by \cite[(5.7)--(5.8)]{J}.
+\end{proof}
+
+\subsection*{Deciding admissibility}
+Every bound and every route is a maximum or minimum of affine functions of $(a,c,v_A,v_B,v_C)$. On an axis-parallel box the exact range of an affine function is computed by interval arithmetic with no overestimation. For a box $\mathcal B$, a pair $(\beta,\rho)$ with $\beta=\max_i\min_j \ell_{ij}$ and $\rho=\min_k m_k$ certifies all of $\mathcal B$ if for every $i$ and $k$ there is $j$ with $\sup_{\mathcal B}(\ell_{ij}-m_k)\le-\delta$. Our program subdivides a cell (with $v_Y$ ranging over $[-1,\frac45 y_{\max}]$) by bisection along the coordinate of largest weighted width until every sub-box is certified, lies outside the domain ($b<0$ or some $v_Y>\frac45y$ throughout), or a node budget is exhausted. A cell is marked admissible only in the first case; exhausting the budget, or finding an uncertified point, marks it not admissible. Before bisection, $9\times 9^3$ sample points per cell are tested and any failure marks the cell not admissible. The grid has $400\times400$ cells of side $1/400$ in $(a,c)$.
+
+The certificate uses only the $\sup$ of affine functions over boxes, so floating point errors are of order $10^{-15}$, far below the margin $\delta$.
+
+\subsection*{A second grid for one zeta factor}
+Now let $F=ZBC$, where $Z$ is a zeta sum of length $x^{z}$ with $z>1/4$ and $B,C$ have no zeta factor. Write $\tau_1=\log_xT_1\le 1/2+o(1)$. If the coefficients of $Z$ are $\xi_0$ or $\xi_0\log$ and $Z\ge T_1z_2$, then \eqref{eq:claim} holds by \cite[Lemma~5.4]{J}, so we may assume $Z<T_1z_2$, that is $z\le\tau_1+o(1)$. If the coefficients are $\xi_0g$, then $Z$ is supported on proper prime powers, so $|Z(it)|\le Z^{1/2+o(1)}$ and $\int_{T_1}^{2T_1}|Z(it)|^{2k}dt\le x^{1/2+o(1)}Z^{k}$, and each bound on $Z$ listed below holds trivially. For $\xi_0$ and $\xi_0\log$ the inputs are the following.
+\begin{enumerate}[(Z1)]
+\item $v_Z\le\frac45 z$ by \cite[Lemma~5.8]{J}, and $v_Z\le z/2+1/12$. For the latter, expand $\xi_0$ as in the proof of \cite[Lemma~5.4]{J} and apply to each sum $\sum_{n\sim N}n^{-it}$ with $N\le Z$ the second-derivative bound $T_1^{1/2}$ and the third-derivative bound $N^{1/2}T_1^{1/6}+NT_1^{-1/6}$. With $z\le\tau_1\le 1/2$, the third-derivative bound gives $z/2+\tau_1/6\le z/2+1/12$ when $z\le 2\tau_1/3$, and otherwise the second-derivative bound gives $\tau_1/2\le z/2+1/12$, because $\tau_1\le z+1/6$ follows from $z>2\tau_1/3$ and $\tau_1\le1/2$.
+\item $\int_{T_1}^{2T_1}|Z(it)|^{2k}dt\le x^{o(1)}J_{2k}$, where $J_2=x^{1/2}Z$ comes from the mean value theorem, which gives $\ll(T_1+Z)Z\,x^{o(1)}$, together with $Z\le T_1z_2$; $J_4=x^{1/2}Z^2$ is \cite[Lemma~5.7]{J}; $J_{12}=xZ^6$ follows from Heath-Brown's twelfth moment $\int_0^T|\zeta(\tfrac12+it)|^{12}dt\ll T^2\log^{17}T$ \cite{HB12}, transferred to $Z$ by Perron's formula and Hölder's inequality as in \cite[Lemmas~5.5 and~5.6]{J}; and $J_6=J_4^{3/4}J_{12}^{1/4}$, $J_8=J_4^{1/2}J_{12}^{1/2}$ by Hölder's inequality. In logarithmic form $j_2=\frac12+z$, $j_4=\frac12+2z$, $j_6=\frac58+3z$, $j_8=\frac34+4z$ and $j_{12}=1+6z$.
+\end{enumerate}
+The coefficients of $Z$ and of its powers are bounded by $x^{o(1)}$, which is enough for Huxley's estimate, Lemma~\ref{lem:GMmeasure} and \cite[Proposition~2.2]{J}, because every use below carries a fixed power margin.
+
+With variables $(z,c,v_Z,v_B,v_C)$, $b=1-z-c$ and $\tau=\log_x|\mathcal T_\sigma|$, the \emph{zeta domain} is given by $1/4\le z\le 1/2$, $b\ge0$, $-1\le v_Y\le\frac45y$ for $Y\in\{Z,B,C\}$, and $v_Z\le z/2+1/12$. The \emph{zeta bounds} for $\tau$ are $\tau\le\frac12$, the Huxley and Guth--Maynard bounds above for $Y^w$ with $Y\in\{Z,B,C\}$ and $1\le w\le 30$, and the moment bounds
+\[
+\tau\le \tfrac12+2z-4v_Z,\qquad \tau\le 1+6z-12v_Z,
+\]
+which follow from (Z2) since $|Z(it)|\ge x^{v_Z+o(1)}$ on $\mathcal T_\sigma$.
+
+The \emph{zeta routes} come from Hölder's inequality. A route is specified by a set $\mathcal X\subsetneq\{Z,B,C\}$ and a mode $\mu\in\{0,2,4\}$ for $M$, with $\mu=0$ only when $\mathcal X=\emptyset$; by a mode $k_Y\in\{0,1,2,3\}$ for each $Y\in\{B,C\}\setminus\mathcal X$; and by a mode $e\in\{0,2,4,6,8,12\}$ for $Z$ when $Z\notin\mathcal X$. Mode $0$ means that the factor is bounded pointwise on $\mathcal T_\sigma$; mode $\mu=2$ or $4$ means that $XM$ with $X=\prod_{Y\in\mathcal X}Y$ is taken in $L^{\mu}(0,T)$; $k_Y\ge1$ means that $Y^{k_Y}$ is taken in $L^2(T_1,2T_1)$; and $e\ge2$ means that $Z$ is taken in $L^e(T_1,2T_1)$. The Hölder weights are $1/\mu$, $1/(2k_Y)$ and $1/e$ for the non-pointwise modes, their sum $W$ must satisfy $W\le1$, and $\alpha=1-W$ is the exponent of $|\mathcal T_\sigma|$. With $x_{\mathcal X}=\sum_{Y\in\mathcal X}y$, the factors contribute, in $\log_x$,
+\begin{align*}
+M&:\quad r\ \ (\mu=0),\qquad \max\big(x_{\mathcal X}+r,\ \tfrac12(x_{\mathcal X}+r+\tfrac12)\big)\ \ (\mu=2),\\
+&\phantom{:}\quad \max\big(x_{\mathcal X}+r,\ \tfrac12x_{\mathcal X}+\tfrac34r+\tfrac18\big)\ \ (\mu=4);\\
+Y\in\{B,C\}\setminus\mathcal X&:\quad v_Y\ \ (k_Y=0),\qquad \max\big(y,\ \tfrac12y+\tfrac1{4k_Y}\big)\ \ (k_Y\ge1);\\
+Z\notin\mathcal X&:\quad v_Z\ \ (e=0),\qquad j_e/e\ \ (e\ge2).
+\end{align*}
+The $M$ terms come from \cite[Proposition~2.2]{J}, which gives $\int_0^T|XM|^2\ll x^{o(1)}(X^2R^2+XRT)$, and for $\mu=4$ from $|M|^4\le R^2|M|^2$ applied with $X^2$ in place of $X$; the $B,C$ terms come from the mean value theorem $\int_0^T|Y^{k}|^2\ll S^{o(1)}(T+Y^{k})Y^{k}$. If $\Sigma$ denotes the sum of the contributions, the route gives \eqref{eq:claim} on $\mathcal T_\sigma$ whenever $\alpha\tau+\Sigma\le 1+r-\delta'$ for a fixed $\delta'>0$. When $\alpha>0$ we write this as $\tau\le(1+r-\Sigma)/\alpha-\delta$, and when $\alpha=0$ it reads $\Sigma\le1+r-\delta$.
+
+\begin{definition}\label{def:zcert}
+A point of the zeta domain is \emph{zeta-certified} if some zeta route with $\alpha=0$ satisfies $\Sigma\le1+r-\delta$ there, or some zeta bound $\beta$ and some zeta route with $\alpha>0$ satisfy $\beta\le(1+r-\Sigma)/\alpha-\delta$ there, where $\delta=10^{-6}$ as in Definition~\ref{def:cert}. A cell $[z',z'']\times[c',c'']$ is \emph{zeta-admissible} if every point of the zeta domain with $(z,c)$ in the cell is zeta-certified.
+\end{definition}
+
+\begin{proposition}\label{prop:zranges}
+Let $F=ZBC$, where $Z$ is a zeta sum and $B,C$ have no zeta factor and are each constant or of length at least $z_1$, and suppose $(\log_xZ,\log_xC)$ lies, up to $o(1)$, in a zeta-admissible cell $[z',z'']\times[c',c'']$ with $z'>1/4$. Then \eqref{eq:claim} holds.
+\end{proposition}
+
+\begin{proof}
+If $Z\ge T_1z_2$ and the coefficients of $Z$ are $\xi_0$ or $\xi_0\log$, this is \cite[Lemma~5.4]{J}. Otherwise (Z1) and \cite[Lemma~5.8]{J} place the point $(z,c,v_Z,v_B,v_C)$ of each of the $S^{o(1)}$ sets $\mathcal T_\sigma$ in the zeta domain up to $o(1)$, the zeta bounds hold for $\tau$ up to the losses $x^{o(1)}$ and the loss $x^{\delta/2}$ of Lemma~\ref{lem:GMmeasure}, and the zeta routes are valid up to $x^{o(1)}$. Since $\alpha$ takes finitely many values, a certified inequality $\beta\le(1+r-\Sigma)/\alpha-\delta$ gives $\alpha\beta+\Sigma\le1+r-\alpha\delta$ with a fixed margin, and since all the forms involved are affine, the argument of Proposition~\ref{prop:ranges} applies verbatim.
+\end{proof}
+
+The zeta grid is computed by \texttt{coverZ.cpp} exactly as in the previous subsection, over $(z,c)\in[1/4,1/2]\times[0,1]$ with cells of side $1/400$. A zeta-case configuration is accepted if \cite[Proposition~6.1(iii)]{J} applies or its length box lies in a zeta-admissible cell; cells touching $z=1/4$ are not used.
+
+\section{The sieve}\label{sec:sieve}
+
+We use the procedure of \cite[Section~7.2]{J} with $r$ in place of $0.07$ (in particular with Lemma~\ref{lem:rcheck}), and with the following additions. Throughout, a set of prime variables $p_1>\dots>p_n$ in boxes $p_i\in[x^{\alpha_i},x^{\alpha_i+h}]$ yields, by \cite[Section~4]{J}, polynomials $F=P_1\cdots P_n\cdot W$ where $W$ is the product of the remaining factors ($R_i$, the decomposed $q$-variables, and $H$), of length $x^{1-\sum\alpha_i+O(h)}$, whose factors other than $H$ are shorter than $P_n$, while $H$ is either a zeta sum or shorter than $x^{1/4}$ (\cite[Information~4.15, Remark~4.17]{J}). By \cite[Lemma~5.9]{J} we may assume that $F$ has at most one zeta factor.
+
+\begin{enumerate}[(a)]
+\item \emph{Zeta case.} If $W$ contains a zeta factor, we test \cite[Proposition~6.1(iii)]{J} as in \J{}.
+\item \emph{Groupings.} If there is no zeta factor, we test every assignment of $P_1,\dots,P_n,W$ (and, in Järviniemi's second strategy, of $P_1,\dots,P_n,R_1,W/R_1$ over a casework in $\log_xR_1$ with step $1/400$) to three nonempty groups $A,B,C$, and accept if the resulting length ranges satisfy \cite[Proposition~6.1(i) or (ii)]{J} or lie in admissible cells.
+\item \emph{Two variables.} For $n=2$, \J{} uses only the regions $B_1\cup B_2$ of Lemma~\ref{lem:rcheck}. We also apply tests (a), (b), (d) to the sum $\sum S(\mathcal A_{pq},q)$; this is legitimate because the reduction of \cite[Section~4]{J} applies to any $n$.
+\item \emph{One Heath-Brown split.} By \cite[Remark~4.10]{J} the Heath-Brown decomposition may be applied to any subset of the prime variables. We apply it to a single $P_i$ with $P_i\ge x^{1/4}$ and use Lemma~\ref{lem:split}.
+\item \emph{Splitting $W$.} In the case without a zeta factor every factor of $W$ is shorter than $x^{m}$ with $m=\max(\log_xP_n,1/4)$ (\cite[Information~4.15, Remark~4.17]{J}). If $w=\log_xW>m$, then $W$ has at least two factors, and the argument of Lemma~\ref{lem:split} with $1/4$ replaced by $m$ groups them as $W=W_1W_2$ with $\log_xW_1\in[w/2,\max(m,2w/3)]$ and $W_2$ non-constant. On a box of prime variables the program evaluates $m$ and $w$ at the upper ends $m_u,w_u$ of their ranges, and with $w_l$ the lower end of the range of $w$ it lets $\log_xW_1$ run over $[w_l/2,\max(m_u,2w_u/3)]$, which contains $[w/2,\max(m,2w/3)]$ at every point of the box. We run the grouping test (b) on $P_1,\dots,P_n,W_1,W_2$ with $\log_xW_1$ in steps of $1/400$ over this range, and accept if every step is accepted.
+\item \emph{Zeta factors.} Configurations with one zeta factor are also tested against the zeta grid of Section~\ref{sec:ranges}, and groupings containing a zeta factor are also tested against the main grid (Remark~\ref{rem:zetamain}).
+\end{enumerate}
+
+\begin{lemma}\label{lem:split}
+Let $P$ have logarithmic length $p\in[1/4,1/2)$ and apply the Heath-Brown decomposition. Each resulting product $P=N_1\cdots N_J$ falls into one of two cases:
+\begin{enumerate}[(i)]
+\item some $N_j$ is a zeta sum $Z$, with $\log_xZ\in[1/4,p]$;
+\item every $N_j$ is shorter than $x^{1/4}$, and the $N_j$ can be grouped as $P=Q_1Q_2$ with $\log_xQ_1\in[p/2,\max(1/4,2p/3)]$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+A factor of length at least $x^{1/4}$ has coefficients $\xi_0,\xi_0\log$ or $\xi_0 g$ by \cite[Information~4.15]{J}, so it is a zeta sum, and there is at most one since $p<1/2$. Otherwise let the lengths be $\ell_1\ge\ell_2\ge\dots$, all below $1/4$, with sum $p$. If $\ell_1\ge 2p/3$, take $Q_1=N_1$: then $\log_xQ_1\in[2p/3,1/4)$. If $\ell_1\in[p/3,2p/3)$, take $Q_1$ to be the longer of $N_1$ and $P/N_1$. If $\ell_1<p/3$, add factors in order until the sum first reaches $p/3$; the sum is then below $2p/3$, and we take $Q_1$ to be the longer of this product and its complement. In each case $\log_xQ_1\in[p/2,\max(1/4,2p/3)]$.
+\end{proof}
+
+In case (i) we run a casework in $\log_xZ$ with step $1/400$ over $[1/4,p]$, and at each step test \cite[Proposition~6.1(iii)]{J} with $A=Z$ and the remaining factors $P/Z$, the other $P_j$, and $W$ split into $B<x^{1/2}$, $C<x^{1/4+r}$ (if $W$ also has a zeta factor we are done by \cite[Lemma~5.9]{J}). In case (ii) we run the grouping test (b) on $P_1,\dots,\widehat{P_i},\dots,P_n,Q_1,Q_2,W$, with $\log_xQ_1$ in steps of $1/400$ over the stated range; if $W$ has a zeta factor, this configuration is tested by (a) and (f) instead. A box of prime variables is accepted if, for some $i$, every case is accepted.
+
+The loss of a rejected box is bounded exactly as in \cite[(7.6)--(7.7)]{J}. The starting sum is over $x^{r}\le q<p\le x^{1/2-\epsilon}$ with boxes of side $1/3000$, and further Buchstab steps use side $1/400$, as in \J{}.
+
+\section{Results of the computation}
+
+The computation was run for $r=0.061$, $0.059$ and $0.0585$ without steps (e), (f) and the extra routes, for $r=0.058$ with step (e), and for $r=\rz$ with everything, using the $400\times400$ admissible grids. Table~\ref{tab:loss} lists the loss by range of $\log_xp$, where $p$ is the larger of the two initial prime variables; entries are rounded up. With all steps, $r=0.057$ fails: the ranges $[0.22,0.5)$ already contribute $1.00221$.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+range of $\log_x p$ & $r=0.061$ & $r=0.059$ & $r=0.0585$ & $r=0.058$ & $r=\rz$\\
+\midrule
+$[r,\,0.16)$ & 0.00025 & 0.00053 & 0.00064 & 0.00004 & 0.00004\\
+$[0.16,\,0.22)$ & 0.00887 & 0.01070 & 0.01155 & 0.01203 & 0.01070\\
+$[0.22,\,0.26)$ & 0.01000 & 0.01481 & 0.01698 & 0.01814 & 0.01691\\
+$[0.26,\,0.30)$ & 0.03605 & 0.04369 & 0.04679 & 0.04855 & 0.05011\\
+$[0.30,\,0.3337)$ & 0.11956 & 0.13434 & 0.13731 & 0.14142 & 0.13848\\
+$[0.3337,\,0.36)$ & 0.15231 & 0.15552 & 0.15830 & 0.15696 & 0.15760\\
+$[0.36,\,0.39)$ & 0.16113 & 0.16581 & 0.16711 & 0.16832 & 0.16808\\
+$[0.39,\,0.43)$ & 0.15523 & 0.16279 & 0.16594 & 0.16730 & 0.16914\\
+$[0.43,\,0.5)$ & 0.27063 & 0.28345 & 0.28663 & 0.28467 & 0.28053\\
+\midrule
+total & 0.91397 & 0.97161 & 0.99123 & 0.99738 & \LOSS\\
+\bottomrule
+\end{tabular}
+\caption{Upper bounds for the sieve loss. Entries are rounded up; totals are rounded up from the unrounded sums.}\label{tab:loss}
+\end{table}
+
+Since the total loss is below $1$, the argument of \cite[Sections~3 and~7]{J} gives, for all but $O(R)$ integers $m$, a lower bound $S(\mathcal A(m),2\sqrt x)\gg \frac{\delta_0}{\delta_1}S(\mathcal B(m),2\sqrt x)$, and Theorem~\ref{thm:main} follows from \cite[Lemma~3.1]{J} exactly as there.
+
+\subsection*{Controls}
+\begin{enumerate}[(1)]
+\item With $r=0.07$, the tables and all additions switched off, our modified program reproduces Järviniemi's total $0.99027$ and his value $0.28464871$ for the top range $[0.43,0.5)$.
+\item The admissible grids were spot-checked independently: for $3000$ random admissible cells, $40$ random points each (with $(v_A,v_B,v_C)$ uniform in the domain \eqref{eq:domain}) were tested by a separate implementation; no failure occurred. A planted configuration $a=b=c=1/3$, $\sigma=0.63$, which is known not to be certified, is correctly rejected. For $r=\rz$, every certified cell $(i,j)$ with $i+j<399$ in either grid, where $(i,j)$ denotes the cell with lower corner $(i/400,j/400)$, was tested (6186 cells in the main grid, and 15849 of the 15860 certified cells of the zeta grid, the other 11 lying on the outer diagonal $i+j=399$), at 1500 points each by a separate implementation of the inequality lists, with no failure; on cells marked not admissible the same checker finds failing points in about 90\% of samples.
+\item With a grid built from Huxley's estimate alone ($200\times200$ cells, direct treatment of two-variable sums, no full groupings and no Heath-Brown split) the loss at $r=0.065$ exceeds $1.04$, while the same procedure with Theorem~\ref{thm:GM} gives $0.922$. So the Guth--Maynard estimate is what moves the exponent.
+\item The complete computation for $r=\rz$, from both grids to the nine ranges of Table~\ref{tab:loss}, was independently reproduced from the published code bundle, with total $0.99154810$.
+\end{enumerate}
+
+\subsection*{Code}
+The programs are available from the author on request and as ancillary files with the arXiv version, with a README that lists the command and environment flags behind each column of Table~\ref{tab:loss}. The main grid is computed by \texttt{cover.cpp} (the plain grid, with the routes $\rho_0$, $\rho_X$) and \texttt{coverM.cpp} (the extended Cauchy--Schwarz routes $\rho_Q$), which is run only on boundary cells, namely the cells not certified in the plain grid that lie within Chebyshev distance $2$ of a certified cell. Every cell of the main grid for $r=\rz$ is certified in the plain grid or by \texttt{coverM.cpp} on a boundary cell with node budget $20000$, and a script in the bundle rebuilds the cell-wise union of the two and checks this. The zeta grid is computed by \texttt{coverZ.cpp}. The loss is computed by \texttt{sieve3.cpp} (Järviniemi's program with the changes of Section~\ref{sec:sieve}), \texttt{sieveE.cpp} (adding step (e)) and \texttt{sieveZ.cpp} (adding step (f)). The checkers are \texttt{verify\_tab.py} and an independent pointwise checker for both grids at $r=\rz$, used in Controls~(2).
+
+\section{Limits of the method and of zero-based approaches}\label{sec:limits}
+
+This section records two limits on what can reach Andrica's conjecture itself. Theorem~\ref{thm:beurling} shows that zero-freeness and $|t|^{o(1)}$ growth of the zeta function on $\sigma>1/2$, together with error terms $O(x^{1/2+\varepsilon})$ for the integer and prime counting functions, are consistent with infinitely many failures; the construction says nothing about zeros on the critical line. Proposition~\ref{prop:moment} identifies a single-scale moment bound that would suffice.
+
+\subsection{Beurling systems}
+A Beurling system is a nondecreasing sequence $\mathcal P=(p_j)$ of reals $p_j>1$ tending to infinity (the generalized primes); the generalized integers are the finite products, counted with multiplicity, with counting function $N(x)$; $\pi(x)=\#\{p_j\le x\}$, $\psi(x)=\sum_{p_j^m\le x}\log p_j$, and $\zeta_{\mathcal P}(s)=\prod_j(1-p_j^{-s})^{-1}=\int_{1^-}^\infty u^{-s}\,dN(u)$ for $\sigma=\Re s>1$; see \cite{DZ} for the general theory.
+
+Broucke, Debruyne and Vindas \cite{BDV} constructed Beurling systems satisfying the Riemann hypothesis with large oscillation of $N(x)$. To control gaps between consecutive generalized primes we use the following theorem of Broucke and Vindas \cite[Theorem~1.2]{BV}.
+
+\begin{theorem}[Broucke--Vindas]\label{thm:BVb}
+Let $F$ be continuous, nondecreasing, with $F(1)=0$, $F(x)\to\infty$ and $F(x)\ll x/\log x$. Then there is a strictly increasing sequence of generalized primes $\mathcal P$ with $|\pi_{\mathcal P}(x)-F(x)|\le1$ for all $x$, such that for all $x\ge1$ and real $t$
+\[
+\Big|\sum_{p_j\le x}p_j^{-it}-\int_1^x u^{-it}\,dF(u)\Big|\ll \sqrt x+\sqrt{\frac{x\log(|t|+1)}{\log(x+1)}} ,
+\]
+where the implied constant depends on $F$ and on $\mathcal P$.
+\end{theorem}
+
+In their construction, with $F(q_j)=j$, the prime $p_j$ is drawn independently from $dF$ restricted to $(q_{j-1},q_j]$, and the bound holds almost surely. Below $F$ satisfies $dF(W_k)=0$ for a sequence of intervals $W_k$, so almost every realization also has no generalized prime in any $W_k$, and we choose such a realization.
+
+\subsection{The construction}
+Let $L$ be nondecreasing with $1\le L(x)\le\sqrt{x}\log x$ for all large $x$. Choose $x_1$ large and $x_{k+1}=x_k^2$. Put $W_k=(x_k,x_k+L_k]$ and $B_k=(x_k-L_k,x_k]$ with $L_k=L(x_k)$; these intervals are pairwise disjoint. Let
+\[
+f(u)=\frac{1-u^{-1}}{\log u}\Big(1+\sum_k \mathbf 1_{B_k}(u)-\sum_k\mathbf 1_{W_k}(u)\Big)\quad(u>1),\qquad F(x)=\int_1^x f(u)\,du .
+\]
+Then $f\ge0$, $f=0$ on each $W_k$, $f$ doubles on $B_k$, $F$ is continuous, nondecreasing and $F(x)\ll x/\log x$. Let $\mathcal P$ be a realization from Theorem~\ref{thm:BVb} with no generalized prime in any $W_k$.
+
+\begin{lemma}[Gaps]\label{lem:bgap}
+For each large $k$ there are consecutive generalized primes $p<p'$ with
+\[
+x_k-3\log x_k<p\le x_k,\qquad x_k+L_k<p'\le x_k+L_k+3\log x_k .
+\]
+In particular $p'-p>L_k$.
+\end{lemma}
+\begin{proof}
+No $p_j$ lies in $W_k$, by the choice of realization. Since $f\ge (1-u^{-1})/\log u$ on $I=(x_k-3\log x_k,x_k]$, which avoids every $W_j$, and $|\pi-F|\le1$, the interval $I$ contains at least $F(x_k)-F(x_k-3\log x_k)-2\ge 3-o(1)-2>0$ generalized primes. The same argument on $I'=(x_k+L_k,\,x_k+L_k+3\log x_k]$, which also avoids every $W_j$, shows that $I'$ contains a generalized prime. Let $p$ be the largest generalized prime in $I$ and $p'$ the smallest in $I'$; they are consecutive because none lies in $W_k$.
+\end{proof}
+
+\begin{lemma}[Primes]\label{lem:bpsi}
+$\psi(x)=x+O(\sqrt{x}\log x)$.
+\end{lemma}
+\begin{proof}
+Let $\psi_F(x)=\int_1^x\log u\,dF(u)$. Without the perturbation, $\int_1^x(1-u^{-1})\,du=x-1-\log x$. The $k$-th perturbation changes $\psi_F$ by $\int_{B_k\cap[1,x]}(1-u^{-1})du-\int_{W_k\cap[1,x]}(1-u^{-1})du$, which has absolute value at most $L_k$ and equals $\log(1-L_k^2/x_k^2)=O(L_k^2/x_k^2)=O(\log^2x_k/x_k)$ once $x\ge x_k+L_k$. Since $L_k\le\sqrt{x_k}\log x_k$ and $x_k$ grows doubly exponentially, $\psi_F(x)=x+O(\sqrt x\log x)$. By partial summation and $|\pi-F|\le1$, $\sum_{p_j\le x}\log p_j=\psi_F(x)+O(\log x)$, and prime powers contribute $\ll\pi(\sqrt x)\log x\ll\sqrt x$.
+\end{proof}
+
+\begin{lemma}[Zeta function]\label{lem:bzeta}
+For every $\kappa\in(0,1/2)$ and $\eta>0$, $\zeta_{\mathcal P}(s)(s-1)$ extends analytically to $\sigma>1/2$, $\zeta_{\mathcal P}(s)=A/(s-1)+O(1)$ near $s=1$ with $A>0$, and $|\zeta_{\mathcal P}(\sigma+it)|\ll_{\kappa,\eta}(|t|+2)^{\eta}$ for $\sigma\ge 1/2+\kappa$, $|t|\ge1$.
+\end{lemma}
+\begin{proof}
+For $\sigma>1$, $\log\zeta_{\mathcal P}(s)=\sum_j p_j^{-s}+Q(s)$ with $Q(s)=\sum_j\sum_{m\ge2}p_j^{-ms}/m$, which is analytic and bounded on $\sigma\ge1/2+\kappa$ because $\pi(x)\ll x/\log x$. Next,
+\[
+\sum_j p_j^{-s}=\int_1^\infty u^{-s}dF(u)+H(s),\qquad H(s)=\int_1^\infty u^{-\sigma}\,dE_t(u),
+\]
+where $E_t(u)=\sum_{p_j\le u}p_j^{-it}-\int_1^uv^{-it}dF(v)$. Integrating by parts and using Theorem~\ref{thm:BVb}, for $\sigma\ge1/2+\kappa$,
+\[
+|H(s)|\le\sigma\int_1^\infty|E_t(u)|u^{-\sigma-1}du\ll_\kappa 1+\sqrt{\log(|t|+2)}.
+\]
+The function $H$ is analytic on $\sigma>1/2$: the truncations $H_Y(s)=\sum_{p_j\le Y}p_j^{-s}-\int_1^Yu^{-s}dF(u)$ are entire, and by the same integration by parts $H_Y(s)=Y^{-\sigma}E_t(Y)+\sigma\int_1^YE_t(u)u^{-\sigma-1}du$, so Theorem~\ref{thm:BVb} shows that $H_Y\to H$ locally uniformly on $\sigma>1/2$ as $Y\to\infty$. Finally $\int_1^\infty u^{-s}dF(u)=\int_1^\infty u^{-s}\frac{1-u^{-1}}{\log u}du+G(s)$, where the first integral equals $\log\frac{s}{s-1}$ (differentiate in $s$), and
+\[
+|G(s)|\le\sum_k\int_{B_k\cup W_k}\frac{u^{-\sigma}}{\log u}du\ll\sum_k\frac{L_k\,x_k^{-1/2-\kappa}}{\log x_k}\ll\sum_k x_k^{-\kappa}<\infty,
+\]
+uniformly in $t$, with $G$ analytic on $\sigma>1/2$. Hence $\zeta_{\mathcal P}(s)=\frac{s}{s-1}\exp(G(s)+H(s)+Q(s))$, which gives every claim with $A=\exp(G(1)+H(1)+Q(1))$, because $\exp(C\sqrt{\log(|t|+2)})\ll_\eta(|t|+2)^\eta$.
+\end{proof}
+
+\begin{lemma}[Integers]\label{lem:bN}
+$N(x)=Ax+O_\varepsilon(x^{1/2+\varepsilon})$ for every $\varepsilon>0$.
+\end{lemma}
+\begin{proof}
+Let $1\le y\le x$ and $c_0=2$. By Perron's formula for the Mellin--Stieltjes transform,
+\[
+\frac1y\int_x^{x+y}N(u)\,du=\frac1{2\pi i}\int_{c_0-i\infty}^{c_0+i\infty}\zeta_{\mathcal P}(s)\frac{(x+y)^{s+1}-x^{s+1}}{y\,s(s+1)}\,ds .
+\]
+Move the line to $\sigma_0=1/2+\kappa$, picking up the residue at $s=1$, which is $A\frac{(x+y)^2-x^2}{2y}=A(x+y/2)$. The horizontal segments vanish by Lemma~\ref{lem:bzeta}. On $\sigma=\sigma_0$ the kernel is $\ll x^{\sigma_0}\min(1/|s|,\ x/(y|s|^2))$, so the remaining integral is
+\[
+\ll x^{\sigma_0}\Big(\int_{1}^{x/y}t^{\eta-1}dt+\frac xy\int_{x/y}^\infty t^{\eta-2}dt+1\Big)\ll x^{1/2+\kappa}(x/y)^{\eta}.
+\]
+Since $N$ is nondecreasing, $N(x)\le\frac1y\int_x^{x+y}N\le A(x+y/2)+O(x^{1/2+\kappa}(x/y)^\eta)$, and the same argument on $[x-y,x]$ gives the lower bound. Take $y=x^{1/2+\kappa}$ and $\kappa,\eta$ small.
+\end{proof}
+
+\begin{theorem}\label{thm:beurling}
+For every nondecreasing $L$ with $1\le L(x)\le\sqrt x\log x$ for all large $x$ there is a Beurling system with $N(x)=Ax+O_\varepsilon(x^{1/2+\varepsilon})$, $\psi(x)=x+O(\sqrt x\log x)$, $\zeta_{\mathcal P}(s)$ analytic and of growth $|t|^{o(1)}$ on $\sigma>1/2$ apart from the simple pole at $1$ (in particular nonvanishing there, being an exponential times $s/(s-1)$), and infinitely many pairs of consecutive generalized primes $p<p'$ with $p'-p>L(p)$.
+\end{theorem}
+\begin{proof}
+Lemmas~\ref{lem:bgap}--\ref{lem:bN}; in Lemma~\ref{lem:bgap}, $p\le x_k$ and $L$ is nondecreasing, so $p'-p>L(x_k)\ge L(p)$.
+\end{proof}
+
+\begin{corollary}\label{cor:beurling}
+(i) With $L(x)=3\sqrt x$: a Beurling system satisfying the Riemann hypothesis for $\zeta_{\mathcal P}$, with $N(x)=Ax+O(x^{1/2+\varepsilon})$ and $\psi(x)=x+O(\sqrt x\log x)$, in which $\sqrt{p'}-\sqrt p\ge 1$ for infinitely many consecutive generalized primes. So Andrica's conjecture does not follow from these properties.
+
+(ii) With $L(x)=\sqrt x\log x$: even $\psi(x)=x+O(\sqrt x\log x)$ together with $N(x)=Ax+O(x^{1/2+\varepsilon})$ allows gaps $p'-p>\sqrt p\log p$ infinitely often. So in this generality the size of the error term in $\psi$ is also the size of the largest guaranteed-prime-free gap, up to a constant.
+\end{corollary}
+\begin{proof}
+(i) Take $p<p'$ as in Lemma~\ref{lem:bgap}, so that $p'-p>L_k=3\sqrt{x_k}$, $p\le x_k$ and $p'\le x_k+3\sqrt{x_k}+3\log x_k$, whence $\sqrt{p'}\le\sqrt{x_k}+2$. Then $\sqrt{p'}-\sqrt p=(p'-p)/(\sqrt{p'}+\sqrt p)>3\sqrt{x_k}/(2\sqrt{x_k}+2)>1$. (ii) Immediate from Theorem~\ref{thm:beurling}.
+\end{proof}
+
+\begin{remark}
+Corollary~\ref{cor:beurling}(i) shows that any argument using only the properties listed in Theorem~\ref{thm:beurling}, namely zero-freeness and $|t|^{o(1)}$ growth of the zeta function on $\sigma>1/2$ and the stated asymptotics for $N$ and $\psi$, cannot prove Andrica's conjecture. The construction does not model the zeros on the critical line, so arguments that use finer information about them, such as their pair correlation, are not covered. Any proof must use input of that kind or arithmetic of $\mathbb Z$ that Beurling systems lack, such as the additive structure of the integers or bilinear information about integers in short intervals. Sieve methods do use such information, but their Type II input collapses at length $\sqrt x$.
+\end{remark}
+
+
+\subsection{A moment hypothesis that implies Andrica}
+
+\begin{proposition}\label{prop:moment}
+Let $k>2$ be fixed and suppose that for all large $X$, with $H=\sqrt X$,
+\[
+\int_X^{2X}\big|\psi(y+H)-\psi(y)-H\big|^k\,dy<2^{-k}X^{(k+1)/2}.
+\]
+Then $\sqrt{p_{n+1}}-\sqrt{p_n}<1$ for all sufficiently large $n$.
+\end{proposition}
+
+\begin{proof}
+Suppose $(x,x+2\sqrt x+1]$ contains no prime, and choose $X$ with $x\in[X,1.5X]$, so that $H=\sqrt X\le\sqrt x$. For $y\in[x,x+H]$ the interval $(y,y+H]$ lies in $(x,x+2\sqrt x]$, so it contains no prime and at most $O(\log x)$ prime powers ($O(1)$ for each exponent $m\le\log_2(2x)$), contributing $O(\log^2 x)$ to $\psi$. Hence $|\psi(y+H)-\psi(y)-H|\ge H/2$ on a set of measure $H$ inside $[X,2X]$, and the integral is at least $H(H/2)^k=2^{-k}X^{(k+1)/2}$, a contradiction.
+\end{proof}
+
+\begin{remark}
+The method is folklore for $k=2$, where it fails: the conjectured variance is $\asymp X^{3/2}\log X$, a factor $\log X$ too large. For $k=4$, Conjecture~1 of Montgomery and Soundararajan \cite{MS} states that $\sum_{n\le N}(\psi(n+H)-\psi(n)-H)^4\sim 3NH^2\log^2(N/H)$ uniformly for $(\log N)^{1+\kappa}\le H\le N^{1-\kappa}$, for each fixed $\kappa>0$. Taking the difference of the cases $N=2X$ and $N=X$ with $H=\sqrt X$ gives $\sum_{X<n\le 2X}(\psi(n+H)-\psi(n)-H)^4\sim\frac34X^2\log^2X$. For $y\in[n,n+1)$ the quantity $\psi(y+H)-\psi(y)-H$ differs from its value at $n$ by $O(\log X)$, and by Minkowski's inequality this changes the fourth root of the fourth moment by $O(X^{1/4}\log X)$, which is negligible. Hence the conjecture predicts $\int_X^{2X}|\psi(y+H)-\psi(y)-H|^4dy\sim\frac34X^2\log^2X$, well below $X^{5/2}/16$. So that conjecture implies Andrica's conjecture for large $n$; together with the verification below $2^{64}$ \cite{Visser}, it would settle it, provided the threshold is made explicit. No unconditional bound of the required strength is known, and by Theorem~\ref{thm:beurling} none can follow from the properties listed there alone.
+\end{remark}
+
+\section{Concluding remarks}
+The largest remaining contribution, about $0.28$, comes from $p\in[x^{0.43},x^{1/2}]$, almost entirely from boxes without a zeta factor in which no grouping lands in the admissible set. Stronger large values estimates near $V\approx N^{3/4}$, or an improvement of Heath-Brown's mean value theorem, would directly lower the exponent. Andrica's conjecture and Legendre's conjecture remain open; Section~\ref{sec:limits} records what any proof must supply.
+
+\subsection*{Acknowledgements}
+The computations were run with programs adapted from those accompanying \cite{J}. AI-assisted tools were used in developing and checking parts of the arguments and code; all statements were verified by the author.
+
+\begin{thebibliography}{99}
+\bibitem{ANTEDB} T.~Tao, T.~Trudgian and A.~Yang, \emph{Analytic Number Theory Exponent Database}, \url{https://teorth.github.io/expdb/}; see also arXiv:2501.16779.
+\bibitem{BDV} F.~Broucke, G.~Debruyne and J.~Vindas, \emph{Beurling integers with RH and large oscillation}, Adv. Math. 370 (2020), Paper No.~107240; arXiv:2004.11501.
+\bibitem{BV} F.~Broucke and J.~Vindas, \emph{A new generalized prime random approximation procedure and some of its applications}, Math. Z. 307 (2024), Paper No.~62; arXiv:2102.08478.
+\bibitem{DZ} H.~G. Diamond and W.-B. Zhang, \emph{Beurling Generalized Numbers}, Mathematical Surveys and Monographs 213, Amer. Math. Soc., 2016.
+\bibitem{GT} A.~Gafni and T.~Tao, \emph{On the number of exceptional intervals to the prime number theorem in short intervals}, Essent. Number Theory 5 (2026), no.~2, 221--241; arXiv:2505.24017.
+\bibitem{GM} L.~Guth and J.~Maynard, \emph{New large value estimates for Dirichlet polynomials}, Ann. of Math. (2) 203 (2026), no.~2, 623--675; arXiv:2405.20552.
+\bibitem{HB12} D.~R. Heath-Brown, \emph{The twelfth power moment of the Riemann zeta-function}, Quart. J. Math. Oxford Ser. (2) 29 (1978), 443--462.
+\bibitem{HB-MVT} D.~R. Heath-Brown, \emph{The differences between consecutive smooth numbers}, Acta Arith. 184 (2018), no.~3, 267--285.
+\bibitem{HB-V} D.~R. Heath-Brown, \emph{The differences between consecutive primes, V}, Int. Math. Res. Not. IMRN 2021 (22), 17514--17562; \url{https://doi.org/10.1093/imrn/rnz295}.
+\bibitem{J} O.~Järviniemi, \emph{On large differences between consecutive primes}, arXiv:2212.10965v2.
+\bibitem{MS} H.~L. Montgomery and K.~Soundararajan, \emph{Primes in short intervals}, Comm. Math. Phys. 252 (2004), 589--617; arXiv:math/0409258.
+\bibitem{Visser} M.~Visser, \emph{Strong version of Andrica's conjecture}, Int. Math. Forum 14 (2019), no.~4, 181--188; arXiv:1812.02762.
+\end{thebibliography}
+
+\end{document}
