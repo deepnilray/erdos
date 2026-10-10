@@ -1,8 +1,10 @@
 # Mixed certificates: covering primes plus algebraic factorisations
 
 **Theorem E (computer-assisted).** Let m ≥ 1 with gcd(m, 6) = 1. Allow m to be a perfect power M^g of any
-exponent g. Let P be any finite set of primes p ∤ 6 with e_p = |⟨2,3⟩ mod p| ≤ 4·10⁵. Then some k, l ≥ 0
+exponent g. Let P be any finite set of primes p ∤ 6 with e_p = |⟨2,3⟩ mod p| ≤ 4·10⁵. Then some k, l ≥ 1
 make 2^k·3^l·m + 1 **divisible by no p ∈ P and not factored by any binomial identity**.
+(Everything here is periodic, so the uncovered set has positive density and meets k, l ≥ 1. There 2 and 3
+do not divide the value either.)
 
 This closes the only known way of answering #203 YES within the certified range: Sierpiński-type
 certificates of every kind, from pure coverings to Izotov-style mixtures. It does **not** settle #203, as the

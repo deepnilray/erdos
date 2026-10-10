@@ -1,7 +1,9 @@
 # A 2D distortion method for Erdős #203
 
 **Theorem (computer-assisted).** Let P be any finite set of primes p ∤ 6 with e_p = |⟨2,3⟩ mod p| ≤ 4·10⁵
-for every p ∈ P. Then for every m coprime to 6 there are k, l ≥ 0 such that no p ∈ P divides 2^k·3^l·m + 1.
+for every p ∈ P. Then for every m coprime to 6 there are k, l ≥ 1 such that no p ∈ P divides 2^k·3^l·m + 1.
+(The uncovered set is periodic with positive density, so it meets k, l ≥ 1. There 2 and 3 do not divide the
+value either. At k = 0 the value 3^l·m + 1 is even, which is why k ≥ 1 matters.)
 
 There is *no condition on lcm(e_p)*. Earlier exclusions needed lcm(e_p) to divide a fixed N ≤ 2.3·10⁸.
 Here lcm(e_p) is unrestricted. The pool of candidate primes has
