@@ -1,0 +1,4 @@
+*.pkl
+e203/verdict3/B_tailmodel
+e203/verdict3/sieve_e2
+e203/verdict3/chunks/

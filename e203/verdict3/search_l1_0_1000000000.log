@@ -1,0 +1,53 @@
+REC_S m=1 k=0 l=0 s=1 rank=0 log2n=0.00
+REC_S m=5 k=1 l=1 s=6 rank=4 log2n=4.91
+REC_RANK m=5 k=1 l=1 rank=4
+REC_S m=19 k=2 l=1 s=12 rank=7 log2n=7.83
+REC_RANK m=19 k=2 l=1 rank=7
+REC_S m=41 k=1 l=2 s=18 rank=9 log2n=9.53
+REC_RANK m=41 k=1 l=2 rank=9
+REC_S m=43 k=3 l=1 s=24 rank=10 log2n=10.01
+REC_RANK m=43 k=3 l=1 rank=10
+REC_S m=53 k=6 l=1 s=192 rank=24 log2n=13.31
+REC_RANK m=53 k=6 l=1 rank=24
+REC_S m=1187 k=3 l=3 s=216 rank=25 log2n=17.97
+REC_RANK m=1187 k=3 l=3 rank=25
+REC_S m=1241 k=7 l=2 s=1152 rank=41 log2n=20.45
+REC_RANK m=1241 k=7 l=2 rank=41
+REC_S m=2657 k=9 l=1 s=1536 rank=44 log2n=21.96
+REC_RANK m=2657 k=9 l=1 rank=44
+REC_S m=9403 k=2 l=6 s=2916 rank=51 log2n=24.71
+REC_RANK m=9403 k=2 l=6 rank=51
+REC_S m=27149 k=10 l=1 s=3072 rank=52 log2n=26.31
+REC_RANK m=27149 k=10 l=1 rank=52
+REC_S m=27427 k=9 l=2 s=4608 rank=57 log2n=26.91
+REC_RANK m=27427 k=9 l=2 rank=57
+REC_S m=29747 k=10 l=2 s=9216 rank=66 log2n=28.03
+REC_RANK m=29747 k=10 l=2 rank=66
+REC_S m=53819 k=11 l=2 s=18432 rank=75 log2n=29.89
+REC_RANK m=53819 k=11 l=2 rank=75
+REC_S m=237983 k=2 l=9 s=78732 rank=97 log2n=34.13
+REC_RANK m=237983 k=2 l=9 rank=97
+REC_S m=916469 k=13 l=3 s=221184 rank=114 log2n=37.56
+REC_RANK m=916469 k=13 l=3 rank=114
+REC_S m=2199587 k=1 l=11 s=354294 rank=122 log2n=39.50
+REC_RANK m=2199587 k=1 l=11 rank=122
+REC_S m=4616939 k=9 l=6 s=373248 rank=123 log2n=40.65
+REC_RANK m=4616939 k=9 l=6 rank=123
+REC_S m=5132863 k=3 l=10 s=472392 rank=127 log2n=41.14
+REC_RANK m=5132863 k=3 l=10 rank=127
+REC_S m=6913051 k=15 l=3 s=884736 rank=139 log2n=42.48
+REC_RANK m=6913051 k=15 l=3 rank=139
+REC_S m=7497953 k=6 l=10 s=3779136 rank=168 log2n=44.69
+REC_RANK m=7497953 k=6 l=10 rank=168
+REC_S m=7728803 k=22 l=1 s=12582912 rank=194 log2n=46.47
+REC_RANK m=7728803 k=22 l=1 rank=194
+REC_S m=67810661 k=11 l=8 s=13436928 rank=196 log2n=49.69
+REC_RANK m=67810661 k=11 l=8 rank=196
+REC_S m=100831399 k=8 l=10 s=15116544 rank=199 log2n=50.44
+REC_RANK m=100831399 k=8 l=10 rank=199
+REC_S m=129934229 k=21 l=2 s=18874368 rank=204 log2n=51.12
+REC_RANK m=129934229 k=21 l=2 rank=204
+REC_S m=134786549 k=17 l=6 s=95551488 rank=243 log2n=53.52
+REC_RANK m=134786549 k=17 l=6 rank=243
+REC_S m=202622591 k=5 l=14 s=153055008 rank=256 log2n=54.78
+REC_RANK m=202622591 k=5 l=14 rank=256

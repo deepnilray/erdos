@@ -1,1 +1,4 @@
 pool 100814 primes validated in 11s; levels in range: 47583
+progress e=402000 bad=0 nontrivial=1235 t=82s
+progress e=404000 bad=0 nontrivial=2468 t=159s
+progress e=406000 bad=0 nontrivial=3718 t=237s

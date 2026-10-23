@@ -1,0 +1,3 @@
+pool primes <N: 100802  sieve primes <N with e<=8e5: 100802
+in sieve not pool: 0 []  in pool not sieve: 0 []  wrong e: 0
+range (4e5,8e5]: sieve 47575 pool 47575 equal: True

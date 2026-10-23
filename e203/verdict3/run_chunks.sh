@@ -1,7 +1,14 @@
 #!/bin/bash
-# sequential chunks, minl=1 (k>=1,l>=1 witnesses); logs in search_l1_<a>_<b>.log
-cd /home/claude/e203wt/e203/verdict3
-for r in "3000000001 4000000000" "4000000001 5000000000" "5000000001 6000000000" "6000000001 7000000000" "7000000001 8000000000" "8000000001 9000000000" "9000000001 10000000000" "0 1000000000" "1000000001 2000000000" "2000000001 3000000000"; do
- set -- $r
- nice -n 10 /tmp/claude-0/-home-claude/89603433-4fa1-57e4-a8fc-4d2490c5f294/scratchpad/s1 $1 $2 0 1 > search_l1_$1_$2.log 2>&1
+# sequential chunked certificate; resumable (a chunk is done when its log has a RESULT line)
+cd /home/claude/e203wt/e203
+LO=${1:-400000}; HI=${2:-800000}; STEP=${3:-20000}; shift 3
+POOLS="$@"
+a=$LO
+while [ $a -lt $HI ]; do
+  b=$((a+STEP)); f=verdict3/chunks/cert_${a}_${b}.log
+  if ! grep -q "^RESULT" $f 2>/dev/null; then
+    nice -n 10 python3 verdict3/certify_range.py $a $b $POOLS > $f 2>&1
+  fi
+  a=$b
 done
+echo ALLDONE > verdict3/chunks/ALLDONE_${LO}_${HI}

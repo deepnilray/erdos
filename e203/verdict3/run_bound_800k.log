@@ -1,0 +1,2 @@
+E=800000: 100814 primes, light=0.04850936, astar=0.626827, build 413s, r-source {'coupled': 8718700, 'minU': 0, 'bonf': 0}
+  sweep 0: bound 0.90558

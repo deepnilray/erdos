@@ -3,8 +3,14 @@ R3 = max over g with 3|g, over the cells killed by each 6-core prime for SOME M 
      u(3Z^2 \\ B_core) / (1 - u(B_core) - lam'),  lam' = light {2,3} mass + 1/36 + 1/48 + 1/144,
 computed on (Z/144)^2 by enumerating M mod p and marking 2^k 3^l M^g == -1 (mod p) directly.
 S  = sum_{5 <= q <= 4e5} q^-2/(1-delta_q) + tail sum_{q > 4e5} q^-2  (< 1/(4e5 - 1))."""
-import json, itertools, numpy as np
+import sys, json, itertools, numpy as np
 from fractions import Fraction as F
+# Usage: verify_mixed.py [POOL.jsonl E DELTA.json B_EXACT]   (B_EXACT = exact rational bound of the pure theorem, e.g. 730585/1000000
+# or the exact fraction printed by verify_distortion23.py).  No arguments reproduces the original E = 4e5 run.
+POOL_PATH = sys.argv[1] if len(sys.argv) > 1 else 'poolE400000.jsonl'
+E_MAX = int(float(sys.argv[2])) if len(sys.argv) > 2 else 400000
+DELTA_PATH = sys.argv[3] if len(sys.argv) > 3 else 'delta23r_E400000.json'
+B_EXACT = F(sys.argv[4]) if len(sys.argv) > 4 else F(730585, 1000000)
 from sympy import primerange, factorint
 M = 144; CORE = [5, 7, 13, 17, 19, 37]
 k, l = np.meshgrid(np.arange(M), np.arange(M), indexing='ij')
@@ -20,7 +26,7 @@ def killed_sets(p, g):
     nonempty = [s for s in sets.values() if s.any()]   # WLOG every usable prime is used (CRT on M)
     return nonempty if nonempty else [np.zeros(M * M, bool)]
     return list(sets.values())
-pool = [json.loads(x) for x in open('poolE400000.jsonl')]
+pool = [p for p in (json.loads(x) for x in open(POOL_PATH)) if p['e'] <= E_MAX]
 heavy = [5, 7, 13, 17, 19, 37, 73, 97, 577]
 light = sum((F(1, p['e']) for p in pool if max(factorint(p['e'])) <= 3 and p['p'] not in heavy), F(0))
 lam = light + F(1, 36) + F(1, 48) + F(1, 144)
@@ -35,9 +41,9 @@ for gp in [d for d in range(1, 145) if 144 % d == 0 and d % 3 == 0]:
         if r > best[0]: best = (r, gp)
 print(f"light {{2,3}} mass = {float(light):.8f};  lam' = {float(lam):.8f}")
 print(f"R3 (all g with 3|g, all M) = {best[0]} = {float(best[0]):.6f}  attained at g' = {best[1]}")
-d = json.load(open('delta23r_E400000.json'))
-S = sum((F(1, q * q) / (1 - F(round(100 * d.get(str(q), 0.0)), 100)) for q in primerange(5, 400001)), F(0))
-tail = F(1, 400000 - 1)
+d = json.load(open(DELTA_PATH))
+S = sum((F(1, q * q) / (1 - F(round(100 * d.get(str(q), 0.0)), 100)) for q in primerange(5, E_MAX + 1)), F(0))
+tail = F(1, E_MAX - 1)
 print(f"S = {float(S):.6f} (+ tail <= {float(tail):.2e})")
-B = F(730585, 1000000)
+B = B_EXACT
 print(f"Theorem E totals: 3 not| g: {float(B + S + tail):.6f}   3 | g: {float(B + S + tail + best[0]):.6f}")

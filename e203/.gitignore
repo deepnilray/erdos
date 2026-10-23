@@ -23,3 +23,6 @@ delta23r_E*.npy
 verify23r_*.log
 delta23r_E*.json
 types_E20000.json
+verdict3/B_E*.pkl
+verdict3/*.pkl
+verdict3/sieve_2e9.txt
