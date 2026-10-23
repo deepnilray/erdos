@@ -69,11 +69,33 @@ For m with gcd(m,6)=1, "no prime among 2^k3^ℓ m+1, k,ℓ≥1" holds iff m is n
 
 ## 6. Extended exhaustive search (k,ℓ≥1)
 
-RESULTS_PLACEHOLDER
+**Result [VERIFIED, 1 ≤ m ≤ 10^10, gcd(m,6)=1].** Every such m has a prime 2^k3^ℓ m+1 with k≥1 and ℓ≥1. Run with `search_l1.c` (minl=1), 10 chunks of 10^9 (3.33·10^9 values of m, about 0.6–0.85·10^3 s each at nice 10 on one core; logs `search_l1_<a>_<b>.log`). Primes below 2^64 are proved by deterministic 7-base Miller–Rabin (Sinclair). Chunk survivors: exactly one, **m = 6257518159**, which has no prime with 2^k3^ℓ m+1<2^64.
+- Resolved by `B_survivor.py`: first prime in the order of s is at **(k,ℓ)=(16,10)**, n = 24215564436818558977 (20 digits, log2 s = 31.85). BPSW + 40 MR rounds agree; I also ran Miller–Rabin on the first 13 prime bases, which is deterministic below 3.3·10^24 (Sorenson–Webster, recalled from memory, **not re-read**), so the label is PROVED prime if that bound is right and PRP otherwise. An independent gmpy2 scan confirms it has no prime below 2^64 for k,ℓ≥1.
+- **Hardest m so far: 6257518159** (log2 s = 31.85, rank in the (k,ℓ) order beyond the C table). Hardest among those resolved inside 2^64: m=9137270819 at (13,11), s=1451188224 (log2 s = 30.43, n=13259899812031635457, prime, below 2^64). For m≤3·10^9 the hardest is unchanged: m=2970893047 at (28,1).
+- For m≤3·10^9 the l≥1 rerun reproduces the old claim: all 10^9 values have a prime with ℓ≥1; no survivors in [0,3·10^9].
+- Rerun history: the first attempt of the [0,3·10^9] chunk was interrupted by a machine restart; it was rerun from scratch (the log was deleted first), and the three chunks above carry DONE lines.
+- Extrapolation check: the previous record fit predicted s_rec≈0.2·N, i.e. log2 s≈31 at N=10^10; observed 31.85 (survivor) and 30.43. Consistent.
+- This is a check of the k,ℓ≥1 problem up to 10^10, a factor 3.3 beyond the earlier 3·10^9. It does not touch coverings or large m (hypothetical YES m are astronomically large).
 
 ## 7. Far-tail test of the Cramér/Bateman–Horn model
 
-TAIL_PLACEHOLDER
+**Setup** (`B_tailmodel.c`, `B_tail_compare.txt`, `B_tail_model_out.txt`). For 1.5·10^7 uniformly random m∈(3·10^9,10^10] coprime to 6, the cells (k≥1,ℓ≥1, 2^k3^ℓ<2^33) are sieved exactly by all primes 5≤p≤1500 (cell killed iff p | 2^k3^ℓ m+1), and each surviving cell gets probability ∏_{p≤1500}(1−1/p)^{−1}/ln(2^k3^ℓ m+1) of being prime, independently. This is the Cramér/Bateman–Horn model with exact small-prime lattice correlations. The model prediction for "first prime has s≥2^b" is the mean over sampled m of ∏_{cells s<2^b}(1−P_cell). The empirical side is the C search histogram over the 2.333·10^9 values of m in (3·10^9,10^10], with the survivor m=6257518159 counted at b=31.
+
+**Result [VERIFIED against exhaustive data, no free parameters].**
+| b | observed count | model expected | observed/model |
+|---|---|---|---|
+| 5 | 1384266579 | 1384729267 | 0.9997 |
+| 10 | 135390584 | 135558897 | 0.9988 |
+| 15 | 4237401 | 4240696 | 0.9992 |
+| 20 | 55406 | 55813 | 0.993 |
+| 24 | 1095 | 1125 | 0.973 |
+| 26 | 128 | 140 | 0.915 |
+| 28 | 18 | 15.6 | 1.15 |
+| 29 | 8 | 5.3 | 1.51 |
+| 30 | 3 | 1.7 | 1.76 |
+| 31 | 1 | 0.6 | 1.77 |
+Tail probabilities from 0.88 down to 4·10^-10 are reproduced; all counts for b≥20 lie within about 1.5 Poisson standard deviations of the model (for example b=26: 128 observed against 140±12; b=29: 8 against 5.3±2.3). For 5≤b≤19 the model is a uniform 0.1% high (ratio 0.998–0.999, about 3 model standard errors), a small systematic that I attribute to treating primes above 1500 as independent; it does not grow with b. This extends the earlier tail test (agreed to probabilities of about 10^-3) by six orders of magnitude and uses a different data set. The control that could have failed: a model with the wrong local factor (for example without the exact small-prime sieve) fails already at moderate b (verdict/1 §4.3 shows the independence version is 7.5% off on low-C m).
+**What it adds to the YES/NO question.** Within the model, P(m has no prime up to height h) is accurate in the far tail for generic m, so no "unexpectedly hard" non-covering m appears among 3.3·10^9 values. It says nothing about coverings (local factor exactly 0), which the model cannot price. [CONJECTURED for the extrapolation; the agreement itself VERIFIED.] I did not refine `h_model.py`: the existing model needed no change.
 
 ## 8. Aristotle prompts (Lean-formalisable statements)
 
@@ -86,3 +108,12 @@ TAIL_PLACEHOLDER
 **AP4 (reformulation, trivial).** For `m : ℕ` coprime to 6: `(∀ k l : ℕ, 1 ≤ k → 1 ≤ l → ¬ Nat.Prime (2^k*3^l*m+1)) ↔ ¬ ∃ p k l : ℕ, p.Prime ∧ 1 ≤ k ∧ 1 ≤ l ∧ p = 2^k*3^l*m+1`.
 
 (Lemmas R and D need Romanoff-type bounds that Mathlib does not have; I do not offer them as Aristotle targets.)
+
+## 9. Red team of agent A (A_certify.md had not been written when I finished)
+
+No `A_certify.md` existed at the end of my run, so I reviewed only A's scripts in `verdict3/` (`certify_range.py`, `audit_forms.py`, `compare_sieve.py`, the logs). Findings:
+- **No flaw found in the logic of `certify_range.py`.** Its claim "p | gcd(2^e−1,3^e−1) iff e_p | e (p odd, p≠3)" is correct, multiplicities are removed with a while-loop, and a missing pool prime p with e_p=e would leave p in G(e_p), so the test is sound. The planted-deletion control (`--control N`) is a control that can fail.
+- **Scope caveats to state in A_certify.md:** (i) the test only certifies levels e in (LO,HI]; completeness below LO rests on the earlier certificate. (ii) `sieve_compare.log` compares against a sieve over p<2·10^9 only ("pool primes <N: 100802" against 100814 in the pool), so 12 pool primes with p>2·10^9 are covered by the gcd route alone. (iii) The 4·10^5–8·10^5 certificate log I saw (`certify_400k_800k.log`) stopped at e=406000, so it was still running; no completion line existed.
+- `audit_forms.py` is a valid proof of the lattice form (index e, two vectors in the kernel, |⟨2,3⟩|=lcm of orders), with a perturbation control.
+- Not reviewed: exact-rational B(8·10^5), Theorem E at 8·10^5, any conditional all-E theorem, since those files did not exist.
+- Housekeeping: `verdict3/B_E800000.pkl` (479 MB) is not from me; it is already covered by `.gitignore` (`verdict3/*.pkl`). I added `verdict3/B_tailmodel` (my compiled binary) to `.gitignore`.

@@ -26,3 +26,4 @@ types_E20000.json
 verdict3/B_E*.pkl
 verdict3/*.pkl
 verdict3/sieve_2e9.txt
+verdict3/B_tailmodel

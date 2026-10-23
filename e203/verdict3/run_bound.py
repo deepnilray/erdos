@@ -14,10 +14,12 @@ sub = [p for p in pool if p['e'] <= E]
 light = sum(1 / p['e'] for p in sub if max(factorint(p['e'])) <= 3 and p['p'] not in heavy)
 astar = opt_heavy + light
 rfun, stats = DR.make_r(tag, astar, lam_E=light)
-B = D23.build(sub, heavy, astar, r_override=rfun)
+import os
+PK=f'verdict3/B_E{E}.pkl'
+B = pickle.load(open(PK,'rb')) if os.path.exists(PK) else D23.build(sub, heavy, astar, r_override=rfun)
 t1 = time.time()
 print(f'E={E}: {len(sub)} primes, light={light:.8f}, astar={astar:.6f}, build {t1-t0:.0f}s, r-source {stats}', flush=True)
-pickle.dump(B, open(f'verdict3/B_E{E}.pkl', 'wb'), protocol=4)
+if not os.path.exists(PK): pickle.dump(B, open(PK, 'wb'), protocol=4)
 dv, cost = O.optimise(B, sweeps=6)
 c, m1, m2 = D.costs(B, dv); U = c.sum()
 np.save(f'delta23r_E{E}.npy', dv)
