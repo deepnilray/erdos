@@ -7,7 +7,7 @@ Labels: **PROVED** (complete argument here or in a cited theorem I read), **VERI
 
 | # | statement | label |
 |---|---|---|
-| Z | **Every covering has at least N_Z primes p with e_p > 8·10⁵** (hence ≥ N_Z primes), N_Z = 6183 with the δ-vector capped at 1/2 (table in §3 for other caps) | VERIFIED (uses float B(8·10⁵) = 0.7435 for the capped δ; PROVED given that number) |
+| Z | **Every covering has at least N_Z primes p with e_p > 8·10⁵** (hence ≥ N_Z primes), N_Z = 10300 with the δ-vector capped at 0.28 (6183 at cap 0.5; table in §3) | VERIFIED (uses float pool bound B' = 0.7984 for the capped δ; PROVED given that number). In particular: **no covering certificate with at most 10 299 primes** |
 | S | Every covering has ≥ 20 primes (exact, B(4·10⁵)) and ≥ 21 (float, B(8·10⁵)); superseded by Z, but the finite pools S_K = {e : f(e) ≤ K−1} (|S_34| = 4266) are the right object for "size ≤ K" statements | PROVED / VERIFIED |
 | C | **Conditional all-E theorem**: HYPOTHESES H_dens(κ), H_align(ε) ⇒ no covering exists. Total bound 0.8635 (κ=1, ε=0), 0.951 (κ=1.3, ε=0.25), 0.951 (κ=1.5, ε=0) | HYPOTHESIS-conditional; bound VERIFIED (float) |
 | T | General tail inequality B(∞) ≤ B(E) + T(E), with T explicit; T(E) = ∞ if δ_q = 0 beyond Q (§4.1); the quadratic tail needs only a *smooth-set* multiplicity bound, global second moments of n(e) are not enough (§4.3) | PROVED |
@@ -55,10 +55,30 @@ Let E₀ = 8·10⁵, δ = the optimised vector of the 8·10⁵ run with δ_q rep
 **Claim.** If P is a covering and P_> = {p ∈ P : e_p > E₀}, N = |P_>|, then
  1 ≤ s(N)·B' + Σ_{p∈P_>} ρ(e_p),  ρ(e) = r(e) ∏_{q | e, q ≥ 5} g_q / e,  r(e) = R_max = 2.6145 if gcd(e,6) > 1 else 1,  s(N) = (1−α*)/(1−α*−N/E₀), α* = 0.626827.
 *Proof.* (i) By M1 (DISTORTION.md), 1 ≤ Σ_ℓ cost_ℓ(P_ℓ). (ii) cost_ℓ(F ∪ G) ≤ cost_ℓ(F) + E[α_G]/(1−δ_ℓ) since (x+y−δ)₊ ≤ (x−δ)₊ + y. (iii) For F = P ∩ pool, the stage bounds of the run are monotone in the family (m₁, m₂ are sums of nonnegative terms, the majorant coefficients are nonnegative) and valid for any earlier sets (L1 uses only δ), so Σ cost_ℓ(F_ℓ) ≤ B'. (iv) For p ∈ G, E[α_p] ≤ P_{<ℓ}(A_p) ≤ r_p ∏_{q | e_p, 5 ≤ q < ℓ}(1−δ_q)^{-1}/e_p (L1 + L4″), and the stage factor (1−δ_ℓ)^{-1} completes the product over all q | e_p; set δ_q = 0 for q outside the run (such stages are empty in the pool, so B' is unchanged). (v) Tail primes with 3-smooth e_p lie in B₂₃ and raise α₂₃ by Σ1/e_p ≤ N/E₀; every price scales by at most (1−α*)/(1−α*−N/E₀), and costs scale at most linearly in the prices (the majorants are linear in m₁, m₂). ∎
-**Bounding ρ.** ρ is multiplicative apart from r and every prime power has h(q^a) = g_q/q^a < 1, so ρ(e) is maximised by a DFS over 400-smooth e just above E₀ (exact, `C_size.py`); e = m·Q with a prime Q > 400, m ≤ E₀ smooth, is bounded by RMAX·∏g(m)·g_max^w/max(401^w m, E₀+1) for w = 1…4 large primes and RMAX(g_max/401)^5 beyond; e > 64E₀ is bounded by 2⁴RMAX/(64E₀). Result for CAP = 0.5: **c = max ρ = 3.894·10⁻⁵** (attained at e = 832 370), B' = 0.743546.
-**Result.** s(N)B' + Nc ≥ 1 first holds at **N = 6184**; so a covering contains ≥ 6183 primes with e_p > 8·10⁵ (and ≥ 6183 primes in all). CAP table: CAPTBL
-Reading: the large-index primes of a covering must carry *weighted* reciprocal mass ≥ 1 − s B' ≈ 0.22, each prime carrying at most 4·10⁻⁵. Combined with Sun: each of them has f(e_p) ≤ |P|−1, so |P| ≥ 6183 forces nothing more than smoothness e_p ≤ 2^{|P|−1}.
+**Bounding ρ.** ρ is multiplicative apart from r and every prime power has h(q^a) = g_q/q^a < 1, so ρ(e) is maximised by a DFS over 400-smooth e just above E₀ (exact, `C_size.py`); e = m·Q with a prime Q > 400, m ≤ E₀ smooth, is bounded by RMAX·∏g(m)·g_max^w/max(401^w m, E₀+1) for w = 1…4 large primes and RMAX(g_max/401)^5 beyond; e > 64E₀ is bounded by 2⁴RMAX/(64E₀). **Result.** s(N)B' + Nc ≥ 1 first holds at N = N_Z, so a covering contains ≥ N_Z primes with e_p > 8·10⁵ (hence ≥ N_Z primes in all). Table (`C_size.py CAP`; the control CAP = 1 reproduces 0.742445):
+
+| CAP | B' | c = max ρ | N_Z |
+|---|---|---|---|
+| 0.10 | 1.231 | 5.5·10⁻⁶ | none (B' > 1) |
+| 0.20 | 0.9226 | 9.9·10⁻⁶ | 5916 |
+| 0.25 | 0.8362 | 1.37·10⁻⁵ | 9869 |
+| 0.27 | 0.8100 | 1.57·10⁻⁵ | 10275 |
+| **0.28** | **0.7984** | **1.68·10⁻⁵** | **10300** |
+| 0.30 | 0.7795 | 1.93·10⁻⁵ | 10001 |
+| 0.35 | 0.7538 | 2.76·10⁻⁵ | 8153 |
+| 0.50 | 0.7435 | 3.89·10⁻⁵ | 6183 |
+
+Smaller caps lower the inflation g_q of large-q stages (the optimiser's own δ has spikes up to 0.95 near q = 307, which would give g = 20) at the price of a larger B'; the best cap is a compromise and a joint optimisation of δ for this objective would increase N_Z further (not done).
+**Scaling.** N_Z ∝ (1 − sB')/c ∝ E₀: a certified pool up to 1.6·10⁶ would roughly double it.
+Reading (CAP 0.28 numbers): the large-index primes of a covering must carry *weighted* reciprocal mass ≥ 1 − s B' ≈ 0.17, each prime carrying at most 1.7·10⁻⁵. Combined with Sun: each of them has f(e_p) ≤ |P|−1, so |P| ≥ 6183 forces nothing more than smoothness e_p ≤ 2^{|P|−1}.
 This is the unconditional theorem I can prove toward the target; it does not touch the all-E question because the number of allowed tail primes is unbounded.
+
+### 3b. L's "stages q ≤ k" route, quantified
+For a minimal certificate with k primes Sun gives P⁺(e_p) ≤ k and n(e) ≤ k, so only stages q ≤ k occur and a Li–Wang–Yi tail costs ≪ Σ_{y<q≤k} k²(log q)⁶/q² ≈ k²(log k)⁵/y. This is **weaker than Theorem Z's treatment**: with at most k primes in all, the *first-moment* (Lipschitz) bound already gives tail cost ≤ k·max_{e>E₀}ρ(e) ≤ k·1.7·10⁻⁵, and for primes in stages q > y the weight is ρ ≤ RΛ/q so their total is ≤ kRΛ_max/y, smaller than k²/y. The quadratic method only pays when the number of tail primes is unbounded, which is exactly the all-E case. So the best explicit unconditional K I can prove is the Z value K = 10 299 (it grows linearly with the certified pool, not like √y).
+
+### 3c. Direction lemma, dichotomy per prime ℓ [PROVED] and what it gives
+Fix ℓ and reduce mod ℓ: for ℓ | e_p, A_p mod ℓ is a coset of the line L_p^{(ℓ)} = Λ_p mod ℓ ⊂ F_ℓ², i.e. an affine line (index-ℓ coset), while for ℓ ∤ e_p it is everything. A nonzero v ∈ F_ℓ² lies in exactly one line through 0, namely the one it spans; φ_p(v) ≢ 0 mod ℓ ⇔ v ∉ L_p. Hence a vector v mod ℓ with φ_p(v) a unit-at-ℓ for all p with ℓ | e_p exists **iff the set {L_p^{(ℓ)}} of kernel directions is not all of P¹(F_ℓ)** (ℓ+1 lines). If this holds for every ℓ | lcm(e_p), CRT gives a primitive v ∈ Z² with φ_p(v) coprime to e_p for all p; then every slice x₀ + Zv is a 1-D covering of Z with moduli exactly e_p (each prime once; ψ_p restricted to the slice is t ↦ φ_p(v)t + const, a bijection of Z/e_p). If instead for some ℓ all ℓ+1 directions occur, no v works (this is the aligned-at-no-direction case, which needs ≥ ℓ+1 primes with ℓ | e_p).
+**Corollary D (unconditional, uses recalled BBMST).** If P is a covering whose primes satisfy the dichotomy at every ℓ, have pairwise distinct e_p, and all e_p > 616 000, then the slice is a covering of Z with distinct moduli > 616 000, contradicting Balister–Bollobás–Morris–Sahasrabudhe–Tiba (min modulus of a covering with distinct moduli is ≤ 616 000; recalled from memory and from L6, not re-read). With multiplicity s = max n(e) the Klein–Koukoulopoulos–Lemieux bound (arXiv:2212.01299 Thm 3, as reported by L) replaces 616 000 by exp(c log²(s+1)/log log(s+2)) with an unspecified c. So the pure-large-modulus coverings (no prime with e_p ≤ 616 000, distinct e_p, generic directions) are excluded; this is of no use against general certificates because the small primes (e_p = 4, 6, 10, …) are exactly the ones a covering wants. It is a different regime from Theorem Z (which excludes coverings with few large primes).
 
 ## 4. The tail for all E
 
@@ -101,8 +121,8 @@ Let st(ℓ) = {e : P⁺(e) = ℓ}. E[N_ℓ] = Σ_{e∈st(ℓ)} n(e)Λ(e)/e', e' 
 | 1.0 | 0.25 | 0.8897 |
 | 1.0 | 0.5 | 0.9160 |
 | 1.5 | 0.25 | 0.9973 |
-| 1.3 | 0.25 | GRID2A |
-| 1.3 | 0.10 | GRID2B |
+| 1.3 | 0.25 | 0.9514 |
+| 1.3 | 0.10 | 0.9286 |
 
 So H_dens(1.5) with H_align(0) or H_dens(1.3) with H_align(0.25) closes the problem; the margin is ≈ 5%. The proof is §4 with: pool part exact (M₁, M₂ of the run), tail part m₁ = R κτ F₁^{>}, m₂ = M₂^{pool} + R[2κτ Σ_d θ(d) Y_d^{pool} F_d^{>} + (κτ)² Σ_d θ(d)(F_d^{>})²] + m₁^{tail}/ℓ, F_d^{>} = (closed Euler product over all e) − (enumerated e ≤ E₀), R = 2.68 ≥ the largest coupled price; Σ_dθ(d)F_d² has the closed local factor s_q² + g_q²q⁴/((q−1)⁴(q+1)²) (derivation: Σ_{c≥1}ρ_q F_q(c)², F_q(c) = g_q q^{2−c}/(q−1)²). It differs from agent A's `tail_bound.py` (which I patched, copy `C_tail.py`) only in the alignment model: A's "noalign" used c = 1 (undercounts pair sums by 35–47%, see below) and r_p·R for pool-tail pairs (overcounts), its "align" mode used the worst case c = gcd (overcounts by 2.4–3.6×, total 22.8).
 **Why the random-form model is justified.**
