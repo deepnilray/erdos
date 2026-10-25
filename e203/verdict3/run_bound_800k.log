@@ -1,2 +1,8 @@
 E=800000: 100814 primes, light=0.04850936, astar=0.626827, build 12s, r-source {'coupled': 0, 'minU': 0, 'bonf': 0}
   sweep 0: bound 0.90558
+  sweep 1: bound 0.74440
+  sweep 2: bound 0.74244
+  sweep 3: bound 0.74244
+  sweep 4: bound 0.74244
+  sweep 5: bound 0.74244
+E=800000: BOUND=0.742445 -> NO COVERING POSSIBLE  opt 4200s total 4213s

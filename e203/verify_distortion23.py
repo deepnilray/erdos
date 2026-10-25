@@ -69,8 +69,7 @@ def main(pool_path, E, heavy_ps, delta_path, core=(), core_val=None, rtable=None
         for q in primes:
             if q not in (2, 3): x /= (1 - dl.get(q, F(0)))
         return x
-    total = F(0)
-    for ell in sorted(st):
+    def stage_cost(ell):
         P = st[ell]; d = dl.get(ell, F(0)); fac = [factorint(p['e']) for p in P]
         A = min(F(1), sum((F(1, ell ** f[ell]) for f in fac), F(0)))
         info = [(part(p, ell), [q for q in f if q != ell]) for p, f in zip(P, fac)]
@@ -93,8 +92,20 @@ def main(pool_path, E, heavy_ps, delta_path, core=(), core_val=None, rtable=None
                     t = d + (1 - d) * F(jj, 800)
                     if t >= 2 * d: cand.append((1 - 2 * d / t) * m1 + d / t ** 2 * m2)
             cost = min(cand) / (1 - d)
-        total += cost
+        return cost
+    import os
+    W = int(os.environ.get('VERIFY_WORKERS', '1'))
+    order = sorted(st, key=lambda l: -len(st[l]))
+    if W > 1:
+        from multiprocessing import Pool
+        global _SC; _SC = stage_cost
+        with Pool(W) as pl: costs = list(pl.imap_unordered(_call_sc, order, chunksize=1))
+    else: costs = [stage_cost(l) for l in order]
+    total = sum(costs, F(0))
     return total, astar
+
+_SC = None
+def _call_sc(l): return _SC(l)
 
 if __name__ == '__main__':
     heavy = [int(x) for x in sys.argv[3].split(',')]
@@ -102,5 +113,6 @@ if __name__ == '__main__':
     cv = F(sys.argv[6]) if len(sys.argv) > 6 else None          # exact core optimum, e.g. 2770/5184
     rt = (sys.argv[7], sys.argv[8]) if len(sys.argv) > 8 else None
     tot, astar = main(sys.argv[1], int(float(sys.argv[2])), heavy, sys.argv[4], core, cv, rt)
+    print("EXACT FRACTION:", tot, flush=True)
     print(f"alpha* (exact, one-layer heavy + light union) = {float(astar):.6f}")
     print(f"EXACT RATIONAL BOUND (merged {{2,3}}) E={sys.argv[2]}: {float(tot):.6f}  (< 1: {tot < 1})", flush=True)
