@@ -1,0 +1,9 @@
+CAP 0.3
+CAP=0.30  B' = 0.779499
+large-prime part bound: 1.3611e-05 ;  c = 1.9348e-05
+coverings need |P_>| >= 10001 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.4
+CAP=0.40  B' = 0.745847
+large-prime part bound: 2.3640e-05 ;  c = 3.5603e-05
+coverings need |P_>| >= 6661 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.45
