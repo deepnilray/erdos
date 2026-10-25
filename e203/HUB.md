@@ -7,7 +7,8 @@ Current verdict: NO more likely [CONJECTURED] — see `VERDICT.md` and `verdict/
 ## Proved / verified so far (see the linked files)
 - All pure coverings with e_p ≤ 4·10⁵ excluded; B(4·10⁵) = 0.730584 exact rational [PROVED, `DISTORTION.md`].
 - Mixed certificates (primes + algebraic factorisations) excluded for e_p ≤ 4·10⁵ [PROVED, `MIXED.md`, Theorem E].
-- B(8·10⁵) = 0.742445 in floating point; the 4–8·10⁵ pool is complete only by construction [VERIFIED, float].
+- B(8·10⁵) = 0.742445 in floating point [VERIFIED, float; exact-rational check pending].
+- The 4–8·10⁵ pool (47583 primes) is certified complete by the second (gcd) route: all 20 chunks of (4·10⁵, 8·10⁵] give `certified complete: True` [VERIFIED, `verdict3/certify_range.py`, logs in `verdict3/chunks/`].
 - Every m ≤ 10¹⁰ coprime to 6 has a prime 2^k3^l·m+1 with k,l ≥ 1 [VERIFIED, `verdict3/search_l1.c`; the old `search.c` wrongly allowed l=0]. Hardest m = 6257518159, first prime at (k,l)=(16,10), proved prime by a Lucas certificate.
 - Erdős–Odlyzko 1979 Thm 2: positive lower density of m with a prime [literature].
 
