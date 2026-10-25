@@ -7,3 +7,10 @@ CAP=0.40  B' = 0.745847
 large-prime part bound: 2.3640e-05 ;  c = 3.5603e-05
 coverings need |P_>| >= 6661 primes with e_p > 800000 (hence |P| >= that)
 CAP 0.45
+CAP=0.45  B' = 0.743980
+large-prime part bound: 2.7249e-05 ;  c = 3.8940e-05
+coverings need |P_>| >= 6172 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.6
+CAP=0.60  B' = 0.743174
+large-prime part bound: 3.5683e-05 ;  c = 3.8940e-05
+coverings need |P_>| >= 6192 primes with e_p > 800000 (hence |P| >= that)
