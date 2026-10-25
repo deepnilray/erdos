@@ -95,6 +95,19 @@ def main(pool_path, E, heavy_ps, delta_path, core=(), core_val=None, rtable=None
         return cost
     import os
     W = int(os.environ.get('VERIFY_WORKERS', '1'))
+    CK = os.environ.get('VERIFY_CKPT')          # optional checkpoint file: one 'ell num den' line per finished stage
+    done = {}
+    if CK and os.path.exists(CK):
+        for ln in open(CK):
+            a = ln.split()
+            if len(a) == 3: done[int(a[0])] = F(int(a[1]), int(a[2]))
+    _inner = stage_cost
+    def stage_cost(ell):
+        if ell in done: return done[ell]
+        c = _inner(ell)
+        if CK:
+            with open(CK, 'a') as fh: fh.write(f"{ell} {c.numerator} {c.denominator}\n")
+        return c
     order = sorted(st, key=lambda l: -len(st[l]))
     if W > 1:
         from multiprocessing import Pool

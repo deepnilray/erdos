@@ -24,6 +24,8 @@ Current verdict: NO more likely [CONJECTURED] — see `VERDICT.md` and `verdict/
   agent B = NO-side and literature. Reports go to `verdict3/`.
 - 2026-10-23 (evening): both agents hit the usage limit, resumed after reset. B finished: `B_noside.md`, `APPROACHES.md`; no literature beyond Erdős–Odlyzko 1979; `verdict/5_priorart.md` wrongly calls #202 solved (it is open).
 
+- 2026-10-26: run4 agents: A (certify, resumed), C (all-E no-covering), L (literature, continuous), V (check + Aristotle prompts). V status 1: no flaw; exposition gap — DISTORTION.md must state the CRT augmentation lemma (all pool sets nonempty) that MIXED.md states; fix in the paper.
+
 ## Run3 assignments
 - **A (certify):** second-route completeness certificate for `poolE_400k_800k.jsonl`; exact-rational B(8·10⁵);
   Theorem E at 8·10⁵; conditional all-E theorem with explicit hypothesis H; push E to 1.6·10⁶ if feasible.
