@@ -11,6 +11,10 @@ Current verdict: NO more likely [CONJECTURED] — see `VERDICT.md` and `verdict/
 - Every m ≤ 10¹⁰ coprime to 6 has a prime 2^k3^l·m+1 with k,l ≥ 1 [VERIFIED, `verdict3/search_l1.c`; the old `search.c` wrongly allowed l=0]. Hardest m = 6257518159, first prime at (k,l)=(16,10), proved prime by a Lucas certificate.
 - Erdős–Odlyzko 1979 Thm 2: positive lower density of m with a prime [literature].
 
+## Public state (erdosproblems.com forum thread 203, read 2026-10-25)
+- Status OPEN, no solution claims. Posted work: |H_p| = lcm of orders and Σ1/|H_p| ≥ 1 (AnimishSharma, Jun 2026), no covering with lcm < 5040 for p ≤ 5·10⁷; covering searches plateau at 71.7% (N=5040) and 76.0% (N=55440), density bound < 1 at N=720720 (veljjanoski, Sep 2026); "shallow" search 10¹⁰–10¹¹ with no match (emil467q, Nov 2025; convention and depth unstated).
+- So our search to 10¹⁰ is not new as a range; its value is the k,l ≥ 1 convention with proved primes. Our exclusion of all coverings with e_p ≤ 4·10⁵ and no lcm condition goes far beyond anything posted.
+
 ## Run log
 - 2026-10-10: five-direction assessment (verdict/1–5).
 - 2026-10-17/22: scheduled all-agents run (trigger trig_016THwwcVavtrWxeAPL3Eiv1) fired; no commits came back
