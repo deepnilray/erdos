@@ -64,6 +64,9 @@ Let E₀ = 8·10⁵, δ = the optimised vector of the 8·10⁵ run with δ_q rep
 | 0.25 | 0.8362 | 1.37·10⁻⁵ | 9869 |
 | 0.27 | 0.8100 | 1.57·10⁻⁵ | 10275 |
 | **0.28** | **0.7984** | **1.68·10⁻⁵** | **10300** |
+| 0.285 / 0.29 / 0.27 / 0.26 / 0.24 / 0.22 / 0.20 / 0.17 / 0.14 | 0.7931 / 0.7882 / 0.8100 / – / – / – / – / – / – | – | 10266 / 10202 / 10275 / 10135 / 9457 / 8093 / 5916 / 815 / 1 |
+
+Cap scan below 0.28 (`C_size_caps2.log`, plus `C_size_caps.log`): N peaks at cap 0.28 (10300), falls for caps below 0.27, and is 1 at cap 0.14. Optimum over the scanned caps is 0.28. Joint re-optimisation of δ for (1−B′)/ρ_max was not done (gap).
 | 0.30 | 0.7795 | 1.93·10⁻⁵ | 10001 |
 | 0.35 | 0.7538 | 2.76·10⁻⁵ | 8153 |
 | 0.50 | 0.7435 | 3.89·10⁻⁵ | 6183 |

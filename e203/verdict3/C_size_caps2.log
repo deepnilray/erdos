@@ -1,1 +1,33 @@
 CAP 0.26
+smooth part: max rho = 1.4655e-05 at e = 803985
+large-prime part bound: 1.0898e-05 ;  c = 1.4655e-05
+coverings need |P_>| >= 10135 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.24
+smooth part: max rho = 1.2825e-05 at e = 803985
+large-prime part bound: 9.7957e-06 ;  c = 1.2825e-05
+coverings need |P_>| >= 9457 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.22
+smooth part: max rho = 1.1263e-05 at e = 803985
+large-prime part bound: 8.8290e-06 ;  c = 1.1263e-05
+coverings need |P_>| >= 8093 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.20
+smooth part: max rho = 9.9239e-06 at e = 803985
+large-prime part bound: 7.9787e-06 ;  c = 9.9239e-06
+coverings need |P_>| >= 5916 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.17
+smooth part: max rho = 8.2555e-06 at e = 803985
+large-prime part bound: 6.8862e-06 ;  c = 8.2555e-06
+coverings need |P_>| >= 815 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.14
+smooth part: max rho = 6.9126e-06 at e = 803985
+large-prime part bound: 5.9744e-06 ;  c = 6.9126e-06
+coverings need |P_>| >= 1 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.27
+CAP=0.27  B' = 0.809960
+coverings need |P_>| >= 10275 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.285
+CAP=0.28  B' = 0.793122
+coverings need |P_>| >= 10266 primes with e_p > 800000 (hence |P| >= that)
+CAP 0.29
+CAP=0.29  B' = 0.788235
+coverings need |P_>| >= 10202 primes with e_p > 800000 (hence |P| >= that)
