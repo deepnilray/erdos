@@ -17,7 +17,9 @@ dv = np.minimum(dv0, CAP)
 B1 = D.costs(Bp, dv)[0].sum(); print('CAP=%.2f  B\' = %.6f' % (CAP, B1))
 idx = {l: i for i, l in enumerate(ells)}
 def g(q): return 1.0 if q in (2, 3) or q not in idx else 1.0 / (1.0 - dv[idx[q]])
-qs = [q for q in ells if q <= 400 and q >= 5]
+import sympy
+qs = [q for q in sympy.primerange(5, 401)]
+print('primes<=400 not in the run:', [q for q in qs if q not in idx])
 gmax_big = max([g(q) for q in ells if q > 400] + [1.0])
 print('max g(q) over q>400: %.3f ; g(5..) = %s' % (gmax_big, [round(g(q), 2) for q in qs[:8]]))
 # exact max over e in (E0, 64*E0] of  rho(e) = r(e) * prod g_q / e  : DFS over 400-smooth e, plus e = m*Q with Q > 400 prime
@@ -47,15 +49,16 @@ print('smooth part: max rho = %.4e at e = %d' % (best[0], best[1]))
 best2 = 0.0
 def dfs2(i, m, prod):
     global best2
-    # smallest admissible e = m * Q with Q > max(400, E0/m); bound: e >= max(401*m, E0)
-    e_lb = max(401 * m, E0 + 1)
-    val = RMAX * prod * gmax_big / e_lb
-    best2 = max(best2, val)
+    for w in (1, 2, 3, 4):           # w large primes (>400), each g <= gmax_big, product L >= 401^w and e = m*L > E0
+        val = RMAX * prod * gmax_big ** w / max(m * 401 ** w, E0 + 1)
+        best2 = max(best2, val)
     for j in range(i, len(allp)):
         q = allp[j]; mm = m * q
         if mm > E0: continue
         dfs2(j + 1, mm, prod * (g(q) if q >= 5 else 1.0))
 dfs2(0, 1, 1.0)
+# w >= 5 large primes: rho <= RMAX*(gmax/401)^5 (since prod(m)/m <= 1)
+best2 = max(best2, RMAX * (gmax_big / 401) ** 5)
 c = max(best[0], best2, RMAX * 2.0 ** 4 / LIM)   # last: e>64E0 (rigorous, see C_allE.md)
 print('large-prime part bound: %.4e ;  c = %.4e' % (best2, c))
 # solve for the smallest N=|P_>| allowed:  1 <= s(N) B' + N c
