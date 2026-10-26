@@ -127,7 +127,9 @@ for l in stage_list:
     diag = sum(n_of[e] * Lam(f, l) * (l ** -f[l]) / e for e, f in data) + TAU * F1gt / l
     TH = 1.0 + EPS
     m2 = M2F.get(l, 0.0) + TH * RSTAR * (cross + TAU * TAU * S2tail) + RSTAR * TAU * F1gt / l
-    if KQ is not None: m2 = M2F.get(l, 0.0) + TH * RSTAR * max(KQ ** 2 * (S2data + cross + TAU1 ** 2 * S2tail) - S2data, 0.0) + RSTAR * TAU * F1gt / l     # cross already holds 2*theta*TAU*Y*F^>; pool diag is inside M2F
+    if KQ is not None and len(sys.argv) > 6 and sys.argv[6] == 'tailonly':   # tail-only aggregate H_Q: Q^> <= KQ^2 tau1^2 S2tail; cross by Cauchy-Schwarz (theta-weighted) with the exact pool Y
+        m2 = M2F.get(l, 0.0) + TH * RSTAR * (2 * KQ * TAU1 * math.sqrt(S2data * S2tail) + KQ ** 2 * TAU1 ** 2 * S2tail) + RSTAR * TAU * F1gt / l
+    elif KQ is not None: m2 = M2F.get(l, 0.0) + TH * RSTAR * max(KQ ** 2 * (S2data + cross + TAU1 ** 2 * S2tail) - S2data, 0.0) + RSTAR * TAU * F1gt / l     # cross already holds 2*theta*TAU*Y*F^>; pool diag is inside M2F
     c_mom = cost(m1, m2, d_l)
     # linear (Lipschitz) tail on top of finite cost
     c_lin = cfin.get(l, 0.0) + RSTAR * TAU * F1gt / (1 - d_l) if l in cfin else RSTAR * TAU * F1gt / (1 - d_l)
@@ -140,4 +142,4 @@ for Q0 in (11, 30, 50, 100, 200, 500, 1000):
     tot = cl[L < Q0].sum() + cm[L >= Q0].sum()
     print(f'KAPPA={KAPPA} L1={L1} split Q0={Q0}: sum(l<{Q0}) linear {cl[L<Q0].sum():.5f} + sum(l>={Q0}) moment {cm[L>=Q0].sum():.5f} = {tot:.5f}', flush=True)
 print('min-per-stage total (up to l<3e6):', best.sum(), ' last cm terms:', cm[-3:], 'l:', L[-3:])
-np.savez(f'verdict3/C_tailQ_k{KAPPA}_q{KQ}_e{EPS}.npz' if KQ is not None else f'verdict3/C_tailtheta_k{KAPPA}_L{L1}_e{EPS}.npz', L=L, cl=cl, cm=cm)
+np.savez(f'verdict3/C_tailQ_k{KAPPA}_q{KQ}_e{EPS}_{sys.argv[6] if len(sys.argv)>6 else "tot"}.npz' if KQ is not None else f'verdict3/C_tailtheta_k{KAPPA}_L{L1}_e{EPS}.npz', L=L, cl=cl, cm=cm)
