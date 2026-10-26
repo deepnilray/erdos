@@ -1,2 +1,7 @@
 tailonly kappa_L=1.0 KQ=1.0: min-per-stage total (up to l<3e6): 0.8718854671495909  last cm terms: [2.19707967e-10 2.19
 tailonly kappa_L=1.0 KQ=1.2: min-per-stage total (up to l<3e6): 0.9038118740924405  last cm terms: [3.13616335e-10 3.13
+tailonly kappa_L=1.0 KQ=1.34: min-per-stage total (up to l<3e6): 0.9279719278351561  last cm terms: [3.89511371e-10 3.89
+tailonly kappa_L=1.2 KQ=1.34: min-per-stage total (up to l<3e6): 0.9303242397979533  last cm terms: [3.90767342e-10 3.90
+tailonly kappa_L=1.2 KQ=1.5: min-per-stage total (up to l<3e6): 0.9598010920520305  last cm terms: [4.87749075e-10 4.87
+tailonly kappa_L=1.5 KQ=1.5: min-per-stage total (up to l<3e6): 0.9632771248228374  last cm terms: [4.89633032e-10 4.89
+tailonly kappa_L=1.0 KQ=1.5: min-per-stage total (up to l<3e6): 0.9574129325510907  last cm terms: [4.86493104e-10 4.86

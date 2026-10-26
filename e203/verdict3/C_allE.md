@@ -9,7 +9,7 @@ Labels: **PROVED** (complete argument here or in a cited theorem I read), **VERI
 |---|---|---|
 | Z | **Every covering has at least N_Z primes p with e_p > 8·10⁵** (hence ≥ N_Z primes), N_Z = 10300 with the δ-vector capped at 0.28 (6183 at cap 0.5; table in §3) | VERIFIED (uses float pool bound B' = 0.7984 for the capped δ; PROVED given that number). In particular: **no covering certificate with at most 10 299 primes** |
 | S | Every covering has ≥ 20 primes (exact, B(4·10⁵)) and ≥ 21 (float, B(8·10⁵)); superseded by Z, but the finite pools S_K = {e : f(e) ≤ K−1} (|S_34| = 4266) are the right object for "size ≤ K" statements | PROVED / VERIFIED |
-| C | **Conditional all-E theorem**: HYPOTHESES H_dens(κ), H_align(ε) ⇒ no covering exists. Total bound 0.8635 (κ=1, ε=0), 0.951 (κ=1.3, ε=0.25), 0.951 (κ=1.5, ε=0) | HYPOTHESIS-conditional; bound VERIFIED (float) |
+| C′ | **Conditional all-E theorem (restated)**: aggregate hypotheses H_Q(κ_Q) per stage (tail quadratic functional) and H_L(κ_L) (linear), plus H_align(ε) ⇒ no covering exists. Bound 0.872 (κ_Q=1), 0.928 (κ_Q=1.34, κ_L=1), 0.957–0.963 (κ_Q=1.5). The earlier Theorem C with pointwise H_dens is **WITHDRAWN** (false in its own model, found by V). | HYPOTHESIS-conditional; bound VERIFIED (float); hypotheses unproved. H_Q is supported out of sample only at the level κ_Q² ≈ 1.8 (see §5b) |
 | T | General tail inequality B(∞) ≤ B(E) + T(E), with T explicit; T(E) = ∞ if δ_q = 0 beyond Q (§4.1); the quadratic tail needs only a *smooth-set* multiplicity bound, global second moments of n(e) are not enough (§4.3) | PROVED |
 | A | Alignment criterion: ∩Λ_p contains a primitive vector ⇔ gcd(e_p,e_q) divides D_pq for all pairs; then the 2-D problem is exactly a 1-D covering of Z with moduli e_p | PROVED (+VERIFIED on 8918 families) |
 | M | Lemma M: for random primitive forms E[c_pq] = ∏(1 + a_r (r−1)/(r+1)); matches the pool within 6% in every stage bucket | PROVED (Monte Carlo VERIFIED) + VERIFIED on data |
@@ -108,7 +108,8 @@ Let st(ℓ) = {e : P⁺(e) = ℓ}. E[N_ℓ] = Σ_{e∈st(ℓ)} n(e)Λ(e)/e', e' 
 * GRH-conditional: Moree–Stevenhagen (two-variable Artin: density of p with 3 ∈ ⟨2⟩ exists, positive, a rational multiple of ∏(1−p/(p³−1))); Agrawal–Pollack, arXiv:1912.02554 (ord_p 2 = ord_p 3 infinitely often, positive density). Unconditional lower bound for the two-variable Artin problem: arXiv:1711.06410. Matthews/Erdős–Murty/Elsholtz: |⟨2,3⟩ mod p| ≥ p^{2/3−ε} for almost all p, i.e. only density-one information, silent about the exceptional primes that form the pool.
 **Conclusion U.** The tail Σ_{e_p>E} cannot be controlled unconditionally by any published result I found.
 
-## 5. Conditional theorem C [HYPOTHESIS-conditional]
+## 5. Theorem C with pointwise H_dens — WITHDRAWN (kept for the record; superseded by §5b)
+**Withdrawn 2026-10-26.** V (V_check.md §3.4) showed H_dens(κ) "for every ℓ and every d" is false in the very Poisson model it was calibrated on: taking d equal to a realised e, the single term G/e exceeds the expected mass of all multiples of d (worst LHS/RHS 6.2 at ℓ=5,7, probability 1 of failure for κ ≤ 2). Nothing in §5 below this line is to be cited; the table is not a theorem.
 
 **Data/model.** E₀ = 8·10⁵. Profile: δ = vector of the 8·10⁵ run for ℓ < 1000, δ = ½ for ℓ ≥ 1000 and for q outside the run (A's choice; the stage costs below ℓ = 1000 are the run's, ℓ ≥ 1000 is re-evaluated with moments). G(e) = ∏_{q|e,q≥5}(1−δ_q)^{-1}. Reference density n̂(e) = κ τ e/φ(e), τ = C₀/ln E₀, C₀ = 0.813 (calibrated on e ≤ E₀). Random-form weights θ(d) = ∏_{q|d}(q−1)/(q+1).
 **H_dens(κ).** For every prime ℓ ≥ 5 and every d: Σ_{e>E₀, P⁺(e)=ℓ, d|e} n(e)G(e)/e ≤ Σ_{same} n̂(e)G(e)/e (this absorbs κ). [Includes the 3-smooth part: Σ_{3-smooth e>E₀} n(e)/e ≤ κ·4.2·10⁻⁶, which changes all prices by < 3·10⁻⁵ relative.]
@@ -133,6 +134,35 @@ So H_dens(1.5) with H_align(0) or H_dens(1.3) with H_align(0.25) closes the prob
 * **Data [VERIFIED, `C_alignmodel.py`]** Ratio actual Σ w_pw_q c^<_pq / model Σ w_pw_q E[c] over the 8·10⁵ pool, by stage bucket ℓ ∈ [5,6), [7,12), [12,30), [30,100), [100,300), [300,1000), ≥1000: 0.942, 1.011, 0.965, 0.991, 1.010, 1.005, 0.993 (up to 2.9·10⁶ pairs per bucket). Controls: against c = 1 the ratio is 1.35–1.47, against the worst case c = g it is 0.28–0.42. So ε = 0.05 is supported by the data.
 * **H_dens out-of-sample [VERIFIED, `C_testH.py`].** C₀ calibrated on (E₁/2, E₁] only, tested on (E₁, 8·10⁵] with the stage weights G: total ratio data/model 1.008 (E₁ = 10⁵), 0.994 (2·10⁵), 0.999 (4·10⁵); by P⁺-bucket (5, 7, 30, 100, ≥1000): 1.25–1.30, 1.14–1.18, 1.05–1.09, 1.01, 0.94–0.95. The two small-ℓ buckets exceed 1 but carry < 0.5% of the tail mass (their κ is 1.3, which the table above covers). Controls: dropping e/φ(e) gives bucket ratios 2.1/1.8/1.35/1.07/0.87; 1/log²e gives 1.37/1.30/1.20/1.13/1.06; both have clearly worse bucket profiles, although the *total* ratios (1.04–1.13) are not discriminating, because the total is dominated by one bucket. **The bucket-by-(ℓ,d) form of H_dens is not tested; only 5 aggregated buckets.**
 **Gaps, stated plainly.** (a) H_dens is an unproved statement about the multiplicity of e_p for e > 8·10⁵, for all ℓ and all d, extending to infinity; the calibration constant is fitted. (b) The sum over stages ℓ > 3·10⁶ is extrapolated, not summed (≈ 4·10⁻⁵, safe by two orders). (c) B(8·10⁵) is float, the 4·10⁵ exact value 0.730584 would need the whole tail redone at E₀ = 4·10⁵ (tail mass larger). (d) The pool-tail cross terms use single price R = 2.68 for all pairs (conservative). (e) The profile δ is not re-optimised against the tail; a joint optimisation should lower the totals.
+
+## 5b. Theorem C′ (restated with aggregate hypotheses) [HYPOTHESIS-conditional]
+
+The proof consumes only, per stage ℓ, the linear functional Y₁ = Σ_{e>E₀, P⁺(e)=ℓ} n(e)Λ(e)/e and the quadratic functional Q_ℓ^> = Σ_d θ(d)(Y_d^>)², Y_d^> = Σ_{e>E₀, P⁺(e)=ℓ, d|e'} n(e)Λ(e)/e, θ(d)=∏_{q|d}(q−1)/(q+1) (pointwise-in-d statements are never used). Model values: Y₁^{mod} = τ F₁^>, Q^{mod} = τ²Σ_dθ(d)(F_d^>)² with τ = C₀/ln E₀ (κ=1), F as in the withdrawn §5 (closed Euler products minus the enumerated e ≤ E₀).
+* **H_L(κ_L).** For every ℓ ≥ 5 (small and large stages alike, including the y-smooth e > 8·10⁵ at ℓ < 30, and the 3-smooth part): Y₁^> ≤ κ_L Y₁^{mod}.
+* **H_Q(κ_Q).** For every ℓ ≥ 5: Q_ℓ^> ≤ κ_Q² Q_ℓ^{mod}.
+* **H_align(ε)** as before (pair alignment excess; Lemma M).
+**Theorem C′.** Under H_L, H_Q, H_align no finite P covers Z². The cross term between the exact pool functional Y^{pool} and the tail is bounded by Cauchy–Schwarz in the θ-weighted inner product, 2Σθ Y^{pool}Y^> ≤ 2κ_Q τ √(S2data·S2tail), so no mixed hypothesis is needed. Totals (`C_tail.py κ_L 1000 x ε κ_Q tailonly`, `C_tailQ_grid2.log`; stages ℓ < 3·10⁶, tail beyond that ≈ 4·10⁻⁵):
+
+| κ_L | κ_Q | ε | total bound |
+|---|---|---|---|
+| 1.0 | 1.0 | 0 | 0.8719 |
+| 1.0 | 1.2 | 0 | 0.9038 |
+| 1.0 | 1.34 | 0 | 0.9280 |
+| 1.2 | 1.34 | 0 | 0.9303 |
+| 1.0 | 1.5 | 0 | 0.9574 |
+| 1.2 | 1.5 | 0 | 0.9598 |
+| 1.5 | 1.5 | 0 | 0.9633 |
+
+All totals < 1, so H_Q(κ_Q ≤ 1.5) with H_L(κ_L ≤ 1.5), H_align(0) gives the contradiction; the margin is 4–13%. H_align(0.25) is not in the grid for the tail-only version (the earlier pooled variant, which also scales the exactly known pool part by κ_Q², gives 1.03–1.18 and does not close; that variant is the wrong hypothesis because the pool part is known, listed in `C_tailQ_grid.log`).
+**Testing H_Q out of sample [`C_testQ.py`, `C_testQ.log`].** C₀ calibrated on (E₁/2, E₁], Q_real/Q_model computed on the window (E₁, 8·10⁵] with real n(e) from the pool, prices Λ at cap 0.28, buckets of ℓ:
+| window | ℓ=5–6 | 7–11 | 12–29 | 30–99 | 100–999 | ≥1000 | total |
+|---|---|---|---|---|---|---|---|
+| (10⁵, 8·10⁵] | 1.55 | 1.51 | 1.55 | 1.35 | 1.21 | 1.16 | 1.30 |
+| (2·10⁵, 8·10⁵] | 1.64 | 1.66 | 1.47 | 1.29 | 1.20 | 1.17 | 1.25 |
+| (4·10⁵, 8·10⁵] | 1.76 | 1.77 | 1.46 | 1.39 | 1.21 | 1.22 | 1.29 |
+Controls: data inflated ×1.5 gives total 2.8–2.9 (the test detects a 1.5× excess of multiplicity); the model without e/φ(e) gives 2.0–2.1 total and 4–6.5 at ℓ < 30. So H_Q holds on these windows with κ_Q² ≈ 1.8, i.e. κ_Q ≈ 1.34 (the worst bucket, 1.77). Single stages 5…29 range 1.17–1.89 (stage 3 is the 3-smooth part and is erratic, 1.6–5.7; it is carried by the separate 3-smooth estimate).
+**Finding that changes the picture.** The Poisson model of the withdrawn §5 underpredicts Q: `C_testQ_sim.py` (12 Poisson draws of n(e) with the same n̂) gives Q-ratios 1.0–1.2 per bucket with ranges that exclude the data values (1.2–1.8) for ℓ ≥ 12. So real multiplicities n(e) are over-dispersed or clustered across multiples relative to independent Poisson, and the earlier "model-consistent κ ≈ 1.05" is not available. The honest statement is the empirical κ_Q ≈ 1.34 from the table, with a ≈ 7% margin at that value.
+**Gaps, stated plainly.** (a) H_L and H_Q are unproved statements about all e > 8·10⁵ for all stages; their evidence is three out-of-sample windows below 8·10⁵, in which the ratio is not shrinking toward 1 (1.25–1.30 total) and the Poisson model does not explain it; extrapolation to e → ∞ is an assumption. (b) The per-stage ratios at ℓ = 5, 7 are noisy (few e per window); the bucket value 1.77 is used for all stages, and large stages ℓ ≥ 1000 are tested only in aggregate. (c) The small-stage y-smooth e > 8·10⁵ are covered by H_Q/H_L directly but nothing proves finiteness or density of such e. (d) Items (b)–(e) of the withdrawn list (extrapolation beyond ℓ = 3·10⁶, float B(8·10⁵), single price R = 2.68, δ not re-optimised) still apply. (e) C₂'s H_cls route for ℓ ≥ Q remains a weaker alternative for large stages and does not cover ℓ < 30.
 
 ## 6. Lean-formalisable statements (elementary only)
 ```lean
@@ -164,5 +194,6 @@ python3 verdict3/C_commonT.py 300,1000,3000,8000   # common discrete log family,
 python3 verdict3/C_sun.py 8e5 34       # pools S_K
 python3 verdict3/C_lemmaM.py; python3 verdict3/C_alignmodel.py 800000; python3 verdict3/C_testH.py
 python3 verdict3/C_size.py 0.5         # Theorem Z (needs B_E800000.pkl, 479 MB, gitignored)
-python3 verdict3/C_tail.py 1.0 1000 x 0.0   # Theorem C (kappa, L1, unused, eps); ~40 s
+python3 verdict3/C_tail.py 1.0 1000 x 0.0 1.34 tailonly   # Theorem C' (kappa_L, L1, unused, eps, kappa_Q, mode); ~1-2 min
+PYTHONPATH=. python3 verdict3/C_testQ.py ; python3 verdict3/C_testQ_sim.py   # H_Q out-of-sample test + Poisson comparison
 ```

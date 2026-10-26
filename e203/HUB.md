@@ -26,6 +26,13 @@ Current verdict: NO more likely [CONJECTURED] — see `VERDICT.md` and `verdict/
 
 - 2026-10-26: run4 agents: A (certify, resumed), C (all-E no-covering), L (literature, continuous), V (check + Aristotle prompts). V status 1: no flaw; exposition gap — DISTORTION.md must state the CRT augmentation lemma (all pool sets nonempty) that MIXED.md states; fix in the paper.
 
+## Run4 results (2026-10-26)
+- **Theorem Z** (agent C, checked by V): any covering certificate has ≥ 10 300 primes with e_p > 8·10⁵ [VERIFIED on float B′=0.7984 at δ-cap 0.28; per-prime cost 1.68·10⁻⁵ CONFIRMED by V; exact B′ running]. Lettl–Sun alone gives ≥ 20.
+- **Theorem A** (agent D, checked by V): all but ≈ 2.76% (ρ−1, ρ ≈ 1.0276) of m ≤ x coprime to 6 have k,l ≥ 1 with Ω(2^k3^l m+1) ≤ 19 [PROVED modulo the fundamental lemma of sieve theory, exact citation still to be matched; ρ VERIFIED numerically, no interval enclosure]. No prior art found (limited search).
+- Proved lemmas: equal-index lattices sharing a primitive vector are equal; alignment criterion (2-D → 1-D iff gcd(e_p,e_q) | α_pβ_q−β_pα_q pairwise); common discrete log ⇒ 1-D, (3/p)=(2/p)^T, 5 and 13 incompatible, no common-T covering with e_p ≤ 8000; homogeneous (subgroup) certificates impossible; direction-lemma dichotomy.
+- Dead routes (proved obstructions): every route to bound c(e)=#{p: e_p=e} (Minkowski, Möbius/gcd size, irredundance); density one for primes (parity, Chebyshev ceiling ≈ 0.49); Maynard dense clusters (too few forms); density one even for almost-primes (would imply no covering); literature YES constructions (all 1-D with free multiplier).
+- Withdrawn: "uncovered density ≥ 0.2694" (B(E) bounds the tilted measure, not uniform density; counterexample 31 primes with e_p | 5040 cover 71.7%). Conditional theorems of A and C: stage-wise hypotheses false pointwise; being restated with aggregate hypotheses.
+
 ## Run3 assignments
 - **A (certify):** second-route completeness certificate for `poolE_400k_800k.jsonl`; exact-rational B(8·10⁵);
   Theorem E at 8·10⁵; conditional all-E theorem with explicit hypothesis H; push E to 1.6·10⁶ if feasible.
