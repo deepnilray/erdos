@@ -1,1 +1,2 @@
 tailonly kappa_L=1.0 KQ=1.0: min-per-stage total (up to l<3e6): 0.8718854671495909  last cm terms: [2.19707967e-10 2.19
+tailonly kappa_L=1.0 KQ=1.2: min-per-stage total (up to l<3e6): 0.9038118740924405  last cm terms: [3.13616335e-10 3.13
