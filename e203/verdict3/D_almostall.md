@@ -139,3 +139,6 @@ Searches run (WebSearch, standard mode): "almost all odd k … k·2^n+1 has at m
 1. Theorem A (exceptional density ≈ 2.8%, r_0 = 19) is the strongest unconditional-modulo-cited-lemma statement obtained. It also bounds the density of covering classes by ≈ 2.8%.
 2. Density one is blocked by covering classes (rough version) and by multi-covering classes (Ω version). Lemma S as originally stated is withdrawn; Lemma S' stands as OPEN-STEP and would only matter after a left-tail bound for the local factor and a covering exclusion.
 3. To close the gap in Theorem A as a theorem: obtain the exact statement of the fundamental lemma (Opera de Cribro Cor. 6.10 or Halberstam–Richert Thm 2.5) and an explicit Romanoff tail for ρ.
+
+## 11. Round 3 checkpoints (sharpen Theorem A)
+- [start] Plan: (1) exact bad-class measure for w in {13,17,19,23,29,31} via inclusion-exclusion over subsets S of the small primes: delta(t) = sum_S (-1)^|S| 1[t_S in H_S]/e(S); (2) rigorous rho; (3) Richert weights / r0. Updates below as they land.
