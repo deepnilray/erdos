@@ -62,7 +62,8 @@ for e in range(2, E0 + 1):
     f = fac(e); st_e[max(f)].append((e, f))
 ALIGN = True
 EPS = float(sys.argv[4]) if len(sys.argv) > 4 else 0.0
-TAU = KAPPA * C0 / math.log(E0)
+KQ = float(sys.argv[5]) if len(sys.argv) > 5 else None   # aggregate hypothesis H_Q(KQ): Q_total <= KQ^2 * Q_model(kappa=1); None = old pointwise mode (withdrawn)
+TAU1 = C0 / math.log(E0); TAU = KAPPA * TAU1
 TS = np.linspace(0, 1, 801)[1:]
 def cost(m1, m2, d, A=1.0):
     best = m1; x = min(2 * d, A)
@@ -118,14 +119,15 @@ for l in stage_list:
     S2tail = max(S2tail, 0.0)
     for dd, yv in Ydata.items():
         ph = phi_int(dd); Fgt = max(Fd(dd) - Fle.get(dd, 0.0), 0.0)
-        cross += 2 * ph * TAU * yv * Fgt
+        cross += 2 * ph * (TAU1 if KQ is not None else TAU) * yv * Fgt
     S2data = sum(phi_int(dd) * yv * yv for dd, yv in Ydata.items())
     Y1 = Ydata.get(1, 0.0) + TAU * F1gt
     Tt = RSTAR * TAU * F1gt
     m1 = M1F.get(l, 0.0) + Tt
     diag = sum(n_of[e] * Lam(f, l) * (l ** -f[l]) / e for e, f in data) + TAU * F1gt / l
     TH = 1.0 + EPS
-    m2 = M2F.get(l, 0.0) + TH * RSTAR * (cross + TAU * TAU * S2tail) + RSTAR * TAU * F1gt / l     # cross already holds 2*theta*TAU*Y*F^>; pool diag is inside M2F
+    m2 = M2F.get(l, 0.0) + TH * RSTAR * (cross + TAU * TAU * S2tail) + RSTAR * TAU * F1gt / l
+    if KQ is not None: m2 = M2F.get(l, 0.0) + TH * RSTAR * max(KQ ** 2 * (S2data + cross + TAU1 ** 2 * S2tail) - S2data, 0.0) + RSTAR * TAU * F1gt / l     # cross already holds 2*theta*TAU*Y*F^>; pool diag is inside M2F
     c_mom = cost(m1, m2, d_l)
     # linear (Lipschitz) tail on top of finite cost
     c_lin = cfin.get(l, 0.0) + RSTAR * TAU * F1gt / (1 - d_l) if l in cfin else RSTAR * TAU * F1gt / (1 - d_l)
@@ -138,4 +140,4 @@ for Q0 in (11, 30, 50, 100, 200, 500, 1000):
     tot = cl[L < Q0].sum() + cm[L >= Q0].sum()
     print(f'KAPPA={KAPPA} L1={L1} split Q0={Q0}: sum(l<{Q0}) linear {cl[L<Q0].sum():.5f} + sum(l>={Q0}) moment {cm[L>=Q0].sum():.5f} = {tot:.5f}', flush=True)
 print('min-per-stage total (up to l<3e6):', best.sum(), ' last cm terms:', cm[-3:], 'l:', L[-3:])
-np.savez(f'verdict3/C_tailtheta_k{KAPPA}_L{L1}_e{EPS}.npz', L=L, cl=cl, cm=cm)
+np.savez(f'verdict3/C_tailQ_k{KAPPA}_q{KQ}_e{EPS}.npz' if KQ is not None else f'verdict3/C_tailtheta_k{KAPPA}_L{L1}_e{EPS}.npz', L=L, cl=cl, cm=cm)
