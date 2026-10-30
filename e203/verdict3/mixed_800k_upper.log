@@ -1,0 +1,3 @@
+S <= 0.145099 (+ tail <= 1.25e-06)
+Theorem E totals (upper bounds): 3 not| g: 0.887544   3 | g: 0.963820
+both < 1: True True

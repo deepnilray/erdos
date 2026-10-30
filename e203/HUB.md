@@ -15,8 +15,8 @@ Labels: PROVED = complete argument; VERIFIED = computation with a control that c
 | # | statement | label | where |
 |---|---|---|---|
 | Y1 | No covering (finite set of primes p∤6 whose killed cosets cover Z²) uses only primes with e_p = \|⟨2,3⟩ mod p\| ≤ 4·10⁵. Bound B(4·10⁵) = 0.730584 < 1, exact rational. | PROVED | `DISTORTION.md` |
-| Y2 | Same for mixed certificates (primes + algebraic factorisations; Capelli says these are the only algebraic ones), e_p ≤ 4·10⁵, bound 0.953242. | PROVED | `MIXED.md` Thm E |
-| Y3 | **No covering uses only primes with e_p ≤ 8·10⁵.** B(8·10⁵) = 0.742445 < 1 in EXACT rational arithmetic (`verdict3/verify23_800k.log`, all 15 279 stages, 2026-10-30; δ file sha256 in `verify23_800k.delta.sha256`). Theorem E at 8·10⁵: `run_mixed.sh` running. | PROVED (given Y4) | `verdict3/A_certify.md` |
+| Y2 | Same for mixed certificates (primes + algebraic factorisations; Capelli says these are the only algebraic ones). e_p ≤ 4·10⁵: bound 0.953242. **e_p ≤ 8·10⁵: totals ≤ 0.887544 (3 ∤ g) and ≤ 0.963820 (3 \| g), 2026-10-30** — B exact, R3 = 250822656/3288355921 exact (`verdict3/mixed_800k.log`), S bounded above with δ and every term rounded up (`verdict3/mixed_S_upper.py`, `mixed_800k_upper.log`), because `verify_mixed.py`'s exact S sum died at 8·10⁵ (huge common denominator). V to re-check the S step. | PROVED (4·10⁵); 8·10⁵ PROVED pending V's check of the S script | `MIXED.md` Thm E |
+| Y3 | **No covering uses only primes with e_p ≤ 8·10⁵.** B(8·10⁵) = 0.742445 < 1 in EXACT rational arithmetic (`verdict3/verify23_800k.log`, all 15 279 stages, 2026-10-30; δ file sha256 in `verify23_800k.delta.sha256`). Theorem E at 8·10⁵: see Y2. | PROVED (given Y4) | `verdict3/A_certify.md` |
 | Y4 | Pool of all 100 814 primes with e_p ≤ 8·10⁵ is complete: gcd route (20/20 chunks, planted control 60/60), sieve route over all p < 2·10⁹ (exact match), V's own sieve to 3·10⁶. 12 primes > 2·10⁹ are covered only by the gcd route. | VERIFIED | `A_certify.md` §1, `V_check.md` §7 |
 | Y5 | **Theorem Z.** Every covering contains at least N_Z primes with e_p > 8·10⁵. **N_Z = 13 184 PROVED**: B′ = 0.798372 < 1 at δ cap 0.28 in EXACT rational arithmetic (`verdict3/V_verify_cap028.log`, all 15 279 stages, 2026-10-30). N_Z = **14 082** with the jointly optimised δ (`verdict3/C_delta_final.json`): VERIFIED (float B′), exact check running (`C_run_exact.sh`, `C_ckpt_final.txt`). Key step: a single new prime's image in (Z/144)² is cyclic of order gcd(e_p,144), so its price is ≤ 2.2419 (V confirmed). | 13 184: PROVED (given Y4); 14 082: VERIFIED | `verdict3/C_allE.md` §3, §3d |
 | Y6 | Lettl–Sun: every covering has ≥ 20 primes (superseded by Y5). | PROVED | `C_allE.md` |
@@ -56,7 +56,7 @@ Labels: PROVED = complete argument; VERIFIED = computation with a control that c
 
 **Concrete open items in this project (closable):**
 1. Exact-rational B′ for the final δ (`verdict3/C_run_exact.sh`, checkpoint `C_ckpt_final.txt`) → Theorem Z with 14 082 becomes PROVED. (DONE 2026-10-30: cap-0.28 check → 13 184 PROVED.)
-2. DONE 2026-10-30: exact-rational B(8·10⁵) = 0.742445. Remaining: Theorem E at 8·10⁵ (`verdict3/run_mixed.sh`, running).
+2. DONE 2026-10-30: exact-rational B(8·10⁵) = 0.742445. DONE: Theorem E at 8·10⁵ (Y2), pending V's check of `mixed_S_upper.py`.
 3. Read Friedlander–Iwaniec, *Opera de Cribro*, Lemma 6.3 / Cor. 6.10 (or Halberstam–Richert Thm 2.5) and match hypotheses → Theorem A becomes PROVED. Needs the book (Deepnil may get it via Ashoka).
 4. Interval arithmetic on Theorem A's floating sums; independent check of `D_eprimes.c` and the tail τ = 3.2·10⁻⁴.
 5. Common-T maximum at E = 300 (C: 0.5627), independent check deferred.
