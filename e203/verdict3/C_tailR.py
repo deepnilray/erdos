@@ -21,6 +21,8 @@ def options(i):
         if x > di: o.append((0.0, (x - di) / x ** 2))
         for t in TS[TS >= 2 * di]: o.append((1 - 2 * di / t, di / t ** 2))
     return o
+import os
+RLIN = float(os.environ.get('RLIN', RSTAR))   # price on LINEAR tail terms (single new cosets: cyclic price 2.2419*CORR suffices, C_allE 3d); pair terms keep RSTAR
 w = np.zeros(len(L)); v = np.zeros(len(L)); fixed = np.zeros(len(L))
 for i in range(len(L)):
     li, di = L[i], d[i]
@@ -30,9 +32,9 @@ for i in range(len(L)):
     for a, b in options(i):
         c = (a * m1 + b * m2) / (1 - di)
         if c < best[0]: best = (c, 'mom', (a, b))
-    if best[1] == 'lin': fixed[i] = cfin[i]; w[i] = RSTAR / (1 - di)
+    if best[1] == 'lin': fixed[i] = cfin[i]; w[i] = RLIN / (1 - di)
     else:
-        a, b = best[2]; fixed[i] = (a * M1F[i] + b * M2F[i]) / (1 - di); w[i] = RSTAR * (a + b / li) / (1 - di); v[i] = TH * RSTAR * b / (1 - di)
+        a, b = best[2]; fixed[i] = (a * M1F[i] + b * M2F[i]) / (1 - di); w[i] = RLIN * (a + b / li) / (1 - di); v[i] = TH * RSTAR * b / (1 - di)
 import os
 KLR = [float(x) for x in os.environ['KLR'].split(',')] if os.environ.get('KLR') else None      # per-range kappa_L
 KQ2R = [float(x) for x in os.environ['KQ2R'].split(',')] if os.environ.get('KQ2R') else None   # per-range kappa_Q^2

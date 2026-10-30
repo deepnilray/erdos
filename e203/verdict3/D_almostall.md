@@ -5,6 +5,8 @@ Labels: **PROVED** (full argument here, or a theorem I opened), **PROVED-mod-X**
 
 ## 0. Summary (strongest statements)
 
+**Current headline (§11.5, supersedes 3. below):** all but 1.6% of m have a cell with Ω ≤ 22 (0.6% with Ω ≤ 26). Rigorous 1.02751 ≤ ρ ≤ 1.02820. Conditional on FI Lemma 6.3 (explicit form) and Lemma U (§11.1, open).
+
 1. **Density one for primes is not reachable by a second-moment/Chebyshev argument with any known input.** Precise obstruction (§5): Cauchy–Schwarz over m caps at P(R>0) ≥ 1/(κρ), where ρ ≈ 1.0272 is the exact local-factor loss (VERIFIED, §3.3) and κ is the sieve upper-bound constant for pairs (4 classically; 3.3996 for twin primes by Wu, abstract opened). Parity forces κ ≥ 2 for every sieve, so the method cannot exceed ≈ 0.49 even in the best case, and today gives ≈ 0.24–0.29 (and only after one more cited first-moment step, §5).
 2. **Maynard's "Dense clusters of primes in subsets" does not fit (§1).** Its hypotheses force k ≤ c·√(log x / log log x) forms, its conclusion is x·exp(−O(k log log x)) integers, while a positive proportion of m needs k ≳ log x forms. PROVED as a statement about Theorem 3.1 as relayed by the page I fetched.
 3. **New, and provable with standard sieve theory: an almost-prime version at density 1 − 0.028.** (§3) For z = x^{1/(2s)}, all but (ρ−1+o(1))x ≈ 0.028x of the m ≤ x coprime to 6 have some k,ℓ ≥ 1 with 2^k3^ℓm+1 free of prime factors < z, hence Ω(2^k3^ℓm+1) ≤ ⌊(1+c)s/(1−ε)⌋ (§10: r0 = 19 or 20 at s = 19, not 2.2s). PROVED-mod-(fundamental lemma of the dimension-1 and dimension-2 sieve, cited) and mod the numerical value ρ (VERIFIED, rigorous enclosure not done). No primes, no zero-density input. There is no parity problem because only rough numbers are counted.
@@ -159,3 +161,110 @@ V is right that s0 = 9κ+1 = 19 is only the threshold for the fundamental lemma;
 The r0 = 19 statements in §10.3 and §10.5 are superseded by this subsection.
 - [ckpt 2026-10-30a] §10.6 written (r0 = 26 at 2.85%). Built `D_eprimes.c`: for all primes q ≤ 10⁸, e_q and the discrete logs of 2, 3 in H_q/H_q^G, G = gcd(e_q, 55440) (spot-checked against sympy brute force). Output `D_data/ep_1e8.bin` (gitignore-size, regenerate in 45 s). Kconst: K1, K2 for primes ≥ w in `D_Kconst.py`.
 - [ckpt 2026-10-30b] `D_classes.py` (exact class distribution of ν_r, FFT over a slice of ∏H_p; control E[ν] = ∏_{5≤p<w}(1−1/p) matches to 10 digits for every w): **no covering classes and no small-ν classes for w ≤ 31**: min ν = 0.5583 (w=13), 0.5097 (17), 0.4691 (19), 0.4311 (23), 0.3919 (29), **0.3740 (w=31)**; P(ν<0.1) = 0 exactly. Data `D_data/nu_w{w}.npz`.
+
+### 11.0 Status of the r0 correction (reply to V)
+§10.6 already replaces r0 = 19. V estimated r0 ≈ 40+ with an unspecified K. With the explicit Ω(κ) constants (`D_Kconst.py`: K2 = 1.1412 for primes ≥ 5, so K2^{10} = 3.75; K2 = 1.0327 for primes ≥ 31, so K2^{10} = 1.38), the relative error e^{18−s}K2^{10} is below 10⁻³ already at s ≈ 26. The table in §11.5 gives r0 for each target density. In every case r0 = ⌊s(1+c)/(1−ε)⌋, with c = ε = 0.001 and s chosen as large as possible for that r0.
+
+### 11.1 Stratified second moment: the reduction [PROVED, modulo FL and Lemma U below]
+Fix w and put W = ∏_{5≤p<w}p. Let H = ⟨2,3⟩ mod W ≅ Z²/Λ_W. For a class r of m mod W, let T_r ⊂ H be the set of exponent classes whose cells survive every p < w, and let ν_r = |T_r|/|H|. Sieve only by the primes w ≤ p < z, inside each class (m = r + Wt). Then:
+- First moment: E_r R = (1 + θη1)·ν_r|B|·∏_{w≤p<z}(1 − 1/p).
+- Pairs: (1/N_r²) Σ_{u≠u'∈S_r} ∏_{w≤p<z}(1 − ρ_{uu'}(p)/p)/(1 − 1/p)² → ratio_r as N, z → ∞.
+
+**Character formula.** Expand (1 − ρ/p)/(1 − 1/p)² = (1 − 1/(p−1)²)(1 + g(p)·1[Δ ∈ Λ_p]), with g(p) = 1/(p−2). Write 1[Δ ∈ Λ_d] = (1/e(d)) Σ_{ψ∈Ĥ_d} ψ(Δ). A character survives the average over u, u' ∈ T_r only if it lies in Ĥ_W. This gives
+ ratio_r = C_w Σ_{ψ ∈ Ĥ_W} B(ψ) |T̂_r(ψ)|²/|T_r|²,
+where C_w = ∏_{p≥w}(1 − 1/(p−1)²), B(ψ) = Σ_{d: p|d ⇒ p≥w, ψ∈Ĥ_d} g(d)/e(d), and B(1) = W_w := Σ_d g(d)/e(d).
+
+**Parseval.** Σ_{ψ≠1} |T̂_r(ψ)|²/|T_r|² = 1/ν_r − 1. Hence
+ **ratio_r ≤ C_w·(W_w + M_w(1/ν_r − 1)), with M_w = max_{ψ≠1} B(ψ).**
+
+**Paley–Zygmund per class.** P_r(R = 0) ≤ 1 − (1−η1)²/((1+η2)·ratio_r) + o(1). Classes with ν_r = 0 count with weight 1, so covering classes are included automatically. Summing over classes,
+ **δ ≤ Σ_r μ(r)·min(1, 1 − (1−η1)²/((1+η2)·C_w(W_w + M_w(1/ν_r − 1))))**.
+Only two kinds of input remain: the exact finite distribution of ν_r, and the two Romanoff-type constants W_w and M_w. No Lemma S and no covering hypothesis is used. The case w = 5 is the unstratified Theorem A, since H is trivial and ratio = ρ.
+
+**Lemma U (OPEN-STEP, needed equally by Theorem A).** The box version of the pair average satisfies limsup_N E_N[F_{≥w}(Δ)] ≤ W_w, where F_{≥w}(Δ) = ∏_{p≥w, p | n(Δ)}(1 + g(p)) and Δ = u' − u for u, u' uniform in [1,N]². The same is needed inside classes.
+- For d with e(d) ≤ T this is exact equidistribution.
+- For the rest, the obstacle is boundary terms from lattices Λ_d with a short vector (lattice points lying along a line in the box).
+- The bound #((u+Λ_d)∩B∖{u}) ≤ N²/e + N/c + N/h, together with the crude Lemma D, leaves an O(1) boundary term rather than o(1). §10.2 said "qualitatively proved"; that claim is **withdrawn**.
+- Numerics support Lemma U: ρ_N increases with N (1.02629, 1.02721, 1.02748, 1.02755, 1.02757–1.02758 for N = 40 … 600), stays below the rigorous upper bound 1.02820 for ρ_∞ (§11.2), and lies within 5·10⁻⁵ of the lower bound 1.02752.
+- A proof needs a lattice-point bound with error O(N/λ1(Λ_d)), plus a summation over shortest vectors that beats the trivial Σ_v F(v)/|v|. That is a real but standard-looking gap.
+
+### 11.2 Rigorous enclosure of ρ (= ρ_∞, the w = 5 constant) [PROVED modulo floating point and the correctness of `D_eprimes.c`]
+`D_eprimes.c` computes e_q and the discrete logs of 2 and 3 modulo G = gcd(e_q, 55440) for every prime q ≤ 10⁸, spot-checked against sympy. `D_W.py` and `D_comp.py` then use the following decomposition.
+
+**Decomposition** with W = ∏_{5≤p<31}p. Here |H| = 665280, and the lattice basis is (0, 55440), (12, 1896):
+ W_5 = Σ_{d2: primes ≥ 31} (g(d2)/e(d2))·mean_{h∈K_{d2}} F_{<31}(h),
+where K_{d2} ⊂ H is the image of Λ_{d2}. For a prime q, K_q = {(i,j) : iα_q + jβ_q ≡ 0 mod J_q}, with J_q = gcd(g, hβ_q, cα_q + j_cβ_q) and g = gcd(e_q, 55440).
+
+**Terms:**
+- d2 = 1 gives A(1) = 1.156260681. This is exact: the mean of F_{<31} over the 665280 classes.
+- Single primes 31 ≤ q ≤ 10⁸ give 0.0110916. This is exact, using the cached conditional means.
+- The remainder (d2 composite, or containing a prime > 10⁸) is at most τ_31·max F, with τ_31 = 2.892·10⁻⁴ + 3.08·10⁻⁵ = 3.199·10⁻⁴ and max F = 2.379666.
+
+**Bounding τ:**
+- **Composites.** Assign d to its two largest keys p1 > p2, where key = (e_p, p). Then e(d) ≥ lcm(e_{p1}, e_{p2}), and the rest of d is bounded by Π_key(p2). Pairs with e ≤ 3000 are summed exactly with the lcm (2.27·10⁻⁴). Unknown second primes q > 10⁸ add 1.6·10⁻⁷. The max-key bound for e_{p1} > 3000 adds 6.2·10⁻⁵.
+- **Unknown primes q > Y.** Their mass with e_q ≤ y is bounded in two ways: (a) by count, since their product divides ∏_{t≤y}(2^t − 1); (b) by Rosser–Schoenfeld, θ(x) ≥ x(1 − 1/ln x), θ(x) ≤ 1.01624x, and Σ_{p≤x} 1/p ≤ lnln x + B + 1/ln²x.
+- **Tail p1 > Y.** Summation by parts against the decreasing envelope of Π̄(y)/y, with the grid taken up to 10³⁰⁰.
+
+**Result:** W_5 ≤ 1.1681138 and C_5 ≤ 0.8802158 (the product truncated at 10⁸ is an upper bound), so **ρ_∞ ≤ 1.028192**. Lower bound: W_5 ≥ A(1) + single-prime part = 1.1673523 and C_5 ≥ 0.8802158·(1 − 10⁻⁸), so **ρ_∞ ≥ 1.027515**. Hence **1.02751 ≤ ρ_∞ ≤ 1.02820**.
+
+**Consistency check (VERIFIED).** The independent box computation gives 1.02758 at N = 600, inside the interval. It also shows the main part A(1) + single primes = 1.16735 agrees with the box mean of F (1.1675).
+
+The same code gives, for the stratified constants (Y = 10⁸ for w = 31, Y = 10⁷ for the others):
+
+| w | W_w ≤ | M_w ≤ (max_ψ B1 + τ) | C_w ≤ | τ_w |
+|---|---|---|---|---|
+| 13 | 1.031648 | 1.167·10⁻² | 0.975477 | 1.92·10⁻³ |
+| 17 | 1.023208 | 8.317·10⁻³ | 0.982299 | 1.06·10⁻³ |
+| 19 | 1.018778 | 7.401·10⁻³ | 0.986151 | 7.9·10⁻⁴ |
+| 23 | 1.015272 | 3.895·10⁻³ | 0.989204 | 5.5·10⁻⁴ |
+| 29 | 1.010854 | 3.806·10⁻³ | 0.991252 | 4.6·10⁻⁴ |
+| 31 | 1.009387 | 3.415·10⁻³ | 0.992518 | 3.2·10⁻⁴ |
+
+Here B1(ψ) is the exact single-prime part of B(ψ), computed on all 665280 characters. M_w is bounded uniformly using τ_w.
+
+### 11.3 Exact class distribution (`D_classes.py`) [VERIFIED by two controls]
+Method:
+- S is the set of primes p < w with −1/m ∈ H_p. P(S) = ∏_{p∈S} e_p/p · ∏_{p∉S}(1 − e_p/p), and given S the targets are uniform on ∏_{p∈S} H_p.
+- Fix the target at the largest prime of S to 1. Each coset of im(H) meets this slice equally often.
+- ν is then obtained by one FFT convolution of the histogram of H with the "all coordinates differ" indicator.
+
+Controls:
+1. E[ν] = ∏_{5≤p<w}(1 − 1/p) holds to 10 digits for every w.
+2. `D_nucheck.py` recomputes ν directly from residues with pow, independent of the log tables:
+   - At w = 23, 1025 random m have the same minimum (0.431134…) and the same 1% and 10% quantiles exactly.
+   - At w = 31, 102 random m: minimum 0.3758 against the exact 0.3740, consistent.
+
+**Result:** there are no covering classes and no class with ν < 0.37 for any w ≤ 31. The minimum of ν is 0.5583, 0.5097, 0.4691, 0.4311, 0.3919, 0.3740 for w = 13, 17, 19, 23, 29, 31.
+
+### 11.4 Weighted sieve (Richert / Chen) for smaller r0: verdict
+At the 97%+ level the argument needs the first moment and the pair moment as **asymptotics**, with relative errors much smaller than ρ − 1 ≈ 0.028 (and much smaller than M_w/ν ≈ 0.009 when stratified).
+- A weighted (Richert) sieve with sieve limit z' = D^{1/s'} and s' small replaces the indicator by weights whose lower-bound constant involves f_κ(s') < 1. For the linear sieve, f(s) = 0 for s ≤ 2 and f(3) ≈ 0.69 (recalled; Diamond–Halberstam–Richert tables not found or opened).
+- Paley–Zygmund then gives P(R' > 0) ≥ f(s')²/(F_2(s')·ρ) < 1/2 for every s' where weights help. That is a positive-proportion statement with Ω ≤ r0 small, which is weaker than what EO79 already give for primes (positive proportion with Ω = 1).
+- **Verdict:** a weighted sieve cannot lower r0 at the 97% level. Only the fundamental-lemma range s ≳ 22 delivers relative errors below 10⁻². At positive proportion the best r0 is 1 (EO79), so the weighted sieve has no role there either. [Reasoning; no table computation done.]
+
+### 11.5 Best explicit theorems [PROVED modulo (FI Lemma 6.3 in V's explicit form), Lemma U, and floating point]
+c = ε = 0.001, and s = (r0+1)(1−ε)/(1+c) − 10⁻⁶ (`D_r0table.py`, `D_delta.py`).
+
+| r0 | s | δ, unstratified (ρ ≤ 1.028192) | δ, stratified w = 31 |
+|---|---|---|---|
+| 20 | 20.958 | 0.186 | 0.0722 |
+| 21 | 21.956 | 0.0925 | **0.0313** |
+| 22 | 22.954 | 0.0525 | **0.0153** |
+| 23 | 23.952 | 0.0368 | **0.0093** |
+| 24 | 24.950 | **0.0309** | 0.0070 |
+| 25 | 25.948 | **0.0287** | 0.0062 |
+| 26 | 26.946 | 0.0279 | 0.0059 |
+| ∞ | ∞ | 1 − 1/ρ ≤ 0.02742 | **0.00573** |
+
+Stratified δ at large s for the other w: 1.34% (w = 13), 1.13% (17), 1.10% (19), 0.81% (23), 0.61% (29), 0.57% (31).
+
+**Theorem A′.** For x ≥ x0, all but at most 1.6% of the m ≤ x coprime to 6 have k, ℓ ≥ 1 with 2^k3^ℓ ≤ x^{0.001} and Ω(2^k3^ℓm + 1) ≤ 22. Also all but 0.93% have such a cell with Ω ≤ 23, and all but 0.6% with Ω ≤ 26. For r0 large the exceptional density is at most 0.58%.
+
+**Covering corollary (uniform in y).** For every y, the density of m coprime to 6 whose lattice is covered by the primes in [5, y) is at most 0.0058. The exact computation adds that this density is 0 for y ≤ 31, and that every class mod ∏_{p<31}p keeps at least 37.4% of its cells.
+
+**Dependencies, stated once:**
+- (i) FI Lemma 6.3 in the explicit form e^{9κ−s}K^{10} (V's reading; I did not open it).
+- (ii) Lemma U (§11.1).
+- (iii) Floating-point sums of about 10⁸ terms, with no interval arithmetic; the relative rounding is far below the margins used.
+
+The step from 2.85% to 1.6% at r0 = 22 comes from the finite stratification. The step from 2.74% to 0.57% at large r0 comes from the same source.

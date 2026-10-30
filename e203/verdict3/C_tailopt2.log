@@ -1,0 +1,2 @@
+sc08 L1=1000 DBIG=0.5 DSCALE=0.8 DCAP=1.0 | uniform(1,1.34): al 0.8855 (+ tail beyond comput | uniform(1,1.5): al 0.9010 (+ tail beyond comput | empirical: al 0.8670 (+ tail beyond comput
+L300sc09 L1=300 DBIG=0.5 DSCALE=0.9 DCAP=1.0 | uniform(1,1.34): al 0.8796 (+ tail beyond comput | uniform(1,1.5): al 0.8981 (+ tail beyond comput | empirical: al 0.8580 (+ tail beyond comput

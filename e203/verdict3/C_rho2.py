@@ -12,6 +12,8 @@ for l in open('coupled_full_E200000.txt'):
     k, R = l.split()[:2]; a, c, d = map(int, k.split(','))
     if gcd(gcd(a, c), d) == 1: RT[a * d] = max(RT.get(a * d, 0.0), float(R))
 assert len(RT) == 15 and all(144 % n == 0 for n in RT)
+CORR = 1.0000251                                  # table prices use lambda = 0.0485; light mass at 8e5 is 0.04850936 (V_check.md)
+RT = {k: (v * CORR if k > 1 else v) for k, v in RT.items()}
 RMX = max(RT.values()); print('cyclic-type price table r(gcd(e,144)):', {k: round(v, 4) for k, v in sorted(RT.items())}, ' max %.6f' % RMX)
 dl = {int(k): float(v) for k, v in json.load(open(sys.argv[1])).items()}; B1 = float(sys.argv[2])
 def g(q): return 1.0 if q in (2, 3) or q not in dl else 1.0 / (1.0 - dl[q])
