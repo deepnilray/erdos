@@ -49,6 +49,7 @@ def evaluate(dq, cb):
 if __name__ == '__main__':
     sweeps = int(sys.argv[1]) if len(sys.argv) > 1 else 3
     dq = np.minimum(dv0[qi], 0.28); cb = 0.28
+    if os.environ.get('START'): _s = json.load(open(os.environ['START'])); dq = np.array([_s[str(q)] for q in qs]); cb = float(os.environ.get('CB0', 0.28))
     N, B1, c = evaluate(dq, cb); print('start (cap .28): N=%.1f B\'=%.6f rho=%.4e (smooth %.4e large %.4e)' % ((N, B1) + (c[0], c[1], c[2])), flush=True)
     steps = [0.04, 0.02, 0.01, 0.005][:sweeps + 1]
     for sw in range(sweeps + 1):
@@ -64,5 +65,5 @@ if __name__ == '__main__':
                     if N2 > N + 1e-9: dq, cb, N, B1, c = dq2, cb2, N2, B2, c2; imp += 1
                     else: break
         print('sweep %d step %.3f: N=%.1f B\'=%.6f rho=%.4e  Cbig=%.3f  improvements %d' % (sw, st, N, B1, c[0], cb, imp), flush=True)
-        json.dump({str(l): float(x) for l, x in zip(ells, full(dq, cb))}, open('verdict3/C_opt_best.json', 'w')); np.savez('verdict3/C_opt_best.npz', dv=full(dq, cb), dq=dq, cb=cb, N=N, B1=B1, rho=c[0])
+        json.dump({str(l): float(x) for l, x in zip(ells, full(dq, cb))}, open(os.environ.get('OUTJ', 'verdict3/C_opt_best.json'), 'w')); np.savez(os.environ.get('OUTJ', 'verdict3/C_opt_best.json').replace('.json', '.npz'), dv=full(dq, cb), dq=dq, cb=cb, N=N, B1=B1, rho=c[0])
     print('dq =', np.round(dq, 3).tolist())

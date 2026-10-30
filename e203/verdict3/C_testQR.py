@@ -4,10 +4,12 @@ Controls: data x1.5 (must give ~1.5 / ~2.25); model without e/phi (must fail at 
 import json, math, numpy as np
 from collections import defaultdict
 z = np.load('verdict3/stages_E800000.npz'); ells = [int(x) for x in z['ells']]; dv = z['dv'].copy(); idx = {l: i for i, l in enumerate(ells)}
+import os
+DBIG = float(os.environ.get('DBIG', 0.5)); L1 = int(os.environ.get('L1', 1000)); dv = np.minimum(dv * float(os.environ.get('DSCALE', 1.0)), float(os.environ.get('DCAP', 1.0)))
 for l in ells:
-    if l >= 1000: dv[idx[l]] = 0.5
-def g(q): return 1.0 if q in (2, 3) else 1 / (1 - (dv[idx[q]] if q in idx else 0.5))
-W = np.load('verdict3/C_tailR_weights.npz'); wl = dict(zip(W['L'].astype(int), W['w'])); vl = dict(zip(W['L'].astype(int), W['v']))
+    if l >= L1: dv[idx[l]] = DBIG
+def g(q): return 1.0 if q in (2, 3) else 1 / (1 - (dv[idx[q]] if q in idx else DBIG))
+W = np.load(os.environ.get('WTS', 'verdict3/C_tailR_weights.npz')); wl = dict(zip(W['L'].astype(int), W['w'])); vl = dict(zip(W['L'].astype(int), W['v']))
 n = defaultdict(int)
 for l in open('poolE800000.jsonl'): n[json.loads(l)['e']] += 1
 E = 800000; spf = np.zeros(E + 1, dtype=np.int64)

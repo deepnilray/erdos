@@ -3,8 +3,8 @@
 import numpy as np, random, sys
 from sympy import primerange, n_order
 from math import gcd
-w=31; P=list(primerange(5,w)); random.seed(3)
-z=np.load('D_data/nu_w31.npz'); nu=z['nu']; mu=z['mu']; cdf=np.cumsum(mu)
+w=int(sys.argv[2]) if len(sys.argv)>2 else 31; P=list(primerange(5,w)); random.seed(3)
+z=np.load("D_data/nu_w%d.npz"%w); nu=z['nu']; mu=z['mu']; cdf=np.cumsum(mu)
 W=1
 for p in P: W*=p
 # period lattice: i mod L2=lcm ord_p 2, j mod L3 = lcm ord_p 3 ; nu = fraction of surviving cells over the full torus Z/L2 x Z/L3

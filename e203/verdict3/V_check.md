@@ -124,3 +124,25 @@ The file still states (H_n) stage by stage ("all stage functionals ... at most k
 ### 8.4 Pending
 - Exact-rational B' at cap 0.28: running under the coordinator's restart (9 of the stages checkpointed at 2026-10-30).
 - Common-T E=300 comparison: not rerun (not light: my B&B did not finish in 280 s; deferred while the cores are busy).
+
+## 9. Round 5 (2026-10-30): C_allE.md sections 3d and 5c
+
+### 9.1 Section 3d (cyclic-type price for a new prime): CONFIRMED
+- Cyclic quotient: Z^2/(Lambda_p + 144Z^2) = (Z/e_p)/144(Z/e_p) = Z/gcd(e_p,144). It is cyclic of order exactly gcd(e_p,144). Pool sample: psi mod gcd(e,144) is onto in 3000/3000 (V_cyc.py).
+- The table holds every cyclic type: my own parse of coupled_full_E200000.txt (V_cyc.py) finds, for every n | 144 with n > 1, exactly n*prod_{q|n}(1+1/q) cyclic types (gcd(a,c,d) = 1). Max price by index: 1:1, 2:1.648, 3:1.4623, 4:1.8296, 6:2.1057, 8:1.8355, 9:1.4881, 12:2.2413, 16:1.8355, 18:2.1057, 24:2.2419, 36:2.2413, 48/72/144:2.2419. These are identical to C's table. RMAX 2.6145 belongs to a non-cyclic type.
+- DFS ratios: max r(2g)/r(g) = 1.648 < 2 and max r(3g)/r(g) = 1.462 < 3 over all g | 144; there are no violations. Multiplying by 2 or 3 once v_2 or v_3 is saturated leaves r unchanged.
+- rho_max, independent (V_rho2.py: own segmented sieve over every e in (8e5, 1e8], price r(gcd(e,144)), plus an analytic tail for e > 1e8):
+  - cap-0.28 vector: 1.24965e-5 at e = 870870 (tail < 2.3e-7). C: 1.2496e-5 at 870870.
+  - C_opt_best.json snapshot (sweep 1): 1.23933e-5 at e = 903210 (tail < 2.9e-6). C: 1.2393e-5.
+- Minor: the table prices use lambda = 0.0485, but the light mass at 8e5 is 0.04850936. The correction factor CORR = 1.0000251 should multiply r. My numbers include it; C's apparently do not. The effect on N_Z is below one prime.
+- N_Z = 13184 at cap 0.28 rests on the float B' = 0.798372. My exact check of that B' is still running (restarted by the coordinator; 69 of 15279 stages done, largest first). The joint-delta values (13813, 13962, and 14006 at sweep 2) rest on float B' for re-optimised vectors that nobody has verified exactly. Each final vector needs its own exact run.
+
+### 9.2 Section 5c (Theorem C'', range-sum hypotheses): CONFIRMED as a repair (logic); totals not independently re-run
+- Fixing one majorant per stage from the model alone is legitimate: any fixed (a,b) with (x-delta)_+ <= a x + b x^2 on the relevant range is a valid bound. The cost is then linear in (Y_1^>, Q_l^>, cross_l).
+- cross_l <= 2 sqrt(S_l Q_l^>) is the theta-weighted Cauchy-Schwarz bound. Summing over a range, sum v (2 sqrt(S Q) + Q) <= 2 sqrt(sum vS) sqrt(sum vQ) + sum vQ is Cauchy-Schwarz in l with v >= 0. Both are correct. So only the eight range sums are consumed, which is exactly the aggregate form I asked for in 8.2.
+- Remaining caveats (C states all of them):
+  - The weights depend on delta, so a re-optimised delta (9.1) changes the hypothesis and needs a re-test.
+  - The top ranges are thin in every window below 8e5. In [1e5, inf) the stages see only cofactors e' <= 8, so the Q-ratio of 5.25 there is not evidence about e > 8e5.
+  - The ratios do not shrink as the window grows.
+  - The Lipschitz stages could use 2.2419 instead of R* = 2.680 (this would help).
+- The totals (0.9084 with the per-range empirical kappas, 0.9961 with the crude kappas) come from C's own code and have not been re-run independently.
