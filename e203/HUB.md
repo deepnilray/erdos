@@ -16,9 +16,9 @@ Labels: PROVED = complete argument; VERIFIED = computation with a control that c
 |---|---|---|---|
 | Y1 | No covering (finite set of primes p∤6 whose killed cosets cover Z²) uses only primes with e_p = \|⟨2,3⟩ mod p\| ≤ 4·10⁵. Bound B(4·10⁵) = 0.730584 < 1, exact rational. | PROVED | `DISTORTION.md` |
 | Y2 | Same for mixed certificates (primes + algebraic factorisations; Capelli says these are the only algebraic ones), e_p ≤ 4·10⁵, bound 0.953242. | PROVED | `MIXED.md` Thm E |
-| Y3 | B(8·10⁵) = 0.742445 (float, reproduced twice). Exact-rational check checkpointed (58 lines), not finished; resume with `verdict3/run_verify.sh`. | VERIFIED (float) | `verdict3/A_certify.md` |
+| Y3 | **No covering uses only primes with e_p ≤ 8·10⁵.** B(8·10⁵) = 0.742445 < 1 in EXACT rational arithmetic (`verdict3/verify23_800k.log`, all 15 279 stages, 2026-10-30; δ file sha256 in `verify23_800k.delta.sha256`). Theorem E at 8·10⁵: `run_mixed.sh` running. | PROVED (given Y4) | `verdict3/A_certify.md` |
 | Y4 | Pool of all 100 814 primes with e_p ≤ 8·10⁵ is complete: gcd route (20/20 chunks, planted control 60/60), sieve route over all p < 2·10⁹ (exact match), V's own sieve to 3·10⁶. 12 primes > 2·10⁹ are covered only by the gcd route. | VERIFIED | `A_certify.md` §1, `V_check.md` §7 |
-| Y5 | **Theorem Z.** Every covering contains at least N_Z primes with e_p > 8·10⁵. N_Z = 13 184 (δ cap 0.28), N_Z = **14 082** with the jointly optimised δ (`verdict3/C_delta_final.json`). Key step: a single new prime's image in (Z/144)² is cyclic of order gcd(e_p,144), so its price is ≤ 2.2419 (V confirmed). | VERIFIED (float B′); becomes PROVED when the exact check of B′ passes (resumed 2026-10-30 from checkpoint, not finished) | `verdict3/C_allE.md` §3, §3d |
+| Y5 | **Theorem Z.** Every covering contains at least N_Z primes with e_p > 8·10⁵. **N_Z = 13 184 PROVED**: B′ = 0.798372 < 1 at δ cap 0.28 in EXACT rational arithmetic (`verdict3/V_verify_cap028.log`, all 15 279 stages, 2026-10-30). N_Z = **14 082** with the jointly optimised δ (`verdict3/C_delta_final.json`): VERIFIED (float B′), exact check running (`C_run_exact.sh`, `C_ckpt_final.txt`). Key step: a single new prime's image in (Z/144)² is cyclic of order gcd(e_p,144), so its price is ≤ 2.2419 (V confirmed). | 13 184: PROVED (given Y4); 14 082: VERIFIED | `verdict3/C_allE.md` §3, §3d |
 | Y6 | Lettl–Sun: every covering has ≥ 20 primes (superseded by Y5). | PROVED | `C_allE.md` |
 | Y7 | Structural lemmas: equal-index lattices sharing a primitive vector are equal; alignment criterion (2-D problem is 1-D iff gcd(e_p,e_q) \| α_pβ_q − β_pα_q pairwise); common discrete log 3 ≡ 2^T mod p reduces to a 1-D covering, (3/p) = (2/p)^T, primes 5 and 13 are incompatible, no common-T covering with e_p ≤ 8000; subgroup (homogeneous) certificates are impossible (Fermat); direction-lemma dichotomy. | PROVED | `C_allE.md` §1, `V_check.md` |
 
@@ -55,8 +55,8 @@ Labels: PROVED = complete argument; VERIFIED = computation with a control that c
 - needs a bound on c(e) = #{p : e_p = e} (pointwise c(e) ≤ exp(c(log e)^θ), θ < ½, or the aggregate hypotheses of C1). The one-base analogue is an open Erdős conjecture; Minkowski, Möbius/gcd-size and irredundance routes are proved dead (`C2_ce.md`).
 
 **Concrete open items in this project (closable):**
-1. Exact-rational B′ for the final δ (`verdict3/C_run_exact.sh`, checkpoint `C_ckpt_final.txt`) → Theorem Z with 14 082 becomes PROVED. Also V's cap-0.28 check (`V_run_cap.sh`, `V_ckpt_cap028.txt`) → 13 184 PROVED.
-2. Exact-rational B(8·10⁵) (`verdict3/run_verify.sh`, `verify_ckpt.txt`; sha256 guard on `delta23r_E800000.json`), then Theorem E at 8·10⁵ (`verdict3/run_mixed.sh`).
+1. Exact-rational B′ for the final δ (`verdict3/C_run_exact.sh`, checkpoint `C_ckpt_final.txt`) → Theorem Z with 14 082 becomes PROVED. (DONE 2026-10-30: cap-0.28 check → 13 184 PROVED.)
+2. DONE 2026-10-30: exact-rational B(8·10⁵) = 0.742445. Remaining: Theorem E at 8·10⁵ (`verdict3/run_mixed.sh`, running).
 3. Read Friedlander–Iwaniec, *Opera de Cribro*, Lemma 6.3 / Cor. 6.10 (or Halberstam–Richert Thm 2.5) and match hypotheses → Theorem A becomes PROVED. Needs the book (Deepnil may get it via Ashoka).
 4. Interval arithmetic on Theorem A's floating sums; independent check of `D_eprimes.c` and the tail τ = 3.2·10⁻⁴.
 5. Common-T maximum at E = 300 (C: 0.5627), independent check deferred.
