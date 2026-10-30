@@ -4,3 +4,79 @@ Traceback (most recent call last):
     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 BrokenPipeError: [Errno 32] Broken pipe
 base L1=1000 DBIG=0.5 DSCALE=1.0 DCAP=1.0 | uniform 1.34: kL=1.00 kQ=1.34 eps=0.00 (choice at kQ=1.34): total 0.9471 (+ tail beyond comput | empirical: 1.34): total 0.9084 (+ tail beyond comput
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+big04 L1=1000 DBIG=0.4 DSCALE=1.0 DCAP=1.0 | uniform 1.34: kL=1.00 kQ=1.34 eps=0.00 (choice at kQ=1.34): total 0.9445 (+ tail beyond comput | empirical: 1.34): total 0.9054 (+ tail beyond comput
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+big06 L1=1000 DBIG=0.6 DSCALE=1.0 DCAP=1.0 | uniform 1.34: kL=1.00 kQ=1.34 eps=0.00 (choice at kQ=1.34): total 0.9549 (+ tail beyond comput | empirical: 1.34): total 0.9169 (+ tail beyond comput
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+L300 L1=300 DBIG=0.5 DSCALE=1.0 DCAP=1.0 | uniform 1.34: kL=1.00 kQ=1.34 eps=0.00 (choice at kQ=1.34): total 0.9105 (+ tail beyond comput | empirical: 1.34): total 0.8810 (+ tail beyond comput
+L3000 L1=3000 DBIG=0.5 DSCALE=1.0 DCAP=1.0 | uniform 1.34: kL=1.00 kQ=1.34 eps=0.00 (choice at kQ=1.34): total 1.0400 (+ tail beyond comput | empirical: 1.34): total 0.9725 (+ tail beyond comput
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+sc09 L1=1000 DBIG=0.5 DSCALE=0.9 DCAP=1.0 | uniform 1.34: kL=1.00 kQ=1.34 eps=0.00 (choice at kQ=1.34): total 0.8931 (+ tail beyond comput | empirical: 1.34): total 0.8682 (+ tail beyond comput
+/home/claude/e203wt/e203/verdict3/C_tailR.py:29: RuntimeWarning: divide by zero encountered in scalar divide
+  best = (cfin[i] + RSTAR * Y1[i] / (1 - di), 'lin', None)
+/home/claude/e203wt/e203/verdict3/C_tailR.py:31: RuntimeWarning: divide by zero encountered in scalar divide
+  c = (a * m1 + b * m2) / (1 - di)
+/home/claude/e203wt/e203/verdict3/C_tailR.py:33: RuntimeWarning: divide by zero encountered in scalar divide
+  if best[1] == 'lin': fixed[i] = cfin[i]; w[i] = RSTAR / (1 - di)
+/home/claude/e203wt/e203/verdict3/C_tailR.py:31: RuntimeWarning: invalid value encountered in scalar multiply
+  c = (a * m1 + b * m2) / (1 - di)
+/home/claude/e203wt/e203/verdict3/C_tailR.py:28: RuntimeWarning: invalid value encountered in scalar multiply
+  m1 = M1F[i] + RSTAR * Y1[i]; m2 = M2F[i] + TH * RSTAR * (2 * kC * np.sqrt(S[i] * Qm[i]) + kC ** 2 * Qm[i]) + RSTAR * Y1[i] / li
+/home/claude/e203wt/e203/verdict3/C_tailR.py:45: RuntimeWarning: invalid value encountered in multiply
+  lin = kL * (w[m] * Y1[m]).sum(); vQ = kQ ** 2 * (v[m] * Qm[m]).sum(); vS = (v[m] * S[m]).sum()
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+/home/claude/e203wt/e203/verdict3/C_tailR.py:29: RuntimeWarning: divide by zero encountered in scalar divide
+  best = (cfin[i] + RSTAR * Y1[i] / (1 - di), 'lin', None)
+/home/claude/e203wt/e203/verdict3/C_tailR.py:31: RuntimeWarning: divide by zero encountered in scalar divide
+  c = (a * m1 + b * m2) / (1 - di)
+/home/claude/e203wt/e203/verdict3/C_tailR.py:33: RuntimeWarning: divide by zero encountered in scalar divide
+  if best[1] == 'lin': fixed[i] = cfin[i]; w[i] = RSTAR / (1 - di)
+/home/claude/e203wt/e203/verdict3/C_tailR.py:31: RuntimeWarning: invalid value encountered in scalar multiply
+  c = (a * m1 + b * m2) / (1 - di)
+/home/claude/e203wt/e203/verdict3/C_tailR.py:28: RuntimeWarning: invalid value encountered in scalar multiply
+  m1 = M1F[i] + RSTAR * Y1[i]; m2 = M2F[i] + TH * RSTAR * (2 * kC * np.sqrt(S[i] * Qm[i]) + kC ** 2 * Qm[i]) + RSTAR * Y1[i] / li
+/home/claude/e203wt/e203/verdict3/C_tailR.py:45: RuntimeWarning: invalid value encountered in multiply
+  lin = kL * (w[m] * Y1[m]).sum(); vQ = kQ ** 2 * (v[m] * Qm[m]).sum(); vS = (v[m] * S[m]).sum()
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+sc11 L1=1000 DBIG=0.5 DSCALE=1.1 DCAP=1.0 | uniform 1.34: kL=1.00 kQ=1.34 eps=0.00 (choice at kQ=1.34): total nan (+ tail beyond computed  | empirical: 1.34): total nan (+ tail beyond computed 
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+cap05 L1=1000 DBIG=0.5 DSCALE=1.0 DCAP=0.5 | uniform 1.34: kL=1.00 kQ=1.34 eps=0.00 (choice at kQ=1.34): total 0.9154 (+ tail beyond comput | empirical: 1.34): total 0.8845 (+ tail beyond comput
