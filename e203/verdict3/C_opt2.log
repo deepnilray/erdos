@@ -1,1 +1,2 @@
 start (cap .28): N=14012.6 B'=0.785224 rho=1.2568e-05 (smooth 1.2568e-05 large 8.5815e-06)
+sweep 0 step 0.040: N=14077.4 B'=0.784269 rho=1.2568e-05  Cbig=0.480  improvements 5
