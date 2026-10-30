@@ -2,12 +2,16 @@
 Variables: delta_q for the 78 primes 5<=q<=400 (in [0,0.6]) and one cap Cbig for all q>400 (their delta = min(run value, Cbig)).
 B' via distort_fast.costs on the pickled build; rho_max via the sparse incidence sets of C_rhoset.py (same bound as C_size.py).
 usage: python3 verdict3/C_opt.py [sweeps]   -> writes verdict3/C_opt_best.npz (full 15279-vector) and prints N."""
-import sys, pickle, math, numpy as np
+import sys, os, json, pickle, math, numpy as np
 sys.path.insert(0, '.')
 import distort_fast as D
 E0 = 800000; OPT = 0.578318; LAM0 = 0.04850936; RMAX = 2.614450284594; LIM = 64 * E0
-z = np.load('verdict3/stages_E800000.npz'); ells = [int(x) for x in z['ells']]; dv0 = z['dv'].copy(); idx = {l: i for i, l in enumerate(ells)}
 Bp = pickle.load(open('verdict3/B_E800000.pkl', 'rb'))
+if os.environ.get('DV0'):                           # start/base vector from a {ell: delta} json (e.g. V_delta_cap028.json); then Cbig <= its cap
+    _j = json.load(open(os.environ['DV0'])); ells = [int(x) for x in Bp['ells']]; dv0 = np.array([_j[str(l)] for l in ells]); CBMAX = float(dv0.max())
+else:
+    z = np.load('verdict3/stages_E800000.npz'); ells = [int(x) for x in z['ells']]; dv0 = z['dv'].copy(); CBMAX = 0.6
+idx = {l: i for i, l in enumerate(ells)}
 R = pickle.load(open('/tmp/C_rhoset.pkl', 'rb')); qs = R['qs']
 Ae, AS, Bme, BS = R['Ae'], R['AS'], R['Bme'], R['BS']
 from math import gcd
@@ -54,11 +58,11 @@ if __name__ == '__main__':
                 while True:
                     dq2 = dq.copy(); cb2 = cb
                     if k >= 0: dq2[k] = min(max(dq[k] + sgn * st, 0.0), 0.6)
-                    else: cb2 = min(max(cb + sgn * st, 0.0), 0.6)
+                    else: cb2 = min(max(cb + sgn * st, 0.0), CBMAX)
                     if (k >= 0 and dq2[k] == dq[k]) or (k < 0 and cb2 == cb): break
                     N2, B2, c2 = evaluate(dq2, cb2)
                     if N2 > N + 1e-9: dq, cb, N, B1, c = dq2, cb2, N2, B2, c2; imp += 1
                     else: break
         print('sweep %d step %.3f: N=%.1f B\'=%.6f rho=%.4e  Cbig=%.3f  improvements %d' % (sw, st, N, B1, c[0], cb, imp), flush=True)
-        np.savez('verdict3/C_opt_best.npz', dv=full(dq, cb), dq=dq, cb=cb, N=N, B1=B1, rho=c[0])
+        json.dump({str(l): float(x) for l, x in zip(ells, full(dq, cb))}, open('verdict3/C_opt_best.json', 'w')); np.savez('verdict3/C_opt_best.npz', dv=full(dq, cb), dq=dq, cb=cb, N=N, B1=B1, rho=c[0])
     print('dq =', np.round(dq, 3).tolist())
