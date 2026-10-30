@@ -5,3 +5,4 @@ e203/verdict3/chunks/
 e203/verdict3/*.npz
 e203/verdict3/**/*.npz
 e203/verdict3/D_data/
+e203/delta23r_E*.npy

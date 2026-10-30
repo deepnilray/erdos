@@ -4,3 +4,5 @@ E=800000: 100814 primes, light=0.04850936, astar=0.626827, build 295s, r-source 
   sweep 2: bound 0.74244
   sweep 3: bound 0.74244
   sweep 4: bound 0.74244
+  sweep 5: bound 0.74244
+E=800000: BOUND=0.742445 -> NO COVERING POSSIBLE  opt 2142s total 2437s
