@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/claude/e203wt/e203/verdict3/C_tailR.py", line 50, in <module>
+    print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+base L1=1000 DBIG=0.5 DSCALE=1.0 DCAP=1.0 | uniform 1.34: kL=1.00 kQ=1.34 eps=0.00 (choice at kQ=1.34): total 0.9471 (+ tail beyond comput | empirical: 1.34): total 0.9084 (+ tail beyond comput
