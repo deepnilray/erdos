@@ -1,0 +1,188 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{longtable,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=3pt}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.12}
+
+\title{Erd\H{o}s \#203: literature ledger, audit and untried methods}
+\author{Prepared for Deepnil Ray \,--\, branch \texttt{claude/open-conjecture-search-h6tgg3}, folder \texttt{e203/}}
+\date{30 October 2026}
+
+\begin{document}
+\maketitle
+
+\textbf{Problem.} Is there $m$ with $(m,6)=1$ such that $2^k3^\ell m+1$ is composite for all $k,\ell$ (site form $k,\ell\ge0$; the repository works with $k,\ell\ge1$, which is the weaker YES statement and the stronger NO statement, so every repository exclusion of YES and every repository NO-witness transfers to the site form)?
+
+\textbf{Status.} Open. Nothing in this document proves either answer. Labels used throughout: PROVED, VERIFIED (computation with a control that can fail), CONJECTURED, and for citations P (page opened this session or recorded as opened in an earlier ledger), S (second-hand), U (not opened).
+
+\section{Audit of the existing write-up}
+
+Re-run today with code independent of the repository's builders. Every check below includes a control that was shown able to fail.
+
+\begin{longtable}{P{4.6cm}P{8.2cm}P{2.3cm}}
+\toprule
+Claim & Result of the re-run & Status\\\midrule
+\endhead
+N1: hardest $m\le10^{10}$ is $6257518159$, first prime at $(16,10)$ & $2^{16}3^{10}m+1$ is prime and is the smallest-size prime cell with $k,\ell\ge1$ (next cells $(29,2)$, $(26,4)$). $\gcd(m,6)=1$. Control $m=1$ returns $(1,1)$, i.e.\ $7$. & CONFIRMED\\
+Y4: the pool of primes with $e_p\le8\cdot10^5$ is complete & Orders of $2$ and $3$ recomputed from scratch for every prime $5\le p<3\cdot10^6$ (spf sieve, exact order test). $88\,923$ primes have $e_p\le8\cdot10^5$ and equal the pool restricted to $p<3\cdot10^6$ exactly. Deleting one pool prime makes the comparison fail (control fired). & CONFIRMED for $p<3\cdot10^6$ (the repository itself reaches $2\cdot10^9$)\\
+Pool lattice forms $(\alpha,\beta,e)$ & $15\,000$ random $(k,\ell)$ on $3\,000$ random pool primes: $\alpha k+\beta\ell\equiv0\pmod e$ iff $2^k3^\ell\equiv1\pmod p$, zero mismatches. & CONFIRMED (sample)\\
+Multiplicities $c(e)$ & Histogram $\{1{:}89200,\,2{:}5412,\,3{:}250,\,4{:}10\}$, $\sum c(e)^2=113\,258$, $\sum c(e)=100\,814$. Matches L21. & CONFIRMED\\
+Y7: primes $5$ and $13$ are incompatible in a common-$T$ covering & $2$ generates $(\mathbb Z/5)^\times$ and $3=2^3$, forcing $T\equiv3\pmod4$; $2$ generates $(\mathbb Z/13)^\times$ and $3=2^4$, forcing $T\equiv0\pmod4$. Incompatible. & CONFIRMED (by hand)\\
+Citations & Eleven arXiv identifiers opened (section 3). Authors, titles and dates match, with the corrections listed at the end of section 3. & CONFIRMED with corrections\\
+Numeric odds in repository documents & \texttt{VERDICT.md} and \texttt{verdict/1\_heuristic.md} stated ``about 95\%'', \texttt{TARGET.md} stated ``about 10\%''. Removed today, in line with the standing rule against success probabilities. & FIXED\\
+HUB run state & HUB lists three exact verifiers as RUNNING. The container was replaced, so none was running. Checkpoints exist (58, 103 and 6 lines) and none has finished; \texttt{C\_verify\_final.log} is empty. Two were resumed today in the background. & CORRECTED\\
+Y1 bound $0.730584$, Theorem Z, Theorem A sums & Not re-run (hours of exact-rational arithmetic, or an interval-arithmetic rewrite). Agent V's red-team log confirms the pieces listed in \texttt{V\_check.md}. & NOT RE-RUN\\
+Theorem A input (Friedlander--Iwaniec, \emph{Opera de Cribro}, Lemma 6.3, error $e^{9\kappa-s}K^{10}$) & Searched again. Wikipedia and the Columbia sieve-seminar notes do not quote the lemma. The explicit form is still unconfirmed by any page I opened. & STILL OPEN\\
+\bottomrule
+\end{longtable}
+
+\section{Level of what closing \#203 requires}
+
+The ladder below places each rung on the significance scale anchored at $100=$ Riemann hypothesis. The placements are my judgment and carry no measurement behind them.
+
+\begin{longtable}{P{1.2cm}P{7.4cm}P{2.6cm}P{3.6cm}}
+\toprule
+Rung & Target & Rough scale & Status\\\midrule
+\endhead
+0 & Finite verification: every $m\le10^{10}$ has a prime cell & --- & done (N1)\\
+1 & Paper: Theorems Y1, Y5 (Z), N3 (A), lemmas Y7, N5; exact-rational checks; Opera de Cribro match & about 8--12 & four items open, all closable\\
+2 & ``No covering exists at any size'' (kills every known YES mechanism) & about 18--25 & needs a bound on $c(e)=\#\{p:e_p=e\}$; weaker than Erd\H{o}s's one-base conjecture $E_a(r)\ll r^{\varepsilon}$, still unproved\\
+3 & Full YES: explicit covering or mixed certificate & about 25--30 & must use at least $14\,082$ primes with $e_p>8\cdot10^5$; no construction method known\\
+4 & Full NO: a prime for every $m$ & about 35 and above & a family with $O((\log x)^2)$ members per $m$ and the parity barrier; Erd\H{o}s--Odlyzko gives positive lower density only\\
+\bottomrule
+\end{longtable}
+
+Closing \#203 itself sits above the 5--19 band. Rung 1 lies inside it. Rung 2 lies just above it and is the nearest honest target for a result that moves the problem.
+
+\section{Consolidated literature ledger}
+
+Entries come from \texttt{APPROACHES.md}, \texttt{L\_literature.md}, the public pages, and this session's searches. The last column is the verification flag.
+
+\subsection{Origin and public state}
+\begin{longtable}{P{0.7cm}P{5.3cm}P{7.5cm}P{1.3cm}}
+\toprule
+\# & Source & Content and bearing & Flag\\\midrule
+\endhead
+1 & Erd\H{o}s--Graham, \emph{Old and new problems and results in combinatorial number theory}, Monogr.\ Enseign.\ Math.\ 28 (1980), p.\,27 & Origin. Tao confirmed the statement on the forum, 29 Dec 2025. & S\\
+2 & Erd\H{o}s--Odlyzko, J.\ Number Theory 11 (1979) 257--263 & Positive lower density of $m$ with a prime cell (Thm 2, any prime set). Moment method on the exponent box, Linnik-type lower bound, sieve upper bound, Romanoff-type order sums. Best known toward NO; no explicit constant. & P\\
+3 & erdosproblems.com/203 & Open, ``cannot be resolved with a finite computation'', last edited 20 Jan 2026, formalised, user uona working, no claimed solutions. Re-read today, unchanged. & P\\
+4 & erdosproblems.com/1113 & One-base cousin: Sierpi\'nski numbers without a covering set. Open, last edited 29 Dec 2025, no two-base content. Re-read today. & P\\
+5 & Forum posts (AnimishSharma Jun 2026; emil467q Nov 2025; veljjanoski Sep 2026) & $\sum1/|H_p|\ge1$ criterion and no covering with lcm $<5040$ for $p\le5\cdot10^7$; no $m\in[10^{10},10^{11}]$; coverage plateaus $71.7\%$ at $N=5040$, $76.0\%$ at $N=55440$. & P\\
+6 & github.com/Neo7672/erdos-203-covering-search (16--17 Sep 2026, AI-assisted, 7 commits) & \emph{New this session.} 105 primes below $5\cdot10^6$ with $h(p)\le400$, total density $1.63$; budget $1.02$ at $N=5040$; search plateaus with $17$--$21\%$ uncovered. Claims no solution. Far weaker than Y1. & P\\
+7 & Issue \#9414, the-omega-institute/trureturing & \emph{New this session.} Progress log, states ``whole-solution KPI: 0''. Reports that a fixed 252-row family leaves at least $1.48676\%$ uncovered under any global phase vector. No covering or proof claimed. & P (page); claims unchecked\\
+8 & veljjanoski/erdos203 (GitHub) & Negative computational search, no proof content. & P\\
+\bottomrule
+\end{longtable}
+
+\subsection{One-base covering theory and constructions}
+\begin{longtable}{P{0.7cm}P{5.3cm}P{7.5cm}P{1.3cm}}
+\toprule
+\# & Source & Content and bearing & Flag\\\midrule
+\endhead
+9 & Sierpi\'nski, Elem.\ Math.\ 15 (1960); Selfridge (1962/63); Robinson, Proc.\ AMS 9 (1958) & Coverings of $\{k2^n+1\}$ by primes. No two-dimensional analogue known. & P (bibliography)\\
+10 & Izotov, Fibonacci Quart.\ 33 (1995); Filaseta--Finch--Kozek, J.\ Number Theory 128 (2008) 1916--1940 & Covering plus algebraic factors (Sophie Germain). Conjecture: a Sierpi\'nski number is a perfect power or has bounded least prime factor. Handled in \texttt{MIXED.md} via Capelli. & P\\
+11 & Simpson (1985); Jenkin--Simpson, INTEGERS 3 (2003) A13 & Irredundant 1-D covering with lcm $\prod p_i^{a_i}$ has at least $1+\sum a_i(p_i-1)$ classes. & P\\
+12 & Filaseta--Groth--Luckner arXiv:2305.09219; Filaseta--Juillerat--Luckner arXiv:2209.10646; Grantham et al.\ arXiv:1903.05023; Agrawal et al.\ arXiv:2208.09720; Harrington--Sun--Wong arXiv:2104.00602 & Constructions and classifications, all with one exponent and a free multiplier fixed by CRT. Not usable here because the lattices $\Lambda_p$ are fixed by $p$. & P\\
+\bottomrule
+\end{longtable}
+
+\subsection{Minimum modulus and the distortion method (YES-side obstruction)}
+\begin{longtable}{P{0.7cm}P{5.3cm}P{7.5cm}P{1.3cm}}
+\toprule
+\# & Source & Content and bearing & Flag\\\midrule
+\endhead
+13 & Hough, Ann.\ of Math.\ 181 (2015) 361--382 & Least modulus $\le10^{16}$ (Annals), $10^{18}$ on the arXiv page. Cite the Annals value. & P\\
+14 & Balister--Bollob\'as--Morris--Sahasrabudhe--Tiba, Invent.\ Math.\ 228 (2022) 377--414 & Distortion method; engine of \texttt{DISTORTION.md}. & P\\
+15 & Hough--Nielsen, Proc.\ AMS (2019), arXiv:1703.02133 & Distinct moduli: some modulus divisible by $2$ or $3$. Repeated moduli not treated. & P\\
+16 & Klein--Koukoulopoulos--Lemieux, arXiv:2212.01299 (v2, Aug 2023) & $j$-th smallest modulus $\le\exp(cj^2/\log(j+1))$; multiplicity-$s$ version $\exp(c\log^2(s+1)/\log\log(s+2))$ as reported in L5. & P (abstract); multiplicity theorem S\\
+17 & Li--Wang--Yi, arXiv:2302.05946 (v2, Aug 2026) & Distortion method as an abstract theorem on a finite set with an inverse system; the repository's tilt is a special case (V confirmed). & P\\
+\bottomrule
+\end{longtable}
+
+\subsection{Lattice and coset coverings}
+\begin{longtable}{P{0.7cm}P{5.3cm}P{7.5cm}P{1.3cm}}
+\toprule
+\# & Source & Content and bearing & Flag\\\midrule
+\endhead
+18 & Granville--Pappalardi, arXiv:2601.10296 (v2, Apr 2026) & Two-dimensional lattice coverings for $a^m-b^n$; Conjecture 1 that the only obstruction is a covering. Does not mention \#203. Item 5 there proves non-existence for $a=2$ by a homogeneity point that has no coset analogue. & P\\
+19 & Cremona--Koymans, arXiv:2601.03212 (v3, 12 Oct 2026) & Finite coverings of $\mathbb Z^2$ by sublattices (homogeneous only). Size bound $t+1+\sum e_i(p_i-1)$. Does not transfer to cosets. & P\\
+20 & Lettl--Sun, arXiv:math/0411144 (v2, 2008) & For a minimal cover by cosets, every irredundant coset has index $\le2^{k-m}$ and $k\ge m+f(\text{index})$ with $f$ the Mycielski function. Used for pruning; weak. & P\\
+21 & Snellman, arXiv:2608.22550 (23 Aug 2026) & Dense directions in lattice-line coverings of $\mathbb Z^2$. No bearing. & P\\
+22 & Borodzik--Nguyen--Robins, arXiv:1306.2644 & Exact tilings by translated sublattices. Certificates overlap, so no use. & S\\
+23 & Hegedüs, arXiv:2405.16231 (v2, Apr 2026); Jamison; Brouwer--Schrijver & Almost covers and blocking sets in affine space; quantitative support for the direction lemma. & P (abstract)\\
+\bottomrule
+\end{longtable}
+
+\subsection{Orders, gcds and the pool}
+\begin{longtable}{P{0.7cm}P{5.3cm}P{7.5cm}P{1.3cm}}
+\toprule
+\# & Source & Content and bearing & Flag\\\midrule
+\endhead
+24 & Bugeaud--Corvaja--Zannier, Math.\ Z.\ 243 (2003) 79--84 & $\gcd(a^n-1,b^n-1)<e^{\varepsilon n}$, ineffective. Gives $c(e)\le\varepsilon e/\log e$ only. & P\\
+25 & Corvaja--Zannier, arXiv:math/0311030; Hernandez--Luca & Common factors of shifted $S$-units, finitely many exceptional pairs, ineffective. & S\\
+26 & Nguyen-Dang, arXiv:2606.07959 (v2, Aug 2026) & $\gcd(a^n-1,b^n-1)$ satisfies a linear recurrence only for dependent $a,b$. & P\\
+27 & Akbary--Yazdani, arXiv:1505.06500 & States Erd\H{o}s's conjecture $E_a(r)\ll r^{\varepsilon}$; abstract also covers function fields and elliptic curves. The conjecture statement was read in an earlier pass, not re-read today. & P (abstract); statement S\\
+28 & Pehlivan, arXiv:1504.01550 (DOI 10.1142/S1793042116501281) & Lemma 8: $\#\{p:|\Gamma_p|\le t\}\ll t^{1+1/r}/\log t$. The abstract mentions only GRH; the unconditional status of Lemma 8 was read earlier and is unconfirmed today. & P (abstract); lemma S\\
+29 & Matthews (1982); Erd\H{o}s--Murty (1999); Elsholtz, Proc.\ AMS 130 (2002); Kurlberg--Pomerance, Acta Arith.\ 119 (2005) & Almost-all-$p$ lower bounds on $|\langle2,3\rangle\bmod p|$. Nothing on the exceptional pool. & S/P\\
+30 & Zsigmondy; Bilu--Hanrot--Voutier (2001); Evertse (1984) & Primitive divisors; finiteness of $S$-unit solutions. Structural only. & P\\
+\bottomrule
+\end{longtable}
+
+\subsection{NO-side tools}
+\begin{longtable}{P{0.7cm}P{5.3cm}P{7.5cm}P{1.3cm}}
+\toprule
+\# & Source & Content and bearing & Flag\\\midrule
+\endhead
+31 & Heath-Brown (1992); Xylouris, arXiv:0906.2749 & Linnik constant $5.2$; gives $m$ for a given $A=2^a3^b$, not $A$ for a given $m$. & P\\
+32 & Halberstam--Richert; Friedlander--Iwaniec, \emph{Opera de Cribro} Ch.\ 6 & Fundamental lemma; input to Theorem A. Explicit form unconfirmed. & U\\
+33 & Ding--Li--Li arXiv:2607.03662; Radomskii arXiv:2609.38207 and 2504.09954; Ding--Zhai arXiv:2401.15892; Han--Yu arXiv:2605.15758 & Romanoff-type additive results ($n=p+2^u3^v$ and relatives), positive proportion. Same ceiling as Erd\H{o}s--Odlyzko. & P (first two)\\
+34 & Sun--Fang, Bull.\ Austral.\ Math.\ Soc.\ 78 (2008); Chen, Proc.\ AMS 129 (2001) & One-base extensions of Erd\H{o}s--Odlyzko; covering iff density zero in a progression. & P\\
+\bottomrule
+\end{longtable}
+
+\subsection{Corrections found while verifying citations}\label{sec:corr}
+\begin{itemize}
+\item arXiv:math/0411144 is by Lettl and Sun (the ledger entry L4 credits Sun alone).
+\item arXiv:2212.01299 is by Klein, Koukoulopoulos and Lemieux (L5 recorded the authors as not shown).
+\item Cremona--Koymans is at v3 (12 Oct 2026); Li--Wang--Yi at v2 (Aug 2026).
+\item Pehlivan's page gives a DOI only, so the journal name stays out of any bibliography until it is checked.
+\item The JNT 2024 paper on Erd\H{o}s covering systems in global function fields (ScienceDirect S0022314X24001707) could not be fetched; only its title is known, from a search listing.
+\end{itemize}
+
+\section{Methods that have not been used on \#203}
+
+``Not used'' means absent from the repository's record and absent from the sources above. For items 2 and 6 the supporting search was a single query each, so absence there is weak evidence.
+
+\begin{longtable}{P{0.6cm}P{3.6cm}P{7.7cm}P{3.1cm}}
+\toprule
+\# & Method & What it would do & Cost and caveat\\\midrule
+\endhead
+1 & Function-field analogue: $P^kQ^\ell m+1$ irreducible in $\mathbb F_q[T]$ with $P,Q$ coprime primes & Weil-type estimates and exact Chebotarev make both directions testable. Silverman's theorem (math/0401356, abstract level) says $\deg\gcd(a^n-1,b^n-1)\ge cn$ infinitely often there, so the analogue of $c(e)$ can be large, and a covering may exist in that setting. A covering found there would show which mechanism a covering over $\mathbb Z$ needs; a proof of non-existence there would show which step of the tail argument survives. & Moderate. CONJECTURED idea; the function-field covering paper above is the entry point.\\
+2 & Maynard--Tao weights on the exponent box, in the variable $m$ & For a fixed admissible set of cells the forms $A_im+1$ are linear in $m$, so multidimensional sieve weights apply. The conclusion holds on a set of $m$ of density about $(\log x)^{-r}$, which does not reach a positive-density statement. & Low expected gain; listed so the question is closed.\\
+3 & Two-dimensional Crittenden--Vanden Eynden principle & A $k$-coset periodic cover of a lattice line is decided by its first $2^k$ points. A planar analogue for cyclic-quotient cosets would turn a finite box into a statement about all of $\mathbb Z^2$ and convert the search data into a rigorous bound on $k$. & Unknown; needs a proof.\\
+4 & Corvaja--Zannier / Hernandez--Luca for lattice alignments & Controls primes whose lattices share two independent vectors, which is the alignment quantity $c^<$ in \texttt{DISTORTION.md}. & Ineffective; finitely many unlisted exceptions.\\
+5 & Klein--Koukoulopoulos--Lemieux multiplicity theorem on a lattice line & The direction lemma (Y7) gives a 1-D covering with moduli $e_p$ in the unit-direction case. Whether the multiplicity theorem was then applied is not recorded. & Cheap to check in \texttt{C\_allE.md}.\\
+6 & Reformulation: $m$ is the $\{2,3\}$-free part of $p-1$ & NO is the statement that this map from primes with $6\mid p-1$ is onto the integers coprime to $6$. Results on smooth parts of shifted primes may apply. & One literature search not yet made.\\
+7 & Exact LP/ILP duals at fixed torus size & Would sharpen Y1 for individual $N$, but Y1 already excludes every $N$ with all $e_p\le4\cdot10^5$. & Moot.\\
+\bottomrule
+\end{longtable}
+
+Items already used and not repeated: the distortion tilt (Y1, Y5), the Lettl--Sun pruning (Y6, weak), the Li--Wang--Yi framework, the direction-lemma dichotomy, the Romanoff-type lemma for $\{2,3\}$, the fundamental-lemma almost-prime count (N3).
+
+\section{Open items carried forward}
+\begin{enumerate}
+\item Exact-rational B$'$ for the final $\delta$ (resumed today, checkpoint \texttt{verdict3/C\_ckpt\_final.txt}) and the cap-$0.28$ check (resumed, \texttt{verdict3/V\_ckpt\_cap028.txt}). Theorem Z becomes PROVED when they pass.
+\item Exact B$(8\cdot10^5)$ (\texttt{verdict3/run\_verify.sh}, not started today) and Theorem E at $8\cdot10^5$.
+\item \emph{Opera de Cribro}, Lemma 6.3 or Corollary 6.10: needs the book, possibly through Ashoka's library.
+\item Interval arithmetic on Theorem A's floating sums; independent check of \texttt{D\_eprimes.c}.
+\item Prior-art search for Theorem A; one search on item 6 above.
+\item The \#203 paper (.tex and PDF), with the CRT augmentation lemma added to the pure theorem.
+\end{enumerate}
+
+\end{document}

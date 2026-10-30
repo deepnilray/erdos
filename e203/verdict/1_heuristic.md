@@ -1,9 +1,9 @@
 # Erdős #203: the probabilistic (Cramér / Bateman–Horn) model, agent 1
 
-**Verdict: NO is much more probable** (no m with gcd(m,6)=1 makes every 2^k·3^l·m+1 composite). Confidence about **95%**.
+**Verdict: NO is much more probable** (no m with gcd(m,6)=1 makes every 2^k·3^l·m+1 composite). 
 Under the model, YES requires a local obstruction of density exactly 0, which in practice means a covering. Such a covering
 would need primes with e_p > 4·10⁵, which the repo has not excluded. The model cannot price that option, and it is the
-whole of the remaining 5%. The model passes every data check I ran, after one correction (§4.4). Its first version failed
+whole of the remaining doubt. The model passes every data check I ran, after one correction (§4.4). Its first version failed
 the perfect-power control. I report that failure below and explain how it was fixed.
 
 Scripts and data are all in this directory and use the `h_` prefix. Labels: [PROVED] means a rigorous argument;

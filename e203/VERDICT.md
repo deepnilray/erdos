@@ -1,6 +1,6 @@
 # Which answer is more likely?
 
-**Verdict: NO, no such m exists [CONJECTURED, about 95%].** Nothing here proves either answer. #203 is still
+**Verdict: NO, no such m exists [CONJECTURED].** Nothing here proves either answer. #203 is still
 OPEN. Five independent checks (2026-10-10) all point the same way. Each full report is in [`verdict/`](verdict/).
 
 ## Why NO

@@ -42,7 +42,7 @@ it is a covering of a finite torus ℤ_N × ℤ_N.
 ## Forecast (written before any computation)
 
 A covering probably exists: density is unbounded and nothing forbids it. But it needs moduli far beyond
-N ≈ 5·10⁴. Chance that one session produces a verified m: low, about 10%. The plausible route is not a
+N ≈ 5·10⁴. A verified m from one session is unlikely (forecast superseded by the 2026-10 results: no covering with e_p ≤ 4·10⁵). The plausible route is not a
 flat search. It is to build nesting on purpose. For example, restrict to primes whose L_p contains a common
 direction (k, l) = (J, −1)·t, so that each strip reduces to a 1D covering problem. Then stack 1D Sierpiński
 coverings across strips and use algebraic factors (m a perfect power) to cover leftover cosets.
