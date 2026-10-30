@@ -5,7 +5,7 @@ Labels: **PROVED** (full argument here, or a theorem I opened), **PROVED-mod-X**
 
 ## 0. Summary (strongest statements)
 
-**Current headline (§11.5, supersedes 3. below):** all but 1.6% of m have a cell with Ω ≤ 22 (0.6% with Ω ≤ 26). Rigorous 1.02751 ≤ ρ ≤ 1.02820. Conditional on FI Lemma 6.3 (explicit form) and Lemma U (§11.1, open).
+**Current headline (§11.6, supersedes 3. below and §10.6/§11.5 numbers):** all but 2.0% of m coprime to 6 have k,ℓ ≥ 1 with Ω(2^k3^ℓm+1) ≤ 22; 1.1% with Ω ≤ 23; 0.6% with Ω ≤ 26; ≤ 0.58% for r0 large. Without stratification, ≤ 3% first at r0 = 29 (2.85%). Rigorous 1.02751 ≤ ρ ≤ 1.02820. Lemma U is PROVED (V, §11.6). The only unopened input is FI Lemma 6.3 in the explicit form e^{9κ−s}K^{10}.
 
 1. **Density one for primes is not reachable by a second-moment/Chebyshev argument with any known input.** Precise obstruction (§5): Cauchy–Schwarz over m caps at P(R>0) ≥ 1/(κρ), where ρ ≈ 1.0272 is the exact local-factor loss (VERIFIED, §3.3) and κ is the sieve upper-bound constant for pairs (4 classically; 3.3996 for twin primes by Wu, abstract opened). Parity forces κ ≥ 2 for every sieve, so the method cannot exceed ≈ 0.49 even in the best case, and today gives ≈ 0.24–0.29 (and only after one more cited first-moment step, §5).
 2. **Maynard's "Dense clusters of primes in subsets" does not fit (§1).** Its hypotheses force k ≤ c·√(log x / log log x) forms, its conclusion is x·exp(−O(k log log x)) integers, while a positive proportion of m needs k ≳ log x forms. PROVED as a statement about Theorem 3.1 as relayed by the page I fetched.
@@ -149,12 +149,12 @@ Searches run (WebSearch, standard mode): "almost all odd k … k·2^n+1 has at m
 ### 10.6 Correction (V flaw, V_check.md §8): r0 = 19 was wrong; corrected r0 = 26
 V is right that s0 = 9κ+1 = 19 is only the threshold for the fundamental lemma; at s = 19 its relative error swamps ρ−1. Corrected computation:
 - **Fundamental lemma used, in V's reading** (Friedlander–Iwaniec, *Opera de Cribro*, Lemma 6.3; NOT opened by me): for a sieve problem of dimension κ with Ω(κ) constant K (∏_{w1≤p<w2}(1−ρ(p)/p)^{-1} ≤ K(log w2/log w1)^κ for all w1<w2 in the sifting range) and level D = z^s, s ≥ 9κ+1, the upper and lower sieves give S = XV(z)(1 + θ e^{9κ−s}K^{10}) + O(Σ_{d<D, d|P(z)}|r_d|), |θ| ≤ 1. The only version I opened is the citation of FI Cor. 6.10 in arXiv 1504.00533 §3.2, which states the same lemma as S = {1+O_{C0}(e^{−s})}YV(z) + O(Σ_{d<z^s}|r(d)|) for s ≥ 1, with a non-explicit constant. Any explicit r0 below therefore depends on V's explicit reading of Lemma 6.3.
-- **Explicit K** (`D_Kconst.py`, exact sup over prime pairs up to 2·10⁷; for w1 ≥ 2·10⁷ Rosser–Schoenfeld |Σ_{p≤x}1/p − lnln x − B| < 1/ln²x keeps the ratio below e^{0.008}, under the sup): primes ≥ 5: K1 = 1.03386 (κ=1, attained at [5,7)), K2 = 1.14124 (κ=2, attained at [5,19)). So K1^{10} = 1.396, K2^{10} = 3.75. Primes ≥ 31: K1 = 1.01597, K2 = 1.03270 (K2^{10} = 1.379).
+- **Explicit K — WRONG, superseded by §11.6** (the sup must allow real w2 → p⁺; correct: K1 = 1.25, K2 = 5/3 for primes ≥ 5) (`D_Kconst.py` old version, sup over prime pairs up to 2·10⁷; for w1 ≥ 2·10⁷ Rosser–Schoenfeld |Σ_{p≤x}1/p − lnln x − B| < 1/ln²x keeps the ratio below e^{0.008}, under the sup): primes ≥ 5: K1 = 1.03386 (κ=1, attained at [5,7)), K2 = 1.14124 (κ=2, attained at [5,19)). So K1^{10} = 1.396, K2^{10} = 3.75. Primes ≥ 31: K1 = 1.01597, K2 = 1.03270 (K2^{10} = 1.379).
 - **Chebyshev with the errors.** E[R] ≥ (1−η1)μ, E[R²] ≤ (1+η2)·pairs + (1+η1)μ, with η1 = e^{9−s}K1^{10}, η2 = e^{18−s}K2^{10}. Cauchy–Schwarz gives P(R=0) ≤ 1 − (1−η1)²/((1+η2)ρ) + o(1). (This is the Paley–Zygmund form; it is slightly better than Chebyshev's ρ−1.)
 - **Smallest s with exceptional density ≤ 3%:** with ρ ≤ 1.0280 (numerical upper value, §10.2): s = 25 gives 0.0306, **s = 26 gives 0.0285**, s = 28 gives 0.0274, s → ∞ gives 1 − 1/ρ = 0.0272.
 - **Ω bound.** c = ε = 0.001: A_u ≤ x^c (box N = ⌊c ln x/ln 6⌋ → ∞, so E R ≍ s|B|/log x → ∞ still), D = x^{1−ε}, z = D^{1/s}; n = A_u m+1 ≤ x^{1+c}+1, so Ω(n) ≤ log n/log z = s(1+c)/(1−ε) + o(1) = 26.052 + o(1). Remainder: ≤ (log x)⁴ pairs × Σ_{d<D} 2^{ω(d)} ≪ x^{1−ε}(log x)⁵ = o(x/(log x)^{10}).
 
-**Theorem A (corrected) [PROVED modulo (FI Lemma 6.3 in V's explicit form) and (ρ ≤ 1.0280, numerical, rigorous enclosure in §11)].** For x ≥ x0, all but at most 0.0285·x of the m ≤ x coprime to 6 (relative density ≤ 2.85% among such m) have k, ℓ ≥ 1 with Ω(2^k3^ℓm+1) ≤ 26. For every ε' > 0 there is r0(ε') such that all but (1 − 1/ρ + ε')x of them have such a cell with Ω ≤ r0(ε'), where 1 − 1/ρ ≈ 0.0272. The cell can be taken with 2^k3^ℓ ≤ x^{0.001}.
+**Theorem A (corrected; its r0 = 26 / 2.85% is SUPERSEDED by §11.6: with the correct K, 2.85% needs r0 = 29) [PROVED modulo (FI Lemma 6.3 in V's explicit form) and (ρ ≤ 1.0280, numerical, rigorous enclosure in §11)].** For x ≥ x0, all but at most 0.0285·x of the m ≤ x coprime to 6 (relative density ≤ 2.85% among such m) have k, ℓ ≥ 1 with Ω(2^k3^ℓm+1) ≤ 26. For every ε' > 0 there is r0(ε') such that all but (1 − 1/ρ + ε')x of them have such a cell with Ω ≤ r0(ε'), where 1 − 1/ρ ≈ 0.0272. The cell can be taken with 2^k3^ℓ ≤ x^{0.001}.
 
 **Covering by-product, uniform in y [PROVED modulo the same inputs].** For every y, let C_y be the set of m coprime to 6 for which the primes 5 ≤ p < y cover the lattice: every (k,ℓ) with k,ℓ ≥ 1 has some p < y dividing 2^k3^ℓm+1. C_y is periodic mod ∏_{p<y}p, so it has a density. For m ∈ C_y and z > y, R_z(m) = 0, so C_y ∩ [1,x] lies in the exceptional set of Theorem A (with the same s, for x large depending on y). Hence **dens(C_y) ≤ 1 − 1/ρ + ε' ≈ 0.0272 for every y**, i.e. sup_y dens(C_y) ≤ 0.0272. The bound is uniform in y. (Covering classes with the k,ℓ ≥ 1 restriction: a lattice covering of Z² restricts to one of Z_{≥1}², and the box B ⊂ Z_{≥1}², so the argument applies to covering classes in either sense.)
 
@@ -181,7 +181,7 @@ where C_w = ∏_{p≥w}(1 − 1/(p−1)²), B(ψ) = Σ_{d: p|d ⇒ p≥w, ψ∈�
  **δ ≤ Σ_r μ(r)·min(1, 1 − (1−η1)²/((1+η2)·C_w(W_w + M_w(1/ν_r − 1))))**.
 Only two kinds of input remain: the exact finite distribution of ν_r, and the two Romanoff-type constants W_w and M_w. No Lemma S and no covering hypothesis is used. The case w = 5 is the unstratified Theorem A, since H is trivial and ratio = ρ.
 
-**Lemma U (OPEN-STEP, needed equally by Theorem A).** The box version of the pair average satisfies limsup_N E_N[F_{≥w}(Δ)] ≤ W_w, where F_{≥w}(Δ) = ∏_{p≥w, p | n(Δ)}(1 + g(p)) and Δ = u' − u for u, u' uniform in [1,N]². The same is needed inside classes.
+**Lemma U (was OPEN-STEP; now PROVED by V, proof in §11.6).** The box version of the pair average satisfies limsup_N E_N[F_{≥w}(Δ)] ≤ W_w, where F_{≥w}(Δ) = ∏_{p≥w, p | n(Δ)}(1 + g(p)) and Δ = u' − u for u, u' uniform in [1,N]². The same is needed inside classes.
 - For d with e(d) ≤ T this is exact equidistribution.
 - For the rest, the obstacle is boundary terms from lattices Λ_d with a short vector (lattice points lying along a line in the box).
 - The bound #((u+Λ_d)∩B∖{u}) ≤ N²/e + N/c + N/h, together with the crude Lemma D, leaves an O(1) boundary term rather than o(1). §10.2 said "qualitatively proved"; that claim is **withdrawn**.
@@ -242,7 +242,7 @@ At the 97%+ level the argument needs the first moment and the pair moment as **a
 - Paley–Zygmund then gives P(R' > 0) ≥ f(s')²/(F_2(s')·ρ) < 1/2 for every s' where weights help. That is a positive-proportion statement with Ω ≤ r0 small, which is weaker than what EO79 already give for primes (positive proportion with Ω = 1).
 - **Verdict:** a weighted sieve cannot lower r0 at the 97% level. Only the fundamental-lemma range s ≳ 22 delivers relative errors below 10⁻². At positive proportion the best r0 is 1 (EO79), so the weighted sieve has no role there either. [Reasoning; no table computation done.]
 
-### 11.5 Best explicit theorems [PROVED modulo (FI Lemma 6.3 in V's explicit form), Lemma U, and floating point]
+### 11.5 Best explicit theorems — numbers SUPERSEDED by §11.6 (K constants were too small)
 c = ε = 0.001, and s = (r0+1)(1−ε)/(1+c) − 10⁻⁶ (`D_r0table.py`, `D_delta.py`).
 
 | r0 | s | δ, unstratified (ρ ≤ 1.028192) | δ, stratified w = 31 |
@@ -268,3 +268,47 @@ Stratified δ at large s for the other w: 1.34% (w = 13), 1.13% (17), 1.10% (19)
 - (iii) Floating-point sums of about 10⁸ terms, with no interval arithmetic; the relative rounding is far below the margins used.
 
 The step from 2.85% to 1.6% at r0 = 22 comes from the finite stratification. The step from 2.74% to 0.57% at large r0 comes from the same source.
+
+### 11.6 Round-6 corrections after V_check.md §10 (these supersede §10.6 and §11.5 wherever they differ)
+
+**(1) Lemma U is PROVED (V_check.md §10.1).** I checked V's argument and adopt it.
+- Claim: for u ≠ u' uniform in [1,N]² and Δ = u'−u, limsup_N E_N[F(Δ)] ≤ W = Σ_d g(d)/e(d).
+- *Proof (V).*
+  - (a) Each Δ has probability ≤ (1+o(1))/N², so E_N[F] = Σ_d g(d)·P(Δ ∈ Λ_d∖0).
+  - (b) Let v be a shortest vector of Λ_d. Gauss reduction gives |v|² ≤ (2/√3)e(d). The points of Λ_d lie on lines parallel to v, spaced e/|v| apart. The box [−N,N]² meets at most 2√2N|v|/e + 1 of these lines, and each line carries at most 2√2N/|v| + 1 points. Hence #(Λ_d ∩ box ∖ 0) ≤ 8N²/e + C·N/|v| with C = 2√2(1 + 2/√3), and the count is 0 if |v| > √2N.
+  - (c) Since d | n(v) and 0 < n(v) ≤ 6^{|v|}, we get λ1(d) ≥ log d/log 6. In particular d ≤ 6^{√2N} whenever the count is nonzero.
+  - (d) Split at T. The finitely many d with e(d) ≤ T are periodic, so their probability tends to 1/e(d). The rest contribute at most 8·Σ_{e(d)>T} g(d)/e(d), a tail of W (Lemma R), plus (C log 6/N)·Σ_{1<d≤6^{√2N}} g(d)/log d ≪ (log log 6^N)/N ≪ log N/N. Here Σ_{d≤X} g(d) ≪ log X, followed by partial summation. Now let T → ∞. ∎
+- Inside a class r the same argument works: the weight per Δ is at most (1+o(1))/(ν_r²N²), cosets of Λ_d ∩ Λ_W replace Λ_d, and the extra +1 per coset costs ≪ |H_W|/N.
+- My failed attempt used the crude Lemma D boundary sum over all d. The fix is to weight each d by 1/λ1(d), with λ1(d) ≥ log d/log 6.
+- So Theorem A and the stratified version no longer depend on any open step, apart from the cited FL.
+
+**(2) K constants corrected.**
+- The Ω(κ) condition must hold for all real w1 < w2. The old `D_Kconst.py` took w2 only at the next prime. The fixed version takes w1 = p_a and w2 → p_b⁺. It reproduces V:
+  - Primes ≥ 5: K1 = 1.25, K2 = 5/3, attained at p = 5 alone. So K1¹⁰ = 9.31 and K2¹⁰ = 165.4.
+  - Primes ≥ 31: K1 = 1.03612, K2 = 1.07482, attained on [41,43]. So K1¹⁰ = 1.426 and K2¹⁰ = 2.058.
+- Recomputed table (`D_r0table.py`, log `D_r0table.log`). It is identical to V's independent recomputation:
+
+| r0 | s | δ unstratified (ρ ≤ 1.028192) | δ stratified, w = 31 |
+|---|---|---|---|
+| 21 | 21.956 | 0.767 | 0.0434 |
+| 22 | 22.954 | 0.551 | **0.0200** |
+| 23 | 23.952 | 0.320 | **0.0110** |
+| 24 | 24.950 | 0.161 | 0.0077 |
+| 25 | 25.948 | 0.0811 | 0.0065 |
+| 26 | 26.946 | 0.0479 | **0.0060** |
+| 28 | 28.942 | 0.0303 | 0.0058 |
+| 29 | 29.940 | **0.0285** | 0.0057 |
+| ∞ | ∞ | ≤ 0.02742 | ≤ 0.00573 |
+
+- The large-s limits do not depend on K, so the per-w limits in §11.5 stand: 1.34%, 1.13%, 1.10%, 0.81%, 0.61%, 0.57% for w = 13, 17, 19, 23, 29, 31. The covering corollary also stands: for every y, the density of m whose lattice is covered by the primes in [5, y) is ≤ 0.58%, and it is 0 for y ≤ 31.
+
+**(3) e(d) for composite d.** I checked that no code of mine uses e(d) = lcm(ord_d 2, ord_d 3) for composite d.
+- For primes, e_p = lcm(ord 2, ord 3) is correct because F_p^× is cyclic (Lemma B(i)).
+- A(1) and the class computations use the exact lattice Λ_W (|H_W| = 665280, basis (0,55440), (12,1896)), checked by the uniqueness assert in `D_classes.py`.
+- The single-prime terms use the exact common quotient J_q.
+- The composite bound uses e(d) ≥ lcm(e_{p1}, e_{p2}). This is a valid lower bound, since H_d surjects onto each H_p, so each e_p divides e(d).
+- V's exact-rational A(1) = 1.1562606807 agrees with mine.
+
+**Final statement.**
+
+**Theorem A″ [PROVED modulo FI, *Opera de Cribro*, Lemma 6.3 in the explicit form S = XV(z)(1 + θe^{9κ−s}K^{10}), |θ| ≤ 1 (unopened), and modulo floating-point sums with no interval arithmetic].** Let c = ε = 0.001. For x ≥ x0, every m ≤ x coprime to 6, except for at most 2.0% of them, has k,ℓ ≥ 1 with 2^k3^ℓ ≤ x^{0.001} and Ω(2^k3^ℓm+1) ≤ 22. The exceptional share is at most 1.1% for Ω ≤ 23, at most 0.6% for Ω ≤ 26, and at most 0.58% for r0 large. Without stratification, the bound reaches ≤ 3% only at Ω ≤ 29. The constant enclosure is 1.02751 ≤ ρ ≤ 1.02820.

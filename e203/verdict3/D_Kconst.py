@@ -1,5 +1,5 @@
 # D_Kconst.py: K_kappa(w) = sup_{w<=w1<w2} prod_{w1<=p<w2}(1-kappa/p)^{-1} (log w1/log w2)^kappa  (Omega(kappa) constant, primes >= w)
-# sup over w1,w2 among primes up to Y (w2 = next prime after last included). Large-scale tail: Mertens -> ratio -> const, checked by monotone trend.
+# sup over real w1<w2: for the prime set {Q[a..b]} the worst case is w1=Q[a], w2 -> Q[b]+ (V_check.md 10.2 fix; the old version used w2=Q[b+1]). Large-scale tail: Mertens -> ratio -> const, checked by monotone trend.
 import numpy as np, sys
 from sympy import primerange
 Y=int(sys.argv[1])
@@ -14,5 +14,5 @@ for kappa in (1,2):
     Lm1=np.concatenate([[0.0],L[:-1]])
     g=kappa*ll-Lm1
     pm=np.maximum.accumulate(g)
-    val=L[:-1]-kappa*ll[1:]+pm[:-1]
-    print("kappa",kappa,"w",w,"K",np.exp(val.max()),"at w2 index",val.argmax(),"Q",Q[val.argmax()+1])
+    val=L-kappa*ll+pm
+    print("kappa",kappa,"w",w,"K",np.exp(val.max()),"at w2 index",val.argmax(),"w2->",Q[val.argmax()],"+")

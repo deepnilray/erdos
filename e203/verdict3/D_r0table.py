@@ -3,10 +3,10 @@
 import numpy as np, math
 c=eps=0.001
 z=np.load('D_data/nu_w31.npz'); nu=z['nu']; mu=z['mu']; m=mu>0; nu=nu[m]; mu=mu[m]
-Wup,M,Cw,K1s,K2s=1.0093865,3.4152e-3,0.9925180,1.0159726,1.0326954
-rho,K1,K2=1.028192,1.033859,1.141244
+Wup,M,Cw,K1s,K2s=1.0093865,3.4152e-3,0.9925180,1.0361162,1.0748174
+rho,K1,K2=1.028192,1.25,5/3
 print("r0   s       unstrat   strat(w=31)")
-for r0 in range(19,32):
+for r0 in range(19,36):
     s=(r0+1)*(1-eps)/(1+c)-1e-6
     if s<19: continue
     e1=math.exp(9-s)*K1**10; e2=math.exp(18-s)*K2**10
