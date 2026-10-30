@@ -14,7 +14,7 @@ fail), CONJECTURED (hypothesis or heuristic). No file here was committed. Large 
 | B(8·10^5), float | 0.742445 (reproduces agent 3 and the 4·10^5 → 8·10^5 trend) | VERIFIED (float) |
 | B(8·10^5), exact rational | EXACT_PENDING | PROVED once the pool is complete (see scope) |
 | Theorem E at 8·10^5 | MIXED_PENDING | see section 2 |
-| Conditional all-E bound | 0.9833 (+5·10^-4) under H(κ=1, ε=0.85); closes only for κ ≲ 1–1.5 | CONJECTURED hypothesis, VERIFIED arithmetic |
+| Conditional all-E bound (aggregate H_L, H_Q) | 0.904 at κ_Q² = 1.44, 0.928 at κ_Q² = 1.8 (data level), 0.963 at κ_Q² = κ_L² = 2.25 | hypotheses CONJECTURED; bound VERIFIED (float, C's run) |
 | Push to E = 1.6·10^6 | not done (cost: about 8·10^5 gcds of 1.6·10^6-bit numbers, ≈ 0.15 s each ≈ 35 h CPU, plus factoring) | — |
 
 Scope caveats, all load-bearing:
@@ -83,55 +83,90 @@ E = 2·10^4 with 2 workers still gives 0.633429.) Tables: the 1908-type tables o
 types missing from the table would only fall back to larger values, so the result is a valid upper bound either way. The light-mass correction
 (1−OPT_h−0.0485)/(1−OPT_h−λ) is applied exactly, as for 4·10^5.
 
-EXACT_RESULT_PENDING
+**Status 2026-10-30: PENDING.** The container was replaced and the git-ignored `delta23r_E800000.json` was lost. The head session is
+regenerating it (`verdict3/run_bound_800k_regen.log`) and will start `verdict3/run_verify.sh` once the regenerated δ reproduces 0.742445.
+- **Checkpoint decision.** The 22 stage costs from the old run (`verify_ckpt.txt`) can no longer be tied to the old δ file, and mixing stage
+  costs from two δ vectors is not a valid bound (one global δ is required). So I moved the checkpoint aside to `verdict3/verify_ckpt.old_delta.txt`,
+  and the run recomputes from scratch.
+- **Cross-check after the run.** Compare the overlapping stages of the old and new checkpoints line by line. Equality is evidence that the
+  regenerated δ matches the old one, but it is not used in the bound.
+- **Guard.** `run_verify.sh` now records sha256 of the δ file and refuses to resume a checkpoint if the file has changed.
 
 ## 2. Theorem E at 8·10^5
 
-MIXED_RESULT_PENDING
+**Status: PENDING the exact fraction.** `verify_mixed.py` is parametrised: `verify_mixed.py POOL E DELTA B_EXACT`; with no arguments it
+reproduces the 4·10⁵ run. Run `verdict3/run_mixed.sh` once `verify23_800k.log` shows `EXACT FRACTION:`. The script takes that fraction,
+records the δ sha256 and runs
+`verify_mixed.py poolE800000.jsonl 800000 delta23r_E800000.json <fraction>` → `verdict3/mixed_800k.log`.
 
-## 3. Conditional all-E bound
+What the 8·10⁵ run changes compared with 4·10⁵:
+- the λ′ in R3 uses the 8·10⁵ light mass (0.04850936, larger, so R3 is conservative);
+- S sums over 5 ≤ q ≤ 8·10⁵ with the 8·10⁵ δ;
+- the tail term becomes 1/(8·10⁵ − 1).
 
-Numbers from `verdict3/tail_bound.py`, `align_stats.py`, `check_H_n.py`; arithmetic is float, so these are VERIFIED (float), not PROVED.
+The same δ file must be used for B and for S, and the script enforces this by using one path.
 
-**What "no covering at any E" means.** A covering is a finite set P of primes, so E = max e_p is finite; the full pool of all primes with e_p ≤ E dominates P
-(augmentation lemma). So the claim is sup_E B(E) < 1, where for each E the bound uses the same δ vector.
+Expected size (not yet a result): B ≈ 0.7424, S ≈ 0.146–0.15, R3 ≈ 0.076. That gives about 0.89 for 3 ∤ g and about 0.97 for 3 | g, which is below 1 but with a thinner
+margin than at 4·10⁵ (0.953).
 
-**Reduction [PROVED, from L1, L3 and 1-Lipschitzness of (x−δ)_+].** Fix δ_ℓ from the 8·10^5 optimum for ℓ < 1000 and δ_ℓ = 1/2 for every ℓ ≥ 1000 (the finite bound stays 0.742445). For every E:
- - stage ℓ ≤ Q0: cost_ℓ(E) ≤ cost_ℓ(8·10^5) + R*/(1−δ_ℓ) · Σ_{p: e_p>8·10^5, P+(e_p)=ℓ} Λ_p/e_p;
- - any stage: cost_ℓ(E) ≤ min over majorants (a·m1 + b·m2)/(1−δ_ℓ) (the code's family), with m1 = Σ Λ_p r_p/e_p, m2 = diagonal + Σ_{p≠q} Λ_pΛ_q r c^<_{pq}/(e_p e_q);
- - here R* = 1/(1−α*) = 2.680 bounds every r, and c^<_{pq} ≤ ℓ-free part of gcd(e_p, e_q).
+## 3. Conditional all-E bound (restated with aggregate hypotheses, 2026-10-30)
 
-**The worst-case gcd bound alone cannot close.** With c^< replaced by gcd'(e_p,e_q) the pair term gains a factor ∏_{q<ℓ}(1+4/q) ~ (ln ℓ)^4,
-and even with n(e) at exactly its Artin–Kummer model values the total is 22.8 [VERIFIED (float), `tail_bound.py 1.0 1000` with alignment]. So **no hypothesis on n(e) alone suffices for this method**.
-Alignment of the forms must be controlled too.
+**Status: hypotheses CONJECTURED; the implication is proved modulo float arithmetic (bound VERIFIED, float). It does not settle #203.**
 
-**Hypothesis H(κ, ε) [CONJECTURED].** n̂(e) := 0.813 · (e/φ(e)) / ln(8·10^5), the Artin–Kummer prediction with 1/ln e relaxed to 1/ln E0 (an upper bound for e > E0).
- - (H_n) for e > E0 = 8·10^5, all stage functionals Σ_{p ∈ stage ℓ, e_p>E0} Λ_p/e_p are at most κ times those of n̂;
- - (H_c) in every stage the alignment excess is at most ε: Σ_{p≠q} w_p w_q (c^<_{pq}−1) ≤ ε (Y_1² + Y_1/ℓ), w_p = Λ_p/e_p, Y_1 = Σ w_p.
+**Withdrawn.** My first version (2026-10-24) assumed (H_n) "every stage functional of n is ≤ κ times that of n̂" plus a per-stage
+alignment cap ε. V showed (V_check.md §3.4) that the pointwise-in-d form of such density hypotheses is false even in the Poisson model it
+was calibrated on: a single realised e beats the expected mass of all multiples of d. My H_n quantified over the same functionals, so it is
+withdrawn, and so is its table (0.8748 … 1.0024). Two findings survive. (i) With worst-case alignment c^<_pq = gcd′(e_p, e_q) the method
+gives 22.8, so **no hypothesis on n(e) alone suffices; alignment must be controlled** [VERIFIED, float]. (ii) The alignment excess on the data
+is small (max 0.85 per stage in my normalisation; C's Lemma M model fits the pair sums to within 6%).
 
-**Theorem (conditional).** Under H(κ, ε): B(E) ≤ T(κ, ε) for all E, with the following values of T (sums over ℓ < 3·10^6; the rest is < 5·10^-4 by the ℓ^-2 decay of the last terms):
+**What the proof uses** (C_allE.md §5b, Theorem C′; the reduction is the one in my first version: δ fixed from the 8·10⁵ run for ℓ < 1000,
+δ = ½ for ℓ ≥ 1000, then L1 + L3 + 1-Lipschitz). For each stage ℓ ≥ 5, only two aggregates of the tail e > E₀ = 8·10⁵ enter:
+- the first moment Y₁^>(ℓ) = Σ_{e>E₀, P⁺(e)=ℓ} n(e)Λ(e)/e;
+- the sum of squares Q^>(ℓ) = Σ_d θ(d)(Y_d^>)², where Y_d^> is the same sum restricted to d | e/ℓ^{v_ℓ(e)} and θ(d) = ∏_{q|d}(q−1)/(q+1).
 
-| κ | ε | T |
+The model values Y₁^mod and Q^mod come from n̂(e) = τ·e/φ(e) with τ = 0.813/ln E₀. This is the Artin–Kummer prediction with 1/ln e relaxed to 1/ln E₀.
+
+**Hypotheses.**
+- H_L(κ_L): Y₁^> ≤ κ_L·Y₁^mod for every ℓ.
+- H_Q(κ_Q²): Q^> ≤ κ_Q²·Q^mod for every ℓ (the squares may exceed the model by the factor κ_Q²).
+- H_align(0): pair sums take the random-form (Lemma M) value.
+
+The pool–tail cross term is bounded by Cauchy–Schwarz, so no mixed hypothesis is needed.
+
+**Theorem (conditional).** Under H_L(κ_L), H_Q(κ_Q²) and H_align(0), no finite set of primes covers, so no pure covering certificate exists
+at any E. The bounds below come from C's `C_tail.py … tailonly` (`C_tailQ_grid2.log`); stages ℓ < 3·10⁶ are summed and the remainder is about 4·10⁻⁵.
+
+| κ_L | factor on squares κ_Q² | bound |
 |---|---|---|
-| 1.0 | 0.00 | 0.8748 |
-| 1.0 | 0.50 | 0.9386 |
-| 1.0 | 0.85 | 0.9832 |
-| 1.0 | 1.00 | 1.0024 (fails) |
-| 1.2 | 0.30 | 0.9639 |
-| 1.5 | 0.00 | 0.9811 |
-| 2.0 | 0.00 | 1.1156 (fails) |
-| 0.8 | 1.00 | 0.9332 |
+| 1.0 | 1.00 | 0.8719 |
+| 1.0 | 1.44 | 0.9038 |
+| 1.0 | 1.80 | 0.9280 |
+| 1.2 | 1.80 | 0.9303 |
+| 1.0 | 2.25 | 0.9574 |
+| 1.5 | 2.25 | 0.9633 |
 
-So the method closes iff roughly κ ≲ 1.5 at ε = 0, κ ≲ 1 at ε ≈ 0.9. The per-stage minimum chooses the linear tail bound for ℓ ≲ 30 and the second-moment bound above.
+**A factor of up to 1.4 on the squares closes with margin: at κ_Q² = 1.44 and κ_L = 1 the bound is 0.904 < 1.** It still closes at κ_Q² = 2.25.
+I did not recompute these numbers in this container. The 8·10⁵ stage file and build pickle were lost with the old container, and both cores
+are busy. They are C's numbers, VERIFIED (float). My own earlier run with c = 1 and ε = 0 gave 0.8748 at κ = 1. That is consistent with C's 0.8719,
+up to the different cross-term treatment.
 
-**Data check [VERIFIED].**
- - Alignment excess (all stages with ≥ 2 primes, e ≤ 8·10^5): max 0.85, mass-weighted means 0.17–0.33 by ℓ bucket (`align_stats.py`), so ε = 0.85 holds on the data.
- - Stage masses against n̂ on the top half of the range (4·10^5, 8·10^5]: ratio 1.37 (P+<7, mass 3·10^-5), 1.17 (7–30), 1.12 (30–100), 1.02 (100–1000), 0.99 (1000–10^4), 0.94 (≥ 10^4), total 1.006
-   (`check_H_n.py`; on (2·10^5, 8·10^5]: total 1.031). So κ ≈ 1.0–1.2 on the data, which sits at the edge of what the proof tolerates. There is real slack only because the data decay like 1/ln e while H_n uses 1/ln E0; I did not exploit this.
+**Data check [VERIFIED; C_testQ.py, C_testH.py, my check_H_n.py].** On the out-of-sample windows (E₁, 8·10⁵]:
+- First moment: the total ratio is 1.006 on (4·10⁵, 8·10⁵], with buckets 0.94–1.37. The 1.37 bucket (ℓ = 5) carries only 3·10⁻⁵ of the mass.
+- Squares: the total ratio is 1.25–1.30, rising to 1.77 in the ℓ < 12 buckets.
 
-**Closest known results.** None implies H. Bugeaud–Corvaja–Zannier (Math. Z. 243, 2003) gives log gcd(2^e−1, 3^e−1) ≤ εe, hence n(e) ≤ εe/ln e: a power of e short of any bound of the shape needed.
-GRH-conditional Kummer/Artin counts for the two-generator group ⟨2,3⟩ control primes up to index about p^{1/6}–p^{1/4} and are averages over p, not statements about the smooth levels e that H needs; Romanoff-type convergence (Σ 1/(n·ord_n a) < ∞) is of the same family and also does not give H.
-H_c (non-alignment of directions in P¹(F_q)) has no known proof either.
+**So the data do not satisfy H_Q(1.44) in the small-ℓ buckets. They support κ_Q² ≈ 1.8 (bound 0.928, margin 7%), not 1.4.** The ratios do not
+shrink as E₁ grows, and an independent-Poisson model of n(e) does not reproduce them (the data are over-dispersed). Extending H to all
+e > 8·10⁵ is therefore an assumption with no theoretical support.
+
+**Closest known results.** None implies H_L or H_Q.
+- Bugeaud–Corvaja–Zannier (2003) give log gcd(2^e−1, 3^e−1) ≤ εe for large e (ineffective). That yields only n(e) ≤ εe/ln e, a power of e too weak.
+- GRH-conditional Kummer/Chebotarev counts for ⟨2,3⟩ (Cangelmi–Pappalardi 1999 and successors) give averages over p, up to index about
+  x^{1/30} (published), not bounds on n(e) at smooth levels e.
+- Nothing is known about the alignment statistics.
+
+The weakest clean form of what is needed is a square-sum bound on n(e) along multiples of d inside each P⁺-stage, uniform in ℓ. As far as
+I know, no GRH-conditional theorem implies it.
 
 ## Aristotle prompt
 
