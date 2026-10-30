@@ -146,3 +146,57 @@ The file still states (H_n) stage by stage ("all stage functionals ... at most k
   - The ratios do not shrink as the window grows.
   - The Lipschitz stages could use 2.2419 instead of R* = 2.680 (this would help).
 - The totals (0.9084 with the per-range empirical kappas, 0.9961 with the crude kappas) come from C's own code and have not been re-run independently.
+
+## 10. Round 6 (2026-10-30): D_almostall.md section 11
+
+### 10.1 Lemma U: PROVED (proof below). Both Theorem A and the stratified version are released from this gap.
+Claim: for u, u' uniform with u != u' in [1,N]^2 and Delta = u'-u, limsup_N E_N[F(Delta)] <= W := sum_d g(d)/e(d). Here F(Delta) = sum_{d | n(Delta)} g(d) (d squarefree with primes >= 5) and g(d) = prod 1/(p-2).
+Proof.
+- (a) Each Delta has probability <= N^2/(N^2(N^2-1)) = (1+o(1))/N^2. Hence E_N[F] = sum_d g(d) P(Delta in Lambda_d \ 0).
+- (b) Lattice count. Let v be the shortest vector of Lambda_d; Gauss reduction gives |v|^2 <= (2/sqrt3) e(d). The points of Lambda_d lie on lines parallel to v spaced e/|v| apart. The box [-N,N]^2 meets at most 2 sqrt2 N |v|/e + 1 of these lines, with at most 2 sqrt2 N/|v| + 1 points on each. So #(Lambda_d cap box \ 0) <= 8N^2/e + C N/|v| with C = 2 sqrt2 (1 + 2/sqrt3), using N|v|/e <= (2/sqrt3) N/|v|. The count is 0 if |v| > sqrt2 N.
+- (c) Shortest vectors are long for large d. Since v != 0 lies in Lambda_d, d divides the numerator n(v) of 2^a 3^b - 1, and 0 < n(v) <= 6^{|v|}. So lambda1(d) = |v| >= log d/log 6, and d <= 6^{sqrt2 N} whenever the count is nonzero.
+- (d) Split at T.
+  - The finitely many d with e(d) <= T (all their primes have e_p <= T) are periodic, so P -> 1/e(d).
+  - The rest contribute <= (1+o(1)) [8 sum_{e(d)>T} g(d)/e(d) + (C log 6/N) sum_{1<d<=6^{sqrt2 N}} g(d)/log d].
+  - The first sum is a tail of the convergent series W (g(d) <= 3^{omega(d)}/d and e(d) >= ord_d 2, Lemma R).
+  - For the second, sum_{d<=X} g(d) <= prod_{5<=p<=X}(1+1/(p-2)) << log X, so partial summation gives sum_{1<d<=X} g(d)/log d << log log X << log N. That term is << log N/N -> 0.
+  - Letting T -> infinity gives limsup E_N[F] <= W.
+- Inside classes the argument is the same. The pairs are restricted to S_r, the weight per Delta is at most (1+o(1))/(nu_r^2 N^2), and cosets of Lambda_d cap Lambda_W replace Lambda_d. The extra +1 per coset contributes <= |H_W| (1/N^2) sum_{d<=6^{sqrt2 N}} g(d) << 1/N. lambda1 can only grow. The character average over S_r converges for the finitely many d with e(d) <= T. Truncating at p < z only lowers F.
+The gap D flagged was the crude Lemma D boundary sum over all primes up to 6^N. The fix is (c): the boundary term is weighted by 1/lambda1(d), and lambda1(d) is at least log d/log 6.
+
+### 10.2 Explicit K constants: FLAW. D's K is too small, and the explicit r0 table shifts.
+The Omega(kappa) condition prod_{w1<=p<w2}(1-kappa/p)^{-1} <= K (log w2/log w1)^kappa must hold for all real w1 < w2. D_Kconst.py takes w2 only at the next prime, so it misses w2 just above a prime. Correct values (V_Kfix.py):
+- Primes >= 5: the sup is the single prime p = 5 with w2 -> 5+. K1 = (1-1/5)^{-1} = 1.25, so K1^10 = 9.31 (D: 1.396). K2 = (1-2/5)^{-1} = 5/3, so K2^10 = 165.4 (D: 3.75).
+- Primes >= 31: K1 = 1.03612, K1^10 = 1.426; K2 = 1.07482, K2^10 = 2.058, both attained on [41,43] (D: 1.01597 and 1.03270, K2^10 = 1.379).
+Recomputed with D's own formula and D's nu distribution (eta1 = e^{9-s} K1^10, eta2 = e^{18-s} K2^10, rho <= 1.028192, s = (r0+1)(0.999/1.001)):
+
+| r0 | unstratified, D's K | unstratified, corrected K | stratified w=31, D's K | stratified w=31, corrected K |
+|---|---|---|---|---|
+| 22 | 0.0525 | 0.551 | 0.0153 | 0.0200 |
+| 23 | 0.0368 | 0.320 | 0.0093 | 0.0110 |
+| 24 | 0.0309 | 0.161 | 0.0070 | 0.0077 |
+| 25 | 0.0287 | 0.0811 | 0.0062 | 0.0064 |
+| 26 | 0.0279 | 0.0479 | 0.0059 | 0.0060 |
+| 28 | 0.0275 | 0.0303 | 0.0057 | 0.0058 |
+| 29 | 0.0274 | 0.0285 | 0.0057 | 0.0057 |
+
+Corrected headline statements:
+- Stratified: all but 2.0% of m have a cell with Omega <= 22, 1.1% with Omega <= 23, and 0.6% with Omega <= 26.
+- Unstratified: <= 3% first holds at r0 = 29 (2.85%); D's "2.85% at Omega <= 26" becomes 4.8%.
+- The large-r0 limits and the covering corollary (<= 0.58%, uniform in y) are unchanged, because they let s -> infinity.
+On my earlier "r0 about 40+": that was too pessimistic. With an explicit K the stratified sieve over primes >= 31 really reaches the low 20s, so I withdraw that estimate. Both D's and my numbers rely on the same unopened reading of FI Lemma 6.3 (error e^{9 kappa - s} K^{10}). Until someone opens Opera de Cribro, that reading stays UNCHECKABLE.
+
+### 10.3 Paley-Zygmund per class, character formula, Parseval: CONFIRMED
+- P(R > 0) >= (E R)^2 / E R^2 with E R >= (1-eta1) mu and E R^2 <= (1+eta2) pairs + (1+eta1) mu gives the stated bound as mu -> infinity.
+- The factorisation (1-rho(p)/p)/(1-1/p)^2 = (1-1/(p-1)^2)(1+g(p) 1[Delta in Lambda_p]) holds for both rho(p) = 2 and rho(p) = 1.
+- Only characters of Z^2/(Lambda_W + Lambda_d) survive the class average, which is exact after 10.1.
+- Parseval gives sum_{psi != 1} |T^(psi)|^2/|T|^2 = 1/nu - 1.
+- C_w = prod_{p>=w} is the limit of prod_{w<=p<z} (each factor < 1, so it is the right side as z -> infinity).
+- Classes with nu = 0 count with weight 1.
+nu_r: my own exhaustive enumeration over every class r mod W on the full exponent torus (no logs, no FFT) gives min nu = 0.5583 (w=13) and 0.5097 (w=17), with mean nu = prod(1-1/p) to 10 digits. Both match D.
+
+### 10.4 rho enclosure: partially CONFIRMED
+- A(1), the mean of F_{<31} over H_W, is exactly sum_{d | 5*7*...*29} g(d)/e(d). My exact-rational computation, with e(d) = |<2,3> mod d| from the forms (cross-checked by BFS for small d) and |H_W| = 665280, gives A(1) = 1.1562606807, identical to D. A first attempt with e(d) = lcm(ord 2, ord 3) gave 1.1667; that formula is wrong for composite d, and this is a trap for anyone re-deriving it.
+- The lower bound (A(1) + singles, all terms >= 0) and the upper bound (C_5 is the product truncated at 1e8) are logically sound.
+- Not checked independently: the single-prime sum over 31 <= q <= 1e8 (needs D_eprimes.c, which I have not compared with my own sieve beyond 3e6) and the composite/unknown-prime tail tau_31 = 3.2e-4.
+- The interval [1.02751, 1.02820] contains my box values 1.02747-1.02754 (p < 5000, N <= 300). These sit about 4e-5 below the lower end, which is consistent with the p < 5000 truncation and the 1/N boundary effect (D's own N=600 value is 1.02758).
