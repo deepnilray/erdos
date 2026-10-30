@@ -5,7 +5,7 @@
 #   part C: p1 known, e1>E0: crude g1/e1*(Pi_key(p1)-1).    (p1 unknown: inside T1 of D_W.py)
 import numpy as np, math, sys
 from math import gcd
-w=int(sys.argv[1]); E0=int(sys.argv[2]); Y=10**8
+w=int(sys.argv[1]); E0=int(sys.argv[2]); Y=int(float(sys.argv[3])) if len(sys.argv)>3 else 10**8
 exec(open('D_W.py').read().split("# ---- max-key composite bound ----")[0].split("small=D[D['q']<w]")[0].replace("w=int(sys.argv[1]); Y=int(float(sys.argv[2])); fn=sys.argv[3] if len(sys.argv)>3 else 'D_data/ep_1e8.bin'","fn='D_data/ep_1e8.bin'"))
 big=D[D['q']>=w]
 q=big['q'].astype(np.int64); e=big['e'].astype(np.int64)

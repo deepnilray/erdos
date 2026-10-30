@@ -33,14 +33,19 @@ for i in range(len(L)):
     if best[1] == 'lin': fixed[i] = cfin[i]; w[i] = RSTAR / (1 - di)
     else:
         a, b = best[2]; fixed[i] = (a * M1F[i] + b * M2F[i]) / (1 - di); w[i] = RSTAR * (a + b / li) / (1 - di); v[i] = TH * RSTAR * b / (1 - di)
+import os
+KLR = [float(x) for x in os.environ['KLR'].split(',')] if os.environ.get('KLR') else None      # per-range kappa_L
+KQ2R = [float(x) for x in os.environ['KQ2R'].split(',')] if os.environ.get('KQ2R') else None   # per-range kappa_Q^2
 tot = 0.0; rows = []
-for lo, hi in RANGES:
+for ri, (lo, hi) in enumerate(RANGES):
+    if KLR: kL = KLR[ri]
+    if KQ2R: kQ = KQ2R[ri] ** 0.5
     m = (L >= lo) & (L < hi)
     if not m.any(): continue
     lin = kL * (w[m] * Y1[m]).sum(); vQ = kQ ** 2 * (v[m] * Qm[m]).sum(); vS = (v[m] * S[m]).sum()
     t = fixed[m].sum() + lin + 2 * np.sqrt(vS * vQ) + vQ
     rows.append((lo, hi, t)); tot += t
-ext = 4e-5 * max(kL, kQ ** 2)       # stages beyond the computed range, scaled
+ext = 4e-5 * max(kL, kQ ** 2)       # (with per-range kappas: those of the last range)       # stages beyond the computed range, scaled
 print('kL=%.2f kQ=%.2f eps=%.2f (choice at kQ=%.2f): total %.4f (+ tail beyond computed stages %.1e)' % (kL, kQ, EPS, kC, tot + ext, ext))
 print('   by range:', ' '.join('[%g,%g):%.4f' % r for r in rows))
 np.savez('verdict3/C_tailR_weights.npz', L=L, w=w, v=v, fixed=fixed)

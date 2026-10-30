@@ -3,7 +3,7 @@
 import numpy as np, sys, math
 w=int(sys.argv[1]); Wup,M,Cw,K1,K2=map(float,sys.argv[2:7])
 z=np.load(f'D_data/nu_w{w}.npz'); nu=z['nu']; mu=z['mu']; s_=mu>0; nu=nu[s_]; mu=mu[s_]
-for s in (24,25,26,27,28,30,35,50):
+for s in (19,20,21,22,23,24,25,26,28,30,40):
     e1=math.exp(9-s)*K1**10; e2=math.exp(18-s)*K2**10
     with np.errstate(divide='ignore'):
         ratio=Cw*(Wup+M*(1/nu-1))
