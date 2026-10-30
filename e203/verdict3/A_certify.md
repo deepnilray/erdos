@@ -12,8 +12,8 @@ fail), CONJECTURED (hypothesis or heuristic). No file here was committed. Large 
 | Same pool, independent sieve route (no gcd) | every prime p < 2·10^9 with e_p ≤ 8·10^5 matches the pool exactly: 100 802 = 100 802, 0 missing, 0 extra, 0 wrong e | PROVED for p < 2·10^9 (exhaustive) |
 | Pool forms (α, β, e) define the right lattice | 100 814/100 814 pass (explicit kernel basis + index argument) | PROVED (exhaustive) |
 | B(8·10^5), float | 0.742445 (reproduces agent 3 and the 4·10^5 → 8·10^5 trend) | VERIFIED (float) |
-| B(8·10^5), exact rational | EXACT_PENDING | PROVED once the pool is complete (see scope) |
-| Theorem E at 8·10^5 | MIXED_PENDING | see section 2 |
+| B(8·10^5), exact rational | pending (δ file lost with the container; run restarts from scratch after the δ regen) | PROVED once the pool is complete (see scope) |
+| Theorem E at 8·10^5 | pending; `verdict3/run_mixed.sh` is ready | see section 2 |
 | Conditional all-E bound (aggregate H_L, H_Q) | 0.904 at κ_Q² = 1.44, 0.928 at κ_Q² = 1.8 (data level), 0.963 at κ_Q² = κ_L² = 2.25 | hypotheses CONJECTURED; bound VERIFIED (float, C's run) |
 | Push to E = 1.6·10^6 | not done (cost: about 8·10^5 gcds of 1.6·10^6-bit numbers, ≈ 0.15 s each ≈ 35 h CPU, plus factoring) | — |
 
