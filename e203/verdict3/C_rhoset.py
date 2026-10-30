@@ -31,4 +31,4 @@ def mat(rows):
     for k,(m,u) in enumerate(rows):
         for x in u: r.append(k);c.append(x)
     return sp.csr_matrix((np.ones(len(r)),(r,c)),shape=(len(rows),len(qs)))
-pickle.dump(dict(qs=qs,Ae=np.array([a[0] for a in A],dtype=float),AS=mat(A),Bme=np.array([b[0] for b in Bm],dtype=float),BS=mat(Bm)),open('/tmp/claude-0/-home-claude/89603433-4fa1-57e4-a8fc-4d2490c5f294/scratchpad/rhoset.pkl','wb'))
+pickle.dump(dict(qs=qs,Ae=np.array([a[0] for a in A],dtype=float),AS=mat(A),Bme=np.array([b[0] for b in Bm],dtype=float),BS=mat(Bm)),open('/tmp/C_rhoset.pkl','wb'))

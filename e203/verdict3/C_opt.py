@@ -8,9 +8,17 @@ import distort_fast as D
 E0 = 800000; OPT = 0.578318; LAM0 = 0.04850936; RMAX = 2.614450284594; LIM = 64 * E0
 z = np.load('verdict3/stages_E800000.npz'); ells = [int(x) for x in z['ells']]; dv0 = z['dv'].copy(); idx = {l: i for i, l in enumerate(ells)}
 Bp = pickle.load(open('verdict3/B_E800000.pkl', 'rb'))
-R = pickle.load(open('/tmp/claude-0/-home-claude/89603433-4fa1-57e4-a8fc-4d2490c5f294/scratchpad/rhoset.pkl', 'rb')); qs = R['qs']
+R = pickle.load(open('/tmp/C_rhoset.pkl', 'rb')); qs = R['qs']
 Ae, AS, Bme, BS = R['Ae'], R['AS'], R['Bme'], R['BS']
-rA = np.where((Ae % 2 == 0) | (Ae % 3 == 0), RMAX, 1.0); lnA = np.log(Ae) - np.log(rA)
+from math import gcd
+RT = {1: 1.0}                                   # cyclic-type price r(gcd(e,144)) (C_allE.md sec 3d); OLD=1 restores RMAX
+for _l in open('coupled_full_E200000.txt'):
+    _k, _R = _l.split()[:2]; _a, _c, _d = map(int, _k.split(','))
+    if gcd(gcd(_a, _c), _d) == 1: RT[_a * _d] = max(RT.get(_a * _d, 0.0), float(_R))
+import os
+rfun = (lambda e: RMAX if (e % 2 == 0 or e % 3 == 0) else 1.0) if os.environ.get('OLD') else (lambda e: RT[gcd(int(e), 144)])
+RMX = RMAX if os.environ.get('OLD') else max(RT.values())
+rA = np.array([rfun(e) for e in Ae]); lnA = np.log(Ae) - np.log(rA); rB = np.array([rfun(e) for e in Bme])
 big = np.array([i for i, l in enumerate(ells) if l > 400]); qi = np.array([idx[q] for q in qs])
 def full(dq, cb):
     d = dv0.copy(); d[big] = np.minimum(dv0[big], cb); d[qi] = dq; return d
@@ -18,8 +26,8 @@ def rho_max(dq, cb):
     Lq = -np.log1p(-dq); gmax = 1 / (1 - np.max(np.minimum(dv0[big], cb)))
     smooth = float(np.max(np.exp(AS @ Lq - lnA)))
     x = BS @ Lq
-    large = max(float(np.max(RMAX * np.exp(x + w * math.log(gmax)) / np.maximum(Bme * 401 ** w, E0 + 1))) for w in (1, 2, 3, 4))
-    large = max(large, RMAX * (gmax / 401) ** 5, RMAX * 16 / LIM)
+    large = max(float(np.max(rB * np.exp(x + w * math.log(gmax)) / np.maximum(Bme * 401 ** w, E0 + 1))) for w in (1, 2, 3, 4))
+    large = max(large, RMX * (gmax / 401) ** 5, RMX * 16 / LIM)
     return max(smooth, large), smooth, large
 def Nof(B1, c):
     ok = lambda N: (1 - OPT - LAM0) / (1 - OPT - LAM0 - N / E0) * B1 + N * c >= 1

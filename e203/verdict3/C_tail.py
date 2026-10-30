@@ -12,9 +12,12 @@ KAPPA = float(sys.argv[1]); L1 = int(sys.argv[2]) if len(sys.argv) > 2 else 1000
 E0 = 800000; C0 = 0.813; RSTAR = 1 / (1 - 0.626827)
 z = np.load('verdict3/stages_E800000.npz'); ells = [int(x) for x in z['ells']]; dvec = z['dv'].copy()
 idx = {l: i for i, l in enumerate(ells)}
+import os
+DBIG = float(os.environ.get('DBIG', 0.5)); DCAP = float(os.environ.get('DCAP', 1.0)); DSCALE = float(os.environ.get('DSCALE', 1.0))   # delta profile knobs (round 4)
+dvec = np.minimum(dvec * DSCALE, DCAP)
 for l in ells:
-    if l >= L1: dvec[idx[l]] = 0.5
-def delta(q): return dvec[idx[q]] if q in idx else 0.5       # q > E0: coordinate untouched by the pool, delta chosen 1/2
+    if l >= L1: dvec[idx[l]] = DBIG
+def delta(q): return dvec[idx[q]] if q in idx else DBIG       # q > E0: coordinate untouched by the pool, delta chosen 1/2
 def g(q): return 1.0 if q in (2, 3) else 1.0 / (1 - delta(q))
 # ---- sieve to E0
 N = E0 + 1; spf = np.zeros(N, dtype=np.int64)
@@ -75,6 +78,7 @@ def cost(m1, m2, d, A=1.0):
 res = {}
 stage_list = sorted(set(l for l in PR if 5 <= l < 3000000))
 fin = np.load('verdict3/stages_E800000.npz')
+PIECES = []
 tot_lin = 0.0; tot_mom = 0.0; tot_best = 0.0; rows = []
 # exact finite cost with the modified delta vector
 Bp = pickle.load(open('verdict3/B_E800000.pkl', 'rb'))
@@ -134,6 +138,7 @@ for l in stage_list:
     # linear (Lipschitz) tail on top of finite cost
     c_lin = cfin.get(l, 0.0) + RSTAR * TAU * F1gt / (1 - d_l) if l in cfin else RSTAR * TAU * F1gt / (1 - d_l)
     rows.append((l, c_lin, c_mom, m1, m2))
+    PIECES.append((l, d_l, cfin.get(l, 0.0), M1F.get(l, 0.0), M2F.get(l, 0.0), TAU1 * F1gt, S2data, TAU1 ** 2 * S2tail))   # unit (kappa=1) tail pieces for C_tailR.py
     if l % 1000 == 7 and l < 100: pass
 cl = np.array([r[1] for r in rows]); cm = np.array([r[2] for r in rows]); L = np.array([r[0] for r in rows])
 best = np.minimum(cl, cm)
@@ -143,3 +148,5 @@ for Q0 in (11, 30, 50, 100, 200, 500, 1000):
     print(f'KAPPA={KAPPA} L1={L1} split Q0={Q0}: sum(l<{Q0}) linear {cl[L<Q0].sum():.5f} + sum(l>={Q0}) moment {cm[L>=Q0].sum():.5f} = {tot:.5f}', flush=True)
 print('min-per-stage total (up to l<3e6):', best.sum(), ' last cm terms:', cm[-3:], 'l:', L[-3:])
 np.savez(f'verdict3/C_tailQ_k{KAPPA}_q{KQ}_e{EPS}_{sys.argv[6] if len(sys.argv)>6 else "tot"}.npz' if KQ is not None else f'verdict3/C_tailtheta_k{KAPPA}_L{L1}_e{EPS}.npz', L=L, cl=cl, cm=cm)
+
+np.savez(os.environ.get('POUT', f'verdict3/C_tailpieces_L{L1}.npz'), P=np.array(PIECES), RSTAR=RSTAR)   # columns: l, delta, cfin, M1F, M2F, Y1mod, S2data, Qmod
