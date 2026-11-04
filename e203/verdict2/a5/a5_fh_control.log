@@ -1,0 +1,9 @@
+(1) kappa=2, K=2, L3-style constraint: E in [2.0794e+02, 2.0794e+02], e^E-1 ~ 2.037e+90, cost 1.000000 <= s=19.960039
+(2) mpf re-evaluation (no tail) 2.079441541680e+02 inside iv [2.079441541680e+02, 2.079441541680e+02]: True
+(3) planted over-budget config: cost 21.0000, accepted=False (must be False)
+K 1.5 kappa 1  L3 E_of=2.6859598382e-06  a5 iv=[2.6859598382e-06,2.6859598382e-06]
+K 1.5 kappa 2  L3 E_of=5.1855711805e-04  a5 iv=[5.1855711805e-04,5.1855711805e-04]
+K 3.0 kappa 1  L3 E_of=3.2723093653e-09  a5 iv=[3.2723093653e-09,3.2723093653e-09]
+K 3.0 kappa 2  L3 E_of=3.2958368660e+02  a5 iv=[3.2958368660e+02,3.2958368660e+02]
+K 4.0 kappa 1  L3 E_of=2.0794415417e+02  a5 iv=[2.0794415417e+02,2.0794415417e+02]
+K 4.0 kappa 2  L3 E_of=4.1588830834e+02  a5 iv=[4.1588830834e+02,4.1588830834e+02]
