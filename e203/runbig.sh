@@ -1,0 +1,4 @@
+for N in 36756720 61261200 73513440 232792560 367567200 698377680 1163962800; do
+  timeout 7200 python3 poolbig.py $N 2>&1 | tail -1
+  python3 exclude2.py 0.5885747354497355 5,7,11,13,17,19,29 23 poolN_$N.jsonl
+done

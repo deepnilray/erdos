@@ -1,0 +1,3 @@
+primes in Q: 22 [31, 71, 37, 73, 41, 43, 97, 61, 67, 89, 113, 241, 127, 577, 337, 181, 199, 211, 281, 331, 673, 397]
+exact 1.865731e-05  bound 1.065797e-04  PASS=True   planted(no Pi) 1.015611e-04  fires=False
+planted2 (e(d):=e1*e2, no Pi factor) = 1.167632e-05  vs exact 1.865731e-05 : fires=True

@@ -1,0 +1,30 @@
+W_31 <= 1.0094478781357228  M_31 <= 0.003476617072371375  C_31 <= 0.9925179778277441  tau_31 <= 0.0003812979758097696
+W_5 in [ 1.1673522314327711 , 1.1682595932526785 ];  rho in [ 1.0275218142596803 , 1.0283204998404056 ]
+support lower bound a = 1 - sum 1/e_p = 0.15532106782106783   E[nu] = 0.4738416693058567   E[nu^2] = 0.23023588386020274
+   6  delta_strat(w=31) <= 0.726413   certified q>=phi on [a,1]: True
+   7  delta_strat(w=31) <= 0.506852   certified q>=phi on [a,1]: True
+   8  delta_strat(w=31) <= 0.362172   certified q>=phi on [a,1]: True
+   9  delta_strat(w=31) <= 0.183777   certified q>=phi on [a,1]: True
+  10  delta_strat(w=31) <= 0.101695   certified q>=phi on [a,1]: True
+  11  delta_strat(w=31) <= 0.067947   certified q>=phi on [a,1]: True
+  12  delta_strat(w=31) <= 0.038746   certified q>=phi on [a,1]: True
+  13  delta_strat(w=31) <= 0.026314   certified q>=phi on [a,1]: True
+  14  delta_strat(w=31) <= 0.010305   certified q>=phi on [a,1]: True
+  15  delta_strat(w=31) <= 0.008947   certified q>=phi on [a,1]: True
+  16  delta_strat(w=31) <= 0.007547   certified q>=phi on [a,1]: True
+  17  delta_strat(w=31) <= 0.007212   certified q>=phi on [a,1]: True
+  18  delta_strat(w=31) <= 0.006339   certified q>=phi on [a,1]: True
+  19  delta_strat(w=31) <= 0.006292   certified q>=phi on [a,1]: True
+  20  delta_strat(w=31) <= 0.006269   certified q>=phi on [a,1]: True
+  21  delta_strat(w=31) <= 0.006242   certified q>=phi on [a,1]: True
+  22  delta_strat(w=31) <= 0.006234   certified q>=phi on [a,1]: True
+  23  delta_strat(w=31) <= 0.006223   certified q>=phi on [a,1]: True
+  24  delta_strat(w=31) <= 0.006222   certified q>=phi on [a,1]: True
+  25  delta_strat(w=31) <= 0.006222   certified q>=phi on [a,1]: True
+  26  delta_strat(w=31) <= 0.006222   certified q>=phi on [a,1]: True
+  27  delta_strat(w=31) <= 0.006222   certified q>=phi on [a,1]: True
+  28  delta_strat(w=31) <= 0.006222   certified q>=phi on [a,1]: True
+  29  delta_strat(w=31) <= 0.006222   certified q>=phi on [a,1]: True
+  30  delta_strat(w=31) <= 0.006222   certified q>=phi on [a,1]: True
+ inf  delta_strat(w=31) <= 0.006222   certified q>=phi on [a,1]: True
+[planted al-=1e-4]    6  delta_strat(w=31) <= 0.726313   certified q>=phi on [a,1]: False

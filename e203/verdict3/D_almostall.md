@@ -1,0 +1,314 @@
+# Erdős #203, NO side, "almost all m" (agent D, 2026-10-26)
+
+Labels: **PROVED** (full argument here, or a theorem I opened), **PROVED-mod-X** (complete argument except the named cited input X, which I did not re-prove), **VERIFIED** (computation with a control that can fail), **CONJECTURED**, **OPEN-STEP** (a specific missing step).
+#203 stays OPEN. Nothing here decides it. Convention k,ℓ ≥ 1, gcd(m,6)=1, B = box of exponent vectors u=(a,b) in [1,N]², N ≍ log x, A_u = 2^a 3^b.
+
+## 0. Summary (strongest statements)
+
+**Current headline (§11.6, supersedes 3. below and §10.6/§11.5 numbers):** all but 2.0% of m coprime to 6 have k,ℓ ≥ 1 with Ω(2^k3^ℓm+1) ≤ 22; 1.1% with Ω ≤ 23; 0.6% with Ω ≤ 26; ≤ 0.58% for r0 large. Without stratification, ≤ 3% first at r0 = 29 (2.85%). Rigorous 1.02751 ≤ ρ ≤ 1.02820. Lemma U is PROVED (V, §11.6). The only unopened input is FI Lemma 6.3 in the explicit form e^{9κ−s}K^{10}.
+
+1. **Density one for primes is not reachable by a second-moment/Chebyshev argument with any known input.** Precise obstruction (§5): Cauchy–Schwarz over m caps at P(R>0) ≥ 1/(κρ), where ρ ≈ 1.0272 is the exact local-factor loss (VERIFIED, §3.3) and κ is the sieve upper-bound constant for pairs (4 classically; 3.3996 for twin primes by Wu, abstract opened). Parity forces κ ≥ 2 for every sieve, so the method cannot exceed ≈ 0.49 even in the best case, and today gives ≈ 0.24–0.29 (and only after one more cited first-moment step, §5).
+2. **Maynard's "Dense clusters of primes in subsets" does not fit (§1).** Its hypotheses force k ≤ c·√(log x / log log x) forms, its conclusion is x·exp(−O(k log log x)) integers, while a positive proportion of m needs k ≳ log x forms. PROVED as a statement about Theorem 3.1 as relayed by the page I fetched.
+3. **New, and provable with standard sieve theory: an almost-prime version at density 1 − 0.028.** (§3) For z = x^{1/(2s)}, all but (ρ−1+o(1))x ≈ 0.028x of the m ≤ x coprime to 6 have some k,ℓ ≥ 1 with 2^k3^ℓm+1 free of prime factors < z, hence Ω(2^k3^ℓm+1) ≤ ⌊(1+c)s/(1−ε)⌋ (§10: r0 = 19 or 20 at s = 19, not 2.2s). PROVED-mod-(fundamental lemma of the dimension-1 and dimension-2 sieve, cited) and mod the numerical value ρ (VERIFIED, rigorous enclosure not done). No primes, no zero-density input. There is no parity problem because only rough numbers are counted.
+4. **Density one for the rough-number statement is at least as hard as excluding finite coverings, so Lemma S is withdrawn as a target (see §10).** Numerically the variance drops from 0.027 to ≈0.002 after stratifying m mod ∏_{5≤p<30}p (VERIFIED), but the side condition Lemma S needs (every class has a positive normalised density of surviving cells) fails exactly on covering classes. The 0.2694 figure used in §4 below is withdrawn (V, coordinator message).
+5. Pair correlations for primes on average over smooth moduli (§6): the objects are binary equations a'p − b'q = c with only (log x)⁴ coefficient pairs. No Bombieri–Vinogradov/Fouvry–Iwaniec/Drappeau-type average has enough moduli to act on, and even level 1 does not beat parity. The exact missing statement is an averaged two-point Chowla for dilates (§6).
+6. Other statistics (§7): ± forms, larger families, log-density: none improve the Chebyshev ceiling.
+
+Files: `D_cbox.py`, `D_rho.py`, `D_roughcheck.py`, `D_strat.py` (all in `e203/verdict3/`).
+
+## 1. Maynard's theorem against our hypotheses (item 1)
+
+Source opened: arXiv 1405.2593, "Dense clusters of primes in subsets" (Compositio 2016). I fetched the page twice; the tool returns a summary and the displays were in LaTeX, so conditions marked (relayed) were not seen as typeset formulas.
+
+**Theorem 3.1 (relayed).** Let α>0, 0<θ<1. A a set of integers, P a set of primes, L = {L_i = a_i n + b_i} an admissible set of k forms with 1 ≤ a_i, b_i ≤ x^α, k ≤ (log x)^α, 1 ≤ B ≤ x^α. There is C = C(α,θ): if k ≥ C and Hypothesis 1 holds, and δ > 1/log k is a density parameter, then the number of n ∈ A(x) with at least C^{-1}δ log k of the L_i(n) in P is ≫ #A(x) / ((log x)^k exp(Ck)).
+Hypothesis 1 (relayed): (1) A well distributed in progressions to modulus x^θ with total error ≤ #A(x)/(log x)^{100k²}; (2) the same for primes in L(A)∩P over most q ≤ x^θ, (q,B)=1; (3) A not concentrated in any progression.
+
+**Fit check for A = (x/2,x]∩{(m,6)=1}, L_u(m) = A_u m + 1, u ∈ B.**
+- Admissibility: for p ≥ 5 with small e_p (p=5, 7, 11, 13, 17 have H_p = F_p^×) the forms A_u m+1 kill every residue class of m mod p, so the full family is not admissible; one must restrict m to a class mod these primes, as in §3-4. A technical point, not the obstruction.
+- Coefficients ≤ x^α: yes with α ≥ 1 allowed (A_u ≤ x^c).
+- **k ≤ (log x)^α: allowed for α = 2, so k = |B| ≍ (log x)² is formally within the stated range.** The binding condition is (1): for integers m ≤ x the progression errors are O(1) each, so Σ_{q ≤ x^θ} ≤ x^θ, and (1) needs x^θ ≤ x (log x)^{-100k²}, i.e. k² ≤ θ log x / (100 log log x) (relayed formula). So k ≲ 0.1·√(θ log x / log log x). [PROVED as a consequence of the relayed hypothesis; if the exponent in the relayed formula were misread by me the range changes but not the next point.]
+- **Conclusion count.** With k ≤ √log x the number of m produced is ≫ x·exp(−k log log x − Ck) = x^{1−o(1)}, not ≫ x. Worse, with k forms the expected number of m ≤ x having *any* prime among the k forms is ≍ k x / log x. A positive proportion of m therefore needs k ≳ log x. Gap between what the hypothesis allows (k ≲ √log x) and what is needed (k ≳ log x): a square. **VERDICT: Maynard cannot give even a positive proportion, let alone density one.** Its mechanism (sieve weights supported on m where all k forms are simultaneously rough, a set of density (log x)^{-k}) finds rare m with many primes, the opposite of the "almost all m, at least one prime" direction.
+
+**Selberg/GPY weights in a second moment (item 1, first part).** The weighted statement one can prove is Σ_m w(m)(R(m) − t) > 0 with w(m) = (Σ_{d_u | A_u m+1} λ_{d})² ≥ 0. This gives an m with w(m) > 0 and R(m) > t, never a bound on the counting measure of {R = 0}, because w is concentrated on a set of m of relative density (log z)^{-k}. To convert to counting measure one needs w(m) ≥ c > 0 on almost all m, which a sieve weight is built not to satisfy. [CONJECTURED/no theorem; reasoning only.] The weights do not remove the constant κ either: the weighted second moment Σ w(m) R(m)² needs the same pair sums, so parity enters the same way.
+
+## 2. Why the plain Chebyshev argument stalls (recap, with the exact local loss)
+
+R(m) = #{u ∈ B : A_u m + 1 prime}. Cauchy–Schwarz: #{R>0} ≥ (ΣR)²/ΣR². Even with perfect (Hardy–Littlewood) pair asymptotics ΣR² = ΣR + ρ(ΣR)²(1+o(1)), where
+ρ = lim E_m[c(m)²]/E_m[c(m)]², c(m) = (1/|B|)·Σ_u ∏_{p≥5}[p ∤ A_u m+1](1−1/p)^{-1} (local factor, mean 1).
+EO79's route has κ·ρ with κ = sieve constant. Both factors are quantified below.
+
+## 3. Rough numbers: second moment with a genuine asymptotic
+
+### 3.1 Setup
+z = x^{1/(2s)}, D = x^{1/2} = z^s. R_z(m) = #{u ∈ B : A_u m + 1 has no prime factor < z}. Box: N = ⌊0.1/ln 6 · log x⌋ so A_u ≤ x^{0.1}, |B| = N² ≍ (log x)². If R_z(m) > 0 then some n = A_u m+1 ≤ x^{1.1} has all prime factors ≥ z, so Ω(n) ≤ log n/log z ≤ 2.2 s.
+
+### 3.2 Moments [PROVED-mod fundamental lemma]
+Let I = (x/2,x], and split m into the classes 1,5 mod 6 (m = 6t+c).
+- **First moment.** For fixed u the sequence {A_u m + 1} has, for squarefree d | P(z) (primes 5 ≤ p < z), exactly one forbidden class of m mod p, so |A_d| = X/d + r_d with |r_d| ≤ 1. Dimension-1 fundamental lemma (Friedlander–Iwaniec, Opera de Cribro, Cor. 6.10; Halberstam–Richert Thm 2.5; *recalled, not opened*): #{m} = X·∏_{5≤p<z}(1−1/p)·(1+O(e^{-s})) + O(D). Hence E[R_z] = (1+O(e^{-s}))·|B|·∏_{5≤p<z}(1−1/p) ≍ |B|·s/log x ≍ s·log x → ∞ (using ∏_{p<z}(1−1/p) ≍ 1/log z = 2s/log x).
+- **Second moment.** For u ≠ u', the pair {A_u m+1, A_{u'} m+1} is a dimension-2 sieve problem: ρ(p) = 1 if p | A_{u'} − A_u, else 2, ρ(p) ≤ 2 < p for p ≥ 5, r_d ≤ 2^{ω(d)}. Dimension-2 fundamental lemma (same references): #{m} = X ∏_{5≤p<z}(1−ρ(p)/p)(1+O(e^{-s})) + O(D (log D)²) (valid for s ≥ 19, i.e. 9κ+1). Summing over (log x)⁴ pairs, total remainder ≪ (log x)⁴ x^{1/2} (log x)² = o(x/log⁴x).
+- **No parity obstruction** because the event is "no prime factor < z", not "prime".
+
+### 3.3 The constant ρ [VERIFIED numerically]
+Ratio of pair main term to (first moment)²:
+ρ_x = (1/|B|²) Σ_{u≠u'} ∏_{5≤p<z} (1−ρ(p)/p)/(1−1/p)², with ρ(p) = 1 iff 2^i3^j ≡ 1 mod p for (i,j) = u'−u.
+Three independent computations:
+- `D_rho.py` (weighted pair mean over the box, exact lattice condition, no independence assumption): ρ = 1.02629 (N=40, p<2·10⁴), 1.02721 (N=80, p<2·10⁴), 1.02721 (N=80, p<2·10⁵). Tail from p>2·10⁴ moves it by 10⁻⁶.
+- `D_cbox.py`: direct box average of the exact survivor density over 1500 random m ∈ [10⁹,10¹²] with p ≤ 1000 (N=200) and p ≤ 300 (N=400): E[c²]/E[c]² = 1.0272, 1.0259; mean c = 0.996, 0.993 (should be 1: the first moment has local factor 1).
+- `B_cvar.py` (agent B, independence model): 1.0268.
+- Consistency: ρ = (∏_{p≥5}(1−1/(p−1)²)) · (mean F) = 0.8803 × 1.1680 = 1.0282, with mean F from `B_lemmaR.py` (1.168).
+**Control that can fail** (`D_roughcheck.py`): for fixed z, R_z is periodic in m, so E[R_z²] and Var/E² are predicted exactly by the formula above. Observed vs predicted (N=30, 40000 random m): z=60: Var/E² 0.02699 vs 0.02654, E[R] 361.33 vs 361.21; z=200: 0.02819 vs 0.02780, E[R] 280.61 vs 280.52. (A first run had a bug, m ≡ 0 mod p treated as killing every cell, and gave Var/E² = 1.52; this was caught by the same control.)
+
+### 3.4 Theorem A [PROVED-mod (fundamental lemma) and (value of ρ)]
+For every ε > 0 and s ≥ s_0(ε) (the fundamental-lemma error e^{-s} ≤ ε/10), for x ≥ x_0(ε,s):
+#{m ∈ (x/2,x], (m,6)=1 : min_{k,ℓ ≥ 1} Ω(2^k3^ℓ m + 1) > 2.2 s} ≤ (ρ_∞ − 1 + ε)·x, ρ_∞ ≈ 1.0272.
+*Proof.* Chebyshev: P(R_z = 0) ≤ Var(R_z)/E[R_z]² = [E R_z² − (E R_z)²]/(E R_z)². Insert §3.2: = (1+O(e^{-s}))(ρ_x + 1/E[R_z]) − 1 + O(e^{-s}) ≤ ρ_x − 1 + O(e^{-s}) + o(1). ∎
+Remarks. (a) Taking s = s(x) → ∞ slowly gives "all but (ρ−1+o(1))x of m have min Ω ≤ g(x) for any g → ∞". (b) The rigorous content of the constant: ρ_x is a finite lattice sum whose limit exists numerically; a rigorous upper bound ρ̄ needs interval arithmetic for p up to ~10⁵ plus a tail bound for p > Z (first-order tail Σ_{p>Z} 1/(p e_p) + 4N log N/N² is fine; higher-order terms need Lemma D with weights 3^{ω}); I did not do this. Without it the argument still gives a *positive* proportion (Lemma D bounds ρ_x ≤ C), which is weaker than what EO already know for primes. (c) s ≥ 19 is needed for the standard dimension-2 fundamental lemma, so the explicit Ω bound from this route is about 40–55; a Rosser–Iwaniec lower-bound sieve would reduce this at a cost in constants (not computed).
+**Status vs the literature.** I found no paper stating this. It is elementary compared with EO79 and weaker in the arithmetic conclusion (Ω ≤ r_0 instead of prime), stronger in density (97.2% instead of an unspecified small c). I do not claim novelty beyond "not found in the sources I opened".
+
+## 4. Density one for the almost-prime statement: Lemma S
+
+Stratify m by r mod W, W = ∏_{5≤p<w}p. Given r, cells u surviving all p < w form S_r ⊂ B, |S_r| = N_r. Fundamental lemma applies to the primes in [w, z); the first moment is μ_r = N_r ∏_{w≤p<z}(1−1/p), the pair term is Σ_{u≠u' ∈ S_r} ∏_{w≤p<z}(1−ρ(p)/p). Then
+Var_r/μ_r² ≤ O(e^{-s}) + 1/μ_r + [ (1/N_r²) Σ_{(u,u')∈S_r², u≠u'} F_w(u,u') − 1 ], F_w = ∏_{p>w, p | n(u'−u)} (1+1/(p−2)) (using ∏_{p∤Δ}(1−1/(p−1)²) ≤ 1).
+- **Numerical evidence** (`D_strat.py`, N=30, w=30, z=200, 3000 m per class, 4 random classes): Var/E² = 0.0025, 0.0018, 0.0024, 0.0024, against 0.028 unstratified. VERIFIED (that is: the heuristic is right; sampling noise of order 10⁻³).
+- **Lemma S (OPEN-STEP).** For every η > 0 there is w such that, uniformly in r mod W and for N ≥ N_0(w), (1/N_r²)Σ_{S_r²}(F_w − 1) ≤ η.
+- *What is easy:* over all pairs, Σ_{(i,j)}(F_w − 1) = o_w(1)·N² at first order, since Σ_{p>w} 4N²/(p e_p) → 0 (Lemma R) and the boundary term 4N Σ_{w<p≤6^N}1/p ≍ N log N.
+- *What is not:* S_r has density ≍ 1/log w in B, so the trivial reduction N_r ≳ |B|/log w costs a factor (log w)² against the o_w(1)N² bound. One needs equidistribution of S_r (a set periodic under the lattice Λ_P = ∩_{p<w}Λ_p, index I(w)) over cosets of Λ_d for d with all prime factors > w. When Λ_d and Λ_P have coprime indices this is a CRT statement; when gcd(e(d), I(w)) > 1 the loss is up to a factor depending on the overlap, and Σ over those d must still be o(1). I did not prove this; a natural attack: split d by gcd(e(d), I(w)) and bound the dependent part via Lemma R with the extra weight gcd.
+- If Lemma S holds: Theorem A upgrades to **density one**: for every g(x) → ∞, almost all m have min_{k,ℓ≥1} Ω(2^k3^ℓm+1) ≤ g(x).
+Also needed: N_r ≥ c(w)·|B|/log w uniformly in r (no covering by primes < w for any class). [CORRECTED 2026-10-26: the 0.2694 uniform density is withdrawn (V_check.md); for fixed w only N_r ≥ c(w)|B| with uncontrolled c(w) follows.] For fixed w this follows from the repo bound (uncovered density ≥ 0.2694 using pool primes with e_p ≤ 4·10⁵, Theorem E / DISTORTION.md, quoted not re-proved; primes < w with e_p > 4·10⁵ remove at most Σ_{p<w}1/e_p more). The needed uniform statement "N_r ≥ c|B|/log w" is stronger (positive *normalised* local factor, min over r), CONJECTURED for all w, VERIFIED only in sampled classes (min c(m) ≈ 0.73 in 1500 samples).
+
+## 5. Primes: the Chebyshev ceiling and one conditional explicit constant
+
+**Statement C [PROVED-mod (i) first-moment asymptotic FM, (ii) pair sieve with uniform constant κ, (iii) value of ρ].** If FM holds then #{m ≤ x, (m,6)=1 : some 2^k3^ℓm+1 (k,ℓ≥1) prime} ≥ (1/(κρ) − o(1))·(x/3), i.e. lower density ≥ 0.243 with κ = 4 (Selberg/Halberstam–Richert, Thm 3.11 as I recall it, *not reopened*) and ≥ 0.286 if Wu's constant κ = 3.3996 holds for shifts h = A_{u'} − A_u with the dilation structure (Wu's theorem proves it for twin primes only; abstract of arXiv 0705.1652 opened).
+- **(FM)** ψ(y;q,a) = (y/φ(q))(1+o(1)) for q ∈ {A_u, 2A_u, 3A_u, 6A_u}, y ≍ xA_u, A_u ≤ x^{1/L}, L = L(x) → ∞ slowly. My derivation: Linnik–Gallagher log-free zero density N_q(σ,T) ≪ (qT)^{C(1−σ)} (statement opened in Zaman's BIRS notes, which also state that handling Landau–Siegel zeros is the delicate point) + Lemma A of `B_noside.md` (no exceptional zero for 3-smooth moduli: the only primitive real characters have conductor in {3,4,8,12,24}) + de la Vallée Poussin, gives zero contribution O(e^{-cL}) relative to the main term from zeros of height ≪ q^{O(1)}; large heights need a smoothed explicit formula. **I did not find a published statement of this asymptotic** (Zaman's notes give Linnik only as a lower bound; arXiv 2311.12470 contains no such theorem). Status: CONJECTURED-standard. This is the single cited step EO79 Lemma 1 already uses in lower-bound form; promoting it to an asymptotic is what an explicit constant costs.
+- **Ceiling.** Selberg's parity example shows no sieve gives κ < 2 for pair problems [recalled, not opened]. Hence P(R>0) ≥ 1/(κρ) can never exceed ≈ 1/(2·1.027) = 0.487 by this method. Under Elliott–Halberstam the dimension-2 constant improves only toward the parity limit, never to 1.
+- Density one for primes by second moments needs κ = 1, i.e. an asymptotic for the pair count, equivalently a parity-breaking input (§6).
+
+## 6. Averaged pair correlations for primes (item 2)
+
+The pair count is N(u,u') = #{m : A_u m+1 = p, A_{u'} m+1 = q both prime}. With a = A_{u'}/g, b = A_u/g (g = gcd) it is the number of prime pairs on the line a(p−1) = b(q−1)... i.e. a p − b q = a − b with a, b 3-smooth, p ≤ xA_u. Only (log x)⁴ pairs (u,u') occur.
+1. **No averaging range.** Known unconditional averages for binary prime problems (Bombieri–Davenport/Mikawa-type results for Σ_{h≤H}|Σ Λ(n)Λ(n+h) − S(h)x|, Balog, Perelli, dispersion of Linnik/Bombieri–Friedlander–Iwaniec for Titchmarsh divisor problems) average over a parameter running through a *power* of x. Here the free parameter set has size (log x)⁴. *(Recalled, none of these papers opened; I only confirmed through the search listing that Drappeau's work concerns smooth numbers/moduli in the Fouvry–Iwaniec setting, not our shifts.)*
+2. **3-smooth moduli are well factorable but sparse.** Well-factorability (q = q_1q_2 with q_1 of any prescribed size up to a factor 3) is what BFI/Zhang/Polymath use for levels beyond 1/2, but those theorems average over ≍ Q moduli to exploit Kloosterman-sum cancellation. With O((log Q)²) moduli the large sieve gives nothing beyond a single modulus, and for a single modulus unconditional control stops at q ≤ x^{1/L} (Linnik-type, §5) while GRH gives q ≤ x^{1/2−ε}. So level of distribution > 1/2 for the family {2^a3^b} is **not** available, and it would not matter: the first moment lives at level ≈ 0 (a single modulus A_u ≤ x^{1/L} with a = 1), and the second moment is limited by parity, not by level.
+3. **Exact missing statement.** Replace Λ by the Liouville function: Σ_{u≠u'} Σ_{m ≤ x} λ(A_u m+1) λ(A_{u'} m+1) = o(|B|² x / ... ) uniformly for A_u, A_{u'} ≤ x^{ε}, i.e. an averaged two-point Chowla for dilates λ(n)λ(an − (a−1)), a = 2^i3^j, over (i,j) in a box of size (log x)². Known results I can name (recalled, not opened): Tao's logarithmic two-point Chowla for *fixed* linear forms, Matomäki–Radziwiłł–Tao's averaged Chowla over additive shifts h ≤ H. Neither covers dilates over a thin multiplicative family or ordinary (non-logarithmic) averages with growing coefficients. This is the precise obstruction; Bombieri's asymptotic sieve would turn it into κ = 1.
+4. **Nothing beyond 1/2 for the moduli or beyond parity for pairs** is therefore proved here. [CONJECTURED as to the Chowla-type reduction; the parity statement is the standard barrier.]
+
+## 7. Other statistics (item 3)
+
+- **± forms** (A_u m ± 1): the family doubles, first and second moment both scale, κρ' is unchanged (pairs among (+,+), (−,−), (+,−) are all upper-bounded by κ·HL). No gain in the Chebyshev constant; the covering side is also different (two signs give the Riesel–Sierpiński mixed question, not studied).
+- **More primes** (2^a3^b5^c m+1): more cells, E R grows, but the ceiling 1/(κρ) is unchanged. Rough-number statistic improves nothing either; Theorem A already has E R → ∞.
+- **Log-density / weighted density:** positive lower density already implies positive log-density; density one for primes would need the same Var = o(E²), no easier.
+- **P_2 instead of prime** (CONJECTURED, not worked out): the sequence {A_u m+1 : m ≤ x} has level of distribution D = x^{1−o(1)} relative to its size N = A_u x when A_u ≤ x^{o(1)}, so the linear sieve (Jurkat–Richert) gives a positive-proportion lower bound for P_2 for each u, but lower-bound constants f(s) are not asymptotics, so this gives only a small positive density combined with the dimension-2 upper bound. Not stronger than EO.
+- **The one statistic that does reach 97.2% now:** "some cell has Ω ≤ r_0", Theorem A.
+
+## 8. What to do next (ranked)
+
+1. **Lemma S** (§4): turn 97.2% into density one for P_{g(x)}. Pure lattice combinatorics + Lemma R; I judge it provable. Proof plan: partition d by e(d) vs I(w); for d with gcd(e(d), I(w)) = 1 use CRT on the quotient; for the rest use Lemma R with a gcd weight and the convergence of Σ_{p>w} 1/(p e_p).
+2. **Rigorous ρ̄** with interval arithmetic: gives an unconditional-modulo-fundamental-lemma explicit theorem "≥ 97% of m coprime to 6 have min Ω ≤ r_0".
+3. **FM** (first-moment asymptotic with 3-smooth moduli): locate or prove the asymptotic version of EO79 Lemma 1; that single step converts §5 into an explicit constant ≈ 0.24 for primes, strictly more informative than "c > 0".
+4. Do not spend time on Maynard/GPY weights or on Bombieri–Vinogradov-type averages for this family (§1, §6); the obstruction is not the level of distribution.
+
+## 9. Sources actually opened
+
+- Maynard, arXiv 1405.2593 (fetch; Theorem 3.1 and Hypothesis 1 relayed by the tool, LaTeX displays not seen).
+- Wu, arXiv 0705.1652 (abstract/Theorem 3: π_2(x) ≤ 3.3996 Π(x); previous records 3.418 and 3.406 per the same page).
+- Zaman, "An introduction to log-free zero density estimates" (BIRS notes): N_q(σ,T) ≪ (qT)^{C(1−σ)}, Linnik's theorem as lower bound, Landau–Siegel zeros left aside.
+- Search listings only (content not read): Drappeau arXiv 1307.7554 and 2304.11696, arXiv 2311.12470 (fetched, no relevant theorem).
+- Recalled, not opened: Halberstam–Richert Thms 2.5, 3.11; Friedlander–Iwaniec fundamental lemma; Selberg's parity example; Tao and Matomäki–Radziwiłł–Tao on Chowla.
+
+## 10. Update after coordinator review (2026-10-26, later)
+
+### 10.1 Lemma S: verdict "gap found, and the gap is the covering problem"
+- **Conditional implication (PROVED, elementary).** Suppose some finite set Q of primes p ≥ 5 and a residue class m_0 mod ∏Q cover Z_{≥1}² (every cell (k,ℓ) has a p ∈ Q with p | 2^k3^ℓm+1 for m ≡ m_0). Then for every m ≡ m_0 (mod ∏Q), every cell value is divisible by a prime in Q, so no cell value is z-rough for z > max Q, so R_z(m) = 0 on a set of positive density 1/∏Q. Hence: *density one for the rough-number statement (Theorem A with ε → 0) implies that no finite pure covering exists*, i.e. it implies the open "all-E no-covering" problem. The same holds for any version of Lemma S whose side condition "N_r ≥ c|B|/log w for all classes r, all w" is assumed: that side condition is false on a covering class (N_r = 0).
+- **Withdrawn input.** The bound "uncovered density ≥ 0.2694 for every m" (B_noside §3.3) is withdrawn by V: B(E) bounds the tilted measure; 31 pool primes with e_p | 5040 cover uniform density 0.71705. So even for fixed w only N_r ≥ c(w)|B| with uncontrolled c(w) follows, and §4's use of it is void.
+- **Conditional theorem (what survives).** *If* Lemma S holds on every class with N_r ≥ θ|B|/log w (θ > 0 fixed), then P(R_z = 0) ≤ P_r(c_r < θ) + O(η/θ²) + O(e^{-s}) + o(1). The unstratified Chebyshev bound P(c_r < θ) ≤ Var(c)/(1−θ)² ≈ 0.0276/(1−θ)² is no better than Theorem A for any θ ≤ 0.9, so the stratification gains nothing unless the *left tail of the local factor c* is controlled by higher moments. A sub-Gaussian tail with σ² = 0.0276 would give P(c < 1/2) ≲ e^{-9} (heuristic only, CONJECTURED); a proof needs the 2k-point lattice sums for k ≲ 20.
+- **Lemma S' (what I tried, and where it stops).** For d with all primes > w let J(d) = [Z² : Λ_d + Λ_P] (a common quotient of Z²/Λ_d and Z²/Λ_P, so J(d) | gcd(e(d), I(w))). If J(d) = 1 the count of pairs of survivors with difference in Λ_d is, up to boundary, the independent value (CRT). If J(d) > 1 the survivor correlation can be inflated by up to J(d). The required bound is Σ_{d>1, p>w} 3^{ω(d)} J(d)/(d·e(d)) → 0 as w → ∞. With the trivial J ≤ gcd(e(d), I) this sum contains the terms with e(d) | I(w), which are Σ_{p>w, e_p | I(w)} 1/p; Mertens-type bounds give only O(log w) for that sum, and the Dickman heuristic gives ∫ρ(u)du/u = O(1) (not → 0). Typical J is O(1), which would suffice, but a proof needs the distribution of the gcd of e_p with the huge integer I(w), which I did not find. **Lemma S' is OPEN-STEP and is not needed for Theorem A.**
+- Consequence for the coordinator's question: Lemma S cannot be completed to "density one" without a covering-exclusion theorem; the achievable unconditional statement is Theorem A, with exceptional density ≤ ρ−1 ≈ 2.8%, and moreover the exceptional set contains the (possibly empty) set of covering classes, so Theorem A also proves **δ_cov ≤ ρ − 1 ≈ 0.028**: the density of m admitting a finite pure-prime covering is at most 2.8% (modulo the cited sieve lemma and ρ). I know of no previously stated bound of this type.
+- **Ω-version.** For the statement with Ω ≤ r_0 (small prime factors allowed in a bounded-multiplicity part) the bad classes are those in which every cell has at least t+1 small prime factors counted with multiplicity (a (t+1)-fold covering). Density-one for that statement is implied by, and in the other direction implies, the non-existence of positive-density (t+1)-fold coverings; (t+1)-fold coverings are not excluded by density (Σ_p 1/e_p diverges). Stays OPEN.
+
+### 10.2 ρ: numerics, and what is and is not rigorous
+- `D_rho.py` (weighted ordered-pair mean, exact lattice condition) as N grows, Z = 2·10⁴: N=40: 1.02629; N=80: 1.02721; N=160: 1.02748; N=300: 1.02755; N=600: 1.0275654 (Z=5·10³) and 1.0275797 (Z=5·10⁴). So **ρ_∞ ≈ 1.0276** (increasing in N, boundary corrections ~ 1/N; prime-range effect Z=5·10³→5·10⁴ is +1.4·10⁻⁵). Earlier figure 1.0272 (N=80) was not yet converged; the coordinator's independent N=80 value 1.02721 agrees with it. Corrected statement: all but ≈ 2.8% (ρ−1 ≈ 0.0276) of m.
+- **Rigorous status.** The limit ρ_∞ exists and equals C_0 Σ_d g̃(d)/e(d) (C_0 = ∏_{p≥5}(1−1/(p−1)²), g̃ multiplicative with g̃(p) = 1/(p−2)-type weights) provided the box-boundary terms vanish; qualitatively this follows from Lemma D with 3^{ω} weights plus Cauchy–Schwarz: mean(T_Y − 1) ≤ (mean S_1²)^{1/2}(mean e^{2S_1})^{1/2}, where S_1 = Σ_{p | n, p > Y} 1/(p−1), mean S_1² ≤ η(Y) + O((log N)²/N) with η(Y) the tail of R_0, and mean e^{2S_1} ≤ C by Lemma D. So ρ_x → ρ_∞ and the Y-truncation error → 0 as Y → ∞. **An explicit interval-arithmetic enclosure was not completed**: it needs explicit tails of R_0 (an explicit Romanoff constant) and the 1/N boundary rate; I do not have those. What I can state is ρ_∞ ∈ [1.0275, 1.0278] numerically (VERIFIED at N ≤ 600, Z ≤ 5·10⁴, finite sums; not a proof). A cruder rigorous enclosure (ρ_∞ ≤ 1.1, giving "all but 10%") would need the same explicit Romanoff tail.
+
+### 10.3 The fundamental lemma I rely on (what I could and could not open)
+- Could not open Friedlander–Iwaniec, *Opera de Cribro* (Lemma 6.3, Cor. 6.10) or Halberstam–Richert Thm 2.5; the Wikipedia article's formulas were stripped by the fetch, Evertse's chapter (Leiden, "Fundamental Lemma", Lemma 10.2.2, attributing to Maynard and Friedlander–Iwaniec) states it as: if |A_d| = |A|g(d) + r(d), Σ_{d<x^θ}|r(d)| ≪ |A|/(log x)^B, Σ_{p≤w} g(p) log p = κ log w + O(1), then S(A, x^η) = |A|∏_{p≤x^η}(1−g(p))(1+O(e^{-κ/η})) + O_B(x/(log x)^B) (as relayed; the displayed exponent is garbled in the source and the range of η and the uniformity of the constant are not stated there). I therefore **label Theorem A "PROVED modulo the fundamental lemma in the form: for a sieve problem of dimension ≤ 2 with Ω(2)-condition ∏_{w≤p<z}(1−ρ(p)/p)^{-1} ≤ K (log z/log w)², |r_d| ≤ ρ(d), and s = log D/log z ≥ s_0: S = XV(z)(1+O(e^{-s})) + O(Σ_{d<D, d|P(z)}|r_d|) with absolute constants"** and recall (not verified) that s_0 = 9κ + 1 = 19 is admissible in Friedlander–Iwaniec.
+- **Hypotheses check, uniform in the 3-smooth coefficients.** The sieve problem for the pair (u,u') has primes p ≥ 5 only, A_u coprime to every such p, ρ(p) = 2 if p ∤ A_{u'}−A_u and 1 otherwise (A_{u'} ≠ A_u), ρ(p) ≤ 2 < p, remainders |r_d| ≤ ρ(d) ≤ 2^{ω(d)} after splitting m into the two classes mod 6 and counting by classes mod d on an interval of length x/12; neither A_u nor the size of A_u enters the data. The Ω(2) condition is one-sided and holds uniformly because lowering ρ(p) only lowers ∏(1−ρ(p)/p)^{-1}; the dimension-sum condition with O(1) uniform in Δ = A_{u'}−A_u is **not** needed in this one-sided form (it can fail by Σ_{p|Δ} log p/p). Uniformity in A_u up to x^c, c < 1, holds because the level D can be taken as x^{1−ε} (remainder total ≪ D(log D)² ≪ x^{1−ε}(log x)²), which is independent of A_u.
+- **Explicit r_0.** n = A_u m + 1 ≤ x^{1+c} + 1 and z = D^{1/s} with D = x^{1−ε}: Ω(n) ≤ log n / log z ≤ s(1+c)/(1−ε) + o(1). With s = 19, and c, ε → 0 (box exponents A_u ≤ x^c, c = 0.01, ε = 0.01): **r_0 = 19** (log n/log z < 19.4, so Ω ≤ 19). With an unverifiable but more liberal s_0 the formula is r_0 = ⌊s_0(1+c)/(1−ε)⌋. (This replaces the 2.2s of §3.1, which came from the unnecessary choice D = x^{1/2}.) E[R_z] ≍ |B| s/log x → ∞ still holds for |B| ≍ (log x)².
+- **Does a Chen/Richert weighted sieve lower r_0?** For *positive* density, yes in principle: the sequence {A_u m + 1} has level of distribution x^{1−ε} relative to its size x^{1+c}, i.e. θ = (1−ε)/(1+c) → 1, so the linear sieve with Richert weights (or even the Jurkat–Richert lower bound with s > 2) gives P_2 for a positive proportion of m for each fixed u, and a weighted version over u gives positive density with Ω ≤ 2 (CONJECTURED, details not worked: first moment from the lower-bound sieve, second moment from the dimension-2 upper bound). For density ≥ 97% the weighted sieve loses constants f(s)²/F(s) < 1, so r_0 for 97% stays at the fundamental-lemma level unless dimension-2 sieve tables (Diamond–Halberstam–Richert) give f_2(s)²/F_2(s) ≥ 0.99 at some s < 19; I did not compute this.
+
+### 10.4 Prior-art check
+Searches run (WebSearch, standard mode): "almost all odd k … k·2^n+1 has at most r prime factors"; "Erdős Odlyzko 1979 … improvement … Ω(k2^n+1) bounded"; plus the earlier ledger (APPROACHES.md rows A1–A2, C9). Results: Chen (Proc. AMS 129 (2001)) on k2^n+1 with ≥ 3 prime factors (wrong direction); Sun–Fang (Bull. Austral. Math. Soc. 78 (2008)) on EO integers in progressions; Banks–Finch–Luca–Pomerance–Stănică on Sierpiński and Carmichael numbers; Filaseta et al. (Sierpiński/Riesel variants). None states an almost-prime (Ω ≤ r_0) result for almost all m, in one or two bases. Negative result, limited search: I did not open Chen 2001 or the others beyond their listing; EO79's own text (static.renyi.hu/~p_erdos/1979-12.pdf) is OCR-garbled. I make no priority claim.
+
+### 10.5 Net status
+1. Theorem A (exceptional density ≈ 2.8%, r_0 = 19) is the strongest unconditional-modulo-cited-lemma statement obtained. It also bounds the density of covering classes by ≈ 2.8%.
+2. Density one is blocked by covering classes (rough version) and by multi-covering classes (Ω version). Lemma S as originally stated is withdrawn; Lemma S' stands as OPEN-STEP and would only matter after a left-tail bound for the local factor and a covering exclusion.
+3. To close the gap in Theorem A as a theorem: obtain the exact statement of the fundamental lemma (Opera de Cribro Cor. 6.10 or Halberstam–Richert Thm 2.5) and an explicit Romanoff tail for ρ.
+
+## 11. Round 3 checkpoints (sharpen Theorem A)
+- [start] Plan: (1) exact bad-class measure for w in {13,17,19,23,29,31} via inclusion-exclusion over subsets S of the small primes: delta(t) = sum_S (-1)^|S| 1[t_S in H_S]/e(S); (2) rigorous rho; (3) Richert weights / r0. Updates below as they land.
+- [2026-10-30 resume] Key reduction found (details in §11.1 once written): per class r, P_r(R=0) ≤ 1 − 1/ratio_r (Cauchy–Schwarz), and ratio_r ≤ C_w·(1 + (W_w−1)/ν_r) by Parseval on H_W, where ν_r = surviving fraction of the class, W_w = Σ_{d: p|d ⇒ p≥w} g(d)/e(d), C_w = ∏_{p≥w}(1−1/(p−1)²). So δ_w ≤ E_r[φ(ν_r)], φ(0)=1: needs only the exact distribution of ν_r (finite) and one Romanoff-type constant W_w. No Lemma S, no covering hypothesis.
+
+### 10.6 Correction (V flaw, V_check.md §8): r0 = 19 was wrong; corrected r0 = 26
+V is right that s0 = 9κ+1 = 19 is only the threshold for the fundamental lemma; at s = 19 its relative error swamps ρ−1. Corrected computation:
+- **Fundamental lemma used, in V's reading** (Friedlander–Iwaniec, *Opera de Cribro*, Lemma 6.3; NOT opened by me): for a sieve problem of dimension κ with Ω(κ) constant K (∏_{w1≤p<w2}(1−ρ(p)/p)^{-1} ≤ K(log w2/log w1)^κ for all w1<w2 in the sifting range) and level D = z^s, s ≥ 9κ+1, the upper and lower sieves give S = XV(z)(1 + θ e^{9κ−s}K^{10}) + O(Σ_{d<D, d|P(z)}|r_d|), |θ| ≤ 1. The only version I opened is the citation of FI Cor. 6.10 in arXiv 1504.00533 §3.2, which states the same lemma as S = {1+O_{C0}(e^{−s})}YV(z) + O(Σ_{d<z^s}|r(d)|) for s ≥ 1, with a non-explicit constant. Any explicit r0 below therefore depends on V's explicit reading of Lemma 6.3.
+- **Explicit K — WRONG, superseded by §11.6** (the sup must allow real w2 → p⁺; correct: K1 = 1.25, K2 = 5/3 for primes ≥ 5) (`D_Kconst.py` old version, sup over prime pairs up to 2·10⁷; for w1 ≥ 2·10⁷ Rosser–Schoenfeld |Σ_{p≤x}1/p − lnln x − B| < 1/ln²x keeps the ratio below e^{0.008}, under the sup): primes ≥ 5: K1 = 1.03386 (κ=1, attained at [5,7)), K2 = 1.14124 (κ=2, attained at [5,19)). So K1^{10} = 1.396, K2^{10} = 3.75. Primes ≥ 31: K1 = 1.01597, K2 = 1.03270 (K2^{10} = 1.379).
+- **Chebyshev with the errors.** E[R] ≥ (1−η1)μ, E[R²] ≤ (1+η2)·pairs + (1+η1)μ, with η1 = e^{9−s}K1^{10}, η2 = e^{18−s}K2^{10}. Cauchy–Schwarz gives P(R=0) ≤ 1 − (1−η1)²/((1+η2)ρ) + o(1). (This is the Paley–Zygmund form; it is slightly better than Chebyshev's ρ−1.)
+- **Smallest s with exceptional density ≤ 3%:** with ρ ≤ 1.0280 (numerical upper value, §10.2): s = 25 gives 0.0306, **s = 26 gives 0.0285**, s = 28 gives 0.0274, s → ∞ gives 1 − 1/ρ = 0.0272.
+- **Ω bound.** c = ε = 0.001: A_u ≤ x^c (box N = ⌊c ln x/ln 6⌋ → ∞, so E R ≍ s|B|/log x → ∞ still), D = x^{1−ε}, z = D^{1/s}; n = A_u m+1 ≤ x^{1+c}+1, so Ω(n) ≤ log n/log z = s(1+c)/(1−ε) + o(1) = 26.052 + o(1). Remainder: ≤ (log x)⁴ pairs × Σ_{d<D} 2^{ω(d)} ≪ x^{1−ε}(log x)⁵ = o(x/(log x)^{10}).
+
+**Theorem A (corrected; its r0 = 26 / 2.85% is SUPERSEDED by §11.6: with the correct K, 2.85% needs r0 = 29) [PROVED modulo (FI Lemma 6.3 in V's explicit form) and (ρ ≤ 1.0280, numerical, rigorous enclosure in §11)].** For x ≥ x0, all but at most 0.0285·x of the m ≤ x coprime to 6 (relative density ≤ 2.85% among such m) have k, ℓ ≥ 1 with Ω(2^k3^ℓm+1) ≤ 26. For every ε' > 0 there is r0(ε') such that all but (1 − 1/ρ + ε')x of them have such a cell with Ω ≤ r0(ε'), where 1 − 1/ρ ≈ 0.0272. The cell can be taken with 2^k3^ℓ ≤ x^{0.001}.
+
+**Covering by-product, uniform in y [PROVED modulo the same inputs].** For every y, let C_y be the set of m coprime to 6 for which the primes 5 ≤ p < y cover the lattice: every (k,ℓ) with k,ℓ ≥ 1 has some p < y dividing 2^k3^ℓm+1. C_y is periodic mod ∏_{p<y}p, so it has a density. For m ∈ C_y and z > y, R_z(m) = 0, so C_y ∩ [1,x] lies in the exceptional set of Theorem A (with the same s, for x large depending on y). Hence **dens(C_y) ≤ 1 − 1/ρ + ε' ≈ 0.0272 for every y**, i.e. sup_y dens(C_y) ≤ 0.0272. The bound is uniform in y. (Covering classes with the k,ℓ ≥ 1 restriction: a lattice covering of Z² restricts to one of Z_{≥1}², and the box B ⊂ Z_{≥1}², so the argument applies to covering classes in either sense.)
+
+The r0 = 19 statements in §10.3 and §10.5 are superseded by this subsection.
+- [ckpt 2026-10-30a] §10.6 written (r0 = 26 at 2.85%). Built `D_eprimes.c`: for all primes q ≤ 10⁸, e_q and the discrete logs of 2, 3 in H_q/H_q^G, G = gcd(e_q, 55440) (spot-checked against sympy brute force). Output `D_data/ep_1e8.bin` (gitignore-size, regenerate in 45 s). Kconst: K1, K2 for primes ≥ w in `D_Kconst.py`.
+- [ckpt 2026-10-30b] `D_classes.py` (exact class distribution of ν_r, FFT over a slice of ∏H_p; control E[ν] = ∏_{5≤p<w}(1−1/p) matches to 10 digits for every w): **no covering classes and no small-ν classes for w ≤ 31**: min ν = 0.5583 (w=13), 0.5097 (17), 0.4691 (19), 0.4311 (23), 0.3919 (29), **0.3740 (w=31)**; P(ν<0.1) = 0 exactly. Data `D_data/nu_w{w}.npz`.
+
+### 11.0 Status of the r0 correction (reply to V)
+§10.6 already replaces r0 = 19. V estimated r0 ≈ 40+ with an unspecified K. With the explicit Ω(κ) constants (`D_Kconst.py`: K2 = 1.1412 for primes ≥ 5, so K2^{10} = 3.75; K2 = 1.0327 for primes ≥ 31, so K2^{10} = 1.38), the relative error e^{18−s}K2^{10} is below 10⁻³ already at s ≈ 26. The table in §11.5 gives r0 for each target density. In every case r0 = ⌊s(1+c)/(1−ε)⌋, with c = ε = 0.001 and s chosen as large as possible for that r0.
+
+### 11.1 Stratified second moment: the reduction [PROVED, modulo FL and Lemma U below]
+Fix w and put W = ∏_{5≤p<w}p. Let H = ⟨2,3⟩ mod W ≅ Z²/Λ_W. For a class r of m mod W, let T_r ⊂ H be the set of exponent classes whose cells survive every p < w, and let ν_r = |T_r|/|H|. Sieve only by the primes w ≤ p < z, inside each class (m = r + Wt). Then:
+- First moment: E_r R = (1 + θη1)·ν_r|B|·∏_{w≤p<z}(1 − 1/p).
+- Pairs: (1/N_r²) Σ_{u≠u'∈S_r} ∏_{w≤p<z}(1 − ρ_{uu'}(p)/p)/(1 − 1/p)² → ratio_r as N, z → ∞.
+
+**Character formula.** Expand (1 − ρ/p)/(1 − 1/p)² = (1 − 1/(p−1)²)(1 + g(p)·1[Δ ∈ Λ_p]), with g(p) = 1/(p−2). Write 1[Δ ∈ Λ_d] = (1/e(d)) Σ_{ψ∈Ĥ_d} ψ(Δ). A character survives the average over u, u' ∈ T_r only if it lies in Ĥ_W. This gives
+ ratio_r = C_w Σ_{ψ ∈ Ĥ_W} B(ψ) |T̂_r(ψ)|²/|T_r|²,
+where C_w = ∏_{p≥w}(1 − 1/(p−1)²), B(ψ) = Σ_{d: p|d ⇒ p≥w, ψ∈Ĥ_d} g(d)/e(d), and B(1) = W_w := Σ_d g(d)/e(d).
+
+**Parseval.** Σ_{ψ≠1} |T̂_r(ψ)|²/|T_r|² = 1/ν_r − 1. Hence
+ **ratio_r ≤ C_w·(W_w + M_w(1/ν_r − 1)), with M_w = max_{ψ≠1} B(ψ).**
+
+**Paley–Zygmund per class.** P_r(R = 0) ≤ 1 − (1−η1)²/((1+η2)·ratio_r) + o(1). Classes with ν_r = 0 count with weight 1, so covering classes are included automatically. Summing over classes,
+ **δ ≤ Σ_r μ(r)·min(1, 1 − (1−η1)²/((1+η2)·C_w(W_w + M_w(1/ν_r − 1))))**.
+Only two kinds of input remain: the exact finite distribution of ν_r, and the two Romanoff-type constants W_w and M_w. No Lemma S and no covering hypothesis is used. The case w = 5 is the unstratified Theorem A, since H is trivial and ratio = ρ.
+
+**Lemma U (was OPEN-STEP; now PROVED by V, proof in §11.6).** The box version of the pair average satisfies limsup_N E_N[F_{≥w}(Δ)] ≤ W_w, where F_{≥w}(Δ) = ∏_{p≥w, p | n(Δ)}(1 + g(p)) and Δ = u' − u for u, u' uniform in [1,N]². The same is needed inside classes.
+- For d with e(d) ≤ T this is exact equidistribution.
+- For the rest, the obstacle is boundary terms from lattices Λ_d with a short vector (lattice points lying along a line in the box).
+- The bound #((u+Λ_d)∩B∖{u}) ≤ N²/e + N/c + N/h, together with the crude Lemma D, leaves an O(1) boundary term rather than o(1). §10.2 said "qualitatively proved"; that claim is **withdrawn**.
+- Numerics support Lemma U: ρ_N increases with N (1.02629, 1.02721, 1.02748, 1.02755, 1.02757–1.02758 for N = 40 … 600), stays below the rigorous upper bound 1.02820 for ρ_∞ (§11.2), and lies within 5·10⁻⁵ of the lower bound 1.02752.
+- A proof needs a lattice-point bound with error O(N/λ1(Λ_d)), plus a summation over shortest vectors that beats the trivial Σ_v F(v)/|v|. That is a real but standard-looking gap.
+
+### 11.2 Rigorous enclosure of ρ (= ρ_∞, the w = 5 constant) [PROVED modulo floating point and the correctness of `D_eprimes.c`]
+`D_eprimes.c` computes e_q and the discrete logs of 2 and 3 modulo G = gcd(e_q, 55440) for every prime q ≤ 10⁸, spot-checked against sympy. `D_W.py` and `D_comp.py` then use the following decomposition.
+
+**Decomposition** with W = ∏_{5≤p<31}p. Here |H| = 665280, and the lattice basis is (0, 55440), (12, 1896):
+ W_5 = Σ_{d2: primes ≥ 31} (g(d2)/e(d2))·mean_{h∈K_{d2}} F_{<31}(h),
+where K_{d2} ⊂ H is the image of Λ_{d2}. For a prime q, K_q = {(i,j) : iα_q + jβ_q ≡ 0 mod J_q}, with J_q = gcd(g, hβ_q, cα_q + j_cβ_q) and g = gcd(e_q, 55440).
+
+**Terms:**
+- d2 = 1 gives A(1) = 1.156260681. This is exact: the mean of F_{<31} over the 665280 classes.
+- Single primes 31 ≤ q ≤ 10⁸ give 0.0110916. This is exact, using the cached conditional means.
+- The remainder (d2 composite, or containing a prime > 10⁸) is at most τ_31·max F, with τ_31 = 2.892·10⁻⁴ + 3.08·10⁻⁵ = 3.199·10⁻⁴ and max F = 2.379666.
+
+**Bounding τ:**
+- **Composites.** Assign d to its two largest keys p1 > p2, where key = (e_p, p). Then e(d) ≥ lcm(e_{p1}, e_{p2}), and the rest of d is bounded by Π_key(p2). Pairs with e ≤ 3000 are summed exactly with the lcm (2.27·10⁻⁴). Unknown second primes q > 10⁸ add 1.6·10⁻⁷. The max-key bound for e_{p1} > 3000 adds 6.2·10⁻⁵.
+- **Unknown primes q > Y.** Their mass with e_q ≤ y is bounded in two ways: (a) by count, since their product divides ∏_{t≤y}(2^t − 1); (b) by Rosser–Schoenfeld, θ(x) ≥ x(1 − 1/ln x), θ(x) ≤ 1.01624x, and Σ_{p≤x} 1/p ≤ lnln x + B + 1/ln²x.
+- **Tail p1 > Y.** Summation by parts against the decreasing envelope of Π̄(y)/y, with the grid taken up to 10³⁰⁰.
+
+**Result:** W_5 ≤ 1.1681138 and C_5 ≤ 0.8802158 (the product truncated at 10⁸ is an upper bound), so **ρ_∞ ≤ 1.028192**. Lower bound: W_5 ≥ A(1) + single-prime part = 1.1673523 and C_5 ≥ 0.8802158·(1 − 10⁻⁸), so **ρ_∞ ≥ 1.027515**. Hence **1.02751 ≤ ρ_∞ ≤ 1.02820**.
+
+**Consistency check (VERIFIED).** The independent box computation gives 1.02758 at N = 600, inside the interval. It also shows the main part A(1) + single primes = 1.16735 agrees with the box mean of F (1.1675).
+
+The same code gives, for the stratified constants (Y = 10⁸ for w = 31, Y = 10⁷ for the others):
+
+| w | W_w ≤ | M_w ≤ (max_ψ B1 + τ) | C_w ≤ | τ_w |
+|---|---|---|---|---|
+| 13 | 1.031648 | 1.167·10⁻² | 0.975477 | 1.92·10⁻³ |
+| 17 | 1.023208 | 8.317·10⁻³ | 0.982299 | 1.06·10⁻³ |
+| 19 | 1.018778 | 7.401·10⁻³ | 0.986151 | 7.9·10⁻⁴ |
+| 23 | 1.015272 | 3.895·10⁻³ | 0.989204 | 5.5·10⁻⁴ |
+| 29 | 1.010854 | 3.806·10⁻³ | 0.991252 | 4.6·10⁻⁴ |
+| 31 | 1.009387 | 3.415·10⁻³ | 0.992518 | 3.2·10⁻⁴ |
+
+Here B1(ψ) is the exact single-prime part of B(ψ), computed on all 665280 characters. M_w is bounded uniformly using τ_w.
+
+### 11.3 Exact class distribution (`D_classes.py`) [VERIFIED by two controls]
+Method:
+- S is the set of primes p < w with −1/m ∈ H_p. P(S) = ∏_{p∈S} e_p/p · ∏_{p∉S}(1 − e_p/p), and given S the targets are uniform on ∏_{p∈S} H_p.
+- Fix the target at the largest prime of S to 1. Each coset of im(H) meets this slice equally often.
+- ν is then obtained by one FFT convolution of the histogram of H with the "all coordinates differ" indicator.
+
+Controls:
+1. E[ν] = ∏_{5≤p<w}(1 − 1/p) holds to 10 digits for every w.
+2. `D_nucheck.py` recomputes ν directly from residues with pow, independent of the log tables:
+   - At w = 23, 1025 random m have the same minimum (0.431134…) and the same 1% and 10% quantiles exactly.
+   - At w = 31, 102 random m: minimum 0.3758 against the exact 0.3740, consistent.
+
+**Result:** there are no covering classes and no class with ν < 0.37 for any w ≤ 31. The minimum of ν is 0.5583, 0.5097, 0.4691, 0.4311, 0.3919, 0.3740 for w = 13, 17, 19, 23, 29, 31.
+
+### 11.4 Weighted sieve (Richert / Chen) for smaller r0: verdict
+At the 97%+ level the argument needs the first moment and the pair moment as **asymptotics**, with relative errors much smaller than ρ − 1 ≈ 0.028 (and much smaller than M_w/ν ≈ 0.009 when stratified).
+- A weighted (Richert) sieve with sieve limit z' = D^{1/s'} and s' small replaces the indicator by weights whose lower-bound constant involves f_κ(s') < 1. For the linear sieve, f(s) = 0 for s ≤ 2 and f(3) ≈ 0.69 (recalled; Diamond–Halberstam–Richert tables not found or opened).
+- Paley–Zygmund then gives P(R' > 0) ≥ f(s')²/(F_2(s')·ρ) < 1/2 for every s' where weights help. That is a positive-proportion statement with Ω ≤ r0 small, which is weaker than what EO79 already give for primes (positive proportion with Ω = 1).
+- **Verdict:** a weighted sieve cannot lower r0 at the 97% level. Only the fundamental-lemma range s ≳ 22 delivers relative errors below 10⁻². At positive proportion the best r0 is 1 (EO79), so the weighted sieve has no role there either. [Reasoning; no table computation done.]
+
+### 11.5 Best explicit theorems — numbers SUPERSEDED by §11.6 (K constants were too small)
+c = ε = 0.001, and s = (r0+1)(1−ε)/(1+c) − 10⁻⁶ (`D_r0table.py`, `D_delta.py`).
+
+| r0 | s | δ, unstratified (ρ ≤ 1.028192) | δ, stratified w = 31 |
+|---|---|---|---|
+| 20 | 20.958 | 0.186 | 0.0722 |
+| 21 | 21.956 | 0.0925 | **0.0313** |
+| 22 | 22.954 | 0.0525 | **0.0153** |
+| 23 | 23.952 | 0.0368 | **0.0093** |
+| 24 | 24.950 | **0.0309** | 0.0070 |
+| 25 | 25.948 | **0.0287** | 0.0062 |
+| 26 | 26.946 | 0.0279 | 0.0059 |
+| ∞ | ∞ | 1 − 1/ρ ≤ 0.02742 | **0.00573** |
+
+Stratified δ at large s for the other w: 1.34% (w = 13), 1.13% (17), 1.10% (19), 0.81% (23), 0.61% (29), 0.57% (31).
+
+**Theorem A′.** For x ≥ x0, all but at most 1.6% of the m ≤ x coprime to 6 have k, ℓ ≥ 1 with 2^k3^ℓ ≤ x^{0.001} and Ω(2^k3^ℓm + 1) ≤ 22. Also all but 0.93% have such a cell with Ω ≤ 23, and all but 0.6% with Ω ≤ 26. For r0 large the exceptional density is at most 0.58%.
+
+**Covering corollary (uniform in y).** For every y, the density of m coprime to 6 whose lattice is covered by the primes in [5, y) is at most 0.0058. The exact computation adds that this density is 0 for y ≤ 31, and that every class mod ∏_{p<31}p keeps at least 37.4% of its cells.
+
+**Dependencies, stated once:**
+- (i) FI Lemma 6.3 in the explicit form e^{9κ−s}K^{10} (V's reading; I did not open it).
+- (ii) Lemma U (§11.1).
+- (iii) Floating-point sums of about 10⁸ terms, with no interval arithmetic; the relative rounding is far below the margins used.
+
+The step from 2.85% to 1.6% at r0 = 22 comes from the finite stratification. The step from 2.74% to 0.57% at large r0 comes from the same source.
+
+### 11.6 Round-6 corrections after V_check.md §10 (these supersede §10.6 and §11.5 wherever they differ)
+
+**(1) Lemma U is PROVED (V_check.md §10.1).** I checked V's argument and adopt it.
+- Claim: for u ≠ u' uniform in [1,N]² and Δ = u'−u, limsup_N E_N[F(Δ)] ≤ W = Σ_d g(d)/e(d).
+- *Proof (V).*
+  - (a) Each Δ has probability ≤ (1+o(1))/N², so E_N[F] = Σ_d g(d)·P(Δ ∈ Λ_d∖0).
+  - (b) Let v be a shortest vector of Λ_d. Gauss reduction gives |v|² ≤ (2/√3)e(d). The points of Λ_d lie on lines parallel to v, spaced e/|v| apart. The box [−N,N]² meets at most 2√2N|v|/e + 1 of these lines, and each line carries at most 2√2N/|v| + 1 points. Hence #(Λ_d ∩ box ∖ 0) ≤ 8N²/e + C·N/|v| with C = 2√2(1 + 2/√3), and the count is 0 if |v| > √2N.
+  - (c) Since d | n(v) and 0 < n(v) ≤ 6^{|v|}, we get λ1(d) ≥ log d/log 6. In particular d ≤ 6^{√2N} whenever the count is nonzero.
+  - (d) Split at T. The finitely many d with e(d) ≤ T are periodic, so their probability tends to 1/e(d). The rest contribute at most 8·Σ_{e(d)>T} g(d)/e(d), a tail of W (Lemma R), plus (C log 6/N)·Σ_{1<d≤6^{√2N}} g(d)/log d ≪ (log log 6^N)/N ≪ log N/N. Here Σ_{d≤X} g(d) ≪ log X, followed by partial summation. Now let T → ∞. ∎
+- Inside a class r the same argument works: the weight per Δ is at most (1+o(1))/(ν_r²N²), cosets of Λ_d ∩ Λ_W replace Λ_d, and the extra +1 per coset costs ≪ |H_W|/N.
+- My failed attempt used the crude Lemma D boundary sum over all d. The fix is to weight each d by 1/λ1(d), with λ1(d) ≥ log d/log 6.
+- So Theorem A and the stratified version no longer depend on any open step, apart from the cited FL.
+
+**(2) K constants corrected.**
+- The Ω(κ) condition must hold for all real w1 < w2. The old `D_Kconst.py` took w2 only at the next prime. The fixed version takes w1 = p_a and w2 → p_b⁺. It reproduces V:
+  - Primes ≥ 5: K1 = 1.25, K2 = 5/3, attained at p = 5 alone. So K1¹⁰ = 9.31 and K2¹⁰ = 165.4.
+  - Primes ≥ 31: K1 = 1.03612, K2 = 1.07482, attained on [41,43]. So K1¹⁰ = 1.426 and K2¹⁰ = 2.058.
+- Recomputed table (`D_r0table.py`, log `D_r0table.log`). It is identical to V's independent recomputation:
+
+| r0 | s | δ unstratified (ρ ≤ 1.028192) | δ stratified, w = 31 |
+|---|---|---|---|
+| 21 | 21.956 | 0.767 | 0.0434 |
+| 22 | 22.954 | 0.551 | **0.0200** |
+| 23 | 23.952 | 0.320 | **0.0110** |
+| 24 | 24.950 | 0.161 | 0.0077 |
+| 25 | 25.948 | 0.0811 | 0.0065 |
+| 26 | 26.946 | 0.0479 | **0.0060** |
+| 28 | 28.942 | 0.0303 | 0.0058 |
+| 29 | 29.940 | **0.0285** | 0.0057 |
+| ∞ | ∞ | ≤ 0.02742 | ≤ 0.00573 |
+
+- The large-s limits do not depend on K, so the per-w limits in §11.5 stand: 1.34%, 1.13%, 1.10%, 0.81%, 0.61%, 0.57% for w = 13, 17, 19, 23, 29, 31. The covering corollary also stands: for every y, the density of m whose lattice is covered by the primes in [5, y) is ≤ 0.58%, and it is 0 for y ≤ 31.
+
+**(3) e(d) for composite d.** I checked that no code of mine uses e(d) = lcm(ord_d 2, ord_d 3) for composite d.
+- For primes, e_p = lcm(ord 2, ord 3) is correct because F_p^× is cyclic (Lemma B(i)).
+- A(1) and the class computations use the exact lattice Λ_W (|H_W| = 665280, basis (0,55440), (12,1896)), checked by the uniqueness assert in `D_classes.py`.
+- The single-prime terms use the exact common quotient J_q.
+- The composite bound uses e(d) ≥ lcm(e_{p1}, e_{p2}). This is a valid lower bound, since H_d surjects onto each H_p, so each e_p divides e(d).
+- V's exact-rational A(1) = 1.1562606807 agrees with mine.
+
+**Final statement.**
+
+**Theorem A″ [PROVED modulo FI, *Opera de Cribro*, Lemma 6.3 in the explicit form S = XV(z)(1 + θe^{9κ−s}K^{10}), |θ| ≤ 1 (unopened), and modulo floating-point sums with no interval arithmetic].** Let c = ε = 0.001. For x ≥ x0, every m ≤ x coprime to 6, except for at most 2.0% of them, has k,ℓ ≥ 1 with 2^k3^ℓ ≤ x^{0.001} and Ω(2^k3^ℓm+1) ≤ 22. The exceptional share is at most 1.1% for Ω ≤ 23, at most 0.6% for Ω ≤ 26, and at most 0.58% for r0 large. Without stratification, the bound reaches ≤ 3% only at Ω ≤ 29. The constant enclosure is 1.02751 ≤ ρ ≤ 1.02820.

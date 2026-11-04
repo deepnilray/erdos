@@ -1,0 +1,14 @@
+  sweep 0: bound 0.90558
+  sweep 1: bound 0.74440
+  sweep 2: bound 0.74244
+  sweep 3: bound 0.74244
+  sweep 4: bound 0.74244
+  sweep 5: bound 0.74244
+E=800000: light=0.0485094 astar=0.626827 BOUND=0.742445 (incremental 0.742445) NO COVERING POSSIBLE r-src {'coupled': 8718700, 'minU': 0, 'bonf': 0} build 350s opt 1887s
+  sweep 0: bound 0.88741
+  sweep 1: bound 0.73208
+  sweep 2: bound 0.73059
+  sweep 3: bound 0.73058
+  sweep 4: bound 0.73058
+  sweep 5: bound 0.73058
+E=400000: light=0.0485017 astar=0.626820 BOUND=0.730584 (incremental 0.730584) NO COVERING POSSIBLE r-src {'coupled': 3321441, 'minU': 0, 'bonf': 0} build 110s opt 604s
