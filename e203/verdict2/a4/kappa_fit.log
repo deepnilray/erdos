@@ -1,0 +1,11 @@
+uniform rows: [(1.0, 1.0, 0.8863), (1.0, 1.2, 0.921), (1.0, 1.34, 0.9471), (1.2, 1.34, 0.9495), (1.0, 1.5, 0.9789), (1.5, 1.5, 0.9852)]
+A,B,X,Q = [0.74931 0.01252 0.08402 0.04046]  max fit residual 8e-05
+held-out (1.0,1.34): logged 0.9471, fit 0.9471
+control (planted total 1.05 at (1,1.34)): max residual 0.0635
+uniform kappa at which the fitted total reaches 1: 1.567
+s=1: kappa=16.72  fitted total 13.67
+s=1: kappa=6.69  fitted total 3.20
+s=2: kappa=33.44  fitted total 49.22
+s=2: kappa=13.38  fitted total 9.28
+s=4: kappa=66.88  fitted total 188.16
+s=4: kappa=26.75  fitted total 32.28

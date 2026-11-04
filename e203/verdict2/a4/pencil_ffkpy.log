@@ -1,0 +1,9 @@
+(1) pencil
+  l=2: delta=0  alpha=1/8  beta_gcd=3/4  beta_aligned=0  aligned-version holds? False  gcd-version holds? True  control (drop a line): delta=1/4
+  l=3: delta=0  alpha=16/81  beta_gcd=2/3  beta_aligned=0  aligned-version holds? False  gcd-version holds? True  control (drop a line): delta=2/9
+  l=5: delta=0  alpha=4096/15625  beta_gcd=3/5  beta_aligned=0  aligned-version holds? False  gcd-version holds? True  control (drop a line): delta=4/25
+  l=7: delta=0  alpha=1679616/5764801  beta_gcd=4/7  beta_aligned=0  aligned-version holds? False  gcd-version holds? True  control (drop a line): delta=6/49
+(2) random systems: 20000 tested; violations of gcd-version 0 (must be 0); of aligned-version 588 (control: >0 expected)
+(3) pencil(F_2^2) x exact 1-D cover {0,1 mod 3; 2,5,8 mod 9}
+  uncovered cells on (Z/18)^2: 0 (0 = covering); control (drop one coset): 9; all quotients cyclic: True; common primitive vector in box |v|<=36: False
+ALL CHECKS PASS
