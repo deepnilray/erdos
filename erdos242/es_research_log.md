@@ -137,3 +137,7 @@ D8 DEAD (control-tested): linear forms in two-squares decomposition.
 D9 DEAD: a = 4q only (93.5%), a with prime odd part (98.6%), l(p) | a only (75%) - none reaches 100%, so a construction must allow several shapes.
 D10 OPEN, highest value: characterise V (is it finite? what obstruction?) and prove 'non-square n outside V is represented' by an induction/descent on integers, where composite n gives extra structure. Next rounds: (6) structure of V elements' Jacobi tables; (7) hypothesis test: V = {n : (q/n) = +1 for all primes q < c*log n ...}; (8) prove the representation for n with a large prime factor.
 Files: es_reps.c es_pattern.py es_U.c es_lnr2.py es_shape.py U_3e5.txt.  (reps_hard_1e6.txt is regenerable with es_reps.c; not committed.)
+
+## Round 3 final data (VERIFIED, es_U.c; supersedes the partial counts above)
+The 12e6 run hit its 580 s timeout and was NOT completed to 1.2e7. Guaranteed complete range: n <= 4,800,481 (the file's largest entry; 1095 squares = every odd square <= that bound).
+In that range: |U| = 1122 = 1095 odd squares + 27 non-square composites, 0 primes. (An intermediate message quoted 26 non-squares from a partially flushed file; 27 is the final count.)
