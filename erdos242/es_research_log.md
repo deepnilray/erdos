@@ -157,3 +157,25 @@ Covered non-squares have l(n) up to 61 (e.g. covered n near 3.3e6 with l = 61). 
 Non-square n in the six hard classes: primes (492): mean R = 12.68, frac(R <= 3) = 1.2%, zeros 0.  Composites (883): mean R = 12.07, frac(R <= 3) = 2.0%, zeros 0.
 So primes behave like typical non-square members of these classes; nothing in the data says primality helps. The exceptional set V is composite-only in range, but the zero-rate of composites in this window is already 0, so the evidence that primes are safer than composites is weak. The problem is the integral Hasse principle for S_n on non-squares; Erdos-Straus needs it on primes.
 Ledger D11 (above), D12 DEAD: 'primes are special'.
+
+---
+# Session 2d: literature round (2026-11-08). Chamberland read from the primary source (INTEGERS 26 (2026) #A42, math.colgate.edu/~integers/aa42/aa42.pdf).
+
+## What the paper actually says (quoted/paraphrased from the PDF text)
+Theorem 1 (exact iff): for prime p there are a<=b<=c with p not| a, p | b, p | c and 4/p = 1/a+1/b+1/c   <=>   p = qr - 4 s1 s2, q,r,s1,s2 in Z+, q = 3 (mod 4), s1, s2 | (q+1)/4.
+So Chamberland's representation is EXACTLY the statement 'p has a Type II solution' (Elsholtz-Tao terminology: Type II = exactly two denominators divisible by p). Explicit identity (4):
+4/(qr-4s1s2) = 1/(r(q+1)/4 - s1s2) + 1/(((q+1)/4)(qr-4s1s2)) + 1/((1/s1)((q+1)/4)(r(q+1)/(4 s2) - s1)(qr-4s1s2)) -- see paper eq. (4)-(6) for the exact form.
+Conjecture 2 = 'every prime has a Type II solution'; it is an extrapolation from computer tests, not a theorem. The paper makes no equivalence claim with other families. No r-range restriction: r any positive integer, s1,s2 not required distinct; q unbounded (my es_compare.py search used q <= 4p+1, so it can only under-count Chamberland reps).
+
+## Resolution of the 'Chamberland equivalence' item (VERIFIED + PROVED)
+VERIFIED (exact fractions, 34336 reps of hard primes < 1e6, es_types.py): EVERY family solution 4/p = 1/(uw)+1/(pwX)+1/(uwX) has exactly ONE denominator divisible by p: the family is a TYPE I family. Chamberland's is Type II. Hence they are different families by construction (consistent with the 'p=17 has q=7 but no m=7' check), and neither conjecture is known to imply the other. Elsholtz-Tao/Bradford: any solution has p not| a, p | c, so every prime solution is Type I or Type II; thus Erdos-Straus <=> for each p, Type I or Type II exists. Each of the two conjectures is a priori STRONGER than Erdos-Straus.
+
+## New: reciprocity law for Chamberland's Type II (PROVED; VERIFIED on all 748 reps with q <= 4p+1, p = 1 mod 4, p < 400; wrong-sign control fails 748/748)
+For p = qr - 4 s1 s2 with q = 3 mod 4 (q any odd positive integer, Jacobi symbols), s_i | (q+1)/4:   (p/q) = -(2/q)^{v2(s1)+v2(s2)}.
+Proof. p = -4 s1 s2 (mod q), (-1/q) = -1 and (4/q)=1, so (p/q) = -(s1 s2/q). For odd part s' of s_i: q = -1 (mod s'), so (q/s') = (-1/s'); reciprocity with q = 3 mod 4 gives (s'/q) = (q/s')(-1)^{(s'-1)/2} = 1. The power of 2 in s_i contributes (2/q)^{v2(s_i)}. QED.
+Parallel with Prop C (Type I): Type II needs the MODULUS q to be a quadratic non-residue-type for p ((p/q) = -1 unless an odd 2-power and q = 3 mod 8), Type I needs the ODD PART a' of a to satisfy (a'/p) = -(2/m)^e. Both obstructions are quadratic-reciprocity laws of the same shape; both kill odd squares p = k^2 in the same way (Jacobi symbol of a square is +1), which is the Mordell/Schinzel 'squares mod 840' phenomenon seen from both Type I and Type II.
+
+## Literature seen (search results only; not read in full - verify before citing)
+Loughran-Mitankin, 'Integral Hasse principle and strong approximation for Markoff surfaces' (arXiv 1807.10223): for x^2+y^2+z^2-xyz = m, a Brauer-Manin obstruction forces m-4 mod squares into <-1,2,3,5>; BM-obstructed m are O(B^{1/2}); non-BM Hasse failures exist with count >> M^{1/2}/log M (reported by search snippets, unchecked).
+Elsholtz-Tao (arXiv 1107.1010): sum_{p<=N} f(p) between N log^2 N and N log^2 N loglog N; odd squares have neither Type I nor Type II solutions (quoted in Chamberland's intro). Dao and others extend BM analysis to Markoff-type cubic and Wehler K3 surfaces (2202.07142, 2302.11515; unchecked).
+Analogy NOT yet checked: our surface xyz - x - y = n has BM-type obstruction exactly at squares (Cor D); the sporadic composite exceptions V would then be 'non-BM' failures, which in the Markoff case are conjecturally thin but do exist.
