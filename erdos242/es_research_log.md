@@ -141,3 +141,19 @@ Files: es_reps.c es_pattern.py es_U.c es_lnr2.py es_shape.py U_3e5.txt.  (reps_h
 ## Round 3 final data (VERIFIED, es_U.c; supersedes the partial counts above)
 The 12e6 run hit its 580 s timeout and was NOT completed to 1.2e7. Guaranteed complete range: n <= 4,800,481 (the file's largest entry; 1095 squares = every odd square <= that bound).
 In that range: |U| = 1122 = 1095 odd squares + 27 non-square composites, 0 primes. (An intermediate message quoted 26 non-squares from a partially flushed file; 27 is the final count.)
+
+---
+# Session 2c: rounds 6-7 (2026-11-08)
+
+## Reformulation (PROVED, elementary): matrix / Farey / surface form
+p = klt - k - l  <=>  det [[A, p],[t, B]] = 1 with A = tk-1, B = tl-1, i.e. an SL2(Z) matrix congruent to -[[1,-p],[0,1]] mod t with off-diagonal entries exactly (p, t).  Geometrically: integral points on the cubic surface S_n : xyz - x - y = n (equivalently (xz-1)(yz-1) = nz+1), a Markoff-type surface; odd squares are the Brauer-Manin-type failures (Cor D). Hasse-principle failure for the surface is thin (the uncovered set U = squares + sparse V).
+Unlike Markoff surfaces S_n has no infinite Vieta-jumping group (for fixed z the fibre is a hyperbola), so the orbit/strong-approximation machinery of Ghosh-Sarnak does not apply directly. NOT checked against the literature (Loughran-Mitankin, Bright-Loughran); next step is to read them.
+
+## Round 6: is V the set of integers with unusually large least non-residue l(n)?  DEAD (VERIFIED, es_ell.c, n <= 4.8e6).
+The 27 non-square exceptions have SMALL l(n): e.g. 465 and 2929 have l = 7, 105 has l = 11, 1618521 has l = 13; the largest l among them is 37.
+Covered non-squares have l(n) up to 61 (e.g. covered n near 3.3e6 with l = 61).  So (i) V is not characterised by large l, and (ii) 'l(n) small => n represented' is FALSE (counterexamples 465, 2929, ...).  This kills the construction 'build (m,t,u) from the least non-residue alone'. Ledger D11.
+
+## Round 7: are primes special inside the non-square hard classes?  NO (VERIFIED, es_Rcomp.c, window [1e5,3e5)).
+Non-square n in the six hard classes: primes (492): mean R = 12.68, frac(R <= 3) = 1.2%, zeros 0.  Composites (883): mean R = 12.07, frac(R <= 3) = 2.0%, zeros 0.
+So primes behave like typical non-square members of these classes; nothing in the data says primality helps. The exceptional set V is composite-only in range, but the zero-rate of composites in this window is already 0, so the evidence that primes are safer than composites is weak. The problem is the integral Hasse principle for S_n on non-squares; Erdos-Straus needs it on primes.
+Ledger D11 (above), D12 DEAD: 'primes are special'.
