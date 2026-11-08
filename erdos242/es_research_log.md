@@ -179,3 +179,27 @@ Parallel with Prop C (Type I): Type II needs the MODULUS q to be a quadratic non
 Loughran-Mitankin, 'Integral Hasse principle and strong approximation for Markoff surfaces' (arXiv 1807.10223): for x^2+y^2+z^2-xyz = m, a Brauer-Manin obstruction forces m-4 mod squares into <-1,2,3,5>; BM-obstructed m are O(B^{1/2}); non-BM Hasse failures exist with count >> M^{1/2}/log M (reported by search snippets, unchecked).
 Elsholtz-Tao (arXiv 1107.1010): sum_{p<=N} f(p) between N log^2 N and N log^2 N loglog N; odd squares have neither Type I nor Type II solutions (quoted in Chamberland's intro). Dao and others extend BM analysis to Markoff-type cubic and Wehler K3 surfaces (2202.07142, 2302.11515; unchecked).
 Analogy NOT yet checked: our surface xyz - x - y = n has BM-type obstruction exactly at squares (Cor D); the sporadic composite exceptions V would then be 'non-BM' failures, which in the Markoff case are conjecturally thin but do exist.
+
+---
+# Session 2e: combined-type coverage + Loughran-Mitankin assessment (2026-11-08)
+
+## Round 8: Type I (family) union Type II (Chamberland) -- VERIFIED to n <= 2e7 (es_combined.c, Chamberland q <= 4N+1)
+For n = 1 mod 4, 5 <= n <= 2e7 (output combined_2e7.txt):
+  - odd squares: 2235; with a family rep 0; with a Type II rep 0 (matches Elsholtz-Tao: odd squares have neither type -- this is an independent theory control of the Chamberland code).
+  - missing family: 2264 = 2235 squares + 29 non-squares.   missing Type II: 2236 = 2235 squares + ONE non-square, n = 4545 (= 3^2 * 5 * 101).
+  - missing BOTH: 2235 = exactly the odd squares.  So Type I union Type II covers EVERY non-square n = 1 mod 4 up to 2e7, primes included.
+  - 4545 has no Chamberland rep for q <= 6e6 (checked separately, ~1300 n) but it has a family rep; absence of a Type II rep for 4545 is NOT proved, only unseen.
+  - All 27 family exceptions found earlier (<= 4.8e6) have explicit Type II reps (es_Vcham.py), e.g. 105 = 47*3 - 4*3*3 (3 | 12), 465 = 7*67 - 4, 698569 = 19*36767 - 4.
+Controls: bogus rule (drop s_i | (q+1)/4) makes all odd squares acquire Type II reps (9/9 at N = 400), python and C implementations agree exactly at N = 60000 (138 / 122 / 121), squares < 1e5 have no Type II rep with q <= 1e5.
+New structural observation (CONJECTURED): the sporadic non-square failures of the two types are DISJOINT (V for Type I, {4545,...} for Type II), and the only common failures are squares. If this persists, 'every non-square n = 1 mod 4 is Type I or Type II' is the right integer statement; Erdos-Straus for primes would follow, since a prime is a non-square. No proof of this statement.
+
+## Loughran-Mitankin (arXiv 1807.10223): what the paper does and does not give (ar5iv text; sections beyond ~4.1 only seen through a summary)
+Verbatim statements: Thm 1.1/1.2: #{|m| <= B : weak approximation holds / closure property} << B^{1/2}; Thm 1.3: Brauer-Manin obstruction => m-4 mod squares in <±1,2,3,5>; Thm 1.4: #{m: local solutions everywhere but Br-Manin set empty} ~ B^{1/2}/(log B)^{1/2}; Thm 1.5: Hasse failures explained by BM are >> B^{1/2}/log B. They cite Ghosh-Sarnak numerics suggesting B^gamma (1/2 < gamma < 1) Hasse failures, i.e. MORE than BM-explained ones.
+CORRECTION to my earlier remark: the paper does NOT prove that non-BM Hasse failures are thin. It computes the Brauer group of a smooth cubic surface with three coplanar lines at infinity and counts m with BM obstruction. Method = Brauer group calculation (Gysin sequence, W(E6) Galois action, quaternion algebras, Tauberian counting) -- not a sieve, not Vieta orbits.
+Transfer to S_n : xyz - x - y = n (VERIFIED symbolically with sympy): the projective closure F = xyz - x w^2 - y w^2 - n w^3 has NO affine singular points but is singular at the three vertices of the triangle at infinity; the vertex (0:0:1:0) has local form XY = W^3 (W+n), an A_2 point (the other two are A_1 by hand: yz = w^2*unit). So S_n is a singular cubic surface (type A_2 + 2A_1); the smooth-surface Section 2 of L-M does not apply verbatim; one would work on its minimal resolution (a weak del Pezzo of degree 3). Prop C/Cor D is an elementary Hilbert-symbol/reciprocity computation that plausibly IS the corresponding BM obstruction at squares (CONJECTURED, not checked).
+Consequence: L-M cannot give 'sporadic failures are thin' (they do not prove it even for Markoff). The BM route could at most explain squares, which we already have. Ledger D13: 'transfer L-M thin-failure theorem' DEAD as stated.
+
+## Ledger additions
+D13 DEAD: transferring Loughran-Mitankin's thinness of failures (they prove it only for BM-explained failures; our surface is singular).
+D14 OPEN, best lead: prove 'Type I union Type II covers all non-squares' or find a relation (maybe a bijection or correspondence) between Type I reps (m,t,u) and Type II reps (q,r,s1,s2) showing sporadic failures cannot coincide. Elsholtz-Tao's parametrisation of Type I/II solutions is the place to look; not read yet.
+Files: es_combined.py es_combined.c es_Vcham.py combined_2e6.txt combined_2e7.txt.

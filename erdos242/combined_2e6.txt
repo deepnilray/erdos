@@ -1,0 +1,4 @@
+MODE MAIN N=2000000 q<=8000001
+non-square missed by Type II: 4545 (family hit=1)
+odd squares=706 | with family rep=0 | with Type II rep=0
+missing family=732 missing Type II=707 missing both=706  (squares=706)
