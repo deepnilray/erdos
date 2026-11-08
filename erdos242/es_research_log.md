@@ -203,3 +203,10 @@ Consequence: L-M cannot give 'sporadic failures are thin' (they do not prove it 
 D13 DEAD: transferring Loughran-Mitankin's thinness of failures (they prove it only for BM-explained failures; our surface is singular).
 D14 OPEN, best lead: prove 'Type I union Type II covers all non-squares' or find a relation (maybe a bijection or correspondence) between Type I reps (m,t,u) and Type II reps (q,r,s1,s2) showing sporadic failures cannot coincide. Elsholtz-Tao's parametrisation of Type I/II solutions is the place to look; not read yet.
 Files: es_combined.py es_combined.c es_Vcham.py combined_2e6.txt combined_2e7.txt.
+
+---
+# Session 3 (2026-11-08): multi-agent phase 1 started; credit budget ~30% of week left.
+Literature agent report (agents/LIT.md, UNVERIFIED-SOURCE items marked there):
+- PRIORITY WARNING (CONJECTURED, variable dictionary not checked): our Type I family looks like a re-parametrisation of Elsholtz-Tao Prop 2.3 'n = 4acd - f with f | 4a^2 d + 1' (credited to Nakayama) and related Yamamoto/Aigner classes (Prop 1.9). Do NOT claim the family as new until the dictionary is checked. Props C, D, E and the union conjecture (C*) are not in E-T beyond their Prop 1.6 (odd squares have neither type).
+- E-T give no correspondence between Type I and Type II (both are N-points of one 3-dim variety Sigma_n, mapping to the surface S_n); exceptional-set bound is Vaughan's N exp(-c log^{2/3} N).
+- No accepted proof in 2024-26 literature. Bradford 2602.11774 only outlines; Mallba 2602.20036 density-one (Oblath case); Cambridge Open Engage 'Modulo 24 obstructions' preprints unrefereed; erdosproblems forum rebutted a finite-CRT attempt for n=529 mod 840; Bright-Loughran: no Brauer-Manin obstruction.
