@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\title{A three-parameter family for the Erd\H{o}s--Straus equation\\ and its computational reach}
+\author{Working notes, 8 November 2026}
+\date{}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Status.} The Erd\H{o}s--Straus conjecture ($4/n=1/x+1/y+1/z$ for all $n\ge 2$, Erd\H{o}s Problem 242) is open and remains open after this note. Everything below is labelled \textsc{proved}, \textsc{verified} (with its bound) or \textsc{conjectured}.
+
+\section{An explicit identity}
+
+\begin{theorem}[\textsc{proved}]\label{thm:A}
+Let $m,u,t$ be positive integers with
+\[
+  n \;=\; mut-m-u \qquad\text{and}\qquad mt\equiv 1 \pmod 4 .
+\]
+Put $w=(mt-1)/4$ and $X=ut-1$. Then
+\[
+  \frac4n=\frac1{uw}+\frac1{n\,w\,X}+\frac1{u\,w\,X}.
+\]
+\end{theorem}
+
+\begin{proof}
+Since $mt\equiv1\pmod 4$, $w$ is a positive integer. From $n+m+u=mut$ we get $n+u=m(ut-1)=mX$. Then
+\[
+  \frac1u+\frac1{nX}+\frac1{uX}=\frac{nX+u+n}{unX}=\frac{n(X+1)+u}{unX}=\frac{nut+u}{unX}=\frac{nt+1}{nX}.
+\]
+Expanding, $(mt-1)(ut-1)=mut^2-mt-ut+1=t(mut-m-u)+1=nt+1$, so $nt+1=4wX$. Hence
+\[
+  \frac1{uw}+\frac1{nwX}+\frac1{uwX}=\frac1w\cdot\frac{nt+1}{nX}=\frac1w\cdot\frac{4wX}{nX}=\frac4n .\qedhere
+\]
+\end{proof}
+
+\begin{remark}
+If $m\equiv t\equiv 3\pmod 4$ then $mt\equiv1\pmod 4$ and $n\equiv -m\equiv 1\pmod 4$ is forced, so the family concerns $n\equiv1\pmod 4$. The identity does not need $n$ prime.
+\end{remark}
+
+\section{Reformulation and known special cases}
+
+Write $x=(n+m)/4=uw$. The identity is the divisor criterion ``$m/(nx)=1/y+1/z$ is solvable iff some $d\mid (nx)^2$ satisfies $d\equiv -nx \pmod m$'' evaluated at $d=n^2w$. Equivalent forms of the hypothesis are
+\[
+  n+m+u=mut,\qquad (mt-1)(ut-1)=nt+1,\qquad n\equiv -m \pmod{mt-1}.
+\]
+\begin{proposition}[\textsc{proved}]
+For a prime $p\equiv 1\pmod 4$:
+\begin{enumerate}
+\item If $u=1$, the family holds exactly when $p+1$ has a divisor $m\equiv 3\pmod 4$. This is the classical criterion of Obl\'ath (listed on erdosproblems.com/242).
+\item In the divisor criterion, writing $d=p^{i}e$ with $e\mid x^2$, the choice $e=x^2$ (with $i=0$ or $2$) never works at any offset: it would need $m\mid p^2+4$ with $m\equiv3\pmod 4$, but every odd divisor of $p^2+2^2$ is $\equiv1\pmod 4$ because $\gcd(p,2)=1$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(1) With $u=1$ the equation is $p+1=m(t-1)$; if $m\equiv3\pmod 4$ divides $p+1=2\cdot o$ then $t-1=2o/m$ and $t\equiv 3\pmod 4$ holds because $o/m$ is odd. For (2): a prime $q\mid p^2+4$ with $q$ odd satisfies $-4\equiv p^2$, so $-1$ is a square mod $q$, so $q\equiv1\pmod 4$.
+\end{proof}
+
+\begin{proposition}[\textsc{proved}; divisor form]\label{prop:B}
+Let $p\equiv1\pmod4$. Then $p$ lies in the family of Theorem~\ref{thm:A} if and only if there are an integer $t\equiv3\pmod4$ and a divisor $a$ of $pt+1$ with $4\mid a$ and $a\equiv-1\pmod t$ (and $b:=(pt+1)/a$, which then satisfies $b\equiv-1\pmod t$, is automatically admissible).
+\end{proposition}
+\begin{proof}
+($\Rightarrow$) Take $a=mt-1=4w$ and $b=ut-1=X$; the identity $(mt-1)(ut-1)=pt+1$ was shown in the proof of Theorem~\ref{thm:A}. ($\Leftarrow$) From $ab=pt+1\equiv1\pmod t$ and $a\equiv-1$ we get $b\equiv-1\pmod t$. Set $m=(a+1)/t$, $u=(b+1)/t$. Then $(mt-1)(ut-1)=pt+1$ expands to $mut^2-mt-ut=pt$, i.e.\ $mut-m-u=p$, and $mt=a+1\equiv1\pmod4$.
+\end{proof}
+
+\noindent Thus the conjecture for $p\equiv1\pmod 4$ would follow from: \emph{for every such prime there is $t\equiv3\pmod4$ such that $pt+1$ has a divisor $a\equiv-1\pmod t$ with $4\mid a$.} For $t=3$ this says $3p+1$ has a divisor $\equiv 11 \pmod{12}$ divisible by $4$, and so on; each $t$ imposes a different multiplicative condition, and no single $t$ works for all $p$.
+
+\section{Computations}
+
+All searches use $p\equiv 1,121,169,289,361,529\pmod{840}$ (the classes Mordell's identities leave open). For each such prime the code searches $u=1,2,\dots$ for a divisor $m\equiv3\pmod 4$ of $p+u$ with $(p+u)/m\equiv-1\pmod u$ and $t=((p+u)/m+1)/u\equiv3\pmod 4$.
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Bound & Hard primes & Largest minimal $u$\\
+\hline
+$p<6\cdot10^{5}$ & 1469 & 161 (at $p=30241$, $(m,t)=(27,7)$)\\
+$p<2\cdot10^{7}$ & 39391 & 890 (at $p=5101441$, $(m,t)=(39,147)$)\\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent \textsc{verified}, $p<2\cdot10^7$: every hard prime has a hit with $u\le 890$, and the triple of Theorem~\ref{thm:A} equals $4/p$ in exact rational arithmetic for all 39391 primes. The share of primes with minimal $u=1,2,3$ is $43\%,23\%,13\%$.
+
+\noindent \textsc{verified}, $p<2\cdot10^6$ (4519 hard primes), via the independent $t$-search of Proposition~\ref{prop:B}: every prime has a hit with $t\le 367$ (worst: $p=830041$, $(t,m,u)=(367,87,26)$); the control $p=7\equiv3\pmod 4$ correctly returns no hit.
+
+\noindent \textsc{verified}, random sample (seed 20261108): 40 random primes in the six open classes at each of 12, 15 and 18 digits all lie in the family, with minimal $u\le 12$, $8$, $5$ respectively; the control $p=1000003\equiv3\pmod 4$ returns no hit. This is a sample, not a range.
+
+\noindent Controls: replacing $x$ by $x+1$ breaks the identity for 39391 of 39391 primes; feeding the independent divisor-criterion solver the wrong offset $m+4$ or $m+8$ fails for 55265 of 78782 attempts (the remainder succeed legitimately at another offset).
+
+\section{What is and is not established}
+
+\begin{itemize}
+\item \textsc{proved}: Theorem~\ref{thm:A}; the $u=1$ characterization; the failure of the $e=x^2$ route.
+\item \textsc{verified}, $p<2\cdot10^7$: coverage of the six open classes by the family with $u\le 890$.
+\item \textsc{conjectured}: every prime $p\equiv1\pmod 4$ lies in the family; the minimal $u$ stays below a power of $\log p$. Neither is proved, and the family is a cubic-surface integral-point problem of Markoff type, which is the setting where Bright and Loughran showed there is no Brauer--Manin obstruction but integral points are not known to exist.
+\item Not established: ES for all primes; any statement about the $u$ needed for general $p$.
+\item Prior art: the criterion and the $u=1$ case are classical. Comparison with Chamberland's representation $p=qr-4s_1s_2$ ($q\equiv3\bmod 4$, $s_i\mid (q+1)/4$): \textsc{verified}, odd primes $p\equiv1\pmod 4$ below 400, the two families are \emph{not} the same representation-by-representation (e.g.\ $p=17$ has $q=7$ but no family member with $m=7$; $p=37$ has $m=3$ but no Chamberland $q=3$), although both are non-empty for all 36 primes tested. Whether they are equivalent as covering statements is not established. I did not check the Elsholtz--Tao Type~II parametrization symbol by symbol, so no priority is claimed.
+\end{itemize}
+
+\end{document}
