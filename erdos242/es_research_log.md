@@ -102,3 +102,38 @@ Two sufficient mechanisms. Fixed m: (p+m)/4 has a prime factor q = -4^{-1} (mod 
 es_minm.py tamper (identity corrupted): 4519/4519 failures caught. es_minm.py control (p = 3 mod 4): 74515/74515 no hit (the mod 4 argument predicts exactly this). es_count control (p = 3 mod 4): R = 0 for all 4189+ primes per decade.
 es_jacobi.py control pairs (a not = -1 mod m): 61% violate the formula, so the check has power. es_compare bogus rule changed the output.
 New scripts: es_minm.py, es_compare.py, es_allints.py, es_jacobi.py, es_count.c, es_lnr.py. Log: minm_2e7.log.
+
+---
+# Session 2b: structured attack, rounds 1-5 (2026-11-08). No proof yet. Ledger below.
+
+## Reformulations used (all PROVED, elementary)
+(R-a) p in family  <=>  exist k = 3 (mod 4) and l >= 1, gcd(k,l)=1 (p prime), with k | p+l, l | p+k and t = (p+k+l)/(kl) = 3 (mod 4).   [p = klt - k - l]
+(R-b) (tk-1)(tl-1) = pt+1.  Fixed t: pt+1 needs a factorisation with both factors = -1 (mod t) and 4 | one of them.
+(R-c) The family is the union, over m,t = 3 (mod 4), of the residue classes p = -m (mod mt-1). Uncovered set U = {n = 1 mod 4 : n in no class}.
+Special cases: l = 1: Oblath (p+1 has a divisor = 3 mod 4).  l = 2: p+2 has a divisor = 5 (mod 8).  t = 1 would always work (p+1 = (k-1)(l-1)) but t = 1 violates t = 3 (mod 4): the mod-4 condition IS the whole difficulty.
+
+## Round 1: does the two-squares decomposition p = x^2+y^2 explain the parameters?  DEAD.
+es_pattern.py on 2370 hard primes < 1e6: best linear forms alpha*x+beta*y (|alpha|,|beta| <= 8) hit the reps' parameters no more often than a planted control with random (x,y) (top counts 47 vs 58). Ledger: D8.
+
+## Round 2: look at the hardest primes.
+Primes with R(p)=1,2 (2521, 5569, 21169, 43969, 1201, 3361, 5209, 9601): in every rep pt+1 has only 2-5 prime factors and a is 4*(one or two primes). Thin factorisations, no algebraic pattern.
+
+## Round 3: characterise U exactly (VERIFIED, es_U.c).  KEY STRUCTURAL FINDING.
+U = {all odd squares} U V, V a sparse set of composites, all = 1 mod 8.  Up to 3e5 (complete): |U| = 294 = 273 odd squares (= ALL odd squares <= 547) + 21 non-squares, 0 primes.
+Partial run reaching n >= 4.8e6: 1095 odd squares (= all odd squares in range, consistent with Cor D) + 26 non-squares (5 beyond 3e5: 698569, 1116801, 1126945, 1243089, 1618521), 0 primes.
+V counts: 7 below 3e3, 21 below 3e5, 26 below 4.8e6. Sparse and thinning; whether V is finite is UNKNOWN (CONJECTURED sparse).
+Target statement (CONJECTURED): the family represents every non-square n = 1 mod 4 outside V; since V has no primes in range, this would give Erdos-Straus. The obstruction to squares is exactly Prop C/Cor D (a quadratic-character obstruction, the Brauer-Manin-like phenomenon); for non-squares the character (./n) is nontrivial.
+Why this matters: the question moves from 'cover primes' to 'what extra obstruction (beyond the trivial-character one) makes V?'. Understanding V's elements is the next step.
+
+## Round 4: the least non-residue is the carrier (VERIFIED, es_lnr2.py, 2370 hard primes < 1e6).
+l(p) | pt+1 in some rep: 2069/2370 (87%); l(p) | a: 1767 (75%).  Planted control (random residue prime): 89 and 68. So Prop C's necessary prime is typically the smallest one available.
+Burgess gives l(p) << p^{0.1516} unconditionally; GRH gives << log^2 p. A proof from here needs an explicit construction of (m,t,u) from q = l(p). Not found. Rep in which l(p) divides pt+1 fails for 13% of hard primes, so 'least non-residue only' is insufficient; a second non-residue or a product is needed.
+
+## Round 5: restrict the shape of a = mt-1 (VERIFIED, es_shape.py).
+Some rep with a = 4q (q prime) for 2216/2370 = 93.5%; odd part of a prime: 2336 (98.6%); odd part with exactly two primes: 2304. No single shape covers all hard primes < 1e6.
+
+## Ledger additions
+D8 DEAD (control-tested): linear forms in two-squares decomposition.
+D9 DEAD: a = 4q only (93.5%), a with prime odd part (98.6%), l(p) | a only (75%) - none reaches 100%, so a construction must allow several shapes.
+D10 OPEN, highest value: characterise V (is it finite? what obstruction?) and prove 'non-square n outside V is represented' by an induction/descent on integers, where composite n gives extra structure. Next rounds: (6) structure of V elements' Jacobi tables; (7) hypothesis test: V = {n : (q/n) = +1 for all primes q < c*log n ...}; (8) prove the representation for n with a large prime factor.
+Files: es_reps.c es_pattern.py es_U.c es_lnr2.py es_shape.py U_3e5.txt.  (reps_hard_1e6.txt is regenerable with es_reps.c; not committed.)
