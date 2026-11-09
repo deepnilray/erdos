@@ -234,3 +234,27 @@ Consequence: (i) the family is NOT a new characterisation of Type I; it is a re-
 Family exceptions (non-squares): 105, 465, 585, 801, 2641, 2929, 2961.  Covered by the Nakayama form (n = 4acd - f, f | 4a^2d+1, gcd(c,n)=1): 465, 585, 801, 2641, 2929.  NOT covered: 105, 2961.  Odd squares covered by Nakayama: none (control OK).
 The Nakayama implementation (with gcd) itself misses non-squares 105, 345, 561, 2961; 345 and 561 are in our family. So the two Type I descriptions are incomparable as implemented, and (family OR Nakayama) misses only 105 and 2961, both of which have Type II reps (s1 = s2 = 3 for 105; g > 1).
 CAVEAT: the gcd(c,n)=1 condition and the exact form of Prop 2.3 come from the literature agent's summary, not from my own reading of E-T, and E-T list several equivalent forms; the 345/561 discrepancy suggests my implementation of that condition may differ from theirs. Treat 'full Type I' here as approximate. Not a proof of anything; consistent with C* up to 3000.
+
+---
+# Session 4 (2026-11-09): algebraic leaps. UNIFIED SURFACE FRAMEWORK.
+
+## Leap 1 (PROVED, matrix identity): continued-fraction / SL2(Z) form
+T(a) = [[a,1],[-1,0]].  Then T(x)T(z)T(y) has (1,1)-entry xyz - x - y.  Equivalently n/(yz-1) = x - 1/(z - 1/y) (negative / Hirzebruch-Jung continued fraction of length 3).  So integral points of S_n : xyz - x - y = n are length-3 negative continued-fraction expansions of rationals n/q, q = yz-1.  All our families live on S_n: plane x = m is the fixed-m family (d | n+m, d = -1 mod m, z = (d+1)/m, y = (n+m)/d).
+
+## Leap 2: which residue classes of points of S_n give E-S solutions (mod 4)
+GOOD (each gives a solution): (i) xz = 1 mod 4 or yz = 1 mod 4: Theorem A (PROVED, sympy).  (ii) x = 0 mod 4 or y = 0 mod 4: PROVED by direct algebra: x = 4s gives Chamberland rep q = 4sz-1, r = y, s1 = s, s2 = 1 (q = 3 mod 4, s_i | (q+1)/4 = sz, qr - 4 s1 s2 = y(4sz-1) - 4s = n); exact-fraction check of Chamberland identity (4): 2581 points n <= 2000, 0 failures.  (iii) z = 0 mod 4: via the (agent's, VERIFIED to 3000) characterisation n + r = 4Agd, r | g+d with r = g+d; VERIFIED: all 3308 points with 4 | z, n <= 2000, have a Chamberland rep (control z = 2 mod 4: 234 points whose n has none).  Explicit identity for (iii) NOT yet derived (CONJECTURED-pending-proof, numerically solid).
+BAD classes of points mod 4 for n = 1 mod 4 (all coordinates nonzero mod 4, xz and yz not 1): (x,y,z) = (2,3,1), (3,2,1), (1,1,3), (1,2,2), (2,1,2).  Exactly five.
+Therefore (S): 'S_n(Z) is not contained in the five bad classes' => E-S for n.
+
+## Data for (S) (VERIFIED, es_surface.c, all n = 1 mod 4 <= 400000, output surface_4e5.txt)
+- all 315 odd squares: NO good point (matches Elsholtz-Tao and Cor D; control: widening the good set by z=2 gives all 8 small squares a good point).
+- the ONLY non-square with no good point is n = 105 (105 has a Type II rep with g > 1, e.g. 47*3 - 4*3*3).  So the earlier 27-element exceptional set V collapses to {105} once all good classes (Types I and II together) are used.
+Conjecture (S*): every non-square n = 1 mod 4, n != 105, has an integral point of S_n outside the five bad classes. Implies Erdos-Straus. [a prime is never a square.]
+
+## Mechanism (PROVED by reciprocity, same computation as Prop C): why squares fail and what a proof must produce
+For ANY point, a = xz-1 = 2^e a' (x odd): (n/q) = (-x/q) for each odd prime q | a'; so chi_n(a') = (-x/a'), and for x = 3 mod 4 this equals -(2/x)^e (Prop C); for x = 1 mod 4 it equals (-1/a')(2/x)^e.  Hence good Type I points need chi_n(a') = -1 for the Jacobi character chi_n = (./n).  Norm-form reading: n + x = N(a + sqrt(-x) b) with b = 1 iff n = a^2; squares are exactly the n for which n+x is a norm from Q(sqrt(-x)) with trivial 'b = 1' for every x, which forces chi_n = +1 on all divisors.  For non-square n, chi_n is non-trivial and a proof must exhibit a divisor d | n+x, d = -1 (mod x), carrying chi_n(d') = -1 with the right 2-adic class: an existence statement for divisors of specific integers in a residue class (the sieve/dispersion wall).
+New one-line lemmas from the framework (PROVED): L4: if n = 1 mod 4 and n+4 has a prime factor = 3 mod 4 then n is good (plane x = 4, point (4, (n+4)/q, (q+1)/4)).  All planes x = m, m = 0 mod 4, give analogous families (d | n+m, d = -1 mod m).
+
+## Not used / why
+Lean: the identity (Theorem A) is already sympy-checked; Lean would only pay off for a candidate proof of (S*), which does not exist yet. Browser/paper access was not needed this round.
+Files: es_surface.c es_classcheck.py surface_4e5.txt.

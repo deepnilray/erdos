@@ -1,0 +1,2 @@
+S-bad non-square n=105 (points scanned=10)
+MAIN N=400000: odd squares=315 with a good point=0 | S-bad non-squares=1
