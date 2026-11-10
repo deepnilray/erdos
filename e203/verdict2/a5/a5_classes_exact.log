@@ -1,0 +1,12 @@
+total weight == 1: True
+E[nu] = 0.4738416693058567  exact prod(1-1/p) match: True
+E[nu^2] = 0.23023588386020274  independent lattice formula: 0.23023588386020274  exact match: True
+bins with mass: 1714  lowest nonempty bin nu in [ 0.37392977392977395 , 0.37402597402597404 )
+
+real	0m8.342s
+user	0m5.651s
+sys	0m2.565s
+[planted one count -1] total weight == 1: True
+[planted one count -1] E[nu] = 0.47384166929915716  exact prod(1-1/p) match: False
+[planted one count -1] E[nu^2] = 0.2302358838529555  independent lattice formula: 0.23023588386020274  exact match: False
+[planted one count -1] bins with mass: 1714  lowest nonempty bin nu in [ 0.37392977392977395 , 0.37402597402597404 )

@@ -1,0 +1,20 @@
+  sweep 0: bound 0.86371
+  sweep 1: bound 0.71666
+  sweep 2: bound 0.71569
+  sweep 3: bound 0.71569
+E=200000: light=0.0484919 astar=0.626810 BOUND=0.715690 (incremental 0.715690) NO COVERING POSSIBLE r-src {'coupled': 1286291, 'minU': 0, 'bonf': 0} build 41s opt 140s
+  sweep 0: bound 0.83926
+  sweep 1: bound 0.69886
+  sweep 2: bound 0.69787
+  sweep 3: bound 0.69787
+E=100000: light=0.0484763 astar=0.626794 BOUND=0.697867 (incremental 0.697867) NO COVERING POSSIBLE r-src {'coupled': 488423, 'minU': 0, 'bonf': 0} build 16s opt 52s
+  sweep 0: bound 0.81101
+  sweep 1: bound 0.67370
+  sweep 2: bound 0.67316
+  sweep 3: bound 0.67316
+E=50000: light=0.0484377 astar=0.626756 BOUND=0.673161 (incremental 0.673161) NO COVERING POSSIBLE r-src {'coupled': 189819, 'minU': 0, 'bonf': 0} build 6s opt 22s
+  sweep 0: bound 0.76834
+  sweep 1: bound 0.63388
+  sweep 2: bound 0.63343
+  sweep 3: bound 0.63343
+E=20000: light=0.0483158 astar=0.626634 BOUND=0.633429 (incremental 0.633429) NO COVERING POSSIBLE r-src {'coupled': 58556, 'minU': 0, 'bonf': 0} build 2s opt 9s

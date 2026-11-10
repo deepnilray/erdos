@@ -1,0 +1,6 @@
+pool primes 100814
+form-annihilation failures (algebra) 0 | modular failures p|2^a3^b-1 0 | size/Minkowski/log p violations 0 | Hermite 2/sqrt3 violations 0
+control (beta+1 still annihilates v, should be rare): 0 of 100667
+pool L^2/e mean 0.5263 median 0.5249 q10 0.1077 q01 0.0123 max 1.1518
+random L^2/e mean 0.5246 median 0.5226 q10 0.1040 q01 0.0100 max 1.1518
+min over pool of e/(log p/log 6)^2: 3.5920311475674636

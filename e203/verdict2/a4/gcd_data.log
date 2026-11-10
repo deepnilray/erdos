@@ -1,0 +1,5 @@
+n <= 3000: pool explains g_n for all n: True (unexplained n: []); max log g_n/(n log 2) = 0.7358 at n = 12
+  max over 100 <= n <= 3000: 0.3231 at n = 120
+  max over 1000 <= n <= 3000: 0.1107 at n = 1080
+control: deleted p=1422061 (e=2740): unexplained n = [2740]... count 1, expected 1 -> fires: True
+c(e) bound on pool (e in [20, 8e5]): violations [] ; max c(e) = 4

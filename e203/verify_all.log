@@ -1,0 +1,11 @@
+N=720720: pool certified complete, 99 primes, sum 1/e = 1.2490; coverage <= 0.909400 (exact rational) -> THEOREM HOLDS
+N=1441440: pool certified complete, 114 primes, sum 1/e = 1.2646; coverage <= 0.919715 (exact rational) -> THEOREM HOLDS
+N=2162160: pool certified complete, 132 primes, sum 1/e = 1.2780; coverage <= 0.929180 (exact rational) -> THEOREM HOLDS
+N=3603600: pool certified complete, 150 primes, sum 1/e = 1.2972; coverage <= 0.940812 (exact rational) -> THEOREM HOLDS
+N=4324320: pool certified complete, 152 primes, sum 1/e = 1.2941; coverage <= 0.939848 (exact rational) -> THEOREM HOLDS
+N=12252240: pool certified complete, 192 primes, sum 1/e = 1.3159; coverage <= 0.953372 (exact rational) -> THEOREM HOLDS
+N=21621600: pool certified complete, 229 primes, sum 1/e = 1.3433; coverage <= 0.971810 (exact rational) -> THEOREM HOLDS
+N=36756720: pool certified complete, 258 primes, sum 1/e = 1.3471; coverage <= 0.974568 (exact rational) -> THEOREM HOLDS
+N=61261200: pool certified complete, 281 primes, sum 1/e = 1.3654; coverage <= 0.985322 (exact rational) -> THEOREM HOLDS
+N=73513440: pool certified complete, 299 primes, sum 1/e = 1.3636; coverage <= 0.985428 (exact rational) -> THEOREM HOLDS
+N=232792560: pool certified complete, 322 primes, sum 1/e = 1.3561; coverage <= 0.977654 (exact rational) -> THEOREM HOLDS

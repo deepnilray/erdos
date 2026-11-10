@@ -1,0 +1,14 @@
+  sweep 0: bound 0.80472
+  sweep 1: bound 0.73557
+  sweep 2: bound 0.73493
+  sweep 3: bound 0.73493
+  sweep 4: bound 0.73493
+  sweep 5: bound 0.73493
+E=20000: 3469 primes; alpha* = 0.578318 + light 0.048316 = 0.626634; BOUND=0.734931 -> NO COVERING POSSIBLE
+  sweep 0: bound 1.01471
+  sweep 1: bound 0.80948
+  sweep 2: bound 0.80868
+  sweep 3: bound 0.80868
+  sweep 4: bound 0.80868
+  sweep 5: bound 0.80868
+E=100000: 14856 primes; alpha* = 0.578318 + light 0.048476 = 0.626794; BOUND=0.808684 -> NO COVERING POSSIBLE

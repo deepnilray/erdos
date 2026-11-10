@@ -1,0 +1,8 @@
+w=31 E0=3000: known q>=31: 5761445, with e<=E0: 622
+  A (exact pairs) = 2.274712e-04  B (unknown 2nd) = 1.579814e-07  C (crude, e1>E0) = 6.597466e-05
+  D (largest key unknown, incl. singles q>Y) = 8.665159e-05   analytic tail beyond 1e300: 6.343e-182
+  tau_31 <= 3.802554e-04    Pi_known(all) = 5.221108
+
+real	0m4.996s
+user	0m2.440s
+sys	0m2.543s

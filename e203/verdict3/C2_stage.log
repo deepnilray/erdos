@@ -1,0 +1,10 @@
+stages 15279
+sum_l (mu_l/l)^2 over pool stages l>=5 = 1.31262
+l in [5,30): stages 8, max mu/sqrt(l)=1.8291, max mu/l=0.81802, sum (mu/l)^2=1.277e+00
+l in [30,100): stages 15, max mu/sqrt(l)=0.4292, max mu/l=0.07665, sum (mu/l)^2=3.121e-02
+l in [100,1000): stages 143, max mu/sqrt(l)=0.2462, max mu/l=0.02151, sum (mu/l)^2=4.323e-03
+l in [1000,10000): stages 1061, max mu/sqrt(l)=0.0639, max mu/l=0.00175, sum (mu/l)^2=1.029e-04
+l in [10000,100000): stages 6930, max mu/sqrt(l)=0.0175, max mu/l=0.00015, sum (mu/l)^2=2.902e-06
+l in [100000,10000000): stages 7122, max mu/sqrt(l)=0.0066, max mu/l=0.00002, sum (mu/l)^2=7.336e-08
+sum over pool primes of 1/psi(e) = 1.73 (primes 100814): mean lattice occupancy prob scale
+c(e)=1 for 88.5%; max c(e)=4
