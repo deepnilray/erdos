@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\ZN}{\Z_N}
+\title{Fonollosa's minimum-modulus conjecture:\\ a sign characterization, a cyclic-order lemma,\\ and exhaustive verification for $n=8$}
+\author{Deepnil Ray\thanks{Independent researcher. ORCID 0000-0001-8779-0700. Computations and drafting were done with Claude (Anthropic); every claim below carries one of the labels PROVED, VERIFIED, CONJECTURED.}}
+\date{10 November 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A set $A$ of $n$ residues modulo $N$ is \emph{valid} if the only multiset of size $n$ drawn from $A$ whose sum equals $\sum_{a\in A}a$ is $A$ itself. Fonollosa (arXiv:2607.08366) conjectured that a valid $n$-set forces $N\ge 2^n-2^{\lfloor\log_2 n\rfloor}$. \textbf{Verdict: PARTIAL.} The conjecture is not proved here. We prove (i) a sign characterization of validity in terms of the relation lattice; (ii) a cyclic-order lemma: whenever a difference $a-c$ of two elements generates $\Z_N$, the $2^{n-2}$ subset sums of the remaining elements are $2$-separated along the $(a-c)$-cycle and shearing by the weight preserves their cyclic order; (iii) as consequences, $N\ge 2^{n-1}+n-2$ whenever some difference is a unit (in particular for every prime $N$), and $N\ge 5\cdot 2^{n-3}$ when in addition $A$ contains $3a-2c$ or $4a-3c$. By an exhaustive, symmetry-reduced computer search with controls we verify the conjecture for $n=8$ (the author of the conjecture reports exact certificates for $n\le 7$), and we find that for every $n\le 8$ the moduli $N<2^n$ admitting a valid $n$-set are exactly $N=2^n-2^k$ with $2^k\le n$. We record a sporadic valid $4$-set modulo $15$ that is not affinely equivalent to $\{1,2,4,8\}$, and we show by computation that the weaker ``all-anchor dissociated'' property has the same threshold for $n\le 6$ but a smaller one ($120$ instead of $124$) for $n=7$.
+\end{abstract}
+
+\section{Verdict, worst news first}
+\begin{itemize}
+\item \textbf{Not established:} Fonollosa's Conjecture~1 for general $n$. The best lower bound valid for \emph{all} valid sets remains the bound $N\ge 2^{n-1}$ of Inal (with $N\ge 2^{n-1}+1$ for cyclic groups and $n\ge3$, noted in an October 2026 public issue, see Section~\ref{sec:prior}). Our new unconditional-in-$n$ bounds need a hypothesis (a difference that is a unit) and are far from the conjectured $2^n-2^{\lfloor\log_2 n\rfloor}$.
+\item \textbf{PROVED:} Proposition~\ref{prop:sign}, Corollary~\ref{cor:basic}, Lemma~\ref{lem:order}, Theorem~\ref{thm:tv}, Proposition~\ref{prop:small}.
+\item \textbf{VERIFIED} (exhaustive search, bounds stated, controls fired): Theorem~\ref{thm:n8} and the tables of Section~\ref{sec:comp}.
+\item \textbf{CONJECTURED:} Conjectures~\ref{conj:refined} and~\ref{conj:1d}.
+\end{itemize}
+
+\section{The problem and prior work}\label{sec:prior}
+Throughout $n\ge 2$, $N\ge 2$, and $A\subseteq\ZN$ with $|A|=n$.
+\begin{definition}[Fonollosa]
+$A$ is \emph{valid mod $N$} if for every $k\in\N^{A}$ with $\sum_a k_a=n$ and $\sum_a k_a a\equiv\sum_a a \pmod N$ one has $k_a=1$ for all $a$.
+\end{definition}
+Fonollosa~\cite{F} proved that for the set $\{2^i-1:0\le i<n\}$ the least valid modulus is $2^n-2^{\lfloor\log_2 n\rfloor}$ (formalized in Lean~4, \cite{Frepo}) and stated:
+\begin{conjecture}[Fonollosa, Conjecture~1 of \cite{F}]\label{conj:F}
+If $N<2^n-2^{\lfloor \log_2 n\rfloor}$ then no $n$-subset of $\ZN$ is valid.
+\end{conjecture}
+\noindent Status checked on 10 November 2026: the statement is listed as open in the Formal Conjectures repository~\cite{FC} (file \texttt{Arxiv/2607.08366/MinModulus.lean}, repository state of 9 November 2026). According to~\cite{F} (as read through the arXiv listing and the README of~\cite{Frepo}) the conjecture has exact CP-SAT certificates for $n\le 7$ and non-exhaustive solver searches for $n\le 13$. The README of~\cite{Frepo} attributes to M.~Inal (OSF preprint, DOI 10.17605/OSF.IO/C58Q9, which we have not read directly) the bound $|G|\ge 2^{n-1}$ for every finite abelian group $G$ carrying a valid $n$-tuple, with equality only for $(\Z_2)^{n-1}$; the Lean proof of this bound is in~\cite{Frepo}. A public research issue~\cite{Om} dated 22 October 2026 records $N\ge 2^{n-1}+1$ for cyclic groups and $n\ge 3$ and states that the conjecture is unresolved. We found no later work. We do not claim priority for any statement that follows without the caveat that the literature on this three-month-old problem is small and partly outside the refereed record.
+
+\section{A sign characterization}
+Let $\Lambda=\Lambda(A,N)=\{x\in\Z^{A}:\ \sum_a x_a=0,\ \sum_a x_a a\equiv 0 \pmod N\}$ be the lattice of sum-zero relations.
+\begin{proposition}[PROVED]\label{prop:sign}
+$A$ is valid mod $N$ if and only if every nonzero $x\in\Lambda$ has an entry $\ge 2$ and an entry $\le -2$.
+\end{proposition}
+\begin{proof}
+The map $k\mapsto x=k-\mathbf 1$ is a bijection from $\{k\in\N^A:\sum k_a=n,\ \sum k_a a\equiv\sum a\}$ onto $\{x\in\Lambda: x_a\ge -1\ \forall a\}$, and $k=\mathbf 1$ corresponds to $x=0$. Hence $A$ is valid iff $\Lambda$ has no nonzero vector with all entries $\ge -1$. Since $\Lambda=-\Lambda$, this holds iff $\Lambda$ has no nonzero vector with all entries $\ge -1$ and none with all entries $\le 1$, which is the statement.
+\end{proof}
+\begin{corollary}[PROVED]\label{cor:basic}
+(a) Validity is invariant under $x\mapsto ux+v$ with $u$ a unit of $\ZN$. (b) Every subset of a valid set is valid (as a set of its own size, same modulus). (c) If $A$ lies in a coset of the subgroup of index $h$, then $A$, read in $\Z_{N/h}$, is valid mod $N/h$. (d) (Inal's bound.) For $c\in A$ the $2^{n-1}$ sums $\sum_{a\in S}(a-c)$, $S\subseteq A\setminus\{c\}$, are distinct; hence $N\ge 2^{n-1}$.
+\end{corollary}
+\begin{proof}
+(a) and (c): the lattice $\Lambda$ is unchanged. (b): extend a relation of the subset by zeros. (d): if two such sums agree for $S\ne T$, $|S|\le |T|$, then $\mathbf 1_T-\mathbf 1_S-(|T|-|S|)e_c$ is a nonzero vector of $\Lambda$ with all entries $\le 1$.
+\end{proof}
+Part (d) uses only relation vectors with at most one entry outside $\{-1,0,1\}$. This suggests:
+\begin{definition}
+$A$ is \emph{all-anchor dissociated} (AAD) mod $N$ if every nonzero $x\in\Lambda$ has at least two entries of absolute value $\ge 2$; equivalently, for every $c\in A$ the $2^{n-1}$ sums in Corollary~\ref{cor:basic}(d) are distinct.
+\end{definition}
+Valid sets are AAD by Proposition~\ref{prop:sign}. The converse fails (Section~\ref{sec:comp}).
+
+\section{The cyclic-order lemma}
+Fix distinct $a,c\in A$, put $b=a-c$ and $A''=A\setminus\{a,c\}$, $m=n-2$. For $S\subseteq A''$ let $x_S=\sum_{e\in S}(e-c)\in\ZN$ and $w(S)=|S|$.
+\begin{lemma}[PROVED]\label{lem:order}
+Let $A$ be valid mod $N$. Let $S\ne S'$ be subsets of $A''$ with $w(S')\ge w(S)$, and suppose $x_{S'}-x_S=i\,b$ for an integer $i$. Then $i\notin[-1,\ w(S')-w(S)+1]$.
+\end{lemma}
+\begin{proof}
+Define $\lambda\in\Z^A$ by $\lambda|_{A''}=\mathbf 1_{S'}-\mathbf 1_S$, $\lambda_a=-i$, $\lambda_c=i-(w(S')-w(S))$. Then $\sum\lambda=0$ and $\sum_e\lambda_e e=x_{S'}-x_S-i(a-c)+c\sum\lambda= 0$ in $\ZN$, so $\lambda\in\Lambda$, and $\lambda\ne0$ because $S\neq S'$. If $-1\le i\le w(S')-w(S)+1$, then $\lambda_a\le 1$, $\lambda_c\le 1$ and the entries on $A''$ lie in $\{-1,0,1\}$, so $\lambda$ has no entry $\ge2$, contradicting Proposition~\ref{prop:sign}.
+\end{proof}
+Assume now that $b$ is a unit of $\ZN$, and define the \emph{position} $p(S)\in\{0,\dots,N-1\}$ by $x_S=p(S)\,b$. Applying the lemma to all integers $i\equiv p(S')-p(S)$:
+\begin{corollary}[PROVED]\label{cor:struct}
+If $b$ is a unit, then for $S\ne S'$ with $w(S')\ge w(S)$ the forward distance $d=(p(S')-p(S))\bmod N$ satisfies
+\[ w(S')-w(S)+2\ \le\ d\ \le\ N-2 .\]
+In particular the $2^m$ positions are distinct and pairwise at cyclic distance at least $2$; listing them in cyclic order as $p_1<\dots<p_M$ ($M=2^m$) with weights $w_j$, the gaps $g_j=p_{j+1}-p_j$ (indices mod $M$, $g_M=N-p_M+p_1$) satisfy $g_j\ge 2+\max(0,w_{j+1}-w_j)$. Equivalently the sheared positions $p(S)-w(S)$ are again pairwise $2$-separated and occur in the same cyclic order.
+\end{corollary}
+The sheared configuration is the same structure seen from the anchor $a$ instead of $c$. The corollary is where cyclicity enters: in $(\Z_2)^{n-1}$ every difference has order $2$ and nothing is gained.
+\begin{theorem}[PROVED]\label{thm:tv}
+Let $A$ be valid mod $N$, $n\ge 3$, and suppose some difference of two elements of $A$ is a unit of $\ZN$ (automatic if $N$ is prime). Then $N\ge 2^{n-1}+n-2$.
+\end{theorem}
+\begin{proof}
+Summing the gap inequalities of Corollary~\ref{cor:struct} around the cycle gives $N=\sum_j g_j\ge 2M+\sum_j\max(0,w_{j+1}-w_j)$. The cyclic sequence $(w_j)$ takes the values $0$ (for $S=\emptyset$) and $m$ (for $S=A''$), so its total positive variation is at least $m=n-2$.
+\end{proof}
+\begin{proposition}[PROVED]\label{prop:small}
+Let $A$ be valid mod $N$, $n\ge3$, let $a,c\in A$ with $a-c$ a unit, and suppose $A$ contains $e\in\{3a-2c,\ 4a-3c,\ 3c-2a,\ 4c-3a\}$, $e\ne a,c$. Then $N\ge 5\cdot 2^{n-3}$.
+\end{proposition}
+\begin{proof}
+Exchanging the roles of $a$ and $c$ we may assume $e-c=g\,b$ with $g\in\{3,4\}$. Let $P_0=\{p(S):e\notin S\}$, so $|P_0|=M/2$ and $p(S\cup\{e\})\equiv p(S)+g$. Let $x\in P_0$ have weight $k$, and suppose a position $y$ of some $T$ lies strictly between $x$ and $x+g$. By $2$-separation $y=x+2$ and $g=4$. If $w(T)\ge k$, Corollary~\ref{cor:struct} gives $2\ge w(T)-k+2$, so $w(T)=k$, and then the forward distance $2$ from $y$ to the heavier point $x+g$ contradicts the lower bound $3$. If $w(T)<k$, the forward distance $2$ from $y$ to $x+g$ must be at least $(k+1-w(T))+2\ge4$, a contradiction. So the $M/2$ arcs $[x,x+g]$, $x\in P_0$, contain no further positions; they are pairwise disjoint, and the first position after $x+g$ is at distance at least $2$. Each arc therefore accounts for at least $g+2\ge5$ residues, and $N\ge 5M/2=5\cdot 2^{n-3}$.
+\end{proof}
+The set $\{1,2,4,\dots,2^{n-1}\}$ satisfies the hypothesis with $(c,a,e)=(1,2,4)$ whenever $1$ is a unit, so Proposition~\ref{prop:small} applies to the extremal family but gives only $5/8$ of the true value.
+
+\paragraph{The abstract one-dimensional problem.} Call $(N;\beta_1,\dots,\beta_m)$ a \emph{structure} if the points $p(S)=\sum_{l\in S}\beta_l \bmod N$ satisfy the inequalities of Corollary~\ref{cor:struct}.
+\begin{conjecture}[VERIFIED for $m\le5$ by exhaustive search]\label{conj:1d}
+Every structure with $m$ generators has $N\ge 5\cdot 2^{m-1}$, with equality only for $\beta=(3,5,10,20,\dots,5\cdot2^{m-2})$ and its image under $\beta_l\mapsto N+1-\beta_l$.
+\end{conjecture}
+If true this gives $N\ge 5\cdot2^{n-3}$ for every valid set with a unit difference. The computed minima are $5,10,20,40,80$ for $m=1,\dots,5$ (program \texttt{oned.c}; the search enumerates all increasing generator tuples and prunes on sub-cubes). A related computation (\texttt{lk.c}, VERIFIED for the stated sizes): if the sign condition of Proposition~\ref{prop:sign} is imposed only on relation vectors whose entries outside a fixed set of $k$ coordinates lie in $\{-1,0,1\}$, the least modulus is $2^{n-1}$ for $k\le2$, equals $6,10,20,40$ for $k=3$, $n=3,\dots,6$, and equals $12,24,46$ for $k=4$, $n=4,5,6$. The inequality $N\ge2M+{}$(positive variation) alone does not suffice: $(5,7,9)$ modulo $23$ is a structure whose weights in cyclic order are $0,1,1,1,2,2,2,3$.
+
+\section{Computations}\label{sec:comp}
+\subsection{Method and controls}
+\texttt{enum3.c} enumerates valid $n$-sets modulo $N$ up to the affine maps $x\mapsto ux+v$. Normal form: for a divisor $d<N$ of $N$ the set contains $0$ and $d$, and every pairwise difference $x-y$ has $\gcd(x-y,N)\ge d$. Every valid set has such an image: choose a pair whose difference has minimal $\gcd$ with $N$, translate one element to $0$ and scale the other to that $\gcd$ (the units act transitively on residues of a given $\gcd$). For $d=1$ a second reduction is used: among all triples $(c,a,e)$ with $a-c$ a unit, pick one minimizing the residue $(e-c)(a-c)^{-1}\in[2,N-1]$ and normalize $(c,a)\mapsto(0,1)$; then the third smallest element $t$ of the normalized set is a lower bound for all these residues, a condition inherited by subsets containing $\{0,1,t\}$, so it can be used for pruning. Elements are added in increasing order and every prefix must be valid (Corollary~\ref{cor:basic}(b)). Validity of a $k$-set is tested by a bitset dynamic program that counts, capped at two, the multisets of size $k$ with the target sum.
+
+Controls. (1) Positive controls: the search finds valid sets at every $N=2^n-2^k$ with $2^k\le n$ for $n\le 8$ (Table~\ref{tab:valid}), so a ``no set found'' answer is not an artifact of over-pruning at those sizes. (2) The pruned program \texttt{enum3} and the unpruned programs \texttt{enum2} (only the $\gcd$ normal form) and \texttt{enum} (only $0\in A$) give the same number of affine classes for all $(n,N)$ in Table~\ref{tab:valid} with $n\le7$ and for $N=123$, $n=7$ (zero). (3) An independent pure-Python checker (\texttt{check\_valid.py}) accepts every set output by the C programs and rejects planted invalid sets ($\{1,2,4,8\}$ mod $13$, $\{1,2,4,8,16\}$ mod $24$, $\{0,1,2\}$ mod $5$). (4) The order-lemma checker (\texttt{order\_check.py}) reports $0$ violations on all valid sets found for $n\le7$, and reports violations on $192$ of the $480$ sets modulo $60$ that are AAD but not valid, so the test can fail.
+
+\subsection{Results}
+\begin{theorem}[VERIFIED, exhaustive search, $n\le 8$, all $N<2^n$]\label{thm:n8}
+For $3\le n\le 8$ and $N<2^n$ there is a valid $n$-set modulo $N$ if and only if $N=2^n-2^k$ with $2^k\le n$. In particular Conjecture~\ref{conj:F} holds for $n\le 8$.
+\end{theorem}
+\noindent For $N<2^{n-1}$ this is Corollary~\ref{cor:basic}(d); the search covers $2^{n-1}\le N<2^n$.
+
+\begin{table}[h]\centering
+\begin{tabular}{cll}
+\toprule
+$n$ & moduli $2^{n-1}\le N<2^n$ with a valid $n$-set & affine classes at these moduli\\
+\midrule
+3 & $6,\ 7$ & $1,\ 1$\\
+4 & $12,\ 14,\ 15$ & $1,\ 2,\ 2$\\
+5 & $28,\ 30,\ 31$ & $1,\ 5,\ 1$\\
+6 & $60,\ 62,\ 63$ & $1,\ 2,\ 1$\\
+7 & $124,\ 126,\ 127$ & $1,\ 1,\ 1$\\
+8 & $248,\ 252,\ 254,\ 255$ & $1,\ 1,\ 2,\ 1$\\
+\bottomrule
+\end{tabular}
+\caption{VERIFIED. Output of \texttt{enum3} for every $N$ in $[2^{n-1},2^n)$; all moduli not listed returned no valid set. For $n=8$ the run visited between $6.6\cdot10^4$ and $5.3\cdot10^6$ search nodes per modulus (log \texttt{logs/n8.log}); the six normal-form sets found at $N\in\{248,252,254,255\}$ pass the independent checker. Second class at $N=254$: $\{0,1,64,96,112,120,124,126\}$.}\label{tab:valid}
+\end{table}
+
+
+\begin{remark}[a sporadic class; VERIFIED]
+Modulo $15$ the set $\{0,1,3,10\}$ is valid and is not affinely equivalent to $\{1,2,4,8\}$ (the latter is equivalent to $\{0,1,3,7\}$). No translate-and-scale of it is closed under $x\mapsto 2x-t$ for any $t$, so it is not a ``doubling orbit''. For $n\in\{5,6,7,8\}$ and $N=2^n-1$ the search finds a single class. This does not contradict the uniqueness question of~\cite{F}, which concerns the minimal modulus $2^n-2^{\lfloor\log_2 n\rfloor}$ ($=12$ for $n=4$), where the class is unique for $n\le 8$.
+\end{remark}
+\begin{remark}[AAD sets; VERIFIED]
+For $3\le n\le 6$ the moduli $N<2^n$ admitting an AAD $n$-set are the same as for valid sets. For $n=7$ they are $N\in\{120,124,126,127\}$ (program \texttt{enumd.c}, all $64\le N<128$), so the AAD threshold is $120=2^7-2^3$, below the validity threshold $124$. A proof of Conjecture~\ref{conj:F} must therefore use relation vectors with at least two entries outside $\{-1,0,1\}$.
+\end{remark}
+\begin{conjecture}[refined form; VERIFIED for $n\le 8$]\label{conj:refined}
+If $A$ is a valid $n$-set modulo $N$ and $N<2^n$, then $N$ divides $2^n-2^k$ for some $k$ with $2^k\le n$ (hence $N=2^n-2^k$ by Corollary~\ref{cor:basic}(d) and $N>2^{n-1}$).
+\end{conjecture}
+In particular the conjecture predicts that an \emph{odd} modulus below $2^n-1$ never carries a valid $n$-set.
+
+\section{What is not established}
+\begin{enumerate}
+\item Conjecture~\ref{conj:F} for $n\ge 9$, and any bound of the form $N\ge(\tfrac12+\varepsilon)2^n$ valid for all valid sets. Theorem~\ref{thm:tv} gains only an additive $n-2$ and needs a unit difference; Proposition~\ref{prop:small} needs an arithmetic hypothesis.
+\item Conjecture~\ref{conj:1d} beyond $m=5$. Even if proved it yields the constant $5/8$, not $1$.
+\item The verification for $n=8$ is a computation, not a proof checked by a kernel; no Lean formalization of the new statements was produced (no Lean toolchain was available in the session). The formal statement of Conjecture~\ref{conj:F} exists in~\cite{FC}.
+\item We did not read Inal's preprint or the full text of~\cite{F} in PDF form inside the session (the arXiv PDF could be read only through a summarizing fetch tool); attributions to them follow the arXiv abstract, the README of~\cite{Frepo} and~\cite{Om}.
+\end{enumerate}
+
+\appendix
+\section{Dead ideas and their obstructions}
+\begin{enumerate}
+\item \emph{Clique (pigeonhole) arguments.} Any family of sum-zero integer vectors whose pairwise differences are forbidden relation vectors has at most $2^{n-1}$ members, because $(\Z_2)^{n-1}$ carries a valid tuple. The same caps every Delsarte-type linear-programming bound that ignores cyclicity.
+\item \emph{Two translated cubes.} $N\ge 2^n-|Q_c\cap(Q_c+g)|$ for the anchored cube $Q_c$ and any $g$; averaging over $g$ returns $(N-2^{n-1})^2\ge0$. For explicit valid sets the minimum overlap exceeds $2^n-N$ (e.g.\ $4$ versus $1$ for $\{1,2,4,8,16\}$ mod $31$), also for dilates $uQ_c+g$ and for cubes at two different anchors.
+\item \emph{A virtual anchor.} For $\{1,2,4,\dots\}$ the $2^n$ raw subset sums cover $\ZN$; for the sporadic set mod $15$ no translation $t$ makes the map $S\mapsto\sum_{a\in S}(a-t)$ hit more than $8$ residues.
+\item \emph{Character and polynomial identities.} Parseval for the Riesz product $\prod_{a\ne c}(1+\cos(2\pi r(a-c)/N))$, the norm of $\prod(1+\zeta^{a-c})$, and the degree-$(p-1)$ moment identity modulo a prime $p$ all reduce to the statement ``the number of relations is one'' and give no bound beyond $2^{n-1}$.
+\item \emph{Counting with all translations.} Summing collisions over all $t\in\ZN$ gives the known bound $\binom{2n}{n}/2^n$.
+\item \emph{Reduction to the AAD property.} False for $n=7$ ($N=120$).
+\item \emph{Parity induction for even $N$.} The two parity classes are valid modulo $N/2$, which gives $N\ge 2f(\max(n_0,n_1))$; nothing forces the split $(n-1,1)$ seen in all examples.
+\item \emph{Doubling the smallest element.} For $\{1,2,4,\dots\}$ anchored at $1$ the complement of $Q_c$ is $\{x_S+b_{\min S}\}$; for a general valid set these points can coincide with each other and with lighter points of $Q_c$, and no choice rule avoids all allowed coincidences.
+\item \emph{Proving Conjecture~\ref{conj:1d} by sub-cube doubling or by counting gap-$2$ steps.} The structure $(5,7,9)$ mod $23$ has no generator whose removal leaves a structure that fits in half the cycle by an additive map, and flat gap-$2$ steps (equal weights at distance $2$) are compensated only globally.
+\end{enumerate}
+
+\begin{thebibliography}{9}
+\bibitem{F} J.~A.~R.~Fonollosa, \emph{Minimum modulus for the unique multiset-sum problem}, arXiv:2607.08366 (v2, 14 July 2026).
+\bibitem{Frepo} J.~A.~R.~Fonollosa, \texttt{github.com/jarfo/min-modulus} (Lean~4 formalization; state of 24 July 2026), including a formalization of the abelian-group bound credited there to M.~Inal, \emph{The Exact Minimum Order for Unique Multiset Sums in Finite Abelian Groups}, OSF preprint, DOI 10.17605/OSF.IO/C58Q9 (2026).
+\bibitem{FC} Google DeepMind, \emph{Formal Conjectures}, \texttt{github.com/google-deepmind/formal-conjectures}, file \texttt{FormalConjectures/Arxiv/2607.08366/MinModulus.lean} (state of 9 November 2026).
+\bibitem{Om} \texttt{github.com/the-omega-institute/trureturing}, issue \#20156, ``Research: Fonollosa Conjecture 1 --- global minimum modulus for unique multiset sums'' (opened 22 October 2026).
+\end{thebibliography}
+\end{document}

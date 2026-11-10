@@ -17,6 +17,7 @@ and personal notes rather than from files, and have not been re-verified in this
 | `andrica/` | Andrica's conjecture, sums of large prime gaps | `claude/andrica-state` |
 | `e203/` | Erdős #203 | `claude/open-conjecture-search-h6tgg3` |
 | `e455/` | Erdős #455 | default branch `claude/nifty-allen-xcvku4` |
+| `minmod/` | Fonollosa's minimum-modulus conjecture (arXiv:2607.08366) | `claude/fonollosa-min-modulus` |
 
 The root `README.md` is the September triage log from the default branch (verdict EMPTY at that date).
 Everything else below is listed with its location, which is sometimes Google Drive or an earlier chat, not this repo.
@@ -58,6 +59,18 @@ Status (state 2026-09-28): OPEN. Source: `e455/PROGRESS.md` (read), scripts `kap
 - PROVED: reduction R1 (suffices that the number of gaps d_k ≤ x is o(x)); cap C1 (for every y there is a y-rough convex quadratic chain, so fixed-prime arguments give at most liminf q_n/n² ≥ 1); constant or periodic curvature chains cannot stay below Cn² (Linnik–Vinogradov).
 - VERIFIED: κ(5) = 30/21, κ(7) = 210/157, κ(11) ≈ 1.45; exact DP for N ≤ 1.024·10^6 with N/len² increasing.
 - Dead ideas D1 to D22 are listed in `PROGRESS.md`. Open: show chains with arbitrary non-periodic curvature pay unbounded average curvature. Literature: Richter 1976 only gives liminf ≥ 0.352 (as recorded there).
+
+## 4b. Fonollosa's minimum-modulus conjecture (unique multiset sums in Z_N) — folder `minmod/`
+Status 2026-11-10: OPEN (verdict of the run: PARTIAL). Source: `minmod/minmod.tex/.pdf`, `minmod/NOTES.md` (candidate list, forecast, dead ideas), logs in `minmod/logs/`.
+Statement (arXiv:2607.08366, Conjecture 1): a set A of n residues mod N is valid if the only size-n multiset from A with sum ΣA is A itself; conjecture: valid ⇒ N ≥ 2^n − 2^⌊log2 n⌋.
+- PROVED: sign characterization (valid ⇔ every nonzero sum-zero relation vector has an entry ≥ 2 and an entry ≤ −2); heredity; affine invariance.
+- PROVED: cyclic-order lemma (pair a, c; subsets S ≠ S' of the rest, |S'| ≥ |S|; if x_S' − x_S = i(a−c) then i ∉ [−1, |S'|−|S|+1]).
+- PROVED: if some difference is a unit (e.g. N prime), N ≥ 2^(n−1) + n − 2; if moreover A contains 3a−2c, 4a−3c, 3c−2a or 4c−3a, N ≥ 5·2^(n−3).
+- VERIFIED (exhaustive search `enum3.c`, all 2^(n−1) ≤ N < 2^n, n ≤ 8; controls in paper §5.1): valid n-sets exist exactly at N = 2^n − 2^k with 2^k ≤ n. So the conjecture holds for n = 8 (the author had certificates for n ≤ 7).
+- VERIFIED: sporadic valid class {0,1,3,10} mod 15; AAD (all-anchor dissociated) sets have the same moduli for n ≤ 6 but exist at N = 120 for n = 7; 1D structure minimum 5·2^(m−1) for m ≤ 5.
+- CONJECTURED: N < 2^n and valid ⇒ N | 2^n − 2^k with 2^k ≤ n; every 1D structure has N ≥ 5·2^(m−1).
+- Dead ideas: ten, listed in `minmod/NOTES.md` (clique/LP bounds capped at 2^(n−1) by (Z_2)^(n−1); two-cube unions; virtual anchor; Parseval/cyclotomic identities; AAD reduction; parity induction; doubling the smallest element; halving along a generator).
+- Next attack: prove the 1D bound via an LP-dual certificate; add the relation vectors with two entries ±2; extend the search to n = 9; Lean formalization of the proposition and lemma.
 
 ## 5. Work whose files are NOT in this repo
 These come from memory notes and earlier chat summaries (not re-verified here). Locate the files before resuming.
