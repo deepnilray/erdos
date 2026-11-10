@@ -1,0 +1,36 @@
+CONTROL FIRED (sweep, deleted K2 edge): K2 oracle failed: (0.0, 0.0)
+VERIFIED numerical length=1 missing=0 k=3..50 hits=0 first=None
+VERIFIED numerical length=1 missing=1 k=3..50 hits=0 first=None
+VERIFIED numerical length=2 missing=0 k=3..50 hits=0 first=None
+VERIFIED numerical length=2 missing=1 k=3..50 hits=45 first=(6, 13, 1.979768524889)
+VERIFIED numerical length=3 missing=0 k=3..50 hits=0 first=None
+VERIFIED numerical length=3 missing=1 k=3..50 hits=46 first=(5, 12, 1.925439929599)
+VERIFIED numerical length=4 missing=0 k=3..50 hits=0 first=None
+VERIFIED numerical length=4 missing=1 k=3..50 hits=47 first=(4, 11, 1.976847512557)
+VERIFIED numerical length=5 missing=0 k=3..50 hits=0 first=None
+VERIFIED numerical length=5 missing=1 k=3..50 hits=47 first=(4, 12, 1.948327372149)
+VERIFIED numerical length=6 missing=0 k=3..50 hits=0 first=None
+VERIFIED numerical length=6 missing=1 k=3..50 hits=47 first=(4, 13, 1.934772411059)
+CONTROL FIRED (Laplacian, restored internal edges): nonpositive LDL pivot 2 = -115/8
+CONTROL FIRED (adjacency, planted mixed edge): mixed adjacency form is 1
+VERIFIED exact n=11, k=4, length=4, edges=14, adjacency=134/51, min LDL pivot=103869989/1104413320
+VERIFIED exact n=13, k=6, length=2, edges=30, adjacency=456/97, min LDL pivot=12931/39730
+VERIFIED exact n=15, k=7, length=2, edges=42, adjacency=132/23, min LDL pivot=29491/41630
+VERIFIED exact n=17, k=8, length=2, edges=56, adjacency=900/133, min LDL pivot=30471/41630
+VERIFIED exact n=19, k=9, length=2, edges=72, adjacency=1176/151, min LDL pivot=31801/43530
+VERIFIED exact n=21, k=10, length=2, edges=90, adjacency=1488/169, min LDL pivot=4733/6490
+VERIFIED exact n=23, k=11, length=2, edges=110, adjacency=108/11, min LDL pivot=34461/47330
+VERIFIED exact n=25, k=12, length=2, edges=132, adjacency=444/41, min LDL pivot=35791/49230
+VERIFIED exact n=27, k=13, length=2, edges=156, adjacency=2640/223, min LDL pivot=37121/51130
+VERIFIED exact n=29, k=14, length=2, edges=182, adjacency=3096/241, min LDL pivot=38451/53030
+VERIFIED exact n=31, k=15, length=2, edges=210, adjacency=3588/259, min LDL pivot=39781/54930
+VERIFIED exact n=33, k=16, length=2, edges=240, adjacency=4116/277, min LDL pivot=41111/56830
+VERIFIED exact n=35, k=17, length=2, edges=272, adjacency=936/59, min LDL pivot=6063/8390
+VERIFIED exact n=37, k=18, length=2, edges=306, adjacency=5280/313, min LDL pivot=43771/60630
+VERIFIED exact n=39, k=19, length=2, edges=342, adjacency=5916/331, min LDL pivot=45101/62530
+VERIFIED exact n=41, k=20, length=2, edges=380, adjacency=6588/349, min LDL pivot=46431/64430
+VERIFIED exact n=43, k=21, length=2, edges=420, adjacency=7296/367, min LDL pivot=47761/66330
+VERIFIED exact n=45, k=22, length=2, edges=462, adjacency=1608/77, min LDL pivot=49091/68230
+VERIFIED exact n=47, k=23, length=2, edges=506, adjacency=8820/403, min LDL pivot=50421/70130
+VERIFIED exact n=49, k=24, length=2, edges=552, adjacency=9636/421, min LDL pivot=7393/10290
+VERIFIED exact n=51, k=25, length=2, edges=600, adjacency=10488/439, min LDL pivot=53081/73930

@@ -111,3 +111,15 @@ Repos `deepnilray/SearchChev` and `deepnilray/varwise` (VarWISE × Gaia × ZTF v
 1. Read this file; if the chosen problem is listed, read its folder or note and continue from "Next attack".
 2. If the problem is not listed, run the prior-art gate (search the mathematical object, read the primary source), forecast, then attack.
 3. After each session append a dated entry to this file (status, new PROVED/VERIFIED/CONJECTURED items with bounds, dead ideas, next attack) and commit it, so no later run repeats the work.
+
+## 8. 2026-11-10 — Cazenave's spectral graph conjecture #20829
+Status: **SOLVED by disproof**. Source: Tristan Cazenave, *Lemmas and Conjectures in Spectral Graph Theory*, [arXiv:2611.03879v1](https://arxiv.org/abs/2611.03879v1), §7, Conjecture 2. Files in [`cazenave20829/`](cazenave20829/). The question was whether `mu_1(L) - lambda_2(A) >= 2` for every finite simple connected graph of order at least 2.
+
+- **PROVED:** Two copies of `K_4` with one edge deleted from each, joined at deleted-edge endpoints by a path with at least 3 internal vertices, give a counterexample at each order `n >= 11`. The rational bounds are `lambda_2 >= 134/51` and `mu_1 <= 97/21`, so the gap is at most `2 - 1/119`.
+- **PROVED:** Two copies of `K_k` with one deleted edge per block and a single common connector at the deficient ports also violate the conjecture for every `k >= 6`.
+- **PROVED:** The optimal universal additive constant is `1`. The gap is strictly above `1` for every graph in the class. With `s` deletions incident to each port in the one-connector construction, the gap is at most `1 + 2s/k + 1/s + 2/(k-2)`. Take `k = s^2`.
+- **VERIFIED:** All 11,989,763 connected unlabeled graphs of orders 2 through 10 satisfy the inequality. The exact verifier used interlacing and integer or rational inertia. No graph was unresolved. The planted pivot-sign error failed the `K_2` control, and the order-11 counterexample was rejected. Consequently 11 is the smallest order, with the exclusion through 10 computational.
+- **VERIFIED:** The numerical discovery grid covered 576 combinations with `3 <= k <= 50`, path lengths 1 through 6, and 0 or 1 deletion per block. Exact full-matrix replay covered the order-11 witness and the one-connector family for `6 <= k <= 25`. Deleted, restored, and cross-support edge mutations fired the relevant controls.
+- **PROVED (Lean 4.28.0 and Mathlib):** The concrete graph on 11 vertices is connected and satisfies `mu_1 - lambda_2 < 2`. The checked theorem uses `propext`, `Classical.choice`, and `Quot.sound`. Perturbing a square coefficient caused Lean to reject the identity. The infinite families and sharpness use the symbolic proofs in the paper.
+- Dead ideas: the maximum-degree bound alone stops at the sharp constant `1`. Complete blocks and direct joins with one deletion had no violations on the bounded grid. Unscaled full Laplacian row sums lose the cancellation within the clique blocks.
+- Next attack: the conjecture and optimal constant are closed. A separate follow-up would be a structural characterization of graph sequences whose gap tends to `1`.

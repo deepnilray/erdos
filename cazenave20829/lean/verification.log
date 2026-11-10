@@ -1,0 +1,4 @@
+'Cazenave20829.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+CONTROL FIRED: changing the rational square coefficient made Lean reject the identity
+Lean (version 4.28.0, x86_64-unknown-linux-gnu, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b, Release)
+Mathlib commit 8f9d9cff6bd728b17a24e163c9402775d9e6a365

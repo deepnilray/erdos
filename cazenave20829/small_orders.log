@@ -1,0 +1,10 @@
+CONTROL FIRED: K2 control detected an incorrect inertia classification
+VERIFIED n=2 graphs=1 unresolved=0 interlacing=1 integer_inertia=0 rational_inertia=0
+VERIFIED n=3 graphs=2 unresolved=0 interlacing=2 integer_inertia=0 rational_inertia=0
+VERIFIED n=4 graphs=6 unresolved=0 interlacing=5 integer_inertia=1 rational_inertia=0
+VERIFIED n=5 graphs=21 unresolved=0 interlacing=20 integer_inertia=0 rational_inertia=1
+VERIFIED n=6 graphs=112 unresolved=0 interlacing=104 integer_inertia=6 rational_inertia=2
+VERIFIED n=7 graphs=853 unresolved=0 interlacing=824 integer_inertia=26 rational_inertia=3
+VERIFIED n=8 graphs=11117 unresolved=0 interlacing=10788 integer_inertia=297 rational_inertia=32
+VERIFIED n=9 graphs=261080 unresolved=0 interlacing=256008 integer_inertia=4935 rational_inertia=137
+VERIFIED n=10 graphs=11716571 unresolved=0 interlacing=11539285 integer_inertia=176351 rational_inertia=935
