@@ -65,6 +65,8 @@ Status 2026-11-10: OPEN (verdict of the run: PARTIAL). Source: `minmod/minmod.te
 Statement (arXiv:2607.08366, Conjecture 1): a set A of n residues mod N is valid if the only size-n multiset from A with sum ΣA is A itself; conjecture: valid ⇒ N ≥ 2^n − 2^⌊log2 n⌋.
 - PROVED: sign characterization (valid ⇔ every nonzero sum-zero relation vector has an entry ≥ 2 and an entry ≤ −2); heredity; affine invariance.
 - PROVED: cyclic-order lemma (pair a, c; subsets S ≠ S' of the rest, |S'| ≥ |S|; if x_S' − x_S = i(a−c) then i ∉ [−1, |S'|−|S|+1]).
+- PROVED: 1D bound N ≥ 5·2^(m−1) for m ≤ 3 (so N ≥ 5·2^(n−3) for n ≤ 5 with a unit difference); gap bound g_j ≥ 2n*_j + ascent; alternation criterion.
+- NOT DONE: the independent adversarial check of the paper was cut off by a usage limit; only self-checks and the listed controls were run.
 - PROVED: if some difference is a unit (e.g. N prime), N ≥ 2^(n−1) + n − 2; if moreover A contains 3a−2c, 4a−3c, 3c−2a or 4c−3a, N ≥ 5·2^(n−3).
 - VERIFIED (exhaustive search `enum3.c`, all 2^(n−1) ≤ N < 2^n, n ≤ 8; controls in paper §5.1): valid n-sets exist exactly at N = 2^n − 2^k with 2^k ≤ n. So the conjecture holds for n = 8 (the author had certificates for n ≤ 7).
 - VERIFIED: sporadic valid class {0,1,3,10} mod 15; AAD (all-anchor dissociated) sets have the same moduli for n ≤ 6 but exist at N = 120 for n = 7; 1D structure minimum 5·2^(m−1) for m ≤ 5.

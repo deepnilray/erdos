@@ -19,13 +19,13 @@
 \maketitle
 
 \begin{abstract}
-A set $A$ of $n$ residues modulo $N$ is \emph{valid} if the only multiset of size $n$ drawn from $A$ whose sum equals $\sum_{a\in A}a$ is $A$ itself. Fonollosa (arXiv:2607.08366) conjectured that a valid $n$-set forces $N\ge 2^n-2^{\lfloor\log_2 n\rfloor}$. \textbf{Verdict: PARTIAL.} The conjecture is not proved here. We prove (i) a sign characterization of validity in terms of the relation lattice; (ii) a cyclic-order lemma: whenever a difference $a-c$ of two elements generates $\Z_N$, the $2^{n-2}$ subset sums of the remaining elements are $2$-separated along the $(a-c)$-cycle and shearing by the weight preserves their cyclic order; (iii) as consequences, $N\ge 2^{n-1}+n-2$ whenever some difference is a unit (in particular for every prime $N$), and $N\ge 5\cdot 2^{n-3}$ when in addition $A$ contains $3a-2c$ or $4a-3c$. By an exhaustive, symmetry-reduced computer search with controls we verify the conjecture for $n=8$ (the author of the conjecture reports exact certificates for $n\le 7$), and we find that for every $n\le 8$ the moduli $N<2^n$ admitting a valid $n$-set are exactly $N=2^n-2^k$ with $2^k\le n$. We record a sporadic valid $4$-set modulo $15$ that is not affinely equivalent to $\{1,2,4,8\}$, and we show by computation that the weaker ``all-anchor dissociated'' property has the same threshold for $n\le 6$ but a smaller one ($120$ instead of $124$) for $n=7$.
+A set $A$ of $n$ residues modulo $N$ is \emph{valid} if the only multiset of size $n$ drawn from $A$ whose sum equals $\sum_{a\in A}a$ is $A$ itself. Fonollosa (arXiv:2607.08366) conjectured that a valid $n$-set forces $N\ge 2^n-2^{\lfloor\log_2 n\rfloor}$. \textbf{Verdict: PARTIAL.} The conjecture is not proved here. We prove (i) a sign characterization of validity in terms of the relation lattice; (ii) a cyclic-order lemma: whenever a difference $a-c$ of two elements generates $\Z_N$, the $2^{n-2}$ subset sums of the remaining elements are $2$-separated along the $(a-c)$-cycle and shearing by the weight preserves their cyclic order; (iii) as consequences, $N\ge 2^{n-1}+n-2$ whenever some difference is a unit (in particular for every prime $N$), and $N\ge 5\cdot 2^{n-3}$ when in addition $A$ contains $3a-2c$ or $4a-3c$, or when $n\le5$. By an exhaustive, symmetry-reduced computer search with controls we verify the conjecture for $n=8$ (the author of the conjecture reports exact certificates for $n\le 7$), and we find that for every $n\le 8$ the moduli $N<2^n$ admitting a valid $n$-set are exactly $N=2^n-2^k$ with $2^k\le n$. We record a sporadic valid $4$-set modulo $15$ that is not affinely equivalent to $\{1,2,4,8\}$, and we show by computation that the weaker ``all-anchor dissociated'' property has the same threshold for $n\le 6$ but a smaller one ($120$ instead of $124$) for $n=7$.
 \end{abstract}
 
 \section{Verdict, worst news first}
 \begin{itemize}
 \item \textbf{Not established:} Fonollosa's Conjecture~1 for general $n$. The best lower bound valid for \emph{all} valid sets remains the bound $N\ge 2^{n-1}$ of Inal (with $N\ge 2^{n-1}+1$ for cyclic groups and $n\ge3$, noted in an October 2026 public issue, see Section~\ref{sec:prior}). Our new unconditional-in-$n$ bounds need a hypothesis (a difference that is a unit) and are far from the conjectured $2^n-2^{\lfloor\log_2 n\rfloor}$.
-\item \textbf{PROVED:} Proposition~\ref{prop:sign}, Corollary~\ref{cor:basic}, Lemma~\ref{lem:order}, Theorem~\ref{thm:tv}, Proposition~\ref{prop:small}.
+\item \textbf{PROVED:} Proposition~\ref{prop:sign}, Corollary~\ref{cor:basic}, Lemma~\ref{lem:order}, Corollary~\ref{cor:struct}, Theorem~\ref{thm:tv}, Propositions~\ref{prop:small}, \ref{prop:C}, \ref{prop:D}, \ref{prop:E}.
 \item \textbf{VERIFIED} (exhaustive search, bounds stated, controls fired): Theorem~\ref{thm:n8} and the tables of Section~\ref{sec:comp}.
 \item \textbf{CONJECTURED:} Conjectures~\ref{conj:refined} and~\ref{conj:1d}.
 \end{itemize}
@@ -92,8 +92,35 @@ The set $\{1,2,4,\dots,2^{n-1}\}$ satisfies the hypothesis with $(c,a,e)=(1,2,4)
 
 \paragraph{The abstract one-dimensional problem.} Call $(N;\beta_1,\dots,\beta_m)$ a \emph{structure} if the points $p(S)=\sum_{l\in S}\beta_l \bmod N$ satisfy the inequalities of Corollary~\ref{cor:struct}.
 \begin{conjecture}[VERIFIED for $m\le5$ by exhaustive search]\label{conj:1d}
-Every structure with $m$ generators has $N\ge 5\cdot 2^{m-1}$, with equality only for $\beta=(3,5,10,20,\dots,5\cdot2^{m-2})$ and its image under $\beta_l\mapsto N+1-\beta_l$.
+Every structure with $m$ generators has $N\ge 5\cdot 2^{m-1}$.
 \end{conjecture}
+The bound is attained by $\beta=(3,5,10,20,\dots,5\cdot2^{m-2})$; for $m\ge4$ there are further extremal structures, e.g.\ $(3,5,20,30)$ modulo $40$. The map $\beta_l\mapsto N+1-\beta_l$ (exchange of $a$ and $c$) preserves structures.
+
+The next three statements make progress on Conjecture~\ref{conj:1d}. For a structure list the points in cyclic order $S_0=\emptyset,S_1,\dots,S_{M-1}$, with gaps $g_j$, step vectors $\delta_j=\mathbf 1_{S_{j+1}}-\mathbf 1_{S_j}\in\{-1,0,1\}^m$ and $d_j=w(S_{j+1})-w(S_j)$; let $U=\sum_j\max(0,d_j)$. For a step vector $\delta$ a \emph{translate} of the step is a pair $(T,T+\delta)$ of subsets with $\mathbf 1_{T+\delta}=\mathbf 1_T+\delta$.
+\begin{proposition}[PROVED]\label{prop:C}
+For each step $j$ let $n_j^*$ be the largest number of points in a half-open forward arc $[T,T+\delta_j)$ over all translates of the step. Then $g_j\ge 2n_j^*+\max(0,d_j)$ and
+\[ N\ \ge\ 2^{m+1}+U+2\sum_j (n_j^*-1)\ \ge\ 2^{m+1}+U+2L, \]
+where $L$ is the number of steps having a translate that is not a pair of consecutive points.
+\end{proposition}
+\begin{proof}
+The forward distance from $T$ to $T+\delta_j$ is the residue of $\sum_l(\delta_j)_l\beta_l$, which does not depend on $T$ and equals $g_j$. An arc $[T,T+\delta_j)$ containing $n$ points consists of $n$ consecutive steps, each of length at least $2$ plus its ascent, and the ascents of these steps add up to at least $\max(0,d_j)$ because the weights of $T$ and $T+\delta_j$ differ by $d_j$. Sum over $j$.
+\end{proof}
+For $(5,7,9)$ modulo $23$ the proposition gives $16+3+2\cdot2=23$, which is exact.
+\begin{proposition}[PROVED]\label{prop:D}
+If for some generator $l$ the cyclic order alternates between points not containing $l$ and points containing $l$, then $U\ge 2^{m-1}$ and $N\ge 5\cdot2^{m-1}$.
+\end{proposition}
+\begin{proof}
+There are $2^{m-1}$ steps from a point $x$ without $l$ to a point $y$ with $l$, and $y$ runs over all points containing $l$. With $\omega(S)=|S\setminus\{l\}|$ the sum of $d_j$ over these steps is $\sum_y(\omega(y)+1)-\sum_x\omega(x)=2^{m-1}$, since $S\mapsto S\cup\{l\}$ preserves $\omega$. Hence $U\ge 2^{m-1}$ and $N\ge 2M+U$.
+\end{proof}
+Proposition~\ref{prop:small} is the special case $\beta_l\in\{3,4\}$, in which the arcs $[x,x+\beta_l]$ are empty and the order alternates.
+\begin{proposition}[PROVED]\label{prop:E}
+Conjecture~\ref{conj:1d} holds for $m\le 3$. Consequently, a valid $n$-set with a unit difference has $N\ge 5\cdot 2^{n-3}$ for $n\le 5$.
+\end{proposition}
+\begin{proof}
+Write $U=\sum_{h=0}^{m-1}c_h$, where $c_h\ge1$ counts the steps from weight $\le h$ to weight $>h$. For $m\le2$ this gives $U\ge m=2^{m-1}$. Let $m=3$. If $U\ge4$ we are done, so let $U=3$; then every $c_h=1$, so for each $h$ the points of weight $\le h$ form one cyclic interval. By Proposition~\ref{prop:C} it suffices to find one step with a non-consecutive translate ($U+2L\ge5>4$). Suppose every translate of every step is a pair of consecutive points, and let $S_1$ be the successor of $\emptyset$, $k=|S_1|$. If $k=1$, $S_1=\{l\}$, then all four pairs $(T,T\cup\{l\})$ are consecutive ascents and $U\ge4$. If $k=2$, $S_1=\{p,q\}$, then $\{r\}\to\{p,q,r\}$ is consecutive for the third generator $r$, so both $\emptyset$ and $\{r\}$ are followed by a point of weight $\ge2$ and both are the last point of the interval of weight $\le1$, which is impossible. If $k=3$, then $\emptyset$ is the last point of the interval of weight $\le 1$, which has four points, so its predecessor is a singleton $\{l\}$; the step $\{l\}\to\emptyset$ has the translates $\{l,h\}\to\{h\}$ for both $h\ne l$, so two distinct singletons are each preceded by a point of weight $2$ and are both the first point of that interval, which is impossible. The last sentence follows from Corollary~\ref{cor:struct} with $m=n-2$.
+\end{proof}
+By Proposition~\ref{prop:C}, Conjecture~\ref{conj:1d} follows from the inequality $U+2L\ge 2^{m-1}$ for every structure; this inequality was checked on all structures with $m=3$, $20\le N\le30$, with $m=4$, $40\le N\le 54$, and with $m=5$, $N=80$ (VERIFIED by a separate small script written during the proof search; that script is not in the repository and was not re-run), and is open in general.
+
 If true this gives $N\ge 5\cdot2^{n-3}$ for every valid set with a unit difference. The computed minima are $5,10,20,40,80$ for $m=1,\dots,5$ (program \texttt{oned.c}; the search enumerates all increasing generator tuples and prunes on sub-cubes). A related computation (\texttt{lk.c}, VERIFIED for the stated sizes): if the sign condition of Proposition~\ref{prop:sign} is imposed only on relation vectors whose entries outside a fixed set of $k$ coordinates lie in $\{-1,0,1\}$, the least modulus is $2^{n-1}$ for $k\le2$, equals $6,10,20,40$ for $k=3$, $n=3,\dots,6$, and equals $12,24,46$ for $k=4$, $n=4,5,6$. The inequality $N\ge2M+{}$(positive variation) alone does not suffice: $(5,7,9)$ modulo $23$ is a structure whose weights in cyclic order are $0,1,1,1,2,2,2,3$.
 
 \section{Computations}\label{sec:comp}
