@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newcommand{\W}{\mathcal W}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\Perm}{\operatorname{Perm}}
+\title{The convex hull of even Wachs permutations is a permutohedron--cube product}
+\author{Research draft --- authorship and priority to be confirmed}
+\date{7 November 2026 --- preliminary, not submitted}
+\begin{document}\maketitle
+\begin{abstract}
+Brenti and Sentinelli conjectured that the convex hull of Wachs permutations of even degree is simple. We show, directly from their block parametrization, that this polytope is affinely isomorphic to the Cartesian product of a standard permutohedron with a cube. This resolves their Conjecture~6.3 subject to independent scrutiny, and determines the dimension, face lattice, $f$-vector and an optimization algorithm. This is a research draft; priority over unpublished or unindexed work has not been established, and no complete Lean verification is claimed.
+\end{abstract}
+
+\section{Setting and statement}
+Let $S_{2m}$ denote the symmetric group on $\{1,\ldots,2m\}$ and identify each permutation $w$ with its one-line vector $(w(1),\ldots,w(2m))\in\mathbb R^{2m}$. Define
+\[
+\W(S_{2m})=\{w\in S_{2m}: |w^{-1}(2j-1)-w^{-1}(2j)|=1\text{ for }1\le j\le m\}.
+\]
+(Equivalently, for even degree, consecutive positions $2i-1,2i$ contain two consecutive values $2j-1,2j$.) Write $Q_m=\conv\W(S_{2m})$. Let
+\[\Perm_m=\conv\{(\pi(1),\ldots,\pi(m)):\pi\in S_m\}\subseteq\mathbb R^m\]
+and $C_m=[-1,1]^m$.
+
+\begin{theorem}\label{thm:product}
+For all $m\ge1$, there is an explicit affine isomorphism
+\[Q_m\cong_{\rm aff}\Perm_m\times C_m.\]
+Consequently $Q_m$ is a simple polytope of dimension $2m-1$.
+\end{theorem}
+
+\section{Proof of the product theorem}
+We first give a direct argument for the block parametrization recorded in Proposition 3.2 of Brenti--Sentinelli~\cite{BS}. In the definition of $\W(S_{2m})$, the positions of each value-pair $\{2j-1,2j\}$ form a two-element adjacent subset of $[2m]$, and these $m$ subsets are disjoint and cover $[2m]$. The only tiling of $[2m]$ by disjoint adjacent pairs is $\{1,2\},\{3,4\},\ldots,\{2m-1,2m\}$: position $1$ must be paired with $2$, and induction handles the remaining positions. Consequently each position-pair $\{2i-1,2i\}$ contains one entire value-pair $\{2j-1,2j\}$. The resulting assignment $i\mapsto j$ is a permutation $\pi\in S_m$. The two values in each position-pair may occur in either order, independently. Encode these choices by $\varepsilon_i\in\{-1,1\}$, with $+1$ for the increasing pair. Thus every Wachs vector has a unique representation
+\begin{equation}\label{eq:block}
+x_{2i-1}=2\pi(i)-\frac12-\frac{\varepsilon_i}{2},\qquad
+x_{2i}=2\pi(i)-\frac12+\frac{\varepsilon_i}{2}.
+\end{equation}
+Define the affine map $T:\mathbb R^{2m}\to\mathbb R^m\times\mathbb R^m$ by
+\begin{equation}\label{eq:affine}
+T(x)=(a,b),\qquad a_i=\frac{x_{2i-1}+x_{2i}+1}{4},\qquad b_i=x_{2i}-x_{2i-1}.
+\end{equation}
+It is invertible, with
+\begin{equation}\label{eq:inverse}
+x_{2i-1}=2a_i-\frac12-\frac{b_i}{2},\qquad x_{2i}=2a_i-\frac12+\frac{b_i}{2}.
+\end{equation}
+In particular, Eq.~\eqref{eq:block} gives $T(x)=(\pi(1),\ldots,\pi(m),\varepsilon)$, and hence
+\[T(\W(S_{2m}))=\{(\pi,\varepsilon):\pi\in S_m,\ \varepsilon\in\{-1,1\}^m\}.\]
+An affine map commutes with forming convex hulls. Moreover, for nonempty finite sets $A\subset\mathbb R^r$, $B\subset\mathbb R^s$,
+\begin{equation}\label{eq:convprod}\conv(A\times B)=\conv(A)\times\conv(B).\end{equation}
+Indeed, the left-hand side is contained in the right-hand side by convexity. For the converse, write $a=\sum_i\lambda_i a_i$ and $b=\sum_j\mu_j b_j$ as convex combinations, and observe
+\[(a,b)=\sum_{i,j}\lambda_i\mu_j(a_i,b_j),\qquad\sum_{i,j}\lambda_i\mu_j=1.\]
+Thus $T(Q_m)=\Perm_m\times C_m$, proving the affine equivalence.
+
+For completeness, $\Perm_m$ is simple: its dimension is $m-1$, because its coordinate sum is fixed, and every vertex has exactly $m-1$ adjacent vertices, obtained by interchanging positions occupied by two \emph{consecutive values} (the usual edge description of the type-$A$ permutohedron). The cube $C_m$ is simple of dimension $m$. Every edge of a Cartesian product polytope is an edge of one factor times a vertex of the other. Consequently each vertex of $\Perm_m\times C_m$ lies on exactly $(m-1)+m=2m-1$ edges, its dimension. For $m=1$, $\Perm_1$ is a point, and the same conclusion holds. Therefore $Q_m$ is simple. \qed
+
+\section{Enumerative and geometric consequences}
+\begin{corollary}[Face numbers]\label{cor:faces}
+Let $f_k(Q_m)$ count $k$-dimensional nonempty faces, with $0\le k\le 2m-1$. Then
+\begin{equation}\label{eq:fvec}
+f_k(Q_m)=\sum_{\substack{r+s=k\\0\le r\le m-1\\0\le s\le m}} (m-r)!\,\left\{\begin{matrix}m\\m-r\end{matrix}\right\}\binom{m}{s}\,2^{m-s},
+\end{equation}
+where the curly braces denote Stirling numbers of the second kind. In particular
+\[f_0(Q_m)=2^m m!,\qquad f_1(Q_m)=(2m-1)2^{m-1}m!.\]
+\end{corollary}
+\begin{proof}
+A face of a Cartesian product is the product of faces; their dimensions add. Faces of $\Perm_m$ correspond to ordered partitions of $[m]$: an ordered partition into $m-r$ nonempty blocks determines an $r$-face, giving $(m-r)!\left\{\begin{smallmatrix}m\\m-r\end{smallmatrix}\right\}$. An $s$-face of an $m$-cube is given by choosing $s$ free coordinates, with two assignments to each remaining coordinate. Convolution proves \eqref{eq:fvec}. The vertex and edge formulas follow by setting $k=0,1$ (or by simplicity).\end{proof}
+
+\begin{corollary}[Facet inequalities]\label{cor:facets}
+In the affine coordinates $(a,b)=T(x)$, the polytope $Q_m$ is described by
+\[ -1\le b_i\le1\quad(1\le i\le m),\qquad
+\sum_{i=1}^m a_i=\frac{m(m+1)}2,\]
+and
+\[\sum_{i\in I}a_i\ge \frac{|I|(|I|+1)}2 \quad\text{for all }\varnothing\ne I\subsetneq[m].\]
+For $m\ge2$ it has exactly $2m+(2^m-2)$ facets.
+\end{corollary}
+\begin{proof}
+These are the standard majorization inequalities for the permutohedron together with independent cube bounds. The proper nonempty subsets give the $2^m-2$ permutohedron facets, and the cube provides $2m$ further facets.\end{proof}
+
+\begin{corollary}[Linear optimization]
+Given any $c\in\mathbb R^{2m}$, a maximizer of $c\cdot x$ over $x\in Q_m$ can be obtained by sorting $m$ coefficients and choosing $m$ independent signs; therefore the problem admits an $O(m\log m)$ comparison algorithm.
+\end{corollary}
+\begin{proof}
+Substituting Eq.~\eqref{eq:inverse},
+\[c\cdot x=\sum_{i=1}^m 2(c_{2i-1}+c_{2i})a_i + \sum_{i=1}^m\frac{c_{2i}-c_{2i-1}}2 b_i - \frac12\sum_{i=1}^m(c_{2i-1}+c_{2i}).\]
+The constant term is immaterial. The rearrangement inequality maximizes the first sum by matching the largest coefficient to the largest $a_i\in\{1,\ldots,m\}$; the second sum is maximized by $b_i=\operatorname{sign}(c_{2i}-c_{2i-1})$, with either choice allowed when zero.\end{proof}
+
+\section{Verification, novelty and limits}
+The proof relies on the published parametrization in~\cite[Proposition 3.2]{BS}; the affine equivalence and its geometric consequences are given here explicitly. The authors stated simplicity as Conjecture 6.3 and checked $m\le5$. An online search on 7 November 2026 did not reveal an indexed prior proof of the affine equivalence, but cannot establish priority. In particular, a known product decomposition of the \emph{right weak order} is not itself the polytope product theorem.
+
+A separate Python script exhaustively enumerates all parametrized Wachs permutations for $1\le m\le5$, checks the affine encoding, and compares against direct enumeration for $m\le3$. These finite checks are not used in the theorem's proof. A Lean file proves only tentative block-coordinate identities and has not been compiled or kernel-checked. This draft has not been submitted or published.
+
+\begin{thebibliography}{9}
+\bibitem{BS} F. Brenti and P. Sentinelli, \emph{Wachs permutations, Bruhat order and weak order}, European Journal of Combinatorics \textbf{119} (2024), article 103804. \href{https://doi.org/10.1016/j.ejc.2023.103804}{doi:10.1016/j.ejc.2023.103804}; \href{https://arxiv.org/abs/2212.04932}{arXiv:2212.04932}.
+\end{thebibliography}
+\end{document}
