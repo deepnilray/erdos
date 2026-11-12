@@ -73,3 +73,26 @@ that rejects planted invalid sets.
 3. Extend the exhaustive search to n = 9 (N < 504): needs 512-bit bitsets and a stronger canonical form; estimated
    a few hundred CPU-hours with the present pruning.
 4. Formalize Proposition 1 and Lemma 3 in Lean 4 against the existing statement in formal-conjectures.
+
+## Second attack (2026-11-12) — no proof; what it clarified
+Verdict unchanged: PARTIAL. Nothing below is in the paper yet.
+
+- PROVED (restatement of the order lemma): map each subset S of A'' = A \ {a, c} to the plane point
+  P(S) = (p(S), p(S) − |S|), taken modulo the diagonal period (N, N), where p(S)(a − c) = Σ_{e∈S}(e − c) and a − c is a unit.
+  Then all lifted points form a single chain: any two differ by at least (2, 2) in both coordinates, in the same
+  direction. Generators are the level-one vectors (β_l, β_l − 1).
+- PROVED (full validity in the same picture): A is valid iff for every subset T and every multiset M ≠ T of A'',
+  no lift of P(M) − P(T) lies in {U ≤ 1, V ≥ −1}. Vectors of the relation lattice with an entry ≥ 2 and an entry ≤ −2
+  on A'' are unconstrained, which is why arguments using only the pair (a, c) stop at the constant 5/8.
+- PROVED: every forbidden vector (nonzero, sum zero, entries ≥ −1) is primitive.
+- PROVED (even N): if exactly one element o has the minority parity, write A = 2A_0 ∪ {o}; validity mod N is
+  equivalent to weighted validity of A_0 ∪ {o} mod N/2 with o of weight 2 (multisets of total weight n + 1).
+- VERIFIED: all 19 valid affine classes with even N < 2^n found for n ≤ 8 have a minority parity class of size 1.
+- Obstruction to induction on n through halving: it gives N ≥ 2 f(n−1), and 2 f(n−1) = f(n) only when n is a power
+  of 2 (12/12, 24/28, 56/60, 120/124, 248/248, 496/504 for n = 4..9). The weight-2 element must be charged, so the
+  induction has to run over weighted sets, and the odd-modulus weighted case has no argument yet.
+- Dead: one-generator decomposition of the chain (sums back to the trivial 2^(m+1)); integer (unwrapped) cube
+  induction on the largest generator (needs the full profile of the chain, same difficulty); level-sequence
+  relaxation (gives only 2^(m+1) + m); character sums over one cyclic line (Delsarte-type, capped by (Z_2)^(n−1)).
+- Assessment: the valid moduli below 2^n are exactly 2^n − 2^k, so the threshold is arithmetic (binary carries),
+  and the realistic route is a classification of valid sets below 2^n, by induction over weighted sets.
