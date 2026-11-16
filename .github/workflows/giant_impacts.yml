@@ -24,7 +24,7 @@ jobs:
           mkdir -p results
           if git ls-remote --exit-code origin impacts-live >/dev/null 2>&1; then
             git fetch -q --depth 1 origin impacts-live
-            git archive FETCH_HEAD | tar -x -C results
+            git archive FETCH_HEAD | tar -x -C results && echo restored
           fi
           ls results | head; wc -l results/scores.csv 2>/dev/null || true
       - name: run with live publishing every 8 minutes

@@ -86,17 +86,29 @@ def _pool_clusters(path):
 GOODQ = ("n.qual_frame > 0 AND n.qi_fact > 0.9 AND n.saa_sep > 5 AND n.moon_masked = '00' "
          "AND n.w1snr > 3 AND n.w2snr > 3 AND n.nb = 1")
 
+UPLOAD_OK = [True]
 def fetch_chunk(sub):
     svc = pyvo.dal.TAPService(IRSA)
-    up = Table({"uid": np.array(sub["uid"], int), "ura": np.array(sub["ra"], float), "udec": np.array(sub["dec"], float)})
-    q = ("SELECT u.uid, n.mjd, n.w1mpro, n.w1sigmpro, n.w2mpro, n.w2sigmpro, n.cc_flags FROM TAP_UPLOAD.pos AS u, "
-         "neowiser_p1bs_psd AS n WHERE CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', u.ura, u.udec, 0.000833)) = 1 AND " + GOODQ)
-    for attempt in range(3):
+    if UPLOAD_OK[0]:
+        up = Table({"objid": np.array(sub["uid"], int), "tra": np.array(sub["ra"], float), "tdec": np.array(sub["dec"], float)})
+        q = ("SELECT t.objid, n.mjd, n.w1mpro, n.w1sigmpro, n.w2mpro, n.w2sigmpro, n.cc_flags FROM TAP_UPLOAD.targets AS t, "
+             "neowiser_p1bs_psd AS n WHERE CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', t.tra, t.tdec, 0.000833)) = 1 AND " + GOODQ)
         try:
-            return svc.run_async(q, uploads={"pos": up}, maxrec=5000000).to_table()
+            r = svc.run_async(q, uploads={"targets": up}, maxrec=5000000).to_table(); r.rename_column("objid", "uid"); return r
         except Exception as e:
-            log("chunk retry", attempt, repr(e)[:200]); time.sleep(20 * (attempt + 1))
-    return None
+            log("upload join failed, switching to per-source cone queries:", repr(e)[:200]); UPLOAD_OK[0] = False
+    from astropy.table import vstack
+    parts = []
+    for u, ra, de in zip(np.array(sub["uid"], int), np.array(sub["ra"], float), np.array(sub["dec"], float)):
+        q = ("SELECT mjd, w1mpro, w1sigmpro, w2mpro, w2sigmpro, cc_flags FROM neowiser_p1bs_psd AS n WHERE "
+             f"CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', {ra}, {de}, 0.000833)) = 1 AND " + GOODQ)
+        for attempt in range(3):
+            try:
+                p = svc.run_sync(q, maxrec=20000).to_table(); p["uid"] = u; parts.append(p); break
+            except Exception as e:
+                if attempt == 2: log("cone failed", u, repr(e)[:150])
+                time.sleep(5)
+    return vstack(parts) if parts else None
 
 def visits(m, v1, e1, v2, e2):
     o = np.argsort(m); m, v1, v2 = m[o], v1[o], v2[o]
@@ -139,13 +151,13 @@ def main():
     vfirst = [int(u) for u, c in zip(pool["uid"], pool["cluster"]) if str(c).startswith("VALID:")]
     todo = vfirst + [u for u in todo if u not in vfirst]
     log(f"pool {len(pool)}, done {len(done)}, to do {len(todo)}")
-    CH = 250; chunks = [todo[i:i + CH] for i in range(0, len(todo), CH)]
+    CH = int(os.environ.get('CHUNK', '60')); chunks = [todo[i:i + CH] for i in range(0, len(todo), CH)]
     lcdir = f"{OUT}/lc"; os.makedirs(lcdir, exist_ok=True)
     def work(ch):
         sub = pool[np.isin(np.array(pool["uid"], int), ch)]
         t = fetch_chunk(sub); return ch, t
     nproc = 0
-    with ThreadPoolExecutor(4) as ex:
+    with ThreadPoolExecutor(int(os.environ.get('THREADS', '8'))) as ex:
         futs = []
         for ch in chunks:
             if time.time() - T0 > BUDGET: break
