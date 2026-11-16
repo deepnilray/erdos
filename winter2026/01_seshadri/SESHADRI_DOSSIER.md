@@ -14,8 +14,7 @@ email or document. Never send a citation from this file without opening the pape
   (Gaia, TESS, ZTF, catalogue cross-matching).
 - Nothing in this file argues against his work or claims a flaw in it. Every option either extends his models or applies new data
   to questions he has published on.
-- Not done yet: a verified full publication list from INSPIRE/ADS (the background search was cut off by a usage limit), and the
-  prior-art check for option 4.3. Both are listed in section 6.
+- Publication list verified 2026-11-17 (section 2A). Prior-art checks: see sections 4.1 to 4.3.
 
 ## 1. Who he is (what was confirmed)
 
@@ -29,21 +28,79 @@ email or document. Never send a citation from this file without opening the pape
 - A 2013 Delhi University student blog describes him as saying research in pure science is like poetry (physicsatdu.blogspot.com,
   2013). Useful only as a hint that he likes conceptually clean questions.
 
-## 2. Papers of his seen today
+## 2. Papers of his seen today (rows re-checked 2026-11-17)
+
+INSPIRE = inspirehep.net/api/literature?q=a%20T.Seshadri.1 (his INSPIRE BAI is T.Seshadri.1; the BAI T.R.Seshadri.1 returns
+nothing). arXiv = the arXiv abs page of the listed id. Both were opened on 2026-11-17.
 
 | Paper | Status |
 |---|---|
-| Seshadri and Subramanian, PRL 87, 101301 (2001), CMB polarisation from tangled magnetic fields | VERIFIED-SOURCE: reference list of arXiv:1111.0744 |
-| Subramanian, Seshadri and Barrow, MNRAS 344, L31 (2003) | VERIFIED-SOURCE: same list |
-| Seshadri and Subramanian, PRL 103, 081303 (2009), CMB bispectrum from primordial magnetic fields | VERIFIED-SOURCE: same list |
-| Trivedi, Subramanian and Seshadri, PRD 82, 123006 (2010) | VERIFIED-SOURCE: same list |
-| Trivedi, Seshadri and Subramanian, PRL 108, 231301 (2012), CMB trispectrum and magnetic field limits | VERIFIED-SOURCE: reference list of arXiv:2005.05401 |
-| Atmjeet, Pahwa, Seshadri and Subramanian, PRD 89, 063002 (2014), helical fields from extra dimensions | VERIFIED-SOURCE: reference list of arXiv:1409.6840 |
-| Sharma, Jagannathan, Seshadri and Subramanian 2017, arXiv:1708.08119, inflationary magnetogenesis avoiding strong coupling and backreaction | UNVERIFIED (from the earlier chat "Finding a winter project professor") |
-| Sharma, Subramanian and Seshadri 2018, arXiv:1802.04847, helical magnetogenesis with reheating | UNVERIFIED (same chat) |
-| Malik, Chand and Seshadri, Mg II absorbers and quasar rotation measures (about 2020) | UNVERIFIED, title and year from memory |
+| Seshadri and Subramanian, PRL 87, 101301 (2001), CMB polarisation from tangled magnetic fields, astro-ph/0012056 | VERIFIED: INSPIRE + arXiv listing |
+| Subramanian, Seshadri and Barrow, MNRAS 344, L31 (2003), astro-ph/0303014 | VERIFIED: INSPIRE + arXiv listing |
+| Seshadri and Subramanian, PRL 103, 081303 (2009), CMB bispectrum from primordial magnetic fields on large angular scales, arXiv:0902.4066 | VERIFIED: INSPIRE + arXiv listing |
+| Trivedi, Subramanian and Seshadri, PRD 82, 123006 (2010), arXiv:1009.2724 | VERIFIED: INSPIRE + arXiv listing |
+| Trivedi, Seshadri and Subramanian, PRL 108, 231301 (2012), CMB trispectrum and magnetic field limits, arXiv:1111.0744 | VERIFIED: INSPIRE + arXiv listing |
+| CORRECTED. The earlier row merged two papers. (a) Atmjeet, Pahwa, Seshadri and Subramanian, "Cosmological magnetogenesis from extra-dimensional Gauss-Bonnet gravity", PRD 89, 063002 (2014), arXiv:1312.5815. (b) Atmjeet, Seshadri and Subramanian, "Helical cosmological magnetic fields from extra-dimensions", PRD 91, 103006 (2015), arXiv:1409.6840 (no Pahwa) | VERIFIED: INSPIRE + arXiv listing |
+| Sharma, Jagannathan, Seshadri and Subramanian, "Challenges in inflationary magnetogenesis: constraints from strong coupling, backreaction and the Schwinger effect", PRD 96, 083511 (2017), arXiv:1708.08119 | VERIFIED: arxiv.org/abs/1708.08119 + INSPIRE |
+| Sharma, Subramanian and Seshadri, "Generation of helical magnetic field in a viable scenario of inflationary magnetogenesis", PRD 97, 083503 (2018), arXiv:1802.04847 | VERIFIED: INSPIRE + arXiv listing |
+| Malik, Chand and Seshadri, "Role of intervening Mg II absorbers on the rotation measure and fractional polarisation of the background quasars", ApJ 890 (2020) no. 2, arXiv:1710.10396 (first posted Oct 2017) | VERIFIED: arxiv.org/abs/1710.10396 (journal ref from that page; article number not checked). Not on his INSPIRE profile |
 
 Reading these is the price of entry for the conversation: open the 2017 and 2018 papers and the trispectrum PRL before meeting him.
+
+## 2A. Verified publication list, 2010 to 2026
+
+Sources: INSPIRE (query above, 57 records, but the profile is contaminated with papers by Ranjani Seshadri, a condensed-matter
+physicist; those are excluded below) and the arXiv API search au:Seshadri_T sorted by date, both run 2026-11-17. Every row
+below appeared in at least one of the two. No paper dated 2025 or 2026 with T. R. Seshadri as author was found in either.
+
+**2022 to 2026 (what he is doing now)**
+
+| Year | Paper | Journal | arXiv | What it is about |
+|---|---|---|---|---|
+| 2024 | Goyal, Malik, Yadav, Seshadri, "Investigating cosmic homogeneity using multifractal analysis of the SDSS-IV eBOSS DR16 quasar catalogue" | MNRAS 530, 2866 (2024) | 2404.09197 | Scale of homogeneity from multifractal dimensions of eBOSS quasars; continues his fractal-homogeneity line from 2005 and 2007 |
+| 2023 | Sharma (Rahul), Jain, Paul, Seshadri, "AstroSat observation of the magnetar SGR J1830-0645 during its first detected X-ray outburst" | MNRAS 526, 4877 (2023) | 2310.04079 | X-ray timing and spectroscopy of a magnetar with AstroSat |
+| 2023 | Kaur, Nandi, Choudhury, Seshadri, "Universe bouncing its way to inflation" | IJMPD 33, 2450006 (2024) | 2302.13698 | A bounce followed by inflation in one model |
+| 2022 | Sharma (Ekta), Gopinathan, Soam, Lee, Seshadri, "Core orientations and magnetic fields in isolated molecular clouds" | arXiv comment says accepted in MNRAS; volume not checked | 2209.01509 | Optical and Planck polarisation versus Herschel core orientations in eight clouds; finds random core-field alignment |
+
+Reading of this: since 2020 his output is mostly co-supervised student papers on observational topics (homogeneity, Galactic
+magnetic fields, X-ray), plus one early-universe paper. His last primordial-magnetic-field papers are 2019 to 2021. A
+primordial-magnetism or rotation-measure project would revive a line he has not published on recently, which may be welcome or
+may mean his students have moved on; ask him.
+
+**2010 to 2021**
+
+| Year | Paper | Journal | arXiv |
+|---|---|---|---|
+| 2021 | Bagla et al. (with Seshadri), "The life and science of Thanu Padmanabhan" | none listed | 2110.03208 |
+| 2020 | Jagannathan, Sharma, Seshadri, "Imprints of the post recombination dissipation of helical magnetic field on the CMB" | IJMPD 30, 2050122 (2021) | 2010.08836 |
+| 2020 | Pandey, Malik, Seshadri, "Implications of baryon-dark matter interaction on IGM temperature and tSZ effect with magnetic field" | MNRAS 500, 643 (2020) | 2006.07901 |
+| 2019 | Sharma, Subramanian, Seshadri, "Gravitational wave generation in a viable scenario of inflationary magnetogenesis" | PRD 101, 103526 (2020) | 1912.12089 |
+| 2019 | Jagannathan, Malik, Jain, Seshadri, "Impact of magnetic field on the gas mass fraction of galaxy clusters" | New Astron. 84, 101531 (2021) | 1909.07847 |
+| 2018 | Gupta, Sharma, Seshadri, "Scalar spectral index in the presence of primordial black holes" | IJMPD 29, 2050029 (2020) | 1805.10859 |
+| 2018 | Sharma, Subramanian, Seshadri, "Generation of helical magnetic field in a viable scenario of inflationary magnetogenesis" | PRD 97, 083503 (2018) | 1802.04847 |
+| 2017 | Malik, Chand, Seshadri, "Role of intervening Mg II absorbers on the rotation measure and fractional polarisation of the background quasars" | ApJ 890 (2020) | 1710.10396 |
+| 2017 | Sharma, Jagannathan, Seshadri, Subramanian, "Challenges in inflationary magnetogenesis..." | PRD 96, 083511 (2017) | 1708.08119 |
+| 2016 | Bandyopadhyay, Choudhury, Seshadri, "Studying neutral hydrogen structures during the epoch of reionization using fractal dimensions" | MNRAS 466, 2302 (2017) | 1611.05554 |
+| 2014 | Singh, Choudhary, Seshadri, "Excitation of coherent states: wave function development and analysis" | none listed | 1412.0841 |
+| 2014 | Atmjeet, Seshadri, Subramanian, "Helical cosmological magnetic fields from extra-dimensions" | PRD 91, 103006 (2015) | 1409.6840 |
+| 2013 | Atmjeet, Pahwa, Seshadri, Subramanian, "Cosmological magnetogenesis from extra-dimensional Gauss-Bonnet gravity" | PRD 89, 063002 (2014) | 1312.5815 |
+| 2013 | Trivedi, Subramanian, Seshadri, "Primordial magnetic field limits from the CMB trispectrum: scalar modes and Planck constraints" | PRD 89, 043523 (2014) | 1312.5308 |
+| 2013 | Pahwa, Choudhury, Seshadri, "Inflation in higher dimensional Gauss-Bonnet cosmology" | none listed | 1302.3977 |
+| 2012 | Thakur, Nautiyal, Sen, Seshadri, "Thawing versus tracker behaviour: observational evidence" | MNRAS 427, 988 (2012) | 1204.2617 |
+| 2012 | Sriramkumar, Seshadri (eds.), "Vignettes in Gravitation and Cosmology" (book) | none listed | none |
+| 2011 | Trivedi, Seshadri, Subramanian, "CMB trispectrum and primordial magnetic field limits" | PRL 108, 231301 (2012) | 1111.0744 |
+| 2011 | Unnikrishnan, Thakur, Seshadri, "Can f(R) gravity mimic dark energy with constant equation of state parameter?" | none listed | 1106.6353 |
+| 2011 | Pahwa, Choudhury, Seshadri, "Late-time acceleration in higher dimensional cosmology" | JCAP 09 (2011) 015 | 1104.1925 |
+| 2010 | Trivedi, Subramanian, Seshadri, "Primordial magnetic field limits from CMB bispectrum of magnetic passive scalar modes" | PRD 82, 123006 (2010) | 1009.2724 |
+| 2010 | Thakur, Sen, Seshadri, "Non-minimally coupled f(R) cosmology" | PLB 696, 309 (2011) | 1007.5250 |
+| 2010 | Deb, Singh, Seshadri, Gupta, "A CCD photometric study of the newly discovered contact binary ASAS 134738+0410.1" | BASI 38, 77 (2010) | 1005.3885 |
+| 2010 | Deb, Singh, Seshadri, Gupta, "A CCD photometric study of the late type contact binary EK Comae Berenices" | New Astron. 15, 662 (2010) | 1004.5448 |
+| 2010 | Deb, Tiwari, Singh, Seshadri, Chaubey, "Photometry of the delta Scuti star HD 40372" | none listed | 1001.3472 |
+
+Status of the whole table: VERIFIED as listed on INSPIRE and/or the arXiv API on 2026-11-17 (titles, authors, ids; journal
+data as given there). ADS was not queried (no API token here), so a paper absent from both INSPIRE and arXiv would be missed.
+Note for the talk with him: he has variable-star photometry papers (2010), so Deepnil's TESS/ZTF variable-star work is common
+ground too.
 
 ## 3. The reading project to ask for
 
