@@ -60,3 +60,28 @@ Dead ideas
 
 Next step (exact): prove C3's structure impossible (out-regular, |M| = n, every P(x) a regular tournament of order
 2 deg_M(x) − 1 dominating T(x) \ P(x)), then charge each z ∈ Z to a target y ∈ U(z) with D_y ≥ 1 using C4.
+
+### Session 1, step 3 (2026-11-17): the case Z = ∅ is closed, and |Z| ≥ 2 in any counterexample
+
+Verdict: PROVED a new partial result for the dense case n = 2δ + 3 (write-up `ssnc_2d3.tex` / `ssnc_2d3.pdf`).
+Worst news: the full case n = 2δ + 3 is still open; the remaining case has at least two complete vertices of
+outdegree δ, and I have no charging argument for it yet. Not yet checked by anyone else.
+
+- Lemma 1 PROVED: the capacity inequality I3 is an equality, p(2q_x − 1 − p)/2 = J_P + m_P + r_x.
+- Lemma 3 PROVED (any oriented graph): if x is tight (p_x > 0, D_x = 0) and v ∈ P(x), then T(x) ⊆ R(v)
+  ("x is covered for v"). Proof: P(x) is a regular tournament of order 2q − 1 dominating T(x) \ P(x); an in-neighbour
+  w of v in P(x) cannot beat all q − 1 out-neighbours of v there, so w ∈ N2(v).
+- Lemma 4 PROVED (any oriented graph): each v has at most one covered target, because a covered x receives arcs
+  from every other y ∈ U(v).
+- Theorem PROVED: a counterexample with n = 2δ + 3 satisfies |Z| = Σσ + Σ_E(2q − 1) + Σ_N D_x ≥ |N| ≥ max_v|U(v)| − 1 ≥ 2.
+  So SSNC holds for every oriented graph with n = 2δ + 3 having at most one vertex of outdegree δ adjacent to all
+  others. (Replaces C3 of step 2, which is the special case Z = ∅.)
+- VERIFIED: Lemma 3 on 502 tight (x, v) pairs and Lemma 4 on all sources of 1500 random graphs (n = 2δ + 3, δ ≤ 5):
+  0 violations; planted false claim "no covered target" refuted at 3942 sources (`check_identities.py`).
+- SAT with a Z-vertex fixed as vertex 0 (`--zvertex`, sound by the Theorem): δ = 5 in 33.5 s (was 193 s), control
+  `--slack 1` SAT. Still not enough for δ = 7.
+
+Next step (exact): take z1 ≠ z2 in Z (complete, outdegree δ, N⁻(z) = N2(z) ∪ U(z)). Show the targets in U(z1) ∪ U(z2)
+that are non-tight carry total deficiency Σ D_x > |Z|, e.g. by proving that a non-tight target x ∈ U(z) has
+D_x ≥ 2 or is shared by at most one element of Z. Also run `ssnc_sat.py 15 6 --zvertex` in the background with a
+second Z vertex fixed (cases: z2 ∈ N⁺(z1) or z2 ∈ N⁻(z1)) to measure δ = 6.

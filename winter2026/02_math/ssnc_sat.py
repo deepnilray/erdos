@@ -15,7 +15,7 @@ from pysat.card import CardEnc, EncType
 from pysat.solvers import Solver
 
 
-def build(n, delta, slack, sb, regular=False):
+def build(n, delta, slack, sb, regular=False, zvertex=False):
     pool = IDPool()
     A = lambda u, v: pool.id(('a', u, v))   # arc u -> v
     S = lambda v, w: pool.id(('s', v, w))   # w in N2(v) (forced true when a 2-path exists and v-/->w)
@@ -50,6 +50,12 @@ def build(n, delta, slack, sb, regular=False):
         # symmetry breaking (sound): vertex 0 has outdegree delta, relabel so N+(0) = {1..delta}
         for w in range(1, delta + 1):
             cnf.append([A(0, w)])
+    if zvertex:
+        # Theorem Z (LOG.md, PROVED): every counterexample with n = 2*delta+3 has a vertex z with no missing edge
+        # and d+(z) = delta. Relabel it 0: 0 -> 1..delta, and every other vertex -> 0.
+        assert n == 2 * delta + 3
+        for w in range(delta + 1, n):
+            cnf.append([A(w, 0)])
     return cnf, pool
 
 
@@ -74,9 +80,10 @@ def main():
     ap.add_argument('--slack', type=int, default=0)
     ap.add_argument('--solver', default='cd19')
     ap.add_argument('--nosb', action='store_true')
+    ap.add_argument('--zvertex', action='store_true')
     ap.add_argument('--regular', action='store_true', help='all outdegrees exactly delta (the Z-empty tight case)')
     a = ap.parse_args()
-    cnf, pool = build(a.n, a.delta, a.slack, not a.nosb, a.regular)
+    cnf, pool = build(a.n, a.delta, a.slack, not a.nosb, a.regular, a.zvertex)
     t = time.time()
     with Solver(name=a.solver, bootstrap_with=cnf.clauses) as s:
         sat = s.solve()

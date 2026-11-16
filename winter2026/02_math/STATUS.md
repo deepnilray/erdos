@@ -1,7 +1,8 @@
 # Open conjecture attack (difficulty about 19 to 39 on the scale Riemann hypothesis = 100)
 
-Status 2026-11-16: NOT STARTED. The target-selection search was interrupted by a usage limit before it wrote anything.
-No conjecture has been chosen and no result exists in this folder.
+Status 2026-11-17: IN PROGRESS. Target chosen: Seymour's second neighbourhood conjecture, dense case n = 2δ + 3
+(see TARGETS.md). PROVED so far: any counterexample with n = 2δ + 3 has at least two vertices of outdegree δ adjacent
+to all other vertices (ssnc_2d3.tex/.pdf). Open: the case |Z| ≥ 2. Details and next step in LOG.md.
 
 ## Rules for the agent that picks this up
 1. Read `../../CHECKPOINTS.md` on branch `claude/all-checkpoints` first. Do not choose any problem listed there, nor:

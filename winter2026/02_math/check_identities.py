@@ -61,3 +61,32 @@ for plant in (False, True):
             r = stats(arc, delta, plant); N += 1
             for i in range(3): fails[i] += (not r[i])
     print('planted' if plant else 'real   ', 'graphs', N, 'failures I1,I2,I3 =', fails)
+
+# Lemma 3 (tight => covered) and Lemma 4 (<= 1 covered target per source), any oriented graph.
+# Planted failure: the false claim "no source has a covered target" must be refuted on some graphs.
+def lemmas34(arc, delta):
+    n = len(arc); V = range(n)
+    N1 = [{w for w in V if arc[v][w]} for v in V]
+    N2 = [{w for u in N1[v] for w in V if arc[u][w] and w not in N1[v] and w != v} for v in V]
+    R = [{v} | N1[v] | N2[v] for v in V]
+    U = [set(V) - R[v] for v in V]
+    T = [{y for y in V if y != x and not arc[y][x]} for x in V]
+    P = [{v for v in V if x in U[v]} for x in V]
+    tight_checked = bad3 = bad4 = covered_any = 0
+    for x in V:
+        if P[x] and 2*(len(T[x]) - delta) - 1 - len(P[x]) == 0:
+            for v in P[x]:
+                tight_checked += 1
+                bad3 += not (T[x] <= R[v])
+    for v in V:
+        c = sum(1 for x in U[v] if T[x] <= R[v])
+        bad4 += c > 1; covered_any += c > 0
+    return tight_checked, bad3, bad4, covered_any
+
+tot = [0, 0, 0, 0]
+for delta in range(1, 6):
+    for _ in range(300):
+        r = lemmas34(rand_graph(2*delta+3, delta, rng), delta)
+        tot = [a + b for a, b in zip(tot, r)]
+print('Lemma3: tight (x,v) pairs checked', tot[0], 'violations', tot[1], '| Lemma4 violations', tot[2],
+      '| planted claim "no covered target" refuted at', tot[3], 'sources')
