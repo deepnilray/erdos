@@ -1,0 +1,32 @@
+name: giant-impacts
+on:
+  push:
+    branches: [claude/winter-2026-plan]
+    paths: ["winter2026/03_frontier/giant_impacts/*.py", "winter2026/03_frontier/giant_impacts/RUN", ".github/workflows/giant_impacts.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install numpy scipy astropy pyvo pandas matplotlib requests
+      - name: run
+        working-directory: winter2026/03_frontier/giant_impacts
+        run: |
+          CMD=$(cat RUN 2>/dev/null || echo "python probe.py")
+          echo "running: $CMD"; bash -c "$CMD" || true
+      - name: publish to branch impact-results
+        if: always()
+        working-directory: winter2026/03_frontier/giant_impacts
+        run: |
+          mkdir -p /tmp/pub && cp -r results/* /tmp/pub/ 2>/dev/null || true
+          cd /tmp/pub && git init -q && git checkout -q -b impact-results
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          echo "run ${GITHUB_RUN_ID} of ${GITHUB_SHA} at $(date -u)" > RUN_INFO.txt
+          git add -A && git commit -qm "impact results ${GITHUB_RUN_ID}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" impact-results
