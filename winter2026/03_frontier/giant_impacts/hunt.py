@@ -12,7 +12,7 @@ OUT = "results"; os.makedirs(OUT, exist_ok=True)
 L = open(f"{OUT}/hunt_log.txt", "a")
 def log(*a):
     s = time.strftime("%H:%M:%S ") + " ".join(map(str, a)); print(s, flush=True); L.write(s + "\n"); L.flush()
-IRSA = "https://irsa.ipac.caltech.edu/TAP"; VIZ = "https://tapvizier.cds.unistra.fr/TAPVizieR/tap"
+IRSA = "https://irsa.ipac.caltech.edu/TAP"; VIZ = os.environ.get("VIZ_TAP", "https://tapvizier.cds.unistra.fr/TAPVizieR/tap")
 BUDGET = float(os.environ.get("BUDGET_MIN", "300")) * 60; T0 = time.time()
 VALID = {"ASASSN-21qj": (123.847042, -38.989833), "NGC2547-ID8": (122.260417, -48.971444)}
 
@@ -25,6 +25,32 @@ def pick(cols, *pats):
 def build_pool():
     path = f"{OUT}/pool.csv"
     if os.path.exists(path): return Table.read(path, format="csv")
+    try:
+        if os.environ.get("USE_CLUSTERS") != "1": raise RuntimeError("cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)")
+        return _pool_clusters(path)
+    except Exception as e:
+        log("cluster pool unavailable:", repr(e)[:200], "-> Gaia DR3 nearby main-sequence pool")
+    gaia = pyvo.dal.TAPService("https://gea.esac.esa.int/tap-server/tap")
+    q = ("SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source "
+         "WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 "
+         "AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4")
+    log("gaia pool query:", q)
+    job = gaia.submit_job(q, maxrec=3000000); job.run(); job.wait(phases=["COMPLETED", "ERROR", "ABORTED"], timeout=3600)
+    log("gaia job phase:", job.phase); t = job.fetch_result().to_table(); log("gaia pool rows:", len(t))
+    absg = np.array(t["gmag"], float) + 5 * np.log10(np.array(t["plx"], float) / 100.0)
+    x = np.array(t["bprp"], float); ms = (absg > 2.2 * x + 0.2) & (absg < 2.9 * x + 3.6)
+    t = t[ms]; t = t[np.argsort(-np.array(t["plx"], float))]; log("after main-sequence cut:", len(t))
+    t["prob"] = 1.0; t["cluster"] = "field"; t["logage"] = np.nan
+    return _finish_pool(t, path)
+
+def _finish_pool(t, path):
+    t = Table({k: t[k] for k in ("source_id", "ra", "dec", "gmag", "bprp", "plx", "prob", "cluster", "logage")})
+    t["cluster"] = t["cluster"].astype("U40")
+    for name, (r, d) in VALID.items():
+        t.add_row({"source_id": -1, "ra": r, "dec": d, "gmag": np.nan, "bprp": np.nan, "plx": np.nan, "prob": 1.0, "cluster": "VALID:" + name, "logage": np.nan})
+    t["uid"] = np.arange(len(t)); t.write(path, format="csv", overwrite=True); return t
+
+def _pool_clusters(path):
     viz = pyvo.dal.TAPService(VIZ)
     tabs = viz.run_sync("SELECT table_name FROM TAP_SCHEMA.tables WHERE table_name LIKE 'J/A+A/673/A114%'").to_table()
     names = [str(x) for x in tabs["table_name"]]; log("Hunt&Reffert tables:", names)
@@ -47,9 +73,7 @@ def build_pool():
     absg = np.array(t["gmag"], float) + 5 * np.log10(np.array(t["plx"], float) / 100.0)
     x = np.array(t["bprp"], float); ms = (absg > 2.2 * x + 0.2) & (absg < 2.9 * x + 3.6)
     t = t[ms]; log("after main-sequence cut:", len(t))
-    for name, (r, d) in VALID.items():
-        t.add_row({"source_id": -1, "ra": r, "dec": d, "gmag": np.nan, "bprp": np.nan, "plx": np.nan, "prob": 1.0, "cluster": "VALID:" + name, "logage": np.nan})
-    t["uid"] = np.arange(len(t)); t.write(path, format="csv", overwrite=True); return t
+    return _finish_pool(t, path)
 
 GOODQ = ("n.qual_frame > 0 AND n.qi_fact > 0.9 AND n.saa_sep > 5 AND n.moon_masked = '00' "
          "AND n.w1snr > 3 AND n.w2snr > 3 AND n.nb = 1")
