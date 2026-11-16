@@ -1,1 +1,1 @@
-BUDGET_MIN=320 python hunt.py
+BUDGET_MIN=315 python hunt.py
