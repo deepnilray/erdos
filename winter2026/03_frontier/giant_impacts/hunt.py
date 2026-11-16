@@ -35,8 +35,13 @@ def build_pool():
          "WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 "
          "AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4")
     log("gaia pool query:", q)
-    job = gaia.submit_job(q, maxrec=3000000); job.run(); job.wait(phases=["COMPLETED", "ERROR", "ABORTED"], timeout=3600)
-    log("gaia job phase:", job.phase); t = job.fetch_result().to_table(); log("gaia pool rows:", len(t))
+    t = None
+    for qq in (q, q.replace("parallax > 4", "parallax > 5"), q.replace("parallax > 4", "parallax > 6.67")):
+        try:
+            t = gaia.run_async(qq, maxrec=1500000).to_table(); log("gaia pool rows:", len(t), "for", qq[-120:]); break
+        except Exception as e:
+            log("gaia query failed:", repr(e)[:600])
+    if t is None: raise RuntimeError("no Gaia pool")
     absg = np.array(t["gmag"], float) + 5 * np.log10(np.array(t["plx"], float) / 100.0)
     x = np.array(t["bprp"], float); ms = (absg > 2.2 * x + 0.2) & (absg < 2.9 * x + 3.6)
     t = t[ms]; t = t[np.argsort(-np.array(t["plx"], float))]; log("after main-sequence cut:", len(t))
