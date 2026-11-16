@@ -47,7 +47,33 @@ def list_files(cid):
             log("listing error", url, repr(e))
     return []
 
+def fetch_casda():
+    """SPICE-RACS DR1 files live in a linked CASDA collection; look for catalogue tables on the CASDA TAP service."""
+    import pyvo
+    svc = pyvo.dal.TAPService("https://casda.csiro.au/casda_vo_tools/tap")
+    q = ("SELECT table_name, description FROM TAP_SCHEMA.tables WHERE lower(table_name) LIKE '%spice%' "
+         "OR lower(description) LIKE '%spice%' OR (lower(description) LIKE '%polari%' AND lower(description) LIKE '%racs%')")
+    tabs = svc.search(q).to_table(); log("CASDA tables matching SPICE/RACS-polarisation:"); 
+    for r in tabs: log("   ", r["table_name"], "|", str(r["description"])[:160])
+    names = [str(r["table_name"]) for r in tabs]
+    names.sort(key=lambda n: (0 if "cut" in n.lower() else 1, 0 if "dr1" in n.lower() else 1, n))
+    for n in names:
+        try:
+            cnt = svc.search(f"SELECT COUNT(*) AS n FROM {n}").to_table()["n"][0]; log("table", n, "rows", cnt)
+            if cnt < 1000 or cnt > 400000: continue
+            t = svc.search(f"SELECT * FROM {n}", maxrec=500000).to_table()
+            os.makedirs("data", exist_ok=True); path = os.path.join("data", n.replace(".", "_") + ".fits")
+            t.write(path, overwrite=True); log("saved", path, len(t), "rows"); return path
+        except Exception as e:
+            log("casda table error", n, repr(e))
+    return None
+
 def fetch_catalogue():
+    try:
+        p = fetch_casda()
+        if p: return p
+    except Exception as e:
+        log("CASDA error", repr(e)); traceback.print_exc(file=LOG)
     for doi in DOIS:
         try:
             cid = collection_id(doi)
