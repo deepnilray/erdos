@@ -13,6 +13,13 @@ jobs:
   run:
     runs-on: ubuntu-latest
     timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    env:
+      SHARD: ${{ matrix.shard }}
+      NSHARDS: 4
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -22,11 +29,10 @@ jobs:
         working-directory: winter2026/03_frontier/giant_impacts
         run: |
           mkdir -p results
-          if git ls-remote --exit-code origin impacts-live >/dev/null 2>&1; then
-            git fetch -q --depth 1 origin impacts-live
-            git archive FETCH_HEAD | tar -x -C results && echo restored
-          fi
-          ls results | head; wc -l results/scores.csv 2>/dev/null || true
+          if git clone -q --depth 1 --branch impacts-live-$SHARD "https://github.com/${GITHUB_REPOSITORY}.git" /tmp/prev; then
+            rm -rf /tmp/prev/.git && cp -r /tmp/prev/* results/ && echo "restored shard $SHARD"
+          else echo "no previous state for shard $SHARD"; fi
+          wc -l results/scores.csv 2>/dev/null || true
       - name: run with live publishing every 8 minutes
         working-directory: winter2026/03_frontier/giant_impacts
         run: |

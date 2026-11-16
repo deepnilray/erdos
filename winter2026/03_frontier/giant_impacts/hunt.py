@@ -146,9 +146,10 @@ def main():
         for line in open(done_path).read().splitlines()[1:]: done.add(int(line.split(",")[0]))
     else:
         open(done_path, "w").write("uid,score,dW2,dW1,redden,start,nvis,n_visits,base_w1,base_w2,base_w1w2,jitter\n")
-    todo = [i for i in np.array(pool["uid"], int) if i not in done]
+    NS, SH = int(os.environ.get("NSHARDS", "1")), int(os.environ.get("SHARD", "0"))
+    todo = [i for i in np.array(pool["uid"], int) if i not in done and i % NS == SH]
     # validation objects first
-    vfirst = [int(u) for u, c in zip(pool["uid"], pool["cluster"]) if str(c).startswith("VALID:")]
+    vfirst = [int(u) for u, c in zip(pool["uid"], pool["cluster"]) if str(c).startswith("VALID:") and int(u) not in done] if SH == 0 else []
     todo = vfirst + [u for u in todo if u not in vfirst]
     log(f"pool {len(pool)}, done {len(done)}, to do {len(todo)}")
     CH = int(os.environ.get('CHUNK', '60')); chunks = [todo[i:i + CH] for i in range(0, len(todo), CH)]
