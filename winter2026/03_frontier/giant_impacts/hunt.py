@@ -171,6 +171,8 @@ def main():
             if time.time() - T0 > BUDGET: break
         for f in as_completed(futs): nproc += harvest(f.result(), done_path, lcdir)
     log("processed this run:", nproc)
+    left = len(todo) - nproc
+    open(f"{OUT}/REMAINING", "w").write(str(max(left, 0)) + "\n"); log("remaining in this shard:", left)
     summarize(pool)
 
 def harvest(res, done_path, lcdir):
