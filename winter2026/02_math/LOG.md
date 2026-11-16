@@ -95,3 +95,15 @@ second Z vertex fixed (cases: z2 ∈ N⁺(z1) or z2 ∈ N⁻(z1)) to measure δ 
   inside N⁻(0) are interchangeable): δ = 5 UNSAT in 5.7 s + 4.2 s (was 193 s without any of the theory).
   Controls with `--slack 1` SAT. δ = 6 (n = 15) runs started: both cases still running after 20 min CPU each.
   Result for δ = 6 would only re-confirm Kaneko–Locke; its purpose is to extrapolate the cost of δ = 7.
+- δ = 6 two-Z-vertex runs: not finished after 30 min CPU each (left running; they will likely be killed when the
+  session ends, so treat as UNKNOWN). Growth factor from δ = 5 is above 300, so δ = 7 by SAT is out of reach even
+  with the theory-based symmetry breaking. Dead idea for this session: SAT certificate for (17, 7).
+
+Session 1 summary. Chosen: SSNC case n = 2δ + 3. PROVED: any counterexample with n = 2δ + 3 has |Z| ≥ |N| ≥ 2, i.e.
+at least two vertices of outdegree δ adjacent to all other vertices (so the case with at most one such vertex is
+settled), plus the structure lemmas 1, 3, 4, 6. VERIFIED: algebra guards on 1500 random graphs; SAT UNSAT for
+n = 2δ + 3, δ ≤ 5 (known-answer controls). CONJECTURED: nothing new.
+Exact next step: for z ∈ Z, bound the deficiency of its uncovered targets. Concretely, prove that a non-tight
+target y ∈ U(z) has c(z, y) = |X_y \ P(y)| ≥ 1 or derive a contradiction from X_y ∩ U(z) ⊆ P(y), then show the
+resulting total Σ_{x∈N} D_x exceeds |Z|. Before claiming anything, have the 2-page note ssnc_2d3.pdf checked by a
+human, and re-check arXiv for 2026 work on n = 2δ + 3 (2608.11530 citations).
