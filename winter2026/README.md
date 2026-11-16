@@ -13,11 +13,11 @@ picking up the work. Read it fully, then the file for the part you are working o
 
 ## Where everything is and its state
 
-| Part | File | State on 2026-11-16 |
+| Part | File | State on 2026-11-17 |
 |---|---|---|
-| 1 | `01_seshadri/SESHADRI_DOSSIER.md` | Draft done: reading ladder, three project options, how to approach him. Publication list and two prior-art checks still to do (its section 6). |
-| 2 | `02_math/STATUS.md` | Not started; rules and exclusion list written. A scheduled run is set up to start it. |
-| 3 | `03_frontier/FRONTIER_IDEAS.md` | Eight ideas triaged; two carried to first computations (both null, documented). Next steps listed. |
+| 1 | `01_seshadri/SESHADRI_DOSSIER.md` | Publication list verified (INSPIRE id T.Seshadri.1). Option 4.1 (k^4) mostly answered in his own 2017 paper; option 4.3 (RM x Mg II) OCCUPIED by his co-author Malik et al. 2026 (arXiv:2605.16924); option 4.2 (streams x primordial fields) apparently open. His 2024 eBOSS quasar homogeneity paper connects to our isotropy tests. |
+| 2 | `02_math/` (TARGETS.md, LOG.md, ssnc_2d3.tex/pdf) | Target: Seymour's second neighbourhood conjecture, case n = 2delta+3. PROVED: a counterexample needs at least two complete min-outdegree vertices. Case still open; next step in LOG.md. Needs a human check. |
+| 3 | `03_frontier/FRONTIER_IDEAS.md`, `03_frontier/giant_impacts/` | Flagship: blind NEOWISE hunt for planetary-collision afterglows over 699,339 nearby main-sequence stars. Prototype ASASSN-21qj recovered blindly (score 38 vs field maximum 4.4). Run in progress on branches impacts-live-0..3. ASKAP polarisation test: NULL. |
 
 ## Code and data
 - `03_frontier/polarisation_alignment/align_pilot.py`, `align_diagnostics.py`: run with
