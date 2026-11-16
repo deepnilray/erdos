@@ -16,10 +16,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+        shard: [0, 1, 2, 3]
     env:
       SHARD: ${{ matrix.shard }}
-      NSHARDS: 8
+      NSHARDS: 4
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -32,6 +32,10 @@ jobs:
           if git clone -q --depth 1 --branch impacts-live-$SHARD "https://github.com/${GITHUB_REPOSITORY}.git" /tmp/prev; then
             rm -rf /tmp/prev/.git && cp -r /tmp/prev/* results/ && echo "restored shard $SHARD"
           else echo "no previous state for shard $SHARD"; fi
+          X=$((SHARD+4))
+          if git clone -q --depth 1 --branch impacts-live-$X "https://github.com/${GITHUB_REPOSITORY}.git" /tmp/prevx; then
+            tail -n +2 /tmp/prevx/scores.csv >> results/scores.csv; cp -r /tmp/prevx/lc/* results/lc/ 2>/dev/null || true
+            echo "merged state of former shard $X"; fi
           wc -l results/scores.csv 2>/dev/null || true
       - name: run with live publishing every 8 minutes
         working-directory: winter2026/03_frontier/giant_impacts
