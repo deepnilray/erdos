@@ -35,13 +35,16 @@ def build_pool():
          "WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 "
          "AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4")
     log("gaia pool query:", q)
-    t = None
-    for qq in (q, q.replace("parallax > 4", "parallax > 5"), q.replace("parallax > 4", "parallax > 6.67")):
-        try:
-            t = gaia.run_async(qq, maxrec=1500000).to_table(); log("gaia pool rows:", len(t), "for", qq[-120:]); break
-        except Exception as e:
-            log("gaia query failed:", repr(e)[:600])
-    if t is None: raise RuntimeError("no Gaia pool")
+    from astropy.table import vstack
+    parts = []
+    for r0 in range(0, 360, 5):          # synchronous queries in 5-degree RA strips (async jobs fail via pyvo here)
+        qq = q + f" AND ra >= {r0} AND ra < {r0 + 5}"
+        for attempt in range(3):
+            try:
+                p = gaia.run_sync(qq, maxrec=200000).to_table(); parts.append(p); break
+            except Exception as e:
+                log("strip", r0, "failed:", repr(e)[:300]); time.sleep(10)
+    t = vstack(parts); log("gaia pool rows:", len(t), "from", len(parts), "strips")
     absg = np.array(t["gmag"], float) + 5 * np.log10(np.array(t["plx"], float) / 100.0)
     x = np.array(t["bprp"], float); ms = (absg > 2.2 * x + 0.2) & (absg < 2.9 * x + 3.6)
     t = t[ms]; t = t[np.argsort(-np.array(t["plx"], float))]; log("after main-sequence cut:", len(t))
