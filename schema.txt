@@ -1,0 +1,110 @@
+id	>i8	None	1
+catalogue_id	>i8	None	24205
+cat_id	|S18	None	RACS_1302-06A_4462
+tile_id	|S13	None	RACS_1302-06A
+ra	>f8	deg	194.046266
+ra_err	>f8	arcsec	0.0
+dec	>f8	deg	-5.789302
+dec_err	>f8	arcsec	0.0
+total_i_flux	>f8	Jy	12.64886
+total_i_flux_err	>f8	Jy	0.885944
+peak_i_flux	>f8	Jy / beam	11.579114
+peak_i_flux_err	>f8	Jy / beam	0.0035499999999999998
+maj_axis	>f8	arcsec	26.75
+maj_axis_err	>f8	arcsec	0.01
+min_axis	>f8	arcsec	25.53
+min_axis_err	>f8	arcsec	0.01
+pa	>f8	deg	156.63
+pa_err	>f8	deg	0.42
+dc_maj_axis	>f8	arcsec	9.51
+dc_maj_axis_err	>f8	arcsec	0.01
+dc_min_axis	>f8	arcsec	5.15
+dc_min_axis_err	>f8	arcsec	0.01
+dc_pa	>f8	deg	156.63
+dc_pa_err	>f8	deg	0.42
+stokesi_err	>f8	Jy / beam	0.00348
+beamdist	>f8	deg	1.5493
+n_gaus	>i8	None	3
+source_id	|S18	None	RACS_1302-06A_3958
+sbid	|S5	None	8589
+start_time	>f8	d	58601.55547
+separation_tile_centre	>f8	deg	1.5493
+s_code	|S1	None	M
+rm	>f8	rad / m2	21.845204258627223
+rm_err	>f8	rad / m2	0.017716159503432128
+polint	>f8	Jy / beam	0.5319267956240689
+polint_err	>f8	Jy / beam	0.0003906599887118072
+stokesq	>f8	Jy / beam	0.1701009970823765
+stokesu	>f8	Jy / beam	0.5039854391597332
+polangle	>f8	deg	35.67492896673654
+polangle_err	>f8	deg	0.021039694632793975
+derot_polangle	>f8	deg	65.03436041981955
+derot_polangle_err	>f8	deg	0.11593129585622843
+fracpol	>f8	None	0.04899103405339912
+reffreq_pol	>f8	Hz	864149921.6471783
+reffreq_beam	>f8	Hz	864149921.6471783
+reffreq_i	>f8	Hz	881234835.2288888
+fdf_noise_th	>f8	Jy / beam	0.0001953299943559036
+rmsf_fwhm	>f8	rad / m2	48.245052337646484
+refwave_sq_pol	>f8	m2	0.12035474134702055
+stokesi	>f8	Jy / beam	11.750602792577398
+stokesi_fit_flag_is_negative	>i2	None	0
+stokesi_fit_flag_is_close_to_zero	>i2	None	0
+stokesi_fit_flag_is_not_finite	>i2	None	0
+stokesi_fit_flag_is_not_normal	>i2	None	0
+stokesi_chi2_red	>f8	None	6.6471742060139185
+snr_polint	>f8	None	1361.6114804198967
+minfreq	>f8	Hz	743990740.7407
+maxfreq	>f8	Hz	1030990740.7407
+channelwidth	>f8	Hz	1000000.0
+nchan	>i8	None	254
+rm_width	>f8	rad / m2	737.5540161132812
+stokesi_model_coef	|S55	None	nan,nan,nan,-0.29767261073592327,11.682321427860764
+stokesi_model_coef_err	|S56	None	nan,nan,nan,0.001840740649435707,0.0019985125169363375
+stokesi_model_order	>f8	None	1.0
+noise_chan	>f8	Jy / beam	0.006476947046283914
+fdf_noise_mad	>f8	Jy / beam	0.0016312364023178816
+fdf_noise_rms	>f8	Jy / beam	0.006875202525407076
+beam_maj	>f8	deg	0.00694444444444444
+beam_min	>f8	deg	0.00694444444444444
+beam_pa	>f8	deg	0.0
+sigma_add	>f8	None	41.34437772517039
+sigma_add_err	>f8	None	1.4649966689863205
+snr_flag	>i2	None	0
+leakage_flag	>i2	None	0
+channel_flag	>i2	None	0
+stokesi_fit_flag	>i2	None	0
+complex_sigma_add_flag	>i2	None	1
+complex_m2_cc_flag	>i2	None	1
+local_rm_flag	>i2	None	0
+is_blended_flag	>i2	None	1
+blend_ratio	>f8	None	0.999309663650244
+n_blended	>i8	None	1
+spectral_index	>f8	None	-0.29767261073592327
+spectral_index_err	>f8	None	0.001840740649435707
+int_time	>f8	s	935.60832
+epoch	>f8	d	58601.5608844
+l	>f8	deg	305.1038566911471
+b	>f8	deg	57.062424873485085
+pos_err	>f8	arcsec	22.51
+rm_method	|S38	None	RM Synthesis - Fractional polarization
+telescope	|S5	None	ASKAP
+pol_bias	|S19	None	2012PASA...29..214G
+catalog_name	|S14	None	SPICE-RACS-DR1
+ionosphere	|S5	None	FRion
+flux_type	|S4	None	Peak
+aperture	>f8	deg	0.0
+leakage	>f8	None	0.022253537316482313
+complex_flag	>i2	None	1
+rm_width_err	>f4	rad / m2	--
+complex_test	|S26	None	sigma_add OR Second moment
+ncomp	>i4	None	1
+fracpol_err	>f4	None	--
+stokesq_err	>f4	Jy	--
+stokesu_err	>f4	Jy	--
+stokesv	>f4	Jy	--
+stokesv_err	>f4	Jy	--
+obs_interval	>f4	d	--
+dataref	|S44	None	https://data.csiro.au/collection/csiro:58508
+type	|S1	None	--
+notes	|S1	None	--

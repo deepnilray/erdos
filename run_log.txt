@@ -1,0 +1,94 @@
+CASDA tables matching SPICE/RACS-polarisation:
+    AS110.racs_dr1_sources_spice_racs_dr1_corrected_cut_v01 | ASKAP Level 7 catalogue
+    AS110.spice_racs_dr1_corrected_cut_v01 | ASKAP Level 7 catalogue
+    AS110.spice_racs_dr1_corrected_cut_v02 | ASKAP Level 7 catalogue
+table AS110.spice_racs_dr1_corrected_cut_v02 rows 24758
+saved data/AS110_spice_racs_dr1_corrected_cut_v02.fits 24758 rows
+rows 24758
+columns ['id', 'catalogue_id', 'cat_id', 'tile_id', 'ra', 'ra_err', 'dec', 'dec_err', 'total_i_flux', 'total_i_flux_err', 'peak_i_flux', 'peak_i_flux_err', 'maj_axis', 'maj_axis_err', 'min_axis', 'min_axis_err', 'pa', 'pa_err', 'dc_maj_axis', 'dc_maj_axis_err', 'dc_min_axis', 'dc_min_axis_err', 'dc_pa', 'dc_pa_err', 'stokesi_err', 'beamdist', 'n_gaus', 'source_id', 'sbid', 'start_time', 'separation_tile_centre', 's_code', 'rm', 'rm_err', 'polint', 'polint_err', 'stokesq', 'stokesu', 'polangle', 'polangle_err', 'derot_polangle', 'derot_polangle_err', 'fracpol', 'reffreq_pol', 'reffreq_beam', 'reffreq_i', 'fdf_noise_th', 'rmsf_fwhm', 'refwave_sq_pol', 'stokesi', 'stokesi_fit_flag_is_negative', 'stokesi_fit_flag_is_close_to_zero', 'stokesi_fit_flag_is_not_finite', 'stokesi_fit_flag_is_not_normal', 'stokesi_chi2_red', 'snr_polint', 'minfreq', 'maxfreq', 'channelwidth', 'nchan', 'rm_width', 'stokesi_model_coef', 'stokesi_model_coef_err', 'stokesi_model_order', 'noise_chan', 'fdf_noise_mad', 'fdf_noise_rms', 'beam_maj', 'beam_min', 'beam_pa', 'sigma_add', 'sigma_add_err', 'snr_flag', 'leakage_flag', 'channel_flag', 'stokesi_fit_flag', 'complex_sigma_add_flag', 'complex_m2_cc_flag', 'local_rm_flag', 'is_blended_flag', 'blend_ratio', 'n_blended', 'spectral_index', 'spectral_index_err', 'int_time', 'epoch', 'l', 'b', 'pos_err', 'rm_method', 'telescope', 'pol_bias', 'catalog_name', 'ionosphere', 'flux_type', 'aperture', 'leakage', 'complex_flag', 'rm_width_err', 'complex_test', 'ncomp', 'fracpol_err', 'stokesq_err', 'stokesu_err', 'stokesv', 'stokesv_err', 'obs_interval', 'dataref', 'type', 'notes']
+chosen columns: {'ra': 'ra', 'dec': 'dec', 'rm': 'rm', 'angle': 'derot_polangle', 'fracpol': 'fracpol', 'field': 'tile_id'}
+finite rows 24742 | |b|>20: 24742
+flag snr_flag: 17051 flagged
+flag leakage_flag: 6750 flagged
+flag channel_flag: 62 flagged
+flag stokesi_fit_flag: 0 flagged
+passing all quality flags: 5818 (Thomson et al. 2023 quote 5818 reliable RMs)
+|b|>20|2arcmin|nv10|global                                   N= 3917 z=+2.29 p=0.0140
+|b|>20|2arcmin|nv10|within                                   N= 3917 z=+2.70 p=0.0050
+|b|>20|2arcmin|nv20|global                                   N= 3917 z=+0.84 p=0.2078
+|b|>20|2arcmin|nv20|within                                   N= 3917 z=+1.17 p=0.1229
+|b|>20|2arcmin|nv40|global                                   N= 3917 z=+0.29 p=0.3696
+|b|>20|2arcmin|nv40|within                                   N= 3917 z=+0.62 p=0.2507
+|b|>20|10arcmin|nv10|global                                  N= 3368 z=+2.25 p=0.0190
+|b|>20|10arcmin|nv10|within                                  N= 3368 z=+2.18 p=0.0150
+|b|>20|10arcmin|nv20|global                                  N= 3368 z=+1.00 p=0.1479
+|b|>20|10arcmin|nv20|within                                  N= 3368 z=+0.80 p=0.2118
+|b|>20|10arcmin|nv40|global                                  N= 3368 z=+1.01 p=0.1449
+|b|>20|10arcmin|nv40|within                                  N= 3368 z=+1.04 p=0.1518
+|b|>20|60arcmin|nv10|global                                  N=  626 z=+1.14 p=0.1199
+|b|>20|60arcmin|nv10|within                                  N=  626 z=+1.31 p=0.0929
+|b|>20|60arcmin|nv20|global                                  N=  626 z=+0.61 p=0.2517
+|b|>20|60arcmin|nv20|within                                  N=  626 z=+0.65 p=0.2507
+|b|>20|60arcmin|nv40|global                                  N=  626 z=+0.42 p=0.3297
+|b|>20|60arcmin|nv40|within                                  N=  626 z=+0.54 p=0.2857
+|b|>20, |RM|>20|2arcmin|nv10|global                          N=  901 z=+0.65 p=0.2587
+|b|>20, |RM|>20|2arcmin|nv10|within                          N=  901 z=+0.97 p=0.1678
+|b|>20, |RM|>20|2arcmin|nv20|global                          N=  901 z=-0.45 p=0.6673
+|b|>20, |RM|>20|2arcmin|nv20|within                          N=  901 z=-0.05 p=0.5165
+|b|>20, |RM|>20|2arcmin|nv40|global                          N=  901 z=-0.11 p=0.5265
+|b|>20, |RM|>20|2arcmin|nv40|within                          N=  901 z=+0.39 p=0.3497
+|b|>20, |RM|>20|10arcmin|nv10|global                         N=  812 z=-0.41 p=0.6663
+|b|>20, |RM|>20|10arcmin|nv10|within                         N=  812 z=-0.32 p=0.6174
+|b|>20, |RM|>20|10arcmin|nv20|global                         N=  812 z=-0.96 p=0.8232
+|b|>20, |RM|>20|10arcmin|nv20|within                         N=  812 z=-0.94 p=0.8362
+|b|>20, |RM|>20|10arcmin|nv40|global                         N=  812 z=-0.59 p=0.7163
+|b|>20, |RM|>20|10arcmin|nv40|within                         N=  812 z=-0.52 p=0.6923
+|b|>20, |RM|>20|60arcmin|nv10|global                         N=  263 z=+0.18 p=0.4166
+|b|>20, |RM|>20|60arcmin|nv10|within                         N=  263 z=+0.93 p=0.1828
+|b|>20, |RM|>20|60arcmin|nv20|global                         N=  263 z=-0.14 p=0.5195
+|b|>20, |RM|>20|60arcmin|nv20|within                         N=  263 z=-0.15 p=0.5415
+|b|>20, |RM|>20|60arcmin|nv40|global                         N=  263 z=-0.43 p=0.6444
+|b|>20, |RM|>20|60arcmin|nv40|within                         N=  263 z=-1.22 p=0.8841
+|b|>20, fracpol>0.03|2arcmin|nv10|global                     N= 3621 z=+3.02 p=0.0030
+|b|>20, fracpol>0.03|2arcmin|nv10|within                     N= 3621 z=+3.39 p=0.0020
+|b|>20, fracpol>0.03|2arcmin|nv20|global                     N= 3621 z=+1.13 p=0.1279
+|b|>20, fracpol>0.03|2arcmin|nv20|within                     N= 3621 z=+1.81 p=0.0380
+|b|>20, fracpol>0.03|2arcmin|nv40|global                     N= 3621 z=+0.61 p=0.2567
+|b|>20, fracpol>0.03|2arcmin|nv40|within                     N= 3621 z=+1.40 p=0.0939
+|b|>20, fracpol>0.03|10arcmin|nv10|global                    N= 3133 z=+2.26 p=0.0100
+|b|>20, fracpol>0.03|10arcmin|nv10|within                    N= 3133 z=+2.41 p=0.0110
+|b|>20, fracpol>0.03|10arcmin|nv20|global                    N= 3133 z=+1.11 p=0.1239
+|b|>20, fracpol>0.03|10arcmin|nv20|within                    N= 3133 z=+1.25 p=0.1069
+|b|>20, fracpol>0.03|10arcmin|nv40|global                    N= 3133 z=+1.25 p=0.1039
+|b|>20, fracpol>0.03|10arcmin|nv40|within                    N= 3133 z=+1.50 p=0.0729
+|b|>20, fracpol>0.03|60arcmin|nv10|global                    N=  607 z=+1.41 p=0.0879
+|b|>20, fracpol>0.03|60arcmin|nv10|within                    N=  607 z=+1.94 p=0.0280
+|b|>20, fracpol>0.03|60arcmin|nv20|global                    N=  607 z=+0.63 p=0.2577
+|b|>20, fracpol>0.03|60arcmin|nv20|within                    N=  607 z=+1.14 p=0.1349
+|b|>20, fracpol>0.03|60arcmin|nv40|global                    N=  607 z=+0.30 p=0.3676
+|b|>20, fracpol>0.03|60arcmin|nv40|within                    N=  607 z=+0.91 p=0.1938
+|b|>20, |RM|>20, fracpol>0.03|2arcmin|nv10|global            N=  832 z=+1.06 p=0.1479
+|b|>20, |RM|>20, fracpol>0.03|2arcmin|nv10|within            N=  832 z=+1.37 p=0.0919
+|b|>20, |RM|>20, fracpol>0.03|2arcmin|nv20|global            N=  832 z=+0.27 p=0.3736
+|b|>20, |RM|>20, fracpol>0.03|2arcmin|nv20|within            N=  832 z=+0.44 p=0.3207
+|b|>20, |RM|>20, fracpol>0.03|2arcmin|nv40|global            N=  832 z=+0.39 p=0.3267
+|b|>20, |RM|>20, fracpol>0.03|2arcmin|nv40|within            N=  832 z=+0.42 p=0.3397
+|b|>20, |RM|>20, fracpol>0.03|10arcmin|nv10|global           N=  755 z=+0.10 p=0.4456
+|b|>20, |RM|>20, fracpol>0.03|10arcmin|nv10|within           N=  755 z=+0.29 p=0.3826
+|b|>20, |RM|>20, fracpol>0.03|10arcmin|nv20|global           N=  755 z=-0.34 p=0.6214
+|b|>20, |RM|>20, fracpol>0.03|10arcmin|nv20|within           N=  755 z=-0.41 p=0.6503
+|b|>20, |RM|>20, fracpol>0.03|10arcmin|nv40|global           N=  755 z=+0.12 p=0.4426
+|b|>20, |RM|>20, fracpol>0.03|10arcmin|nv40|within           N=  755 z=-0.07 p=0.5145
+|b|>20, |RM|>20, fracpol>0.03|60arcmin|nv10|global           N=  252 z=+0.91 p=0.1788
+|b|>20, |RM|>20, fracpol>0.03|60arcmin|nv10|within           N=  252 z=+1.27 p=0.0939
+|b|>20, |RM|>20, fracpol>0.03|60arcmin|nv20|global           N=  252 z=+0.49 p=0.2967
+|b|>20, |RM|>20, fracpol>0.03|60arcmin|nv20|within           N=  252 z=-0.04 p=0.4945
+|b|>20, |RM|>20, fracpol>0.03|60arcmin|nv40|global           N=  252 z=+0.12 p=0.4136
+|b|>20, |RM|>20, fracpol>0.03|60arcmin|nv40|within           N=  252 z=-1.08 p=0.8571
+CONTROL random angles: z=+0.71 p=0.249 (must not be significant)
+PLANTED fraction 0.05 in a 10-deg cap (40 sources): z=-1.00 p=0.8412
+PLANTED fraction 0.1 in a 10-deg cap (85 sources): z=+1.96 p=0.0260
+PLANTED fraction 0.2 in a 10-deg cap (113 sources): z=+0.34 p=0.3706
+PLANTED fraction 0.3 in a 10-deg cap (269 sources): z=+2.63 p=0.0070
+PLANTED fraction 0.5 in a 10-deg cap (253 sources): z=+6.09 p=0.0010
+DONE
