@@ -1,0 +1,5 @@
+20:27:45 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+20:27:45 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+20:33:19 gaia pool rows: 704562 from 72 strips
+20:33:19 after main-sequence cut: 699339
+20:33:24 pool 699341, done 0, to do 87418
