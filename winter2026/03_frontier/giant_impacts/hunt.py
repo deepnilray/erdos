@@ -88,9 +88,9 @@ GOODQ = ("n.qual_frame > 0 AND n.qi_fact > 0.9 AND n.saa_sep > 5 AND n.moon_mask
 
 def fetch_chunk(sub):
     svc = pyvo.dal.TAPService(IRSA)
-    up = Table({"uid": np.array(sub["uid"], int), "ra": np.array(sub["ra"], float), "dec": np.array(sub["dec"], float)})
+    up = Table({"uid": np.array(sub["uid"], int), "ura": np.array(sub["ra"], float), "udec": np.array(sub["dec"], float)})
     q = ("SELECT u.uid, n.mjd, n.w1mpro, n.w1sigmpro, n.w2mpro, n.w2sigmpro, n.cc_flags FROM TAP_UPLOAD.pos AS u, "
-         "neowiser_p1bs_psd AS n WHERE CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', u.ra, u.dec, 0.000833)) = 1 AND " + GOODQ)
+         "neowiser_p1bs_psd AS n WHERE CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', u.ura, u.udec, 0.000833)) = 1 AND " + GOODQ)
     for attempt in range(3):
         try:
             return svc.run_async(q, uploads={"pos": up}, maxrec=5000000).to_table()
