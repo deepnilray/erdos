@@ -21,6 +21,13 @@ folder unless a source is named.
   tested rests on optical samples of a few hundred quasars and may simply not exist; (4) the PMF-to-subhalo chain in idea B uses
   a fit to one set of simulations.
 
+## 0b. Update 2026-11-17
+- Idea A was run on the real SPICE-RACS DR1 catalogue (5,818 reliable RMs): NULL, as forecast. See `askap_alignment/RESULT.md`.
+- Black-hole masses from Gaia DR4 astrometric microlensing: OCCUPIED. The Warsaw group (Wyrzykowski, Kruszyńska, Rybicki and
+  others) has dark-lens candidates from DR3 and is preparing DR4 analyses; predictions papers exist (arXiv:2609.10705,
+  arXiv:2403.14612, arXiv:2412.14844, arXiv:2301.00822). Do not race them.
+- New flagship: systematic search for planetary-collision afterglows, VarWISE x Gaia DR4 x ZTF. See `giant_impacts/PLAN.md`.
+
 ## 1. Ledger of ideas considered
 
 | # | Idea | Status | Reason |
