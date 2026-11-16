@@ -19,7 +19,7 @@ H = {"Accept": "application/json", "User-Agent": "deepnilray-research/1.0"}
 def collection_id(doi):
     r = requests.get("https://doi.org/" + doi, allow_redirects=True, timeout=60)
     log("DOI", doi, "->", r.url, r.status_code)
-    m = re.search(r"csiro:(\d+)", r.url) or re.search(r"collections?/(\d+)", r.url)
+    m = re.search(r"csiro(?::|%3A)(\d+)", r.url, re.I) or re.search(r"collections?/(\d+)", r.url)
     return m.group(1) if m else None
 
 def walk(o):
@@ -41,6 +41,7 @@ def list_files(cid):
                     name = d.get("filename") or d.get("name")
                     href = (d.get("link") or {}).get("href") if isinstance(d.get("link"), dict) else d.get("link") or d.get("href")
                     if name and href: files.append((name, href, d.get("fileSize") or d.get("size")))
+                log("listing top-level keys:", list(j.keys()) if isinstance(j, dict) else type(j), "| parsed files:", len(files))
                 if files: return files
         except Exception as e:
             log("listing error", url, repr(e))
