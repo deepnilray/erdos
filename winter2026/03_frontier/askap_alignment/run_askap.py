@@ -56,7 +56,7 @@ def fetch_casda():
     tabs = svc.search(q).to_table(); log("CASDA tables matching SPICE/RACS-polarisation:"); 
     for r in tabs: log("   ", r["table_name"], "|", str(r["description"])[:160])
     names = [str(r["table_name"]) for r in tabs]
-    names.sort(key=lambda n: (0 if "cut" in n.lower() else 1, 0 if "dr1" in n.lower() else 1, n))
+    names.sort(key=lambda n: (1 if "sources" in n.lower() else 0, 0 if "cut" in n.lower() else 1, [-int(x) for x in re.findall(r"_v(\d+)", n)] or [0], n))
     for n in names:
         try:
             cnt = svc.search(f"SELECT COUNT(*) AS n FROM {n}").to_table()["n"][0]; log("table", n, "rows", cnt)
