@@ -9,9 +9,10 @@ email or document. Never send a citation from this file without opening the pape
 ## 0. Verdict first
 
 - Recommended approach: ask him for the **reading project** on primordial magnetic fields (section 3), and bring **one concrete
-  question from his own model** (section 4.1) as the seed of the bigger project. Keep option 4.2 (Gaia streams) as the
-  data-driven follow-on; 4.3 (rotation measures with new survey data) was found OCCUPIED on 2026-11-17 by arXiv:2605.16924, because they use the pipeline skills Deepnil already has
-  (Gaia, TESS, ZTF, catalogue cross-matching).
+  question from his own model** (section 4.1) as the seed of the bigger project. Keep option 4.2 (Gaia streams and
+  strong lensing as a magnetic-field probe) as the data-driven follow-on, since it uses the pipeline skills Deepnil already has
+  (Gaia, TESS, ZTF, catalogue cross-matching). Option 4.3 (rotation measures with new survey data) was found OCCUPIED on
+  2026-11-17 by arXiv:2605.16924, and option 4.1 is mostly answered inside 1708.08119 itself (see 4.1).
 - Nothing in this file argues against his work or claims a flaw in it. Every option either extends his models or applies new data
   to questions he has published on.
 - Publication list verified 2026-11-17 (section 2A). Prior-art checks: see sections 4.1 to 4.3.
@@ -161,6 +162,27 @@ Full write-up and first computation in `../03_frontier/FRONTIER_IDEAS.md`, secti
 (EMPTY); measured to 0.15 dex per mass decade from 10^5 to 10^9 solar masses, streams would test fields from about 0.05 to
 0.7 nG. It joins his CMB-limits work to Gaia, which Deepnil already uses. Stated honestly to him as a forecast project.
 
+PRIOR-ART CHECK 2026-11-17: APPARENTLY OPEN for streams and for strong-lensing substructure specifically; the neighbouring
+small-scale probes are crowded. Method: INSPIRE abstract searches ("primordial magnetic" with lensing, stellar stream, subhalo,
+substructure, flux ratio, strong lensing, halo mass function, dwarf/satellite galaxies), run 2026-11-17; the arXiv API was
+rate-limited and ADS was not queried, so this is not exhaustive.
+- No paper found that uses GD-1, Pal 5 or any stellar stream, or strong-lens flux ratios, to constrain primordial magnetic fields.
+- Closest, all VERIFIED on INSPIRE records or arXiv abs pages:
+  - Pavicevic, Irsic, Viel, Bolton et al., PRL 135, 071001 (2025), arXiv:2501.06299: first Lyman-alpha forest PMF constraints
+    from hydro simulations; a hint of extra power fitted by B ~ 0.2 nG (k_peak ~ 20/Mpc). This sits inside the 0.05 to 0.7 nG
+    window of our stream forecast, which makes a stream or lensing cross-check more interesting, and also more contested.
+  - D'Ambrosio and Viel, "Constraining primordial magnetic fields with weak lensing", arXiv:2610.00485 (Oct 2026): N-body plus
+    convergence-spectrum emulator, forecast B_1Mpc < 0.8 to 1.6 nG.
+  - Ralegankar, Garaldi, Viel, arXiv:2410.02676 (2024), and Ralegankar, Pavicevic, Viel, arXiv:2402.14079 (2024): the PMF-induced
+    matter power spectrum into the non-linear regime (the input a stream or lensing analysis would need).
+  - Ralegankar, PRL 131, 231002 (2023), arXiv:2303.11861: PMFs make 10^-11 to 10^3 solar-mass dark-matter minihalos.
+  - Sanati et al., arXiv:2005.05401 (2020) and arXiv:2403.05672 (2024): dwarf-galaxy constraints.
+  - Gilman, Benson, Bovy et al., MNRAS (2022), arXiv:2112.03293: the small-scale primordial matter power spectrum from 11 quad
+    lenses, parametrised generically; never mapped onto PMF parameters in that paper. Re-casting its posterior (and the GD-1
+    subhalo results, e.g. arXiv:1911.02662) in terms of B and n_B is the cheapest open step.
+- Competition risk: the Trieste group (Viel, Ralegankar, Pavicevic, D'Ambrosio) is moving through every small-scale probe in turn;
+  strong lensing or streams is a natural next paper for them. Move quickly if Seshadri likes it.
+
 ### 4.3 Rotation measures of quasars behind intervening galaxies, with the new radio and spectroscopic surveys
 This is the data version of his own Faraday-rotation line of work: do sightlines through intervening Mg II absorbers show extra
 rotation-measure scatter, and what field strength does that imply? New since his paper: the LoTSS DR2 rotation-measure grid,
@@ -197,5 +219,8 @@ That has to come from Seshadri, not from Deepnil.
 
 - Pull his full publication list from INSPIRE-HEP and ADS; verify every UNVERIFIED row above; note his 2022 to 2026 papers,
   since those show what he is thinking about now.
-- Prior-art search for 4.3 done 2026-11-17: OCCUPIED (arXiv:2605.16924). 4.2: see section 4.2.
+- Prior-art search for 4.3 done 2026-11-17: OCCUPIED (arXiv:2605.16924). 4.2 done: APPARENTLY OPEN for streams and strong
+  lensing (INSPIRE only); repeat the search on ADS full text and read 2501.06299 and 2112.03293 before proposing it.
+- Journal volume for arXiv:2209.01509 (Ekta Sharma et al., MNRAS) and the ApJ 890 article number for arXiv:1710.10396 still
+  unchecked; get them from ADS or the journal page before citing.
 - 4.1 checked against 1708.08119 on 2026-11-17 (see 4.1). Remaining: read 2012.14720 in full before raising the slope question.
