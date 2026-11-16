@@ -1,1 +1,1 @@
-python probe.py
+BUDGET_MIN=320 python hunt.py
