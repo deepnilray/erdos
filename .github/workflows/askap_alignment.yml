@@ -1,0 +1,30 @@
+name: askap-alignment
+on:
+  push:
+    branches: [claude/winter-2026-plan]
+    paths: ["winter2026/03_frontier/askap_alignment/**", ".github/workflows/askap_alignment.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install numpy astropy requests
+      - name: run analysis
+        working-directory: winter2026/03_frontier/askap_alignment
+        run: python run_askap.py
+      - name: publish results to branch askap-results
+        if: always()
+        working-directory: winter2026/03_frontier/askap_alignment
+        run: |
+          mkdir -p /tmp/pub && cp -r results/* /tmp/pub/ 2>/dev/null || true
+          cd /tmp/pub && git init -q && git checkout -q -b askap-results
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          echo "run ${GITHUB_RUN_ID} of commit ${GITHUB_SHA} at $(date -u)" > RUN_INFO.txt
+          git add -A && git commit -qm "askap results run ${GITHUB_RUN_ID}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" askap-results
