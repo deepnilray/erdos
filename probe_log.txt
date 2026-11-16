@@ -1,0 +1,149 @@
+TABLE allwise_p3as_psd | AllWISE Source Catalog
+TABLE neowiser_p1bs_psd | NEOWISE-R Single Exposure (L1b) Source Table
+TABLE neowiser_p1ba_mch | NEOWISE-R Known Solar System Object Possible Association List (<a href='http://wise2.ipac.caltech.edu/docs/release/neowi
+TABLE neowiser_p1bs_frm | NEOWISE-R Single Exposure (L1b) Frame Metadata Table
+TABLE neowiser_p1bl_lod | NEOWISE-R Single Exposure (L1b) Scan Inventory Table
+TABLE neowiser_p1bm_frm | NEOWISE-R Single Exposure (L1b) Image Inventory Table
+TABLE varwisepure | VarWISE Pure Catalog
+TABLE varwiseext | VarWISE Extended Catalog
+TABLE varwiseassoc | VarWISE Associations Table
+TABLE neowisesbpropv2 | NEOWISE Derived Diameters and Albedos of Solar System Small Bodies Catalog v2
+TABLE wise.neowiser_p1bm_frm | NEOWISE-R Single Exposure (L1b) Image Inventory Table
+TABLE wise.neowiser_merge_p1bm_frm | NEOWISE-R Merged Single Exposure (L1b) Image Inventory Table
+
+COLUMNS of varwisepure:
+    cluster_id long | Internal VarWISE Cluster Identification Number
+    designation char | VarWISE Designation
+    ra double | Right Ascension (J2000)
+    dec double | Declination (J2000)
+    vartype char | Predicted variable type
+    confidence double | Confidence in the predicted variable type
+    variability_snr double | Variability signal to noise ratio
+    period1 double | Value of the best-fit period
+    period2 double | Value of the alternate fit period
+    period_significance double | Plavchan-type power of the phase folding for period1
+    suspect_period long | Flag indicating whether the period is likely an alias
+    w1_amp double | Span between the 95th and 5th percentile for the W1 magnitude
+    w2_amp double | Span between the 95th and 5th percentile for the W2 magnitude
+    n_obs long | Number of NEOWISE single-exposure photometric measurements at W1
+    w1mag double | Value of w1mpro from the AllWISE Source Catalog
+    w1emag double | Value of w1sigmpro from the AllWISE Source Catalog
+    w2mag double | Value of w2mpro from the AllWISE Source Catalog
+    w2emag double | Value of w2sigmpro from the AllWISE Source Catalog
+    w3mag double | Value of w3mpro from the AllWISE Source Catalog
+    w3emag double | Value of w3sigmpro from the AllWISE Source Catalog
+    w4mag double | Value of w4mpro from the AllWISE Source Catalog
+    w4emag double | Value of w4sigmpro from the AllWISE Source Catalog
+    jmag double | Value of j_m from the 2MASS All-Sky Point Source Catalog
+    jemag double | Value of j_msigcom from the 2MASS All-Sky Point Source Catalog
+    hmag double | Value of h_m from the 2MASS All-Sky Point Source Catalog
+    hemag double | Value of h_msigcom from the 2MASS All-Sky Point Source Catalog
+    kmag double | Value of k_m from the 2MASS All-Sky Point Source Catalog
+    kemag double | Value of k_msigcom from the 2MASS All-Sky Point Source Catalog
+    gmag double | Value of Gmag from the VizieR version of Gaia DR3
+    gemag double | Value of e_Gmag from the VizieR version of Gaia DR3
+    bpmag double | Value of BPmag from the VizieR version of Gaia DR3
+    bpemag double | Value of e_BPmag from the VizieR version of Gaia DR3
+    rpmag double | Value of RPmag from the VizieR version of Gaia DR3
+    rpemag double | Value of e_RPmag from the VizieR version of Gaia DR3
+    plx double | Gaia DR3 measured parallax
+    e_plx double | Gaia DR3 measured parallax error
+    simbad_type char | SIMBAD variable source type
+    known_extragalactic long | Indicates whether object is in the Gaia QSO/Galaxy catalog
+    blended_source double | Likelihood of spurious variability due to WISE source confusion
+    latent_artifact double | Likelihood of spurious variability due to WISE latent artifacts
+    x double | unit sphere (x,y,z) position x value
+    y double | unit sphere (x,y,z) position y value
+    z double | unit sphere (x,y,z) position z value
+    spt_ind long | Spatial (x,y,z) index key
+    htm20 long | HTM20 spatial index key
+    cntr long | entry counter (key) number (unique within table)
+rows 457080
+ASASSN-21qj in varwisepure : 0
+
+COLUMNS of varwiseext:
+    cluster_id long | Internal VarWISE Cluster Identification Number
+    designation char | VarWISE Designation
+    ra double | Right Ascension (J2000)
+    dec double | Declination (J2000)
+    vartype char | Predicted variable type
+    confidence double | Confidence in the predicted variable type
+    variability_snr double | Variability signal to noise ratio
+    period1 double | Value of the best-fit period
+    period2 double | Value of the alternate fit period
+    period_significance double | Plavchan-type power of the phase folding for period1
+    suspect_period long | Flag indicating whether the period is likely an alias
+    w1_amp double | Span between the 95th and 5th percentile for the W1 magnitude
+    w2_amp double | Span between the 95th and 5th percentile for the W2 magnitude
+    n_obs long | Number of NEOWISE single-exposure photometric measurements at W1
+    w1mag double | Value of w1mpro from the AllWISE Source Catalog
+    w1emag double | Value of w1sigmpro from the AllWISE Source Catalog
+    w2mag double | Value of w2mpro from the AllWISE Source Catalog
+    w2emag double | Value of w2sigmpro from the AllWISE Source Catalog
+    w3mag double | Value of w3mpro from the AllWISE Source Catalog
+    w3emag double | Value of w3sigmpro from the AllWISE Source Catalog
+    w4mag double | Value of w4mpro from the AllWISE Source Catalog
+    w4emag double | Value of w4sigmpro from the AllWISE Source Catalog
+    jmag double | Value of j_m from the 2MASS All-Sky Point Source Catalog
+    jemag double | Value of j_msigcom from the 2MASS All-Sky Point Source Catalog
+    hmag double | Value of h_m from the 2MASS All-Sky Point Source Catalog
+    hemag double | Value of h_msigcom from the 2MASS All-Sky Point Source Catalog
+    kmag double | Value of k_m from the 2MASS All-Sky Point Source Catalog
+    kemag double | Value of k_msigcom from the 2MASS All-Sky Point Source Catalog
+    gmag double | Value of Gmag from the VizieR version of Gaia DR3
+    gemag double | Value of e_Gmag from the VizieR version of Gaia DR3
+    bpmag double | Value of BPmag from the VizieR version of Gaia DR3
+    bpemag double | Value of e_BPmag from the VizieR version of Gaia DR3
+    rpmag double | Value of RPmag from the VizieR version of Gaia DR3
+    rpemag double | Value of e_RPmag from the VizieR version of Gaia DR3
+    plx double | Gaia DR3 measured parallax
+    e_plx double | Gaia DR3 measured parallax error
+    simbad_type char | SIMBAD variable source type
+    known_extragalactic long | Indicates whether object is in the Gaia QSO/Galaxy catalog
+    blended_source double | Likelihood of spurious variability due to WISE source confusion
+    latent_artifact double | Likelihood of spurious variability due to WISE latent artifacts
+    x double | unit sphere (x,y,z) position x value
+    y double | unit sphere (x,y,z) position y value
+    z double | unit sphere (x,y,z) position z value
+    spt_ind long | Spatial (x,y,z) index key
+    htm20 long | HTM20 spatial index key
+    cntr long | entry counter (key) number (unique within table)
+rows 1918082
+ASASSN-21qj in varwiseext : 0
+
+COLUMNS of varwiseassoc:
+    cntr long | cntr from NEOWISE-R L1b Source Table
+    cluster_id long | Internal VarWISE cluster identification number
+QUERY FAILED: SELECT COUNT(*) AS n FROM varwiseassoc DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+rows ?
+QUERY FAILED: SELECT * FROM varwiseassoc WHERE CONTAINS(POINT('ICRS',ra,dec), CIRCLE('ICRS',123.847042,-38.989833,0.003))=1 DALQueryError: UsageFault: BAD_REQUEST: ORA-00904: "VARWISEASSOC"."Z": invalid identifier
+ASASSN-21qj in varwiseassoc : None
+
+neowiser_p1bs_psd columns: ['ra', 'dec', 'sigra', 'sigdec', 'sigradec', 'glon', 'glat', 'elon', 'elat', 'w1x', 'w1y', 'w2x', 'w2y', 'cntr', 'source_id', 'frame_num', 'scan_id', 'src', 'w1mpro', 'w1sigmpro', 'w1snr', 'w1rchi2', 'w2mpro', 'w2sigmpro', 'w2snr', 'w2rchi2', 'rchi2', 'nb', 'na', 'w1sat', 'w2sat', 'satnum', 'cc_flags', 'det_bit', 'ph_qual', 'sso_flg', 'qual_frame', 'qi_fact', 'saa_sep', 'moon_masked', 'w1frtr', 'w2frtr', 'mjd', 'w1cc_map', 'w1cc_map_str', 'w2cc_map', 'w2cc_map_str', 'w1sky', 'w1sigsk', 'w1conf', 'w2sky', 'w2sigsk', 'w2conf', 'w1flux', 'w1sigflux', 'w2flux', 'w2sigflux', 'w1fitr', 'w2fitr', 'w1mag', 'w1sigm', 'w1flg', 'w1mcor', 'w2mag', 'w2sigm', 'w2flg', 'w2mcor', 'w1mag_1', 'w1sigm_1', 'w1flg_1', 'w2mag_1', 'w2sigm_1', 'w2flg_1', 'w1mag_2', 'w1sigm_2', 'w1flg_2', 'w2mag_2', 'w2sigm_2', 'w2flg_2', 'w1mag_3', 'w1sigm_3', 'w1flg_3', 'w2mag_3', 'w2sigm_3', 'w2flg_3', 'w1mag_4', 'w1sigm_4', 'w1flg_4', 'w2mag_4', 'w2sigm_4', 'w2flg_4', 'w1mag_5', 'w1sigm_5', 'w1flg_5', 'w2mag_5', 'w2sigm_5', 'w2flg_5', 'w1mag_6', 'w1sigm_6', 'w1flg_6', 'w2mag_6', 'w2sigm_6', 'w2flg_6', 'w1mag_7', 'w1sigm_7', 'w1flg_7', 'w2mag_7', 'w2sigm_7', 'w2flg_7', 'w1mag_8', 'w1sigm_8', 'w1flg_8', 'w2mag_8', 'w2sigm_8', 'w2flg_8', 'allwise_cntr', 'r_allwise', 'pa_allwise', 'n_allwise', 'w1mpro_allwise', 'w1sigmpro_allwise', 'w2mpro_allwise', 'w2sigmpro_allwise', 'w3mpro_allwise', 'w3sigmpro_allwise', 'w4mpro_allwise', 'w4sigmpro_allwise', 'tmass_key', 'r_2mass', 'pa_2mass', 'n_2mass', 'xscprox', 'j_m_2mass', 'j_msig_2mass', 'h_m_2mass', 'h_msig_2mass', 'k_m_2mass', 'k_msig_2mass', 'x', 'y', 'z', 'spt_ind', 'htm20']
+NEOWISE single exposures for ASASSN-21qj: 417
+   visit mjd 56788 n=19 W1=11.646 W2=11.726
+   visit mjd 56979 n=22 W1=11.650 W2=11.732
+   visit mjd 57147 n=18 W1=11.653 W2=11.732
+   visit mjd 57341 n=27 W1=11.637 W2=11.718
+   visit mjd 57506 n=18 W1=11.668 W2=11.735
+   visit mjd 57705 n=22 W1=11.666 W2=11.729
+   visit mjd 57867 n=15 W1=11.677 W2=11.740
+   visit mjd 58072 n=20 W1=11.667 W2=11.760
+   visit mjd 58227 n=18 W1=11.319 W2=10.972
+   visit mjd 58437 n=19 W1=11.228 W2=10.904
+   visit mjd 58594 n=16 W1=11.264 W2=10.938
+   visit mjd 58801 n=22 W1=11.226 W2=10.915
+   visit mjd 58958 n=17 W1=11.249 W2=10.925
+   visit mjd 59168 n=20 W1=11.340 W2=11.136
+   visit mjd 59323 n=20 W1=11.346 W2=11.161
+   visit mjd 59532 n=21 W1=11.424 W2=11.247
+   visit mjd 59690 n=19 W1=11.494 W2=11.338
+   visit mjd 59896 n=24 W1=11.614 W2=11.623
+   visit mjd 60054 n=20 W1=11.659 W2=11.715
+   visit mjd 60263 n=21 W1=11.691 W2=11.779
+   visit mjd 60421 n=19 W1=11.647 W2=11.749
+
+Gaia DR3 within 5.4 arcsec:
+    {'source_id': '5539970597334497024', 'phot_g_mean_mag': '16.91182', 'bp_rp': '1.8387375', 'parallax': '1.4711192570303577', 'parallax_over_error': '28.107798', 'ruwe': '1.0188257', 'teff_gspphot': '5300.861', 'logg_gspphot': '4.6511', 'phot_variable_flag': 'NOT_AVAILABLE'}
+    {'source_id': '5539970601632026752', 'phot_g_mean_mag': '13.370842', 'bp_rp': '0.8148804', 'parallax': '1.7631350531229681', 'parallax_over_error': '156.95311', 'ruwe': '1.1035732', 'teff_gspphot': '5761.088', 'logg_gspphot': '4.3386', 'phot_variable_flag': 'NOT_AVAILABLE'}
+AllWISE: [{'designation': 'J081523.22-385923.3', 'w1mpro': '11.681', 'w2mpro': '11.749', 'w3mpro': '12.247', 'w4mpro': '9.028', 'ph_qual': 'AACU', 'cc_flags': '0000'}]
