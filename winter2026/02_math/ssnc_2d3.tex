@@ -84,6 +84,21 @@ or has only one, it does not exist. In particular SSNC holds for every oriented 
 most one vertex of outdegree $\delta$ is adjacent to all other vertices.
 \end{corollary}
 
+\begin{lemma}[targets of a complete vertex]\label{zt}
+Let $z\in Z$ and $k=|U(z)|$. Then $N^-(z)=N_2(z)\cup U(z)$; for every $y\in U(z)$ all in-neighbours of $y$ lie in
+$N^-(z)$, $T(y)=\{z\}\cup N_1(z)\cup X_y$ with $X_y\subseteq N^-(z)\setminus\{y\}$ and $|X_y|=q_y-1$; $y$ is covered
+for $z$ iff $X_y\cap U(z)=\emptyset$; at most one $y\in U(z)$ has $q_y=1$; and
+$\sum_{y\in U(z)}q_y\ge k(k+1)/2$.
+\end{lemma}
+\begin{proof}
+$z$ is adjacent to every vertex and has $\delta$ out-neighbours, so its $\delta+2$ in-neighbours are exactly the vertices
+outside $R(z)$ or in $N_2(z)$. For $y\in U(z)$ no vertex of $\{z\}\cup N_1(z)$ sends an arc to $y$, which gives the
+description of $T(y)$; $q_y=1$ means $X_y=\emptyset$, so $y$ is covered, and Lemma~\ref{one} allows one such $y$. The
+in-arcs of the vertices of $U(z)$ come from the set $N^-(z)$ of size $\delta+2$: at most $\binom k2$ from inside $U(z)$
+and at most $k(\delta+2-k)$ from $N_2(z)$. Hence $\sum_{y\in U(z)}(\delta+2-q_y)\le\binom k2+k(\delta+2-k)$, which
+rearranges to the bound.
+\end{proof}
+
 \section*{Status}
 The remaining case, $|Z|\ge 2$, is open. Each $z\in Z$ satisfies $N^-(z)=N_2(z)\cup U(z)$, $|N^-(z)|=\delta+2$, and has
 at least two non-tight targets in $U(z)\subseteq N^-(z)$. Closing the case needs a charging of $Z$ to the deficiencies

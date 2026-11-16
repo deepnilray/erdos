@@ -15,7 +15,7 @@ from pysat.card import CardEnc, EncType
 from pysat.solvers import Solver
 
 
-def build(n, delta, slack, sb, regular=False, zvertex=False):
+def build(n, delta, slack, sb, regular=False, zvertex=False, z2=None):
     pool = IDPool()
     A = lambda u, v: pool.id(('a', u, v))   # arc u -> v
     S = lambda v, w: pool.id(('s', v, w))   # w in N2(v) (forced true when a 2-path exists and v-/->w)
@@ -56,6 +56,15 @@ def build(n, delta, slack, sb, regular=False, zvertex=False):
         assert n == 2 * delta + 3
         for w in range(delta + 1, n):
             cnf.append([A(w, 0)])
+    if z2:
+        # Theorem (LOG.md step 3, PROVED): a counterexample has a second vertex of outdegree delta adjacent to all
+        # others. It is an out-neighbour of 0 (relabel it 1) or an in-neighbour of 0 (relabel it n-1).
+        k = 1 if z2 == 'out' else n - 1
+        for w in V:
+            if w != k:
+                cnf.append([A(k, w), A(w, k)])
+        cnf.extend(CardEnc.atmost(lits=[A(k, w) for w in V if w != k], bound=delta, vpool=pool,
+                                  encoding=EncType.seqcounter).clauses)
     return cnf, pool
 
 
@@ -81,9 +90,10 @@ def main():
     ap.add_argument('--solver', default='cd19')
     ap.add_argument('--nosb', action='store_true')
     ap.add_argument('--zvertex', action='store_true')
+    ap.add_argument('--z2', choices=['out', 'in'])
     ap.add_argument('--regular', action='store_true', help='all outdegrees exactly delta (the Z-empty tight case)')
     a = ap.parse_args()
-    cnf, pool = build(a.n, a.delta, a.slack, not a.nosb, a.regular, a.zvertex)
+    cnf, pool = build(a.n, a.delta, a.slack, not a.nosb, a.regular, a.zvertex, a.z2)
     t = time.time()
     with Solver(name=a.solver, bootstrap_with=cnf.clauses) as s:
         sat = s.solve()

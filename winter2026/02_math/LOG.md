@@ -85,3 +85,13 @@ Next step (exact): take z1 ≠ z2 in Z (complete, outdegree δ, N⁻(z) = N2(z) 
 that are non-tight carry total deficiency Σ D_x > |Z|, e.g. by proving that a non-tight target x ∈ U(z) has
 D_x ≥ 2 or is shared by at most one element of Z. Also run `ssnc_sat.py 15 6 --zvertex` in the background with a
 second Z vertex fixed (cases: z2 ∈ N⁺(z1) or z2 ∈ N⁻(z1)) to measure δ = 6.
+
+### Session 1, step 4 (2026-11-17): structure at a complete vertex; δ = 6 SAT runs
+
+- Lemma 6 PROVED (in ssnc_2d3.tex): for z ∈ Z with k = |U(z)| ≥ 3: every y ∈ U(z) has all in-neighbours in
+  N⁻(z) = N2(z) ∪ U(z); T(y) = {z} ∪ N⁺(z) ∪ X_y with |X_y| = q_y − 1; y is covered iff X_y ∩ U(z) = ∅; at most one
+  y ∈ U(z) has q_y = 1; Σ_{y∈U(z)} q_y ≥ k(k+1)/2 (≥ 6).
+- SAT with two Z vertices fixed (`--zvertex --z2 out|in`, sound by the step-3 Theorem; labels inside N⁺(0) and
+  inside N⁻(0) are interchangeable): δ = 5 UNSAT in 5.7 s + 4.2 s (was 193 s without any of the theory).
+  Controls with `--slack 1` SAT. δ = 6 (n = 15) runs started: both cases still running after 20 min CPU each.
+  Result for δ = 6 would only re-confirm Kaneko–Locke; its purpose is to extrapolate the cost of δ = 7.
