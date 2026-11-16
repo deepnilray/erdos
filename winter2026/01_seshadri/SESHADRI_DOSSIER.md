@@ -9,7 +9,7 @@ email or document. Never send a citation from this file without opening the pape
 ## 0. Verdict first
 
 - Recommended approach: ask him for the **reading project** on primordial magnetic fields (section 3), and bring **one concrete
-  question from his own model** (section 4.1) as the seed of the bigger project. Keep option 4.2 (Gaia streams and
+  question about his own 2017 paper** (section 4.1, now framed as a question, since its main content is already in that paper). Keep option 4.2 (Gaia streams and
   strong lensing as a magnetic-field probe) as the data-driven follow-on, since it uses the pipeline skills Deepnil already has
   (Gaia, TESS, ZTF, catalogue cross-matching). Option 4.3 (rotation measures with new survey data) was found OCCUPIED on
   2026-11-17 by arXiv:2605.16924, and option 4.1 is mostly answered inside 1708.08119 itself (see 4.1).
@@ -177,9 +177,9 @@ rate-limited and ADS was not queried, so this is not exhaustive.
     matter power spectrum into the non-linear regime (the input a stream or lensing analysis would need).
   - Ralegankar, PRL 131, 231002 (2023), arXiv:2303.11861: PMFs make 10^-11 to 10^3 solar-mass dark-matter minihalos.
   - Sanati et al., arXiv:2005.05401 (2020) and arXiv:2403.05672 (2024): dwarf-galaxy constraints.
-  - Gilman, Benson, Bovy et al., MNRAS (2022), arXiv:2112.03293: the small-scale primordial matter power spectrum from 11 quad
+  - Gilman, Benson, Bovy et al., arXiv:2112.03293 (arXiv abs page opened; journal said to be MNRAS 2022, DOI stac670, not checked): the small-scale primordial matter power spectrum from 11 quad
     lenses, parametrised generically; never mapped onto PMF parameters in that paper. Re-casting its posterior (and the GD-1
-    subhalo results, e.g. arXiv:1911.02662) in terms of B and n_B is the cheapest open step.
+    subhalo results, e.g. arXiv:1911.02662, UNVERIFIED: seen only as a search-result title) in terms of B and n_B is the cheapest open step.
 - Competition risk: the Trieste group (Viel, Ralegankar, Pavicevic, D'Ambrosio) is moving through every small-scale probe in turn;
   strong lensing or streams is a natural next paper for them. Move quickly if Seshadri likes it.
 
@@ -217,8 +217,7 @@ That has to come from Seshadri, not from Deepnil.
 
 ## 6. Still to do (for the next session)
 
-- Pull his full publication list from INSPIRE-HEP and ADS; verify every UNVERIFIED row above; note his 2022 to 2026 papers,
-  since those show what he is thinking about now.
+- Publication list done 2026-11-17 from INSPIRE and arXiv (section 2A); an ADS cross-check is still worth doing.
 - Prior-art search for 4.3 done 2026-11-17: OCCUPIED (arXiv:2605.16924). 4.2 done: APPARENTLY OPEN for streams and strong
   lensing (INSPIRE only); repeat the search on ADS full text and read 2501.06299 and 2112.03293 before proposing it.
 - Journal volume for arXiv:2209.01509 (Ekta Sharma et al., MNRAS) and the ApJ 890 article number for arXiv:1710.10396 still
