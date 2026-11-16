@@ -132,6 +132,13 @@ def main():
     b = SkyCoord(RA*u.deg, DE*u.deg).galactic.b.deg
     base = np.isfinite(RA) & np.isfinite(DE) & np.isfinite(PSI)
     log("finite rows", base.sum(), "| |b|>20:", (base & (abs(b) > 20)).sum())
+    good = np.ones(len(t), bool)
+    for f in ("snr_flag", "leakage_flag", "channel_flag", "stokesi_fit_flag"):
+        if f in cols:
+            v = np.array(t[f]).astype(str); bad = np.isin(np.char.lower(v), ["true", "1", "t"])
+            log(f"flag {f}: {bad.sum()} flagged"); good &= ~bad
+    log("passing all quality flags:", (base & good).sum(), "(Thomson et al. 2023 quote 5818 reliable RMs)")
+    base &= good
     rng = np.random.default_rng(20261117); results = {}
 
     def dedupe(idx, arcmin):
@@ -162,7 +169,7 @@ def main():
         for am in (2, 10, 60):
             idx = dedupe(np.where(m)[0], am)
             if len(idx) < 100: log(f"{name}, one per {am}': N={len(idx)} too small"); continue
-            for nv in (10, 20, 40, 80):
+            for nv in (10, 20, 40):
                 for within in (False, True):
                     r = stat(idx, nv, within=within); key = f"{name}|{am}arcmin|nv{nv}|{'within' if within else 'global'}"
                     results[key] = r
