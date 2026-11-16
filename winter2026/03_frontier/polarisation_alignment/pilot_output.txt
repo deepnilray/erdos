@@ -1,0 +1,26 @@
+sources with derotated angle, |b|>20, non-Galactic type: 1880  -> after 2' de-duplication: 1454
+by catalogue: {np.str_('1980A&AS...39..379T'): 500, np.str_('10.3847/1538-3881/ad2fc8'): 336, np.str_('1981ApJS...45...97S'): 259, np.str_('2017MNRAS.467.1776K'): 158, np.str_('2017MNRAS.469.4034O'): 100, np.str_('2022MNRAS.510..260L'): 57, np.str_('2011MNRAS.413..132B'): 39, np.str_('2019MNRAS.487.3432M'): 5}
+
+== ALL: N = 1454
+   n_v=  5  S_D=0.4358  shuffled 0.4013 +- 0.0084  z=+4.12  p=0.0005
+   n_v= 10  S_D=0.3170  shuffled 0.2817 +- 0.0083  z=+4.25  p=0.0005
+   n_v= 20  S_D=0.2359  shuffled 0.1986 +- 0.0084  z=+4.42  p=0.0005
+   n_v= 40  S_D=0.1775  shuffled 0.1394 +- 0.0090  z=+4.25  p=0.0005
+   n_v= 80  S_D=0.1331  shuffled 0.0974 +- 0.0088  z=+4.04  p=0.0010
+
+== old compilations (no POSSUM pilot): N = 1118
+   n_v=  5  S_D=0.4398  shuffled 0.4013 +- 0.0098  z=+3.95  p=0.0005
+   n_v= 10  S_D=0.3183  shuffled 0.2811 +- 0.0097  z=+3.85  p=0.0005
+   n_v= 20  S_D=0.2331  shuffled 0.1969 +- 0.0098  z=+3.69  p=0.0010
+   n_v= 40  S_D=0.1735  shuffled 0.1383 +- 0.0098  z=+3.60  p=0.0010
+   n_v= 80  S_D=0.1313  shuffled 0.0961 +- 0.0101  z=+3.50  p=0.0020
+
+== POSSUM pilot only: N = 336
+   n_v=  5  S_D=0.4185  shuffled 0.4018 +- 0.0164  z=+1.02  p=0.1509
+   n_v= 10  S_D=0.3109  shuffled 0.2824 +- 0.0163  z=+1.75  p=0.0460
+   n_v= 20  S_D=0.2400  shuffled 0.1987 +- 0.0163  z=+2.53  p=0.0110
+   n_v= 40  S_D=0.1908  shuffled 0.1411 +- 0.0163  z=+3.04  p=0.0040
+   n_v= 80  S_D=0.1475  shuffled 0.0999 +- 0.0151  z=+3.15  p=0.0060
+
+control A (random angles): z=-0.79 p=0.778  [must NOT be significant]
+control B (planted alignment in a 30-deg cap, 130 sources): z=+7.50 p=0.0010  [MUST be significant]

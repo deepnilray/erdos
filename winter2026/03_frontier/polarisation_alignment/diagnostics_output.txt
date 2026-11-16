@@ -1,0 +1,22 @@
+1) angle histograms per catalogue (6 bins of 30 deg), and exact-value pile-ups
+   1980A&AS...39..379T    N= 505 hist=[87 79 82 90 80 87] most-repeated value 75.0 x7  sky radius ~161 deg
+   10.3847/1538-3881/ad2f N= 484 hist=[89 87 84 77 77 70] most-repeated value 22.9 x2  sky radius ~2 deg
+   1981ApJS...45...97S    N= 419 hist=[68 74 78 74 55 70] most-repeated value 131.0 x9  sky radius ~166 deg
+   2017MNRAS.469.4034O    N= 174 hist=[30 28 26 28 30 32] most-repeated value 77.0 x4  sky radius ~74 deg
+   2017MNRAS.467.1776K    N= 167 hist=[33 31 28 22 23 30] most-repeated value 3.8 x2  sky radius ~11 deg
+   2022MNRAS.510..260L    N=  80 hist=[17 18 12  7  7 19] most-repeated value 0.6 x1  sky radius ~3 deg
+   2011MNRAS.413..132B    N=  39 hist=[6 8 4 8 8 5] most-repeated value 140.0 x2  sky radius ~120 deg
+   2019MNRAS.487.3432M    N=  12 hist=[1 6 2 1 0 2] most-repeated value 89.8 x2  sky radius ~131 deg
+
+2) n_v=20 tests
+   all, one source per 2' (global shuffle)                    N= 1454 z=+4.41 p=0.0005
+   all, one source per 2' (shuffle WITHIN catalogue)          N= 1454 z=+4.08 p=0.0010
+   all, one source per 10' (global shuffle)                   N= 1045 z=+1.14 p=0.1259
+   all, one source per 10' (shuffle WITHIN catalogue)         N= 1045 z=+1.07 p=0.1394
+   all, one source per 60' (global shuffle)                   N=  736 z=+0.32 p=0.3633
+   all, one source per 60' (shuffle WITHIN catalogue)         N=  736 z=+0.04 p=0.4798
+   only 1980A&AS...39..379T, one per 60'                      N=  465 z=+0.36 p=0.3563
+   only 2017MNRAS.469.4034O, one per 60'                      N=   87 z=-1.09 p=0.8691
+   only 2017MNRAS.467.1776K, one per 60'                      N=   70 z=-1.22 p=0.9040
+   TI80 + SN81 only, one per 60' (global shuffle)             N=  513 z=+1.14 p=0.1359
+   TI80 + SN81 only, one per 60' (shuffle within catalogue)   N=  513 z=+1.11 p=0.1374

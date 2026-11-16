@@ -1,0 +1,27 @@
+bin-averaged subhalo boost over LCDM (n_B=-2.9):
+ B[nG]  peak log10M   [1e5,1e6] [1e6,1e7] [1e7,1e8] [1e8,1e9]
+  0.02     4.15       1.71     1.06     1.00     1.00
+  0.05     5.30       2.90     1.89     1.10     1.00
+  0.10     6.17       2.75     4.21     1.97     1.04
+  0.20     7.08       1.20     2.73     3.71     1.70
+  0.35     7.92       1.01     1.27     2.98     3.34
+  0.50     8.45       1.00     1.04     1.81     3.62
+  1.00     9.49       1.00     1.00     1.03     1.74
+
+controls: zero-field limit OK; planted x30 boost gives delta lnL = -7.2 (fires)
+
+wide f_survive prior [1e-4,0.5] (as in B21)
+   relative posterior at 0.05 nG: 0.87   | lowest relative posterior 0.831 at B=0.71 nG   | field values with relative posterior < 0.05: None
+
+simulation-motivated f_survive in [0.1,0.5]
+   relative posterior at 0.05 nG: 1.00   | lowest relative posterior 0.457 at B=0.34 nG   | field values with relative posterior < 0.05: None
+
+fixed f_survive = 0.22 (B21 best fit)
+   relative posterior at 0.05 nG: 1.00   | lowest relative posterior 0.392 at B=0.33 nG   | field values with relative posterior < 0.05: None
+
+FORECAST (hypothetical future data consistent with LCDM, f_survive in [0.1,0.5]):
+   four decade bins 1e5-1e9 each measured to 0.50 dex: field values with relative posterior < 0.05: None   (relative posterior at 0.05 nG: 0.638)
+   four decade bins 1e5-1e9 each measured to 0.30 dex: field values with relative posterior < 0.05: None   (relative posterior at 0.05 nG: 0.391)
+   four decade bins 1e5-1e9 each measured to 0.20 dex: field values with relative posterior < 0.05: [0.08933671843019261, 0.10415896657190929]   (relative posterior at 0.05 nG: 0.161)
+   four decade bins 1e5-1e9 each measured to 0.15 dex: field values with relative posterior < 0.05: [0.044774422771366805, 0.6829097747667202]   (relative posterior at 0.05 nG: 0.043)
+   four decade bins 1e5-1e9 each measured to 0.10 dex: field values with relative posterior < 0.05: [0.024230553172571768, 0.8933671843019262]   (relative posterior at 0.05 nG: 0.001)
