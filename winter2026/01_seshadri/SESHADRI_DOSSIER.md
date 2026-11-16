@@ -9,8 +9,8 @@ email or document. Never send a citation from this file without opening the pape
 ## 0. Verdict first
 
 - Recommended approach: ask him for the **reading project** on primordial magnetic fields (section 3), and bring **one concrete
-  question from his own model** (section 4.1) as the seed of the bigger project. Keep option 4.2 (Gaia streams) and 4.3
-  (rotation measures with new survey data) as the data-driven follow-ons, because they use the pipeline skills Deepnil already has
+  question from his own model** (section 4.1) as the seed of the bigger project. Keep option 4.2 (Gaia streams) as the
+  data-driven follow-on; 4.3 (rotation measures with new survey data) was found OCCUPIED on 2026-11-17 by arXiv:2605.16924, because they use the pipeline skills Deepnil already has
   (Gaia, TESS, ZTF, catalogue cross-matching).
 - Nothing in this file argues against his work or claims a flaw in it. Every option either extends his models or applies new data
   to questions he has published on.
@@ -166,8 +166,24 @@ This is the data version of his own Faraday-rotation line of work: do sightlines
 rotation-measure scatter, and what field strength does that imply? New since his paper: the LoTSS DR2 rotation-measure grid,
 SPICE-RACS and POSSUM from ASKAP, the Van Eck 2023 consolidated catalogue (downloaded here, 59,530 rows), and DESI and Gaia
 (Quaia) quasar and absorber catalogues. It fits Deepnil's cross-matching pipeline skills exactly.
-Risk: PRIOR ART UNCHECKED. Several groups (LOFAR and ASKAP teams) work on rotation measure versus redshift and intervening
-galaxies. This must be searched before it is proposed.
+PRIOR-ART CHECK 2026-11-17: OCCUPIED. Drop this as a stand-alone proposal.
+- Malik, O'Sullivan, Thomson, Anderson, Van Eck, Rudnick, Seta et al., "Magnetised CGM gas at z~1 revealed by SPICE-RACS",
+  arXiv:2605.16924 (May 2026; VERIFIED: arXiv abs page). Exactly this test redone: SPICE-RACS DR2 rotation measures crossed with
+  DESI DR1 quasars, 2483 sightlines (612 with Mg II), foreground-cleaned 191 Mg II versus 566 control, a 4.5 sigma excess residual-RM
+  dispersion of 4.13 +/- 0.91 rad/m^2 at median absorber z ~ 1.14, implying about 0.4 to 0.8 microgauss CGM fields over 20 to 150
+  kpc. First author Sunil Malik is Seshadri's own co-author on the 2017/2020 Mg II paper and three later papers; Van Eck (the 2023
+  RMTable author) is a co-author. Seshadri is not an author.
+- Burman, Sharma, Malik, Singh, arXiv:2405.09623 (2024; VERIFIED: arXiv abs page): radial profile of B from 59 single-Mg II
+  sightlines, excess RRM dispersion falling with impact parameter (2.39 versus 1.67 microgauss inside and outside 50 kpc).
+- Heesen, O'Sullivan, Brueggen, Basu et al., arXiv:2302.06617 (2023; VERIFIED: arXiv abs page): the 2461 LoTSS DR2 residual RMs
+  around 183 nearby galaxies (galaxy-selected, not Mg II), no general excess at small impact parameter.
+- Boeckmann, Brueggen, Heesen et al., A&A 678, A56 (2023), arXiv:2308.11391 (VERIFIED: arXiv abs page): MIGHTEE-POL RMs around
+  foreground star-forming galaxies, 2.5 sigma |RM| excess at z ~ 0.46.
+- Not found: a POSSUM-based or LoTSS-DR2-based Mg II absorber analysis. Those are the only gaps, and the Malik/O'Sullivan team
+  (with POSSUM and SPICE-RACS members) is the obvious group to do them next, so the gap is not safe for an outsider.
+What is still usable: Deepnil can tell Seshadri he has read the 2026 SPICE-RACS paper by his former collaborator, and offer
+pipeline help if Seshadri's group wants a piece of it (for example the redshift evolution of the excess, or DESI DR2 absorbers).
+That has to come from Seshadri, not from Deepnil.
 
 ## 5. How to approach him
 
@@ -181,6 +197,5 @@ galaxies. This must be searched before it is proposed.
 
 - Pull his full publication list from INSPIRE-HEP and ADS; verify every UNVERIFIED row above; note his 2022 to 2026 papers,
   since those show what he is thinking about now.
-- Prior-art search for option 4.3 (rotation measure x Mg II x new surveys) and for 4.2 (streams used to constrain primordial
-  fields).
+- Prior-art search for 4.3 done 2026-11-17: OCCUPIED (arXiv:2605.16924). 4.2: see section 4.2.
 - 4.1 checked against 1708.08119 on 2026-11-17 (see 4.1). Remaining: read 2012.14720 in full before raising the slope question.
