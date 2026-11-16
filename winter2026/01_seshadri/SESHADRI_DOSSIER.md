@@ -126,16 +126,35 @@ Suggested ladder (check every item before showing it to him):
 
 ## 4. Options for the bigger project, best first
 
-### 4.1 "Is the k^4 spectrum a theorem?" (his own model)
-In his rise-and-fall magnetogenesis model the magnetic spectrum is scale invariant during inflation and comes out blue, going as
-k^4, after the coupling falls. A short argument (worked in the earlier chat, CONJECTURED until redone on paper): outside the
-horizon A = c1 + c2 ∫ dτ/f², with c2 = f²A′ the frozen electric field. While f rises the integral dies out; when f falls it grows and
-the c2 piece takes over, so the surviving magnetic field is the inflation-era electric field converted, and the k^4 follows from the
-electric spectrum being k² steeper plus one more k² from the conversion. The question to bring him: is k^4 a lower bound for every
-rise-and-fall f, or only for power laws? If a smooth f can beat it without the backreaction problem, that is a paper; if it cannot,
-a proof is a paper. Tools: the exactly solvable Pöschl–Teller-type couplings for which f″/f is solvable, which give exact
-Bogoliubov coefficients through the transition.
-Risk: the "converted electric field" picture may already be in his or Subramanian's papers. Read 1708.08119 first.
+### 4.1 "Is the k^4 spectrum a theorem?" (his own model): CHECKED 2026-11-17, mostly OCCUPIED
+
+What arXiv:1708.08119 actually says (VERIFIED: read in the LaTeX source from arxiv.org/e-print/1708.08119, section "Solving the
+strong coupling problem"):
+- The model is not rise-and-fall inside inflation. f = (a/a_i)^alpha grows during de Sitter inflation from f_i = 1, and then
+  f = f_f (a/a_f)^(-beta) decays during a post-inflation matter-dominated phase until reheating, with beta = alpha N / N_r so that
+  f(a_r) = 1. The transition at a_f is sharp: f, A-bar and A-bar' are matched continuously there. alpha > 1/2 is assumed.
+- Outside the horizon they write A-bar_2 = d_1 + d_2 ∫ dη / f_2^2 (their eq. eqa2) and state that d_1 is the decaying mode while f
+  falls, so a non-zero d_2 is needed. d_2 comes from matching A-bar' at the end of inflation, and they note it is dominated by the
+  higher-order (k/aH)^2 terms of the c_1 branch rather than the c_2 branch.
+- Result at reheating, keeping dominant terms: dρ_B/d ln k ∝ k^(8 - 2 alpha) (a/a_f)^(4 beta + 1), and dρ_E/d ln k ∝ k^(6 - 2 alpha),
+  with the electric energy dominating. For alpha = 2 (scale-invariant B and E during inflation) this is k^4. For alpha = 3 they
+  state it gives k^2. So k^4 is not universal even inside their paper; the slope is set by the inflation-era exponent alpha only,
+  and beta enters the amplitude.
+- The words "the surviving magnetic field is the inflation-era electric field" do not appear, but the mathematics is exactly that:
+  d_2 = f^2 A-bar' at a_f is the frozen electric field, and it is the only growing piece.
+- The physical picture is stated explicitly elsewhere. Giovannini, "Inflationary magnetogenesis in the perturbative regime",
+  CQG 38 (2021) 135018, arXiv:2012.14720 (VERIFIED: arXiv abs page) says the late-time super-horizon magnetic spectra are determined
+  by the electric fields at the end of inflation when the coupling first increases, and he uses smooth (not abrupt) coupling
+  evolution. Smooth and featured couplings are also studied by Tripathy, Chowdhury, Jain, Sriramkumar, PRD 105, 063519 (2022),
+  arXiv:2111.01478 (VERIFIED: arXiv abs page), but those concern features during inflation.
+
+Verdict: the "converted electric field" picture is OCCUPIED (implicit in 1708.08119, explicit in 2012.14720), and the
+"k^4 lower bound" question is answered in the negative by 1708.08119 itself (alpha = 3 gives k^2; the backreaction limit on alpha
+is what bounds the slope). Do not present either as new to him.
+What is left, honestly small: a clean statement that the final slope 8 - 2 alpha does not depend on the shape of the transition or
+on the post-inflation equation of state (sharp matching in 1708.08119; Giovannini covers smooth cases in his own setup), and an
+exact Pöschl–Teller-type example. Use it as a good question showing Deepnil has read his paper ("does the slope depend only on
+alpha, for any smooth fall of f?"), not as a project claim.
 
 ### 4.2 Gaia stellar streams as a test of the magnetic fix to the Hubble tension
 Full write-up and first computation in `../03_frontier/FRONTIER_IDEAS.md`, section 3. Today's GD-1 and Pal 5 data are too weak
@@ -153,7 +172,7 @@ galaxies. This must be searched before it is proposed.
 ## 5. How to approach him
 
 1. After a lecture or in office hours, ask for the reading project (section 3). One sentence.
-2. Mention that you have read his 2017 magnetogenesis paper and ask the section 4.1 question. Let him react; do not pitch a big
+2. Mention that you have read his 2017 magnetogenesis paper and ask the section 4.1 question (as a question about his paper, not as a new idea). Let him react; do not pitch a big
    project in the first conversation.
 3. Follow up by email with a one-page note: the reading plan, the 4.1 question written out in four lines, and a line saying you
    have Gaia and survey-data pipelines if a data project would be useful (options 4.2 or 4.3).
@@ -164,4 +183,4 @@ galaxies. This must be searched before it is proposed.
   since those show what he is thinking about now.
 - Prior-art search for option 4.3 (rotation measure x Mg II x new surveys) and for 4.2 (streams used to constrain primordial
   fields).
-- Redo the 4.1 argument line by line on paper and check it against 1708.08119.
+- 4.1 checked against 1708.08119 on 2026-11-17 (see 4.1). Remaining: read 2012.14720 in full before raising the slope question.
