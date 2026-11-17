@@ -107,3 +107,44 @@ Exact next step: for z ∈ Z, bound the deficiency of its uncovered targets. Con
 target y ∈ U(z) has c(z, y) = |X_y \ P(y)| ≥ 1 or derive a contradiction from X_y ∩ U(z) ⊆ P(y), then show the
 resulting total Σ_{x∈N} D_x exceeds |Z|. Before claiming anything, have the 2-page note ssnc_2d3.pdf checked by a
 human, and re-check arXiv for 2026 work on n = 2δ + 3 (2608.11530 citations).
+
+## 2026-11-17, session 2 (scheduled run): local lemma at a complete vertex — tested, FALSE at δ = 6
+
+Verdict: no new case settled. Worst news first: the natural local lemma that would have closed the case n = 2δ + 3
+("a complete minimum-outdegree vertex z, or one of its out-neighbours, is a Seymour vertex") is FALSE at δ = 6,
+n = 15 (explicit model, independently checked). Combined with the step-3 Theorem (Z ≠ ∅ in any counterexample)
+it would have proved the whole case, so this route is closed in its simplest form.
+
+### Prior-art gate (repeated this session)
+alphaXiv search on the object (second neighbourhood, dense oriented graphs, min-outdegree vertex): no 2026 work on
+n = 2δ + 3 found. New paper read in full: Bai–Li–Park, arXiv:2607.18047 (v2, 24 Jul 2026), "Towards a strengthening
+of the second neighborhood conjecture": a minimum-outdegree vertex is a (strong) Seymour vertex when δ⁺ ≤ 4
+(Thm 1.4), and Remark 3.3 gives a tournament with δ⁺ = 5 in which no minimum-outdegree vertex is Seymour. So the
+local lemma below is automatic for δ ≤ 4 and carries information only from δ = 5. Espuny Díaz–Girão–Granet–
+Kronenberg arXiv:2403.02842, Prop. 4 proof (read): the A/X/B peeling around a min-outdegree vertex, which needs
+vertex-minimality (induction) and does not give a local statement.
+
+### Forecast (written before the runs)
+Lemma L (S = {z} ∪ N⁺(z) all non-Seymour, z complete, d⁺(z) = δ = min outdegree) expected SAT already for small δ
+(local constraints too weak). Outcome: forecast WRONG for δ ≤ 5 (UNSAT), right from δ = 6 (SAT).
+
+### Results (`ssnc_local.py`, `verify_model.py`, CaDiCaL 1.9 via pysat)
+- VERIFIED: Lemma L holds for n = 2δ + 3, δ = 2..5 (δ = 5: 97 s), and for n = 2δ + e, e ∈ {1,2,4,5,6,8}, δ = 2..4.
+  Controls: `--slack 1` SAT for every δ = 2..5 tested, models pass the independent checker.
+- VERIFIED: in Lemma L only the outdegree bounds on A = N⁺(z) and B = N⁺⁺(z) matter: dropping them on all of N⁻(z)
+  makes it SAT (δ = 3, 4, 5); keeping them on B only stays UNSAT (δ = 3, 4, 5); keeping them on C = U(z) only is SAT.
+  (PROVED, trivial: out-arcs of C never enter N1 or N2 of z or of A, so C's outdegrees are irrelevant.)
+- VERIFIED (explicit model, `L_counterexample_15_6.txt`, rechecked by `verify_model.py`): Lemma L is FALSE at
+  δ = 6, n = 15: z = 0 complete, d⁺ = 6, min outdegree 6, A = {1..6}, B = {7..11} (b = δ − 1), C = {12,13,14};
+  z, A and C are all non-Seymour, only B is Seymour. Found in under 1 s.
+- VERIFIED: the variants "z ∪ A ∪ B non-Seymour" (`zAB`) and "z ∪ A ∪ C non-Seymour" (`zAC`) are UNSAT for
+  n = 2δ + 3, δ = 3, 4, 5 (zAB δ = 5: 27.5 s; zAC δ = 5 not run); slack-1 controls SAT. At δ = 6 `zAC` is SAT
+  (same model as above). `zAB` at δ = 6 and `zA --z2 out` at δ = 6 started (results below if they finish).
+- PROVED (counting, any oriented graph with z complete, d⁺(z) = δ = min outdegree on A ∪ B, z non-Seymour,
+  b = |N⁺⁺(z)| = δ − 1 − t, t ≥ 0): the arcs from B into C = U(z) number at least δ + t(2δ − 1 − t)/2 + J + m_Y,
+  where J = total outdegree excess on A ∪ B and m_Y = non-adjacent pairs in Y = A ∪ B. (Count arcs inside Y:
+  Σ_{A} d⁺ + Σ_{B} (d⁺ − 1 − c_u) ≤ C(δ + b, 2) − m_Y.) Also b ≥ (δ + 1)/2.
+
+Dead ideas (deflation class: local statement too weak beyond δ = 5)
+- D-L1: "z complete of min outdegree ⇒ Seymour vertex in N⁺[z]". False at δ = 6 (model above).
+- D-L2: the same with z ∪ A ∪ C non-Seymour. False at δ = 6 (same model).
