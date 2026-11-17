@@ -148,3 +148,43 @@ Lemma L (S = {z} ∪ N⁺(z) all non-Seymour, z complete, d⁺(z) = δ = min out
 Dead ideas (deflation class: local statement too weak beyond δ = 5)
 - D-L1: "z complete of min outdegree ⇒ Seymour vertex in N⁺[z]". False at δ = 6 (model above).
 - D-L2: the same with z ∪ A ∪ C non-Seymour. False at δ = 6 (same model).
+
+### Session 2, continued: two-complete-vertex and R(z) variants; median-order idea
+
+- VERIFIED (models, independent checker inside `ssnc_local.py`): at δ = 6, n = 15, Lemma L still fails when a
+  second complete outdegree-δ vertex is fixed, both as an out-neighbour (`--z2 out`) and as an in-neighbour
+  (`--z2 in`) of z. Both SAT in under 1 s.
+- VERIFIED: `zA2` (z1, N⁺(z1), z2, N⁺(z2) all non-Seymour, z1, z2 complete of outdegree δ) is UNSAT for
+  n = 2δ + 3, δ = 3, 4, 5 (implied by Lemma L there; not new); slack-1 control SAT (δ = 4).
+- UNKNOWN: `zAB` (z, A = N⁺(z), B = N⁺⁺(z) all non-Seymour) and `zA2 --z2 out` at δ = 6, n = 15: no answer after
+  more than 22 min CPU each (outputs, if any, in `runs/`). Unlike Lemma L these are not SAT instantly, which is
+  weak evidence that they may hold at δ = 6. Neither is a proof of anything for general δ.
+- Observation (PROVED, one line, implicit in I2): for n = 2δ + 3, |M| + J = n, i.e. the oriented graph is a
+  tournament minus at most n edges, with equality iff out-regular. Missing graph of average degree ≤ 2.
+- Idea tested and DEAD (`median_feed.py`): "the feed vertex of a median order is Seymour whenever it is adjacent to
+  all other vertices". Exact median orders by subset DP, random oriented graphs on 8 vertices: complete feed
+  vertices that are not Seymour found (2 of 356 at missing-edge probability 0.3, 1 of 28 at 0.5; example printed by
+  the script). Control: the unconditional "feed vertex is Seymour" also fails (4 of 5833), so the checker fires.
+  Note: at missing probability 0.1 no failure in 2174 complete feed vertices; the dense regime (≤ n missing edges)
+  is exactly where this might still hold, so the precise dead statement is the unrestricted one.
+
+Dead ideas added
+- D-L3: Lemma L with two complete vertices fixed (z2 ∈ N⁺(z) or z2 ∈ N⁻(z)): false at δ = 6.
+- D-M1: median-order feed vertex adjacent to all others is Seymour (no density assumption): false, n = 8.
+
+### Where the proof stands (end of session 2)
+PROVED (session 1, unchanged): a counterexample with n = 2δ + 3 has |Z| ≥ |N| ≥ 2. Not closed: the case |Z| ≥ 2.
+Every purely local statement around one complete vertex z that involves only z and N⁺(z) is false at δ = 6
+(models in this folder). Statements involving N⁺⁺(z) as well (`zAB`), or two complete vertices together with their
+out-neighbourhoods (`zA2`), survive through δ = 5 and are undecided at δ = 6.
+
+### Next step (exact, for the next session)
+1. First check `runs/zAB_nonsey_15_6.txt` and `runs/zA2_out_15_6.txt` (they are likely killed with the container;
+   if empty, rerun `python3 ssnc_local.py 15 6 zAB` and `python3 ssnc_local.py 15 6 zA2 --z2 out` with a longer
+   budget, ideally in a GitHub Actions job). A SAT model kills the corresponding local route; UNSAT supports it.
+2. In parallel, test the dense median-order statement on graphs with at most n missing edges (run
+   `median_feed.py` with structured sampling: tournaments with ≤ n deleted edges, n = 9..11). If it holds there,
+   read Fidler–Yuster (JGT 55, 2007) and Dara–Francis–Jacob–Narayanan (DAM 311, 2022) on median orders with missing
+   edges (primary sources, not yet opened in this project) before trying to prove it.
+3. If `zAB` survives δ = 6: try to prove it for n = 2δ + 3 using |U(u)| ≥ 3 − 2j_u for u ∈ B, A ⊆ R(u) for every
+   u ∈ B (because u → z → A), and the B → C arc count above.

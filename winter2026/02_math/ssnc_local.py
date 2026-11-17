@@ -51,14 +51,19 @@ def build(n, delta, Sset, slack, z2, freein=False, degon=None, nocomplete=False,
             cnf.append([-S(v, w), -A(v, w)])
         lits = [S(v, w) for w in V if w != v] + [-A(v, w) for w in V if w != v]
         cls = CardEnc.atmost(lits=lits, bound=n - 2 + slack, vpool=pool, encoding=EncType.seqcounter).clauses
-        if cond and v > delta:
+        if cond == 'Z2':
+            k = 1 if z2 == 'out' else n - 1
+            if v > delta and v != k:
+                # non-Seymour required for the second complete vertex k and its out-neighbours
+                cls = [[-A(k, v)] + c for c in cls]
+        elif cond and v > delta:
             # non-Seymour required only if v in B = N2(0) (cond='B') or v in C = U(0) (cond='C'); exact s(0,v) below
             g = pool.id(('g', v))
             cnf.append([-g, S(0, v)] if cond == 'B' else [-g, -S(0, v)])
             cnf.append([g, -S(0, v)] if cond == 'B' else [g, S(0, v)])
             cls = [[-g] + c for c in cls]
         cnf.extend(cls)
-    if cond:
+    if cond in ('B', 'C'):
         for v in range(delta + 1, n):
             cnf.append([-S(0, v)] + [A(w, v) for w in range(1, delta + 1)])
             for w in range(1, delta + 1):
@@ -100,7 +105,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('n', type=int)
     ap.add_argument('delta', type=int)
-    ap.add_argument('S', choices=['zA', 'zAB', 'zAC', 'A', 'zIn', 'notA', 'notIn', 'all'])
+    ap.add_argument('S', choices=['zA', 'zA2', 'zAB', 'zAC', 'A', 'zIn', 'notA', 'notIn', 'all'])
     ap.add_argument('--slack', type=int, default=0)
     ap.add_argument('--z2', choices=['out', 'in'])
     ap.add_argument('--freein', action='store_true', help='no outdegree lower bound on N-(0)')
@@ -109,13 +114,13 @@ def main():
     a = ap.parse_args()
     n, d = a.n, a.delta
     Aset = set(range(1, d + 1)); In = set(range(d + 1, n))
-    Sset = {'zA': {0} | Aset, 'zAB': set(range(n)), 'zAC': set(range(n)), 'A': set(Aset), 'zIn': {0} | In, 'notA': {0} | In, 'notIn': {0} | Aset,
+    Sset = {'zA': {0} | Aset, 'zA2': set(range(n)), 'zAB': set(range(n)), 'zAC': set(range(n)), 'A': set(Aset), 'zIn': {0} | In, 'notA': {0} | In, 'notIn': {0} | Aset,
             'all': set(range(n))}[a.S]
     if a.S == 'notA':
         Sset = set(range(n)) - Aset
     if a.S == 'notIn':
         Sset = set(range(n)) - In
-    cnf, pool = build(n, d, Sset, a.slack, a.z2, a.freein, a.degon, a.nocomplete, {'zAB': 'B', 'zAC': 'C'}.get(a.S))
+    cnf, pool = build(n, d, Sset, a.slack, a.z2, a.freein, a.degon, a.nocomplete, {'zAB': 'B', 'zAC': 'C', 'zA2': 'Z2'}.get(a.S))
     t = time.time()
     with Solver(name='cd19', bootstrap_with=cnf.clauses) as s:
         sat = s.solve(); dt = time.time() - t
@@ -126,6 +131,9 @@ def main():
             if a.S in ('zAB', 'zAC'):
                 N2z = {v for v in range(d + 1, n) if any(arc[w][v] for w in range(1, d + 1))}
                 Sset = {0} | Aset | (N2z if a.S == 'zAB' else In - N2z)
+            if a.S == 'zA2':
+                k = 1 if a.z2 == 'out' else n - 1
+                Sset = {0} | Aset | {k} | {v for v in range(n) if arc[k][v]}
             bad = [v for v in Sset if res[v][1] > res[v][0] - 1 + a.slack]
             assert not bad, 'checker disagrees with encoding'
             sey = [v for v, (x, y) in enumerate(res) if y >= x]
