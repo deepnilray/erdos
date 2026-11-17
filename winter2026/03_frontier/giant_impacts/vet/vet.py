@@ -26,7 +26,7 @@ def log(*a):
 
 class TSession(requests.Session):
     """every HTTP call gets a timeout, so one hung archive cannot stall the whole job"""
-    def request(self, *a, **k): k.setdefault("timeout", 150); return super().request(*a, **k)
+    def request(self, *a, **k): k.setdefault("timeout", 90); return super().request(*a, **k)
 SES = TSession()
 def TAPS(u): return pyvo.dal.TAPService(u, session=SES)
 GAIA = TAPS("https://gea.esac.esa.int/tap-server/tap")
@@ -45,15 +45,17 @@ def tap(svc, q, tries=3, maxrec=50000):
             err = repr(e)[:200]; time.sleep(4 * (k + 1))
     raise RuntimeError(err)
 
-_svc_ok = {}
+_svc_ok, _dead = {}, {}
 def tap_any(urls, q, key):
-    """first reachable mirror wins; returns (df, url) or raises"""
+    """first reachable mirror wins; a mirror that fails twice is not tried again in this job (unreachable CDS hosts
+    would otherwise cost minutes per target). Returns (df, url) or raises."""
     errs = []
-    order = [_svc_ok[key]] if key in _svc_ok else urls
-    for u in order + [x for x in urls if x not in order]:
+    order = ([_svc_ok[key]] if key in _svc_ok else []) + [u for u in urls if u != _svc_ok.get(key)]
+    for u in order:
+        if _dead.get(u, 0) >= 2: errs.append(f"{u}: skipped (failed twice)"); continue
         try:
-            df = tap(TAPS(u), q, tries=2); _svc_ok[key] = u; return df, u
-        except Exception as e: errs.append(f"{u}: {e}")
+            df = tap(TAPS(u), q, tries=1); _svc_ok[key] = u; _dead[u] = 0; return df, u
+        except Exception as e: errs.append(f"{u}: {e}"); _dead[u] = _dead.get(u, 0) + 1
     raise RuntimeError(" | ".join(errs)[:400])
 
 def cone(ra, dec, r): return f"CONTAINS(POINT('ICRS', ra, dec), CIRCLE('ICRS', {ra}, {dec}, {r / 3600.0})) = 1"
