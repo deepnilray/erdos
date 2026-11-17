@@ -24,8 +24,13 @@ LG = open(f"{OUT}/vet_log.txt", "w")
 def log(*a):
     s = time.strftime("%H:%M:%S ") + " ".join(map(str, a)); print(s, flush=True); LG.write(s + "\n"); LG.flush()
 
-GAIA = pyvo.dal.TAPService("https://gea.esac.esa.int/tap-server/tap")
-IRSA = pyvo.dal.TAPService("https://irsa.ipac.caltech.edu/TAP")
+class TSession(requests.Session):
+    """every HTTP call gets a timeout, so one hung archive cannot stall the whole job"""
+    def request(self, *a, **k): k.setdefault("timeout", 150); return super().request(*a, **k)
+SES = TSession()
+def TAPS(u): return pyvo.dal.TAPService(u, session=SES)
+GAIA = TAPS("https://gea.esac.esa.int/tap-server/tap")
+IRSA = TAPS("https://irsa.ipac.caltech.edu/TAP")
 SIMBAD_URLS = ["https://simbad.cds.unistra.fr/simbad/sim-tap", "https://simbad.harvard.edu/simbad/sim-tap"]
 VIZ_URLS = ["https://tapvizier.cds.unistra.fr/TAPVizieR/tap"]
 YSO_TYPES = {"Y*O", "Y*?", "TT*", "TT?", "Or*", "Ae*", "Ae?", "HH", "YSO", "TTS", "pr*", "pr?", "Y*O?", "FU*", "outflow?", "of?"}
@@ -47,7 +52,7 @@ def tap_any(urls, q, key):
     order = [_svc_ok[key]] if key in _svc_ok else urls
     for u in order + [x for x in urls if x not in order]:
         try:
-            df = tap(pyvo.dal.TAPService(u), q, tries=2); _svc_ok[key] = u; return df, u
+            df = tap(TAPS(u), q, tries=2); _svc_ok[key] = u; return df, u
         except Exception as e: errs.append(f"{u}: {e}")
     raise RuntimeError(" | ".join(errs)[:400])
 
@@ -83,8 +88,10 @@ def slope(t, y, e):
     return float(b[1]), float(np.sqrt(cov[1, 1] * max(chi, 1.0)))
 
 # ---------------------------------------------------------------- per-target vetting
+T0 = time.time(); DEADLINE = float(os.environ.get("VET_DEADLINE_MIN", "85")) * 60
 def vet_one(row):
     r = dict(uid=int(row.uid), label=row.label, ra=float(row.ra), dec=float(row.dec)); errs = []
+    if time.time() - T0 > DEADLINE: r["errors"] = "SKIPPED: job deadline reached"; return r
     # Gaia neighbours within 6"
     try:
         g = tap(GAIA, "SELECT source_id, ra, dec, phot_g_mean_mag AS g, bp_rp, parallax, ruwe, phot_variable_flag, "
@@ -146,7 +153,9 @@ def vet_one(row):
             r["neo_w1w2_first"], r["neo_w1w2_last"] = float(np.median(col[:3])), float(np.median(col[-3:]))
             plot(r, V)
     except Exception as e: errs.append(f"neowise:{e}")
-    r["errors"] = " || ".join(errs)[:600]; return r
+    r["errors"] = " || ".join(errs)[:600]
+    with open(f"{OUT}/vet_partial.jsonl", "a") as fh: fh.write(json.dumps(r, default=str) + "\n")
+    log("vetted", r["uid"], r["label"], "errors:", r["errors"][:200]); return r
 
 def plot(r, V):
     import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
@@ -208,27 +217,39 @@ def main():
     pd.DataFrame(dict(bprp=mids, locus_w1w2=med, sigma=sig)).to_csv(f"{OUT}/ms_locus_w1w2.csv", index=False)
     loc = lambda c: np.interp(c, mids, med); sg = lambda c: np.interp(c, mids, sig)
     f2["excess_locus"] = f2.base_w1w2 - loc(f2.bprp); f2["z_excess"] = f2.excess_locus / sg(f2.bprp)
+    # variability of the 6-month visit medians relative to stars of the same W2 brightness (EDDs such as ID8 vary
+    # recurrently rather than decay, arXiv:2610.10130), used by the detector-2 "excess + variability" variant
+    jb = np.arange(4.0, 15.01, 0.5); jmid, jmed = [], []
+    for a, b in zip(jb[:-1], jb[1:]):
+        x = f2.jitter[(f2.base_w2 >= a) & (f2.base_w2 < b)]
+        if len(x) >= 50: jmid.append((a + b) / 2); jmed.append(np.median(x))
+    jit_ref = lambda w2: np.interp(w2, jmid, jmed)
+    pd.DataFrame(dict(w2=jmid, median_jitter=jmed)).to_csv(f"{OUT}/jitter_ref.csv", index=False)
+    f2["jit_ratio"] = f2.jitter / jit_ref(f2.base_w2)
     A = f2[(f2.excess_locus > 0.10) & (f2.z_excess > 5)].sort_values("z_excess", ascending=False)
+    summ["n_det2_var_pass_all"] = int((A.jit_ratio > 3).sum())
     A.to_csv(f"{OUT}/det2_stageA.csv", index=False); summ["n_det2_stageA"] = len(A); summ["n_det2_input"] = len(f2)
     log("detector 2 stage A:", len(A), "of", len(f2))
     # ---------------- targets
     T = []
-    for lab, df in (("DET1", c1), ("NEAR", near), ("DET2A", A.head(NVET_D2))):
+    for lab, df in (("DET1", c1), ("NEAR", near), ("DET2A", A.head(NVET_D2)), ("DET2A", A[A.jit_ratio > 3].head(NVET_D2))):
         for x in df.itertuples(): T.append(dict(uid=x.uid, ra=x.ra, dec=x.dec, label=lab))
     for x in d[d.cluster.astype(str).str.startswith("VALID:")].itertuples(): T.append(dict(uid=x.uid, ra=x.ra, dec=x.dec, label=x.cluster))
     T = pd.DataFrame(T).drop_duplicates("uid"); log("targets to vet:", len(T))
     with ThreadPoolExecutor(6) as ex: R = list(ex.map(lambda row: vet_one(row), [r for r in T.itertuples()]))
     R = pd.DataFrame(R).merge(d[["uid", "score", "dW2", "dW1", "redden", "start", "nvis", "n_visits", "base_w1", "base_w2", "base_w1w2", "jitter"]], on="uid", how="left")
-    R = R.merge(f2[["uid", "excess_locus", "z_excess"]], on="uid", how="left")
+    R = R.merge(f2[["uid", "excess_locus", "z_excess", "jit_ratio"]], on="uid", how="left")
     # validation objects are not in the field locus table: compute their excess from their own Gaia colour
     for i in R.index[R.label.str.startswith("VALID:")]:
         if np.isfinite(R.at[i, "bprp"]):
             R.at[i, "excess_locus"] = R.at[i, "base_w1w2"] - loc(R.at[i, "bprp"]); R.at[i, "z_excess"] = R.at[i, "excess_locus"] / sg(R.at[i, "bprp"])
+        if np.isfinite(R.at[i, "base_w2"]): R.at[i, "jit_ratio"] = R.at[i, "jitter"] / jit_ref(R.at[i, "base_w2"])
     R["aw_excess"] = R.aw_w1w2 - loc(R.bprp)
     # detector 2 stage B (decay)
     R["w2_fade_sig"] = R.w2_slope / R.w2_slope_err; R["col_decline_sig"] = -R.col_slope / R.col_slope_err
     R["aw_minus_neo_w1w2"] = R.aw_w1w2 - R.base_w1w2
     R["det2_pass"] = (R.excess_locus > 0.10) & (R.z_excess > 5) & (((R.w2_fade_sig > 3) & (R.w2_slope > 0.01)) | ((R.col_decline_sig > 3) & (R.col_slope < -0.005)) | (R.aw_minus_neo_w1w2 > 0.1))
+    R["det2_var_pass"] = (R.excess_locus > 0.10) & (R.z_excess > 5) & (R.jit_ratio > 3)
     K, N = [], []
     for r in R.to_dict("records"):
         det = 2 if r["label"] == "DET2A" or r["label"] == "VALID:NGC2547-ID8" else 1
@@ -237,11 +258,11 @@ def main():
     R.to_csv(f"{OUT}/vet_table.csv", index=False)
     for name in hunt.VALID:
         v = R[R.label == "VALID:" + name]
-        if len(v): summ[f"vet_{name}"] = {k: (None if isinstance(x, float) and not np.isfinite(x) else x) for k, x in v.iloc[0][["score", "score_refetch", "excess_locus", "z_excess", "w2_slope", "w2_fade_sig", "col_slope", "col_decline_sig", "aw_w1w2", "aw_minus_neo_w1w2", "det2_pass", "simbad", "vsx", "kill"]].to_dict().items()}
-    summ["n_det2_pass_vetted"] = int(R[R.label == "DET2A"].det2_pass.sum())
+        if len(v): summ[f"vet_{name}"] = {k: (None if isinstance(x, float) and not np.isfinite(x) else x) for k, x in v.iloc[0][["score", "score_refetch", "excess_locus", "z_excess", "w2_slope", "w2_fade_sig", "col_slope", "col_decline_sig", "aw_w1w2", "aw_minus_neo_w1w2", "det2_pass", "jit_ratio", "det2_var_pass", "simbad", "vsx", "kill"]].to_dict().items()}
+    summ["n_det2_pass_vetted"] = int(R[R.label == "DET2A"].det2_pass.sum()); summ["n_det2_var_pass_vetted"] = int(R[R.label == "DET2A"].det2_var_pass.sum())
     summ["services"] = _svc_ok
     json.dump(summ, open(f"{OUT}/summary.json", "w"), indent=1, default=str); log(json.dumps(summ, indent=1, default=str))
-    cols = ["label", "uid", "ra", "dec", "gmag", "bprp", "score", "score_refetch", "dW2", "dW1", "start", "base_w1", "excess_locus", "z_excess", "w2_slope", "w2_fade_sig", "col_slope", "col_decline_sig", "aw_w1w2", "det2_pass", "n_nb6", "nb_min_dG", "simbad", "vsx", "gaia_varclass", "kill", "notes", "errors"]
+    cols = ["label", "uid", "ra", "dec", "gmag", "bprp", "score", "score_refetch", "dW2", "dW1", "start", "base_w1", "excess_locus", "z_excess", "w2_slope", "w2_fade_sig", "col_slope", "col_decline_sig", "aw_w1w2", "det2_pass", "jit_ratio", "det2_var_pass", "n_nb6", "nb_min_dG", "simbad", "vsx", "gaia_varclass", "kill", "notes", "errors"]
     with open(f"{OUT}/vet_report.md", "w") as fh:
         fh.write("# Vetting report (machine generated; by-eye check of plots/ still required)\n\n```\n" + json.dumps(summ, indent=1, default=str) + "\n```\n\n")
         for r in R[[c for c in cols if c in R.columns]].to_dict("records"):
