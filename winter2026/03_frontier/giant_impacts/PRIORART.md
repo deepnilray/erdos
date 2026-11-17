@@ -30,6 +30,15 @@ describes one. New items, each checked against the arXiv text as stated:
 - Taylor, Lock, Carter & Leinhardt, arXiv:2610.08273 (Oct 2026), "Blinding Lights": SPH post-processing; first days after an
   impact the ejecta can match an M dwarf in temperature and luminosity; proposes Rubin to constrain impact rates. Theory, days
   timescale, optical: does not overlap a NEOWISE multi-year infrared search. (Abstract and full-text grep read.)
-- arXiv:2610.10130 (Oct 2026, NAOC/BNU), "A Recurrent Infrared Modulation in the Warm Post-impact Debris Disk NGC 2547 ID8":
-  title and abstract snippet only. Relevant to detector 2: ID8's NEOWISE light curve is modulated, so a monotonic-decay test can
-  miss it. Read before using ID8 decay numbers in any write-up.
+- Chen, Wang & Huang, arXiv:2610.10130 (Oct 2026), "A Recurrent Infrared Modulation in the Warm Post-impact Debris Disk NGC 2547
+  ID8" (full text read). Its 4.5 um excess shows six recurrent high states with a mean recurrence of 956.8 d and NO secular
+  decline (high-minus-low contrast slope -0.015 +/- 0.028 mJy/yr). Consequence for us: a detector that demands decay over the
+  NEOWISE mission is not guaranteed to recover ID8; an excess-plus-variability test is the better match (see LOG.md).
+- Tzanidakis & Davenport, arXiv:2603.10952 (March 2026), Gaia-GIC-1 = Gaia20ehk (full text read): found through Gaia Photometric
+  Science Alerts, not a WISE search; F5 star at about 3.5 kpc with G about 18.8, so outside our pool (parallax > 4 mas,
+  G 8-15). IR brightening plus optical dimming from MJD about 58,700; dust about 900 K. They cite Tzanidakis et al. 2025, ApJ 991,
+  118 for a systematic main-sequence dipper search (optical). This verifies the Gaia20ehk entry in PLAN.md.
+- Citation check: Kenworthy et al. 2023 for ASASSN-21qj is Nature 622, 251, doi:10.1038/s41586-023-06573-9 (as cited in
+  2610.10130 and 2603.10952; arXiv:2310.08360 title "A planetary collision afterglow and transit of the resultant debris cloud"
+  confirmed). NGC 2547-ID8 impact papers: Meng et al. 2014, Science 345, 1032 (doi:10.1126/science.1255153), Su et al. 2019,
+  AJ 157, 202 (as listed in 2610.10130; not opened directly).
