@@ -1,0 +1,38 @@
+name: giant-impacts-vet
+on:
+  push:
+    branches: [claude/winter-2026-plan]
+    paths: ["winter2026/03_frontier/giant_impacts/vet/**", ".github/workflows/giant_impacts_vet.yml"]
+  workflow_dispatch:
+concurrency:
+  group: giant-impacts-vet
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  vet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install numpy scipy astropy pyvo pandas matplotlib requests
+      - name: fetch shard states
+        run: |
+          for i in 0 1 2 3; do git clone -q --depth 1 --branch impacts-live-$i "https://github.com/${GITHUB_REPOSITORY}.git" /tmp/s$i && wc -l /tmp/s$i/scores.csv; done
+      - name: vet
+        working-directory: winter2026/03_frontier/giant_impacts/vet
+        env:
+          SHARD_DIRS: /tmp/s0 /tmp/s1 /tmp/s2 /tmp/s3
+        run: python vet.py
+      - name: publish to impacts-vet
+        if: always()
+        working-directory: winter2026/03_frontier/giant_impacts/vet
+        run: |
+          mkdir -p /tmp/pub && cp -r out/* /tmp/pub/ 2>/dev/null; cp results/hunt_log.txt /tmp/pub/pool_log.txt 2>/dev/null
+          cd /tmp/pub && git init -q && git checkout -q -b impacts-vet
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          echo "run ${GITHUB_RUN_ID} of ${GITHUB_SHA} at $(date -u)" > RUN_INFO.txt
+          git add -A && git commit -qm "impacts-vet ${GITHUB_RUN_ID}"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" impacts-vet
