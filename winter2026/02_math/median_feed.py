@@ -3,7 +3,7 @@
 other vertex, is f a Seymour vertex?  Median orders are computed exactly by subset DP (n <= 11).
 Control: the same test without the completeness condition (feed vertices with missing edges) is reported too;
 a failure there shows the checker can fire.
-Usage: median_feed.py n trials missing_prob seed"""
+Usage: median_feed.py n trials missing_prob seed   (missing_prob < 0: delete a random number 0..n of edges from a random tournament)"""
 import sys, random
 n, trials, pm, seed = int(sys.argv[1]), int(sys.argv[2]), float(sys.argv[3]), int(sys.argv[4])
 random.seed(seed)
@@ -11,9 +11,11 @@ fails_complete = fails_any = tested_complete = tested_any = 0
 example = None
 for t in range(trials):
     out = [0] * n
+    pairs = [(u, v) for u in range(n) for v in range(u + 1, n)]
+    miss = set(random.sample(pairs, random.randint(0, n))) if pm < 0 else set()
     for u in range(n):
         for v in range(u + 1, n):
-            if random.random() < pm:
+            if (pm >= 0 and random.random() < pm) or (u, v) in miss:
                 continue
             if random.random() < 0.5:
                 out[u] |= 1 << v

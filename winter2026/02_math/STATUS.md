@@ -2,7 +2,9 @@
 
 Status 2026-11-17: IN PROGRESS. Target chosen: Seymour's second neighbourhood conjecture, dense case n = 2δ + 3
 (see TARGETS.md). PROVED so far: any counterexample with n = 2δ + 3 has at least two vertices of outdegree δ adjacent
-to all other vertices (ssnc_2d3.tex/.pdf). Open: the case |Z| ≥ 2. Details and next step in LOG.md.
+to all other vertices (ssnc_2d3.tex/.pdf). Open: the case |Z| ≥ 2. Session 2 (2026-11-17): the local lemma "a complete min-outdegree vertex or one of its
+out-neighbours is Seymour" holds for δ ≤ 5 (SAT) but is FALSE at δ = 6 (explicit model); median-order shortcuts dead.
+Details and next step in LOG.md.
 
 ## Rules for the agent that picks this up
 1. Read `../../CHECKPOINTS.md` on branch `claude/all-checkpoints` first. Do not choose any problem listed there, nor:

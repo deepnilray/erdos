@@ -171,6 +171,7 @@ Dead ideas (deflation class: local statement too weak beyond δ = 5)
 Dead ideas added
 - D-L3: Lemma L with two complete vertices fixed (z2 ∈ N⁺(z) or z2 ∈ N⁻(z)): false at δ = 6.
 - D-M1: median-order feed vertex adjacent to all others is Seymour (no density assumption): false, n = 8.
+- D-M2: the same restricted to tournaments minus at most n edges: false, n = 8 (seed 2).
 
 ### Where the proof stands (end of session 2)
 PROVED (session 1, unchanged): a counterexample with n = 2δ + 3 has |Z| ≥ |N| ≥ 2. Not closed: the case |Z| ≥ 2.
@@ -182,9 +183,10 @@ out-neighbourhoods (`zA2`), survive through δ = 5 and are undecided at δ = 6.
 1. First check `runs/zAB_nonsey_15_6.txt` and `runs/zA2_out_15_6.txt` (they are likely killed with the container;
    if empty, rerun `python3 ssnc_local.py 15 6 zAB` and `python3 ssnc_local.py 15 6 zA2 --z2 out` with a longer
    budget, ideally in a GitHub Actions job). A SAT model kills the corresponding local route; UNSAT supports it.
-2. In parallel, test the dense median-order statement on graphs with at most n missing edges (run
-   `median_feed.py` with structured sampling: tournaments with ≤ n deleted edges, n = 9..11). If it holds there,
-   read Fidler–Yuster (JGT 55, 2007) and Dara–Francis–Jacob–Narayanan (DAM 311, 2022) on median orders with missing
-   edges (primary sources, not yet opened in this project) before trying to prove it.
+2. (Done at the end of session 2.) The dense median-order statement is also DEAD (D-M2): `median_feed.py 8 1500 -1 2`
+   (random tournaments with 0..n edges deleted) gives a complete feed vertex that is not Seymour (1 of 860, n = 8;
+   example printed); none found at n = 9 (990 tested) or n = 10 (919 tested). Median orders would need an extra
+   ingredient (e.g. choosing the median order, or using min outdegree δ); read Fidler–Yuster (JGT 55, 2007) and
+   Dara–Francis–Jacob–Narayanan (DAM 311, 2022), not yet opened, before any further median-order attempt.
 3. If `zAB` survives δ = 6: try to prove it for n = 2δ + 3 using |U(u)| ≥ 3 − 2j_u for u ∈ B, A ⊆ R(u) for every
    u ∈ B (because u → z → A), and the B → C arc count above.
