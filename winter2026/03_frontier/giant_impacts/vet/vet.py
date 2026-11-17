@@ -135,8 +135,9 @@ def vet_one(row):
         except Exception as e2: errs.append(f"vsx:{e} / aavso:{e2}"); r["vsx"] = "UNREACHABLE"
     # AllWISE 2010
     try:
-        a = tap(IRSA, "SELECT designation, w1mpro, w1sigmpro, w2mpro, w2sigmpro, w3mpro, w3sigmpro, w4mpro, w4sigmpro, cc_flags, ext_flg, ph_qual, "
-                f"DISTANCE(POINT('ICRS', ra, dec), POINT('ICRS', {r['ra']}, {r['dec']})) * 3600 AS sep FROM allwise_p3as_psd WHERE " + cone(r["ra"], r["dec"], 6)).sort_values("sep")
+        a = tap(IRSA, "SELECT designation, ra, dec, w1mpro, w1sigmpro, w2mpro, w2sigmpro, w3mpro, w3sigmpro, w4mpro, w4sigmpro, cc_flags, ext_flg, ph_qual "
+                "FROM allwise_p3as_psd WHERE " + cone(r["ra"], r["dec"], 6))
+        a["sep"] = np.hypot((a.ra - r["ra"]) * np.cos(np.radians(r["dec"])), a.dec - r["dec"]) * 3600; a = a.sort_values("sep")
         r["allwise_n6"] = len(a)
         if len(a):
             x = a.iloc[0]
@@ -239,7 +240,10 @@ def main():
     for x in d[d.cluster.astype(str).str.startswith("VALID:")].itertuples(): T.append(dict(uid=x.uid, ra=x.ra, dec=x.dec, label=x.cluster))
     T = pd.DataFrame(T).drop_duplicates("uid"); log("targets to vet:", len(T))
     with ThreadPoolExecutor(6) as ex: R = list(ex.map(lambda row: vet_one(row), [r for r in T.itertuples()]))
-    R = pd.DataFrame(R).merge(d[["uid", "score", "dW2", "dW1", "redden", "start", "nvis", "n_visits", "base_w1", "base_w2", "base_w1w2", "jitter"]], on="uid", how="left")
+    R = pd.DataFrame(R)
+    for c in ("aw_w1", "aw_w2", "aw_w3", "aw_w4", "aw_w1w2", "aw_w2w3", "w2_slope", "w2_slope_err", "col_slope", "col_slope_err", "score_refetch", "bprp", "gmag", "n_nb6", "nb_min_dG"):
+        if c not in R: R[c] = np.nan
+    R = R.merge(d[["uid", "score", "dW2", "dW1", "redden", "start", "nvis", "n_visits", "base_w1", "base_w2", "base_w1w2", "jitter"]], on="uid", how="left")
     R = R.merge(f2[["uid", "excess_locus", "z_excess", "jit_ratio"]], on="uid", how="left")
     # validation objects are not in the field locus table: compute their excess from their own Gaia colour
     for i in R.index[R.label.str.startswith("VALID:")]:
