@@ -1,0 +1,77 @@
+name: giant-impacts-vet2
+on:
+  push:
+    branches: [claude/winter-2026-plan]
+    paths: ["winter2026/03_frontier/giant_impacts/vet2/**", ".github/workflows/giant_impacts_vet2.yml"]
+  workflow_dispatch:
+    inputs:
+      targets:
+        description: "target list: near | far | list"
+        default: near
+        type: choice
+        options: [near, far, list]
+      list_csv:
+        description: "for targets=list: CSV (ra,dec,name) path relative to the vet2 directory"
+        default: list.csv
+      use_cache:
+        description: "restore cached archive query results from earlier runs (1/0)"
+        default: "1"
+concurrency:
+  group: giant-impacts-vet2-${{ github.event.inputs.targets || 'near' }}
+  cancel-in-progress: true
+permissions:
+  contents: write
+env:
+  TARGETS: ${{ github.event.inputs.targets || 'near' }}
+jobs:
+  vet2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install numpy scipy astropy pyvo pandas matplotlib requests skypatrol pyarrow
+      - name: restore cache (archive query results and the rebuilt pool)
+        if: ${{ (github.event.inputs.use_cache || '1') == '1' }}
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            winter2026/03_frontier/giant_impacts/vet2/cache
+            winter2026/03_frontier/giant_impacts/vet2/work/${{ env.TARGETS }}/results/pool.csv
+          key: vet2-${{ env.TARGETS }}-${{ github.run_id }}
+          restore-keys: vet2-${{ env.TARGETS }}-
+      - name: fetch shard states
+        run: |
+          if [ "$TARGETS" = "near" ]; then P=impacts-live; else P=impacts-far; fi
+          for i in 0 1 2 3; do
+            git clone -q --depth 1 --branch $P-$i "https://github.com/${GITHUB_REPOSITORY}.git" /tmp/s$i 2>/dev/null && wc -l /tmp/s$i/scores.csv || echo "no $P-$i"
+          done
+      - name: vet2
+        working-directory: winter2026/03_frontier/giant_impacts/vet2
+        env:
+          SHARD_DIRS: /tmp/s0 /tmp/s1 /tmp/s2 /tmp/s3
+          LIST_CSV: ${{ github.event.inputs.list_csv || 'list.csv' }}
+          OUT: out/${{ env.TARGETS }}
+          VET2_DEADLINE_MIN: "280"
+        run: timeout 310m python vet2.py || true
+      - name: save cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            winter2026/03_frontier/giant_impacts/vet2/cache
+            winter2026/03_frontier/giant_impacts/vet2/work/${{ env.TARGETS }}/results/pool.csv
+          key: vet2-${{ env.TARGETS }}-${{ github.run_id }}
+      - name: publish to impacts-vet2 (one directory per target list)
+        if: always()
+        working-directory: winter2026/03_frontier/giant_impacts/vet2
+        run: |
+          rm -rf /tmp/pub
+          git clone -q --depth 1 --branch impacts-vet2 "https://github.com/${GITHUB_REPOSITORY}.git" /tmp/pub 2>/dev/null || (mkdir -p /tmp/pub && cd /tmp/pub && git init -q && git checkout -q -b impacts-vet2)
+          rm -rf /tmp/pub/$TARGETS && mkdir -p /tmp/pub/$TARGETS && cp -r out/$TARGETS/* /tmp/pub/$TARGETS/ 2>/dev/null
+          cp work/$TARGETS/results/hunt_log.txt /tmp/pub/$TARGETS/pool_log.txt 2>/dev/null
+          cd /tmp/pub && git config user.name "github-actions" && git config user.email "actions@github.com"
+          echo "run ${GITHUB_RUN_ID} of ${GITHUB_SHA} targets=$TARGETS at $(date -u)" > $TARGETS/RUN_INFO.txt
+          git add -A && git commit -qm "impacts-vet2 $TARGETS ${GITHUB_RUN_ID}"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" HEAD:impacts-vet2
