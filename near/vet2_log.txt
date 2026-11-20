@@ -1,28 +1,53 @@
-15:02:32 vet2 start: TARGETS=near OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/near CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
-15:02:32 read /tmp/s0/scores.csv 187257
-15:02:32 read /tmp/s1/scores.csv 186175
-15:02:32 read /tmp/s2/scores.csv 187795
-15:02:32 read /tmp/s3/scores.csv 184555
-15:02:32 merged unique uids 699341
-15:02:33 pool near 699341
-15:02:33 D1 candidates: 4
-15:02:33 targets: 41
-15:02:33 SIMBAD batch: 38 objects for 41 targets
-15:02:33 NEOWISE upload join 0 -> 7364 rows
-15:02:38 vetted uid683344 D1 -> SURVIVOR | kills:  | missing: 
-15:02:38 vetted ASASSN-21qj (uid699339) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
-15:02:38 vetted J060000 (uid211004) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
-15:02:38 vetted uid637541 D1 -> SURVIVOR | kills:  | missing: 
-15:02:38 vetted uid529482 D2 -> SURVIVOR | kills:  | missing: 
-15:02:38 vetted uid584601 D2 -> SURVIVOR | kills:  | missing: 
-15:02:42 vetted uid171672 D2 -> YOUNG | kills:  | missing: 
-15:02:43 vetted uid661720 D2 -> YOUNG | kills:  | missing: 
-15:02:44 vetted V836 Tau (uid252570) CONTROL+D2 -> YOUNG | kills:  | missing: 
-15:02:44 vetted uid358951 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.00 mag fainter in G (4.9" PA257 G14.82 dG+1.00; 5.8" PA313 G18.32 dG+4.49; 8.1" PA276 G17.06 dG+3.24) | missing: 
-15:02:45 vetted uid144763 D2 -> YOUNG | kills:  | missing: 
-15:02:46 vetted uid280237 D2 -> YOUNG | kills:  | missing: 
-15:02:47 vetted uid468346 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.88 mag fainter in G (4.0" PA96 G15.96 dG+2.88) | missing: 
-15:02:47 vetted uid312613 D2 -> YOUNG | kills:  | missing: 
-15:02:48 vetted uid78873 D2 -> YOUNG | kills:  | missing: 
-15:02:49 vetted uid220686 D2 -> YOUNG | kills:  | missing: 
-15:02:50 vetted uid283125 D2 -> YOUNG | kills:  | missing: 
+15:03:23 vet2 start: TARGETS=near OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/near CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
+15:03:23 read /tmp/s0/scores.csv 187257
+15:03:23 read /tmp/s1/scores.csv 186175
+15:03:23 read /tmp/s2/scores.csv 187795
+15:03:23 read /tmp/s3/scores.csv 184555
+15:03:23 merged unique uids 699341
+15:03:24 pool near 699341
+15:03:24 D1 candidates: 4
+15:03:24 targets: 41
+15:03:24 SIMBAD batch: 38 objects for 41 targets
+15:03:24 NEOWISE upload join 0 -> 7364 rows
+15:03:28 vetted uid637541 D1 -> SURVIVOR | kills:  | missing: 
+15:03:28 vetted ASASSN-21qj (uid699339) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
+15:03:28 vetted uid529482 D2 -> SURVIVOR | kills:  | missing: 
+15:03:28 vetted uid584601 D2 -> SURVIVOR | kills:  | missing: 
+15:03:28 vetted J060000 (uid211004) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
+15:03:31 vetted uid683344 D1 -> SURVIVOR | kills:  | missing: 
+15:03:31 vetted uid280237 D2 -> YOUNG | kills:  | missing: 
+15:03:32 vetted uid358951 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.00 mag fainter in G (4.9" PA257 G14.82 dG+1.00; 5.8" PA313 G18.32 dG+4.49; 8.1" PA276 G17.06 dG+3.24) | missing: 
+15:03:33 vetted V836 Tau (uid252570) CONTROL+D2 -> YOUNG | kills:  | missing: 
+15:03:33 vetted uid661720 D2 -> YOUNG | kills:  | missing: 
+15:03:34 vetted uid144763 D2 -> YOUNG | kills:  | missing: 
+15:03:35 vetted uid171672 D2 -> YOUNG | kills:  | missing: 
+15:03:35 vetted uid468346 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.88 mag fainter in G (4.0" PA96 G15.96 dG+2.88) | missing: 
+15:03:36 vetted uid78873 D2 -> YOUNG | kills:  | missing: 
+15:03:37 vetted uid220686 D2 -> YOUNG | kills:  | missing: 
+15:03:38 vetted uid312613 D2 -> YOUNG | kills:  | missing: 
+15:03:38 vetted uid283125 D2 -> YOUNG | kills:  | missing: 
+15:03:39 vetted uid220781 D2 -> YOUNG | kills:  | missing: 
+15:03:40 vetted uid190587 D2 -> YOUNG | kills:  | missing: 
+15:03:40 vetted uid137372 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, UCAC4 326-078840) | missing: 
+15:03:41 vetted uid162954 D2 -> YOUNG | kills:  | missing: 
+15:03:42 vetted uid361168 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* V426 Oph) | missing: 
+15:03:42 vetted uid122962 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+15:03:43 vetted uid74609 D2 -> SURVIVOR | kills:  | missing: 
+15:03:44 vetted uid651925 D2 -> SURVIVOR | kills:  | missing: 
+15:03:45 vetted uid416726 D2 -> SURVIVOR | kills:  | missing: 
+15:03:45 vetted uid304631 D2 -> KILLED | kills: centroid jump 0.618" (3.5 sigma) at the onset toward a neighbour: 7.6" PA52 G18.9 (angle 34 deg); 9.0" PA32 G18.7 (angle 13 deg) | missing: 
+15:03:46 vetted uid55148 D2 -> SURVIVOR | kills:  | missing: ASAS-SN (no source)
+15:03:47 vetted uid338719 D2 -> YOUNG | kills:  | missing: 
+15:03:48 vetted uid329675 D2 -> SURVIVOR | kills:  | missing: 
+15:03:48 vetted uid52960 D2 -> SURVIVOR | kills:  | missing: 
+15:03:49 vetted uid584244 D2 -> SURVIVOR | kills:  | missing: 
+15:03:50 vetted uid41546 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* AE Aqr) | missing: 
+15:03:50 vetted uid678749 D2 -> SURVIVOR | kills:  | missing: 
+15:03:51 vetted uid683552 D2 -> SURVIVOR | kills:  | missing: 
+15:03:52 vetted uid387633 D2 -> SURVIVOR | kills:  | missing: 
+15:03:52 vetted uid57667 D2 -> SURVIVOR | kills:  | missing: 
+15:03:52 vetted uid531152 D2 -> SURVIVOR | kills:  | missing: 
+15:03:52 vetted uid235546 D2 -> SURVIVOR | kills:  | missing: 
+15:03:53 vetted uid166090 D2 -> SURVIVOR | kills:  | missing: 
+15:03:53 vetted uid594661 D2 -> SURVIVOR | kills:  | missing: 
+15:03:53 {"mode": "near", "n_targets": 41, "counts": {"SURVIVOR": 21, "YOUNG": 14, "KILLED": 6}, "controls": [["ASASSN-21qj", "PASS", "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 57.3, missing: none"], ["J060000", "PASS", "category SURVIVOR, largest ASAS-SN seasonal dimming 0.35 mag at MJD 58864"], ["V836 Tau", "PASS", "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"]], "minutes": 0.5}
