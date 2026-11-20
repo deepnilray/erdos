@@ -66,14 +66,15 @@ jobs:
       - name: publish to impacts-vet2 (one directory per target list)
         if: always()
         working-directory: winter2026/03_frontier/giant_impacts/vet2
+        shell: bash {0}
         run: |
           # several target lists publish to one branch: fresh clone, replace only this list's directory, plain push, retry on a race
           SRC=$PWD; URL="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
           for attempt in 1 2 3 4 5 6; do
             rm -rf /tmp/pub
             if git clone -q --depth 1 --branch impacts-vet2 "$URL" /tmp/pub 2>/dev/null; then NEW=0; else NEW=1; mkdir -p /tmp/pub && (cd /tmp/pub && git init -q && git checkout -q -b impacts-vet2); fi
-            rm -rf /tmp/pub/$TARGETS && mkdir -p /tmp/pub/$TARGETS && cp -r $SRC/out/$TARGETS/* /tmp/pub/$TARGETS/ 2>/dev/null
-            cp $SRC/work/$TARGETS/results/hunt_log.txt /tmp/pub/$TARGETS/pool_log.txt 2>/dev/null
+            rm -rf /tmp/pub/$TARGETS && mkdir -p /tmp/pub/$TARGETS && cp -r $SRC/out/$TARGETS/* /tmp/pub/$TARGETS/ 2>/dev/null || true
+            cp $SRC/work/$TARGETS/results/hunt_log.txt /tmp/pub/$TARGETS/pool_log.txt 2>/dev/null || true
             cd /tmp/pub && git config user.name "github-actions" && git config user.email "actions@github.com"
             echo "run ${GITHUB_RUN_ID} of ${GITHUB_SHA} targets=$TARGETS at $(date -u)" > $TARGETS/RUN_INFO.txt
             git add -A && git commit -qm "impacts-vet2 $TARGETS ${GITHUB_RUN_ID}"
