@@ -1,0 +1,49 @@
+[
+ {
+  "name": "ASASSN-21qj (uid3303105)",
+  "det": "D1",
+  "label": "CONTROL+D1",
+  "uid": 3303105,
+  "ra": 123.847042,
+  "dec": -38.989833,
+  "gaia_id": null,
+  "score_stored": 38.038,
+  "cluster": "VALID:ASASSN-21qj",
+  "control": "ASASSN-21qj",
+  "expect": "survive; SIMBAD counterpart"
+ },
+ {
+  "name": "uid55937",
+  "det": "D2",
+  "label": "D2",
+  "uid": 55937,
+  "ra": 110.89912382504355,
+  "dec": -33.16840337021625,
+  "gaia_id": 5592473072135280640,
+  "score_stored": 0.431,
+  "d2_exc": 0.398163917541504,
+  "d2_z": 18.80829439052593,
+  "d2_jr": 5.9193192337819545,
+  "cluster": "field"
+ },
+ {
+  "name": "J060000",
+  "det": "D1",
+  "label": "CONTROL",
+  "control": "J060000",
+  "expect": "survive; optical dip in ASAS-SN",
+  "ra": 90.00308,
+  "dec": -31.00781,
+  "gaia_id": null
+ },
+ {
+  "name": "V836 Tau",
+  "det": "D2",
+  "label": "CONTROL",
+  "control": "V836 Tau",
+  "expect": "flagged young",
+  "ra": 75.77750987,
+  "dec": 25.38870272,
+  "gaia_id": 3420008412568724736
+ }
+]

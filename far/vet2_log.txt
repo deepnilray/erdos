@@ -1,0 +1,29 @@
+15:02:44 vet2 start: TARGETS=far OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/far CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
+15:02:44 read /tmp/s0/scores.csv 29400
+15:02:44 read /tmp/s1/scores.csv 30180
+15:02:44 read /tmp/s2/scores.csv 29340
+15:02:44 read /tmp/s3/scores.csv 29700
+15:02:44 merged unique uids 118620
+15:13:11 pool far 3303107
+15:13:11 D1 candidates: 1
+15:13:11 D2 stage A (excess): 17 of 102603 | with jitter > 3x: 1
+15:13:11 targets: 4
+15:14:06 SIMBAD batch: 5 objects for 4 targets
+15:14:12 NEOWISE upload join 0 -> 747 rows
+15:18:21   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
+15:19:15   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
+15:20:57   retry 2/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
+15:21:37   J060000 asas-sn FAILED RuntimeError('asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host=\'asassn-lb01.ifa.hawaii.edu\', port=9006): Max retries exceeded with url
+15:21:38 vetted J060000 CONTROL -> SURVIVOR | kills:  | missing: asas-sn
+15:21:50   retry 2/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
+15:22:30   V836 Tau asas-sn FAILED RuntimeError('asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host=\'asassn-lb01.ifa.hawaii.edu\', port=9006): Max retries exceeded with url
+15:22:31 vetted V836 Tau CONTROL -> YOUNG | kills:  | missing: asas-sn
+15:22:35   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
+15:22:56   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
+15:23:16   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
+15:23:56   ASASSN-21qj (uid3303105) asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
+15:23:56 vetted ASASSN-21qj (uid3303105) CONTROL+D1 -> SURVIVOR | kills:  | missing: asas-sn
+15:25:11   retry 2/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
+15:25:51   uid55937 asas-sn FAILED RuntimeError('asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host=\'asassn-lb01.ifa.hawaii.edu\', port=9006): Max retries exceeded with url
+15:25:52 vetted uid55937 D2 -> SURVIVOR | kills:  | missing: asas-sn
+15:25:52 {"mode": "far", "n_targets": 4, "counts": {"SURVIVOR": 3, "YOUNG": 1}, "controls": [["ASASSN-21qj", "PASS", "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 57.3, missing: asas-sn"], ["J060000", "FAIL", "category SURVIVOR, largest ASAS-SN seasonal dimming n/a mag at MJD n/a"], ["V836 Tau", "PASS", "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"]], "minutes": 23.1}
