@@ -33,8 +33,8 @@ W1 > 8. Coverage: COMPLETE as of 2026-11-18: 699,341 entries scored, 611,091 wit
 ## NEW 2026-11-20 after the hunt finished (D1, no literature found in a web search; SIMBAD/VSX unchecked)
 | Det | uid | Gaia DR3 | RA | Dec | G | BP-RP | plx (mas) | Signal | Status |
 |---|---|---|---|---|---|---|---|---|---|
-| D1 | 683344 | 5792808347020475136 | 220.96632 | -76.19612 | 13.52 | 1.29 | 4.04 | 2018 step: W2 -0.41, W1 -0.21 mag, W1-W2 -0.06 to +0.15, six-year plateau; about 1100 K | CANDIDATE. Passed: field control (135 stars), centroid, saturation, AllWISE, by-eye. Open: literature, TESS pixel photometry, optical |
-| D1 | 637541 | 5808318474663998464 | 252.21435 | -69.41863 | 11.92 | 0.89 | 4.16 | 2021 step: W2 -0.155, W1 -0.086 mag, reddening, decaying; about 1300 K; 4-day spot rotation | CANDIDATE. Passed: field control (79 stars), centroid, saturation, AllWISE, by-eye. Open: literature, age |
+| D1 | 683344 | 5792808347020475136 | 220.96632 | -76.19612 | 13.52 | 1.29 | 4.04 | 2018 step: W2 -0.41, W1 -0.21 mag, W1-W2 -0.06 to +0.15, six-year plateau; about 1100 K | CANDIDATE (strongest). Passed: field control (135 stars), centroid, saturation, AllWISE, by-eye, VSX (only Gaia ROT entry), ASAS-SN (no optical dimming > ~3%), TESS pixels (no dips > ~3%). Open: SIMBAD, spectrum, Gaia DR4 |
+| D1 | 637541 | 5808318474663998464 | 252.21435 | -69.41863 | 11.92 | 0.89 | 4.16 | 2021 step: W2 -0.155, W1 -0.086 mag, reddening, decaying; about 1300 K; 4-day spot rotation | AMBIGUOUS. Passed field control and centroid, but ASAS-SN shows the optical brightening by 2-9% at the same time, which plain warm dust cannot do; likely stellar or a companion. Open: SIMBAD, spectrum |
 
 ## Killed (D1 near-threshold exercise targets and D2 stage A), with reason
 Full per-target table: candidates/vet_table_2026-11-17.csv (columns kill, gaia_varclass, nb_list, aw_*).

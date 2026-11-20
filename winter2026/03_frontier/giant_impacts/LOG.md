@@ -1,5 +1,31 @@
 # Giant-impact afterglow hunt: log
 
+## 2026-11-20, later (Claude, interactive): follow-up of the two new candidates
+Verdict: candidate 1 (Gaia DR3 5792808347020475136) still looks like a clean sudden-dust event and survives every check that
+could be run; candidate 2 (Gaia DR3 5808318474663998464) is now ambiguous, because it brightened in the optical too. Neither is a
+discovery: SIMBAD could not be queried (CDS returns "Page unavailable" from both this sandbox and GitHub Actions on 2026-11-20).
+
+- VSX (via the VizieR mirror at vizier.cfa.harvard.edu, B/vsx/vsx): both are listed only as Gaia DR3 rotational variables
+  ("ROT", G range 0.03-0.06 mag), entries imported from the Gaia DR3 classifier; no infrared event is recorded. J060000 is listed as
+  ASASSN-V J060000.76-310027.8, type "DIP:" (control: the lookup finds the known object).
+- ASAS-SN Sky Patrol optical light curves (workflow giant_impacts_followup.yml, branch impacts-followup). Controls fired: the
+  pipeline shows ASASSN-21qj's 2021 dimming (1.2 mag) and J060000's 2019 dip (0.4 mag in 60-day medians).
+  Candidate 1: an apparent 0.6 mag "dimming" was traced to a constant zero-point offset of one camera (bF); per-camera normalised,
+  cameras bF and bj stay flat within about 0.02-0.03 mag in every season 2018-2024; camera bn alone shows erratic offsets (up to
+  0.2 mag late in 2024) that the other two do not, so camera-specific. Conclusion: no optical dimming above about 3% accompanies the
+  46% W2 brightening. ASASSN-21qj also showed no optical change for its first 2.5 years of infrared brightening.
+  Candidate 2: all three g-band cameras agree that the star got BRIGHTER in the optical by 0.02-0.04 mag from the first season after
+  the infrared onset, and kept brightening to 0.05-0.09 mag by 2024, while the infrared excess decayed. The extra light is roughly
+  flat in F_nu from g to W2 (about 1.3, 1.9, 1.9 mJy in g, W1, W2), which a single warm-dust blackbody cannot produce. Possible:
+  a stellar activity change (its TESS spot amplitude grew from about 0.5% in 2019 to 1-2% in 2021) plus something else, or an
+  unresolved companion or background source. Downgraded: probably not a simple impact afterglow (CONJECTURED).
+- TESS pixel photometry for candidate 1 (TESScut 11x11, 3x3 aperture, background subtracted; sectors 12, 38, 39): only smooth
+  few-percent trends that follow the spacecraft orbits and background; no transit-like dips deeper than about 3% on hour-to-day
+  scales. The 10% "dip" in the QLP sector-39 curve does not appear and was a QLP systematic.
+
+Next: SIMBAD when CDS is back; Gaia DR4 (2026-12-02) photometry and astrometry for candidate 1 (covers the 2018 onset); a spectrum of
+candidate 1 (lithium for age, H-alpha, radial velocity for a companion); a short note on J060000 and candidate 1 with a supervisor.
+
 ## 2026-11-20 (Claude, interactive): HUNT COMPLETE. Two new candidates with no literature found.
 Verdict: the full pool has been scored (699,341 entries, 611,091 with a usable NEOWISE light curve; run 44267373293 finished
 2026-11-18, REMAINING = 0 in all four shards). Above the candidate cuts: ASASSN-21qj (validation, 38.0), J060000 (8.9, OCCUPIED as
