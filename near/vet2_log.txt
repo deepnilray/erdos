@@ -1,54 +1,53 @@
-13:55:56 vet2 start: TARGETS=near OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/near CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
-13:55:56 read /tmp/s0/scores.csv 187257
-13:55:56 read /tmp/s1/scores.csv 186175
-13:55:56 read /tmp/s2/scores.csv 187795
-13:55:56 read /tmp/s3/scores.csv 184555
-13:55:56 merged unique uids 699341
-13:58:54 pool near 699341
-13:58:55 D1 candidates: 4
-13:58:55 targets: 41
-13:59:48 SIMBAD batch: 38 objects for 41 targets
-14:00:05 NEOWISE upload join 0 -> 7364 rows
-14:00:42 vetted J060000 (uid211004) CONTROL+D1 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-14:00:42 vetted uid529482 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-14:00:43 vetted uid584601 D2 -> SURVIVOR | kills:  | missing: 
-14:00:47 vetted uid683344 D1 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-14:00:47 vetted uid637541 D1 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-14:00:47 vetted ASASSN-21qj (uid699339) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
-14:01:19 vetted uid144763 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-14:01:20 vetted uid280237 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-14:01:20 vetted uid358951 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.00 mag fainter in G (4.9" PA257 G14.82 dG+1.00; 5.8" PA313 G18.32 dG+4.49; 8.1" PA276 G17.06 dG+3.24) | missing: 
-14:01:22 vetted uid171672 D2 -> YOUNG | kills:  | missing: 
-14:01:25 vetted uid661720 D2 -> YOUNG | kills:  | missing: 
-14:01:27 vetted V836 Tau (uid252570) CONTROL+D2 -> YOUNG | kills:  | missing: 
-14:02:00 vetted uid78873 D2 -> YOUNG | kills:  | missing: 
-14:02:53 vetted uid220686 D2 -> YOUNG | kills:  | missing: 
-14:04:43 vetted uid468346 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.88 mag fainter in G (4.0" PA96 G15.96 dG+2.88) | missing: 
-14:05:02 vetted uid312613 D2 -> YOUNG | kills:  | missing: 
-14:05:22 vetted uid283125 D2 -> YOUNG | kills:  | missing: 
-14:05:22 vetted uid190587 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-14:06:48 vetted uid137372 D2 -> KILLED | kills: eclipsing / spectroscopic binary in SIMBAD (EB*, UCAC4 326-078840) | missing: 
-14:07:15 vetted uid220781 D2 -> YOUNG | kills:  | missing: 
-14:08:05 vetted uid361168 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* V426 Oph) | eclipsing / spectroscopic binary in SIMBAD (SB*, V* V426 Oph) | missing: 
-14:08:22 vetted uid74609 D2 -> SURVIVOR | kills:  | missing: 
-14:08:37 vetted uid162954 D2 -> YOUNG | kills:  | missing: 
-14:09:01 vetted uid122962 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-14:10:28 vetted uid651925 D2 -> SURVIVOR | kills:  | missing: 
-14:10:52 vetted uid416726 D2 -> SURVIVOR | kills:  | missing: 
-14:11:56 vetted uid304631 D2 -> KILLED | kills: centroid jump 0.618" (3.5 sigma) at the onset toward a neighbour: 7.6" PA52 G18.9 (angle 34 deg); 9.0" PA32 G18.7 (angle 13 deg) | missing: 
-14:11:56 vetted uid55148 D2 -> SURVIVOR | kills:  | missing: ASAS-SN (no source)
-14:12:11 vetted uid338719 D2 -> YOUNG | kills:  | missing: 
-14:12:58 vetted uid329675 D2 -> SURVIVOR | kills:  | missing: 
-14:14:00 vetted uid678749 D2 -> SURVIVOR | kills:  | missing: 
-14:14:41 vetted uid584244 D2 -> SURVIVOR | kills:  | missing: 
-14:15:05 vetted uid52960 D2 -> SURVIVOR | kills:  | missing: 
-14:16:16 vetted uid683552 D2 -> SURVIVOR | kills:  | missing: 
-14:16:34 vetted uid57667 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-14:16:35 vetted uid41546 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* AE Aqr) | eclipsing / spectroscopic binary in SIMBAD (SB*, V* AE Aqr) | missing: 
-14:16:58 vetted uid387633 D2 -> SURVIVOR | kills:  | missing: 
-14:19:59   retry 1/3 irsa.ipac.caltech.edu: DALFormatError: ReadTimeout: HTTPSConnectionPool(host='irsa.ipac.caltech.edu', port=443): Read timed out. (read timeout=300.0)
-14:20:23 vetted uid594661 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-14:20:23 vetted uid166090 D2 -> SURVIVOR | kills:  | missing: 
-14:20:27 vetted uid235546 D2 -> KILLED | kills: eclipsing / spectroscopic binary in SIMBAD (SB*, BD+40  3447B) | missing: 
-14:20:49 vetted uid531152 D2 -> SURVIVOR | kills:  | missing: 
-14:20:49 {"mode": "near", "n_targets": 41, "counts": {"SURVIVOR": 20, "YOUNG": 14, "KILLED": 7}, "controls": [["ASASSN-21qj", "PASS", "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 60.5, missing: none"], ["J060000", "FAIL", "category SURVIVOR, largest ASAS-SN seasonal dimming n/a mag at MJD n/a"], ["V836 Tau", "PASS", "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"]], "minutes": 24.9}
+14:25:44 vet2 start: TARGETS=near OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/near CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
+14:25:44 read /tmp/s0/scores.csv 187257
+14:25:44 read /tmp/s1/scores.csv 186175
+14:25:44 read /tmp/s2/scores.csv 187795
+14:25:44 read /tmp/s3/scores.csv 184555
+14:25:44 merged unique uids 699341
+14:25:46 pool near 699341
+14:25:46 D1 candidates: 4
+14:25:46 targets: 41
+14:25:46 SIMBAD batch: 38 objects for 41 targets
+14:25:46 NEOWISE upload join 0 -> 7364 rows
+14:28:19 vetted J060000 (uid211004) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
+14:30:36 vetted uid584601 D2 -> SURVIVOR | kills:  | missing: 
+14:30:52 vetted uid637541 D1 -> SURVIVOR | kills:  | missing: 
+14:31:07 vetted uid683344 D1 -> SURVIVOR | kills:  | missing: 
+14:33:07 vetted uid529482 D2 -> SURVIVOR | kills:  | missing: 
+14:33:39 vetted uid144763 D2 -> YOUNG | kills:  | missing: 
+14:33:44 vetted uid280237 D2 -> YOUNG | kills:  | missing: 
+14:34:40 vetted ASASSN-21qj (uid699339) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
+14:34:52 vetted V836 Tau (uid252570) CONTROL+D2 -> YOUNG | kills:  | missing: 
+14:37:02 vetted uid171672 D2 -> YOUNG | kills:  | missing: 
+14:37:05 vetted uid78873 D2 -> YOUNG | kills:  | missing: 
+14:38:05 vetted uid358951 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.00 mag fainter in G (4.9" PA257 G14.82 dG+1.00; 5.8" PA313 G18.32 dG+4.49; 8.1" PA276 G17.06 dG+3.24) | missing: 
+14:38:38 vetted uid661720 D2 -> YOUNG | kills:  | missing: 
+14:40:58 vetted uid468346 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.88 mag fainter in G (4.0" PA96 G15.96 dG+2.88) | missing: 
+14:41:06 vetted uid312613 D2 -> YOUNG | kills:  | missing: 
+14:41:37 vetted uid283125 D2 -> YOUNG | kills:  | missing: 
+14:41:40 vetted uid220686 D2 -> YOUNG | kills:  | missing: 
+14:42:27 vetted uid190587 D2 -> YOUNG | kills:  | missing: 
+14:43:30 vetted uid137372 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, UCAC4 326-078840) | missing: 
+14:43:45 vetted uid162954 D2 -> YOUNG | kills:  | missing: 
+14:43:59 vetted uid74609 D2 -> SURVIVOR | kills:  | missing: 
+14:45:22 vetted uid220781 D2 -> YOUNG | kills:  | missing: 
+14:46:29 vetted uid55148 D2 -> SURVIVOR | kills:  | missing: ASAS-SN (no source)
+14:47:21 vetted uid361168 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* V426 Oph) | missing: 
+14:47:47 vetted uid338719 D2 -> YOUNG | kills:  | missing: 
+14:48:29 vetted uid329675 D2 -> SURVIVOR | kills:  | missing: 
+14:49:35 vetted uid122962 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+14:49:42 vetted uid584244 D2 -> SURVIVOR | kills:  | missing: 
+14:50:32 vetted uid651925 D2 -> SURVIVOR | kills:  | missing: 
+14:50:32 vetted uid416726 D2 -> SURVIVOR | kills:  | missing: 
+14:50:33 vetted uid304631 D2 -> KILLED | kills: centroid jump 0.618" (3.5 sigma) at the onset toward a neighbour: 7.6" PA52 G18.9 (angle 34 deg); 9.0" PA32 G18.7 (angle 13 deg) | missing: 
+14:50:57 vetted uid41546 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* AE Aqr) | missing: 
+14:51:24 vetted uid52960 D2 -> SURVIVOR | kills:  | missing: 
+14:51:40 vetted uid387633 D2 -> SURVIVOR | kills:  | missing: 
+14:52:40 vetted uid57667 D2 -> SURVIVOR | kills:  | missing: 
+14:52:56 vetted uid235546 D2 -> SURVIVOR | kills:  | missing: 
+14:52:59 vetted uid531152 D2 -> SURVIVOR | kills:  | missing: 
+14:53:38 vetted uid678749 D2 -> SURVIVOR | kills:  | missing: 
+14:54:51 vetted uid683552 D2 -> SURVIVOR | kills:  | missing: 
+14:55:37 vetted uid166090 D2 -> SURVIVOR | kills:  | missing: 
+14:56:36 vetted uid594661 D2 -> SURVIVOR | kills:  | missing: 
+14:56:36 {"mode": "near", "n_targets": 41, "counts": {"SURVIVOR": 21, "YOUNG": 14, "KILLED": 6}, "controls": [["ASASSN-21qj", "PASS", "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 57.3, missing: none"], ["J060000", "PASS", "category SURVIVOR, largest ASAS-SN seasonal dimming 0.35 mag at MJD 58864"], ["V836 Tau", "PASS", "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"]], "minutes": 30.9}
