@@ -86,19 +86,22 @@ def _pool_clusters(path):
 GOODQ = ("n.qual_frame > 0 AND n.qi_fact > 0.9 AND n.saa_sep > 5 AND n.moon_masked = '00' "
          "AND n.w1snr > 3 AND n.w2snr > 3 AND n.nb = 1")
 
-UPLOAD_OK = [True]
 def fetch_chunk(sub):
+    """returns (table or None, set of uids whose query failed). A transient IRSA error no longer switches the whole run to
+    slow per-source cones (2026-11-17 fix): the upload join is retried; only that chunk falls back to cones, and sources whose
+    cone failed are reported so they are not written to scores.csv as done-without-data."""
     svc = pyvo.dal.TAPService(IRSA)
-    if UPLOAD_OK[0]:
-        up = Table({"objid": np.array(sub["uid"], int), "tra": np.array(sub["ra"], float), "tdec": np.array(sub["dec"], float)})
-        q = ("SELECT t.objid, n.mjd, n.w1mpro, n.w1sigmpro, n.w2mpro, n.w2sigmpro, n.cc_flags FROM TAP_UPLOAD.targets AS t, "
-             "neowiser_p1bs_psd AS n WHERE CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', t.tra, t.tdec, 0.000833)) = 1 AND " + GOODQ)
+    up = Table({"objid": np.array(sub["uid"], int), "tra": np.array(sub["ra"], float), "tdec": np.array(sub["dec"], float)})
+    q = ("SELECT t.objid, n.mjd, n.w1mpro, n.w1sigmpro, n.w2mpro, n.w2sigmpro, n.cc_flags FROM TAP_UPLOAD.targets AS t, "
+         "neowiser_p1bs_psd AS n WHERE CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', t.tra, t.tdec, 0.000833)) = 1 AND " + GOODQ)
+    for attempt in range(3):
         try:
-            r = svc.run_async(q, uploads={"targets": up}, maxrec=5000000).to_table(); r.rename_column("objid", "uid"); return r
+            r = svc.run_async(q, uploads={"targets": up}, maxrec=5000000).to_table(); r.rename_column("objid", "uid"); return r, set()
         except Exception as e:
-            log("upload join failed, switching to per-source cone queries:", repr(e)[:200]); UPLOAD_OK[0] = False
+            log(f"upload join failed (attempt {attempt + 1}/3):", repr(e)[:160]); time.sleep(30 * (attempt + 1))
+    log("chunk falls back to per-source cones")
     from astropy.table import vstack
-    parts = []
+    parts, failed = [], set()
     for u, ra, de in zip(np.array(sub["uid"], int), np.array(sub["ra"], float), np.array(sub["dec"], float)):
         q = ("SELECT mjd, w1mpro, w1sigmpro, w2mpro, w2sigmpro, cc_flags FROM neowiser_p1bs_psd AS n WHERE "
              f"CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', {ra}, {de}, 0.000833)) = 1 AND " + GOODQ)
@@ -106,9 +109,10 @@ def fetch_chunk(sub):
             try:
                 p = svc.run_sync(q, maxrec=20000).to_table(); p["uid"] = u; parts.append(p); break
             except Exception as e:
-                if attempt == 2: log("cone failed", u, repr(e)[:150])
+                if attempt == 2: log("cone failed", u, repr(e)[:150]); failed.add(int(u))
                 time.sleep(5)
-    return vstack(parts) if parts else None
+    if len(failed) == len(sub): return None, failed
+    return (vstack(parts) if parts else None), failed
 
 def visits(m, v1, e1, v2, e2):
     o = np.argsort(m); m, v1, v2 = m[o], v1[o], v2[o]
@@ -143,7 +147,7 @@ def main():
     pool = build_pool(); done_path = f"{OUT}/scores.csv"
     done = set()
     if os.path.exists(done_path):
-        for line in open(done_path).read().splitlines()[1:]: done.add(int(line.split(",")[0]))
+        done = done_now(done_path, 1, 0)
     else:
         open(done_path, "w").write("uid,score,dW2,dW1,redden,start,nvis,n_visits,base_w1,base_w2,base_w1w2,jitter\n")
     NS, SH = int(os.environ.get("NSHARDS", "1")), int(os.environ.get("SHARD", "0"))
@@ -171,16 +175,32 @@ def main():
             if time.time() - T0 > BUDGET: break
         for f in as_completed(futs): nproc += harvest(f.result(), done_path, lcdir)
     log("processed this run:", nproc)
-    left = len(todo) - nproc
+    left = len([i for i in np.array(pool["uid"], int) if i % NS == SH]) - len(done_now(done_path, NS, SH))
     open(f"{OUT}/REMAINING", "w").write(str(max(left, 0)) + "\n"); log("remaining in this shard:", left)
     summarize(pool)
 
+def done_now(done_path, NS, SH):
+    """uids already scored, minus sources whose cone query failed before the 2026-11-17 fix and were written as NaN rows"""
+    done, nan, fin = set(), set(), set()
+    for line in open(done_path).read().splitlines()[1:]:
+        f = line.split(","); u = int(f[0]); done.add(u)
+        (nan if f[1] == "nan" else fin).add(u)
+    bad = set()
+    if os.path.exists(f"{OUT}/hunt_log.txt"):
+        for line in open(f"{OUT}/hunt_log.txt"):
+            if " cone failed " in line: bad.add(int(line.split(" cone failed ")[1].split()[0]))
+    redo = (bad & nan) - fin
+    return {u for u in done - redo if u % NS == SH}
+
 def harvest(res, done_path, lcdir):
-    ch, t = res
-    if t is None: log("chunk failed, will retry next run"); return 0
+    ch, (t, failed) = res
+    if t is None and failed: log("chunk failed, will retry next run"); return 0
+    if t is None:  # query succeeded and returned no rows for any source: all genuinely without data
+        t = Table({"uid": np.array([], int), **{c: np.array([], float) for c in ("mjd", "w1mpro", "w1sigmpro", "w2mpro", "w2sigmpro")}, "cc_flags": np.array([], str)})
+    ch = [u for u in ch if u not in failed]
     uid = np.array(t["uid"], int); m = np.array(t["mjd"], float)
     w1, e1, w2, e2 = (np.array(t[c], float) for c in ("w1mpro", "w1sigmpro", "w2mpro", "w2sigmpro"))
-    cc = np.array([str(x) for x in t["cc_flags"]]); ok = np.array([c[:2] in ("00", "0") or c == "0000" for c in cc]) & np.isfinite(w1 + w2)
+    cc = np.array([str(x) for x in t["cc_flags"]]); ok = np.array([c[:2] in ("00", "0") or c == "0000" for c in cc], dtype=bool) & np.isfinite(w1 + w2)
     rows = []
     for u in ch:
         s = (uid == u) & ok; r = None
