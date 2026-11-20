@@ -1,0 +1,67 @@
+name: giant-impacts-far
+# Second search: Gaia DR3 main-sequence stars at 250-500 pc (parallax 2-4 mas), G 8-16. State on branches impacts-far-0..3.
+on:
+  push:
+    branches: [claude/winter-2026-plan]
+    paths: ["winter2026/03_frontier/giant_impacts/RUN_FAR", ".github/workflows/giant_impacts_far.yml"]
+  workflow_dispatch:
+concurrency:
+  group: giant-impacts-far
+  cancel-in-progress: false
+permissions:
+  contents: write
+  actions: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    env:
+      SHARD: ${{ matrix.shard }}
+      NSHARDS: 4
+      BRANCH_PREFIX: impacts-far
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install numpy scipy astropy pyvo pandas matplotlib requests
+      - name: restore state
+        working-directory: winter2026/03_frontier/giant_impacts
+        run: |
+          mkdir -p results
+          if git clone -q --depth 1 --branch impacts-far-$SHARD "https://github.com/${GITHUB_REPOSITORY}.git" /tmp/prev; then
+            rm -rf /tmp/prev/.git && cp -r /tmp/prev/* results/ && echo "restored shard $SHARD"
+          else echo "no previous state for shard $SHARD"; fi
+          wc -l results/scores.csv 2>/dev/null || true
+      - name: run with live publishing every 8 minutes
+        working-directory: winter2026/03_frontier/giant_impacts
+        run: |
+          ( while true; do sleep 480; ./publish.sh "$GITHUB_REPOSITORY" "${{ secrets.GITHUB_TOKEN }}"; done ) &
+          CMD=$(cat RUN_FAR); echo "running: $CMD"; bash -c "$CMD" || true
+      - name: final publish
+        if: always()
+        working-directory: winter2026/03_frontier/giant_impacts
+        run: ./publish.sh "$GITHUB_REPOSITORY" "${{ secrets.GITHUB_TOKEN }}"
+  relaunch:
+    # runs after ALL shards finish, so a relaunch never cancels a shard mid-publish
+    needs: run
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: relaunch if any shard is unfinished
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          LEFT=0
+          for i in 0 1 2 3; do
+            R=$(curl -s "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/impacts-far-$i/REMAINING" | tr -dc '0-9')
+            echo "shard $i remaining: ${R:-unknown}"; if [ -z "$R" ] || [ "$R" -gt 0 ]; then LEFT=1; fi
+          done
+          if [ "$LEFT" = 1 ] && [ "${GITHUB_RUN_NUMBER}" -lt 60 ]; then
+            curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/giant_impacts_far.yml/dispatches" \
+              -d "{\"ref\":\"${GITHUB_REF_NAME}\"}" && echo "relaunched"
+          fi

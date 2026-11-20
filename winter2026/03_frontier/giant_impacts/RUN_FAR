@@ -1,0 +1,1 @@
+POOL=far CHUNK=60 THREADS=6 BUDGET_MIN=320 python hunt.py
