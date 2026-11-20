@@ -12,8 +12,8 @@ d2 = pd.read_csv("../blindspot/d2_excess_variability_near.csv")
 T = pd.DataFrame({"uid": list(d2.uid) + [-1, -2, -3, -4], "ra": list(d2.ra) + [123.847042, 220.96632, 252.21435, 90.00308],
                   "dec": list(d2.dec) + [-38.989833, -76.19612, -69.41863, -31.00781]})
 up = Table({"objid": T.uid.values.astype(int), "tra": T.ra.values, "tdec": T.dec.values})
-q = ("SELECT t.objid, b.main_id, b.otype, b.sp_type, DISTANCE(POINT('ICRS',b.ra,b.dec),POINT('ICRS',t.tra,t.tdec))*3600 AS sep, "
-     "(SELECT COUNT(*) FROM has_ref AS h WHERE h.oidref = b.oid) AS nref FROM TAP_UPLOAD.t AS t JOIN basic AS b "
+q = ("SELECT t.objid, b.main_id, b.otype, b.sp_type, DISTANCE(POINT('ICRS',b.ra,b.dec),POINT('ICRS',t.tra,t.tdec))*3600 AS sep "
+     "FROM TAP_UPLOAD.t AS t JOIN basic AS b "
      "ON CONTAINS(POINT('ICRS',b.ra,b.dec),CIRCLE('ICRS',t.tra,t.tdec,5./3600))=1")
 for url in ("https://simbad.idia.ac.za/simbad/sim-tap", "https://simbad.harvard.edu/simbad/sim-tap", "https://simbad.cds.unistra.fr/simbad/sim-tap"):
     try:
