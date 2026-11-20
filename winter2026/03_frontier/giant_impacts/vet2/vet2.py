@@ -652,6 +652,8 @@ def vet_one(t, ctx):
     asn = None
     if DO_ASASSN: asn = step("asas-sn", lambda: asassn(t, r, r.get("onset_mjd")))
     else: r["missing"].append("ASAS-SN (disabled)")
+    try: r["category"] = verdict(r)[0]
+    except Exception: pass
     try: plot(r, V, rawg, asn)
     except Exception as e: r["errors"].append(f"plot: {repr(e)[:150]}")
     return finish(r)
@@ -702,7 +704,6 @@ def plot(r, V, raw, asn):
     ax[0].set_title(f"{r['name']} [{r['label']}] {r.get('category', '')}  ra {r['ra']:.5f} dec {r['dec']:.5f}\n"
                     f"score {fnum(r.get('score_refetch'), '%.1f')}  field z {fnum(r.get('fc_z'), '%.1f')}  "
                     f"centroid jump {fnum(r.get('cen_jump_sig'), '%.1f')} sig  T {fnum(r.get('dust_T'), '%.0f')} K", fontsize=8)
-    r["category"] = r.get("category", "")
     plt.tight_layout(); fn = f"{OUT}/plots/{safe(r['name'])}.png"; plt.savefig(fn, dpi=90); plt.close(); r["plot"] = os.path.relpath(fn, OUT)
 
 # ------------------------------------------------------------------ outputs
