@@ -6,6 +6,29 @@ Labels: VERIFIED-SOURCE means the reference was seen on a primary or reference-l
 UNVERIFIED means it is from memory or an earlier chat and must be checked against arXiv/ADS/INSPIRE before it goes in any
 email or document. Never send a citation from this file without opening the paper.
 
+## 00. LEAD PITCH (2026-11-20): Deepnil's own systematic search found new candidates
+
+Verdict first: lead with the data-discovery project, because Seshadri said he wants data analysis that finds undiscovered things,
+and Deepnil now has results in hand. Keep section 0a (his helical magnetogenesis model) as the theory half.
+
+What to say: "I ran what appears to be the first systematic search of NEOWISE infrared light curves for planetary-collision
+afterglows: 699,341 nearby Sun-like and K-type main-sequence stars from Gaia. It recovers the known collision ASASSN-21qj blindly
+(score 38; no other star in 611,091 with light curves comes close except three). Two of the three are stars with nothing in the
+literature I could find, where hot dust (about 1100 K and 1300 K) appeared suddenly in 2018 and in 2021 and is still there. The
+third is a known 2019 dimming star whose infrared brightening nobody seems to have reported. Could we vet these together this
+winter and write it up?"
+
+What he would do with you (a decent amount of real work, all of it his kind of thing: careful data analysis):
+1. Vet the three: SIMBAD/VSX/literature; ASAS-SN and Gaia DR4 (2 December) optical light curves, looking for the dimming that marks
+   debris passing in front of the star; TESS pixel-level photometry (Deepnil's skill) for dips; ages from rotation and, if a
+   telescope is reachable, a lithium spectrum.
+2. Measure the completeness of the search by injecting the ASASSN-21qj and J060000 light-curve shapes into real quiet stars, and
+   turn the detections into the first measured rate of such events per star per year (with error bars).
+3. Paper: "A systematic NEOWISE search for planetary-collision afterglows in 7 x 10^5 nearby main-sequence stars".
+Evidence and files: ../03_frontier/giant_impacts/LOG.md (2026-11-20 entries), CANDIDATES.md, candidates/new_candidates_lc.png.
+Honest risks: the literature gate is not passed (SIMBAD unreachable from our machines); each candidate could still be a hidden
+young star, an unresolved companion, or a known variable; none is a discovery until those checks pass.
+
 ## 0a. NEW TOP RECOMMENDATION (2026-11-20): "Does the sky already constrain your 2018 helical model?"
 
 Verdict first: the best project to ask him for is to confront HIS OWN helical inflationary magnetogenesis model

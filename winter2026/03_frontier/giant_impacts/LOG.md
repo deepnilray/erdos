@@ -1,5 +1,45 @@
 # Giant-impact afterglow hunt: log
 
+## 2026-11-20 (Claude, interactive): HUNT COMPLETE. Two new candidates with no literature found.
+Verdict: the full pool has been scored (699,341 entries, 611,091 with a usable NEOWISE light curve; run 44267373293 finished
+2026-11-18, REMAINING = 0 in all four shards). Above the candidate cuts: ASASSN-21qj (validation, 38.0), J060000 (8.9, OCCUPIED as
+an object, see below) and TWO NEW field stars, both with sudden, sustained, reddening mid-IR brightening and nothing found on them in
+a web search. They are CANDIDATES: SIMBAD/VSX (CDS) still unreachable, so the literature gate is not passed.
+
+1. uid 683344 = Gaia DR3 5792808347020475136 = AllWISE J144351.92-761145.9. RA 220.96632, Dec -76.19612. G 13.52, BP-RP 1.29,
+   parallax 4.04 mas (247 pc), RUWE 1.02, Gaia GSP-Phot Teff 4774 K, log g 4.58 (K dwarf), Gaia classifier SOLAR_LIKE (0.66).
+   NEOWISE (VERIFIED, by eye: candidates/new_candidates_lc.png): flat for 9 visits 2014-2018 (W2 11.24-11.27); between 2018-02-21
+   (MJD 58178) and 2018-08-12 (58342) W2 brightens by 0.41 mag and W1 by 0.21; W1-W2 goes from -0.06 to +0.15 and STAYS there:
+   a plateau for six years to 2024 (W2 10.83-10.93). AllWISE 2010: W1-W2 -0.05, W2-W3 0.21 (W3 S/N about 10): no clear prior excess.
+   Excess colour gives about 1100 K if one blackbody (range about 960-1240 K; CONJECTURED as physics).
+   Checks passed: field control (135 stars within 12', W2 8.5-12.5, same epochs: median step -0.012, largest other 0.034, this star
+   0.411; VERIFIED, control fired); centroid moves smoothly with proper motion, no jump at the step (< 0.03"), whereas the brightest
+   neighbour (Gaia G 16.4 at 7.9") would pull it by about 1.7" if it were the source; W1 11.2 (unsaturated); PSF fits unchanged.
+   Caution: W1 PSF reduced chi2 is about 3 in every visit (before and after), probably the 7.9" neighbour.
+   TESS: QLP light curves exist for sectors 12 (2019), 38-39 (2021), 65-66 (2023), 93, 100-102; QLP SAP flux at G 13.5 is dominated
+   by scattered-light systematics. A possible 10% dip in sector 39 (BTJD 2379-2382) is UNVERIFIED (likely systematics). Needs
+   pixel-level photometry (TESScut, own aperture and background).
+2. uid 637541 = Gaia DR3 5808318474663998464 = AllWISE J164851.45-692507.0. RA 252.21435, Dec -69.41863. G 11.92, BP-RP 0.89,
+   parallax 4.16 mas (240 pc), RUWE 1.03, Teff 5513 K, log g 4.42, [M/H] -0.34 (G dwarf), classifier SOLAR_LIKE (0.72).
+   NEOWISE: flat for 14 visits 2014-2020; between 2020-08-21 (MJD 59082) and 2021-03-13 (59286) W2 brightens 0.155 mag, W1 0.086,
+   W1-W2 -0.04 to +0.03, then decays over three years (W2 10.22 to 10.31 by 2024). About 1300 K if one blackbody (1130-1550 K).
+   Field control (79 stars within 12'): median step 0.016, largest other 0.068, this star 0.155 (VERIFIED). Centroid: no jump.
+   Faint Gaia neighbour (G 18.1, 6 mag fainter) at 5.1"; it would have to brighten to W2 about 12.4 and would shift the centroid by
+   about 0.65"; not seen.
+   TESS SPOC/QLP: a spot-modulated light curve with period about 4 d, amplitude about 0.5% in 2019 (sector 12, before the IR event)
+   and about 1-2% in 2021 (sector 39, two months after the IR onset) and later. A G dwarf rotating in about 4 days is either young
+   (roughly 100 Myr scale, CONJECTURED from typical rotation-age relations, not computed) or tidally locked in a close binary
+   (RUWE 1.03 argues mildly against a wide-separation companion, not against a close one). No obvious dips by eye.
+
+Mundane explanations still open for both (worst first): (a) a background or companion source invisible to Gaia that brightened,
+co-located within about 0.3"; (b) a young star whose disk changed (no YSO flag from Gaia, no prior excess, but age unknown);
+(c) a known variable listed in SIMBAD/VSX (unchecked); (d) for 637541, magnetic activity cannot make the W1-W2 colour redder by
+0.07 mag at fixed photosphere, so it is not obviously spots.
+
+Exact next steps: SIMBAD/VSX from a CDS-reachable machine; TESScut pixel photometry for 683344 (sectors 12-102) and 637541;
+ASAS-SN Sky Patrol optical light curves 2014-2026 for both (dimming at onset = transit of debris, the ASASSN-21qj signature); Gaia
+DR4 epoch photometry on 2026-12-02 (covers 683344's 2018 onset); lithium/H-alpha spectrum to settle ages.
+
 ## 2026-11-20 (Claude, interactive): literature check on J060000
 Verdict: NOT FOUND in print. No source read reports the NEOWISE mid-infrared brightening of ASASSN-V J060000.76-310027.83
 that coincides with its 2019-2021 optical fade. Status of the IR brightening: CONJECTURED unpublished (ADS still unchecked:
@@ -59,7 +99,7 @@ uid 211004 = Gaia DR3 2891196718939580672 = AllWISE J060000.75-310027.9 = ASASSN
 - What it is: a K dwarf (ATel 13361 fits Teff 4500 +/- 100 K; SALT spectrum "normal K type star", ATel 13377), G = 13.13,
   BP-RP = 1.52, parallax 6.39 mas (157 pc), RUWE 1.02. Gaia DR3 flags it VARIABLE, classifier SOLAR_LIKE (0.41).
 - What NEOWISE shows (VERIFIED, by eye: candidates/J060000/211004_lc.png): flat for 12 visits 2014-2019 (W2 10.575-10.598); the
-  visit of 2019-09-30 (MJD 58750) is still flat; the next, 2020-02-26 (MJD 58905), is brighter by dW2 = 0.161, dW1 = 0.055 mag;
+  visit of 2019-09-24 (MJD 58750) is still flat; the next, 2020-02-26 (MJD 58905), is brighter by dW2 = 0.161, dW1 = 0.055 mag;
   then a smooth decline to W2 = 10.55 by 2024-03, still 0.04 mag above baseline. W1-W2 went from -0.065 to +0.04. The optical fade
   began about 2019-10-25 (ATel 13377), inside the 5-month NEOWISE gap, so the IR rise and the optical fade start together within
   that resolution.
