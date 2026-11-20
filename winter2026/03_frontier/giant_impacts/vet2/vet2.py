@@ -59,7 +59,8 @@ ZP = {"W1": 309.54, "W2": 171.787}; LAM = {"W1": 3.35e-6, "W2": 4.60e-6}
 
 YOUNG_TYPES = {"Y*O", "Y*?", "TT*", "TT?", "Or*", "Ae*", "Ae?", "pr*", "pr?", "YSO", "TTS", "Y*O?", "FU*"}
 CV_TYPES = {"CV*", "NL*", "DN*", "No*", "XB*", "LXB", "HXB", "CV"}
-EB_TYPES = {"EB*", "EB", "Al*", "bL*", "WU*", "El*", "SB*"}          # confirmed binaries; '?' variants are notes only
+EB_TYPES = {"EB*", "EB", "Al*", "bL*", "WU*"}                       # confirmed eclipsing binaries; '?' variants are notes only
+SB_TYPES = {"SB*", "El*", "**"}                                      # other binaries: flags, not kills
 GAL_TYPES = {"G", "GiG", "GiC", "GiP", "BiC", "IG", "PaG", "SBG", "H2G", "EmG", "AGN", "QSO", "Sy1", "Sy2", "SyG", "BLL",
              "Bla", "LIN", "rG", "LSB", "bCG", "GrG", "CGG", "ClG", "SCG"}
 GAL_Q = {"G?", "Q?", "AG?", "Bz?", "BL?", "C?G", "Gr?", "Sy?", "rG?"}
@@ -259,26 +260,36 @@ def field_control(t, r, raw, groups, k):
     idx = list(range(max(k - 2, 0), k)) + list(range(k, min(k + 2, len(groups))))
     wins = [(raw.mjd.iloc[groups[i]].min() - 2, raw.mjd.iloc[groups[i]].max() + 2, i >= k) for i in idx]
     m0, m1 = wins[0][0], wins[-1][1]
-    q = ("SELECT mjd, ra, dec, w1mpro, w2mpro, cc_flags FROM neowiser_p1bs_psd WHERE "
-         f"CONTAINS(POINT('ICRS', ra, dec), CIRCLE('ICRS', {t['ra']}, {t['dec']}, 0.2)) = 1 AND mjd BETWEEN {m0:.4f} AND {m1:.4f} "
-         "AND w2mpro BETWEEN 8.5 AND 12.5 AND w1snr > 10 AND nb = 1 AND qual_frame > 0 AND qi_fact > 0.9 AND saa_sep > 5 AND moon_masked = '00'")
-    f = tap(IRSA, q, maxrec=2000000, tries=3, wait=20)
+    cond = (f"n.mjd BETWEEN {m0:.4f} AND {m1:.4f} AND n.w2mpro BETWEEN 8.5 AND 12.5 AND n.w1snr > 10 AND n.nb = 1 AND n.qual_frame > 0 "
+            "AND n.qi_fact > 0.9 AND n.saa_sep > 5 AND n.moon_masked = '00'")
+    f = None
+    try:
+        # neighbours = AllWISE sources within 12' with W2 8.3-12.7; their NEOWISE detections come from synchronous upload joins of
+        # <= 60 positions (a 12' NEOWISE cone over all epochs regularly exceeds 3-5 minutes at IRSA)
+        aw = tap(IRSA, "SELECT ra, dec, w2mpro FROM allwise_p3as_psd WHERE " + cone(t["ra"], t["dec"], 720) + " AND w2mpro BETWEEN 8.3 AND 12.7")
+        ax, ay = offs(aw.ra, aw.dec, t["ra"], t["dec"]); aw = aw.assign(sep=np.hypot(ax, ay))
+        aw = aw[aw.sep > 3].sort_values("sep").head(int(os.environ.get("FIELD_MAX", "240"))).reset_index(drop=True)
+        parts = []
+        for i in range(0, len(aw), 60):
+            up = Table({"aid": np.arange(i, min(i + 60, len(aw))), "ara": aw.ra.values[i:i + 60].astype(float), "adec": aw.dec.values[i:i + 60].astype(float)})
+            q = ("SELECT t.aid, n.mjd, n.ra, n.dec, n.w1mpro, n.w2mpro, n.cc_flags FROM TAP_UPLOAD.a AS t, neowiser_p1bs_psd AS n WHERE "
+                 "CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', t.ara, t.adec, 0.000556)) = 1 AND " + cond)
+            parts.append(tap(IRSA, q, uploads={"a": up}, maxrec=2000000, tries=3, wait=20))
+        f = pd.concat(parts, ignore_index=True) if parts else pd.DataFrame(columns=["aid", "mjd", "ra", "dec", "w1mpro", "w2mpro", "cc_flags"])
+        f = f.rename(columns={"aid": "key"}); src = f"AllWISE anchors + upload joins ({len(aw)} anchors)"
+    except Exception as e:
+        r["errors"].append(f"field upload joins: {repr(e)[:150]}; falling back to a 12' cone")
+    if f is None:
+        q = ("SELECT n.mjd, n.ra, n.dec, n.w1mpro, n.w2mpro, n.cc_flags FROM neowiser_p1bs_psd AS n WHERE "
+             f"CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', {t['ra']}, {t['dec']}, 0.2)) = 1 AND " + cond)
+        f = tap(IRSA, q, maxrec=2000000, tries=2, wait=20)
+        fx, fy = offs(f.ra, f.dec, t["ra"], t["dec"])
+        f["key"] = (np.round(fx / 3).astype(int) * 100000 + np.round(fy / 3).astype(int)); src = "12' cone, 3-arcsec grid"
     f = f[f.cc_flags.astype(str).str[:2] == "00"].reset_index(drop=True)
     side = np.full(len(f), -1)
-    for a, b, after in wins: side[(f.mjd >= a) & (f.mjd <= b)] = int(after)
+    for a, b, after in wins: side[((f.mjd >= a) & (f.mjd <= b)).to_numpy()] = int(after)
     f = f[side >= 0].assign(after=side[side >= 0])
-    # identify sources: nearest AllWISE source within 2" (falls back to a 3" grid)
-    fx, fy = offs(f.ra, f.dec, t["ra"], t["dec"])
-    try:
-        aw = tap(IRSA, "SELECT ra, dec, w2mpro FROM allwise_p3as_psd WHERE " + cone(t["ra"], t["dec"], 720) + " AND w2mpro BETWEEN 7.5 AND 13.5")
-        from scipy.spatial import cKDTree
-        ax, ay = offs(aw.ra, aw.dec, t["ra"], t["dec"]); dist, j = cKDTree(np.c_[ax, ay]).query(np.c_[fx, fy])
-        key = np.where(dist < 2.0, j, -1); src = "AllWISE anchors"
-        tgt_anchor = set(np.where(np.hypot(ax, ay) < 3)[0])
-    except Exception as e:
-        r["errors"].append(f"field anchors: {repr(e)[:120]}")
-        key = (np.round(fx / 3).astype(int) * 100000 + np.round(fy / 3).astype(int)); src = "3-arcsec grid"; tgt_anchor = set()
-    f = f.assign(key=key, fx=fx, fy=fy); f = f[f.key >= 0] if src == "AllWISE anchors" else f
+    fx, fy = offs(f.ra, f.dec, t["ra"], t["dec"]); f = f.assign(fx=fx, fy=fy); tgt_anchor = set()
     rows = []
     for kk, g in f.groupby("key"):
         if kk in tgt_anchor or np.hypot(g.fx.median(), g.fy.median()) < 3: continue
@@ -438,7 +449,7 @@ def simbad_apply(t, r, objs):
     r["_simbad_objs"] = objs
 
 # ------------------------------------------------------------------ ASAS-SN Sky Patrol, per-camera normalisation
-_SP = {"client": None, "dead": False}; _SPL = threading.Lock()
+_SP = {"fails": 0}
 def _with_timeout(fn, sec):
     from concurrent.futures import ThreadPoolExecutor
     ex = ThreadPoolExecutor(1); f = ex.submit(fn)
@@ -446,20 +457,26 @@ def _with_timeout(fn, sec):
     finally: ex.shutdown(wait=False)
 
 def asassn_fetch(t):
+    """one fresh SkyPatrolClient per target: the client keeps per-query state (self.index), so a shared client used from
+    several threads mixes up catalogues and light curves (seen in run 44748576117)"""
     def run():
-        with _SPL:
-            if _SP["dead"]: raise RuntimeError("Sky Patrol client unavailable")
-            if _SP["client"] is None:
-                try:
-                    from pyasassn.client import SkyPatrolClient
-                    _SP["client"] = _with_timeout(lambda: SkyPatrolClient(verbose=False), 120)
-                except Exception as e:
-                    _SP["dead"] = True; raise RuntimeError(f"Sky Patrol client: {repr(e)[:150]}")
-            c = _SP["client"]
-        lc = _with_timeout(lambda: c.cone_search(ra_deg=t["ra"], dec_deg=t["dec"], radius=10, units="arcsec", download=True, catalog="master_list"), 300)
-        if lc is None: return pd.DataFrame(), pd.DataFrame()
-        return lc.data.copy(), lc.catalog_info.copy()
-    return cached(_key("asassn", round(t["ra"], 6), round(t["dec"], 6)), lambda: retry(run, 2, 20, what="asas-sn"))
+        if _SP["fails"] >= 6: raise RuntimeError("Sky Patrol skipped after 6 consecutive failures")
+        try:
+            from pyasassn.client import SkyPatrolClient
+            def go():
+                c = SkyPatrolClient(verbose=False)
+                lc = c.cone_search(ra_deg=t["ra"], dec_deg=t["dec"], radius=10, units="arcsec", download=True, catalog="master_list")
+                if lc is None: return pd.DataFrame(), pd.DataFrame()
+                return lc.data.copy(), lc.catalog_info.copy()
+            data, cat = _with_timeout(go, 300)
+        except Exception:
+            _SP["fails"] += 1; raise
+        _SP["fails"] = 0
+        if len(cat):
+            dx, dy = offs(cat.ra_deg, cat.dec_deg, t["ra"], t["dec"])
+            if np.min(np.hypot(dx, dy)) > 10: raise RuntimeError(f"Sky Patrol returned a source {np.min(np.hypot(dx, dy)):.0f}\" away (mixed-up query)")
+        return data, cat
+    return cached(_key("asassn-v2", round(t["ra"], 6), round(t["dec"], 6)), lambda: retry(run, 2, 20, what="asas-sn"))
 
 def asassn(t, r, t_on):
     data, cat = asassn_fetch(t)
@@ -558,7 +575,8 @@ def verdict(r):
     if "YSO" in str(r.get("gaia_varclass", "")): young.append(f"Gaia DR3 variability class {r['gaia_varclass']}")
     ct = sorted({ty for o in cp for ty in o["types"]})
     if set(ct) & CV_TYPES: kills.append(f"cataclysmic variable / X-ray binary in SIMBAD ({','.join(sorted(set(ct) & CV_TYPES))}, {cp[0]['main_id']})")
-    if set(ct) & EB_TYPES: kills.append(f"eclipsing / spectroscopic binary in SIMBAD ({','.join(sorted(set(ct) & EB_TYPES))}, {cp[0]['main_id']})")
+    if set(ct) & SB_TYPES: flags.append(f"binary type in SIMBAD ({','.join(sorted(set(ct) & SB_TYPES))}, {cp[0]['main_id']})")
+    if set(ct) & EB_TYPES: kills.append(f"eclipsing binary in SIMBAD ({','.join(sorted(set(ct) & EB_TYPES))}, {cp[0]['main_id']})")
     gal = [o for o in objs if o["sep"] < 6 and set(o["types"]) & GAL_TYPES]
     if gal: kills.append("galaxy/QSO within 6\" in SIMBAD: " + "; ".join(f'{o["main_id"]} [{",".join(sorted(set(o["types"]) & GAL_TYPES))}] {o["sep"]:.1f}"' for o in gal))
     if r.get("gaia_qso_cand"): flags.append("in the Gaia DR3 QSO candidate table (low purity)")
@@ -737,7 +755,7 @@ def write_outputs(R, final=False):
             fh.write(f"Generated {time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())}; {len(R)} targets; machine-generated, the plots in plots/ "
                      "still need a look by eye.\n\n")
             fh.write("Kill rules: field-control z < 5 (detector-1 and list targets); centroid jump > 3 sigma toward a Gaia neighbour; Gaia "
-                     "neighbour within 6\" with dG < 3; baseline W1 < 8; SIMBAD CV / confirmed eclipsing or spectroscopic binary (counterpart "
+                     "neighbour within 6\" with dG < 3; baseline W1 < 8; SIMBAD CV / confirmed eclipsing binary (counterpart "
                      "within 3\"); SIMBAD galaxy/QSO within 6\"; young star (SIMBAD Y*O, Y*?, TT*, TT?, Or*, Ae*, Ae?, pr* within 5\" or Gaia "
                      "variability class YSO) kills detector-1/list targets and labels detector-2 targets 'known/likely young star'. Flags (not "
                      "kills): 'not plain dust' (optical brightening at the infrared onset in >= 2 ASAS-SN cameras, none dimming, median < -0.015 "
