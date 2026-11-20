@@ -1,0 +1,169 @@
+19:42:22 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+19:42:22 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+19:46:33 gaia pool rows: 704562 from 72 strips
+19:46:34 after main-sequence cut: 699339
+19:46:38 pool 699341, done 0, to do 174835
+19:59:28 pool 699341, done 1800, to do 173035
+20:27:47 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+20:27:47 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+20:33:19 gaia pool rows: 704562 from 72 strips
+20:33:19 after main-sequence cut: 699339
+20:33:24 pool 699341, done 6900, to do 83968
+20:47:45 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+20:47:45 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+20:52:24 gaia pool rows: 704562 from 72 strips
+20:52:24 after main-sequence cut: 699339
+20:52:28 pool 699341, done 8340, to do 166495
+20:57:16 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+20:57:16 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+21:00:35 gaia pool rows: 704562 from 72 strips
+21:00:35 after main-sequence cut: 699339
+21:00:40 pool 699341, done 9060, to do 165775
+00:52:14 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28468212?WAIT=59
+00:52:20 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28468204?WAIT=59
+00:52:20 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28468208?WAIT=59
+00:52:20 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28468214?WAIT=59
+00:52:28 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28468159?WAIT=59
+00:52:28 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28468160?WAIT=59
+02:52:45 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+02:52:45 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+02:54:27 gaia pool rows: 704562 from 72 strips
+02:54:27 after main-sequence cut: 699339
+02:54:31 pool 699341, done 53400, to do 121435
+03:04:55 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28479329?WAIT=59
+03:04:55 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28479328?WAIT=59
+03:04:55 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28479325?WAIT=59
+03:05:02 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28479320?WAIT=59
+03:05:07 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28479326?WAIT=59
+03:05:07 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28479333?WAIT=59
+03:05:13 cone failed 222482 DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+03:09:08 cone failed 222494 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+03:09:53 cone failed 222498 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+03:10:15 cone failed 223214 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+03:11:00 cone failed 223218 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+03:11:45 cone failed 223222 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:13 cone failed 227094 DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:13 cone failed 227574 DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:13 cone failed 226862 DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:13 cone failed 227342 DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:13 cone failed 227814 DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:48:07 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+08:48:07 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+08:50:04 gaia pool rows: 704562 from 72 strips
+08:50:04 after main-sequence cut: 699339
+08:50:09 pool 699341, done 56520, to do 118315
+10:07:29 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28513573?WAIT=59
+10:07:30 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28513475?WAIT=59
+12:10:40 cone failed 280874 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:12:09 cone failed 281834 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:12:59 cone failed 281598 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:13:34 cone failed 281122 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:13:45 cone failed 281602 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:14:13 cone failed 280882 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:14:20 cone failed 281126 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:14:59 cone failed 280886 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:15:01 cone failed 281366 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:15:47 cone failed 281610 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:16:32 cone failed 281614 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+13:06:33 cone failed 281686 DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+13:06:48 cone failed 281690 DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+13:16:22 cone failed 281926 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+13:16:59 cone failed 281454 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+13:17:07 cone failed 281930 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+13:17:54 cone failed 281214 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+13:17:54 cone failed 280974 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+14:43:24 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+14:43:24 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+14:45:13 gaia pool rows: 704562 from 72 strips
+14:45:13 after main-sequence cut: 699339
+14:45:16 pool 699341, done 70440, to do 104395
+15:08:07 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28533931
+15:08:16 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28533782?WAIT=59
+15:08:16 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28533781?WAIT=59
+15:08:18 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28533780?WAIT=59
+15:08:18 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28533777?WAIT=59
+15:08:24 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28533756?WAIT=59
+15:08:38 cone failed 295682 DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:08:41 cone failed 294722 DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:12:09 cone failed 295206 DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:18:02 cone failed 296174 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:18:24 cone failed 295934 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:18:44 cone failed 295698 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:18:57 cone failed 294738 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:47:37 cone failed 295498 DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+16:05:53 cone failed 295770 DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+20:38:52 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+20:38:52 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+20:43:13 gaia pool rows: 704562 from 72 strips
+20:43:13 after main-sequence cut: 699339
+20:43:17 pool 699341, done 74460, to do 100375
+22:10:27 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28558989?WAIT=59
+22:10:27 upload join failed, switching to per-source cone queries: DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28558988?WAIT=59
+22:10:30 upload join failed, switching to per-source cone queries: DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/async/28558964?WAIT=59
+22:10:30 upload join failed, switching to per-source cone queries: DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/async/28558965?WAIT=59
+22:10:37 cone failed 355202 DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+22:10:37 cone failed 355442 DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+22:10:37 upload join failed, switching to per-source cone queries: DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/async/28558955?WAIT=59
+22:10:37 upload join failed, switching to per-source cone queries: DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/async/28558957?WAIT=59
+22:10:40 cone failed 354722 DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+22:10:40 cone failed 354962 DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:10:34 cone failed 356786 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:10:35 cone failed 356554 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:10:44 cone failed 356314 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:11:19 cone failed 356790 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:11:20 cone failed 356558 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:11:27 cone failed 357030 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:11:29 cone failed 356318 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:11:35 cone failed 355850 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:12:05 cone failed 356562 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:12:13 cone failed 357034 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:12:14 cone failed 356322 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:12:20 cone failed 355854 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:12:28 cone failed 356086 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:13:00 cone failed 356326 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:13:13 cone failed 356090 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:13:58 cone failed 356094 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+02:34:26 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+02:34:26 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+02:36:11 gaia pool rows: 704562 from 72 strips
+02:36:12 after main-sequence cut: 699339
+02:36:18 pool 699341, done 88920, to do 85915
+05:06:00 upload join failed, switching to per-source cone queries: DALServiceError: HTTPSConnectionPool(host='irsa.ipac.caltech.edu', port=443): Max retries exceeded with url: /TAP/async/28593827 (Caused by ConnectTimeoutError(<HTTPSConnection(host='irsa.ipac.caltech
+08:29:42 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+08:29:42 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+08:35:10 gaia pool rows: 704562 from 72 strips
+08:35:10 after main-sequence cut: 699339
+08:35:14 pool 699341, done 117300, to do 57535
+11:53:15 processed this run: 57535
+11:53:15 remaining in this shard: 0
+11:53:15 scored: 186355 | with light curve: 162633
+11:53:15 VALIDATION ASASSN-21qj: []
+11:53:15 VALIDATION NGC2547-ID8: []
+11:53:15 score > 5: 1  (and reddening dW2-dW1>0.05: 0)
+11:53:15 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+11:53:15 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+11:53:15 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+11:53:15 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+11:53:15 candidates written: 0
+11:53:15 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+09:18:54 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+09:18:54 gaia pool query: SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+09:22:02 gaia pool rows: 704562 from 72 strips
+09:22:02 after main-sequence cut: 699339
+09:22:09 pool 699341, done 174835, to do 0
+09:22:09 processed this run: 0
+09:22:09 remaining in this shard: 0
+09:22:10 scored: 187795 | with light curve: 163865
+09:22:10 VALIDATION ASASSN-21qj: []
+09:22:10 VALIDATION NGC2547-ID8: []
+09:22:10 score > 5: 1  (and reddening dW2-dW1>0.05: 0)
+09:22:10 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+09:22:10 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+09:22:10 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+09:22:10 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+09:22:10 candidates written: 0
+09:22:10 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
