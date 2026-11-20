@@ -1,0 +1,25 @@
+# version=2022
+# DRAFT ONLY - NOT SUBMITTED - placeholders must be replaced; see README
+# observatory
+! mpcCode W84
+# submitter
+! name PLACEHOLDER (submitter)
+# observers
+! name PLACEHOLDER (original observers of NOAO program 2014A-0496)
+# measurers
+! name PLACEHOLDER (measurer)
+# telescope
+! aperture 4.0
+! design Reflector
+! detector CCD
+# comment
+! line Positions from NOIRLab Source Catalog DR2 (archival DECam), not re-measured
+permID|provID|trkSub|mode|stn|obsTime|ra|dec|rmsRA|rmsDec|astCat|mag|rmsMag|band|photCat
+||T1C0017|CCD|W84|2014-03-30T01:10:09.98Z|189.463353|-3.732137|0.161|0.158|Gaia2|22.44|0.09|VR|Gaia2
+||T1C0017|CCD|W84|2014-03-30T02:47:00.75Z|189.447640|-3.725065|0.085|0.087|Gaia2|22.30|0.09|VR|Gaia2
+||T1C0017|CCD|W84|2014-03-30T07:08:38.04Z|189.404797|-3.705877|0.086|0.088|Gaia2|22.19|0.07|VR|Gaia2
+||T1C0017|CCD|W84|2014-03-30T08:48:38.95Z|189.388555|-3.698491|0.108|0.102|Gaia2|21.97|0.07|VR|Gaia2
+||T1C0017|CCD|W84|2014-03-31T01:55:15.25Z|189.228733|-3.623271|0.154|0.151|Gaia2|22.11|0.10|VR|Gaia2
+||T1C0017|CCD|W84|2014-03-31T03:59:55.21Z|189.208395|-3.614201|0.074|0.077|Gaia2|22.16|0.07|VR|Gaia2
+||T1C0017|CCD|W84|2014-03-31T06:04:23.75Z|189.187976|-3.605101|0.165|0.165|Gaia2|22.18|0.13|r|Gaia2
+||T1C0017|CCD|W84|2014-03-31T08:38:01.64Z|189.163028|-3.593783|0.263|0.257|Gaia2|22.08|0.13|VR|Gaia2

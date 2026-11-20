@@ -1,0 +1,11 @@
+# regenerable / large: raw downloads and service caches (re-created by the scripts)
+cache/
+data/*_meas.parquet
+data/*_chips.csv
+data/*_exclude.csv
+data/*_tracklet_dets.csv
+data/*_dets_classified.csv
+data/*_rotate*_tracklet_dets.csv
+data/*_tclean*_tracklet_dets.csv
+data/*_clean_tracklet_dets.csv
+data/*_control_onchip.parquet
