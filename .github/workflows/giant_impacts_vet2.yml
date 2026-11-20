@@ -32,15 +32,19 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: pip install numpy scipy astropy pyvo pandas matplotlib requests skypatrol pyarrow
-      - name: restore cache (archive query results and the rebuilt pool)
+      - name: restore query cache (shared by all target lists)
         if: ${{ (github.event.inputs.use_cache || '1') == '1' }}
         uses: actions/cache/restore@v4
         with:
-          path: |
-            winter2026/03_frontier/giant_impacts/vet2/cache
-            winter2026/03_frontier/giant_impacts/vet2/work/${{ env.TARGETS }}/results/pool.csv
-          key: vet2-${{ env.TARGETS }}-${{ github.run_id }}
-          restore-keys: vet2-${{ env.TARGETS }}-
+          path: winter2026/03_frontier/giant_impacts/vet2/cache
+          key: vet2-q-${{ github.run_id }}
+          restore-keys: vet2-q-
+      - name: restore the rebuilt pool for this target list
+        uses: actions/cache/restore@v4
+        with:
+          path: winter2026/03_frontier/giant_impacts/vet2/work/${{ env.TARGETS }}/results/pool.csv
+          key: vet2-pool-${{ env.TARGETS }}-${{ github.run_id }}
+          restore-keys: vet2-pool-${{ env.TARGETS }}-
       - name: fetch shard states
         run: |
           if [ "$TARGETS" = "near" ]; then P=impacts-live; else P=impacts-far; fi
@@ -55,14 +59,18 @@ jobs:
           OUT: out/${{ env.TARGETS }}
           VET2_DEADLINE_MIN: "280"
         run: timeout 310m python vet2.py || true
-      - name: save cache
+      - name: save query cache
         if: always()
         uses: actions/cache/save@v4
         with:
-          path: |
-            winter2026/03_frontier/giant_impacts/vet2/cache
-            winter2026/03_frontier/giant_impacts/vet2/work/${{ env.TARGETS }}/results/pool.csv
-          key: vet2-${{ env.TARGETS }}-${{ github.run_id }}
+          path: winter2026/03_frontier/giant_impacts/vet2/cache
+          key: vet2-q-${{ github.run_id }}
+      - name: save pool
+        if: always() && hashFiles(format('winter2026/03_frontier/giant_impacts/vet2/work/{0}/results/pool.csv', env.TARGETS)) != ''
+        uses: actions/cache/save@v4
+        with:
+          path: winter2026/03_frontier/giant_impacts/vet2/work/${{ env.TARGETS }}/results/pool.csv
+          key: vet2-pool-${{ env.TARGETS }}-${{ github.run_id }}
       - name: publish to impacts-vet2 (one directory per target list)
         if: always()
         working-directory: winter2026/03_frontier/giant_impacts/vet2
