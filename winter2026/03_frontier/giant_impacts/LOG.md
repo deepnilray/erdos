@@ -2,7 +2,7 @@
 
 ## 2026-11-20, afternoon (Claude): blind spot fixed, completeness measured, far search running
 Verdict: the excess-plus-variability detector (for events that began before 2014) now runs on the whole near pool and recovers
-three known dusty systems blindly (NGC 2547-ID8 as the planted control, plus V488 Per and RZ Psc B, both known extreme-dust stars,
+three known dusty systems blindly (NGC 2547-ID8 as the planted control, plus V488 Per (the most extreme known debris disk) and the RZ Psc system (a known dusty young star),
 found without being told). It flags 37 stars: 16 are known young stars (SIMBAD TT*/Or*/Y*O), 2 are cataclysmic variables (AE Aqr,
 V426 Oph) and 14 have NO SIMBAD entry within 5 arcsec. Several of those 14 have strong warm-dust colours in AllWISE 2010.
 CANDIDATES, not discoveries: most likely uncatalogued young stars with disks (Class II colours: W1-W2 > 0.25 and W2-W3 > 1), a few
