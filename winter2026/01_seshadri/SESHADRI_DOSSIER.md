@@ -6,7 +6,69 @@ Labels: VERIFIED-SOURCE means the reference was seen on a primary or reference-l
 UNVERIFIED means it is from memory or an earlier chat and must be checked against arXiv/ADS/INSPIRE before it goes in any
 email or document. Never send a citation from this file without opening the paper.
 
-## 0. Verdict first
+## 0a. NEW TOP RECOMMENDATION (2026-11-20): "Does the sky already constrain your 2018 helical model?"
+
+Verdict first: the best project to ask him for is to confront HIS OWN helical inflationary magnetogenesis model
+(Sharma, Subramanian & Seshadri, PRD 97, 083503 (2018), arXiv:1802.04847) with the 2025-2026 small-scale-structure data on
+primordial magnetic fields (PMFs): the Lyman-alpha forest bound and hint (Pavicevic et al., arXiv:2501.06299), JWST/reionisation
+(Fairbairn et al., arXiv:2604.24835) and strong-lensing substructure (Gilman et al., arXiv:2112.03293). Pilot numbers below say
+the low-reheating corner of his model may already be ruled out, and the Lyman-alpha hint (B ~ 0.2 nG) would correspond to
+reheating at roughly the QCD-to-GeV scale. It extends his paper rather than criticising it, it has a clean theory core (the
+matter power spectrum sourced by a FULLY HELICAL field, which no paper found has computed), and it ends in a number he can quote.
+
+Why he should care (each point checked against the source named)
+- His model's table (1802.04847, Table 1, LaTeX source read 2026-11-20): maximal present-day field and coherence length
+  5 MeV: 6.4 nG at 1.6 Mpc; 150 MeV: 0.99 nG at 0.58 Mpc; 100 GeV: 0.039 nG at 0.068 Mpc; 1000 GeV: 0.0071 nG at 0.032 Mpc.
+  Fields of 0.1-1 nG coherent over 0.1-1 Mpc are exactly what the Lyman-alpha forest and JWST now test (k ~ 10-100 Mpc^-1).
+- Lyman-alpha (2501.06299, full text read): hint of extra power fitted by B_1Mpc = 0.2 +/- 0.05 nG (n_B = -2.9); with
+  conservative noise modelling, B < 0.30 nG at 3 sigma. Note: its abstract says k_peak ~ 20 Mpc^-1 for the hint, but its body
+  gives k_peak = 48 Mpc^-1 for 0.2 nG and 20.1 Mpc^-1 for 0.5 nG; our code reproduces the body (47.9 and 19.9).
+- JWST/reionisation (2604.24835, abstract read): sqrt<B^2> < 0.27 nG (n_B = -2) and < 0.18 nG (n_B = +2), 95%, "in Gaussian,
+  non-helical scenarios". Ralegankar, Pavicevic & Viel (2402.14079, LaTeX read) likewise "focus on non-helical PMFs".
+  So the helical case, which is what his model produces, is an explicit gap. OPEN as far as searched (INSPIRE citations of
+  1708.08119 and 1802.04847 listed 2026-11-20, plus two alphaXiv searches); older LSS papers (e.g. Kahniashvili et al. 2013,
+  arXiv:1211.2769) not yet read for helical terms.
+
+Pilot computation (CONJECTURED as physics, VERIFIED as arithmetic): pmf_lensing/helical_model_pilot.py, output in
+pmf_lensing/helical_model_pilot_output.txt. Non-helical Lorentz-force kernel of 2402.14079 integrated numerically for his
+spectrum (k^4 below k_c = 2 pi/L_c, k^-2/3 assumed above, damping at lambda_D = 0.088 Mpc (B/nG)), growth from the two-fluid
+equations, LCDM from CAMB. Controls fired: integrator reproduces the paper's G for n_B = -2.5 and -2.0 to 3% and 0.6%;
+calibration constants from the two agree to 3%; zero field gives zero boost; k_peak of the n_B = -2.9 reference models matches
+2501.06299 to 0.5%.
+log10(P/P_LCDM) at k = 10, 20, 30, 50 Mpc^-1:
+- Lyman-alpha reference, n_B = -2.9: 0.2 nG (hint) 0.01, 0.13, 0.33, 0.47; 0.3 nG (3 sigma bound) 0.06, 0.34, 0.50, 0.23;
+  0.5 nG (strongly excluded) 0.26, 0.55, 0.28, 0.00.
+- His model, T_r = 150 MeV, maximal field: 0.28, 1.37, 1.08, 0.01 -> far above the excluded 0.5 nG reference: likely ruled out.
+- T_r = 150 MeV with 1% of the maximal EM energy (B = 0.10 nG): 0.00, 0.01, 0.06, 0.25 (0.56 at k = 80): hint-like.
+- T_r = 5 MeV with 1%: 0.67, 1.23, 1.21, 0.39 -> likely ruled out. T_r >= 100 GeV: no visible effect.
+Biggest uncertainties, each a piece of the project: the helical kernel (missing here), the damping scale for blue spectra
+(kappa; 2402.14079 shows the peak power scales as kappa^-4), the small-scale tail after the inverse cascade, and mapping a
+peaked spectrum onto bounds derived for n_B = -2.9 (Pavicevic and arXiv:2609.39399 say models with equal k_peak behave alike).
+
+What the project is (winter-sized, theory plus public data)
+1. Derive the scalar Lorentz-force power spectrum for a field with helical part (the antisymmetric term in <B_i B_j>), for
+   his spectrum. Seshadri has done the analogous helical calculation for the CMB (Jagannathan, Sharma & Seshadri 2020,
+   arXiv:2010.08836), so this is home ground for him.
+2. Run his model over (T_r, epsilon) and map each case to k_peak and amplitude; compare with the Lyman-alpha, JWST and lensing
+   bounds. Output: the excluded region in the (T_r, epsilon) plane and the band that would explain the Lyman-alpha hint.
+3. Forecast: what DESI/ESPRESSO Lyman-alpha and JWST-era lensing samples would do.
+
+Risks, worst first: (1) his former student Ramkishor Sharma and Subramanian are active on low-scale magnetogenesis (arXiv:2611.19721,
+Nov 2026) and could do this themselves, which is a reason to propose it through Seshadri, not around him; (2) the Trieste group
+(Viel, Pavicevic, Ralegankar, D'Ambrosio) owns the PMF-matter-power pipeline; (3) the pilot uses a non-helical kernel and a
+guessed tail, so the "ruled out" statements may move by a lot.
+
+How to ask (one sentence): "Sir, the 2025 Lyman-alpha forest analysis finds a hint of a 0.2 nG primordial field and a 0.3 nG
+bound; your 2018 helical model gives about 1 nG at 0.6 Mpc for QCD-scale reheating. Could I work out over the winter what these
+small-scale constraints imply for the reheating temperature in your model, including the helical contribution?"
+Bring: the pilot table above, and the line that the helical case is explicitly left open by 2604.24835 and 2402.14079.
+
+Second option (data, Deepnil's own pipeline): the strong-lensing route alone is EMPTY today. pmf_lensing/pmf_vs_lensing.py
+shows that even the 0.5 nG model sits within 0.7 sigma of the Gilman et al. 2022 lensing constraints (log10 P/P_LCDM =
+0.0 +/- 0.4 at k = 10, 0.1 +0.7/-0.6 at 25, 0.2 +1.0/-0.9 at 50 Mpc^-1, 68%). Lensing becomes decisive only with larger JWST
+samples; keep it as the forecast part of step 3.
+
+## 0. Verdict first (2026-11-16; superseded by 0a for the project, still valid for the reading list)
 
 - Recommended approach: ask him for the **reading project** on primordial magnetic fields (section 3), and bring **one concrete
   question about his own 2017 paper** (section 4.1, now framed as a question, since its main content is already in that paper). Keep option 4.2 (Gaia streams and

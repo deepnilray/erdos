@@ -1,5 +1,22 @@
 # Giant-impact afterglow hunt: log
 
+## 2026-11-20 (Claude, interactive): literature check on J060000
+Verdict: NOT FOUND in print. No source read reports the NEOWISE mid-infrared brightening of ASASSN-V J060000.76-310027.83
+that coincides with its 2019-2021 optical fade. Status of the IR brightening: CONJECTURED unpublished (ADS still unchecked:
+it blocks automated access).
+Read and checked: ATels 13346 (Way et al., discovery), 13349 (Buckley et al., SALT: "long period eclipsing binary"
+speculated), 13357, 13361 (McCollum & Laine: archival, pre-event SED, no excess), 13377 (Sokolovsky et al.: "patchy dust ring",
+Boyajian-like), 13450 (Schaefer, 5 Feb 2020: century of Harvard plates, possible 0.4 mag dip in 1937; the 2019/20 dip is deeper in
+blue, R = A_V/E(B-V) between 2 and 4, read as occulting dust; content via a fetch-tool summary, not verbatim); AAVSO campaign page
+for Alert Notice 691 (Kenworthy, Sept 2020 and June 2021: best hypothesis a ring system about 1 au across around an unseen
+companion; eclipse ended about late May 2021; analysis "of the size of the dust" planned); github.com/mkenworthy/asas-sn-J060000
+(optical only); arXiv:2507.03080, 2511.02581, 2507.19594 (ASAS-SN big-dipper search: J0600 not in it), 2404.07378, 2408.06744
+(no WISE discussion of J0600). No ATel after 13450 refers to this star.
+Why the brightening matters physically (CONJECTURED): about 800 K dust appearing at the same time as the occultation sits close
+to a K dwarf (well inside 1 au), which is hard to reconcile with a cold ring around a distant companion and favours freshly made,
+hot circumstellar dust. That is the content of a possible short note (RNAAS-length) with a supervisor.
+Next: one manual ADS full-text search ("J060000" OR "J0600-31") AND (WISE OR NEOWISE OR infrared); if empty, draft the note.
+
 ## 2026-11-17, 04:40 UTC (Claude, scheduled run)
 Verdict: no new giant-impact afterglow. The one field star above threshold, uid 211004 = Gaia DR3 2891196718939580672,
 turns out to be the KNOWN 2019 optical dimmer ASASSN-V J060000.76-310027.83 (Boyajian-like 0.9 mag fade from 2019-10-25,
