@@ -94,17 +94,26 @@ def _pool_clusters(path):
 GOODQ = ("n.qual_frame > 0 AND n.qi_fact > 0.9 AND n.saa_sep > 5 AND n.moon_masked = '00' "
          "AND n.w1snr > 3 AND n.w2snr > 3 AND n.nb = 1")
 
+import requests as _rq
+class _TSession(_rq.Session):
+    def request(self, *a, **k): k.setdefault("timeout", 600); return super().request(*a, **k)
+_SES = _TSession()
+
 def fetch_chunk(sub):
     """returns (table or None, set of uids whose query failed). A transient IRSA error no longer switches the whole run to
     slow per-source cones (2026-11-17 fix): the upload join is retried; only that chunk falls back to cones, and sources whose
     cone failed are reported so they are not written to scores.csv as done-without-data."""
-    svc = pyvo.dal.TAPService(IRSA)
+    svc = pyvo.dal.TAPService(IRSA, session=_SES)
     up = Table({"objid": np.array(sub["uid"], int), "tra": np.array(sub["ra"], float), "tdec": np.array(sub["dec"], float)})
     q = ("SELECT t.objid, n.mjd, n.w1mpro, n.w1sigmpro, n.w2mpro, n.w2sigmpro, n.cc_flags FROM TAP_UPLOAD.targets AS t, "
          "neowiser_p1bs_psd AS n WHERE CONTAINS(POINT('ICRS', n.ra, n.dec), CIRCLE('ICRS', t.tra, t.tdec, 0.000833)) = 1 AND " + GOODQ)
     for attempt in range(3):
         try:
-            r = svc.run_async(q, uploads={"targets": up}, maxrec=5000000).to_table(); r.rename_column("objid", "uid"); return r, set()
+            # synchronous upload join first (2026-11-20: IRSA's async queue stalled for hours while sync joins of 60 targets
+            # returned in seconds); async is the fallback
+            if attempt < 2: r = svc.run_sync(q, uploads={"targets": up}, maxrec=2000000).to_table()
+            else: r = svc.run_async(q, uploads={"targets": up}, maxrec=5000000).to_table()
+            r.rename_column("objid", "uid"); return r, set()
         except Exception as e:
             log(f"upload join failed (attempt {attempt + 1}/3):", repr(e)[:160]); time.sleep(30 * (attempt + 1))
     log("chunk falls back to per-source cones")
