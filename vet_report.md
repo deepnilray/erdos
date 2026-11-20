@@ -1,0 +1,2392 @@
+# Vetting report (machine generated; by-eye check of plots/ still required)
+
+```
+{
+ "n_pool": 699341,
+ "n_scored": 699341,
+ "n_with_lc": 611091,
+ "frac_done": 1.0,
+ "n_score_gt_5": 8,
+ "n_score_gt_8": 4,
+ "n_score_gt_12": 2,
+ "n_score_gt_20": 2,
+ "valid_ASASSN-21qj": {
+  "score": 38.038,
+  "dW2": 0.738,
+  "dW1": 0.332,
+  "start": 58227.4,
+  "rank": 1
+ },
+ "valid_NGC2547-ID8": {
+  "score": 0.0,
+  "dW2": 0.0,
+  "dW1": 0.0,
+  "start": NaN,
+  "rank": 213619
+ },
+ "field_max_score": 21.587,
+ "n_cand_det1": 4,
+ "n_cand_det1_field": 3,
+ "n_det2_var_pass_all": 37,
+ "n_det2_stageA": 111,
+ "n_det2_input": 580634,
+ "vet_NGC2547-ID8": {
+  "score": 0.0,
+  "score_refetch": 0.0,
+  "excess_locus": 0.41801403045654295,
+  "z_excess": 40.27808583921518,
+  "w2_slope": 0.005011456814838189,
+  "w2_fade_sig": 0.5523192051034314,
+  "col_slope": -0.0022778530930901617,
+  "col_decline_sig": 0.4061129073613754,
+  "aw_w1w2": 0.31599998474121094,
+  "aw_minus_neo_w1w2": -0.05400001525878906,
+  "det2_pass": false,
+  "jit_ratio": 10.2409060370477,
+  "det2_var_pass": true,
+  "simbad": "UNREACHABLE",
+  "vsx": "UNREACHABLE",
+  "kill": ""
+ },
+ "n_det2_pass_vetted": 10,
+ "n_det2_var_pass_vetted": 37,
+ "services": {}
+}
+```
+
+## DET1 uid 699339
+- label: DET1
+- uid: 699339
+- ra: 123.847042
+- dec: -38.989833
+- gmag: 13.370841979980469
+- bprp: 0.81488037109375
+- score: 38.038
+- score_refetch: 38.03818294201611
+- dW2: 0.738
+- dW1: 0.332
+- start: 58227.4
+- base_w1: 11.651
+- excess_locus: nan
+- z_excess: nan
+- w2_slope: -0.053386282212273206
+- w2_fade_sig: -1.3955431886196172
+- col_slope: 0.03864163866963531
+- col_decline_sig: -1.8897125504088512
+- aw_w1w2: -0.06799983978271484
+- det2_pass: False
+- jit_ratio: nan
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 3.5409774780273438
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 3.7" G=16.91 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap: DALServiceError: 504 Server Error: Gateway Time-out for url: https://simbad.harvard.edu/simbad/sim-tap/sync || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: DALFormatError: ConnectTimeout: HTTPSConnectionPool(host='tapvizier.cds.unistra.fr', port=443): Max retries exceeded with url: /TAPVizieR/tap/sync (Caused by ConnectTimeoutError(<HTTPSConnection(host= / aavso:Expecting value: line 1 co
+
+## DET1 uid 683344
+- label: DET1
+- uid: 683344
+- ra: 220.96631845279592
+- dec: -76.19611715207567
+- gmag: 13.519299507141113
+- bprp: 1.2942934036254883
+- score: 21.587
+- score_refetch: 21.587201769466798
+- dW2: 0.3645
+- dW1: 0.1675
+- start: 59273.9
+- base_w1: 11.185
+- excess_locus: -0.002614131927490257
+- z_excess: -0.1959119810161022
+- w2_slope: -0.05016856514176571
+- w2_fade_sig: -7.125784483468795
+- col_slope: 0.02656207087022055
+- col_decline_sig: -6.809369922380787
+- aw_w1w2: -0.04600048065185547
+- det2_pass: False
+- jit_ratio: 1.1048287515435105
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.66)
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap: DALServiceError: 504 Server Error: Gateway Time-out for url: https://simbad.harvard.edu/simbad/sim-tap/sync || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: DALFormatError: ConnectTimeout: HTTPSConnectionPool(host='tapvizier.cds.unistra.fr', port=443): Max retries exceeded with url: /TAPVizieR/tap/sync (Caused by ConnectTimeoutError(<HTTPSConnection(host= / aavso:Expecting value: line 1 co
+
+## DET1 uid 637541
+- label: DET1
+- uid: 637541
+- ra: 252.2143482892713
+- dec: -69.41863188755389
+- gmag: 11.922951698303223
+- bprp: 0.8946743011474609
+- score: 10.182
+- score_refetch: 10.18234142544391
+- dW2: 0.144
+- dW1: 0.085
+- start: 59285.7
+- base_w1: 10.338
+- excess_locus: 0.008573944091796848
+- z_excess: 0.8261494374551318
+- w2_slope: -0.010889497339039647
+- w2_fade_sig: -3.8482923888043326
+- col_slope: 0.004536907453125876
+- col_decline_sig: -2.9951597653529105
+- aw_w1w2: -0.04599952697753906
+- det2_pass: False
+- jit_ratio: 0.9876543209876543
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 6.163079261779785
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.72)
+- kill: 
+- notes: faint Gaia neighbours within 6": 5.1" G=18.09 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap: DALServiceError: 504 Server Error: Gateway Time-out for url: https://simbad.harvard.edu/simbad/sim-tap/sync || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: DALFormatError: ConnectTimeout: HTTPSConnectionPool(host='tapvizier.cds.unistra.fr', port=443): Max retries exceeded with url: /TAPVizieR/tap/sync (Caused by ConnectTimeoutError(<HTTPSConnection(host= / aavso:Expecting value: line 1 co
+
+## DET1 uid 211004
+- label: DET1
+- uid: 211004
+- ra: 90.00308214391504
+- dec: -31.007806913856175
+- gmag: 13.131755828857422
+- bprp: 1.5247125625610352
+- score: 8.864
+- score_refetch: 8.864452978137795
+- dW2: 0.13
+- dW1: 0.042
+- start: 58905.4
+- base_w1: 10.523
+- excess_locus: -0.004982753753662056
+- z_excess: -0.2802026815346506
+- w2_slope: -0.008114927829865873
+- w2_fade_sig: -2.4452623390390573
+- col_slope: 0.004968330253193084
+- col_decline_sig: -2.190357599986045
+- aw_w1w2: -0.09200000762939453
+- det2_pass: False
+- jit_ratio: 1.035116571539131
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.41)
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap: DALServiceError: 504 Server Error: Gateway Time-out for url: https://simbad.harvard.edu/simbad/sim-tap/sync || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: DALFormatError: ConnectTimeout: HTTPSConnectionPool(host='tapvizier.cds.unistra.fr', port=443): Max retries exceeded with url: /TAPVizieR/tap/sync (Caused by ConnectTimeoutError(<HTTPSConnection(host= / aavso:Expecting value: line 1 co
+
+## NEAR uid 577418
+- label: NEAR
+- uid: 577418
+- ra: 264.48631589391795
+- dec: 60.62201459623151
+- gmag: 13.183899879455566
+- bprp: 1.3070440292358398
+- score: 6.187
+- score_refetch: 6.187224796356861
+- dW2: 0.0875
+- dW1: 0.0685
+- start: 60162.4
+- base_w1: 10.629
+- excess_locus: -0.01035911941528321
+- z_excess: -0.776347813547013
+- w2_slope: -0.009678485306740984
+- w2_fade_sig: -16.000410497053686
+- col_slope: 0.0005971515804415741
+- col_decline_sig: -0.8633237304548088
+- aw_w1w2: -0.017000198364257812
+- det2_pass: False
+- jit_ratio: 0.9564801530368244
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap: DALServiceError: 504 Server Error: Gateway Time-out for url: https://simbad.harvard.edu/simbad/sim-tap/sync || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: DALFormatError: ConnectTimeout: HTTPSConnectionPool(host='tapvizier.cds.unistra.fr', port=443): Max retries exceeded with url: /TAPVizieR/tap/sync (Caused by ConnectTimeoutError(<HTTPSConnection(host= / aavso:Expecting value: line 1 co
+
+## NEAR uid 679380
+- label: NEAR
+- uid: 679380
+- ra: 268.49337204273354
+- dec: 3.053498939258752
+- gmag: 12.810583114624023
+- bprp: 0.998016357421875
+- score: 5.78
+- score_refetch: 5.779921916794984
+- dW2: 0.087
+- dW1: 0.115
+- start: 59656.6
+- base_w1: 10.844
+- excess_locus: -0.00115869140625003
+- z_excess: -0.11164666380008378
+- w2_slope: -0.009444229997568863
+- w2_fade_sig: -5.867624979634901
+- col_slope: -0.0049374444297079515
+- col_decline_sig: 3.128315994321998
+- aw_w1w2: -0.020999908447265625
+- det2_pass: False
+- jit_ratio: 1.024218693350736
+- det2_var_pass: False
+- n_nb6: 2
+- nb_min_dG: 7.093265533447266
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 5.0" G=19.90; 5.9" G=20.83 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap: DALServiceError: 504 Server Error: Gateway Time-out for url: https://simbad.harvard.edu/simbad/sim-tap/sync || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: DALFormatError: ConnectTimeout: HTTPSConnectionPool(host='tapvizier.cds.unistra.fr', port=443): Max retries exceeded with url: /TAPVizieR/tap/sync (Caused by ConnectTimeoutError(<HTTPSConnection(host= / aavso:Expecting value: line 1 co
+
+## NEAR uid 542579
+- label: NEAR
+- uid: 542579
+- ra: 229.53130893107252
+- dec: -38.07345326914459
+- gmag: 11.109038352966309
+- bprp: 1.5807180404663086
+- score: 5.112
+- score_refetch: 5.111675413564349
+- dW2: 0.102
+- dW1: 0.144
+- start: 59261.3
+- base_w1: 8.009
+- excess_locus: 0.10242819595336924
+- z_excess: 5.222490401717582
+- w2_slope: -0.01614631908987474
+- w2_fade_sig: -8.537619148114272
+- col_slope: -0.007918176331342903
+- col_decline_sig: 7.208204500316064
+- aw_w1w2: 0.04000043869018555
+- det2_pass: True
+- jit_ratio: 1.73
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 6.146000862121582
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 4.4" G=17.26 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 298055
+- label: NEAR
+- uid: 298055
+- ra: 141.53051720693747
+- dec: -57.5390042136021
+- gmag: 13.08606243133545
+- bprp: 1.457326889038086
+- score: 5.075
+- score_refetch: 5.074628881678151
+- dW2: 0.0725
+- dW1: 0.102
+- start: 59939.9
+- base_w1: 10.45
+- excess_locus: 0.028706924438476597
+- z_excess: 1.818671540501501
+- w2_slope: -0.008088313359009502
+- w2_fade_sig: -7.668570320132797
+- col_slope: -0.002719381693137234
+- col_decline_sig: 3.2919949485919933
+- aw_w1w2: -0.024000167846679688
+- det2_pass: False
+- jit_ratio: 0.9967751392553503
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 5.991786003112793
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 5.3" G=19.08 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 170435
+- label: NEAR
+- uid: 170435
+- ra: 266.51091023535315
+- dec: 36.99987949835417
+- gmag: 14.93609619140625
+- bprp: 2.017587661743164
+- score: 4.92
+- score_refetch: 4.919981589576194
+- dW2: 0.076
+- dW1: 0.111
+- start: 59452.4
+- base_w1: 11.599
+- excess_locus: 0.059927207946777666
+- z_excess: 1.6168139200533567
+- w2_slope: -0.01041285253720051
+- w2_fade_sig: -8.346542968148155
+- col_slope: -0.0052508127352189835
+- col_decline_sig: 2.6919118164164586
+- aw_w1w2: 0.12400054931640625
+- det2_pass: False
+- jit_ratio: 0.8700524980829353
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 220917
+- label: NEAR
+- uid: 220917
+- ra: 82.83505152684741
+- dec: -42.8454475022132
+- gmag: 10.576681137084961
+- bprp: 0.8068704605102539
+- score: 4.844
+- score_refetch: 4.843650700787177
+- dW2: 0.0685
+- dW1: 0.0895
+- start: 59831.7
+- base_w1: 9.149
+- excess_locus: 0.016549636840820288
+- z_excess: 1.6549636840820288
+- w2_slope: -0.007797351027355583
+- w2_fade_sig: -13.077602455078912
+- col_slope: -0.0014718068112764035
+- col_decline_sig: 2.8739937552336094
+- aw_w1w2: -0.02399921417236328
+- det2_pass: False
+- jit_ratio: 1.0
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 51511
+- label: NEAR
+- uid: 51511
+- ra: 175.82228834514575
+- dec: 11.386570640023931
+- gmag: 11.904853820800781
+- bprp: 1.471745491027832
+- score: 4.808
+- score_refetch: 4.808382217953261
+- dW2: 0.068
+- dW1: 0.077
+- start: 59925.8
+- base_w1: 9.163
+- excess_locus: 0.039130180358886754
+- z_excess: 2.4136408531788147
+- w2_slope: -0.009559745683221987
+- w2_fade_sig: -5.959903070508237
+- col_slope: -0.0023249379145147547
+- col_decline_sig: 2.795477499341025
+- aw_w1w2: -0.03199958801269531
+- det2_pass: False
+- jit_ratio: 1.0
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 5.641550064086914
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: RS(0.53)
+- kill: 
+- notes: faint Gaia neighbours within 6": 5.9" G=17.55 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 47551
+- label: NEAR
+- uid: 47551
+- ra: 257.9955187278829
+- dec: -13.738803368640276
+- gmag: 13.364262580871582
+- bprp: 1.728994369506836
+- score: 4.734
+- score_refetch: 4.734189142923154
+- dW2: 0.076
+- dW1: 0.0755
+- start: 58715.3
+- base_w1: 10.12
+- excess_locus: 0.02828101348876971
+- z_excess: 1.0504140330820189
+- w2_slope: -0.012954761976457773
+- w2_fade_sig: -8.822244605952209
+- col_slope: -0.0023949710497985686
+- col_decline_sig: 0.8668344689031032
+- aw_w1w2: 0.05500030517578125
+- det2_pass: False
+- jit_ratio: 1.26
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 2.855250358581543
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: blend: Gaia neighbour within 6" only 2.9 mag fainter in G (1.7" G=16.22)
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 202846
+- label: NEAR
+- uid: 202846
+- ra: 77.02874255210047
+- dec: -53.271073674932666
+- gmag: 10.640054702758789
+- bprp: 0.8330984115600586
+- score: 4.455
+- score_refetch: 4.4547870176862645
+- dW2: 0.063
+- dW1: 0.0615
+- start: 59240.8
+- base_w1: 9.103
+- excess_locus: 0.020647872924804665
+- z_excess: 2.052216158163432
+- w2_slope: -0.00602706682432504
+- w2_fade_sig: -7.520281546995468
+- col_slope: -0.0009713888904542295
+- col_decline_sig: 1.8967154668283783
+- aw_w1w2: 0.016000747680664062
+- det2_pass: False
+- jit_ratio: 1.0
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 94591
+- label: NEAR
+- uid: 94591
+- ra: 179.3238401857341
+- dec: 62.23091348688527
+- gmag: 8.24245548248291
+- bprp: 0.6949672698974609
+- score: 4.427
+- score_refetch: 4.427264445107676
+- dW2: 0.0935
+- dW1: 0.213
+- start: 59532.6
+- base_w1: 6.746
+- excess_locus: nan
+- z_excess: nan
+- w2_slope: -0.012204851739784278
+- w2_fade_sig: -8.253822045398337
+- col_slope: -0.015437398617948414
+- col_decline_sig: 4.966557865570599
+- aw_w1w2: -0.043999671936035156
+- det2_pass: False
+- jit_ratio: nan
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: W1 saturation (baseline W1 6.75 < 8)
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 14142
+- label: NEAR
+- uid: 14142
+- ra: 26.971252358094503
+- dec: -63.07661332004184
+- gmag: 11.551968574523926
+- bprp: 1.5091781616210938
+- score: 4.419
+- score_refetch: 4.419383664937113
+- dW2: 0.0625
+- dW1: 0.101
+- start: 60093.3
+- base_w1: 8.87
+- excess_locus: 0.048949310302734424
+- z_excess: 2.8258380448806872
+- w2_slope: -0.007477701797988179
+- w2_fade_sig: -9.937079604892784
+- col_slope: -0.0043857754329593365
+- col_decline_sig: 3.9205365394708007
+- aw_w1w2: -0.01900005340576172
+- det2_pass: False
+- jit_ratio: 1.0
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 131042
+- label: NEAR
+- uid: 131042
+- ra: 240.79913181450925
+- dec: -32.655762494092905
+- gmag: 12.213641166687012
+- bprp: 1.7738475799560547
+- score: 4.419
+- score_refetch: 4.419417382415922
+- dW2: 0.0625
+- dW1: 0.102
+- start: 59268.6
+- base_w1: 9.057
+- excess_locus: 0.0942074356079104
+- z_excess: 3.184441868852994
+- w2_slope: -0.004799857974921773
+- w2_fade_sig: -3.854874881258115
+- col_slope: -0.0039213402795793585
+- col_decline_sig: 3.8597524128910012
+- aw_w1w2: 0.043000221252441406
+- det2_pass: False
+- jit_ratio: 1.0
+- det2_var_pass: False
+- n_nb6: 2
+- nb_min_dG: 7.636713981628418
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.66)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: faint Gaia neighbours within 6": 5.4" G=19.85; 5.4" G=20.86 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 450211
+- label: NEAR
+- uid: 450211
+- ra: 327.6183789443937
+- dec: -6.562421298280476
+- gmag: 11.802092552185059
+- bprp: 1.0148792266845703
+- score: 4.414
+- score_refetch: 4.414393986166723
+- dW2: 0.0655
+- dW1: 0.0765
+- start: 58621.2
+- base_w1: 9.913
+- excess_locus: 0.03719033813476559
+- z_excess: 3.5835056305299173
+- w2_slope: -0.0024846368502079996
+- w2_fade_sig: -1.7598856847098765
+- col_slope: -0.0020958439005263492
+- col_decline_sig: 3.1888109472804835
+- aw_w1w2: -0.008999824523925781
+- det2_pass: False
+- jit_ratio: 1.0
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 190609
+- label: NEAR
+- uid: 190609
+- ra: 146.3205783011417
+- dec: 19.787489153161314
+- gmag: 11.494464874267578
+- bprp: 1.2103509902954102
+- score: 4.384
+- score_refetch: 4.384081464624388
+- dW2: 0.062
+- dW1: 0.077
+- start: 60263.4
+- base_w1: 9.144
+- excess_locus: 0.05370701980590819
+- z_excess: 4.528111072263943
+- w2_slope: -0.006816278819315763
+- w2_fade_sig: -12.640031857254124
+- col_slope: -0.002483849318324813
+- col_decline_sig: 4.109288203664452
+- aw_w1w2: -0.020000457763671875
+- det2_pass: False
+- jit_ratio: 1.0
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## NEAR uid 602876
+- label: NEAR
+- uid: 602876
+- ra: 96.93261686004553
+- dec: -1.4567622867331078
+- gmag: 12.080683708190918
+- bprp: 0.9426183700561523
+- score: 4.35
+- score_refetch: 4.349705363817638
+- dW2: 0.08
+- dW1: 0.084
+- start: 60010.7
+- base_w1: 10.327
+- excess_locus: 0.015057102203369116
+- z_excess: 1.4508394715238782
+- w2_slope: -0.011832388420733218
+- w2_fade_sig: -10.32934522391224
+- col_slope: -0.0017676686104549355
+- col_decline_sig: 3.184271484240584
+- aw_w1w2: -0.029000282287597656
+- det2_pass: False
+- jit_ratio: 1.5230936603698941
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 5.547329902648926
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 5.5" G=17.63 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 280237
+- label: DET2A
+- uid: 280237
+- ra: 52.07800300359415
+- dec: 48.66327162743381
+- gmag: 12.539466857910156
+- bprp: 1.2376813888549805
+- score: 1.026
+- score_refetch: 1.0256389684727536
+- dW2: 0.349
+- dW1: 0.3235
+- start: 58722.4
+- base_w1: 9.364
+- excess_locus: 0.8512536277770997
+- z_excess: 69.56488969609788
+- w2_slope: -0.03589436352890896
+- w2_fade_sig: -1.0280037750450601
+- col_slope: 0.0148338860301599
+- col_decline_sig: -1.532603500968007
+- aw_w1w2: 0.7810001373291016
+- det2_pass: False
+- jit_ratio: 17.69
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: RS(0.13)
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 468346
+- label: DET2A
+- uid: 468346
+- ra: 58.83067259622279
+- dec: 47.353263821226996
+- gmag: 13.082223892211914
+- bprp: 1.2856121063232422
+- score: 0.994
+- score_refetch: 0.9939348973317264
+- dW2: 0.121
+- dW1: 0.129
+- start: 57995.4
+- base_w1: 9.873
+- excess_locus: 0.6822122421264648
+- z_excess: 51.12731703512337
+- w2_slope: 0.03216458041054099
+- w2_fade_sig: 3.7878817856219955
+- col_slope: -0.015550659980641698
+- col_decline_sig: 7.142169762193071
+- aw_w1w2: 0.6970005035400391
+- det2_pass: True
+- jit_ratio: 11.93
+- det2_var_pass: True
+- n_nb6: 1
+- nb_min_dG: 2.8827056884765625
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.72)
+- kill: blend: Gaia neighbour within 6" only 2.9 mag fainter in G (4.0" G=15.96)
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 338719
+- label: DET2A
+- uid: 338719
+- ra: 17.425355890679004
+- dec: 27.95047511614597
+- gmag: 11.341718673706055
+- bprp: 0.9578227996826172
+- score: 0.009
+- score_refetch: 0.008880619365194424
+- dW2: 0.001
+- dW1: -0.0075
+- start: 59575.1
+- base_w1: 9.206
+- excess_locus: 0.480969367980957
+- z_excess: 46.344199184921926
+- w2_slope: 0.008876654609302148
+- w2_fade_sig: 1.5707792749998106
+- col_slope: -0.0034146882525871013
+- col_decline_sig: 1.3935043103271698
+- aw_w1w2: 0.4530000686645508
+- det2_pass: False
+- jit_ratio: 5.76
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 661720
+- label: DET2A
+- uid: 661720
+- ra: 85.41485023663923
+- dec: -1.7841334970074052
+- gmag: 13.847317695617676
+- bprp: 1.4730606079101562
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 11.153
+- excess_locus: 0.6650775756835938
+- z_excess: 40.92509775918963
+- w2_slope: 0.01931595176249923
+- w2_fade_sig: 0.7640400459081059
+- col_slope: -0.005836775238440159
+- col_decline_sig: 0.46657248138558266
+- aw_w1w2: 0.4250001907348633
+- det2_pass: False
+- jit_ratio: 14.12758520244684
+- det2_var_pass: True
+- n_nb6: 1
+- nb_min_dG: 6.0408430099487305
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 3.3" G=19.89 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 608202
+- label: DET2A
+- uid: 608202
+- ra: 265.65058245481737
+- dec: -29.360962915412806
+- gmag: 12.26099681854248
+- bprp: 1.1309137344360352
+- score: 0.831
+- score_refetch: 0.8313012349568396
+- dW2: 0.026
+- dW1: 0.0285
+- start: 57463.6
+- base_w1: 8.127
+- excess_locus: 0.42123654937744137
+- z_excess: 35.51502001361131
+- w2_slope: 0.006843433433194601
+- w2_fade_sig: 2.693227018409847
+- col_slope: -0.010502544156549429
+- col_decline_sig: 5.481736307935358
+- aw_w1w2: 0.30299997329711914
+- det2_pass: True
+- jit_ratio: 2.88
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.56)
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 584244
+- label: DET2A
+- uid: 584244
+- ra: 43.548272861416415
+- dec: 5.882712238779236
+- gmag: 13.429815292358398
+- bprp: 1.3538150787353516
+- score: 4.347
+- score_refetch: 4.34655933649203
+- dW2: 0.288
+- dW1: 0.139
+- start: 58493.6
+- base_w1: 10.585
+- excess_locus: 0.434
+- z_excess: 30.568062976003173
+- w2_slope: -0.017521406526345068
+- w2_fade_sig: -1.672785186915657
+- col_slope: 0.010804184601546765
+- col_decline_sig: -2.4361156041951486
+- aw_w1w2: 0.38899993896484375
+- det2_pass: False
+- jit_ratio: 5.0200000000000005
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.19)
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 656817
+- label: DET2A
+- uid: 656817
+- ra: 61.73301902584373
+- dec: 6.2891205068400975
+- gmag: 11.601112365722656
+- bprp: 1.0291385650634766
+- score: 0.243
+- score_refetch: 0.24250781236259056
+- dW2: 0.0085
+- dW1: -0.0125
+- start: 57622.5
+- base_w1: 9.661
+- excess_locus: 0.27316554260253906
+- z_excess: 26.013494782726934
+- w2_slope: 0.0053851817576103704
+- w2_fade_sig: 3.553189546070345
+- col_slope: -0.0008617383709235498
+- col_decline_sig: 0.7464376326841826
+- aw_w1w2: 0.32700061798095703
+- det2_pass: True
+- jit_ratio: 1.3299999999999998
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 662358
+- label: DET2A
+- uid: 662358
+- ra: 183.39222618612666
+- dec: -5.595415266316503
+- gmag: 10.592610359191895
+- bprp: 0.6272640228271484
+- score: 0.749
+- score_refetch: 0.7494968850334104
+- dW2: 0.0165
+- dW1: 0.002
+- start: 57749.7
+- base_w1: 9.326
+- excess_locus: 0.24218112182617185
+- z_excess: 24.218112182617183
+- w2_slope: 0.0035215274175607594
+- w2_fade_sig: 3.3158526895171048
+- col_slope: -0.0024336752184864704
+- col_decline_sig: 3.3681233666830663
+- aw_w1w2: 0.2180004119873047
+- det2_pass: False
+- jit_ratio: 1.39
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 8.21894359588623
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 4.2" G=18.81 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 91685
+- label: DET2A
+- uid: 91685
+- ra: 310.8134893444856
+- dec: 10.726485778142795
+- gmag: 11.897050857543945
+- bprp: 1.2738752365112305
+- score: 1.049
+- score_refetch: 1.0492300792711597
+- dW2: 0.016
+- dW1: 0.002
+- start: 57327.6
+- base_w1: 9.57
+- excess_locus: 0.2879775047302246
+- z_excess: 21.636097302596998
+- w2_slope: 0.0030333403300665807
+- w2_fade_sig: 3.3255956777987423
+- col_slope: -0.002281148162285816
+- col_decline_sig: 3.470844954500712
+- aw_w1w2: 0.2239999771118164
+- det2_pass: False
+- jit_ratio: 1.15
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.32)
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 331421
+- label: DET2A
+- uid: 331421
+- ra: 92.76480805645846
+- dec: -47.19145490116393
+- gmag: 11.550493240356445
+- bprp: 0.9262685775756836
+- score: 0.019
+- score_refetch: 0.01887233776602532
+- dW2: 0.0005
+- dW1: 0.0155
+- start: 60008.8
+- base_w1: 9.88
+- excess_locus: 0.208076114654541
+- z_excess: 20.04934522889721
+- w2_slope: -0.0003444525403456876
+- w2_fade_sig: -0.269488037836031
+- col_slope: -0.0011383584720675043
+- col_decline_sig: 1.0376569171970222
+- aw_w1w2: 0.16499996185302734
+- det2_pass: False
+- jit_ratio: 2.25
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 304631
+- label: DET2A
+- uid: 304631
+- ra: 262.18994257660785
+- dec: -32.777595642703204
+- gmag: 11.220528602600098
+- bprp: 0.8942966461181641
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 9.54
+- excess_locus: 0.1995437316894531
+- z_excess: 19.22720044800188
+- w2_slope: -0.012628384290096939
+- w2_fade_sig: -1.1969450810246696
+- col_slope: -0.0013140299827772393
+- col_decline_sig: 0.08403705373051235
+- aw_w1w2: 0.22799968719482422
+- det2_pass: False
+- jit_ratio: 6.119999999999999
+- det2_var_pass: True
+- n_nb6: 2
+- nb_min_dG: 6.893675804138184
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.32)
+- kill: 
+- notes: faint Gaia neighbours within 6": 3.7" G=18.11; 4.3" G=20.98 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 594661
+- label: DET2A
+- uid: 594661
+- ra: 112.65632808235229
+- dec: -32.20108427952715
+- gmag: 13.298583030700684
+- bprp: 1.3102436065673828
+- score: 0.606
+- score_refetch: 0.606278568177726
+- dW2: 0.0285
+- dW1: -0.0015
+- start: 58574.2
+- base_w1: 10.793
+- excess_locus: 0.2537048721313476
+- z_excess: 19.013510209642796
+- w2_slope: 0.005600001344671757
+- w2_fade_sig: 1.913380261053134
+- col_slope: -0.0025039991553997727
+- col_decline_sig: 1.1134186161003332
+- aw_w1w2: 0.24199962615966797
+- det2_pass: False
+- jit_ratio: 3.438284720880819
+- det2_var_pass: True
+- n_nb6: 1
+- nb_min_dG: 5.183709144592285
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: RS(0.27)
+- kill: 
+- notes: faint Gaia neighbours within 6": 2.7" G=18.48 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 452192
+- label: DET2A
+- uid: 452192
+- ra: 314.81118149272123
+- dec: 52.432362441249666
+- gmag: 12.515308380126953
+- bprp: 1.1175804138183594
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 10.235
+- excess_locus: 0.19755482482910153
+- z_excess: 16.65611297965579
+- w2_slope: 0.0015920776912905499
+- w2_fade_sig: 1.239386925867378
+- col_slope: -0.0001979212465060623
+- col_decline_sig: 0.05823522788226012
+- aw_w1w2: 0.2049999237060547
+- det2_pass: False
+- jit_ratio: 1.3599999999999999
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 584601
+- label: DET2A
+- uid: 584601
+- ra: 258.62760222314137
+- dec: 14.23864155181237
+- gmag: 11.986324310302734
+- bprp: 0.9098224639892578
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 10.292
+- excess_locus: 0.1697857971191406
+- z_excess: 16.359850178175467
+- w2_slope: 0.03279472096525038
+- w2_fade_sig: 3.7166984598863038
+- col_slope: -0.029684568014584536
+- col_decline_sig: 2.196236913267746
+- aw_w1w2: -0.053999900817871094
+- det2_pass: True
+- jit_ratio: 18.419999999999998
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 648724
+- label: DET2A
+- uid: 648724
+- ra: 43.979444533307785
+- dec: 47.372154224043804
+- gmag: 12.2493257522583
+- bprp: 1.014054298400879
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 10.377
+- excess_locus: 0.16412434387207028
+- z_excess: 15.814336192410078
+- w2_slope: 0.0033619095642232377
+- w2_fade_sig: 1.524073670099996
+- col_slope: -0.002459096902730216
+- col_decline_sig: 1.826943710263191
+- aw_w1w2: 0.13199996948242188
+- det2_pass: False
+- jit_ratio: 2.505740241589298
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 458014
+- label: DET2A
+- uid: 458014
+- ra: 345.08558863585745
+- dec: 59.16191582557135
+- gmag: 13.397679328918457
+- bprp: 1.3874425888061523
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 10.788
+- excess_locus: 0.23250229644775394
+- z_excess: 15.68206505110981
+- w2_slope: 0.0077357076752322396
+- w2_fade_sig: 2.526123584557267
+- col_slope: -0.005099144477207395
+- col_decline_sig: 0.7861304865876275
+- aw_w1w2: 0.2090005874633789
+- det2_pass: False
+- jit_ratio: 2.01542912246866
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 6.244114875793457
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.87)
+- kill: 
+- notes: faint Gaia neighbours within 6": 5.4" G=19.64 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 220781
+- label: DET2A
+- uid: 220781
+- ra: 239.43168559652145
+- dec: -41.72727997321955
+- gmag: 12.032893180847168
+- bprp: 1.7484111785888672
+- score: 0.665
+- score_refetch: 0.6651481000425584
+- dW2: 0.078
+- dW1: 0.064
+- start: 58173.8
+- base_w1: 8.21
+- excess_locus: 0.4367859878540041
+- z_excess: 15.55772898912863
+- w2_slope: 0.002101105689188809
+- w2_fade_sig: 0.21964594172361213
+- col_slope: -0.0026302832424235575
+- col_decline_sig: 1.132064735714136
+- aw_w1w2: 0.430999755859375
+- det2_pass: False
+- jit_ratio: 10.36
+- det2_var_pass: True
+- n_nb6: 2
+- nb_min_dG: 5.074774742126465
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.79)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: faint Gaia neighbours within 6": 4.2" G=18.48; 4.5" G=17.11 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 651925
+- label: DET2A
+- uid: 651925
+- ra: 269.69075922763017
+- dec: -25.975451435110035
+- gmag: 12.6002779006958
+- bprp: 1.2058467864990234
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 8.116
+- excess_locus: 0.17261693572998046
+- z_excess: 14.553566009879638
+- w2_slope: 0.009108575931158658
+- w2_fade_sig: 1.3801950521209887
+- col_slope: -0.004162678991272581
+- col_decline_sig: 2.6352483500693102
+- aw_w1w2: 0.1100001335144043
+- det2_pass: False
+- jit_ratio: 6.569999999999999
+- det2_var_pass: True
+- n_nb6: 2
+- nb_min_dG: 5.2148942947387695
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.67)
+- kill: 
+- notes: faint Gaia neighbours within 6": 2.5" G=17.82; 5.1" G=20.14 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 74609
+- label: DET2A
+- uid: 74609
+- ra: 327.5569930568382
+- dec: 14.114774363166841
+- gmag: 13.06904411315918
+- bprp: 1.7826471328735352
+- score: 0.518
+- score_refetch: 0.5181060172125792
+- dW2: 0.042
+- dW1: 0.084
+- start: 58995.5
+- base_w1: 9.662
+- excess_locus: 0.4287764587402346
+- z_excess: 14.350547422124357
+- w2_slope: 0.008137048294962652
+- w2_fade_sig: 1.150084085085733
+- col_slope: -0.00696607509894762
+- col_decline_sig: 2.9883789726118826
+- aw_w1w2: 0.4380006790161133
+- det2_pass: False
+- jit_ratio: 6.59
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.23)
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 377996
+- label: DET2A
+- uid: 377996
+- ra: 199.01949923961624
+- dec: -26.45644473450871
+- gmag: 14.349522590637207
+- bprp: 1.7876510620117188
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 10.896
+- excess_locus: 0.4239758300781252
+- z_excess: 14.119759034322012
+- w2_slope: 0.012876656975743321
+- w2_fade_sig: 6.288878727611813
+- col_slope: -0.005629511453623951
+- col_decline_sig: 4.640655586792891
+- aw_w1w2: 0.26999950408935547
+- det2_pass: True
+- jit_ratio: 2.733040507564666
+- det2_var_pass: False
+- n_nb6: 2
+- nb_min_dG: 2.48099422454834
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: blend: Gaia neighbour within 6" only 2.5 mag fainter in G (2.7" G=16.83; 3.0" G=17.51)
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 607149
+- label: DET2A
+- uid: 607149
+- ra: 72.62992771417187
+- dec: -5.8017479499332945
+- gmag: 12.254644393920898
+- bprp: 1.396209716796875
+- score: 0.545
+- score_refetch: 0.545127879352198
+- dW2: 0.019
+- dW1: 0.0055
+- start: 58520.9
+- base_w1: 9.372
+- excess_locus: 0.20615161132812504
+- z_excess: 13.904735689203095
+- w2_slope: 0.0025305328066654777
+- w2_fade_sig: 1.4011899907070038
+- col_slope: 0.002006065758559953
+- col_decline_sig: -1.3227237245968002
+- aw_w1w2: 0.11499977111816406
+- det2_pass: False
+- jit_ratio: 2.85
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 2.6594104766845703
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: blend: Gaia neighbour within 6" only 2.7 mag fainter in G (3.1" G=14.91)
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 137372
+- label: DET2A
+- uid: 137372
+- ra: 239.4767727187125
+- dec: -24.845233620586544
+- gmag: 11.78406047821045
+- bprp: 1.6108150482177734
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 8.215
+- excess_locus: 0.2874184951782227
+- z_excess: 13.43216698263741
+- w2_slope: 0.009994715071740878
+- w2_fade_sig: 1.073626764271265
+- col_slope: -0.004727152093643971
+- col_decline_sig: 1.3289824538388266
+- aw_w1w2: 0.2709999084472656
+- det2_pass: False
+- jit_ratio: 9.89
+- det2_var_pass: True
+- n_nb6: 1
+- nb_min_dG: 6.01375675201416
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.72)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: faint Gaia neighbours within 6": 4.3" G=17.80 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 529482
+- label: DET2A
+- uid: 529482
+- ra: 311.0204027439226
+- dec: 29.664798047422785
+- gmag: 12.061513900756836
+- bprp: 1.8918981552124023
+- score: 2.024
+- score_refetch: 2.023832416291829
+- dW2: 0.671
+- dW1: 0.5345
+- start: 58054.9
+- base_w1: 8.164
+- excess_locus: 0.4486203689575198
+- z_excess: 12.965582815569272
+- w2_slope: 0.01226556357739017
+- w2_fade_sig: 0.2687872940814186
+- col_slope: -0.008030081207898526
+- col_decline_sig: 0.8702003605800488
+- aw_w1w2: 0.505000114440918
+- det2_pass: False
+- jit_ratio: 30.769999999999996
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 683552
+- label: DET2A
+- uid: 683552
+- ra: 266.7401619063317
+- dec: -27.96507684508803
+- gmag: 11.925764083862305
+- bprp: 0.9965925216674805
+- score: 0.108
+- score_refetch: 0.10822482419299762
+- dW2: 0.005
+- dW1: 0.018
+- start: 59655.1
+- base_w1: 8.49
+- excess_locus: 0.12872740173339842
+- z_excess: 12.403634708658377
+- w2_slope: 0.0010391696383752203
+- w2_fade_sig: 0.5975321430816848
+- col_slope: -0.002760017078075594
+- col_decline_sig: 2.0743557127682313
+- aw_w1w2: 0.09100055694580078
+- det2_pass: False
+- jit_ratio: 4.29
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 312613
+- label: DET2A
+- uid: 312613
+- ra: 164.12614198580593
+- dec: -77.19426586619744
+- gmag: 12.537557601928711
+- bprp: 1.958749771118164
+- score: 2.409
+- score_refetch: 2.4087439455897495
+- dW2: 0.3505
+- dW1: 0.2485
+- start: 59424.1
+- base_w1: 8.645
+- excess_locus: 0.446900054931641
+- z_excess: 12.216008647676786
+- w2_slope: -0.03472070707010955
+- w2_fade_sig: -3.124552912247984
+- col_slope: 0.006470775013211992
+- col_decline_sig: -2.935784003354759
+- aw_w1w2: 0.5329999923706055
+- det2_pass: False
+- jit_ratio: 11.25
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 361168
+- label: DET2A
+- uid: 361168
+- ra: 271.96538229349926
+- dec: 5.863113091058077
+- gmag: 12.328191757202148
+- bprp: 0.8815546035766602
+- score: 0.056
+- score_refetch: 0.05631141558836961
+- dW2: 0.008
+- dW1: 0.035
+- start: 58364.3
+- base_w1: 10.193
+- excess_locus: 0.12552436828613278
+- z_excess: 12.09500378544765
+- w2_slope: 0.009029938934808357
+- w2_fade_sig: 1.341451417713526
+- col_slope: -0.00041086498181774553
+- col_decline_sig: 0.3449255767122024
+- aw_w1w2: 0.0710000991821289
+- det2_pass: False
+- jit_ratio: 8.42
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 190587
+- label: DET2A
+- uid: 190587
+- ra: 245.39455517105213
+- dec: -26.207570472626276
+- gmag: 12.579424858093262
+- bprp: 1.793950080871582
+- score: 1.799
+- score_refetch: 1.7988841966248532
+- dW2: 0.206
+- dW1: 0.143
+- start: 57255.6
+- base_w1: 8.384
+- excess_locus: 0.3439679870605471
+- z_excess: 11.384425654574517
+- w2_slope: -0.0014051787044464525
+- w2_fade_sig: -0.12637615743336578
+- col_slope: -7.19490987565255e-05
+- col_decline_sig: 0.043435654804531626
+- aw_w1w2: 0.3529996871948242
+- det2_pass: False
+- jit_ratio: 10.879999999999999
+- det2_var_pass: True
+- n_nb6: 1
+- nb_min_dG: 7.844084739685059
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.56)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: faint Gaia neighbours within 6": 4.9" G=20.42 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 166090
+- label: DET2A
+- uid: 166090
+- ra: 265.12366217077255
+- dec: -30.864415203729187
+- gmag: 13.247617721557617
+- bprp: 1.5992441177368164
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 9.924
+- excess_locus: 0.23457558822631847
+- z_excess: 11.325821869437315
+- w2_slope: 0.005958811419916554
+- w2_fade_sig: 1.742857583191037
+- col_slope: -0.0023437396589599153
+- col_decline_sig: 1.2210695680374213
+- aw_w1w2: 0.11199951171875
+- det2_pass: False
+- jit_ratio: 3.61
+- det2_var_pass: True
+- n_nb6: 2
+- nb_min_dG: 5.717948913574219
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 4.7" G=19.11; 5.7" G=18.97 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 575687
+- label: DET2A
+- uid: 575687
+- ra: 10.647073416786215
+- dec: 61.95480447581772
+- gmag: 13.23617172241211
+- bprp: 1.3312673568725586
+- score: 0.165
+- score_refetch: 0.16549089657843885
+- dW2: 0.0095
+- dW1: -0.031
+- start: 57410.8
+- base_w1: 10.524
+- excess_locus: 0.152
+- z_excess: 11.234925520770766
+- w2_slope: 0.002476847557951089
+- w2_fade_sig: 0.578754540961724
+- col_slope: -0.0014991513752320002
+- col_decline_sig: 0.7059553021600271
+- aw_w1w2: 3.498000144958496
+- det2_pass: True
+- jit_ratio: 2.0320015706292334
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 6.390642166137695
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 3.5" G=19.63 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 330914
+- label: DET2A
+- uid: 330914
+- ra: 24.78034842202181
+- dec: 62.35013504142563
+- gmag: 11.1048583984375
+- bprp: 0.8671989440917969
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 9.514
+- excess_locus: 0.11437591552734372
+- z_excess: 11.08380447955495
+- w2_slope: 0.005451167023561132
+- w2_fade_sig: 2.5982232671760124
+- col_slope: -0.0038553112539610832
+- col_decline_sig: 1.5603607856721233
+- aw_w1w2: nan
+- det2_pass: False
+- jit_ratio: 1.99
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.28)
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 162954
+- label: DET2A
+- uid: 162954
+- ra: 239.7701153239085
+- dec: -24.379823050383706
+- gmag: 13.044803619384766
+- bprp: 1.973801612854004
+- score: 1.393
+- score_refetch: 1.3925268974916187
+- dW2: 0.141
+- dW1: 0.104
+- start: 57806.7
+- base_w1: 8.741
+- excess_locus: 0.4062876129150394
+- z_excess: 10.972008595293012
+- w2_slope: 0.001515849041625078
+- w2_fade_sig: 0.24020809510399418
+- col_slope: 0.00010344054768971845
+- col_decline_sig: -0.0626063440606416
+- aw_w1w2: 0.5230007171630859
+- det2_pass: True
+- jit_ratio: 8.74
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.84)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 607005
+- label: DET2A
+- uid: 607005
+- ra: 253.0202342645957
+- dec: -5.022177242003401
+- gmag: 12.976569175720215
+- bprp: 1.2177581787109375
+- score: 0.096
+- score_refetch: 0.09562569003430431
+- dW2: 0.003
+- dW1: -0.009
+- start: 58179.3
+- base_w1: 10.713
+- excess_locus: 0.12985516357421872
+- z_excess: 10.948263487641535
+- w2_slope: 0.002570857344885605
+- w2_fade_sig: 2.0140441976929777
+- col_slope: -0.0020037045545608406
+- col_decline_sig: 1.3947998369287842
+- aw_w1w2: -0.010999679565429688
+- det2_pass: False
+- jit_ratio: 2.722200846479415
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 139999
+- label: DET2A
+- uid: 139999
+- ra: 223.0785628807235
+- dec: 29.026221893110048
+- gmag: 13.157798767089844
+- bprp: 1.6548137664794922
+- score: 0.284
+- score_refetch: 0.2835923929862933
+- dW2: 0.009
+- dW1: -0.0
+- start: 57575.1
+- base_w1: 10.27
+- excess_locus: 0.2508260726928712
+- z_excess: 10.847453298427743
+- w2_slope: 0.008882149061123034
+- w2_fade_sig: 4.091762433741091
+- col_slope: -0.0068442187050452696
+- col_decline_sig: 4.2057885890226405
+- aw_w1w2: 0.20600032806396484
+- det2_pass: True
+- jit_ratio: 2.35
+- det2_var_pass: False
+- n_nb6: 1
+- nb_min_dG: 5.927867889404297
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.29)
+- kill: 
+- notes: faint Gaia neighbours within 6": 2.8" G=19.09 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 235546
+- label: DET2A
+- uid: 235546
+- ra: 279.9398600235581
+- dec: 40.57959812189497
+- gmag: 10.38737964630127
+- bprp: 0.7800655364990234
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 8.192
+- excess_locus: 0.10840524291992185
+- z_excess: 10.840524291992184
+- w2_slope: 0.0033956983495733173
+- w2_fade_sig: 0.47100968787053404
+- col_slope: -0.010490799249099667
+- col_decline_sig: 1.640367412476455
+- aw_w1w2: -0.006999969482421875
+- det2_pass: False
+- jit_ratio: 3.69
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 220686
+- label: DET2A
+- uid: 220686
+- ra: 239.34997549669143
+- dec: -42.668039145944924
+- gmag: 12.970864295959473
+- bprp: 2.125319480895996
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 8.188
+- excess_locus: 0.39292332458496126
+- z_excess: 10.598217322242323
+- w2_slope: -0.009830816506625206
+- w2_fade_sig: -0.9132858059165764
+- col_slope: 0.004851790885155964
+- col_decline_sig: -1.654124318618532
+- aw_w1w2: 0.46199989318847656
+- det2_pass: False
+- jit_ratio: 12.790000000000001
+- det2_var_pass: True
+- n_nb6: 2
+- nb_min_dG: 5.746882438659668
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.76)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: faint Gaia neighbours within 6": 2.3" G=18.72; 5.4" G=19.41 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 52960
+- label: DET2A
+- uid: 52960
+- ra: 141.34134697275366
+- dec: -67.54017923747992
+- gmag: 11.54986572265625
+- bprp: 1.443903923034668
+- score: 1.504
+- score_refetch: 1.5036799658841098
+- dW2: 0.089
+- dW1: 0.068
+- start: 58136.1
+- base_w1: 8.822
+- excess_locus: 0.1592438430786133
+- z_excess: 10.349555658773642
+- w2_slope: 0.00037489040301541543
+- w2_fade_sig: 0.04770984759345895
+- col_slope: 0.0003412375813838806
+- col_decline_sig: -0.0855056398070633
+- aw_w1w2: 0.13499927520751953
+- det2_pass: False
+- jit_ratio: 5.05
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 329675
+- label: DET2A
+- uid: 329675
+- ra: 339.60016120948376
+- dec: -56.068351676517494
+- gmag: 14.337679862976074
+- bprp: 1.8625850677490234
+- score: 0.805
+- score_refetch: 0.8049592771023109
+- dW2: 0.049
+- dW1: 0.027
+- start: 59341.8
+- base_w1: 10.61
+- excess_locus: 0.3434829864501956
+- z_excess: 10.295158620413106
+- w2_slope: 0.0019246602207381924
+- w2_fade_sig: 0.42761311352321524
+- col_slope: -0.00345481873397636
+- col_decline_sig: 1.0715800475661905
+- aw_w1w2: 0.4289999008178711
+- det2_pass: False
+- jit_ratio: 5.535607420706164
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 404927
+- label: DET2A
+- uid: 404927
+- ra: 161.06942861354668
+- dec: -45.27052268699745
+- gmag: 12.222171783447266
+- bprp: 0.9979124069213867
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 10.22
+- excess_locus: 0.1058329925537109
+- z_excess: 10.197625075033326
+- w2_slope: 0.0086158692461063
+- w2_fade_sig: 6.657849361982048
+- col_slope: -0.0031946412926026793
+- col_decline_sig: 2.7471693768657466
+- aw_w1w2: 0.07900047302246094
+- det2_pass: False
+- jit_ratio: 1.99
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 252570
+- label: DET2A
+- uid: 252570
+- ra: 75.77750987241083
+- dec: 25.388702716302966
+- gmag: 12.642464637756348
+- bprp: 2.1104307174682617
+- score: 1.573
+- score_refetch: 1.5728480488192733
+- dW2: 0.2865
+- dW1: 0.3245
+- start: 57805.7
+- base_w1: 8.416
+- excess_locus: 0.3772052421569827
+- z_excess: 10.059608982105354
+- w2_slope: 0.0071567024031754245
+- w2_fade_sig: 0.5924406658310458
+- col_slope: -0.007837778096199817
+- col_decline_sig: 4.495651847689408
+- aw_w1w2: 0.4660000801086426
+- det2_pass: True
+- jit_ratio: 15.440000000000001
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.83)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 365312
+- label: DET2A
+- uid: 365312
+- ra: 76.04522788595976
+- dec: 25.289261563029864
+- gmag: 10.994185447692871
+- bprp: 1.2342395782470703
+- score: 0.283
+- score_refetch: 0.2828222122475033
+- dW2: 0.004
+- dW1: 0.003
+- start: 57441.7
+- base_w1: 8.575
+- excess_locus: 0.11318479156494139
+- z_excess: 9.327310954482943
+- w2_slope: 0.00173170563911626
+- w2_fade_sig: 3.766519931508056
+- col_slope: -0.0017988285843840016
+- col_decline_sig: 3.303659989453269
+- aw_w1w2: 0.03699970245361328
+- det2_pass: False
+- jit_ratio: 1.0
+- det2_var_pass: False
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 55148
+- label: DET2A
+- uid: 55148
+- ra: 13.189171233433843
+- dec: -27.475769488931373
+- gmag: 11.885183334350586
+- bprp: 1.464766502380371
+- score: 1.786
+- score_refetch: 1.7858909768349418
+- dW2: 0.1135
+- dW1: 0.083
+- start: 60117.7
+- base_w1: 9.184
+- excess_locus: 0.1464093399047852
+- z_excess: 9.147635730575201
+- w2_slope: -0.0034419658400498543
+- w2_fade_sig: -0.8140512382452417
+- col_slope: -0.0005518199472668143
+- col_decline_sig: 0.26969431136179783
+- aw_w1w2: 0.14400005340576172
+- det2_pass: False
+- jit_ratio: 6.069999999999999
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 41546
+- label: DET2A
+- uid: 41546
+- ra: 310.0384797217098
+- dec: -0.8707909181473499
+- gmag: 10.947425842285156
+- bprp: 1.2228164672851562
+- score: 1.384
+- score_refetch: 1.3835493786645887
+- dW2: 0.0725
+- dW1: 0.02
+- start: 57682.7
+- base_w1: 8.616
+- excess_locus: 0.10795632934570311
+- z_excess: 9.101943321336092
+- w2_slope: 0.0036717336655739397
+- w2_fade_sig: 1.3018247184311822
+- col_slope: 0.00143682130822068
+- col_decline_sig: -0.7813295057080681
+- aw_w1w2: 0.08700084686279297
+- det2_pass: False
+- jit_ratio: 4.760000000000001
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 78873
+- label: DET2A
+- uid: 78873
+- ra: 212.04213467546532
+- dec: -41.39804387593391
+- gmag: 11.60600757598877
+- bprp: 1.6732206344604492
+- score: 2.712
+- score_refetch: 2.7123694919982975
+- dW2: 1.026
+- dW1: 0.8015
+- start: 59409.3
+- base_w1: 8.591
+- excess_locus: 0.2092491111755373
+- z_excess: 8.840700542149662
+- w2_slope: -0.049361659276604436
+- w2_fade_sig: -2.268831465657746
+- col_slope: 0.01583305367007824
+- col_decline_sig: -3.221827412805208
+- aw_w1w2: 0.32200002670288086
+- det2_pass: True
+- jit_ratio: 13.32
+- det2_var_pass: True
+- n_nb6: 1
+- nb_min_dG: 3.8998374938964844
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: faint Gaia neighbours within 6": 2.4" G=15.51 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 283125
+- label: DET2A
+- uid: 283125
+- ra: 78.14265814235702
+- dec: 25.98013003605569
+- gmag: 12.980001449584961
+- bprp: 2.0681686401367188
+- score: 0.333
+- score_refetch: 0.3328051518895706
+- dW2: 0.053
+- dW1: 0.046
+- start: 57278.5
+- base_w1: 9.01
+- excess_locus: 0.33363952636718786
+- z_excess: 8.700983404106697
+- w2_slope: 0.01258285000587196
+- w2_fade_sig: 1.6169300501496795
+- col_slope: 0.0028116796855991552
+- col_decline_sig: -0.7849301102155454
+- aw_w1w2: 0.3920001983642578
+- det2_pass: False
+- jit_ratio: 11.2
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.24)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 171672
+- label: DET2A
+- uid: 171672
+- ra: 242.52085987645262
+- dec: -21.54230381322838
+- gmag: 12.486234664916992
+- bprp: 1.8951034545898438
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 8.469
+- excess_locus: 0.28997930908203146
+- z_excess: 8.35773809777348
+- w2_slope: 0.00521654153003015
+- w2_fade_sig: 0.6640043441277829
+- col_slope: -0.003708731384851092
+- col_decline_sig: 2.302460618901108
+- aw_w1w2: 0.24699974060058594
+- det2_pass: False
+- jit_ratio: 13.5
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.80)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 358951
+- label: DET2A
+- uid: 358951
+- ra: 167.2233143565783
+- dec: -75.35999793933325
+- gmag: 13.821907043457031
+- bprp: 2.1095714569091797
+- score: 1.543
+- score_refetch: 1.5431645673184289
+- dW2: 0.224
+- dW1: 0.18
+- start: 59785.0
+- base_w1: 8.814
+- excess_locus: 0.30439427947998077
+- z_excess: 8.112316174144008
+- w2_slope: -0.007679494919127228
+- w2_fade_sig: -0.6634038392573907
+- col_slope: 0.0016647015927649875
+- col_decline_sig: -0.7491353934614371
+- aw_w1w2: 0.41100025177001953
+- det2_pass: False
+- jit_ratio: 13.969999999999999
+- det2_var_pass: True
+- n_nb6: 2
+- nb_min_dG: 0.9956235885620117
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.41)
+- kill: blend: Gaia neighbour within 6" only 1.0 mag fainter in G (4.9" G=14.82; 5.8" G=18.32) | Gaia DR3 variability classifier: YSO
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 122962
+- label: DET2A
+- uid: 122962
+- ra: 207.05426949980858
+- dec: -52.16969586185728
+- gmag: 12.679118156433105
+- bprp: 1.944870948791504
+- score: 0.153
+- score_refetch: 0.15323013359753201
+- dW2: 0.014
+- dW1: 0.005
+- start: 58153.3
+- base_w1: 8.889
+- excess_locus: 0.29223097229003936
+- z_excess: 8.079014039876999
+- w2_slope: -0.008028077586355264
+- w2_fade_sig: -1.4325599805240943
+- col_slope: 0.000970105468732968
+- col_decline_sig: -0.165827478423969
+- aw_w1w2: 0.35900020599365234
+- det2_pass: False
+- jit_ratio: 6.7
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.56)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 416726
+- label: DET2A
+- uid: 416726
+- ra: 335.1989298267341
+- dec: 63.27297655360496
+- gmag: 14.265270233154297
+- bprp: 1.7802753448486328
+- score: 0.142
+- score_refetch: 0.14249685248816615
+- dW2: 0.013
+- dW1: -0.047
+- start: 57394.0
+- base_w1: 11.091
+- excess_locus: 0.23915594482421895
+- z_excess: 8.02309912823531
+- w2_slope: 0.009852572230613199
+- w2_fade_sig: 1.9907172122580752
+- col_slope: -0.001784862583953507
+- col_decline_sig: 0.33670168443024046
+- aw_w1w2: 0.13500022888183594
+- det2_pass: False
+- jit_ratio: 6.308428279287175
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 387633
+- label: DET2A
+- uid: 387633
+- ra: 162.78307114733707
+- dec: -11.614689174975023
+- gmag: 13.452154159545898
+- bprp: 1.4360170364379883
+- score: 0.125
+- score_refetch: 0.12521293452903154
+- dW2: 0.008
+- dW1: 0.0035
+- start: 58463.7
+- base_w1: 10.884
+- excess_locus: 0.1165593185424805
+- z_excess: 7.692325077437262
+- w2_slope: 0.007917955518081055
+- w2_fade_sig: 2.810772657704025
+- col_slope: -0.004354912700067213
+- col_decline_sig: 2.1480101101829483
+- aw_w1w2: 0.053999900817871094
+- det2_pass: False
+- jit_ratio: 4.078605858361142
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 678749
+- label: DET2A
+- uid: 678749
+- ra: 261.7269520730173
+- dec: -34.42002115437998
+- gmag: 13.338479042053223
+- bprp: 1.487466812133789
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 10.588
+- excess_locus: 0.11425199127197272
+- z_excess: 6.850351940979614
+- w2_slope: 0.011653780174644923
+- w2_fade_sig: 1.7759541290409746
+- col_slope: -0.0044042330897191544
+- col_decline_sig: 0.5335038625516534
+- aw_w1w2: 0.015999794006347656
+- det2_pass: False
+- jit_ratio: 4.375729288214702
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 57667
+- label: DET2A
+- uid: 57667
+- ra: 110.17109637951334
+- dec: 14.301934753110949
+- gmag: 11.805403709411621
+- bprp: 1.5835399627685547
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 8.473
+- excess_locus: 0.13414600372314464
+- z_excess: 6.781814027691115
+- w2_slope: 0.0111092482056038
+- w2_fade_sig: 2.9376503136772047
+- col_slope: -0.007813289840326292
+- col_decline_sig: 1.1768366050726833
+- aw_w1w2: 0.08999967575073242
+- det2_pass: False
+- jit_ratio: 3.98
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 531152
+- label: DET2A
+- uid: 531152
+- ra: 28.132998551970708
+- dec: 76.8288589657954
+- gmag: 13.593749046325684
+- bprp: 1.4472541809082031
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 11.004
+- excess_locus: 0.10410983276367192
+- z_excess: 6.722887315869406
+- w2_slope: 0.005145057313344248
+- w2_fade_sig: 2.09871959282299
+- col_slope: -0.00591254776293866
+- col_decline_sig: 2.2980478757232445
+- aw_w1w2: 0.01900005340576172
+- det2_pass: False
+- jit_ratio: 3.9509198096455713
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: 
+- kill: 
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## DET2A uid 144763
+- label: DET2A
+- uid: 144763
+- ra: 242.25311940366726
+- dec: -19.14807841494259
+- gmag: 12.892170906066895
+- bprp: 2.1887903213500977
+- score: 0.819
+- score_refetch: 0.8186490454730367
+- dW2: 0.152
+- dW1: 0.141
+- start: 59066.2
+- base_w1: 8.813
+- excess_locus: 0.20900000000000002
+- z_excess: 5.421868028100324
+- w2_slope: -0.01901016323303062
+- w2_fade_sig: -3.0070483935980787
+- col_slope: 0.005857924162563036
+- col_decline_sig: -3.361570422757345
+- aw_w1w2: 0.2519998550415039
+- det2_pass: False
+- jit_ratio: 16.009999999999998
+- det2_var_pass: True
+- n_nb6: 0
+- nb_min_dG: nan
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: YSO(0.87)
+- kill: Gaia DR3 variability classifier: YSO
+- notes: literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+
+## VALID:NGC2547-ID8 uid 699340
+- label: VALID:NGC2547-ID8
+- uid: 699340
+- ra: 122.260417
+- dec: -48.971444
+- gmag: 12.972408294677734
+- bprp: 0.9252338409423828
+- score: 0.0
+- score_refetch: 0.0
+- dW2: 0.0
+- dW1: 0.0
+- start: nan
+- base_w1: 11.039
+- excess_locus: 0.41801403045654295
+- z_excess: 40.27808583921518
+- w2_slope: 0.005011456814838189
+- w2_fade_sig: 0.5523192051034314
+- col_slope: -0.0022778530930901617
+- col_decline_sig: 0.4061129073613754
+- aw_w1w2: 0.31599998474121094
+- det2_pass: False
+- jit_ratio: 10.2409060370477
+- det2_var_pass: True
+- n_nb6: 3
+- nb_min_dG: 6.060726165771484
+- simbad: UNREACHABLE
+- vsx: UNREACHABLE
+- gaia_varclass: SOLAR_LIKE(0.64)
+- kill: 
+- notes: faint Gaia neighbours within 6": 3.1" G=19.39; 4.4" G=20.42; 5.5" G=19.03 | literature check incomplete (SIMBAD or VSX unreachable)
+- errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: skipped (failed twice) / aavso:Expecting value: line 1 column 1 (char 0)
+

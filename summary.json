@@ -1,0 +1,51 @@
+{
+ "n_pool": 699341,
+ "n_scored": 699341,
+ "n_with_lc": 611091,
+ "frac_done": 1.0,
+ "n_score_gt_5": 8,
+ "n_score_gt_8": 4,
+ "n_score_gt_12": 2,
+ "n_score_gt_20": 2,
+ "valid_ASASSN-21qj": {
+  "score": 38.038,
+  "dW2": 0.738,
+  "dW1": 0.332,
+  "start": 58227.4,
+  "rank": 1
+ },
+ "valid_NGC2547-ID8": {
+  "score": 0.0,
+  "dW2": 0.0,
+  "dW1": 0.0,
+  "start": NaN,
+  "rank": 213619
+ },
+ "field_max_score": 21.587,
+ "n_cand_det1": 4,
+ "n_cand_det1_field": 3,
+ "n_det2_var_pass_all": 37,
+ "n_det2_stageA": 111,
+ "n_det2_input": 580634,
+ "vet_NGC2547-ID8": {
+  "score": 0.0,
+  "score_refetch": 0.0,
+  "excess_locus": 0.41801403045654295,
+  "z_excess": 40.27808583921518,
+  "w2_slope": 0.005011456814838189,
+  "w2_fade_sig": 0.5523192051034314,
+  "col_slope": -0.0022778530930901617,
+  "col_decline_sig": 0.4061129073613754,
+  "aw_w1w2": 0.31599998474121094,
+  "aw_minus_neo_w1w2": -0.05400001525878906,
+  "det2_pass": false,
+  "jit_ratio": 10.2409060370477,
+  "det2_var_pass": true,
+  "simbad": "UNREACHABLE",
+  "vsx": "UNREACHABLE",
+  "kill": ""
+ },
+ "n_det2_pass_vetted": 10,
+ "n_det2_var_pass_vetted": 37,
+ "services": {}
+}

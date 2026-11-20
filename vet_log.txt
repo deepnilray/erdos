@@ -1,0 +1,132 @@
+12:35:17 read /tmp/s0/scores.csv 187257
+12:35:17 read /tmp/s1/scores.csv 186175
+12:35:17 read /tmp/s2/scores.csv 187795
+12:35:17 read /tmp/s3/scores.csv 184555
+12:35:18 merged rows 745782 -> unique uids 699341
+12:38:07 pool rows 699341
+12:38:08 detector 2 stage A: 111 of 580634
+12:38:08 targets to vet: 73
+12:41:08 vetted 683344 DET1 errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap
+12:41:08 vetted 679380 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap
+12:41:10 vetted 699339 DET1 errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap
+12:43:26 vetted 211004 DET1 errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap
+12:43:38 vetted 170435 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:43:43 vetted 220917 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:44:03 vetted 298055 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:44:03 vetted 577418 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap
+12:44:03 vetted 637541 DET1 errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: DALServiceError: 404 Client Error: Not Found for url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync | https://simbad.harvard.edu/simbad/sim-tap
+12:44:35 vetted 542579 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:45:25 vetted 94591 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:46:17 vetted 47551 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:46:33 vetted 190609 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:46:35 vetted 202846 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:46:40 vetted 14142 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:46:50 vetted 280237 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:46:50 vetted 450211 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:47:04 vetted 51511 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:47:06 vetted 131042 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:48:34 vetted 608202 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:48:45 vetted 656817 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:49:04 vetted 662358 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:49:12 vetted 468346 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:49:24 vetted 331421 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:49:25 vetted 661720 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:49:28 vetted 602876 NEAR errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:49:28 vetted 338719 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:49:45 vetted 304631 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:50:28 vetted 584244 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:51:12 vetted 91685 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:51:22 vetted 594661 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:51:37 vetted 452192 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:51:37 vetted 584601 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:52:26 vetted 648724 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:53:16 vetted 458014 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:54:20 vetted 220781 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:54:30 vetted 651925 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:54:31 vetted 529482 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:54:39 vetted 74609 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:54:43 vetted 377996 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:54:43 vetted 137372 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:55:06 vetted 607149 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:56:06 vetted 166090 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:57:12 vetted 361168 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:57:20 vetted 312613 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:57:22 vetted 683552 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:57:24 vetted 575687 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:57:26 vetted 190587 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:57:35 vetted 139999 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:57:35 vetted 235546 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:58:11 vetted 330914 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:59:09 vetted 162954 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:59:29 vetted 607005 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:59:36 vetted 220686 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+12:59:59 vetted 329675 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:00:02 vetted 52960 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:00:13 vetted 78873 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:01:16 vetted 404927 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:01:29 vetted 171672 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:02:10 vetted 55148 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:02:10 vetted 252570 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:02:21 vetted 122962 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:02:26 vetted 365312 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:02:31 vetted 387633 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:02:34 vetted 41546 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:02:42 vetted 283125 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:02:47 vetted 531152 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:02:55 vetted 358951 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:04:42 vetted 416726 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:05:24 vetted 678749 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:05:26 vetted 57667 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:05:30 vetted 144763 DET2A errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:05:40 vetted 699340 VALID:NGC2547-ID8 errors: simbad:https://simbad.cds.unistra.fr/simbad/sim-tap: skipped (failed twice) | https://simbad.harvard.edu/simbad/sim-tap: skipped (failed twice) || vsx:https://tapvizier.cds.unistra.fr/TAPVizieR/tap: s
+13:05:40 {
+ "n_pool": 699341,
+ "n_scored": 699341,
+ "n_with_lc": 611091,
+ "frac_done": 1.0,
+ "n_score_gt_5": 8,
+ "n_score_gt_8": 4,
+ "n_score_gt_12": 2,
+ "n_score_gt_20": 2,
+ "valid_ASASSN-21qj": {
+  "score": 38.038,
+  "dW2": 0.738,
+  "dW1": 0.332,
+  "start": 58227.4,
+  "rank": 1
+ },
+ "valid_NGC2547-ID8": {
+  "score": 0.0,
+  "dW2": 0.0,
+  "dW1": 0.0,
+  "start": NaN,
+  "rank": 213619
+ },
+ "field_max_score": 21.587,
+ "n_cand_det1": 4,
+ "n_cand_det1_field": 3,
+ "n_det2_var_pass_all": 37,
+ "n_det2_stageA": 111,
+ "n_det2_input": 580634,
+ "vet_NGC2547-ID8": {
+  "score": 0.0,
+  "score_refetch": 0.0,
+  "excess_locus": 0.41801403045654295,
+  "z_excess": 40.27808583921518,
+  "w2_slope": 0.005011456814838189,
+  "w2_fade_sig": 0.5523192051034314,
+  "col_slope": -0.0022778530930901617,
+  "col_decline_sig": 0.4061129073613754,
+  "aw_w1w2": 0.31599998474121094,
+  "aw_minus_neo_w1w2": -0.05400001525878906,
+  "det2_pass": false,
+  "jit_ratio": 10.2409060370477,
+  "det2_var_pass": true,
+  "simbad": "UNREACHABLE",
+  "vsx": "UNREACHABLE",
+  "kill": ""
+ },
+ "n_det2_pass_vetted": 10,
+ "n_det2_var_pass_vetted": 37,
+ "services": {}
+}
