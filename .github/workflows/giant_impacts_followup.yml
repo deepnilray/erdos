@@ -1,0 +1,28 @@
+name: giant-impacts-followup
+on:
+  push:
+    branches: [claude/winter-2026-plan]
+    paths: ["winter2026/03_frontier/giant_impacts/vet/followup.py", ".github/workflows/giant_impacts_followup.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  followup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install skypatrol astroquery astropy pandas pyarrow
+      - name: run
+        working-directory: winter2026/03_frontier/giant_impacts/vet
+        run: python followup.py || true
+      - name: publish to impacts-followup
+        if: always()
+        working-directory: winter2026/03_frontier/giant_impacts/vet
+        run: |
+          mkdir -p /tmp/pub && cp -r followup/* /tmp/pub/ 2>/dev/null; cd /tmp/pub && git init -q && git checkout -q -b impacts-followup
+          git config user.name "github-actions" && git config user.email "actions@github.com"
+          echo "run ${GITHUB_RUN_ID} at $(date -u)" > RUN_INFO.txt; git add -A && git commit -qm "followup ${GITHUB_RUN_ID}"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" impacts-followup
