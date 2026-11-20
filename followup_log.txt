@@ -1,0 +1,3 @@
+SIMBAD OK via https://simbad.idia.ac.za/simbad/sim-tap rows 34
+control ASASSN-21qj found: True
+all otypes rows 203
