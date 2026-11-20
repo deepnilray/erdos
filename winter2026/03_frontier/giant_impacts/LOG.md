@@ -1,5 +1,31 @@
 # Giant-impact afterglow hunt: log
 
+## 2026-11-20, afternoon (Claude): blind spot fixed, completeness measured, far search running
+Verdict: the excess-plus-variability detector (for events that began before 2014) now runs on the whole near pool and recovers
+three known dusty systems blindly (NGC 2547-ID8 as the planted control, plus V488 Per and RZ Psc B, both known extreme-dust stars,
+found without being told). It flags 37 stars: 16 are known young stars (SIMBAD TT*/Or*/Y*O), 2 are cataclysmic variables (AE Aqr,
+V426 Oph) and 14 have NO SIMBAD entry within 5 arcsec. Several of those 14 have strong warm-dust colours in AllWISE 2010.
+CANDIDATES, not discoveries: most likely uncatalogued young stars with disks (Class II colours: W1-W2 > 0.25 and W2-W3 > 1), a few
+possibly extreme debris disks. Age (lithium, H-alpha) decides.
+
+- Completeness (subagent, completeness/README.md, commit 3098e2c): 0 false positives in 1,723 real light curves (95% upper limit
+  0.17% per star); 50%/90% recovery at 0.137/0.204 mag (step), 0.144/0.239 (ramp), 0.196/0.434 (3-yr decay); blind for onsets
+  before the third visit (about the first 12-15 months) and in the last year. ASASSN-21qj control re-scored at 38.04. VERIFIED.
+- Far search (250-500 pc, 3,303,105 stars, branches impacts-far-*): IRSA's async queue stalled (about 360 stars per shard in two
+  hours); hunt.py now uses synchronous upload joins first (commit fa1a1e0) and the run was restarted; it then scored about
+  2,000 stars per shard in 8 minutes. ETA a few days.
+- Blind-spot detector on the near pool: 111 stars with W1-W2 excess > 0.10 mag and z > 5; 37 also vary (visit jitter > 3x the
+  median for their W2). Control: ID8 excess 0.418, z 40, jitter ratio 10.2, recovered. SIMBAD via the IDIA mirror (CDS down;
+  control ASASSN-21qj found). Files: blindspot/d2_excess_variability_near.csv, d2_vetted.csv, unknown14.csv.
+  Strongest uncatalogued warm-dust stars (AllWISE 2010 colours; Gaia GSP-Phot Teff/log g):
+  Gaia DR3 246657089893122176 (RA 58.83, Dec +47.35, 212 pc, K dwarf 4800 K, W1-W2 0.70, W2-W3 1.12, NEOWISE jitter 12x);
+  Gaia DR3 1768914166695591296 (327.56, +14.12, 110 pc, K7 4200 K, W1-W2 0.44, W2-W3 1.07, jitter 6.6x);
+  Gaia DR3 5628404318169472 (43.55, +5.88, 232 pc, K 4500 K, W1-W2 0.39, W2-W3 1.57, D1 score 4.35);
+  Gaia DR3 6505057483979425024 (339.60, -56.07, 185 pc, M0 3650 K, W1-W2 0.43, W2-W3 1.92);
+  Gaia DR3 1858978638770086016 (311.02, +29.66, 223 pc, log g 3.8, W1-W2 0.51, W3-W4 1.90; Cygnus direction).
+  Mundane explanations still open for each: uncatalogued YSO, background galaxy or nebula in the WISE beam (ext_flg = 1 for some),
+  blends. Next: light curves and field controls for these five, Gaia H-alpha and cluster membership, then spectra.
+
 ## 2026-11-20 — Catalog and publication audit
 
 **Verdict: CANDIDATE for all three field infrared events. OCCUPIED for the ASASSN-21qj infrared event and for J060000's optical fade.**
