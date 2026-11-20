@@ -1,0 +1,67 @@
+[
+ {
+  "name": "G246657089893122176",
+  "det": "LIST",
+  "label": "LIST",
+  "ra": 58.8306726,
+  "dec": 47.3532638
+ },
+ {
+  "name": "G6505057483979425024",
+  "det": "LIST",
+  "label": "LIST",
+  "ra": 339.6001612,
+  "dec": -56.0683517
+ },
+ {
+  "name": "G1768914166695591296",
+  "det": "LIST",
+  "label": "LIST",
+  "ra": 327.5569931,
+  "dec": 14.1147744
+ },
+ {
+  "name": "G1858978638770086016",
+  "det": "LIST",
+  "label": "LIST",
+  "ra": 311.0204027,
+  "dec": 29.664798
+ },
+ {
+  "name": "G5628404318169472",
+  "det": "LIST",
+  "label": "LIST",
+  "ra": 43.5482729,
+  "dec": 5.8827122
+ },
+ {
+  "name": "ASASSN-21qj",
+  "det": "D1",
+  "label": "CONTROL",
+  "control": "ASASSN-21qj",
+  "expect": "survive; SIMBAD counterpart",
+  "ra": 123.847042,
+  "dec": -38.989833,
+  "gaia_id": null
+ },
+ {
+  "name": "J060000",
+  "det": "D1",
+  "label": "CONTROL",
+  "control": "J060000",
+  "expect": "survive; optical dip in ASAS-SN",
+  "ra": 90.00308,
+  "dec": -31.00781,
+  "gaia_id": null
+ },
+ {
+  "name": "V836 Tau",
+  "det": "D2",
+  "label": "CONTROL",
+  "control": "V836 Tau",
+  "expect": "flagged young",
+  "ra": 75.77750987,
+  "dec": 25.38870272,
+  "gaia_id": 3420008412568724736
+ }
+]

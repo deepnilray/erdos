@@ -1,0 +1,13 @@
+15:22:18 vet2 start: TARGETS=list OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/list CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
+15:22:18 targets: 8
+15:22:18 SIMBAD batch: 5 objects for 8 targets
+15:22:18 NEOWISE upload join 0 -> 1593 rows
+15:22:23 vetted G246657089893122176 LIST -> KILLED | kills: blend: Gaia neighbour within 6" only 2.88 mag fainter in G (4.0" PA96 G15.96 dG+2.88) | missing: 
+15:22:23 vetted G6505057483979425024 LIST -> SURVIVOR | kills:  | missing: 
+15:22:24 vetted G1768914166695591296 LIST -> SURVIVOR | kills:  | missing: 
+15:22:24 vetted ASASSN-21qj CONTROL -> SURVIVOR | kills:  | missing: 
+15:22:24 vetted G1858978638770086016 LIST -> SURVIVOR | kills:  | missing: 
+15:22:25 vetted G5628404318169472 LIST -> SURVIVOR | kills:  | missing: 
+15:22:25 vetted V836 Tau CONTROL -> YOUNG | kills:  | missing: 
+15:22:25 vetted J060000 CONTROL -> SURVIVOR | kills:  | missing: 
+15:22:25 {"mode": "list", "n_targets": 8, "counts": {"SURVIVOR": 6, "KILLED": 1, "YOUNG": 1}, "controls": [["ASASSN-21qj", "PASS", "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 57.3, missing: none"], ["J060000", "PASS", "category SURVIVOR, largest ASAS-SN seasonal dimming 0.35 mag at MJD 58864"], ["V836 Tau", "PASS", "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"]], "minutes": 0.1}
