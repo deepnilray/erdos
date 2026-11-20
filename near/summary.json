@@ -1,0 +1,27 @@
+{
+ "mode": "near",
+ "n_targets": 41,
+ "counts": {
+  "SURVIVOR": 20,
+  "YOUNG": 14,
+  "KILLED": 7
+ },
+ "controls": [
+  [
+   "ASASSN-21qj",
+   "PASS",
+   "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 60.5, missing: none"
+  ],
+  [
+   "J060000",
+   "FAIL",
+   "category SURVIVOR, largest ASAS-SN seasonal dimming n/a mag at MJD n/a"
+  ],
+  [
+   "V836 Tau",
+   "PASS",
+   "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"
+  ]
+ ],
+ "minutes": 24.9
+}
