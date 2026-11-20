@@ -31,23 +31,31 @@ def build_pool():
     except Exception as e:
         log("cluster pool unavailable:", repr(e)[:200], "-> Gaia DR3 nearby main-sequence pool")
     gaia = pyvo.dal.TAPService("https://gea.esac.esa.int/tap-server/tap")
-    q = ("SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source "
-         "WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 "
-         "AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4")
-    log("gaia pool query:", q)
+    POOL = os.environ.get("POOL", "near")
+    if POOL == "far":   # second search (2026-11-20): 250-500 pc, G 8-16; disjoint from the near pool (parallax > 4)
+        q = ("SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source "
+             "WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 "
+             "AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4"); step = 2.5
+    else:
+        q = ("SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source "
+             "WHERE parallax > 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 15 "
+             "AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4"); step = 5
+    log("gaia pool query (POOL=%s):" % POOL, q)
     from astropy.table import vstack
     parts = []
-    for r0 in range(0, 360, 5):          # synchronous queries in 5-degree RA strips (async jobs fail via pyvo here)
-        qq = q + f" AND ra >= {r0} AND ra < {r0 + 5}"
-        for attempt in range(3):
+    for r0 in np.arange(0, 360, step):          # synchronous queries in RA strips (async jobs fail via pyvo here)
+        qq = q + f" AND ra >= {r0} AND ra < {r0 + step}"
+        for attempt in range(4):
             try:
-                p = gaia.run_sync(qq, maxrec=200000).to_table(); parts.append(p); break
+                p = gaia.run_sync(qq, maxrec=300000).to_table(); parts.append(p)
+                if len(p) >= 300000: log("WARNING strip", r0, "hit the row limit")
+                break
             except Exception as e:
-                log("strip", r0, "failed:", repr(e)[:300]); time.sleep(10)
+                log("strip", r0, "failed:", repr(e)[:300]); time.sleep(15)
     t = vstack(parts); log("gaia pool rows:", len(t), "from", len(parts), "strips")
     absg = np.array(t["gmag"], float) + 5 * np.log10(np.array(t["plx"], float) / 100.0)
     x = np.array(t["bprp"], float); ms = (absg > 2.2 * x + 0.2) & (absg < 2.9 * x + 3.6)
-    t = t[ms]; t = t[np.argsort(-np.array(t["plx"], float))]; log("after main-sequence cut:", len(t))
+    t = t[ms]; t = t[np.argsort(-np.array(t["plx"], float), kind="stable" if POOL == "far" else "quicksort")]; log("after main-sequence cut:", len(t))
     t["prob"] = 1.0; t["cluster"] = "field"; t["logage"] = np.nan
     return _finish_pool(t, path)
 
