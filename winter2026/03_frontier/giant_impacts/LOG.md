@@ -1,5 +1,21 @@
 # Giant-impact afterglow hunt: log
 
+## 2026-11-20, evening (Claude): automated vetting (vet2) built and validated; far search on track
+Verdict: every candidate now gets the full manual checklist automatically (vet2/vet2.py, workflow giant_impacts_vet2.yml, results on
+branch impacts-vet2). On the near list it reproduces every manual result: controls pass (ASASSN-21qj survives and is found in
+SIMBAD, field z 57; J060000 survives with its 0.35 mag optical dip recovered; V836 Tau flagged young), candidate 1 survives with no
+flags (field z 34.3, centroid jump 1.6 sigma, no SIMBAD object, about 1040 K), candidate 2 is flagged "not plain dust". VERIFIED
+(runs 44763410479 near, 44763412267 far, 44762497568 list).
+Worst news first:
+- Gaia DR3 246657089893122176, the strongest uncatalogued warm-dust star in the previous entry, is KILLED as a blend: a Gaia
+  neighbour 4.0" away only 2.88 mag fainter.
+- Candidate 1's optical check is inconclusive rather than clean: two ASAS-SN cameras give -0.05 to -0.06 mag (brighter) after the
+  2018 onset, one gives +0.014, with only one 120-day bin before onset in the g cameras.
+- Four of the five uncatalogued warm-dust stars survive with Class II-like colours (likely uncatalogued young stars with disks).
+Far search: 154,980 of 3,303,107 scored at 16:10 UTC (about 39,000 per hour); expected to finish around 24 November. After every
+far run the workflow now dispatches vet2 on the far list, so new candidates are vetted within hours of being scored.
+Next: wait for the far run; read impacts-vet2/far/vet2_report.md after each run; spectra for candidate 1 and the four survivors.
+
 ## 2026-11-20, afternoon (Claude): blind spot fixed, completeness measured, far search running
 Verdict: the excess-plus-variability detector (for events that began before 2014) now runs on the whole near pool and recovers
 three known dusty systems blindly (NGC 2547-ID8 as the planted control, plus V488 Per (the most extreme known debris disk) and the RZ Psc system (a known dusty young star),
