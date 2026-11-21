@@ -1,0 +1,232 @@
+{
+ "sets": [
+  {
+   "set": "Z1",
+   "n_images": 12,
+   "lim5": 20.91,
+   "n_truth": 37,
+   "link_rec": 11,
+   "synth_rec": 30,
+   "link_unknown": 0,
+   "synth_review": 3,
+   "synth_scrambled_review": 0,
+   "synth_cand": 8674,
+   "synth_cand_scrambled": 8680,
+   "synth_seconds": 146.9,
+   "n_vel": 17038
+  },
+  {
+   "set": "Z2",
+   "n_images": 12,
+   "lim5": 20.9,
+   "n_truth": 23,
+   "link_rec": 9,
+   "synth_rec": 20,
+   "link_unknown": 1,
+   "synth_review": 3,
+   "synth_scrambled_review": 0,
+   "synth_cand": 6703,
+   "synth_cand_scrambled": 6721,
+   "synth_seconds": 96.3,
+   "n_vel": 16834
+  },
+  {
+   "set": "Z3",
+   "n_images": 8,
+   "lim5": 20.66,
+   "n_truth": 25,
+   "link_rec": 9,
+   "synth_rec": 24,
+   "link_unknown": 0,
+   "synth_review": 1,
+   "synth_scrambled_review": 0,
+   "synth_cand": 11048,
+   "synth_cand_scrambled": 11173,
+   "synth_seconds": 1575.3,
+   "n_vel": 17104
+  },
+  {
+   "set": "Z4",
+   "n_images": 8,
+   "lim5": 20.6,
+   "n_truth": 29,
+   "link_rec": 6,
+   "synth_rec": 21,
+   "link_unknown": 0,
+   "synth_review": 0,
+   "synth_scrambled_review": 0,
+   "synth_cand": 8506,
+   "synth_cand_scrambled": 8379,
+   "synth_seconds": 132.3,
+   "n_vel": 17104
+  },
+  {
+   "set": "Z5",
+   "n_images": 12,
+   "lim5": 20.85,
+   "n_truth": 31,
+   "link_rec": 10,
+   "synth_rec": 26,
+   "link_unknown": 0,
+   "synth_review": 0,
+   "synth_scrambled_review": 1,
+   "synth_cand": 7239,
+   "synth_cand_scrambled": 7311,
+   "synth_seconds": 1432.8,
+   "n_vel": 17058
+  },
+  {
+   "set": "Z6",
+   "n_images": 12,
+   "lim5": 20.16,
+   "n_truth": 27,
+   "link_rec": 7,
+   "synth_rec": 18,
+   "link_unknown": 0,
+   "synth_review": 0,
+   "synth_scrambled_review": 0,
+   "synth_cand": 2200,
+   "synth_cand_scrambled": 2207,
+   "synth_seconds": 53.1,
+   "n_vel": 16948
+  },
+  {
+   "set": "Z7",
+   "n_images": 7,
+   "lim5": 20.25,
+   "n_truth": 22,
+   "link_rec": 1,
+   "synth_rec": 11,
+   "link_unknown": 0,
+   "synth_review": 0,
+   "synth_scrambled_review": 0,
+   "synth_cand": 1259,
+   "synth_cand_scrambled": 1381,
+   "synth_seconds": 800.5,
+   "n_vel": 16535
+  },
+  {
+   "set": "Z8",
+   "n_images": 11,
+   "lim5": 20.07,
+   "n_truth": 20,
+   "link_rec": 6,
+   "synth_rec": 14,
+   "link_unknown": 0,
+   "synth_review": 0,
+   "synth_scrambled_review": 0,
+   "synth_cand": 694,
+   "synth_cand_scrambled": 685,
+   "synth_seconds": 46.8,
+   "n_vel": 8624
+  }
+ ],
+ "by_V": [
+  {
+   "V": "14-17",
+   "n": 1,
+   "link": 1,
+   "synth": 1,
+   "either": 1,
+   "link_frac": 1.0,
+   "synth_frac": 1.0,
+   "either_frac": 1.0
+  },
+  {
+   "V": "17-18",
+   "n": 0,
+   "link": 0,
+   "synth": 0,
+   "either": 0,
+   "link_frac": null,
+   "synth_frac": null,
+   "either_frac": null
+  },
+  {
+   "V": "18-19",
+   "n": 7,
+   "link": 7,
+   "synth": 6,
+   "either": 7,
+   "link_frac": 1.0,
+   "synth_frac": 0.86,
+   "either_frac": 1.0
+  },
+  {
+   "V": "19-19.5",
+   "n": 10,
+   "link": 10,
+   "synth": 10,
+   "either": 10,
+   "link_frac": 1.0,
+   "synth_frac": 1.0,
+   "either_frac": 1.0
+  },
+  {
+   "V": "19.5-20",
+   "n": 21,
+   "link": 16,
+   "synth": 18,
+   "either": 19,
+   "link_frac": 0.76,
+   "synth_frac": 0.86,
+   "either_frac": 0.9
+  },
+  {
+   "V": "20-20.5",
+   "n": 16,
+   "link": 13,
+   "synth": 16,
+   "either": 16,
+   "link_frac": 0.81,
+   "synth_frac": 1.0,
+   "either_frac": 1.0
+  },
+  {
+   "V": "20.5-21",
+   "n": 36,
+   "link": 12,
+   "synth": 34,
+   "either": 34,
+   "link_frac": 0.33,
+   "synth_frac": 0.94,
+   "either_frac": 0.94
+  },
+  {
+   "V": "21-21.5",
+   "n": 43,
+   "link": 0,
+   "synth": 38,
+   "either": 38,
+   "link_frac": 0.0,
+   "synth_frac": 0.88,
+   "either_frac": 0.88
+  },
+  {
+   "V": "21.5-22",
+   "n": 37,
+   "link": 0,
+   "synth": 27,
+   "either": 27,
+   "link_frac": 0.0,
+   "synth_frac": 0.73,
+   "either_frac": 0.73
+  },
+  {
+   "V": "22-25",
+   "n": 42,
+   "link": 0,
+   "synth": 14,
+   "either": 14,
+   "link_frac": 0.0,
+   "synth_frac": 0.33,
+   "either_frac": 0.33
+  }
+ ],
+ "link_miss_why_V_lt_20_5": {
+  "undetected": 4,
+  "linker_other": 3,
+  "max_resid": 1
+ },
+ "n_truth": 214
+}

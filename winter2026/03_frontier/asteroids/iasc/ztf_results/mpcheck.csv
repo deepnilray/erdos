@@ -1,0 +1,15 @@
+id,method,ra,dec,tmid_jd,rate,n_listed,nearest,nearest_sep_arcsec,nearest_V,nearest_rate,head
+Z1_S000,synth,137.61564227377264,16.45654846298205,2458522.8055364806,0.49675886010840997,1,(164182) 2004 BM52,264.4,19.6,0.554,"The following objects, brighter than V = 24.0, were found in the   5.0-arcminute region around R.A. = 09 10 27.8, Decl. = +16 27 24 (J2000.0) on 2019 "
+Z1_S001,synth,137.64256833022677,16.343230906417364,2458522.8055364806,0.7299038562694368,1,(229336) 2005 QW10,275.3,20.8,0.639,"The following objects, brighter than V = 24.0, were found in the   5.0-arcminute region around R.A. = 09 10 34.2, Decl. = +16 20 36 (J2000.0) on 2019 "
+Z1_S002,synth,137.42796088646364,16.358505577221788,2458522.8055364806,0.5455898935455935,1,(319242) 2006 AG45,192.4,20.5,0.613,"The following objects, brighter than V = 24.0, were found in the   5.0-arcminute region around R.A. = 09 09 42.7, Decl. = +16 21 31 (J2000.0) on 2019 "
+Z2_T009,link,143.4103409851375,10.46161896041532,2458524.8442865754,0.12568553913885297,3,2016 NG176,74.5,21.3,0.672,"The following objects, brighter than V = 24.0, were found in the   5.0-arcminute region around R.A. = 09 33 38.5, Decl. = +10 27 42 (J2000.0) on 2019 "
+Z2_S000,synth,143.350034556821,10.606801864507426,2458524.8442865754,0.6403821576449881,4,2021 PW236,1.4,21.4,0.619,"The following objects, brighter than V = 24.0, were found in the   5.0-arcminute region around R.A. = 09 33 24.0, Decl. = +10 36 24 (J2000.0) on 2019 "
+Z2_S001,synth,143.56978834718382,10.384875004148606,2458524.8442865754,0.7408480976180262,0,,,,,"
+
+MPChecker/CMTChecker/NEOChecker/NEOCMTChecker
+
+
+MPChecker/CMTChecker/NEOChecker/NEOCMTChecker
+Here are the results of your search(es) in the request"
+Z2_S002,synth,143.4325079514781,10.43748458206558,2458524.8442865754,0.12791896903506242,3,(619977) 2006 UT99,109.4,22.1,0.523,"The following objects, brighter than V = 24.0, were found in the   5.0-arcminute region around R.A. = 09 33 43.8, Decl. = +10 26 15 (J2000.0) on 2019 "
+Z3_S000,synth,28.164329874223203,11.106285955321825,2458779.8187353862,0.6781790354267954,2,2019 TU55,4.1,21.3,0.67,"The following objects, brighter than V = 24.0, were found in the   5.0-arcminute region around R.A. = 01 52 39.4, Decl. = +11 06 23 (J2000.0) on 2019 "
