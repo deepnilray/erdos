@@ -1,254 +1,160 @@
-17:42:21 vet2 start: TARGETS=far OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/far CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
-17:42:21 read /tmp/s0/scores.csv 296278
-17:42:21 read /tmp/s1/scores.csv 300180
-17:42:21 read /tmp/s2/scores.csv 301679
-17:42:21 read /tmp/s3/scores.csv 297719
-17:42:21 merged unique uids 1195855
-17:42:25 pool far 3303107
-17:42:26 D1 candidates: 2
-17:42:26 D2 stage A (excess): 268 of 1028394 | with jitter > 3x: 95
-17:42:26 targets: 99
-17:43:39 SIMBAD batch: 110 objects for 99 targets
-17:43:58 NEOWISE upload join 0 -> 15735 rows
-17:44:19 NEOWISE upload join 60 -> 7609 rows
-17:44:20 vetted uid220308 D2 -> SURVIVOR | kills:  | missing: 
-17:44:20 vetted uid325718 D2 -> SURVIVOR | kills:  | missing: 
-17:44:20 vetted ASASSN-21qj (uid3303105) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
-17:47:47   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:47:47   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:47:51   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:47:59   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:48:44   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:48:57   retry 1/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:49:04   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-17:49:17   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-17:49:44   uid1090282 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-17:49:44 vetted uid1090282 D1 -> KILLED | kills: centroid jump 0.100" (4.4 sigma) at the onset toward a neighbour: 4.0" PA224 G20.3 (angle 23 deg); 8.3" PA247 G16.7 (angle 1 deg); 9.2" PA217 G21.1 (angle 29 de | missing: asas-sn
-17:49:45 vetted uid342028 D2 -> SURVIVOR | kills:  | missing: 
-17:49:57   uid1148744 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-17:49:57 vetted uid1148744 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.46 mag fainter in G (3.8" PA197 G20.28 dG+4.90; 5.9" PA46 G16.84 dG+1.46; 7.6" PA254 G16.25 dG+0.87; 7.9" PA343 G19.80 dG | missing: asas-sn
-17:50:23   retry 2/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:50:23   retry 2/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:50:27   retry 2/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:50:35   retry 2/2 asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host='asassn-lb01.ifa.hawaii.edu', port=9006): Max retries exceeded with url: /get_current_message (Caused by C
-17:51:03   uid961709 asas-sn FAILED RuntimeError('asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host=\'asassn-lb01.ifa.hawaii.edu\', port=9006): Max retries exceeded with url
-17:51:03   uid1050117 asas-sn FAILED RuntimeError('asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host=\'asassn-lb01.ifa.hawaii.edu\', port=9006): Max retries exceeded with url
-17:51:03 vetted uid961709 D2 -> YOUNG | kills:  | missing: asas-sn
-17:51:03 vetted uid1050117 D2 -> YOUNG | kills:  | missing: asas-sn
-17:51:07   uid984129 asas-sn FAILED RuntimeError('asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host=\'asassn-lb01.ifa.hawaii.edu\', port=9006): Max retries exceeded with url
-17:51:07 vetted uid984129 D2 -> YOUNG | kills:  | missing: asas-sn
-17:51:15   uid1103309 asas-sn FAILED RuntimeError('asas-sn: ConnectTimeout(MaxRetryError("HTTPConnectionPool(host=\'asassn-lb01.ifa.hawaii.edu\', port=9006): Max retries exceeded with url
-17:51:15 vetted uid1103309 D2 -> SURVIVOR | kills:  | missing: asas-sn
-17:54:51   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-17:55:11   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-17:55:51   uid1159910 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-17:55:51 vetted uid1159910 D2 -> YOUNG | kills:  | missing: asas-sn
-17:55:51 vetted uid456710 D2 -> SURVIVOR | kills:  | missing: 
-17:56:31   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-17:56:33   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-17:56:51   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-17:56:53   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-17:57:31   uid1061853 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-17:57:31 vetted uid1061853 D2 -> YOUNG | kills:  | missing: asas-sn
-17:57:33   uid956198 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-17:57:33 vetted uid956198 D2 -> YOUNG | kills:  | missing: asas-sn
-17:57:34 vetted uid800756 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-17:59:43   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:00:03   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:00:05   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:00:12   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:00:21   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:00:25   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:00:32   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:00:41   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:00:43   uid1048217 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:00:43 vetted uid1048217 D2 -> YOUNG | kills:  | missing: asas-sn
-18:00:43 vetted uid416674 D2 -> YOUNG | kills:  | missing: 
-18:00:48   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:01:05   uid1116725 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:01:05 vetted uid1116725 D2 -> YOUNG | kills:  | missing: asas-sn
-18:01:08   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:01:12   uid993575 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:01:12 vetted uid993575 D2 -> YOUNG | kills:  | missing: asas-sn
-18:01:13 vetted uid532798 D2 -> YOUNG | kills:  | missing: 
-18:01:21   uid1175029 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:01:21 vetted uid1175029 D2 -> YOUNG | kills:  | missing: asas-sn
-18:01:22 vetted uid838651 D2 -> SURVIVOR | kills:  | missing: 
-18:01:22 vetted uid137313 D2 -> SURVIVOR | kills:  | missing: 
-18:01:23 vetted uid878866 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-18:01:23 vetted uid239897 D2 -> SURVIVOR | kills:  | missing: 
-18:01:24 vetted uid844587 D2 -> YOUNG | kills:  | missing: 
-18:01:48   uid999033 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:01:48 vetted uid999033 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.16 mag fainter in G (2.1" PA37 G19.53 dG+4.58; 2.8" PA22 G20.43 dG+5.48; 3.1" PA238 G18.28 dG+3.34; 3.9" PA176 G20.69 dG+ | missing: asas-sn
-18:01:48 vetted uid260980 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-18:01:49 vetted uid55937 D2 -> SURVIVOR | kills:  | missing: 
-18:01:50 vetted uid310080 D2 -> YOUNG | kills:  | missing: 
-18:01:50 vetted uid269584 D2 -> SURVIVOR | kills:  | missing: 
-18:02:13   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:02:33   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:03:13   uid981812 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:03:13 vetted uid981812 D2 -> YOUNG | kills:  | missing: asas-sn
-18:04:43   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:05:03   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:05:43   uid1078155 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:05:43 vetted uid1078155 D2 -> YOUNG | kills:  | missing: asas-sn
-18:05:44 vetted uid438254 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.67 mag fainter in G (4.4" PA40 G17.73 dG+2.67) | missing: 
-18:06:05   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:06:18   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:06:25   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:06:38   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:06:51   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:07:05   uid958315 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:07:06 vetted uid958315 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.66 mag fainter in G (1.6" PA173 G15.27 dG+2.66) | missing: asas-sn
-18:07:06 vetted uid712994 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-18:07:11   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:07:18   uid1117853 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:07:19 vetted uid1117853 D2 -> YOUNG | kills:  | missing: asas-sn
-18:07:43   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:07:51   uid1136791 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:07:51 vetted uid1136791 D2 -> YOUNG | kills:  | missing: asas-sn
-18:07:56   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:08:03   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:08:16   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:08:43   uid1016323 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:08:44 vetted uid1016323 D2 -> YOUNG | kills:  | missing: asas-sn
-18:08:56   uid1180376 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:08:56 vetted uid1180376 D2 -> YOUNG | kills:  | missing: asas-sn
-18:10:36   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:10:56   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:11:06   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:11:16   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:11:26   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:11:36   uid1169402 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:11:36   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:11:36 vetted uid1169402 D2 -> YOUNG | kills:  | missing: asas-sn
-18:11:36 vetted uid560552 D2 -> SURVIVOR | kills:  | missing: 
-18:11:37 vetted uid909402 D2 -> YOUNG | kills:  | missing: 
-18:12:06   uid1117149 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:12:06 vetted uid1117149 D2 -> YOUNG | kills:  | missing: asas-sn
-18:12:16   uid1020396 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:12:16 vetted uid1020396 D2 -> YOUNG | kills:  | missing: asas-sn
-18:12:21   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:12:41   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:13:21   uid979261 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:13:21 vetted uid979261 D2 -> YOUNG | kills:  | missing: asas-sn
-18:13:22 vetted uid835189 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-18:13:22 vetted uid869035 D2 -> YOUNG | kills:  | missing: 
-18:13:23 vetted uid889197 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.51 mag fainter in G (2.1" PA271 G14.02 dG+0.51; 9.9" PA197 G20.84 dG+7.33) | missing: 
-18:13:23 vetted uid875307 D2 -> KILLED | kills: centroid jump 0.232" (3.2 sigma) at the onset toward a neighbour: 3.7" PA196 G12.9 (angle 9 deg) | blend: Gaia neighbour within 6" only 1.51 mag fainter in G (3 | missing: ASAS-SN change at onset (no camera spans the onset)
-18:13:24 vetted uid896516 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, Kiso A-0903 109) | missing: 
-18:13:41   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:13:57   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:14:01   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:14:17   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:14:41   uid1018261 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:14:41 vetted uid1018261 D2 -> YOUNG | kills:  | missing: asas-sn
-18:14:41 vetted uid892905 D2 -> KILLED | kills: centroid jump 0.143" (3.1 sigma) at the onset toward a neighbour: 2.1" PA91 G13.5 (angle 0 deg) | blend: Gaia neighbour within 6" only -0.51 mag fainter in G (2 | missing: 
-18:14:57   uid1096024 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:14:57 vetted uid1096024 D2 -> YOUNG | kills:  | missing: asas-sn
-18:14:57 vetted uid880869 D2 -> YOUNG | kills:  | missing: 
-18:14:58 vetted uid351866 D2 -> YOUNG | kills:  | missing: 
-18:16:59   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:17:11   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:17:19   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:17:31   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:17:59   uid1020158 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:17:59 vetted uid1020158 D2 -> YOUNG | kills:  | missing: asas-sn
-18:17:59 vetted uid900210 D2 -> YOUNG | kills:  | missing: 
-18:18:11   uid984249 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:18:11 vetted uid984249 D2 -> YOUNG | kills:  | missing: asas-sn
-18:18:12 vetted uid902493 D2 -> SURVIVOR | kills:  | missing: 
-18:18:37   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:18:56   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:18:57   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:19:16   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:19:37   uid991402 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:19:38 vetted uid991402 D2 -> YOUNG | kills:  | missing: asas-sn
-18:19:56   uid1116479 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:19:56 vetted uid1116479 D2 -> YOUNG | kills:  | missing: asas-sn
-18:19:56 vetted uid850157 D2 -> KILLED | kills: galaxy/QSO within 6" in SIMBAD: V* V1157 Ori [G] 0.0" | missing: 
-18:21:08   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:21:28   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:22:08   uid983581 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:22:08 vetted uid983581 D2 -> YOUNG | kills:  | missing: asas-sn
-18:22:28   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:22:36   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:22:48   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:22:56   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:23:28   uid980347 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:23:28 vetted uid980347 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.09 mag fainter in G (4.7" PA136 G15.19 dG+0.09; 6.7" PA36 G19.91 dG+4.81; 7.7" PA34 G19.35 dG+4.25) | missing: asas-sn
-18:23:28 vetted uid428084 D2 -> SURVIVOR | kills:  | missing: 
-18:23:36   uid941546 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:23:36 vetted uid941546 D2 -> YOUNG | kills:  | missing: asas-sn
-18:23:37 vetted uid126443 D2 -> SURVIVOR | kills:  | missing: 
-18:24:21   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:24:41   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:24:56   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:25:14   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:25:16   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:25:21   uid1108316 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:25:21 vetted uid1108316 D2 -> YOUNG | kills:  | missing: asas-sn
-18:25:21 vetted uid869353 D2 -> YOUNG | kills:  | missing: 
-18:25:22 vetted uid438629 D2 -> KILLED | kills: centroid jump 0.288" (4.2 sigma) at the onset toward a neighbour: 6.2" PA100 G18.2 (angle 9 deg) | missing: ASAS-SN (no source)
-18:25:22 vetted uid765206 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -1.51 mag fainter in G (3.7" PA16 G11.37 dG-1.51) | missing: 
-18:25:23 vetted uid781730 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-18:25:23 vetted uid783499 D2 -> SURVIVOR | kills:  | missing: 
-18:25:34   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:25:56   uid1173802 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:25:56 vetted uid1173802 D2 -> YOUNG | kills:  | missing: asas-sn
-18:25:57 vetted uid311901 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.66 mag fainter in G (5.5" PA123 G13.27 dG+0.66) | missing: 
-18:25:57 vetted uid624745 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* LY UMa) | missing: 
-18:26:14   uid1144163 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:26:14 vetted uid1144163 D2 -> SURVIVOR | kills:  | missing: asas-sn
-18:28:06   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:28:26   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:29:06   uid1197713 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:29:06 vetted uid1197713 D2 -> YOUNG | kills:  | missing: asas-sn
-18:29:06 vetted uid926008 D2 -> YOUNG | kills:  | missing: 
-18:29:07 vetted uid857434 D2 -> YOUNG | kills:  | missing: 
-18:29:07 vetted uid847196 D2 -> YOUNG | kills:  | missing: 
-18:29:08 vetted uid407360 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -0.74 mag fainter in G (2.4" PA257 G10.88 dG-0.74; 6.7" PA64 G19.07 dG+7.46; 8.9" PA141 G20.11 dG+8.49; 9.1" PA245 G18.83 d | missing: 
-18:29:08 vetted uid354608 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, ASAS J191551-1415.0) | missing: 
-18:29:49   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:30:09   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:30:49   uid1003353 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:30:50 vetted uid1003353 D2 -> YOUNG | kills:  | missing: asas-sn
-18:31:05   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:31:25   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:31:46   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:32:05   uid1004862 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:32:05 vetted uid1004862 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, V* FW Cep) | missing: asas-sn
-18:32:06 vetted uid690873 D2 -> SURVIVOR | kills:  | missing: 
-18:32:06   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:32:46   uid959202 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:32:46 vetted uid959202 D2 -> SURVIVOR | kills:  | missing: asas-sn
-18:32:47 vetted uid893973 D2 -> YOUNG | kills:  | missing: 
-18:32:47 vetted uid704416 D2 -> SURVIVOR | kills:  | missing: 
-18:32:47 vetted uid775856 D2 -> SURVIVOR | kills:  | missing: 
-18:33:58   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:34:18   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:34:58   uid955772 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:34:58 vetted uid955772 D2 -> YOUNG | kills:  | missing: asas-sn
-18:34:59 vetted J060000 CONTROL -> SURVIVOR | kills:  | missing: 
-18:34:59 vetted V836 Tau CONTROL -> YOUNG | kills:  | missing: 
-18:35:26   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:35:41   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:35:46   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:36:01   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:36:03   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:36:24   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:36:26   uid1137499 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:36:26 vetted uid1137499 D2 -> SURVIVOR | kills:  | missing: asas-sn
-18:36:41   uid1084142 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:36:41 vetted uid1084142 D2 -> SURVIVOR | kills:  | missing: asas-sn
-18:37:04   uid1069828 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:37:04 vetted uid1069828 D2 -> YOUNG | kills:  | missing: asas-sn
-18:37:16   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:37:36   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:38:16   uid983466 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:38:16 vetted uid983466 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.92 mag fainter in G (1.8" PA177 G17.62 dG+2.92) | missing: asas-sn
-18:38:28   retry 1/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:38:48   retry 2/2 asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')
-18:39:28   uid1052915 asas-sn FAILED RuntimeError("asas-sn: RuntimeError('Sky Patrol skipped after 6 consecutive failures')")
-18:39:28 vetted uid1052915 D2 -> YOUNG | kills:  | missing: asas-sn
-18:39:28 {"mode": "far", "n_targets": 99, "counts": {"YOUNG": 55, "SURVIVOR": 25, "KILLED": 19}, "controls": [["ASASSN-21qj", "PASS", "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 57.3, missing: none"], ["J060000", "PASS", "category SURVIVOR, largest ASAS-SN seasonal dimming 0.35 mag at MJD 58864"], ["V836 Tau", "PASS", "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"]], "minutes": 57.1}
+23:05:06 vet2 start: TARGETS=far OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/far CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
+23:05:06 read /tmp/s0/scores.csv 356698
+23:05:06 read /tmp/s1/scores.csv 362100
+23:05:06 read /tmp/s2/scores.csv 361919
+23:05:06 read /tmp/s3/scores.csv 357719
+23:05:07 merged unique uids 1438434
+23:05:14 pool far 3303107
+23:05:14 D1 candidates: 2
+23:05:14 D2 stage A (excess): 338 of 1235165 | with jitter > 3x: 141
+23:05:14 targets: 145
+23:06:21 SIMBAD batch: 171 objects for 145 targets
+23:06:46 NEOWISE upload join 0 -> 16072 rows
+23:07:07 NEOWISE upload join 60 -> 13710 rows
+23:07:21 NEOWISE upload join 120 -> 5049 rows
+23:07:23 vetted uid220308 D2 -> SURVIVOR | kills:  | missing: 
+23:07:24 vetted ASASSN-21qj (uid3303105) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
+23:07:24 vetted uid325718 D2 -> SURVIVOR | kills:  | missing: 
+23:07:32 vetted uid1103309 D2 -> SURVIVOR | kills:  | missing: 
+23:07:34 vetted uid1050117 D2 -> YOUNG | kills:  | missing: 
+23:07:35 vetted uid1090282 D1 -> KILLED | kills: centroid jump 0.100" (4.4 sigma) at the onset toward a neighbour: 4.0" PA224 G20.3 (angle 23 deg); 8.3" PA247 G16.7 (angle 1 deg); 9.2" PA217 G21.1 (angle 29 de | missing: 
+23:07:36 vetted uid342028 D2 -> SURVIVOR | kills:  | missing: 
+23:07:39 vetted uid961709 D2 -> YOUNG | kills:  | missing: 
+23:07:44 vetted uid1148744 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.46 mag fainter in G (3.8" PA197 G20.28 dG+4.90; 5.9" PA46 G16.84 dG+1.46; 7.6" PA254 G16.25 dG+0.87; 7.9" PA343 G19.80 dG | missing: 
+23:07:46 vetted uid984129 D2 -> YOUNG | kills:  | missing: 
+23:07:48 vetted uid1175029 D2 -> YOUNG | kills:  | missing: 
+23:07:53 vetted uid1116725 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+23:07:54 vetted uid1159910 D2 -> YOUNG | kills:  | missing: 
+23:07:57 vetted uid999033 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.16 mag fainter in G (2.1" PA37 G19.53 dG+4.58; 2.8" PA22 G20.43 dG+5.48; 3.1" PA238 G18.28 dG+3.34; 3.9" PA176 G20.69 dG+ | missing: ASAS-SN (no source)
+23:08:02 vetted uid1061853 D2 -> YOUNG | kills:  | missing: 
+23:08:03 vetted uid456710 D2 -> SURVIVOR | kills:  | missing: 
+23:08:05 vetted uid956198 D2 -> YOUNG | kills:  | missing: 
+23:08:13 vetted uid1048217 D2 -> YOUNG | kills:  | missing: 
+23:08:21 vetted uid993575 D2 -> YOUNG | kills:  | missing: 
+23:09:10 vetted uid1355017 D2 -> YOUNG | kills:  | missing: 
+23:09:11 vetted uid1408208 D2 -> YOUNG | kills:  | missing: 
+23:09:12 vetted uid1371630 D2 -> YOUNG | kills:  | missing: 
+23:09:16 vetted uid1262405 D2 -> YOUNG | kills:  | missing: 
+23:09:21 vetted uid981812 D2 -> YOUNG | kills:  | missing: 
+23:09:22 vetted uid416674 D2 -> YOUNG | kills:  | missing: 
+23:09:23 vetted uid958315 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.66 mag fainter in G (1.6" PA173 G15.27 dG+2.66) | missing: 
+23:09:24 vetted uid800756 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+23:09:25 vetted uid532798 D2 -> YOUNG | kills:  | missing: 
+23:09:26 vetted uid838651 D2 -> SURVIVOR | kills:  | missing: 
+23:09:28 vetted uid1117853 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+23:09:31 vetted uid1136791 D2 -> YOUNG | kills:  | missing: 
+23:09:57 vetted uid1394555 D2 -> YOUNG | kills:  | missing: 
+23:10:26 vetted uid1277809 D2 -> SURVIVOR | kills:  | missing: ASAS-SN (no source)
+23:10:28 vetted uid137313 D2 -> SURVIVOR | kills:  | missing: 
+23:10:29 vetted uid1197479 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.44 mag fainter in G (3.1" PA192 G16.22 dG+2.44; 8.3" PA0 G19.06 dG+5.28) | galaxy/QSO within 6" in SIMBAD: ESO-HA  593 [G | missing: 
+23:10:30 vetted uid878866 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+23:10:30 vetted uid239897 D2 -> SURVIVOR | kills:  | missing: 
+23:10:32 vetted uid1272657 D2 -> YOUNG | kills:  | missing: 
+23:10:32 vetted uid844587 D2 -> YOUNG | kills:  | missing: 
+23:10:33 vetted uid260980 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+23:10:39 vetted uid1078155 D2 -> YOUNG | kills:  | missing: 
+23:11:22 vetted uid1252374 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+23:11:23 vetted uid55937 D2 -> SURVIVOR | kills:  | missing: 
+23:11:24 vetted uid310080 D2 -> YOUNG | kills:  | missing: 
+23:11:25 vetted uid269584 D2 -> SURVIVOR | kills:  | missing: 
+23:11:37 vetted uid1357327 D2 -> YOUNG | kills:  | missing: 
+23:11:38 vetted uid1384448 D2 -> YOUNG | kills:  | missing: 
+23:11:40 vetted uid438254 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.67 mag fainter in G (4.4" PA40 G17.73 dG+2.67) | missing: 
+23:11:50 vetted uid1418968 D2 -> YOUNG | kills:  | missing: 
+23:11:51 vetted uid1180376 D2 -> YOUNG | kills:  | missing: 
+23:11:52 vetted uid1169402 D2 -> YOUNG | kills:  | missing: 
+23:11:53 vetted uid712994 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+23:12:00 vetted uid1016323 D2 -> YOUNG | kills:  | missing: 
+23:12:03 vetted uid1020396 D2 -> YOUNG | kills:  | missing: 
+23:12:07 vetted uid1018261 D2 -> YOUNG | kills:  | missing: 
+23:12:07 vetted uid560552 D2 -> SURVIVOR | kills:  | missing: 
+23:12:12 vetted uid1096024 D2 -> YOUNG | kills:  | missing: 
+23:12:14 vetted uid1117149 D2 -> YOUNG | kills:  | missing: 
+23:12:19 vetted uid1116479 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+23:12:19 vetted uid979261 D2 -> YOUNG | kills:  | missing: 
+23:12:20 vetted uid909402 D2 -> YOUNG | kills:  | missing: 
+23:13:20 vetted uid1376645 D2 -> YOUNG | kills:  | missing: 
+23:14:15 vetted uid1356608 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+23:16:34 vetted uid1273358 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.13 mag fainter in G (2.4" PA110 G14.59 dG+0.13; 8.0" PA10 G20.34 dG+5.89; 8.6" PA140 G17.65 dG+3.20) | missing: 
+23:16:42 vetted uid1020158 D2 -> YOUNG | kills:  | missing: 
+23:16:51 vetted uid1424151 D2 -> YOUNG | kills:  | missing: 
+23:16:52 vetted uid869035 D2 -> YOUNG | kills:  | missing: 
+23:17:01 vetted uid991402 D2 -> YOUNG | kills:  | missing: 
+23:17:02 vetted uid889197 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.51 mag fainter in G (2.1" PA271 G14.02 dG+0.51; 9.9" PA197 G20.84 dG+7.33) | missing: 
+23:17:03 vetted uid875307 D2 -> KILLED | kills: centroid jump 0.232" (3.2 sigma) at the onset toward a neighbour: 3.7" PA196 G12.9 (angle 9 deg) | blend: Gaia neighbour within 6" only 1.51 mag fainter in G (3 | missing: ASAS-SN change at onset (no camera spans the onset)
+23:17:28 vetted uid1363385 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.55 mag fainter in G (2.7" PA128 G16.52 dG+1.55) | missing: 
+23:17:29 vetted uid896516 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, Kiso A-0903 109) | missing: 
+23:17:29 vetted uid835189 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+23:17:37 vetted uid984249 D2 -> YOUNG | kills:  | missing: 
+23:17:50 vetted uid1284783 D2 -> YOUNG | kills:  | missing: 
+23:17:51 vetted uid892905 D2 -> KILLED | kills: centroid jump 0.143" (3.1 sigma) at the onset toward a neighbour: 2.1" PA91 G13.5 (angle 0 deg) | blend: Gaia neighbour within 6" only -0.51 mag fainter in G (2 | missing: 
+23:17:57 vetted uid1144163 D2 -> SURVIVOR | kills:  | missing: 
+23:17:58 vetted uid880869 D2 -> YOUNG | kills:  | missing: 
+23:18:52 vetted uid1393011 D2 -> YOUNG | kills:  | missing: 
+23:18:53 vetted uid351866 D2 -> YOUNG | kills:  | missing: 
+23:18:59 vetted uid983581 D2 -> YOUNG | kills:  | missing: 
+23:21:35 vetted uid1374460 D2 -> YOUNG | kills:  | missing: 
+23:22:15 vetted uid1373972 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+23:22:25 vetted uid980347 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.09 mag fainter in G (4.7" PA136 G15.19 dG+0.09; 6.7" PA36 G19.91 dG+4.81; 7.7" PA34 G19.35 dG+4.25) | missing: 
+23:23:27 vetted uid1272600 D2 -> SURVIVOR | kills:  | missing: 
+23:23:28 vetted uid902493 D2 -> SURVIVOR | kills:  | missing: 
+23:23:35 vetted uid941546 D2 -> YOUNG | kills:  | missing: 
+23:23:45 vetted uid1108316 D2 -> YOUNG | kills:  | missing: 
+23:23:46 vetted uid850157 D2 -> KILLED | kills: galaxy/QSO within 6" in SIMBAD: V* V1157 Ori [G] 0.0" | missing: 
+23:23:47 vetted uid900210 D2 -> YOUNG | kills:  | missing: 
+23:24:10 vetted uid1192683 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+23:24:18 vetted uid959202 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+23:26:15 vetted uid1435805 D2 -> YOUNG | kills:  | missing: 
+23:26:16 vetted uid428084 D2 -> SURVIVOR | kills:  | missing: 
+23:26:18 vetted uid1281030 D2 -> YOUNG | kills:  | missing: 
+23:26:23 vetted uid1207210 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -2.64 mag fainter in G (5.2" PA311 G12.57 dG-2.64) | missing: 
+23:26:24 vetted uid1004862 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, V* FW Cep) | missing: 
+23:26:24 vetted uid1404605 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.74 mag fainter in G (5.5" PA337 G17.74 dG+2.74) | galaxy/QSO within 6" in SIMBAD: V* V1934 Ori [G] 5.5" | missing: 
+23:26:27 vetted uid1197713 D2 -> YOUNG | kills:  | missing: 
+23:26:30 vetted uid1173802 D2 -> YOUNG | kills:  | missing: 
+23:28:49 vetted uid1271126 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.47 mag fainter in G (1.5" PA340 G13.77 dG+0.47) | missing: 
+23:28:50 vetted uid869353 D2 -> YOUNG | kills:  | missing: 
+23:30:04 vetted uid1238881 D2 -> KILLED | kills: galaxy/QSO within 6" in SIMBAD: ESO-HA  720 [G] 0.0" | missing: 
+23:30:05 vetted uid126443 D2 -> SURVIVOR | kills:  | missing: 
+23:30:25 vetted uid1315434 D2 -> YOUNG | kills:  | missing: 
+23:30:25 vetted uid781730 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+23:30:38 vetted uid1275537 D2 -> YOUNG | kills:  | missing: 
+23:30:39 vetted uid438629 D2 -> KILLED | kills: centroid jump 0.288" (4.2 sigma) at the onset toward a neighbour: 6.2" PA100 G18.2 (angle 9 deg) | missing: ASAS-SN (no source)
+23:30:56 vetted uid1369970 D2 -> YOUNG | kills:  | missing: 
+23:30:57 vetted uid765206 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -1.51 mag fainter in G (3.7" PA16 G11.37 dG-1.51) | missing: 
+23:30:58 vetted uid783499 D2 -> SURVIVOR | kills:  | missing: 
+23:31:02 vetted uid1329365 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+23:31:10 vetted uid1084142 D2 -> SURVIVOR | kills:  | missing: 
+23:31:32 vetted uid1425993 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* CH UMa) | missing: 
+23:33:29 vetted uid1238823 D2 -> YOUNG | kills:  | missing: 
+23:34:37 vetted uid1402296 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -4.84 mag fainter in G (5.2" PA237 G9.64 dG-4.84) | missing: 
+23:34:38 vetted uid311901 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.66 mag fainter in G (5.5" PA123 G13.27 dG+0.66) | missing: 
+23:34:45 vetted uid1432270 D2 -> YOUNG | kills:  | missing: 
+23:34:48 vetted uid1137499 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+23:34:49 vetted uid624745 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* LY UMa) | missing: 
+23:34:50 vetted uid926008 D2 -> YOUNG | kills:  | missing: 
+23:34:51 vetted uid847196 D2 -> YOUNG | kills:  | missing: 
+23:34:52 vetted uid857434 D2 -> YOUNG | kills:  | missing: 
+23:34:53 vetted uid1003353 D2 -> YOUNG | kills:  | missing: 
+23:34:54 vetted uid407360 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -0.74 mag fainter in G (2.4" PA257 G10.88 dG-0.74; 6.7" PA64 G19.07 dG+7.46; 8.9" PA141 G20.11 dG+8.49; 9.1" PA245 G18.83 d | missing: 
+23:34:56 vetted uid354608 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, ASAS J191551-1415.0) | missing: 
+23:35:04 vetted uid1052915 D2 -> YOUNG | kills:  | missing: 
+23:35:52 vetted uid1395999 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.54 mag fainter in G (0.9" PA167 G14.87 dG+0.54) | missing: 
+23:37:05 vetted uid1441210 D2 -> KILLED | kills: galaxy/QSO within 6" in SIMBAD: 6C 015907+721900 [AGN,BLL,Bla,QSO] 3.7" | missing: 
+23:37:16 vetted uid955772 D2 -> YOUNG | kills:  | missing: 
+23:37:26 vetted uid1069828 D2 -> YOUNG | kills:  | missing: 
+23:37:27 vetted uid893973 D2 -> YOUNG | kills:  | missing: 
+23:37:28 vetted uid690873 D2 -> SURVIVOR | kills:  | missing: 
+23:37:42 vetted uid1295756 D2 -> YOUNG | kills:  | missing: 
+23:37:43 vetted uid704416 D2 -> SURVIVOR | kills:  | missing: 
+23:38:04 vetted uid1387731 D2 -> YOUNG | kills:  | missing: 
+23:38:05 vetted uid775856 D2 -> SURVIVOR | kills:  | missing: 
+23:38:12 vetted uid1330847 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.72 mag fainter in G (3.7" PA163 G17.72 dG+2.72; 4.5" PA199 G19.70 dG+4.70) | missing: ASAS-SN (no source)
+23:38:13 vetted J060000 CONTROL -> SURVIVOR | kills:  | missing: 
+23:38:14 vetted V836 Tau CONTROL -> YOUNG | kills:  | missing: 
+23:38:16 vetted uid983466 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.92 mag fainter in G (1.8" PA177 G17.62 dG+2.92) | missing: 
+23:40:18 vetted uid1361145 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.46 mag fainter in G (1.2" PA114 G16.90 dG+2.46) | missing: 
+23:41:16 vetted uid1223949 D2 -> YOUNG | kills:  | missing: 
+23:41:36 vetted uid1385941 D2 -> YOUNG | kills:  | missing: 
+23:44:03 vetted uid1205623 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* BV Cen) | missing: ASAS-SN change at onset (no camera spans the onset)
+23:44:03 {"mode": "far", "n_targets": 145, "counts": {"YOUNG": 85, "KILLED": 33, "SURVIVOR": 27}, "controls": [["ASASSN-21qj", "PASS", "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 57.3, missing: none"], ["J060000", "PASS", "category SURVIVOR, largest ASAS-SN seasonal dimming 0.35 mag at MJD 58864"], ["V836 Tau", "PASS", "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"]], "minutes": 39.0}
