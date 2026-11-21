@@ -1,0 +1,4 @@
+name,num,class,V,ra,dec,pos_err_arcsec,recovered
+2018 LT,-,Mars-Crosser,20.0,3.038998,-10.785383,0.02,True
+2007 JO28,683089,MB>Outer,21.2,3.131235,-10.602508,0.053,False
+2006 CX81,610588,MB>Outer,21.4,3.135489,-10.820752,0.016,False

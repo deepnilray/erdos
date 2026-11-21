@@ -1,0 +1,49 @@
+{
+ "images": [
+  {
+   "file": "o60934g0354o.2320159.ch.2929682.XY54.p10.fits",
+   "mjd": 60934.4182461406,
+   "n_det": 247,
+   "parity_flip": false,
+   "rot_sign": 1,
+   "n_match": 45,
+   "rms_arcsec": 0.20217491838610532,
+   "zp": 29.264167101432783
+  },
+  {
+   "file": "o60934g0371o.2320176.ch.2929699.XY54.p10.fits",
+   "mjd": 60934.42926598463,
+   "n_det": 258,
+   "parity_flip": false,
+   "rot_sign": 1,
+   "n_match": 52,
+   "rms_arcsec": 0.3356272725767873,
+   "zp": 29.37628239771408
+  },
+  {
+   "file": "o60934g0388o.2320193.ch.2929716.XY54.p10.fits",
+   "mjd": 60934.44030321869,
+   "n_det": 239,
+   "parity_flip": false,
+   "rot_sign": 1,
+   "n_match": 49,
+   "rms_arcsec": 0.24322480858739992,
+   "zp": 29.296656740543703
+  },
+  {
+   "file": "o60934g0405o.2320210.ch.2929733.XY54.p10.fits",
+   "mjd": 60934.45135345568,
+   "n_det": 225,
+   "parity_flip": false,
+   "rot_sign": 1,
+   "n_match": 47,
+   "rms_arcsec": 0.28937319053268423,
+   "zp": 29.256153067189132
+  }
+ ],
+ "n_tracklets": 2,
+ "n_unknown": 1,
+ "n_known_in_field": 3,
+ "known_recovered": 1,
+ "skybot_head": "# Flag: 1\n# Ticket: 188244832282183510\n# Num | Name | RA(h) | DE(deg) | Class | Mv | Err(arcsec) | d(arcsec) | dRA(arcsec/h) | dDEC(arcsec/h) | Dg(ua) | Dh(ua) | Phase(deg) | SunElong(deg) \n - | 2018 "
+}
