@@ -1,0 +1,3096 @@
+[
+ {
+  "id": "sc1541_077_56698",
+  "projcell": 1541,
+  "subcell": 77,
+  "night": 56698,
+  "filter": "i",
+  "beta": 2.65,
+  "ra": 160.75336351526806,
+  "dec": 10.940745177336463,
+  "cover": 1.0,
+  "images": [
+   {
+    "projcell": 1541,
+    "subcell": 77,
+    "filter": "i",
+    "mjd": 56698.3951,
+    "filename": "/rings.v3.skycell/1541/077/rings.v3.skycell.1541.077.wrp.i.56698_39510.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1541,
+    "subcell": 77,
+    "filter": "i",
+    "mjd": 56698.40693,
+    "filename": "/rings.v3.skycell/1541/077/rings.v3.skycell.1541.077.wrp.i.56698_40693.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1541,
+    "subcell": 77,
+    "filter": "i",
+    "mjd": 56698.41884,
+    "filename": "/rings.v3.skycell/1541/077/rings.v3.skycell.1541.077.wrp.i.56698_41884.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1541,
+    "subcell": 77,
+    "filter": "i",
+    "mjd": 56698.43072,
+    "filename": "/rings.v3.skycell/1541/077/rings.v3.skycell.1541.077.wrp.i.56698_43072.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc930_074_56757",
+  "projcell": 930,
+  "subcell": 74,
+  "night": 56757,
+  "filter": "i",
+  "beta": -4.8,
+  "ra": 209.57816234735157,
+  "dec": -16.99661829013333,
+  "cover": 0.9973958333333334,
+  "images": [
+   {
+    "projcell": 930,
+    "subcell": 74,
+    "filter": "i",
+    "mjd": 56757.4026,
+    "filename": "/rings.v3.skycell/0930/074/rings.v3.skycell.0930.074.wrp.i.56757_40260.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 930,
+    "subcell": 74,
+    "filter": "i",
+    "mjd": 56757.41454,
+    "filename": "/rings.v3.skycell/0930/074/rings.v3.skycell.0930.074.wrp.i.56757_41454.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 930,
+    "subcell": 74,
+    "filter": "i",
+    "mjd": 56757.42644,
+    "filename": "/rings.v3.skycell/0930/074/rings.v3.skycell.0930.074.wrp.i.56757_42644.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 930,
+    "subcell": 74,
+    "filter": "i",
+    "mjd": 56757.43834,
+    "filename": "/rings.v3.skycell/0930/074/rings.v3.skycell.0930.074.wrp.i.56757_43834.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1026_005_56842",
+  "projcell": 1026,
+  "subcell": 5,
+  "night": 56842,
+  "filter": "i",
+  "beta": 5.74,
+  "ra": 245.2539690846158,
+  "dec": -15.762060775841022,
+  "cover": 0.9993489583333334,
+  "images": [
+   {
+    "projcell": 1026,
+    "subcell": 5,
+    "filter": "i",
+    "mjd": 56842.3298,
+    "filename": "/rings.v3.skycell/1026/005/rings.v3.skycell.1026.005.wrp.i.56842_32980.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1026,
+    "subcell": 5,
+    "filter": "i",
+    "mjd": 56842.34277,
+    "filename": "/rings.v3.skycell/1026/005/rings.v3.skycell.1026.005.wrp.i.56842_34277.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1026,
+    "subcell": 5,
+    "filter": "i",
+    "mjd": 56842.35568,
+    "filename": "/rings.v3.skycell/1026/005/rings.v3.skycell.1026.005.wrp.i.56842_35568.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1026,
+    "subcell": 5,
+    "filter": "i",
+    "mjd": 56842.36863,
+    "filename": "/rings.v3.skycell/1026/005/rings.v3.skycell.1026.005.wrp.i.56842_36863.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1328_040_56907",
+  "projcell": 1328,
+  "subcell": 40,
+  "night": 56907,
+  "filter": "i",
+  "beta": -8.4,
+  "ra": 25.68935729250691,
+  "dec": 1.8961553687349875,
+  "cover": 0.9995659722222222,
+  "images": [
+   {
+    "projcell": 1328,
+    "subcell": 40,
+    "filter": "i",
+    "mjd": 56907.47769,
+    "filename": "/rings.v3.skycell/1328/040/rings.v3.skycell.1328.040.wrp.i.56907_47769.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1328,
+    "subcell": 40,
+    "filter": "i",
+    "mjd": 56907.5023509,
+    "filename": "/rings.v3.skycell/1328/040/rings.v3.skycell.1328.040.wrp.i.56907_50235.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1328,
+    "subcell": 40,
+    "filter": "i",
+    "mjd": 56907.51417,
+    "filename": "/rings.v3.skycell/1328/040/rings.v3.skycell.1328.040.wrp.i.56907_51417.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1942_028_57000",
+  "projcell": 1942,
+  "subcell": 28,
+  "night": 57000,
+  "filter": "i",
+  "beta": 9.4,
+  "ra": 53.0707182332006,
+  "dec": 28.947165500110756,
+  "cover": 0.9995659722222222,
+  "images": [
+   {
+    "projcell": 1942,
+    "subcell": 28,
+    "filter": "i",
+    "mjd": 57000.44229,
+    "filename": "/rings.v3.skycell/1942/028/rings.v3.skycell.1942.028.wrp.i.57000_44229.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1942,
+    "subcell": 28,
+    "filter": "i",
+    "mjd": 57000.45468,
+    "filename": "/rings.v3.skycell/1942/028/rings.v3.skycell.1942.028.wrp.i.57000_45468.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1942,
+    "subcell": 28,
+    "filter": "i",
+    "mjd": 57000.4674707,
+    "filename": "/rings.v3.skycell/1942/028/rings.v3.skycell.1942.028.wrp.i.57000_46747.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1942,
+    "subcell": 28,
+    "filter": "i",
+    "mjd": 57000.47943,
+    "filename": "/rings.v3.skycell/1942/028/rings.v3.skycell.1942.028.wrp.i.57000_47943.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc941_046_56811",
+  "projcell": 941,
+  "subcell": 46,
+  "night": 56811,
+  "filter": "g",
+  "beta": 4.46,
+  "ra": 254.5706667937974,
+  "dec": -18.296095732873148,
+  "cover": 0.9508463541666666,
+  "images": [
+   {
+    "projcell": 941,
+    "subcell": 46,
+    "filter": "g",
+    "mjd": 56811.36488,
+    "filename": "/rings.v3.skycell/0941/046/rings.v3.skycell.0941.046.wrp.g.56811_36488.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 941,
+    "subcell": 46,
+    "filter": "g",
+    "mjd": 56811.37753,
+    "filename": "/rings.v3.skycell/0941/046/rings.v3.skycell.0941.046.wrp.g.56811_37753.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 941,
+    "subcell": 46,
+    "filter": "g",
+    "mjd": 56811.39025,
+    "filename": "/rings.v3.skycell/0941/046/rings.v3.skycell.0941.046.wrp.g.56811_39025.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 941,
+    "subcell": 46,
+    "filter": "g",
+    "mjd": 56811.40288,
+    "filename": "/rings.v3.skycell/0941/046/rings.v3.skycell.0941.046.wrp.g.56811_40288.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1045_000_56829",
+  "projcell": 1045,
+  "subcell": 0,
+  "night": 56829,
+  "filter": "i",
+  "beta": -1.55,
+  "ra": 324.91498700267897,
+  "dec": -15.838518148249985,
+  "cover": 0.9892578125,
+  "images": [
+   {
+    "projcell": 1045,
+    "subcell": 0,
+    "filter": "i",
+    "mjd": 56829.56508,
+    "filename": "/rings.v3.skycell/1045/000/rings.v3.skycell.1045.000.wrp.i.56829_56508.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1045,
+    "subcell": 0,
+    "filter": "i",
+    "mjd": 56829.5764,
+    "filename": "/rings.v3.skycell/1045/000/rings.v3.skycell.1045.000.wrp.i.56829_57640.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1045,
+    "subcell": 0,
+    "filter": "i",
+    "mjd": 56829.58769,
+    "filename": "/rings.v3.skycell/1045/000/rings.v3.skycell.1045.000.wrp.i.56829_58769.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1045,
+    "subcell": 0,
+    "filter": "i",
+    "mjd": 56829.59897,
+    "filename": "/rings.v3.skycell/1045/000/rings.v3.skycell.1045.000.wrp.i.56829_59897.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1235_070_56889",
+  "projcell": 1235,
+  "subcell": 70,
+  "night": 56889,
+  "filter": "i",
+  "beta": -6.26,
+  "ra": 13.844318348691697,
+  "dec": -0.8673714656868329,
+  "cover": 0.9978298611111112,
+  "images": [
+   {
+    "projcell": 1235,
+    "subcell": 70,
+    "filter": "i",
+    "mjd": 56889.53252,
+    "filename": "/rings.v3.skycell/1235/070/rings.v3.skycell.1235.070.wrp.i.56889_53252.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1235,
+    "subcell": 70,
+    "filter": "i",
+    "mjd": 56889.54476,
+    "filename": "/rings.v3.skycell/1235/070/rings.v3.skycell.1235.070.wrp.i.56889_54476.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1235,
+    "subcell": 70,
+    "filter": "i",
+    "mjd": 56889.55698,
+    "filename": "/rings.v3.skycell/1235/070/rings.v3.skycell.1235.070.wrp.i.56889_55698.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1235,
+    "subcell": 70,
+    "filter": "i",
+    "mjd": 56889.56921,
+    "filename": "/rings.v3.skycell/1235/070/rings.v3.skycell.1235.070.wrp.i.56889_56921.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1712_006_56993",
+  "projcell": 1712,
+  "subcell": 6,
+  "night": 56993,
+  "filter": "i",
+  "beta": 1.21,
+  "ra": 141.68307554923462,
+  "dec": 16.211524002623065,
+  "cover": 0.9996744791666666,
+  "images": [
+   {
+    "projcell": 1712,
+    "subcell": 6,
+    "filter": "i",
+    "mjd": 56993.51741,
+    "filename": "/rings.v3.skycell/1712/006/rings.v3.skycell.1712.006.wrp.i.56993_51741.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1712,
+    "subcell": 6,
+    "filter": "i",
+    "mjd": 56993.53037,
+    "filename": "/rings.v3.skycell/1712/006/rings.v3.skycell.1712.006.wrp.i.56993_53037.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1712,
+    "subcell": 6,
+    "filter": "i",
+    "mjd": 56993.54331,
+    "filename": "/rings.v3.skycell/1712/006/rings.v3.skycell.1712.006.wrp.i.56993_54331.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1712,
+    "subcell": 6,
+    "filter": "i",
+    "mjd": 56993.5563,
+    "filename": "/rings.v3.skycell/1712/006/rings.v3.skycell.1712.006.wrp.i.56993_55630.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1226_007_56902",
+  "projcell": 1226,
+  "subcell": 7,
+  "night": 56902,
+  "filter": "i",
+  "beta": 2.45,
+  "ra": 334.8488652604144,
+  "dec": -7.932470912123174,
+  "cover": 0.9973958333333334,
+  "images": [
+   {
+    "projcell": 1226,
+    "subcell": 7,
+    "filter": "i",
+    "mjd": 56902.34889,
+    "filename": "/rings.v3.skycell/1226/007/rings.v3.skycell.1226.007.wrp.i.56902_34889.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1226,
+    "subcell": 7,
+    "filter": "i",
+    "mjd": 56902.3625,
+    "filename": "/rings.v3.skycell/1226/007/rings.v3.skycell.1226.007.wrp.i.56902_36250.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1226,
+    "subcell": 7,
+    "filter": "i",
+    "mjd": 56902.37611,
+    "filename": "/rings.v3.skycell/1226/007/rings.v3.skycell.1226.007.wrp.i.56902_37611.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1226,
+    "subcell": 7,
+    "filter": "i",
+    "mjd": 56902.38969,
+    "filename": "/rings.v3.skycell/1226/007/rings.v3.skycell.1226.007.wrp.i.56902_38969.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1101_029_55645",
+  "projcell": 1101,
+  "subcell": 29,
+  "night": 55645,
+  "filter": "mixed",
+  "beta": -6.84,
+  "ra": 188.16321793538407,
+  "dec": -11.127355767606959,
+  "cover": 0.9848090277777778,
+  "images": [
+   {
+    "projcell": 1101,
+    "subcell": 29,
+    "filter": "r",
+    "mjd": 55645.36091,
+    "filename": "/rings.v3.skycell/1101/029/rings.v3.skycell.1101.029.wrp.r.55645_36091.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1101,
+    "subcell": 29,
+    "filter": "r",
+    "mjd": 55645.37153,
+    "filename": "/rings.v3.skycell/1101/029/rings.v3.skycell.1101.029.wrp.r.55645_37153.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1101,
+    "subcell": 29,
+    "filter": "i",
+    "mjd": 55645.38429,
+    "filename": "/rings.v3.skycell/1101/029/rings.v3.skycell.1101.029.wrp.i.55645_38429.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1101,
+    "subcell": 29,
+    "filter": "i",
+    "mjd": 55645.39594,
+    "filename": "/rings.v3.skycell/1101/029/rings.v3.skycell.1101.029.wrp.i.55645_39594.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1043_037_56829",
+  "projcell": 1043,
+  "subcell": 37,
+  "night": 56829,
+  "filter": "i",
+  "beta": 2.64,
+  "ra": 314.07350770989876,
+  "dec": -14.731520325036788,
+  "cover": 0.9984809027777778,
+  "images": [
+   {
+    "projcell": 1043,
+    "subcell": 37,
+    "filter": "i",
+    "mjd": 56829.55712,
+    "filename": "/rings.v3.skycell/1043/037/rings.v3.skycell.1043.037.wrp.i.56829_55712.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1043,
+    "subcell": 37,
+    "filter": "i",
+    "mjd": 56829.56846,
+    "filename": "/rings.v3.skycell/1043/037/rings.v3.skycell.1043.037.wrp.i.56829_56846.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1043,
+    "subcell": 37,
+    "filter": "i",
+    "mjd": 56829.57976,
+    "filename": "/rings.v3.skycell/1043/037/rings.v3.skycell.1043.037.wrp.i.56829_57976.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1043,
+    "subcell": 37,
+    "filter": "i",
+    "mjd": 56829.59104,
+    "filename": "/rings.v3.skycell/1043/037/rings.v3.skycell.1043.037.wrp.i.56829_59104.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1790_051_55945",
+  "projcell": 1790,
+  "subcell": 51,
+  "night": 55945,
+  "filter": "mixed",
+  "beta": 0.27,
+  "ra": 112.9316493930019,
+  "dec": 22.172864202058783,
+  "cover": 0.9985894097222222,
+  "images": [
+   {
+    "projcell": 1790,
+    "subcell": 51,
+    "filter": "g",
+    "mjd": 55945.28736,
+    "filename": "/rings.v3.skycell/1790/051/rings.v3.skycell.1790.051.wrp.g.55945_28736.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1790,
+    "subcell": 51,
+    "filter": "g",
+    "mjd": 55945.3,
+    "filename": "/rings.v3.skycell/1790/051/rings.v3.skycell.1790.051.wrp.g.55945_30000.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1790,
+    "subcell": 51,
+    "filter": "r",
+    "mjd": 55945.31384,
+    "filename": "/rings.v3.skycell/1790/051/rings.v3.skycell.1790.051.wrp.r.55945_31384.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1790,
+    "subcell": 51,
+    "filter": "r",
+    "mjd": 55945.3266133,
+    "filename": "/rings.v3.skycell/1790/051/rings.v3.skycell.1790.051.wrp.r.55945_32661.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1690_061_56243",
+  "projcell": 1690,
+  "subcell": 61,
+  "night": 56243,
+  "filter": "g",
+  "beta": -0.36,
+  "ra": 51.86117471224006,
+  "dec": 18.6193237880944,
+  "cover": 0.9869791666666666,
+  "images": [
+   {
+    "projcell": 1690,
+    "subcell": 61,
+    "filter": "g",
+    "mjd": 56243.32964,
+    "filename": "/rings.v3.skycell/1690/061/rings.v3.skycell.1690.061.wrp.g.56243_32964.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1690,
+    "subcell": 61,
+    "filter": "g",
+    "mjd": 56243.34237,
+    "filename": "/rings.v3.skycell/1690/061/rings.v3.skycell.1690.061.wrp.g.56243_34237.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1690,
+    "subcell": 61,
+    "filter": "g",
+    "mjd": 56243.36027,
+    "filename": "/rings.v3.skycell/1690/061/rings.v3.skycell.1690.061.wrp.g.56243_36027.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1690,
+    "subcell": 61,
+    "filter": "g",
+    "mjd": 56243.37293,
+    "filename": "/rings.v3.skycell/1690/061/rings.v3.skycell.1690.061.wrp.g.56243_37293.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc767_081_56728",
+  "projcell": 767,
+  "subcell": 81,
+  "night": 56728,
+  "filter": "i",
+  "beta": -5.09,
+  "ra": 234.09127299169356,
+  "dec": -24.494019134390758,
+  "cover": 0.9333767361111112,
+  "images": [
+   {
+    "projcell": 767,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56728.55038,
+    "filename": "/rings.v3.skycell/0767/081/rings.v3.skycell.0767.081.wrp.i.56728_55038.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 767,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56728.56164,
+    "filename": "/rings.v3.skycell/0767/081/rings.v3.skycell.0767.081.wrp.i.56728_56164.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 767,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56728.57395,
+    "filename": "/rings.v3.skycell/0767/081/rings.v3.skycell.0767.081.wrp.i.56728_57395.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 767,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56728.58523,
+    "filename": "/rings.v3.skycell/0767/081/rings.v3.skycell.0767.081.wrp.i.56728_58523.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1318_061_56912",
+  "projcell": 1318,
+  "subcell": 61,
+  "night": 56912,
+  "filter": "i",
+  "beta": 4.5,
+  "ra": 345.296064188066,
+  "dec": -1.527918445172993,
+  "cover": 0.9977213541666666,
+  "images": [
+   {
+    "projcell": 1318,
+    "subcell": 61,
+    "filter": "i",
+    "mjd": 56912.47536,
+    "filename": "/rings.v3.skycell/1318/061/rings.v3.skycell.1318.061.wrp.i.56912_47536.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1318,
+    "subcell": 61,
+    "filter": "i",
+    "mjd": 56912.48688,
+    "filename": "/rings.v3.skycell/1318/061/rings.v3.skycell.1318.061.wrp.i.56912_48688.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1318,
+    "subcell": 61,
+    "filter": "i",
+    "mjd": 56912.49837,
+    "filename": "/rings.v3.skycell/1318/061/rings.v3.skycell.1318.061.wrp.i.56912_49837.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1318,
+    "subcell": 61,
+    "filter": "i",
+    "mjd": 56912.50984,
+    "filename": "/rings.v3.skycell/1318/061/rings.v3.skycell.1318.061.wrp.i.56912_50984.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1942_002_57000",
+  "projcell": 1942,
+  "subcell": 2,
+  "night": 57000,
+  "filter": "i",
+  "beta": 8.31,
+  "ra": 55.92391766639934,
+  "dec": 28.300305236598742,
+  "cover": 0.9995659722222222,
+  "images": [
+   {
+    "projcell": 1942,
+    "subcell": 2,
+    "filter": "i",
+    "mjd": 57000.44493,
+    "filename": "/rings.v3.skycell/1942/002/rings.v3.skycell.1942.002.wrp.i.57000_44493.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1942,
+    "subcell": 2,
+    "filter": "i",
+    "mjd": 57000.45733,
+    "filename": "/rings.v3.skycell/1942/002/rings.v3.skycell.1942.002.wrp.i.57000_45733.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1942,
+    "subcell": 2,
+    "filter": "i",
+    "mjd": 57000.4697,
+    "filename": "/rings.v3.skycell/1942/002/rings.v3.skycell.1942.002.wrp.i.57000_46970.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1942,
+    "subcell": 2,
+    "filter": "i",
+    "mjd": 57000.48208,
+    "filename": "/rings.v3.skycell/1942/002/rings.v3.skycell.1942.002.wrp.i.57000_48208.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1545_072_57000",
+  "projcell": 1545,
+  "subcell": 72,
+  "night": 57000,
+  "filter": "i",
+  "beta": 9.61,
+  "ra": 179.08222462906815,
+  "dec": 10.982182111167429,
+  "cover": 0.9979383680555556,
+  "images": [
+   {
+    "projcell": 1545,
+    "subcell": 72,
+    "filter": "i",
+    "mjd": 57000.59208,
+    "filename": "/rings.v3.skycell/1545/072/rings.v3.skycell.1545.072.wrp.i.57000_59208.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1545,
+    "subcell": 72,
+    "filter": "i",
+    "mjd": 57000.60491,
+    "filename": "/rings.v3.skycell/1545/072/rings.v3.skycell.1545.072.wrp.i.57000_60491.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1545,
+    "subcell": 72,
+    "filter": "i",
+    "mjd": 57000.61699,
+    "filename": "/rings.v3.skycell/1545/072/rings.v3.skycell.1545.072.wrp.i.57000_61699.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1545,
+    "subcell": 72,
+    "filter": "i",
+    "mjd": 57000.62843,
+    "filename": "/rings.v3.skycell/1545/072/rings.v3.skycell.1545.072.wrp.i.57000_62843.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1539_091_56698",
+  "projcell": 1539,
+  "subcell": 91,
+  "night": 56698,
+  "filter": "i",
+  "beta": 1.51,
+  "ra": 155.01811135671454,
+  "dec": 11.66756573103891,
+  "cover": 0.9611545138888888,
+  "images": [
+   {
+    "projcell": 1539,
+    "subcell": 91,
+    "filter": "i",
+    "mjd": 56698.38917,
+    "filename": "/rings.v3.skycell/1539/091/rings.v3.skycell.1539.091.wrp.i.56698_38917.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1539,
+    "subcell": 91,
+    "filter": "i",
+    "mjd": 56698.40104,
+    "filename": "/rings.v3.skycell/1539/091/rings.v3.skycell.1539.091.wrp.i.56698_40104.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1539,
+    "subcell": 91,
+    "filter": "i",
+    "mjd": 56698.41291,
+    "filename": "/rings.v3.skycell/1539/091/rings.v3.skycell.1539.091.wrp.i.56698_41291.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1539,
+    "subcell": 91,
+    "filter": "i",
+    "mjd": 56698.42478,
+    "filename": "/rings.v3.skycell/1539/091/rings.v3.skycell.1539.091.wrp.i.56698_42478.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc956_084_56884",
+  "projcell": 956,
+  "subcell": 84,
+  "night": 56884,
+  "filter": "i",
+  "beta": -0.56,
+  "ra": 318.4144788305296,
+  "dec": -16.48111375726154,
+  "cover": 0.9988064236111112,
+  "images": [
+   {
+    "projcell": 956,
+    "subcell": 84,
+    "filter": "i",
+    "mjd": 56884.40428,
+    "filename": "/rings.v3.skycell/0956/084/rings.v3.skycell.0956.084.wrp.i.56884_40428.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 956,
+    "subcell": 84,
+    "filter": "i",
+    "mjd": 56884.41619,
+    "filename": "/rings.v3.skycell/0956/084/rings.v3.skycell.0956.084.wrp.i.56884_41619.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 956,
+    "subcell": 84,
+    "filter": "i",
+    "mjd": 56884.42808,
+    "filename": "/rings.v3.skycell/0956/084/rings.v3.skycell.0956.084.wrp.i.56884_42808.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 956,
+    "subcell": 84,
+    "filter": "i",
+    "mjd": 56884.43998,
+    "filename": "/rings.v3.skycell/0956/084/rings.v3.skycell.0956.084.wrp.i.56884_43998.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1537_064_56741",
+  "projcell": 1537,
+  "subcell": 64,
+  "night": 56741,
+  "filter": "g",
+  "beta": -2.98,
+  "ra": 145.92400944370533,
+  "dec": 10.479182940962728,
+  "cover": 0.9951171875,
+  "images": [
+   {
+    "projcell": 1537,
+    "subcell": 64,
+    "filter": "g",
+    "mjd": 56741.35995,
+    "filename": "/rings.v3.skycell/1537/064/rings.v3.skycell.1537.064.wrp.g.56741_35995.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1537,
+    "subcell": 64,
+    "filter": "g",
+    "mjd": 56741.37323,
+    "filename": "/rings.v3.skycell/1537/064/rings.v3.skycell.1537.064.wrp.g.56741_37323.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1537,
+    "subcell": 64,
+    "filter": "g",
+    "mjd": 56741.38207,
+    "filename": "/rings.v3.skycell/1537/064/rings.v3.skycell.1537.064.wrp.g.56741_38207.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1537,
+    "subcell": 64,
+    "filter": "g",
+    "mjd": 56741.39243,
+    "filename": "/rings.v3.skycell/1537/064/rings.v3.skycell.1537.064.wrp.g.56741_39243.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1407_027_56848",
+  "projcell": 1407,
+  "subcell": 27,
+  "night": 56848,
+  "filter": "i",
+  "beta": 9.23,
+  "ra": 339.12159188564783,
+  "dec": 0.9437934131239653,
+  "cover": 0.9988064236111112,
+  "images": [
+   {
+    "projcell": 1407,
+    "subcell": 27,
+    "filter": "i",
+    "mjd": 56848.53531,
+    "filename": "/rings.v3.skycell/1407/027/rings.v3.skycell.1407.027.wrp.i.56848_53531.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1407,
+    "subcell": 27,
+    "filter": "i",
+    "mjd": 56848.54884,
+    "filename": "/rings.v3.skycell/1407/027/rings.v3.skycell.1407.027.wrp.i.56848_54884.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1407,
+    "subcell": 27,
+    "filter": "i",
+    "mjd": 56848.5624,
+    "filename": "/rings.v3.skycell/1407/027/rings.v3.skycell.1407.027.wrp.i.56848_56240.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1407,
+    "subcell": 27,
+    "filter": "i",
+    "mjd": 56848.57601,
+    "filename": "/rings.v3.skycell/1407/027/rings.v3.skycell.1407.027.wrp.i.56848_57601.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc850_082_55304",
+  "projcell": 850,
+  "subcell": 82,
+  "night": 55304,
+  "filter": "g",
+  "beta": -1.38,
+  "ra": 232.60117544159309,
+  "dec": -20.726686609329956,
+  "cover": 0.8887803819444444,
+  "images": [
+   {
+    "projcell": 850,
+    "subcell": 82,
+    "filter": "g",
+    "mjd": 55304.49683,
+    "filename": "/rings.v3.skycell/0850/082/rings.v3.skycell.0850.082.wrp.g.55304_49683.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 850,
+    "subcell": 82,
+    "filter": "g",
+    "mjd": 55304.50516,
+    "filename": "/rings.v3.skycell/0850/082/rings.v3.skycell.0850.082.wrp.g.55304_50516.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 850,
+    "subcell": 82,
+    "filter": "g",
+    "mjd": 55304.51536,
+    "filename": "/rings.v3.skycell/0850/082/rings.v3.skycell.0850.082.wrp.g.55304_51536.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 850,
+    "subcell": 82,
+    "filter": "g",
+    "mjd": 55304.52373,
+    "filename": "/rings.v3.skycell/0850/082/rings.v3.skycell.0850.082.wrp.g.55304_52373.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1111_025_56730",
+  "projcell": 1111,
+  "subcell": 25,
+  "night": 56730,
+  "filter": "i",
+  "beta": 7.05,
+  "ra": 230.3967057838478,
+  "dec": -11.071115108907374,
+  "cover": 0.9993489583333334,
+  "images": [
+   {
+    "projcell": 1111,
+    "subcell": 25,
+    "filter": "i",
+    "mjd": 56730.56142,
+    "filename": "/rings.v3.skycell/1111/025/rings.v3.skycell.1111.025.wrp.i.56730_56142.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1111,
+    "subcell": 25,
+    "filter": "i",
+    "mjd": 56730.57738,
+    "filename": "/rings.v3.skycell/1111/025/rings.v3.skycell.1111.025.wrp.i.56730_57738.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1111,
+    "subcell": 25,
+    "filter": "i",
+    "mjd": 56730.60597,
+    "filename": "/rings.v3.skycell/1111/025/rings.v3.skycell.1111.025.wrp.i.56730_60597.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1111,
+    "subcell": 25,
+    "filter": "i",
+    "mjd": 56730.62194,
+    "filename": "/rings.v3.skycell/1111/025/rings.v3.skycell.1111.025.wrp.i.56730_62194.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1628_089_55960",
+  "projcell": 1628,
+  "subcell": 89,
+  "night": 55960,
+  "filter": "r",
+  "beta": 4.17,
+  "ra": 153.55514950560232,
+  "dec": 15.467897130198594,
+  "cover": 0.9204644097222222,
+  "images": [
+   {
+    "projcell": 1628,
+    "subcell": 89,
+    "filter": "r",
+    "mjd": 55960.57458,
+    "filename": "/rings.v3.skycell/1628/089/rings.v3.skycell.1628.089.wrp.r.55960_57458.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1628,
+    "subcell": 89,
+    "filter": "r",
+    "mjd": 55960.58897,
+    "filename": "/rings.v3.skycell/1628/089/rings.v3.skycell.1628.089.wrp.r.55960_58897.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1628,
+    "subcell": 89,
+    "filter": "r",
+    "mjd": 55960.60367,
+    "filename": "/rings.v3.skycell/1628/089/rings.v3.skycell.1628.089.wrp.r.55960_60367.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1628,
+    "subcell": 89,
+    "filter": "r",
+    "mjd": 55960.6151,
+    "filename": "/rings.v3.skycell/1628/089/rings.v3.skycell.1628.089.wrp.r.55960_61510.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1328_074_56943",
+  "projcell": 1328,
+  "subcell": 74,
+  "night": 56943,
+  "filter": "i",
+  "beta": -6.68,
+  "ra": 24.29407227882433,
+  "dec": 3.0071831137289196,
+  "cover": 0.9998914930555556,
+  "images": [
+   {
+    "projcell": 1328,
+    "subcell": 74,
+    "filter": "i",
+    "mjd": 56943.43015,
+    "filename": "/rings.v3.skycell/1328/074/rings.v3.skycell.1328.074.wrp.i.56943_43015.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1328,
+    "subcell": 74,
+    "filter": "i",
+    "mjd": 56943.44184,
+    "filename": "/rings.v3.skycell/1328/074/rings.v3.skycell.1328.074.wrp.i.56943_44184.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1328,
+    "subcell": 74,
+    "filter": "i",
+    "mjd": 56943.4655321,
+    "filename": "/rings.v3.skycell/1328/074/rings.v3.skycell.1328.074.wrp.i.56943_46553.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc865_046_56829",
+  "projcell": 865,
+  "subcell": 46,
+  "night": 56829,
+  "filter": "i",
+  "beta": -0.67,
+  "ra": 295.2078366323889,
+  "dec": -22.297301898473027,
+  "cover": 0.9996744791666666,
+  "images": [
+   {
+    "projcell": 865,
+    "subcell": 46,
+    "filter": "i",
+    "mjd": 56829.51042,
+    "filename": "/rings.v3.skycell/0865/046/rings.v3.skycell.0865.046.wrp.i.56829_51042.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 865,
+    "subcell": 46,
+    "filter": "i",
+    "mjd": 56829.52381,
+    "filename": "/rings.v3.skycell/0865/046/rings.v3.skycell.0865.046.wrp.i.56829_52381.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 865,
+    "subcell": 46,
+    "filter": "i",
+    "mjd": 56829.53719,
+    "filename": "/rings.v3.skycell/0865/046/rings.v3.skycell.0865.046.wrp.i.56829_53719.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 865,
+    "subcell": 46,
+    "filter": "i",
+    "mjd": 56829.55064,
+    "filename": "/rings.v3.skycell/0865/046/rings.v3.skycell.0865.046.wrp.i.56829_55064.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1198_028_56784",
+  "projcell": 1198,
+  "subcell": 28,
+  "night": 56784,
+  "filter": "i",
+  "beta": 8.35,
+  "ra": 221.02849389565,
+  "dec": -6.91215935560812,
+  "cover": 0.9994574652777778,
+  "images": [
+   {
+    "projcell": 1198,
+    "subcell": 28,
+    "filter": "i",
+    "mjd": 56784.35205,
+    "filename": "/rings.v3.skycell/1198/028/rings.v3.skycell.1198.028.wrp.i.56784_35205.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1198,
+    "subcell": 28,
+    "filter": "i",
+    "mjd": 56784.36462,
+    "filename": "/rings.v3.skycell/1198/028/rings.v3.skycell.1198.028.wrp.i.56784_36462.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1198,
+    "subcell": 28,
+    "filter": "i",
+    "mjd": 56784.3772,
+    "filename": "/rings.v3.skycell/1198/028/rings.v3.skycell.1198.028.wrp.i.56784_37720.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1198,
+    "subcell": 28,
+    "filter": "i",
+    "mjd": 56784.3898,
+    "filename": "/rings.v3.skycell/1198/028/rings.v3.skycell.1198.028.wrp.i.56784_38980.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1273_047_56710",
+  "projcell": 1273,
+  "subcell": 47,
+  "night": 56710,
+  "filter": "i",
+  "beta": -8.75,
+  "ra": 162.895234501999,
+  "dec": -2.1442888901918615,
+  "cover": 0.9993489583333334,
+  "images": [
+   {
+    "projcell": 1273,
+    "subcell": 47,
+    "filter": "i",
+    "mjd": 56710.46544,
+    "filename": "/rings.v3.skycell/1273/047/rings.v3.skycell.1273.047.wrp.i.56710_46544.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1273,
+    "subcell": 47,
+    "filter": "i",
+    "mjd": 56710.47765,
+    "filename": "/rings.v3.skycell/1273/047/rings.v3.skycell.1273.047.wrp.i.56710_47765.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1273,
+    "subcell": 47,
+    "filter": "i",
+    "mjd": 56710.4898,
+    "filename": "/rings.v3.skycell/1273/047/rings.v3.skycell.1273.047.wrp.i.56710_48980.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1273,
+    "subcell": 47,
+    "filter": "i",
+    "mjd": 56710.50196,
+    "filename": "/rings.v3.skycell/1273/047/rings.v3.skycell.1273.047.wrp.i.56710_50196.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1372_002_56767",
+  "projcell": 1372,
+  "subcell": 2,
+  "night": 56767,
+  "filter": "i",
+  "beta": 8.52,
+  "ra": 201.13129450153494,
+  "dec": 0.22028651862574683,
+  "cover": 0.9983723958333334,
+  "images": [
+   {
+    "projcell": 1372,
+    "subcell": 2,
+    "filter": "i",
+    "mjd": 56767.42353,
+    "filename": "/rings.v3.skycell/1372/002/rings.v3.skycell.1372.002.wrp.i.56767_42353.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1372,
+    "subcell": 2,
+    "filter": "i",
+    "mjd": 56767.43491,
+    "filename": "/rings.v3.skycell/1372/002/rings.v3.skycell.1372.002.wrp.i.56767_43491.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1372,
+    "subcell": 2,
+    "filter": "i",
+    "mjd": 56767.4463,
+    "filename": "/rings.v3.skycell/1372/002/rings.v3.skycell.1372.002.wrp.i.56767_44630.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1372,
+    "subcell": 2,
+    "filter": "i",
+    "mjd": 56767.45766,
+    "filename": "/rings.v3.skycell/1372/002/rings.v3.skycell.1372.002.wrp.i.56767_45766.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc853_047_56811",
+  "projcell": 853,
+  "subcell": 47,
+  "night": 56811,
+  "filter": "g",
+  "beta": -1.2,
+  "ra": 243.25823960551926,
+  "dec": -22.235833782643226,
+  "cover": 0.9368489583333334,
+  "images": [
+   {
+    "projcell": 853,
+    "subcell": 47,
+    "filter": "g",
+    "mjd": 56811.35639,
+    "filename": "/rings.v3.skycell/0853/047/rings.v3.skycell.0853.047.wrp.g.56811_35639.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 853,
+    "subcell": 47,
+    "filter": "g",
+    "mjd": 56811.3689,
+    "filename": "/rings.v3.skycell/0853/047/rings.v3.skycell.0853.047.wrp.g.56811_36890.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 853,
+    "subcell": 47,
+    "filter": "g",
+    "mjd": 56811.39435,
+    "filename": "/rings.v3.skycell/0853/047/rings.v3.skycell.0853.047.wrp.g.56811_39435.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1103_031_56813",
+  "projcell": 1103,
+  "subcell": 31,
+  "night": 56813,
+  "filter": "i",
+  "beta": -2.24,
+  "ra": 199.69888111507134,
+  "dec": -10.632296366894225,
+  "cover": 0.9990234375,
+  "images": [
+   {
+    "projcell": 1103,
+    "subcell": 31,
+    "filter": "i",
+    "mjd": 56813.2821302,
+    "filename": "/rings.v3.skycell/1103/031/rings.v3.skycell.1103.031.wrp.i.56813_28213.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1103,
+    "subcell": 31,
+    "filter": "i",
+    "mjd": 56813.29471,
+    "filename": "/rings.v3.skycell/1103/031/rings.v3.skycell.1103.031.wrp.i.56813_29471.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1103,
+    "subcell": 31,
+    "filter": "i",
+    "mjd": 56813.30765,
+    "filename": "/rings.v3.skycell/1103/031/rings.v3.skycell.1103.031.wrp.i.56813_30765.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1103,
+    "subcell": 31,
+    "filter": "i",
+    "mjd": 56813.32061,
+    "filename": "/rings.v3.skycell/1103/031/rings.v3.skycell.1103.031.wrp.i.56813_32061.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1529_092_55584",
+  "projcell": 1529,
+  "subcell": 92,
+  "night": 55584,
+  "filter": "i",
+  "beta": -9.57,
+  "ra": 114.40436831697667,
+  "dec": 11.66833268920865,
+  "cover": 0.9228515625,
+  "images": [
+   {
+    "projcell": 1529,
+    "subcell": 92,
+    "filter": "i",
+    "mjd": 55584.50381,
+    "filename": "/rings.v3.skycell/1529/092/rings.v3.skycell.1529.092.wrp.i.55584_50381.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1529,
+    "subcell": 92,
+    "filter": "i",
+    "mjd": 55584.51576,
+    "filename": "/rings.v3.skycell/1529/092/rings.v3.skycell.1529.092.wrp.i.55584_51576.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1529,
+    "subcell": 92,
+    "filter": "i",
+    "mjd": 55584.52878,
+    "filename": "/rings.v3.skycell/1529/092/rings.v3.skycell.1529.092.wrp.i.55584_52878.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1529,
+    "subcell": 92,
+    "filter": "i",
+    "mjd": 55584.54207,
+    "filename": "/rings.v3.skycell/1529/092/rings.v3.skycell.1529.092.wrp.i.55584_54207.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc849_030_56729",
+  "projcell": 849,
+  "subcell": 30,
+  "night": 56729,
+  "filter": "i",
+  "beta": -4.42,
+  "ra": 229.0086602186619,
+  "dec": -22.692169052996665,
+  "cover": 0.9997829861111112,
+  "images": [
+   {
+    "projcell": 849,
+    "subcell": 30,
+    "filter": "i",
+    "mjd": 56729.55321,
+    "filename": "/rings.v3.skycell/0849/030/rings.v3.skycell.0849.030.wrp.i.56729_55321.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 849,
+    "subcell": 30,
+    "filter": "i",
+    "mjd": 56729.5642,
+    "filename": "/rings.v3.skycell/0849/030/rings.v3.skycell.0849.030.wrp.i.56729_56420.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 849,
+    "subcell": 30,
+    "filter": "i",
+    "mjd": 56729.5755,
+    "filename": "/rings.v3.skycell/0849/030/rings.v3.skycell.0849.030.wrp.i.56729_57550.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 849,
+    "subcell": 30,
+    "filter": "i",
+    "mjd": 56729.58648,
+    "filename": "/rings.v3.skycell/0849/030/rings.v3.skycell.0849.030.wrp.i.56729_58648.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1455_046_56708",
+  "projcell": 1455,
+  "subcell": 46,
+  "night": 56708,
+  "filter": "i",
+  "beta": 2.79,
+  "ra": 173.362278638353,
+  "dec": 5.914049437998338,
+  "cover": 0.9996744791666666,
+  "images": [
+   {
+    "projcell": 1455,
+    "subcell": 46,
+    "filter": "i",
+    "mjd": 56708.43632,
+    "filename": "/rings.v3.skycell/1455/046/rings.v3.skycell.1455.046.wrp.i.56708_43632.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1455,
+    "subcell": 46,
+    "filter": "i",
+    "mjd": 56708.44847,
+    "filename": "/rings.v3.skycell/1455/046/rings.v3.skycell.1455.046.wrp.i.56708_44847.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1455,
+    "subcell": 46,
+    "filter": "i",
+    "mjd": 56708.46069,
+    "filename": "/rings.v3.skycell/1455/046/rings.v3.skycell.1455.046.wrp.i.56708_46069.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1455,
+    "subcell": 46,
+    "filter": "i",
+    "mjd": 56708.47302,
+    "filename": "/rings.v3.skycell/1455/046/rings.v3.skycell.1455.046.wrp.i.56708_47302.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1039_076_55776",
+  "projcell": 1039,
+  "subcell": 76,
+  "night": 55776,
+  "filter": "mixed",
+  "beta": 7.71,
+  "ra": 298.1556860864188,
+  "dec": -13.115249622329943,
+  "cover": 0.9965277777777778,
+  "images": [
+   {
+    "projcell": 1039,
+    "subcell": 76,
+    "filter": "g",
+    "mjd": 55776.39013,
+    "filename": "/rings.v3.skycell/1039/076/rings.v3.skycell.1039.076.wrp.g.55776_39013.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1039,
+    "subcell": 76,
+    "filter": "g",
+    "mjd": 55776.40102,
+    "filename": "/rings.v3.skycell/1039/076/rings.v3.skycell.1039.076.wrp.g.55776_40102.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1039,
+    "subcell": 76,
+    "filter": "r",
+    "mjd": 55776.41326,
+    "filename": "/rings.v3.skycell/1039/076/rings.v3.skycell.1039.076.wrp.r.55776_41326.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1039,
+    "subcell": 76,
+    "filter": "r",
+    "mjd": 55776.42396,
+    "filename": "/rings.v3.skycell/1039/076/rings.v3.skycell.1039.076.wrp.r.55776_42396.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc957_091_56847",
+  "projcell": 957,
+  "subcell": 91,
+  "night": 56847,
+  "filter": "i",
+  "beta": -1.61,
+  "ra": 323.930849395267,
+  "dec": -16.07095408264412,
+  "cover": 0.9997829861111112,
+  "images": [
+   {
+    "projcell": 957,
+    "subcell": 91,
+    "filter": "i",
+    "mjd": 56847.50299,
+    "filename": "/rings.v3.skycell/0957/091/rings.v3.skycell.0957.091.wrp.i.56847_50299.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 957,
+    "subcell": 91,
+    "filter": "i",
+    "mjd": 56847.51506,
+    "filename": "/rings.v3.skycell/0957/091/rings.v3.skycell.0957.091.wrp.i.56847_51506.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 957,
+    "subcell": 91,
+    "filter": "i",
+    "mjd": 56847.52707,
+    "filename": "/rings.v3.skycell/0957/091/rings.v3.skycell.0957.091.wrp.i.56847_52707.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 957,
+    "subcell": 91,
+    "filter": "i",
+    "mjd": 56847.53912,
+    "filename": "/rings.v3.skycell/0957/091/rings.v3.skycell.0957.091.wrp.i.56847_53912.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1778_081_56934",
+  "projcell": 1778,
+  "subcell": 81,
+  "night": 56934,
+  "filter": "i",
+  "beta": 2.54,
+  "ra": 61.67767285405931,
+  "dec": 23.308999002725315,
+  "cover": 0.9997829861111112,
+  "images": [
+   {
+    "projcell": 1778,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56934.47523,
+    "filename": "/rings.v3.skycell/1778/081/rings.v3.skycell.1778.081.wrp.i.56934_47523.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1778,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56934.48782,
+    "filename": "/rings.v3.skycell/1778/081/rings.v3.skycell.1778.081.wrp.i.56934_48782.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1778,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56934.50039,
+    "filename": "/rings.v3.skycell/1778/081/rings.v3.skycell.1778.081.wrp.i.56934_50039.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1778,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56934.513,
+    "filename": "/rings.v3.skycell/1778/081/rings.v3.skycell.1778.081.wrp.i.56934_51300.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1318_078_56822",
+  "projcell": 1318,
+  "subcell": 78,
+  "night": 56822,
+  "filter": "i",
+  "beta": 5.93,
+  "ra": 342.468435945506,
+  "dec": -1.0201822690469593,
+  "cover": 0.9997829861111112,
+  "images": [
+   {
+    "projcell": 1318,
+    "subcell": 78,
+    "filter": "i",
+    "mjd": 56822.54748,
+    "filename": "/rings.v3.skycell/1318/078/rings.v3.skycell.1318.078.wrp.i.56822_54748.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1318,
+    "subcell": 78,
+    "filter": "i",
+    "mjd": 56822.55916,
+    "filename": "/rings.v3.skycell/1318/078/rings.v3.skycell.1318.078.wrp.i.56822_55916.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1318,
+    "subcell": 78,
+    "filter": "i",
+    "mjd": 56822.57081,
+    "filename": "/rings.v3.skycell/1318/078/rings.v3.skycell.1318.078.wrp.i.56822_57081.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1318,
+    "subcell": 78,
+    "filter": "i",
+    "mjd": 56822.58245,
+    "filename": "/rings.v3.skycell/1318/078/rings.v3.skycell.1318.078.wrp.i.56822_58245.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1145_070_56889",
+  "projcell": 1145,
+  "subcell": 70,
+  "night": 56889,
+  "filter": "i",
+  "beta": -8.36,
+  "ra": 9.775510066562166,
+  "dec": -4.868361372115355,
+  "cover": 0.9996744791666666,
+  "images": [
+   {
+    "projcell": 1145,
+    "subcell": 70,
+    "filter": "i",
+    "mjd": 56889.52825,
+    "filename": "/rings.v3.skycell/1145/070/rings.v3.skycell.1145.070.wrp.i.56889_52825.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1145,
+    "subcell": 70,
+    "filter": "i",
+    "mjd": 56889.54047,
+    "filename": "/rings.v3.skycell/1145/070/rings.v3.skycell.1145.070.wrp.i.56889_54047.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1145,
+    "subcell": 70,
+    "filter": "i",
+    "mjd": 56889.55271,
+    "filename": "/rings.v3.skycell/1145/070/rings.v3.skycell.1145.070.wrp.i.56889_55271.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1145,
+    "subcell": 70,
+    "filter": "i",
+    "mjd": 56889.56495,
+    "filename": "/rings.v3.skycell/1145/070/rings.v3.skycell.1145.070.wrp.i.56889_56495.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1503_054_56914",
+  "projcell": 1503,
+  "subcell": 54,
+  "night": 56914,
+  "filter": "i",
+  "beta": 6.15,
+  "ra": 8.194590116457448,
+  "dec": 10.068282115328364,
+  "cover": 0.9993489583333334,
+  "images": [
+   {
+    "projcell": 1503,
+    "subcell": 54,
+    "filter": "i",
+    "mjd": 56914.3973,
+    "filename": "/rings.v3.skycell/1503/054/rings.v3.skycell.1503.054.wrp.i.56914_39730.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1503,
+    "subcell": 54,
+    "filter": "i",
+    "mjd": 56914.40917,
+    "filename": "/rings.v3.skycell/1503/054/rings.v3.skycell.1503.054.wrp.i.56914_40917.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1503,
+    "subcell": 54,
+    "filter": "i",
+    "mjd": 56914.42104,
+    "filename": "/rings.v3.skycell/1503/054/rings.v3.skycell.1503.054.wrp.i.56914_42104.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1503,
+    "subcell": 54,
+    "filter": "i",
+    "mjd": 56914.43301,
+    "filename": "/rings.v3.skycell/1503/054/rings.v3.skycell.1503.054.wrp.i.56914_43301.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1771_039_56970",
+  "projcell": 1771,
+  "subcell": 39,
+  "night": 56970,
+  "filter": "i",
+  "beta": 9.26,
+  "ra": 28.081403397177198,
+  "dec": 21.33125817135204,
+  "cover": 0.9992404513888888,
+  "images": [
+   {
+    "projcell": 1771,
+    "subcell": 39,
+    "filter": "i",
+    "mjd": 56970.40987,
+    "filename": "/rings.v3.skycell/1771/039/rings.v3.skycell.1771.039.wrp.i.56970_40987.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1771,
+    "subcell": 39,
+    "filter": "i",
+    "mjd": 56970.42289,
+    "filename": "/rings.v3.skycell/1771/039/rings.v3.skycell.1771.039.wrp.i.56970_42289.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1771,
+    "subcell": 39,
+    "filter": "i",
+    "mjd": 56970.43587,
+    "filename": "/rings.v3.skycell/1771/039/rings.v3.skycell.1771.039.wrp.i.56970_43587.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1771,
+    "subcell": 39,
+    "filter": "i",
+    "mjd": 56970.4489,
+    "filename": "/rings.v3.skycell/1771/039/rings.v3.skycell.1771.039.wrp.i.56970_44890.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1273_031_56710",
+  "projcell": 1273,
+  "subcell": 31,
+  "night": 56710,
+  "filter": "i",
+  "beta": -8.16,
+  "ra": 165.45676772759728,
+  "dec": -2.679415519614226,
+  "cover": 0.9992404513888888,
+  "images": [
+   {
+    "projcell": 1273,
+    "subcell": 31,
+    "filter": "i",
+    "mjd": 56710.46478,
+    "filename": "/rings.v3.skycell/1273/031/rings.v3.skycell.1273.031.wrp.i.56710_46478.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1273,
+    "subcell": 31,
+    "filter": "i",
+    "mjd": 56710.47699,
+    "filename": "/rings.v3.skycell/1273/031/rings.v3.skycell.1273.031.wrp.i.56710_47699.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1273,
+    "subcell": 31,
+    "filter": "i",
+    "mjd": 56710.48914,
+    "filename": "/rings.v3.skycell/1273/031/rings.v3.skycell.1273.031.wrp.i.56710_48914.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1273,
+    "subcell": 31,
+    "filter": "i",
+    "mjd": 56710.5013,
+    "filename": "/rings.v3.skycell/1273/031/rings.v3.skycell.1273.031.wrp.i.56710_50130.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1798_050_55238",
+  "projcell": 1798,
+  "subcell": 50,
+  "night": 55238,
+  "filter": "g",
+  "beta": 8.82,
+  "ra": 147.64370223850185,
+  "dec": 22.119808905747487,
+  "cover": 0.8987630208333334,
+  "images": [
+   {
+    "projcell": 1798,
+    "subcell": 50,
+    "filter": "g",
+    "mjd": 55238.51722,
+    "filename": "/rings.v3.skycell/1798/050/rings.v3.skycell.1798.050.wrp.g.55238_51722.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1798,
+    "subcell": 50,
+    "filter": "g",
+    "mjd": 55238.52649,
+    "filename": "/rings.v3.skycell/1798/050/rings.v3.skycell.1798.050.wrp.g.55238_52649.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1798,
+    "subcell": 50,
+    "filter": "g",
+    "mjd": 55238.53942,
+    "filename": "/rings.v3.skycell/1798/050/rings.v3.skycell.1798.050.wrp.g.55238_53942.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1798,
+    "subcell": 50,
+    "filter": "g",
+    "mjd": 55238.54877,
+    "filename": "/rings.v3.skycell/1798/050/rings.v3.skycell.1798.050.wrp.g.55238_54877.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1683_073_56234",
+  "projcell": 1683,
+  "subcell": 73,
+  "night": 56234,
+  "filter": "i",
+  "beta": 9.26,
+  "ra": 21.711965476675772,
+  "dec": 19.04667537059058,
+  "cover": 0.9476996527777778,
+  "images": [
+   {
+    "projcell": 1683,
+    "subcell": 73,
+    "filter": "i",
+    "mjd": 56234.4213,
+    "filename": "/rings.v3.skycell/1683/073/rings.v3.skycell.1683.073.wrp.i.56234_42130.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1683,
+    "subcell": 73,
+    "filter": "i",
+    "mjd": 56234.43329,
+    "filename": "/rings.v3.skycell/1683/073/rings.v3.skycell.1683.073.wrp.i.56234_43329.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1683,
+    "subcell": 73,
+    "filter": "i",
+    "mjd": 56234.4608586,
+    "filename": "/rings.v3.skycell/1683/073/rings.v3.skycell.1683.073.wrp.i.56234_46086.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1683,
+    "subcell": 73,
+    "filter": "i",
+    "mjd": 56234.4736,
+    "filename": "/rings.v3.skycell/1683/073/rings.v3.skycell.1683.073.wrp.i.56234_47360.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1326_010_56907",
+  "projcell": 1326,
+  "subcell": 10,
+  "night": 56907,
+  "filter": "i",
+  "beta": -6.5,
+  "ra": 17.69838127307769,
+  "dec": 0.55405642170205,
+  "cover": 0.9966362847222222,
+  "images": [
+   {
+    "projcell": 1326,
+    "subcell": 10,
+    "filter": "i",
+    "mjd": 56907.47221,
+    "filename": "/rings.v3.skycell/1326/010/rings.v3.skycell.1326.010.wrp.i.56907_47221.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1326,
+    "subcell": 10,
+    "filter": "i",
+    "mjd": 56907.49646,
+    "filename": "/rings.v3.skycell/1326/010/rings.v3.skycell.1326.010.wrp.i.56907_49646.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1326,
+    "subcell": 10,
+    "filter": "i",
+    "mjd": 56907.50867,
+    "filename": "/rings.v3.skycell/1326/010/rings.v3.skycell.1326.010.wrp.i.56907_50867.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1110_038_56786",
+  "projcell": 1110,
+  "subcell": 38,
+  "night": 56786,
+  "filter": "i",
+  "beta": 6.06,
+  "ra": 225.21079946852234,
+  "dec": -10.629670932221334,
+  "cover": 0.9996744791666666,
+  "images": [
+   {
+    "projcell": 1110,
+    "subcell": 38,
+    "filter": "i",
+    "mjd": 56786.36561,
+    "filename": "/rings.v3.skycell/1110/038/rings.v3.skycell.1110.038.wrp.i.56786_36561.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1110,
+    "subcell": 38,
+    "filter": "i",
+    "mjd": 56786.37829,
+    "filename": "/rings.v3.skycell/1110/038/rings.v3.skycell.1110.038.wrp.i.56786_37829.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1110,
+    "subcell": 38,
+    "filter": "i",
+    "mjd": 56786.39097,
+    "filename": "/rings.v3.skycell/1110/038/rings.v3.skycell.1110.038.wrp.i.56786_39097.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1110,
+    "subcell": 38,
+    "filter": "i",
+    "mjd": 56786.40365,
+    "filename": "/rings.v3.skycell/1110/038/rings.v3.skycell.1110.038.wrp.i.56786_40365.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1409_023_56848",
+  "projcell": 1409,
+  "subcell": 23,
+  "night": 56848,
+  "filter": "i",
+  "beta": 5.49,
+  "ra": 348.59295181492234,
+  "dec": 0.8674968492812078,
+  "cover": 0.9998914930555556,
+  "images": [
+   {
+    "projcell": 1409,
+    "subcell": 23,
+    "filter": "i",
+    "mjd": 56848.58294,
+    "filename": "/rings.v3.skycell/1409/023/rings.v3.skycell.1409.023.wrp.i.56848_58294.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1409,
+    "subcell": 23,
+    "filter": "i",
+    "mjd": 56848.58983,
+    "filename": "/rings.v3.skycell/1409/023/rings.v3.skycell.1409.023.wrp.i.56848_58983.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1409,
+    "subcell": 23,
+    "filter": "i",
+    "mjd": 56848.5967,
+    "filename": "/rings.v3.skycell/1409/023/rings.v3.skycell.1409.023.wrp.i.56848_59670.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1409,
+    "subcell": 23,
+    "filter": "i",
+    "mjd": 56848.60361,
+    "filename": "/rings.v3.skycell/1409/023/rings.v3.skycell.1409.023.wrp.i.56848_60361.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1691_024_57001",
+  "projcell": 1691,
+  "subcell": 24,
+  "night": 57001,
+  "filter": "i",
+  "beta": -2.29,
+  "ra": 54.745155142094774,
+  "dec": 16.983006482010495,
+  "cover": 0.9998914930555556,
+  "images": [
+   {
+    "projcell": 1691,
+    "subcell": 24,
+    "filter": "i",
+    "mjd": 57001.4381,
+    "filename": "/rings.v3.skycell/1691/024/rings.v3.skycell.1691.024.wrp.i.57001_43810.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1691,
+    "subcell": 24,
+    "filter": "i",
+    "mjd": 57001.45023,
+    "filename": "/rings.v3.skycell/1691/024/rings.v3.skycell.1691.024.wrp.i.57001_45023.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1691,
+    "subcell": 24,
+    "filter": "i",
+    "mjd": 57001.46241,
+    "filename": "/rings.v3.skycell/1691/024/rings.v3.skycell.1691.024.wrp.i.57001_46241.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1691,
+    "subcell": 24,
+    "filter": "i",
+    "mjd": 57001.47454,
+    "filename": "/rings.v3.skycell/1691/024/rings.v3.skycell.1691.024.wrp.i.57001_47454.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1411_076_56222",
+  "projcell": 1411,
+  "subcell": 76,
+  "night": 56222,
+  "filter": "i",
+  "beta": 4.53,
+  "ra": 355.35071236736417,
+  "dec": 2.8681871609548417,
+  "cover": 0.8793402777777778,
+  "images": [
+   {
+    "projcell": 1411,
+    "subcell": 76,
+    "filter": "i",
+    "mjd": 56222.30752,
+    "filename": "/rings.v3.skycell/1411/076/rings.v3.skycell.1411.076.wrp.i.56222_30752.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1411,
+    "subcell": 76,
+    "filter": "i",
+    "mjd": 56222.31957,
+    "filename": "/rings.v3.skycell/1411/076/rings.v3.skycell.1411.076.wrp.i.56222_31957.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1411,
+    "subcell": 76,
+    "filter": "i",
+    "mjd": 56222.35211,
+    "filename": "/rings.v3.skycell/1411/076/rings.v3.skycell.1411.076.wrp.i.56222_35211.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1411,
+    "subcell": 76,
+    "filter": "i",
+    "mjd": 56222.36449,
+    "filename": "/rings.v3.skycell/1411/076/rings.v3.skycell.1411.076.wrp.i.56222_36449.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1188_051_55251",
+  "projcell": 1188,
+  "subcell": 51,
+  "night": 55251,
+  "filter": "i",
+  "beta": -3.93,
+  "ra": 183.57032728874276,
+  "dec": -5.662290697526766,
+  "cover": 0.8700086805555556,
+  "images": [
+   {
+    "projcell": 1188,
+    "subcell": 51,
+    "filter": "i",
+    "mjd": 55251.53416,
+    "filename": "/rings.v3.skycell/1188/051/rings.v3.skycell.1188.051.wrp.i.55251_53416.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1188,
+    "subcell": 51,
+    "filter": "i",
+    "mjd": 55251.54375,
+    "filename": "/rings.v3.skycell/1188/051/rings.v3.skycell.1188.051.wrp.i.55251_54375.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1188,
+    "subcell": 51,
+    "filter": "i",
+    "mjd": 55251.55522,
+    "filename": "/rings.v3.skycell/1188/051/rings.v3.skycell.1188.051.wrp.i.55251_55522.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1188,
+    "subcell": 51,
+    "filter": "i",
+    "mjd": 55251.5648,
+    "filename": "/rings.v3.skycell/1188/051/rings.v3.skycell.1188.051.wrp.i.55251_56480.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1954_036_55585",
+  "projcell": 1954,
+  "subcell": 36,
+  "night": 55585,
+  "filter": "i",
+  "beta": 6.94,
+  "ra": 108.72251633828459,
+  "dec": 29.33979972477878,
+  "cover": 0.9742838541666666,
+  "images": [
+   {
+    "projcell": 1954,
+    "subcell": 36,
+    "filter": "i",
+    "mjd": 55585.46456,
+    "filename": "/rings.v3.skycell/1954/036/rings.v3.skycell.1954.036.wrp.i.55585_46456.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1954,
+    "subcell": 36,
+    "filter": "i",
+    "mjd": 55585.48091,
+    "filename": "/rings.v3.skycell/1954/036/rings.v3.skycell.1954.036.wrp.i.55585_48091.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1954,
+    "subcell": 36,
+    "filter": "i",
+    "mjd": 55585.49502,
+    "filename": "/rings.v3.skycell/1954/036/rings.v3.skycell.1954.036.wrp.i.55585_49502.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1954,
+    "subcell": 36,
+    "filter": "i",
+    "mjd": 55585.5078,
+    "filename": "/rings.v3.skycell/1954/036/rings.v3.skycell.1954.036.wrp.i.55585_50780.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1142_059_56940",
+  "projcell": 1142,
+  "subcell": 59,
+  "night": 56940,
+  "filter": "i",
+  "beta": -6.6,
+  "ra": 354.2247247975916,
+  "dec": -9.850907028978552,
+  "cover": 0.9994574652777778,
+  "images": [
+   {
+    "projcell": 1142,
+    "subcell": 59,
+    "filter": "i",
+    "mjd": 56940.42125,
+    "filename": "/rings.v3.skycell/1142/059/rings.v3.skycell.1142.059.wrp.i.56940_42125.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1142,
+    "subcell": 59,
+    "filter": "i",
+    "mjd": 56940.43414,
+    "filename": "/rings.v3.skycell/1142/059/rings.v3.skycell.1142.059.wrp.i.56940_43414.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1142,
+    "subcell": 59,
+    "filter": "i",
+    "mjd": 56940.447,
+    "filename": "/rings.v3.skycell/1142/059/rings.v3.skycell.1142.059.wrp.i.56940_44700.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1142,
+    "subcell": 59,
+    "filter": "i",
+    "mjd": 56940.45995,
+    "filename": "/rings.v3.skycell/1142/059/rings.v3.skycell.1142.059.wrp.i.56940_45995.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc854_059_56812",
+  "projcell": 854,
+  "subcell": 59,
+  "night": 56812,
+  "filter": "g",
+  "beta": 0.01,
+  "ra": 246.5804918709816,
+  "dec": -21.711129622652813,
+  "cover": 0.9839409722222222,
+  "images": [
+   {
+    "projcell": 854,
+    "subcell": 59,
+    "filter": "g",
+    "mjd": 56812.3932841,
+    "filename": "/rings.v3.skycell/0854/059/rings.v3.skycell.0854.059.wrp.g.56812_39328.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 854,
+    "subcell": 59,
+    "filter": "g",
+    "mjd": 56812.40537,
+    "filename": "/rings.v3.skycell/0854/059/rings.v3.skycell.0854.059.wrp.g.56812_40537.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 854,
+    "subcell": 59,
+    "filter": "g",
+    "mjd": 56812.41791,
+    "filename": "/rings.v3.skycell/0854/059/rings.v3.skycell.0854.059.wrp.g.56812_41791.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 854,
+    "subcell": 59,
+    "filter": "g",
+    "mjd": 56812.4312252,
+    "filename": "/rings.v3.skycell/0854/059/rings.v3.skycell.0854.059.wrp.g.56812_43123.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1510_096_56972",
+  "projcell": 1510,
+  "subcell": 96,
+  "night": 56972,
+  "filter": "i",
+  "beta": -2.13,
+  "ra": 35.911439175801185,
+  "dec": 11.8955811406542,
+  "cover": 1.0,
+  "images": [
+   {
+    "projcell": 1510,
+    "subcell": 96,
+    "filter": "i",
+    "mjd": 56972.4453,
+    "filename": "/rings.v3.skycell/1510/096/rings.v3.skycell.1510.096.wrp.i.56972_44530.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1510,
+    "subcell": 96,
+    "filter": "i",
+    "mjd": 56972.45898,
+    "filename": "/rings.v3.skycell/1510/096/rings.v3.skycell.1510.096.wrp.i.56972_45898.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1510,
+    "subcell": 96,
+    "filter": "i",
+    "mjd": 56972.47252,
+    "filename": "/rings.v3.skycell/1510/096/rings.v3.skycell.1510.096.wrp.i.56972_47252.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1510,
+    "subcell": 96,
+    "filter": "i",
+    "mjd": 56972.48616,
+    "filename": "/rings.v3.skycell/1510/096/rings.v3.skycell.1510.096.wrp.i.56972_48616.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1879_026_56815",
+  "projcell": 1879,
+  "subcell": 26,
+  "night": 56815,
+  "filter": "i",
+  "beta": 7.65,
+  "ra": 135.29254525813667,
+  "dec": 24.96926561475577,
+  "cover": 0.9996744791666666,
+  "images": [
+   {
+    "projcell": 1879,
+    "subcell": 26,
+    "filter": "i",
+    "mjd": 56815.2645,
+    "filename": "/rings.v3.skycell/1879/026/rings.v3.skycell.1879.026.wrp.i.56815_26450.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1879,
+    "subcell": 26,
+    "filter": "i",
+    "mjd": 56815.27809,
+    "filename": "/rings.v3.skycell/1879/026/rings.v3.skycell.1879.026.wrp.i.56815_27809.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1879,
+    "subcell": 26,
+    "filter": "i",
+    "mjd": 56815.29174,
+    "filename": "/rings.v3.skycell/1879/026/rings.v3.skycell.1879.026.wrp.i.56815_29174.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1879,
+    "subcell": 26,
+    "filter": "i",
+    "mjd": 56815.30543,
+    "filename": "/rings.v3.skycell/1879/026/rings.v3.skycell.1879.026.wrp.i.56815_30543.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1780_068_55889",
+  "projcell": 1780,
+  "subcell": 68,
+  "night": 55889,
+  "filter": "mixed",
+  "beta": 0.74,
+  "ra": 67.18769023609616,
+  "dec": 22.630808969324423,
+  "cover": 0.9994574652777778,
+  "images": [
+   {
+    "projcell": 1780,
+    "subcell": 68,
+    "filter": "g",
+    "mjd": 55889.52762,
+    "filename": "/rings.v3.skycell/1780/068/rings.v3.skycell.1780.068.wrp.g.55889_52762.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1780,
+    "subcell": 68,
+    "filter": "g",
+    "mjd": 55889.54003,
+    "filename": "/rings.v3.skycell/1780/068/rings.v3.skycell.1780.068.wrp.g.55889_54003.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1780,
+    "subcell": 68,
+    "filter": "r",
+    "mjd": 55889.55315,
+    "filename": "/rings.v3.skycell/1780/068/rings.v3.skycell.1780.068.wrp.r.55889_55315.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1780,
+    "subcell": 68,
+    "filter": "r",
+    "mjd": 55889.56493,
+    "filename": "/rings.v3.skycell/1780/068/rings.v3.skycell.1780.068.wrp.r.55889_56493.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1452_024_56698",
+  "projcell": 1452,
+  "subcell": 24,
+  "night": 56698,
+  "filter": "i",
+  "beta": -2.65,
+  "ra": 161.98619992463276,
+  "dec": 5.127296837138843,
+  "cover": 0.9991319444444444,
+  "images": [
+   {
+    "projcell": 1452,
+    "subcell": 24,
+    "filter": "i",
+    "mjd": 56698.44375,
+    "filename": "/rings.v3.skycell/1452/024/rings.v3.skycell.1452.024.wrp.i.56698_44375.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1452,
+    "subcell": 24,
+    "filter": "i",
+    "mjd": 56698.45611,
+    "filename": "/rings.v3.skycell/1452/024/rings.v3.skycell.1452.024.wrp.i.56698_45611.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1452,
+    "subcell": 24,
+    "filter": "i",
+    "mjd": 56698.48104,
+    "filename": "/rings.v3.skycell/1452/024/rings.v3.skycell.1452.024.wrp.i.56698_48104.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1778_013_56934",
+  "projcell": 1778,
+  "subcell": 13,
+  "night": 56934,
+  "filter": "i",
+  "beta": -0.3,
+  "ra": 60.600154803212064,
+  "dec": 20.472560379974563,
+  "cover": 0.9996744791666666,
+  "images": [
+   {
+    "projcell": 1778,
+    "subcell": 13,
+    "filter": "i",
+    "mjd": 56934.47457,
+    "filename": "/rings.v3.skycell/1778/013/rings.v3.skycell.1778.013.wrp.i.56934_47457.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1778,
+    "subcell": 13,
+    "filter": "i",
+    "mjd": 56934.48718,
+    "filename": "/rings.v3.skycell/1778/013/rings.v3.skycell.1778.013.wrp.i.56934_48718.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1778,
+    "subcell": 13,
+    "filter": "i",
+    "mjd": 56934.49973,
+    "filename": "/rings.v3.skycell/1778/013/rings.v3.skycell.1778.013.wrp.i.56934_49973.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1778,
+    "subcell": 13,
+    "filter": "i",
+    "mjd": 56934.51234,
+    "filename": "/rings.v3.skycell/1778/013/rings.v3.skycell.1778.013.wrp.i.56934_51234.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1225_010_56846",
+  "projcell": 1225,
+  "subcell": 10,
+  "night": 56846,
+  "filter": "i",
+  "beta": 3.29,
+  "ra": 333.55399419476936,
+  "dec": -7.4807673447582825,
+  "cover": 0.9988064236111112,
+  "images": [
+   {
+    "projcell": 1225,
+    "subcell": 10,
+    "filter": "i",
+    "mjd": 56846.48126,
+    "filename": "/rings.v3.skycell/1225/010/rings.v3.skycell.1225.010.wrp.i.56846_48126.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1225,
+    "subcell": 10,
+    "filter": "i",
+    "mjd": 56846.49334,
+    "filename": "/rings.v3.skycell/1225/010/rings.v3.skycell.1225.010.wrp.i.56846_49334.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1225,
+    "subcell": 10,
+    "filter": "i",
+    "mjd": 56846.50541,
+    "filename": "/rings.v3.skycell/1225/010/rings.v3.skycell.1225.010.wrp.i.56846_50541.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1225,
+    "subcell": 10,
+    "filter": "i",
+    "mjd": 56846.51742,
+    "filename": "/rings.v3.skycell/1225/010/rings.v3.skycell.1225.010.wrp.i.56846_51742.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1360_048_56698",
+  "projcell": 1360,
+  "subcell": 48,
+  "night": 56698,
+  "filter": "i",
+  "beta": -9.49,
+  "ra": 150.62383244576964,
+  "dec": 1.920731028767545,
+  "cover": 0.9998914930555556,
+  "images": [
+   {
+    "projcell": 1360,
+    "subcell": 48,
+    "filter": "i",
+    "mjd": 56698.43491,
+    "filename": "/rings.v3.skycell/1360/048/rings.v3.skycell.1360.048.wrp.i.56698_43491.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1360,
+    "subcell": 48,
+    "filter": "i",
+    "mjd": 56698.44727,
+    "filename": "/rings.v3.skycell/1360/048/rings.v3.skycell.1360.048.wrp.i.56698_44727.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1360,
+    "subcell": 48,
+    "filter": "i",
+    "mjd": 56698.45963,
+    "filename": "/rings.v3.skycell/1360/048/rings.v3.skycell.1360.048.wrp.i.56698_45963.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1360,
+    "subcell": 48,
+    "filter": "i",
+    "mjd": 56698.47207,
+    "filename": "/rings.v3.skycell/1360/048/rings.v3.skycell.1360.048.wrp.i.56698_47207.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1143_063_56913",
+  "projcell": 1143,
+  "subcell": 63,
+  "night": 56913,
+  "filter": "i",
+  "beta": -5.14,
+  "ra": 0.5380364637502285,
+  "dec": -5.3990561741518475,
+  "cover": 0.9992404513888888,
+  "images": [
+   {
+    "projcell": 1143,
+    "subcell": 63,
+    "filter": "i",
+    "mjd": 56913.46495,
+    "filename": "/rings.v3.skycell/1143/063/rings.v3.skycell.1143.063.wrp.i.56913_46495.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1143,
+    "subcell": 63,
+    "filter": "i",
+    "mjd": 56913.47659,
+    "filename": "/rings.v3.skycell/1143/063/rings.v3.skycell.1143.063.wrp.i.56913_47659.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1143,
+    "subcell": 63,
+    "filter": "i",
+    "mjd": 56913.48818,
+    "filename": "/rings.v3.skycell/1143/063/rings.v3.skycell.1143.063.wrp.i.56913_48818.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1143,
+    "subcell": 63,
+    "filter": "i",
+    "mjd": 56913.5001755,
+    "filename": "/rings.v3.skycell/1143/063/rings.v3.skycell.1143.063.wrp.i.56913_50018.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1143_081_56889",
+  "projcell": 1143,
+  "subcell": 81,
+  "night": 56889,
+  "filter": "i",
+  "beta": -4.76,
+  "ra": 1.5137929477205911,
+  "dec": -4.697583840560162,
+  "cover": 0.9997829861111112,
+  "images": [
+   {
+    "projcell": 1143,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56889.52167,
+    "filename": "/rings.v3.skycell/1143/081/rings.v3.skycell.1143.081.wrp.i.56889_52167.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1143,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56889.53391,
+    "filename": "/rings.v3.skycell/1143/081/rings.v3.skycell.1143.081.wrp.i.56889_53391.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1143,
+    "subcell": 81,
+    "filter": "i",
+    "mjd": 56889.54616,
+    "filename": "/rings.v3.skycell/1143/081/rings.v3.skycell.1143.081.wrp.i.56889_54616.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1534_019_56741",
+  "projcell": 1534,
+  "subcell": 19,
+  "night": 56741,
+  "filter": "g",
+  "beta": -8.83,
+  "ra": 131.53080662893194,
+  "dec": 8.72462850799069,
+  "cover": 0.9998914930555556,
+  "images": [
+   {
+    "projcell": 1534,
+    "subcell": 19,
+    "filter": "g",
+    "mjd": 56741.34867,
+    "filename": "/rings.v3.skycell/1534/019/rings.v3.skycell.1534.019.wrp.g.56741_34867.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1534,
+    "subcell": 19,
+    "filter": "g",
+    "mjd": 56741.36191,
+    "filename": "/rings.v3.skycell/1534/019/rings.v3.skycell.1534.019.wrp.g.56741_36191.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1534,
+    "subcell": 19,
+    "filter": "g",
+    "mjd": 56741.37563,
+    "filename": "/rings.v3.skycell/1534/019/rings.v3.skycell.1534.019.wrp.g.56741_37563.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1534,
+    "subcell": 19,
+    "filter": "g",
+    "mjd": 56741.38595,
+    "filename": "/rings.v3.skycell/1534/019/rings.v3.skycell.1534.019.wrp.g.56741_38595.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1319_099_56933",
+  "projcell": 1319,
+  "subcell": 99,
+  "night": 56933,
+  "filter": "i",
+  "beta": 5.26,
+  "ra": 346.27074557508007,
+  "dec": -0.29679009534444817,
+  "cover": 0.9990234375,
+  "images": [
+   {
+    "projcell": 1319,
+    "subcell": 99,
+    "filter": "i",
+    "mjd": 56933.32162,
+    "filename": "/rings.v3.skycell/1319/099/rings.v3.skycell.1319.099.wrp.i.56933_32162.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1319,
+    "subcell": 99,
+    "filter": "i",
+    "mjd": 56933.33385,
+    "filename": "/rings.v3.skycell/1319/099/rings.v3.skycell.1319.099.wrp.i.56933_33385.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1319,
+    "subcell": 99,
+    "filter": "i",
+    "mjd": 56933.34602,
+    "filename": "/rings.v3.skycell/1319/099/rings.v3.skycell.1319.099.wrp.i.56933_34602.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1319,
+    "subcell": 99,
+    "filter": "i",
+    "mjd": 56933.35821,
+    "filename": "/rings.v3.skycell/1319/099/rings.v3.skycell.1319.099.wrp.i.56933_35821.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1791_077_56734",
+  "projcell": 1791,
+  "subcell": 77,
+  "night": 56734,
+  "filter": "i",
+  "beta": 1.53,
+  "ra": 114.75949810237243,
+  "dec": 23.135899055496107,
+  "cover": 0.8770616319444444,
+  "images": [
+   {
+    "projcell": 1791,
+    "subcell": 77,
+    "filter": "i",
+    "mjd": 56734.29895,
+    "filename": "/rings.v3.skycell/1791/077/rings.v3.skycell.1791.077.wrp.i.56734_29895.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1791,
+    "subcell": 77,
+    "filter": "i",
+    "mjd": 56734.31336,
+    "filename": "/rings.v3.skycell/1791/077/rings.v3.skycell.1791.077.wrp.i.56734_31336.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1791,
+    "subcell": 77,
+    "filter": "i",
+    "mjd": 56734.32666,
+    "filename": "/rings.v3.skycell/1791/077/rings.v3.skycell.1791.077.wrp.i.56734_32666.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1791,
+    "subcell": 77,
+    "filter": "i",
+    "mjd": 56734.33947,
+    "filename": "/rings.v3.skycell/1791/077/rings.v3.skycell.1791.077.wrp.i.56734_33947.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1367_039_57001",
+  "projcell": 1367,
+  "subcell": 39,
+  "night": 57001,
+  "filter": "i",
+  "beta": 0.44,
+  "ra": 178.22439202809636,
+  "dec": 1.4127795734018265,
+  "cover": 0.9993489583333334,
+  "images": [
+   {
+    "projcell": 1367,
+    "subcell": 39,
+    "filter": "i",
+    "mjd": 57001.60329,
+    "filename": "/rings.v3.skycell/1367/039/rings.v3.skycell.1367.039.wrp.i.57001_60329.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1367,
+    "subcell": 39,
+    "filter": "i",
+    "mjd": 57001.61755,
+    "filename": "/rings.v3.skycell/1367/039/rings.v3.skycell.1367.039.wrp.i.57001_61755.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1367,
+    "subcell": 39,
+    "filter": "i",
+    "mjd": 57001.63076,
+    "filename": "/rings.v3.skycell/1367/039/rings.v3.skycell.1367.039.wrp.i.57001_63076.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1323_051_56913",
+  "projcell": 1323,
+  "subcell": 51,
+  "night": 56913,
+  "filter": "i",
+  "beta": -0.13,
+  "ra": 5.376511893146624,
+  "dec": 2.3312338304184013,
+  "cover": 0.9894748263888888,
+  "images": [
+   {
+    "projcell": 1323,
+    "subcell": 51,
+    "filter": "i",
+    "mjd": 56913.51634,
+    "filename": "/rings.v3.skycell/1323/051/rings.v3.skycell.1323.051.wrp.i.56913_51634.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1323,
+    "subcell": 51,
+    "filter": "i",
+    "mjd": 56913.5285,
+    "filename": "/rings.v3.skycell/1323/051/rings.v3.skycell.1323.051.wrp.i.56913_52850.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1323,
+    "subcell": 51,
+    "filter": "i",
+    "mjd": 56913.54069,
+    "filename": "/rings.v3.skycell/1323/051/rings.v3.skycell.1323.051.wrp.i.56913_54069.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1323,
+    "subcell": 51,
+    "filter": "i",
+    "mjd": 56913.55299,
+    "filename": "/rings.v3.skycell/1323/051/rings.v3.skycell.1323.051.wrp.i.56913_55299.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1598_069_56932",
+  "projcell": 1598,
+  "subcell": 69,
+  "night": 56932,
+  "filter": "i",
+  "beta": 1.99,
+  "ra": 30.889885253577415,
+  "dec": 14.469316835837864,
+  "cover": 0.9997829861111112,
+  "images": [
+   {
+    "projcell": 1598,
+    "subcell": 69,
+    "filter": "i",
+    "mjd": 56932.38851,
+    "filename": "/rings.v3.skycell/1598/069/rings.v3.skycell.1598.069.wrp.i.56932_38851.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1598,
+    "subcell": 69,
+    "filter": "i",
+    "mjd": 56932.40068,
+    "filename": "/rings.v3.skycell/1598/069/rings.v3.skycell.1598.069.wrp.i.56932_40068.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1598,
+    "subcell": 69,
+    "filter": "i",
+    "mjd": 56932.41291,
+    "filename": "/rings.v3.skycell/1598/069/rings.v3.skycell.1598.069.wrp.i.56932_41291.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1598,
+    "subcell": 69,
+    "filter": "i",
+    "mjd": 56932.42508,
+    "filename": "/rings.v3.skycell/1598/069/rings.v3.skycell.1598.069.wrp.i.56932_42508.fits",
+    "badflag": 0
+   }
+  ]
+ },
+ {
+  "id": "sc1859_078_56972",
+  "projcell": 1859,
+  "subcell": 78,
+  "night": 56972,
+  "filter": "r",
+  "beta": 8.97,
+  "ra": 46.821540164125864,
+  "dec": 27.124964689769943,
+  "cover": 0.8728298611111112,
+  "images": [
+   {
+    "projcell": 1859,
+    "subcell": 78,
+    "filter": "r",
+    "mjd": 56972.3456,
+    "filename": "/rings.v3.skycell/1859/078/rings.v3.skycell.1859.078.wrp.r.56972_34560.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1859,
+    "subcell": 78,
+    "filter": "r",
+    "mjd": 56972.35779,
+    "filename": "/rings.v3.skycell/1859/078/rings.v3.skycell.1859.078.wrp.r.56972_35779.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1859,
+    "subcell": 78,
+    "filter": "r",
+    "mjd": 56972.37006,
+    "filename": "/rings.v3.skycell/1859/078/rings.v3.skycell.1859.078.wrp.r.56972_37006.fits",
+    "badflag": 0
+   },
+   {
+    "projcell": 1859,
+    "subcell": 78,
+    "filter": "r",
+    "mjd": 56972.38234,
+    "filename": "/rings.v3.skycell/1859/078/rings.v3.skycell.1859.078.wrp.r.56972_38234.fits",
+    "badflag": 0
+   }
+  ]
+ }
+]

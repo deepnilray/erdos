@@ -1,0 +1,49 @@
+{
+ "best_cfg": {
+  "NSIG": 2.5,
+  "GAP_DILATE": 8,
+  "MINAREA": 5,
+  "NOISY_FACTOR": 1.5,
+  "MIN_RATE": 0.1,
+  "MATCH_ARCSEC": 1.3,
+  "LINK_TOL": 1.2,
+  "MAX_RESID": 0.4,
+  "MAG_SPREAD": 0.8,
+  "MIN_SNR": 4.0,
+  "STAT_MIN": 1
+ },
+ "coordinate_descent_best": {
+  "NSIG": 2.5,
+  "GAP_DILATE": 8,
+  "MINAREA": 5,
+  "NOISY_FACTOR": 1.5,
+  "MIN_RATE": 0.15,
+  "MATCH_ARCSEC": 1.3,
+  "LINK_TOL": 0.8,
+  "MAX_RESID": 0.4,
+  "MAG_SPREAD": 0.8,
+  "MIN_SNR": 4.0,
+  "STAT_MIN": 1
+ },
+ "coordinate_descent_train": {
+  "n_sets": 35,
+  "n_truth": 28,
+  "n_rec": 13,
+  "frac": 0.4642857142857143,
+  "n_truth_all": 63,
+  "n_rec_all": 13,
+  "fp_per_set": 0.14285714285714285,
+  "fp_total": 5
+ },
+ "default_train_with_noisy_mask": {
+  "n_sets": 35,
+  "n_truth": 28,
+  "n_rec": 13,
+  "frac": 0.4642857142857143,
+  "n_truth_all": 63,
+  "n_rec_all": 13,
+  "fp_per_set": 2.057142857142857,
+  "fp_total": 72
+ },
+ "note": "adopted = coordinate-descent optimum, with ties on train broken toward the less restrictive (original) value: MIN_RATE 0.1 not 0.15, LINK_TOL 1.2 not 0.8, MIN_SNR 4 not 5"
+}
