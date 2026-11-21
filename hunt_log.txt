@@ -1,0 +1,148 @@
+10:02:40 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+10:02:40 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+10:12:44 gaia pool rows: 3366478 from 144 strips
+10:12:45 after main-sequence cut: 3303105
+10:13:10 pool 3303107, done 0, to do 825779
+12:14:21 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+12:14:21 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+12:20:03 gaia pool rows: 3366478 from 144 strips
+12:20:04 after main-sequence cut: 3303105
+12:20:36 pool 3303107, done 360, to do 825419
+15:47:39 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:48:34 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:48:34 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:48:34 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:48:34 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:49:14 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:49:14 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:49:14 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:49:14 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:55:24 upload join failed (attempt 3/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28991876?WAIT=59
+15:55:24 upload join failed (attempt 3/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28991874?WAIT=59
+15:56:54 chunk falls back to per-source cones
+15:56:54 chunk falls back to per-source cones
+16:49:28 cone failed 154208 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+16:49:29 cone failed 154936 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+17:36:06 processed this run: 41578
+17:36:06 remaining in this shard: 783841
+17:36:07 scored: 41938 | with light curve: 36342
+17:36:07 VALIDATION ASASSN-21qj: [{'score': 38.038, 'dW2': 0.738, 'dW1': 0.332, 'redden': 0.406, 'start': 58227.4, 'nvis': 2, 'n_visits': 12}]
+17:36:07    rank of ASASSN-21qj among all scored: 1
+17:36:07 VALIDATION NGC2547-ID8: [{'score': 0.0, 'dW2': 0.0, 'dW1': 0.0, 'redden': 0.0, 'start': nan, 'nvis': 0, 'n_visits': 21}]
+17:36:07    rank of NGC2547-ID8 among all scored: 11566
+17:36:07 score > 5: 1  (and reddening dW2-dW1>0.05: 1)
+17:36:07 score > 8: 1  (and reddening dW2-dW1>0.05: 1)
+17:36:07 score > 12: 1  (and reddening dW2-dW1>0.05: 1)
+17:36:07 score > 20: 1  (and reddening dW2-dW1>0.05: 1)
+17:36:07 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+17:36:07 candidates written: 1
+17:36:07        uid            cluster  logage  gmag  bprp          ra        dec   score    dW2    dW1    start  nvis  base_w1w2
+0  3303105  VALID:ASASSN-21qj     NaN   NaN   NaN  123.847042 -38.989833  38.038  0.738  0.332  58227.4     2     -0.057
+17:36:50 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+17:36:50 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+17:46:37 gaia pool rows: 3366478 from 144 strips
+17:46:38 after main-sequence cut: 3303105
+17:46:58 pool 3303107, done 41938, to do 783841
+19:38:50 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+19:38:50 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+19:47:34 gaia pool rows: 3366478 from 144 strips
+19:47:34 after main-sequence cut: 3303105
+19:47:55 pool 3303107, done 63538, to do 762241
+01:00:01 processed this run: 63660
+01:00:01 remaining in this shard: 698581
+01:00:02 scored: 127198 | with light curve: 109996
+01:00:02 VALIDATION ASASSN-21qj: [{'score': 38.038, 'dW2': 0.738, 'dW1': 0.332, 'redden': 0.406, 'start': 58227.4, 'nvis': 2, 'n_visits': 12}]
+01:00:02    rank of ASASSN-21qj among all scored: 1
+01:00:02 VALIDATION NGC2547-ID8: [{'score': 0.0, 'dW2': 0.0, 'dW1': 0.0, 'redden': 0.0, 'start': nan, 'nvis': 0, 'n_visits': 21}]
+01:00:02    rank of NGC2547-ID8 among all scored: 35192
+01:00:02 score > 5: 2  (and reddening dW2-dW1>0.05: 1)
+01:00:02 score > 8: 1  (and reddening dW2-dW1>0.05: 1)
+01:00:02 score > 12: 1  (and reddening dW2-dW1>0.05: 1)
+01:00:02 score > 20: 1  (and reddening dW2-dW1>0.05: 1)
+01:00:02 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+01:00:02 candidates written: 1
+01:00:02        uid            cluster  logage  gmag  bprp          ra        dec   score    dW2    dW1    start  nvis  base_w1w2
+0  3303105  VALID:ASASSN-21qj     NaN   NaN   NaN  123.847042 -38.989833  38.038  0.738  0.332  58227.4     2     -0.057
+01:00:54 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+01:00:54 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+01:08:20 gaia pool rows: 3366478 from 144 strips
+01:08:20 after main-sequence cut: 3303105
+01:08:55 pool 3303107, done 127198, to do 698581
+02:22:03 upload join failed (attempt 1/3): DALFormatError: ReadTimeout: HTTPSConnectionPool(host='irsa.ipac.caltech.edu', port=443): Read timed out. (read timeout=600)
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:13:36 upload join failed (attempt 3/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/async
+05:13:56 upload join failed (attempt 3/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/async
+05:14:06 upload join failed (attempt 3/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/async
+05:14:16 upload join failed (attempt 3/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/async
+05:15:06 chunk falls back to per-source cones
+05:15:11 upload join failed (attempt 3/3): DALServiceError: HTTPSConnectionPool(host='irsa.ipac.caltech.edu', port=443): Read timed out. (read timeout=10)
+05:15:26 chunk falls back to per-source cones
+05:15:36 chunk falls back to per-source cones
+05:15:46 chunk falls back to per-source cones
+05:16:41 chunk falls back to per-source cones
+06:56:28 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+06:56:28 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+07:03:56 gaia pool rows: 3366478 from 144 strips
+07:03:56 after main-sequence cut: 3303105
+07:04:31 pool 3303107, done 173578, to do 652201
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+09:41:09 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+09:41:09 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+09:41:09 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+09:41:09 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+12:18:53 processed this run: 58560
+12:18:53 remaining in this shard: 593641
+12:18:54 scored: 232138 | with light curve: 200276
+12:18:54 VALIDATION ASASSN-21qj: [{'score': 38.038, 'dW2': 0.738, 'dW1': 0.332, 'redden': 0.406, 'start': 58227.4, 'nvis': 2, 'n_visits': 12}]
+12:18:54    rank of ASASSN-21qj among all scored: 1
+12:18:54 VALIDATION NGC2547-ID8: [{'score': 0.0, 'dW2': 0.0, 'dW1': 0.0, 'redden': 0.0, 'start': nan, 'nvis': 0, 'n_visits': 21}]
+12:18:54    rank of NGC2547-ID8 among all scored: 64769
+12:18:54 score > 5: 3  (and reddening dW2-dW1>0.05: 1)
+12:18:54 score > 8: 1  (and reddening dW2-dW1>0.05: 1)
+12:18:54 score > 12: 1  (and reddening dW2-dW1>0.05: 1)
+12:18:54 score > 20: 1  (and reddening dW2-dW1>0.05: 1)
+12:18:54 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+12:18:54 candidates written: 1
+12:18:54        uid            cluster  logage  gmag  bprp          ra        dec   score    dW2    dW1    start  nvis  base_w1w2
+0  3303105  VALID:ASASSN-21qj     NaN   NaN   NaN  123.847042 -38.989833  38.038  0.738  0.332  58227.4     2     -0.057
+12:19:47 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+12:19:47 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+12:26:13 gaia pool rows: 3366478 from 144 strips
+12:26:14 after main-sequence cut: 3303105
+12:26:49 pool 3303107, done 232138, to do 593641
+17:41:16 processed this run: 64140
+17:41:17 remaining in this shard: 529501
+17:41:18 scored: 296278 | with light curve: 255137
+17:41:18 VALIDATION ASASSN-21qj: [{'score': 38.038, 'dW2': 0.738, 'dW1': 0.332, 'redden': 0.406, 'start': 58227.4, 'nvis': 2, 'n_visits': 12}]
+17:41:18    rank of ASASSN-21qj among all scored: 1
+17:41:18 VALIDATION NGC2547-ID8: [{'score': 0.0, 'dW2': 0.0, 'dW1': 0.0, 'redden': 0.0, 'start': nan, 'nvis': 0, 'n_visits': 21}]
+17:41:18    rank of NGC2547-ID8 among all scored: 83019
+17:41:18 score > 5: 3  (and reddening dW2-dW1>0.05: 1)
+17:41:18 score > 8: 1  (and reddening dW2-dW1>0.05: 1)
+17:41:18 score > 12: 1  (and reddening dW2-dW1>0.05: 1)
+17:41:18 score > 20: 1  (and reddening dW2-dW1>0.05: 1)
+17:41:18 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+17:41:18 candidates written: 1
+17:41:18        uid            cluster  logage  gmag  bprp          ra        dec   score    dW2    dW1    start  nvis  base_w1w2
+0  3303105  VALID:ASASSN-21qj     NaN   NaN   NaN  123.847042 -38.989833  38.038  0.738  0.332  58227.4     2     -0.057
+17:42:23 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+17:42:23 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+17:48:19 gaia pool rows: 3366478 from 144 strips
+17:48:20 after main-sequence cut: 3303105
+17:48:53 pool 3303107, done 296278, to do 529501
