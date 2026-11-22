@@ -34,3 +34,21 @@ There is no clear excess over the scrambled control, so nothing is claimed.
 - JWST observes from L2. For a main-belt asteroid the parallax relative to Earth is ~500" (about 8000 LW px). SkyBoT treats observer code 274 as the geocentre: its positions for code 274 and code 500 agree to milliarcseconds.
 - JPL Horizons with location '500@-170' (JWST) puts all 16 SkyBoT objects listed near this field off the LW detector.
 - Next step: build a JWST-centric known-object list with a wide geocentric SkyBoT cone plus a Horizons check of each object. That gives true positives on the chip, to validate recovery before trusting any new tracklet.
+
+## Validation attempt, 2026-11-22 (VERIFIED facts, unresolved)
+`val2.py` takes the SkyBoT geocentric cone (0.35 deg) and re-predicts each object from JWST with Horizons. The objects that should be on the LW-A chip are in `known_on_chip.json`:
+- set 0: 1999 SQ5 (V 19.4, 66"/h), 2012 DC54 (V 21.5), 2006 VU41 (V 22.3);
+- set 1: four objects at V 21.8-24.1.
+
+None is seen at its predicted position: there is no detection within ~25 binned px, and the residuals there are ~2-4 sigma. Yet a V 19.4 object should leave an obvious ~70-px streak.
+
+What was checked:
+- The header WCS agrees with Gaia DR3 to a median of 0.3", so the WCS is not the cause.
+- The scrambled control shows no tracklet excess.
+
+Still to rule out:
+- the Horizons/JWST timing or location convention (EXPSTART time scale, '500@-170');
+- the image timing;
+- whether these were genuinely in the beam.
+
+Until a known asteroid is recovered, no JWST result can be trusted. NOTHING is claimed.
