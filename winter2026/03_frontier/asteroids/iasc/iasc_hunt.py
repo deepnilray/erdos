@@ -403,7 +403,12 @@ def identify(uniq, D, T, tmid_mjd, known):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("folder"); ap.add_argument("out"); ap.add_argument("--team", default="XXX")
+    ap.add_argument("--sensitive", action="store_true",
+                    help="2.0-sigma detection, S/N >= 3 (from the parallel handoff, measured there on 40 PS1 sets: V 20.5-21.5 recovery 5/17 -> 7/17, about 2x the false tracklets)")
     a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
+    if a.sensitive:
+        global NSIG, MIN_SNR
+        NSIG, MIN_SNR = 2.0, 3.0
     ims, D, info, cen, rad = measure(a.folder); n = len(ims)
     T = np.array([im["t"].mjd for im in ims]) * 1440.0    # minutes
     uniq = find_tracklets(D, T)

@@ -1,0 +1,271 @@
+set,config,name,V,on_chip,recovered,ntrk,unmatched,n_det
+P00_r_56816_L256B0,base,2001 SC319,20.6,True,1,120,,
+P00_r_56816_L256B0,base,2016 TB207,21.6,True,0,120,,
+P00_r_56816_L256B0,base,__summary__,,True,-1,120,119.0,2161.0
+P00_r_56816_L256B0,sens,2001 SC319,20.6,True,1,144,,
+P00_r_56816_L256B0,sens,2016 TB207,21.6,True,0,144,,
+P00_r_56816_L256B0,sens,__summary__,,True,-1,144,143.0,2593.0
+P01_i_56909_L48B0,base,2016 DV27,22.1,True,0,18,,
+P01_i_56909_L48B0,base,2016 CY42,21.9,True,0,18,,
+P01_i_56909_L48B0,base,__summary__,,True,-1,18,18.0,645.0
+P01_i_56909_L48B0,sens,2016 DV27,22.1,True,0,27,,
+P01_i_56909_L48B0,sens,2016 CY42,21.9,True,0,27,,
+P01_i_56909_L48B0,sens,__summary__,,True,-1,27,27.0,862.0
+P02_i_56698_L160B5,base,2008 QN52,22.2,True,0,0,,
+P02_i_56698_L160B5,base,2000 HG106,21.9,True,0,0,,
+P02_i_56698_L160B5,base,2008 TS210,21.6,True,0,0,,
+P02_i_56698_L160B5,base,__summary__,,True,-1,0,0.0,390.0
+P02_i_56698_L160B5,sens,2008 QN52,22.2,True,0,67,,
+P02_i_56698_L160B5,sens,2000 HG106,21.9,True,0,67,,
+P02_i_56698_L160B5,sens,2008 TS210,21.6,True,0,67,,
+P02_i_56698_L160B5,sens,__summary__,,True,-1,67,67.0,608.0
+P03_i_56885_L312B5,base,2012 BA78,20.4,True,1,1,,
+P03_i_56885_L312B5,base,2017 DF28,20.4,True,0,1,,
+P03_i_56885_L312B5,base,__summary__,,True,-1,1,0.0,698.0
+P03_i_56885_L312B5,sens,2012 BA78,20.4,True,1,1,,
+P03_i_56885_L312B5,sens,2017 DF28,20.4,True,0,1,,
+P03_i_56885_L312B5,sens,__summary__,,True,-1,1,0.0,865.0
+P04_i_56933_L352B-5,base,2000 WQ59,19.0,True,1,4,,
+P04_i_56933_L352B-5,base,2001 RN134,19.9,True,1,4,,
+P04_i_56933_L352B-5,base,__summary__,,True,-1,4,2.0,455.0
+P04_i_56933_L352B-5,sens,2000 WQ59,19.0,True,1,6,,
+P04_i_56933_L352B-5,sens,2001 RN134,19.9,True,1,6,,
+P04_i_56933_L352B-5,sens,__summary__,,True,-1,6,4.0,626.0
+P05_i_56698_L152B0,base,2017 SZ172,22.3,True,0,2,,
+P05_i_56698_L152B0,base,2005 YM40,20.3,True,1,2,,
+P05_i_56698_L152B0,base,__summary__,,True,-1,2,1.0,516.0
+P05_i_56698_L152B0,sens,2017 SZ172,22.3,True,0,4,,
+P05_i_56698_L152B0,sens,2005 YM40,20.3,True,1,4,,
+P05_i_56698_L152B0,sens,__summary__,,True,-1,4,3.0,671.0
+P06_r_56815_L232B0,base,2001 TV101,20.0,True,0,0,,
+P06_r_56815_L232B0,base,2010 AP29,20.6,True,0,0,,
+P06_r_56815_L232B0,base,__summary__,,True,-1,0,0.0,621.0
+P06_r_56815_L232B0,sens,2001 TV101,20.0,True,0,3,,
+P06_r_56815_L232B0,sens,2010 AP29,20.6,True,0,3,,
+P06_r_56815_L232B0,sens,__summary__,,True,-1,3,3.0,768.0
+P07_i_56885_L312B0,base,2000 VD59,19.1,True,1,6,,
+P07_i_56885_L312B0,base,2002 JB115,18.7,True,1,6,,
+P07_i_56885_L312B0,base,2002 QY74,19.9,True,0,6,,
+P07_i_56885_L312B0,base,__summary__,,True,-1,6,4.0,704.0
+P07_i_56885_L312B0,sens,2000 VD59,19.1,True,1,6,,
+P07_i_56885_L312B0,sens,2002 JB115,18.7,True,1,6,,
+P07_i_56885_L312B0,sens,2002 QY74,19.9,True,0,6,,
+P07_i_56885_L312B0,sens,__summary__,,True,-1,6,4.0,859.0
+P08_g_56812_L248B0,base,2000 SN166,19.8,True,0,3,,
+P08_g_56812_L248B0,base,2015 YX36,21.8,True,0,3,,
+P08_g_56812_L248B0,base,__summary__,,True,-1,3,3.0,745.0
+P08_g_56812_L248B0,sens,2000 SN166,19.8,True,0,4,,
+P08_g_56812_L248B0,sens,2015 YX36,21.8,True,0,4,,
+P08_g_56812_L248B0,sens,__summary__,,True,-1,4,4.0,920.0
+P09_r_55597_L152B0,base,2002 PH26,20.7,True,1,3,,
+P09_r_55597_L152B0,base,2006 WT226,20.7,True,1,3,,
+P09_r_55597_L152B0,base,__summary__,,True,-1,3,1.0,455.0
+P09_r_55597_L152B0,sens,2002 PH26,20.7,True,1,3,,
+P09_r_55597_L152B0,sens,2006 WT226,20.7,True,1,3,,
+P09_r_55597_L152B0,sens,__summary__,,True,-1,3,1.0,589.0
+P10_i_56902_L304B-5,base,2014 OL39,21.6,True,0,0,,
+P10_i_56902_L304B-5,base,2014 OT142,21.7,True,0,0,,
+P10_i_56902_L304B-5,base,__summary__,,True,-1,0,0.0,879.0
+P10_i_56902_L304B-5,sens,2014 OL39,21.6,True,0,2,,
+P10_i_56902_L304B-5,sens,2014 OT142,21.7,True,0,2,,
+P10_i_56902_L304B-5,sens,__summary__,,True,-1,2,2.0,1102.0
+P11_i_56943_L16B-5,base,2016 BF72,21.4,True,0,2,,
+P11_i_56943_L16B-5,base,2014 QK326,20.4,True,1,2,,
+P11_i_56943_L16B-5,base,2005 YL296,20.8,True,0,2,,
+P11_i_56943_L16B-5,base,__summary__,,True,-1,2,1.0,357.0
+P11_i_56943_L16B-5,sens,2016 BF72,21.4,True,0,4,,
+P11_i_56943_L16B-5,sens,2014 QK326,20.4,True,1,4,,
+P11_i_56943_L16B-5,sens,2005 YL296,20.8,True,1,4,,
+P11_i_56943_L16B-5,sens,__summary__,,True,-1,4,2.0,444.0
+P12_i_56933_L352B0,base,2007 TT428,21.3,True,0,0,,
+P12_i_56933_L352B0,base,2013 FG10,21.8,True,0,0,,
+P12_i_56933_L352B0,base,__summary__,,True,-1,0,0.0,502.0
+P12_i_56933_L352B0,sens,2007 TT428,21.3,True,0,0,,
+P12_i_56933_L352B0,sens,2013 FG10,21.8,True,0,0,,
+P12_i_56933_L352B0,sens,__summary__,,True,-1,0,0.0,683.0
+P13_i_56902_L336B0,base,2014 PS30,20.8,True,1,1,,
+P13_i_56902_L336B0,base,2008 CD72,19.9,True,0,1,,
+P13_i_56902_L336B0,base,__summary__,,True,-1,1,0.0,359.0
+P13_i_56902_L336B0,sens,2014 PS30,20.8,True,1,1,,
+P13_i_56902_L336B0,sens,2008 CD72,19.9,True,0,1,,
+P13_i_56902_L336B0,sens,__summary__,,True,-1,1,0.0,444.0
+P14_i_56829_L320B5,base,2015 RB241,22.1,True,0,0,,
+P14_i_56829_L320B5,base,2008 UC129,21.9,True,0,0,,
+P14_i_56829_L320B5,base,__summary__,,True,-1,0,0.0,525.0
+P14_i_56829_L320B5,sens,2015 RB241,22.1,True,0,0,,
+P14_i_56829_L320B5,sens,2008 UC129,21.9,True,0,0,,
+P14_i_56829_L320B5,sens,__summary__,,True,-1,0,0.0,641.0
+P15_i_56907_L16B0,base,2023 FH26,22.2,True,0,1,,
+P15_i_56907_L16B0,base,2005 SM125,21.3,True,0,1,,
+P15_i_56907_L16B0,base,__summary__,,True,-1,1,1.0,399.0
+P15_i_56907_L16B0,sens,2023 FH26,22.2,True,0,2,,
+P15_i_56907_L16B0,sens,2005 SM125,21.3,True,0,2,,
+P15_i_56907_L16B0,sens,__summary__,,True,-1,2,2.0,497.0
+P16_i_56940_L336B0,base,2003 WB56,20.4,True,0,2,,
+P16_i_56940_L336B0,base,1997 EU3,20.3,True,1,2,,
+P16_i_56940_L336B0,base,2007 BY103,22.2,True,0,2,,
+P16_i_56940_L336B0,base,2006 SX314,22.0,True,0,2,,
+P16_i_56940_L336B0,base,__summary__,,True,-1,2,1.0,466.0
+P16_i_56940_L336B0,sens,2003 WB56,20.4,True,0,4,,
+P16_i_56940_L336B0,sens,1997 EU3,20.3,True,1,4,,
+P16_i_56940_L336B0,sens,2007 BY103,22.2,True,0,4,,
+P16_i_56940_L336B0,sens,2006 SX314,22.0,True,0,4,,
+P16_i_56940_L336B0,sens,__summary__,,True,-1,4,3.0,585.0
+P17_i_56914_L16B5,base,2000 UM91,19.4,True,1,3,,
+P17_i_56914_L16B5,base,2010 SG45,21.3,True,0,3,,
+P17_i_56914_L16B5,base,2006 WK195,19.3,True,0,3,,
+P17_i_56914_L16B5,base,__summary__,,True,-1,3,2.0,470.0
+P17_i_56914_L16B5,sens,2000 UM91,19.4,True,1,5,,
+P17_i_56914_L16B5,sens,2010 SG45,21.3,True,1,5,,
+P17_i_56914_L16B5,sens,2006 WK195,19.3,True,0,5,,
+P17_i_56914_L16B5,sens,__summary__,,True,-1,5,3.0,601.0
+P18_y_55935_L200B0,base,2002 ET4,22.3,True,0,1,,
+P18_y_55935_L200B0,base,Calliemorgan,19.2,True,1,1,,
+P18_y_55935_L200B0,base,__summary__,,True,-1,1,0.0,363.0
+P18_y_55935_L200B0,sens,2002 ET4,22.3,True,0,1,,
+P18_y_55935_L200B0,sens,Calliemorgan,19.2,True,1,1,,
+P18_y_55935_L200B0,sens,__summary__,,True,-1,1,0.0,446.0
+P19_i_56887_L352B5,base,2003 SL291,20.0,True,1,2,,
+P19_i_56887_L352B5,base,2003 SG260,19.9,True,1,2,,
+P19_i_56887_L352B5,base,__summary__,,True,-1,2,0.0,308.0
+P19_i_56887_L352B5,sens,2003 SL291,20.0,True,1,3,,
+P19_i_56887_L352B5,sens,2003 SG260,19.9,True,1,3,,
+P19_i_56887_L352B5,sens,__summary__,,True,-1,3,1.0,380.0
+P20_i_56884_L296B5,base,2014 OK16,21.0,True,1,5,,
+P20_i_56884_L296B5,base,1999 TF184,18.3,True,1,5,,
+P20_i_56884_L296B5,base,__summary__,,True,-1,5,3.0,1380.0
+P20_i_56884_L296B5,sens,2014 OK16,21.0,True,1,8,,
+P20_i_56884_L296B5,sens,1999 TF184,18.3,True,1,8,,
+P20_i_56884_L296B5,sens,__summary__,,True,-1,8,6.0,1604.0
+P21_i_56997_L128B5,base,2014 YW55,22.3,True,0,1,,
+P21_i_56997_L128B5,base,2007 TP351,21.1,True,0,1,,
+P21_i_56997_L128B5,base,__summary__,,True,-1,1,1.0,375.0
+P21_i_56997_L128B5,sens,2014 YW55,22.3,True,0,2,,
+P21_i_56997_L128B5,sens,2007 TP351,21.1,True,0,2,,
+P21_i_56997_L128B5,sens,__summary__,,True,-1,2,2.0,546.0
+P22_g_56811_L256B5,base,2005 TS177,21.5,True,0,10,,
+P22_g_56811_L256B5,base,2018 RO29,21.8,True,0,10,,
+P22_g_56811_L256B5,base,__summary__,,True,-1,10,10.0,1584.0
+P22_g_56811_L256B5,sens,2005 TS177,21.5,True,0,37,,
+P22_g_56811_L256B5,sens,2018 RO29,21.8,True,0,37,,
+P22_g_56811_L256B5,sens,__summary__,,True,-1,37,37.0,1923.0
+P23_i_56794_L168B-5,base,2008 RC23,22.3,True,0,0,,
+P23_i_56794_L168B-5,base,2002 PB119,20.3,True,0,0,,
+P23_i_56794_L168B-5,base,2000 RX8,21.2,True,0,0,,
+P23_i_56794_L168B-5,base,__summary__,,True,-1,0,0.0,491.0
+P23_i_56794_L168B-5,sens,2008 RC23,22.3,True,0,0,,
+P23_i_56794_L168B-5,sens,2002 PB119,20.3,True,0,0,,
+P23_i_56794_L168B-5,sens,2000 RX8,21.2,True,0,0,,
+P23_i_56794_L168B-5,sens,__summary__,,True,-1,0,0.0,650.0
+P24_r_56816_L248B0,base,2019 JJ31,21.6,True,0,3,,
+P24_r_56816_L248B0,base,2001 VF102,18.4,True,1,3,,
+P24_r_56816_L248B0,base,__summary__,,True,-1,3,2.0,982.0
+P24_r_56816_L248B0,sens,2019 JJ31,21.6,True,0,5,,
+P24_r_56816_L248B0,sens,2001 VF102,18.4,True,1,5,,
+P24_r_56816_L248B0,sens,__summary__,,True,-1,5,4.0,1185.0
+P25_i_56794_L184B5,base,2008 SB137,21.9,True,0,1,,
+P25_i_56794_L184B5,base,2000 QR129,20.8,True,1,1,,
+P25_i_56794_L184B5,base,__summary__,,True,-1,1,0.0,509.0
+P25_i_56794_L184B5,sens,2008 SB137,21.9,True,0,1,,
+P25_i_56794_L184B5,sens,2000 QR129,20.8,True,1,1,,
+P25_i_56794_L184B5,sens,__summary__,,True,-1,1,0.0,621.0
+P26_i_56846_L336B-5,base,2000 SX279,19.3,True,1,1,,
+P26_i_56846_L336B-5,base,2014 PU20,21.7,True,0,1,,
+P26_i_56846_L336B-5,base,__summary__,,True,-1,1,0.0,486.0
+P26_i_56846_L336B-5,sens,2000 SX279,19.3,True,1,1,,
+P26_i_56846_L336B-5,sens,2014 PU20,21.7,True,0,1,,
+P26_i_56846_L336B-5,sens,__summary__,,True,-1,1,0.0,624.0
+P27_i_57028_L64B-5,base,2014 WQ53,21.2,True,0,0,,
+P27_i_57028_L64B-5,base,2008 UN366,21.8,True,0,0,,
+P27_i_57028_L64B-5,base,__summary__,,True,-1,0,0.0,560.0
+P27_i_57028_L64B-5,sens,2014 WQ53,21.2,True,0,0,,
+P27_i_57028_L64B-5,sens,2008 UN366,21.8,True,0,0,,
+P27_i_57028_L64B-5,sens,__summary__,,True,-1,0,0.0,807.0
+P28_i_56708_L144B0,base,2005 UJ537,22.0,True,0,0,,
+P28_i_56708_L144B0,base,2006 QF1,21.3,True,0,0,,
+P28_i_56708_L144B0,base,__summary__,,True,-1,0,0.0,456.0
+P28_i_56708_L144B0,sens,2005 UJ537,22.0,True,0,0,,
+P28_i_56708_L144B0,sens,2006 QF1,21.3,True,0,0,,
+P28_i_56708_L144B0,sens,__summary__,,True,-1,0,0.0,608.0
+P29_i_56847_L328B0,base,2012 BE76,21.3,True,0,1,,
+P29_i_56847_L328B0,base,2010 VX172,22.1,True,0,1,,
+P29_i_56847_L328B0,base,2006 HM36,21.8,True,0,1,,
+P29_i_56847_L328B0,base,Lamont,19.0,True,1,1,,
+P29_i_56847_L328B0,base,__summary__,,True,-1,1,0.0,507.0
+P29_i_56847_L328B0,sens,2012 BE76,21.3,True,0,1,,
+P29_i_56847_L328B0,sens,2010 VX172,22.1,True,0,1,,
+P29_i_56847_L328B0,sens,2006 HM36,21.8,True,0,1,,
+P29_i_56847_L328B0,sens,Lamont,19.0,True,1,1,,
+P29_i_56847_L328B0,sens,__summary__,,True,-1,1,0.0,657.0
+P30_i_56813_L208B-5,base,2005 EB242,20.2,True,0,1,,
+P30_i_56813_L208B-5,base,2014 HF134,22.0,True,0,1,,
+P30_i_56813_L208B-5,base,__summary__,,True,-1,1,1.0,406.0
+P30_i_56813_L208B-5,sens,2005 EB242,20.2,True,0,1,,
+P30_i_56813_L208B-5,sens,2014 HF134,22.0,True,0,1,,
+P30_i_56813_L208B-5,sens,__summary__,,True,-1,1,1.0,551.0
+P31_i_56973_L64B0,base,2018 PM130,21.7,True,0,8,,
+P31_i_56973_L64B0,base,2003 AB79,20.6,True,1,8,,
+P31_i_56973_L64B0,base,__summary__,,True,-1,8,7.0,505.0
+P31_i_56973_L64B0,sens,2018 PM130,21.7,True,0,9,,
+P31_i_56973_L64B0,sens,2003 AB79,20.6,True,1,9,,
+P31_i_56973_L64B0,sens,__summary__,,True,-1,9,8.0,619.0
+P32_i_56882_L240B5,base,2001 TO18,21.8,True,0,1,,
+P32_i_56882_L240B5,base,2014 JO104,22.2,True,0,1,,
+P32_i_56882_L240B5,base,__summary__,,True,-1,1,1.0,878.0
+P32_i_56882_L240B5,sens,2001 TO18,21.8,True,0,3,,
+P32_i_56882_L240B5,sens,2014 JO104,22.2,True,0,3,,
+P32_i_56882_L240B5,sens,__summary__,,True,-1,3,3.0,1091.0
+P33_i_56874_L312B5,base,1992 EX8,16.0,True,1,3,,
+P33_i_56874_L312B5,base,2014 OO386,20.2,True,1,3,,
+P33_i_56874_L312B5,base,__summary__,,True,-1,3,1.0,744.0
+P33_i_56874_L312B5,sens,1992 EX8,16.0,True,1,3,,
+P33_i_56874_L312B5,sens,2014 OO386,20.2,True,1,3,,
+P33_i_56874_L312B5,sens,__summary__,,True,-1,3,1.0,926.0
+P34_i_56902_L336B-5,base,2006 YF26,20.3,True,0,3,,
+P34_i_56902_L336B-5,base,2017 FM12,21.4,True,0,3,,
+P34_i_56902_L336B-5,base,2024 WG103,22.4,True,0,3,,
+P34_i_56902_L336B-5,base,2015 XR242,21.3,True,0,3,,
+P34_i_56902_L336B-5,base,2005 QV97,20.2,True,1,3,,
+P34_i_56902_L336B-5,base,2004 XA28,21.2,True,1,3,,
+P34_i_56902_L336B-5,base,__summary__,,True,-1,3,1.0,433.0
+P34_i_56902_L336B-5,sens,2006 YF26,20.3,True,0,4,,
+P34_i_56902_L336B-5,sens,2017 FM12,21.4,True,1,4,,
+P34_i_56902_L336B-5,sens,2024 WG103,22.4,True,0,4,,
+P34_i_56902_L336B-5,sens,2015 XR242,21.3,True,0,4,,
+P34_i_56902_L336B-5,sens,2005 QV97,20.2,True,1,4,,
+P34_i_56902_L336B-5,sens,2004 XA28,21.2,True,1,4,,
+P34_i_56902_L336B-5,sens,__summary__,,True,-1,4,1.0,546.0
+P35_i_56934_L64B0,base,2014 WJ383,21.8,True,0,0,,
+P35_i_56934_L64B0,base,2002 RZ245,22.1,True,0,0,,
+P35_i_56934_L64B0,base,__summary__,,True,-1,0,0.0,569.0
+P35_i_56934_L64B0,sens,2014 WJ383,21.8,True,0,0,,
+P35_i_56934_L64B0,sens,2002 RZ245,22.1,True,0,0,,
+P35_i_56934_L64B0,sens,__summary__,,True,-1,0,0.0,722.0
+P36_i_56909_L48B5,base,2008 SC146,21.4,True,0,2,,
+P36_i_56909_L48B5,base,2014 UD265,22.2,True,0,2,,
+P36_i_56909_L48B5,base,2012 LT3,21.8,True,0,2,,
+P36_i_56909_L48B5,base,__summary__,,True,-1,2,2.0,439.0
+P36_i_56909_L48B5,sens,2008 SC146,21.4,True,0,3,,
+P36_i_56909_L48B5,sens,2014 UD265,22.2,True,0,3,,
+P36_i_56909_L48B5,sens,2012 LT3,21.8,True,0,3,,
+P36_i_56909_L48B5,sens,__summary__,,True,-1,3,3.0,639.0
+P37_i_56734_L104B0,base,2000 YM98,19.9,True,0,1,,
+P37_i_56734_L104B0,base,Parthenope,11.6,True,0,1,,
+P37_i_56734_L104B0,base,2004 TK140,20.3,True,0,1,,
+P37_i_56734_L104B0,base,__summary__,,True,-1,1,1.0,820.0
+P37_i_56734_L104B0,sens,2000 YM98,19.9,True,0,5,,
+P37_i_56734_L104B0,sens,Parthenope,11.6,True,0,5,,
+P37_i_56734_L104B0,sens,2004 TK140,20.3,True,0,5,,
+P37_i_56734_L104B0,sens,__summary__,,True,-1,5,5.0,949.0
+P38_i_56708_L176B5,base,2009 SH419,22.2,True,0,5,,
+P38_i_56708_L176B5,base,2014 DV134,21.4,True,0,5,,
+P38_i_56708_L176B5,base,__summary__,,True,-1,5,5.0,362.0
+P38_i_56708_L176B5,sens,2009 SH419,22.2,True,0,10,,
+P38_i_56708_L176B5,sens,2014 DV134,21.4,True,0,10,,
+P38_i_56708_L176B5,sens,__summary__,,True,-1,10,10.0,450.0
+P39_i_56934_L0B0,base,1999 RT37,17.6,True,1,1,,
+P39_i_56934_L0B0,base,1999 CH93,20.1,True,0,1,,
+P39_i_56934_L0B0,base,__summary__,,True,-1,1,0.0,562.0
+P39_i_56934_L0B0,sens,1999 RT37,17.6,True,1,1,,
+P39_i_56934_L0B0,sens,1999 CH93,20.1,True,0,1,,
+P39_i_56934_L0B0,sens,__summary__,,True,-1,1,0.0,793.0

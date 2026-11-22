@@ -1,0 +1,25 @@
+{
+ "config": "snr3",
+ "params": {
+  "NSIG": 2.5,
+  "MATCH_ARCSEC": 1.0,
+  "MIN_RATE": 0.03,
+  "MAX_RATE": 20.0,
+  "MAX_RESID": 0.6,
+  "SNR_MIN": 3.0,
+  "PRED_TOL": 1.2,
+  "MAG_PTP": 1.2
+ },
+ "region": "train",
+ "n_sources": 96,
+ "recall": 0.125,
+ "recall_by_mag": {
+  "21-22": 0.27906976744186046,
+  "22-22.5": 0.0,
+  "22.5-23": 0.0,
+  "23-23.5": 0.0
+ },
+ "false_tracklets_per_scramble_set": 0.11,
+ "false_tracklets_in_injection_runs_per_set": 0.0,
+ "n_baseline_tracklets": 2
+}

@@ -33,6 +33,9 @@ SCORE_MIN = 5.0                       # robust stack S/N threshold (sum of all b
 MAX_FRAC = 0.45                       # max fraction of the stacked signal from one image
 MIN_RATIO = 0.4                       # every image's signal >= this x the median image signal (constant-brightness test)
 CLUTTER_BOX, CLUTTER_NEG = 41, 30     # binned px box; > CLUTTER_NEG pixels below -4 sigma (all images) = artefact region
+CLUTTER_OVERRIDE = 30.0               # a peak this strong is kept even inside a clutter region: a bright SLOW mover overlaps
+                                      # itself between images, biases the median and leaves negatives, so it flags its own region
+                                      # (injection test on the IASC practice chip, 2026-11-22)
                                       # (star halos, ghosts, galaxies leave negative AND positive residuals; a mover leaves ~none negative)
 STAR_MASK_SNR = 30                    # mask cores of bright static sources (residuals there are not Gaussian)
 PSF_FWHM = 1.3                        # arcsec, matched-filter FWHM (PS1); None = median header SEEING x PIXSCALE (ZTF)
@@ -145,7 +148,7 @@ def candidates(P, best, bidx, V, order=None):
     Z, T = P["Z"], P["T"].copy()
     if order is not None: T = T[order]
     n, ny, nx = Z.shape
-    loc = (best == ndimage.maximum_filter(best, size=9)) & (best > SCORE_MIN) & ~P["masked"]
+    loc = (best == ndimage.maximum_filter(best, size=9)) & (best > SCORE_MIN) & (~P["masked"] | (best >= CLUTTER_OVERRIDE))
     out = []
     for y, x in zip(*np.nonzero(loc)):
         vx, vy = V[bidx[y, x]]
