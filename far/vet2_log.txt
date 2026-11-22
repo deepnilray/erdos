@@ -1,217 +1,217 @@
-15:09:54 vet2 start: TARGETS=far OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/far CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
-15:09:55 read /tmp/s0/scores.csv 528778
-15:09:55 read /tmp/s1/scores.csv 536640
-15:09:55 read /tmp/s2/scores.csv 534719
-15:09:55 read /tmp/s3/scores.csv 532079
-15:09:55 merged unique uids 2132211
-15:10:02 pool far 3303107
-15:10:02 D1 candidates: 6
-15:10:03 D2 stage A (excess): 709 of 1822694 | with jitter > 3x: 408
-15:10:03 targets: 201
-15:11:10 SIMBAD batch: 249 objects for 201 targets
-15:11:28 NEOWISE upload join 0 -> 15262 rows
-15:11:48 NEOWISE upload join 60 -> 12371 rows
-15:12:03 NEOWISE upload join 120 -> 13560 rows
-15:12:14 NEOWISE upload join 180 -> 4106 rows
-15:12:18 vetted uid1090282 D1 -> KILLED | kills: centroid jump 0.100" (4.4 sigma) at the onset toward a neighbour: 4.0" PA224 G20.3 (angle 23 deg); 8.3" PA247 G16.7 (angle 1 deg); 9.2" PA217 G21.1 (angle 29 de | missing: 
-15:12:18 vetted ASASSN-21qj (uid3303105) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
-15:12:19 vetted uid1894418 D1+D2 -> KILLED | kills: young star (SIMBAD young-star types Or*,Y*O (Haro 5-94)): disk variability expected, not an afterglow candidate | missing: 
-15:12:21 vetted uid220308 D2 -> SURVIVOR | kills:  | missing: 
-15:12:21 vetted uid1838957 D2 -> YOUNG | kills:  | missing: 
-15:12:22 vetted uid1103309 D2 -> SURVIVOR | kills:  | missing: 
-15:12:23 vetted uid1738747 D2 -> YOUNG | kills:  | missing: 
-15:12:24 vetted uid325718 D2 -> SURVIVOR | kills:  | missing: 
-15:12:24 vetted uid1683160 D2 -> YOUNG | kills:  | missing: 
-15:12:25 vetted uid1760111 D2 -> YOUNG | kills:  | missing: 
-15:12:26 vetted uid1515886 D2 -> YOUNG | kills:  | missing: 
-15:12:27 vetted uid1684980 D2 -> YOUNG | kills:  | missing: 
-15:12:27 vetted uid1713962 D2 -> KILLED | kills: centroid jump 0.394" (5.2 sigma) at the onset toward a neighbour: 4.4" PA147 G19.6 (angle 3 deg) | missing: 
-15:12:28 vetted uid1586996 D2 -> SURVIVOR | kills:  | missing: 
-15:12:29 vetted uid1371630 D2 -> YOUNG | kills:  | missing: 
-15:12:30 vetted uid1681049 D2 -> YOUNG | kills:  | missing: 
-15:12:30 vetted uid1574635 D2 -> YOUNG | kills:  | missing: 
-15:12:31 vetted uid1408208 D2 -> YOUNG | kills:  | missing: 
-15:12:32 vetted uid1262405 D2 -> YOUNG | kills:  | missing: 
-15:12:33 vetted uid1569617 D2 -> YOUNG | kills:  | missing: 
-15:12:33 vetted uid1050117 D2 -> YOUNG | kills:  | missing: 
-15:12:34 vetted uid961709 D2 -> YOUNG | kills:  | missing: 
-15:12:35 vetted uid1175029 D2 -> YOUNG | kills:  | missing: 
-15:12:36 vetted uid1148744 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.46 mag fainter in G (3.8" PA197 G20.28 dG+4.90; 5.9" PA46 G16.84 dG+1.46; 7.6" PA254 G16.25 dG+0.87; 7.9" PA343 G19.80 dG | missing: 
-15:12:37 vetted uid984129 D2 -> YOUNG | kills:  | missing: 
-15:12:38 vetted uid1575501 D2 -> YOUNG | kills:  | missing: 
-15:12:38 vetted uid1458786 D2 -> SURVIVOR | kills:  | missing: 
-15:12:39 vetted uid1604479 D2 -> YOUNG | kills:  | missing: 
-15:12:40 vetted uid342028 D2 -> SURVIVOR | kills:  | missing: 
-15:12:40 vetted uid1355017 D2 -> YOUNG | kills:  | missing: 
-15:12:41 vetted uid1616401 D2 -> YOUNG | kills:  | missing: 
-15:12:42 vetted uid1640594 D2 -> YOUNG | kills:  | missing: 
-15:12:43 vetted uid1116725 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:12:44 vetted uid1061853 D2 -> YOUNG | kills:  | missing: 
-15:12:45 vetted uid1550526 D2 -> YOUNG | kills:  | missing: 
-15:12:45 vetted uid1544243 D2 -> YOUNG | kills:  | missing: 
-15:12:46 vetted uid1709237 D2 -> YOUNG | kills:  | missing: 
-15:12:47 vetted uid956198 D2 -> YOUNG | kills:  | missing: 
-15:12:48 vetted uid1159910 D2 -> YOUNG | kills:  | missing: 
-15:12:49 vetted uid1789100 D2 -> YOUNG | kills:  | missing: 
-15:12:49 vetted uid999033 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.16 mag fainter in G (2.1" PA37 G19.53 dG+4.58; 2.8" PA22 G20.43 dG+5.48; 3.1" PA238 G18.28 dG+3.34; 3.9" PA176 G20.69 dG+ | missing: ASAS-SN (no source)
-15:12:50 vetted uid1048217 D2 -> YOUNG | kills:  | missing: 
-15:12:51 vetted uid1785863 D2 -> YOUNG | kills:  | missing: 
-15:12:51 vetted uid1665622 D2 -> YOUNG | kills:  | missing: 
-15:12:52 vetted uid456710 D2 -> SURVIVOR | kills:  | missing: 
-15:12:53 vetted uid1511589 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:12:54 vetted uid1609975 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.25 mag fainter in G (3.4" PA235 G14.37 dG+0.25) | galaxy/QSO within 6" in SIMBAD: 2MASS J05345386-0623526 [G] 3.4" | missing: 
-15:12:54 vetted uid1513819 D2 -> YOUNG | kills:  | missing: 
-15:12:55 vetted uid1694582 D2 -> YOUNG | kills:  | missing: 
-15:12:56 vetted uid1394555 D2 -> YOUNG | kills:  | missing: 
-15:12:57 vetted uid1467951 D2 -> YOUNG | kills:  | missing: 
-15:13:08 vetted uid2015396 D1 -> SURVIVOR | kills:  | missing: 
-15:13:09 vetted uid993575 D2 -> YOUNG | kills:  | missing: 
-15:13:10 vetted uid1616156 D2 -> YOUNG | kills:  | missing: 
-15:13:11 vetted uid1710168 D2 -> SURVIVOR | kills:  | missing: 
-15:13:11 vetted uid1277809 D2 -> SURVIVOR | kills:  | missing: ASAS-SN (no source)
-15:13:12 vetted uid981812 D2 -> YOUNG | kills:  | missing: 
-15:13:20 vetted uid1988767 D2 -> YOUNG | kills:  | missing: 
-15:13:21 vetted uid1918148 D1 -> KILLED | kills: young star (SIMBAD young-star types Or*,TT*,Y*?,Y*O (V* V538 Ori)): disk variability expected, not an afterglow candidate | missing: 
-15:13:22 vetted uid1481782 D2 -> YOUNG | kills:  | missing: 
-15:13:24 vetted uid1450875 D2 -> YOUNG | kills:  | missing: 
-15:13:25 vetted uid1796278 D2 -> YOUNG | kills:  | missing: 
-15:13:25 vetted uid1592930 D2 -> YOUNG | kills:  | missing: 
-15:13:26 vetted uid1743225 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.98 mag fainter in G (4.1" PA347 G17.31 dG+1.98) | galaxy/QSO within 6" in SIMBAD: 6C 102716+745713 [AGN,BLL,Bla,G,QSO,Sy1 | missing: 
-15:13:27 vetted uid1556586 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.49 mag fainter in G (3.6" PA27 G16.27 dG+2.49) | galaxy/QSO within 6" in SIMBAD: ESO-HA 1435 [G] 3.6" | missing: 
-15:13:28 vetted uid1726162 D2 -> YOUNG | kills:  | missing: 
-15:13:28 vetted uid1991772 D1 -> KILLED | kills: young star (SIMBAD young-star types Or*,Y*?,Y*O (2MASS J05423061-0832552); Gaia DR3 variability class YSO(0.58)): disk variability expected, not an afterglow ca | missing: 
-15:13:29 vetted uid1706516 D2 -> YOUNG | kills:  | missing: 
-15:13:30 vetted uid1486857 D2 -> YOUNG | kills:  | missing: 
-15:13:30 vetted uid1514307 D2 -> SURVIVOR | kills:  | missing: ASAS-SN (no source)
-15:13:31 vetted uid416674 D2 -> YOUNG | kills:  | missing: 
-15:13:32 vetted uid1806802 D2 -> YOUNG | kills:  | missing: 
-15:13:33 vetted uid1675293 D2 -> YOUNG | kills:  | missing: 
-15:13:33 vetted uid958315 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.66 mag fainter in G (1.6" PA173 G15.27 dG+2.66) | missing: 
-15:13:34 vetted uid1607366 D2 -> YOUNG | kills:  | missing: 
-15:13:35 vetted uid1494934 D2 -> YOUNG | kills:  | missing: 
-15:13:36 vetted uid1846306 D2 -> YOUNG | kills:  | missing: 
-15:13:37 vetted uid1117853 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:13:38 vetted uid1754877 D2 -> YOUNG | kills:  | missing: 
-15:13:38 vetted uid1197479 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.44 mag fainter in G (3.1" PA192 G16.22 dG+2.44; 8.3" PA0 G19.06 dG+5.28) | galaxy/QSO within 6" in SIMBAD: ESO-HA  593 [G | missing: 
-15:13:39 vetted uid1871307 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.39 mag fainter in G (3.4" PA21 G14.72 dG+1.39) | missing: ASAS-SN change at onset (no camera spans the onset)
-15:13:40 vetted uid1252374 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:13:41 vetted uid1760310 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.42 mag fainter in G (1.2" PA200 G14.91 dG+1.42) | missing: ASAS-SN (no source)
-15:13:41 vetted uid532798 D2 -> YOUNG | kills:  | missing: 
-15:13:42 vetted uid800756 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:13:43 vetted uid1136791 D2 -> YOUNG | kills:  | missing: 
-15:13:43 vetted uid1479092 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:13:44 vetted uid1594699 D2 -> YOUNG | kills:  | missing: 
-15:13:45 vetted uid1768213 D2 -> YOUNG | kills:  | missing: 
-15:13:46 vetted uid1822358 D2 -> KILLED | kills: galaxy/QSO within 6" in SIMBAD: V* V976 Ori [G] 0.0" | missing: 
-15:13:46 vetted uid1511208 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:13:47 vetted uid1599936 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:13:48 vetted uid1384448 D2 -> YOUNG | kills:  | missing: 
-15:13:49 vetted uid1841794 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.88 mag fainter in G (2.0" PA240 G14.45 dG+0.88) | missing: 
-15:13:50 vetted uid1357327 D2 -> YOUNG | kills:  | missing: 
-15:13:51 vetted uid878866 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:13:56 vetted uid2013931 D2 -> SURVIVOR | kills:  | missing: 
-15:14:23 vetted uid1990636 D2 -> YOUNG | kills:  | missing: 
-15:14:24 vetted uid1666435 D2 -> YOUNG | kills:  | missing: 
-15:14:25 vetted uid1616399 D2 -> YOUNG | kills:  | missing: 
-15:14:38 vetted uid1911695 D2 -> YOUNG | kills:  | missing: 
-15:14:38 vetted uid1671757 D2 -> YOUNG | kills:  | missing: 
-15:14:39 vetted uid1418968 D2 -> YOUNG | kills:  | missing: 
-15:14:40 vetted uid1564349 D2 -> YOUNG | kills:  | missing: 
-15:14:41 vetted uid1272657 D2 -> YOUNG | kills:  | missing: 
-15:14:42 vetted uid2027333 D2 -> YOUNG | kills:  | missing: 
-15:14:43 vetted uid1581123 D2 -> YOUNG | kills:  | missing: 
-15:14:44 vetted uid1673027 D2 -> YOUNG | kills:  | missing: 
-15:14:45 vetted uid1499154 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:14:46 vetted uid838651 D2 -> SURVIVOR | kills:  | missing: 
-15:14:46 vetted uid1800505 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:14:47 vetted uid1657002 D2 -> KILLED | kills: galaxy/QSO within 6" in SIMBAD: V* V401 Ori [G] 0.0" | missing: ASAS-SN (no source)
-15:15:10 vetted uid1959195 D2 -> YOUNG | kills:  | missing: 
-15:15:11 vetted uid137313 D2 -> SURVIVOR | kills:  | missing: 
-15:15:12 vetted uid1528618 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:15:12 vetted uid239897 D2 -> SURVIVOR | kills:  | missing: 
-15:15:13 vetted uid1809868 D2 -> YOUNG | kills:  | missing: 
-15:15:14 vetted uid1717992 D2 -> YOUNG | kills:  | missing: 
-15:15:15 vetted uid260980 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:15:16 vetted uid1713922 D2 -> YOUNG | kills:  | missing: 
-15:15:17 vetted uid1618943 D2 -> YOUNG | kills:  | missing: 
-15:15:18 vetted uid1505343 D2 -> YOUNG | kills:  | missing: 
-15:15:19 vetted uid1678383 D2 -> SURVIVOR | kills:  | missing: 
-15:15:20 vetted uid269584 D2 -> SURVIVOR | kills:  | missing: 
-15:15:21 vetted uid1374460 D2 -> YOUNG | kills:  | missing: 
-15:15:22 vetted uid1613134 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.69 mag fainter in G (5.0" PA34 G15.98 dG+1.69) | missing: 
-15:15:23 vetted uid2072594 D2 -> YOUNG | kills:  | missing: 
-15:15:24 vetted uid844587 D2 -> YOUNG | kills:  | missing: 
-15:15:24 vetted uid1356608 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:15:25 vetted uid1376645 D2 -> YOUNG | kills:  | missing: 
-15:15:26 vetted uid1837155 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:15:26 vetted uid1078155 D2 -> YOUNG | kills:  | missing: 
-15:15:28 vetted uid2105741 D2 -> SURVIVOR | kills:  | missing: 
-15:15:29 vetted uid1627666 D2 -> YOUNG | kills:  | missing: 
-15:15:30 vetted uid1791181 D2 -> YOUNG | kills:  | missing: 
-15:15:30 vetted uid1572724 D2 -> YOUNG | kills:  | missing: 
-15:15:31 vetted uid1817699 D2 -> YOUNG | kills:  | missing: 
-15:15:32 vetted uid55937 D2 -> SURVIVOR | kills:  | missing: 
-15:15:33 vetted uid438254 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.67 mag fainter in G (4.4" PA40 G17.73 dG+2.67) | missing: 
-15:15:34 vetted uid1646554 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:15:35 vetted uid1789599 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:15:36 vetted uid1553860 D2 -> YOUNG | kills:  | missing: 
-15:15:37 vetted uid1016323 D2 -> YOUNG | kills:  | missing: 
-15:15:38 vetted uid1516508 D2 -> YOUNG | kills:  | missing: 
-15:15:39 vetted uid1169402 D2 -> YOUNG | kills:  | missing: 
-15:15:39 vetted uid1180376 D2 -> YOUNG | kills:  | missing: 
-15:15:40 vetted uid310080 D2 -> YOUNG | kills:  | missing: 
-15:15:41 vetted uid1508447 D2 -> YOUNG | kills:  | missing: 
-15:15:42 vetted uid712994 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:15:43 vetted uid1987032 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, ZTF J041049.17+380445.7) | missing: 
-15:15:44 vetted uid1020396 D2 -> YOUNG | kills:  | missing: 
-15:15:45 vetted uid1630021 D2 -> YOUNG | kills:  | missing: 
-15:15:46 vetted uid1018261 D2 -> YOUNG | kills:  | missing: 
-15:15:47 vetted uid1424151 D2 -> YOUNG | kills:  | missing: 
-15:15:48 vetted uid1685096 D2 -> YOUNG | kills:  | missing: 
-15:15:49 vetted uid1722578 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* V650 Ori) | missing: 
-15:15:50 vetted uid1096024 D2 -> YOUNG | kills:  | missing: 
-15:15:51 vetted uid1117149 D2 -> YOUNG | kills:  | missing: 
-15:15:52 vetted uid560552 D2 -> SURVIVOR | kills:  | missing: 
-15:15:53 vetted uid979261 D2 -> YOUNG | kills:  | missing: 
-15:15:54 vetted uid1717828 D2 -> YOUNG | kills:  | missing: 
-15:15:55 vetted uid1749579 D2 -> YOUNG | kills:  | missing: 
-15:15:56 vetted uid1574722 D2 -> YOUNG | kills:  | missing: 
-15:15:57 vetted uid909402 D2 -> YOUNG | kills:  | missing: 
-15:15:58 vetted uid1393011 D2 -> YOUNG | kills:  | missing: 
-15:15:59 vetted uid1363385 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.55 mag fainter in G (2.7" PA128 G16.52 dG+1.55) | missing: 
-15:16:00 vetted uid1471333 D2 -> SURVIVOR | kills:  | missing: 
-15:16:01 vetted uid1639002 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.11 mag fainter in G (2.7" PA288 G17.17 dG+2.11; 3.6" PA233 G20.97 dG+5.90; 9.0" PA282 G20.06 dG+5.00) | missing: ASAS-SN change at onset (no camera spans the onset)
-15:16:02 vetted uid1454537 D2 -> YOUNG | kills:  | missing: 
-15:16:04 vetted uid1273358 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.13 mag fainter in G (2.4" PA110 G14.59 dG+0.13; 8.0" PA10 G20.34 dG+5.89; 8.6" PA140 G17.65 dG+3.20) | missing: 
-15:16:05 vetted uid1967034 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.59 mag fainter in G (1.3" PA9 G16.23 dG+2.59) | missing: 
-15:16:05 vetted uid1797726 D2 -> YOUNG | kills:  | missing: 
-15:16:07 vetted uid1761616 D2 -> YOUNG | kills:  | missing: 
-15:16:07 vetted uid1116479 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
-15:16:08 vetted uid1284783 D2 -> YOUNG | kills:  | missing: 
-15:16:10 vetted uid1581737 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:16:11 vetted uid1493976 D2 -> YOUNG | kills:  | missing: 
-15:16:12 vetted uid1192683 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:16:13 vetted uid1806829 D2 -> YOUNG | kills:  | missing: 
-15:16:15 vetted uid1763891 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.75 mag fainter in G (1.2" PA201 G19.75 dG+5.19; 2.9" PA200 G20.63 dG+6.06; 4.4" PA63 G15.31 dG+0.75; 6.2" PA80 G16.29 dG+ | missing: 
-15:16:16 vetted uid1790675 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -0.53 mag fainter in G (3.0" PA219 G15.00 dG-0.53) | galaxy/QSO within 6" in SIMBAD: V* IW Ori B [G] 0.0"; V* IW Ori A [G]  | missing: 
-15:16:17 vetted uid1804779 D2 -> YOUNG | kills:  | missing: 
-15:16:18 vetted uid869035 D2 -> YOUNG | kills:  | missing: 
-15:16:19 vetted uid1928292 D2 -> YOUNG | kills:  | missing: 
-15:16:20 vetted uid1477549 D2 -> YOUNG | kills:  | missing: 
-15:16:21 vetted uid1643271 D2 -> YOUNG | kills:  | missing: 
-15:16:21 vetted uid1694766 D2 -> YOUNG | kills:  | missing: 
-15:16:22 vetted uid1614572 D2 -> YOUNG | kills:  | missing: 
-15:16:23 vetted uid1712002 D2 -> YOUNG | kills:  | missing: 
-15:16:25 vetted uid1427668 D2 -> YOUNG | kills:  | missing: 
-15:16:26 vetted uid1565407 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -0.40 mag fainter in G (0.9" PA150 G14.02 dG-0.40) | missing: ASAS-SN (no source)
-15:16:27 vetted uid1404605 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.74 mag fainter in G (5.5" PA337 G17.74 dG+2.74) | galaxy/QSO within 6" in SIMBAD: V* V1934 Ori [G] 5.5" | missing: 
-15:16:28 vetted uid1877719 D2 -> YOUNG | kills:  | missing: 
-15:16:29 vetted uid1786368 D2 -> YOUNG | kills:  | missing: 
-15:16:30 vetted uid1474845 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:16:32 vetted uid1020158 D2 -> YOUNG | kills:  | missing: 
-15:16:32 vetted J060000 CONTROL -> SURVIVOR | kills:  | missing: 
-15:16:32 vetted V836 Tau CONTROL -> YOUNG | kills:  | missing: 
-15:16:32 vetted uid2074984 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
-15:16:55 vetted uid1989676 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.77 mag fainter in G (2.5" PA153 G16.47 dG+2.77) | missing: 
-15:17:34 vetted uid2071762 D2 -> YOUNG | kills:  | missing: 
-15:17:34 {"mode": "far", "n_targets": 201, "counts": {"YOUNG": 145, "KILLED": 30, "SURVIVOR": 26}, "controls": [["ASASSN-21qj", "PASS", "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 57.3, missing: none"], ["J060000", "PASS", "category SURVIVOR, largest ASAS-SN seasonal dimming 0.35 mag at MJD 58864"], ["V836 Tau", "PASS", "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"]], "minutes": 7.7}
+20:31:55 vet2 start: TARGETS=far OUT=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/out/far CACHE=/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/vet2/cache ASASSN=True
+20:31:55 read /tmp/s0/scores.csv 582478
+20:31:55 read /tmp/s1/scores.csv 589440
+20:31:55 read /tmp/s2/scores.csv 587819
+20:31:55 read /tmp/s3/scores.csv 585059
+20:31:56 merged unique uids 2344790
+20:32:00 pool far 3303107
+20:32:00 D1 candidates: 6
+20:32:01 D2 stage A (excess): 770 of 2001830 | with jitter > 3x: 430
+20:32:01 targets: 201
+20:33:04 SIMBAD batch: 242 objects for 201 targets
+20:33:19 NEOWISE upload join 0 -> 14919 rows
+20:33:36 NEOWISE upload join 60 -> 12601 rows
+20:33:56 NEOWISE upload join 120 -> 12888 rows
+20:34:09 NEOWISE upload join 180 -> 4716 rows
+20:34:12 vetted uid2015396 D1 -> SURVIVOR | kills:  | missing: 
+20:34:12 vetted uid1894418 D1+D2 -> KILLED | kills: young star (SIMBAD young-star types Or*,Y*O (Haro 5-94)): disk variability expected, not an afterglow candidate | missing: 
+20:34:12 vetted uid1090282 D1 -> KILLED | kills: centroid jump 0.100" (4.4 sigma) at the onset toward a neighbour: 4.0" PA224 G20.3 (angle 23 deg); 8.3" PA247 G16.7 (angle 1 deg); 9.2" PA217 G21.1 (angle 29 de | missing: 
+20:34:12 vetted uid1918148 D1 -> KILLED | kills: young star (SIMBAD young-star types Or*,TT*,Y*?,Y*O (V* V538 Ori)): disk variability expected, not an afterglow candidate | missing: 
+20:34:12 vetted uid1991772 D1 -> KILLED | kills: young star (SIMBAD young-star types Or*,Y*?,Y*O (2MASS J05423061-0832552); Gaia DR3 variability class YSO(0.58)): disk variability expected, not an afterglow ca | missing: 
+20:34:12 vetted ASASSN-21qj (uid3303105) CONTROL+D1 -> SURVIVOR | kills:  | missing: 
+20:34:14 vetted uid220308 D2 -> SURVIVOR | kills:  | missing: 
+20:34:15 vetted uid2013931 D2 -> SURVIVOR | kills:  | missing: 
+20:34:15 vetted uid1838957 D2 -> YOUNG | kills:  | missing: 
+20:34:15 vetted uid1738747 D2 -> YOUNG | kills:  | missing: 
+20:34:16 vetted uid1103309 D2 -> SURVIVOR | kills:  | missing: 
+20:34:17 vetted uid1988767 D2 -> YOUNG | kills:  | missing: 
+20:34:17 vetted uid1683160 D2 -> YOUNG | kills:  | missing: 
+20:34:17 vetted uid1760111 D2 -> YOUNG | kills:  | missing: 
+20:34:18 vetted uid325718 D2 -> SURVIVOR | kills:  | missing: 
+20:34:19 vetted uid1515886 D2 -> YOUNG | kills:  | missing: 
+20:34:19 vetted uid1684980 D2 -> YOUNG | kills:  | missing: 
+20:34:20 vetted uid1713962 D2 -> KILLED | kills: centroid jump 0.394" (5.2 sigma) at the onset toward a neighbour: 4.4" PA147 G19.6 (angle 3 deg) | missing: 
+20:34:20 vetted uid1586996 D2 -> SURVIVOR | kills:  | missing: 
+20:34:21 vetted uid1371630 D2 -> YOUNG | kills:  | missing: 
+20:34:21 vetted uid1681049 D2 -> YOUNG | kills:  | missing: 
+20:34:22 vetted uid1574635 D2 -> YOUNG | kills:  | missing: 
+20:34:22 vetted uid1262405 D2 -> YOUNG | kills:  | missing: 
+20:34:23 vetted uid1408208 D2 -> YOUNG | kills:  | missing: 
+20:34:24 vetted uid1569617 D2 -> YOUNG | kills:  | missing: 
+20:34:24 vetted uid1050117 D2 -> YOUNG | kills:  | missing: 
+20:34:25 vetted uid961709 D2 -> YOUNG | kills:  | missing: 
+20:34:25 vetted uid1175029 D2 -> YOUNG | kills:  | missing: 
+20:34:26 vetted uid1148744 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.46 mag fainter in G (3.8" PA197 G20.28 dG+4.90; 5.9" PA46 G16.84 dG+1.46; 7.6" PA254 G16.25 dG+0.87; 7.9" PA343 G19.80 dG | missing: 
+20:34:26 vetted uid984129 D2 -> YOUNG | kills:  | missing: 
+20:34:27 vetted uid1458786 D2 -> SURVIVOR | kills:  | missing: 
+20:34:27 vetted uid342028 D2 -> SURVIVOR | kills:  | missing: 
+20:34:28 vetted uid1575501 D2 -> YOUNG | kills:  | missing: 
+20:34:28 vetted uid1355017 D2 -> YOUNG | kills:  | missing: 
+20:34:29 vetted uid1604479 D2 -> YOUNG | kills:  | missing: 
+20:34:30 vetted uid1616401 D2 -> YOUNG | kills:  | missing: 
+20:34:30 vetted uid1116725 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:34:31 vetted uid1640594 D2 -> YOUNG | kills:  | missing: 
+20:34:31 vetted uid1550526 D2 -> YOUNG | kills:  | missing: 
+20:34:32 vetted uid1544243 D2 -> YOUNG | kills:  | missing: 
+20:34:33 vetted uid1709237 D2 -> YOUNG | kills:  | missing: 
+20:34:33 vetted uid1159910 D2 -> YOUNG | kills:  | missing: 
+20:34:34 vetted uid1061853 D2 -> YOUNG | kills:  | missing: 
+20:34:34 vetted uid1789100 D2 -> YOUNG | kills:  | missing: 
+20:34:34 vetted uid999033 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.16 mag fainter in G (2.1" PA37 G19.53 dG+4.58; 2.8" PA22 G20.43 dG+5.48; 3.1" PA238 G18.28 dG+3.34; 3.9" PA176 G20.69 dG+ | missing: ASAS-SN (no source)
+20:34:35 vetted uid1048217 D2 -> YOUNG | kills:  | missing: 
+20:34:35 vetted uid956198 D2 -> YOUNG | kills:  | missing: 
+20:34:36 vetted uid1665622 D2 -> YOUNG | kills:  | missing: 
+20:34:36 vetted uid456710 D2 -> SURVIVOR | kills:  | missing: 
+20:34:37 vetted uid1511589 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:34:37 vetted uid1785863 D2 -> YOUNG | kills:  | missing: 
+20:34:38 vetted uid1609975 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.25 mag fainter in G (3.4" PA235 G14.37 dG+0.25) | galaxy/QSO within 6" in SIMBAD: 2MASS J05345386-0623526 [G] 3.4" | missing: 
+20:34:39 vetted uid1513819 D2 -> YOUNG | kills:  | missing: 
+20:34:39 vetted uid1694582 D2 -> YOUNG | kills:  | missing: 
+20:34:40 vetted uid1394555 D2 -> YOUNG | kills:  | missing: 
+20:34:40 vetted uid1616156 D2 -> YOUNG | kills:  | missing: 
+20:34:41 vetted uid1710168 D2 -> SURVIVOR | kills:  | missing: 
+20:34:42 vetted uid1990636 D2 -> YOUNG | kills:  | missing: 
+20:34:42 vetted uid993575 D2 -> YOUNG | kills:  | missing: 
+20:34:43 vetted uid2027333 D2 -> YOUNG | kills:  | missing: 
+20:34:43 vetted uid981812 D2 -> YOUNG | kills:  | missing: 
+20:34:44 vetted uid1481782 D2 -> YOUNG | kills:  | missing: 
+20:34:44 vetted uid1277809 D2 -> SURVIVOR | kills:  | missing: ASAS-SN (no source)
+20:34:45 vetted uid1450875 D2 -> YOUNG | kills:  | missing: 
+20:34:45 vetted uid1467951 D2 -> YOUNG | kills:  | missing: 
+20:34:46 vetted uid1796278 D2 -> YOUNG | kills:  | missing: 
+20:34:46 vetted uid1592930 D2 -> YOUNG | kills:  | missing: 
+20:34:47 vetted uid1911695 D2 -> YOUNG | kills:  | missing: 
+20:34:47 vetted uid1743225 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.98 mag fainter in G (4.1" PA347 G17.31 dG+1.98) | galaxy/QSO within 6" in SIMBAD: 6C 102716+745713 [AGN,BLL,Bla,G,QSO,Sy1 | missing: 
+20:34:48 vetted uid1556586 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.49 mag fainter in G (3.6" PA27 G16.27 dG+2.49) | galaxy/QSO within 6" in SIMBAD: ESO-HA 1435 [G] 3.6" | missing: 
+20:34:48 vetted uid1726162 D2 -> YOUNG | kills:  | missing: 
+20:34:49 vetted uid2105741 D2 -> SURVIVOR | kills:  | missing: 
+20:34:49 vetted uid1706516 D2 -> YOUNG | kills:  | missing: 
+20:35:49 vetted uid2280632 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.89 mag fainter in G (2.5" PA333 G15.69 dG+1.89) | missing: 
+20:37:13 vetted uid2197550 D2 -> SURVIVOR | kills:  | missing: 
+20:37:13 vetted uid1806802 D2 -> YOUNG | kills:  | missing: 
+20:37:14 vetted uid1675293 D2 -> YOUNG | kills:  | missing: 
+20:37:14 vetted uid1607366 D2 -> YOUNG | kills:  | missing: 
+20:37:15 vetted uid1494934 D2 -> YOUNG | kills:  | missing: 
+20:37:16 vetted uid1486857 D2 -> YOUNG | kills:  | missing: 
+20:37:18 vetted uid2294196 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -0.47 mag fainter in G (2.8" PA101 G14.92 dG-0.47) | missing: ASAS-SN (no source)
+20:37:19 vetted uid1514307 D2 -> SURVIVOR | kills:  | missing: ASAS-SN (no source)
+20:37:19 vetted uid958315 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.66 mag fainter in G (1.6" PA173 G15.27 dG+2.66) | missing: 
+20:37:20 vetted uid1846306 D2 -> YOUNG | kills:  | missing: 
+20:37:21 vetted uid2214731 D2 -> YOUNG | kills:  | missing: 
+20:37:21 vetted uid2269181 D2 -> SURVIVOR | kills:  | missing: 
+20:37:22 vetted uid1117853 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:37:22 vetted uid1754877 D2 -> YOUNG | kills:  | missing: 
+20:37:23 vetted uid1197479 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.44 mag fainter in G (3.1" PA192 G16.22 dG+2.44; 8.3" PA0 G19.06 dG+5.28) | galaxy/QSO within 6" in SIMBAD: ESO-HA  593 [G | missing: 
+20:37:23 vetted uid1871307 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.39 mag fainter in G (3.4" PA21 G14.72 dG+1.39) | missing: ASAS-SN change at onset (no camera spans the onset)
+20:37:24 vetted uid1252374 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:37:25 vetted uid1760310 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.42 mag fainter in G (1.2" PA200 G14.91 dG+1.42) | missing: ASAS-SN (no source)
+20:37:25 vetted uid416674 D2 -> YOUNG | kills:  | missing: 
+20:37:25 vetted uid532798 D2 -> YOUNG | kills:  | missing: 
+20:37:26 vetted uid800756 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:37:27 vetted uid1479092 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:37:27 vetted uid1594699 D2 -> YOUNG | kills:  | missing: 
+20:37:28 vetted uid1768213 D2 -> YOUNG | kills:  | missing: 
+20:37:28 vetted uid1822358 D2 -> KILLED | kills: galaxy/QSO within 6" in SIMBAD: V* V976 Ori [G] 0.0" | missing: 
+20:37:29 vetted uid1511208 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:37:30 vetted uid1384448 D2 -> YOUNG | kills:  | missing: 
+20:37:30 vetted uid1599936 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:37:31 vetted uid1841794 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.88 mag fainter in G (2.0" PA240 G14.45 dG+0.88) | missing: 
+20:37:31 vetted uid1357327 D2 -> YOUNG | kills:  | missing: 
+20:37:32 vetted uid878866 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:37:33 vetted uid2072594 D2 -> YOUNG | kills:  | missing: 
+20:37:33 vetted uid1616399 D2 -> YOUNG | kills:  | missing: 
+20:37:34 vetted uid1666435 D2 -> YOUNG | kills:  | missing: 
+20:37:34 vetted uid1987032 D2 -> KILLED | kills: eclipsing binary in SIMBAD (EB*, ZTF J041049.17+380445.7) | missing: 
+20:37:35 vetted uid1671757 D2 -> YOUNG | kills:  | missing: 
+20:37:36 vetted uid1564349 D2 -> YOUNG | kills:  | missing: 
+20:37:36 vetted uid1418968 D2 -> YOUNG | kills:  | missing: 
+20:37:37 vetted uid1272657 D2 -> YOUNG | kills:  | missing: 
+20:37:37 vetted uid1136791 D2 -> YOUNG | kills:  | missing: 
+20:37:38 vetted uid1959195 D2 -> YOUNG | kills:  | missing: 
+20:37:38 vetted uid1581123 D2 -> YOUNG | kills:  | missing: 
+20:37:39 vetted uid1673027 D2 -> YOUNG | kills:  | missing: 
+20:37:39 vetted uid1499154 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:37:39 vetted uid838651 D2 -> SURVIVOR | kills:  | missing: 
+20:37:40 vetted uid1800505 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:37:41 vetted uid1928292 D2 -> YOUNG | kills:  | missing: 
+20:37:41 vetted uid1657002 D2 -> KILLED | kills: galaxy/QSO within 6" in SIMBAD: V* V401 Ori [G] 0.0" | missing: ASAS-SN (no source)
+20:37:42 vetted uid1967034 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.59 mag fainter in G (1.3" PA9 G16.23 dG+2.59) | missing: 
+20:37:42 vetted uid137313 D2 -> SURVIVOR | kills:  | missing: 
+20:37:43 vetted uid239897 D2 -> SURVIVOR | kills:  | missing: 
+20:37:43 vetted uid1809868 D2 -> YOUNG | kills:  | missing: 
+20:37:44 vetted uid1717992 D2 -> YOUNG | kills:  | missing: 
+20:37:45 vetted uid260980 D2 -> SURVIVOR | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:37:45 vetted uid1713922 D2 -> YOUNG | kills:  | missing: 
+20:37:46 vetted uid1618943 D2 -> YOUNG | kills:  | missing: 
+20:37:46 vetted uid1505343 D2 -> YOUNG | kills:  | missing: 
+20:37:47 vetted uid1678383 D2 -> SURVIVOR | kills:  | missing: 
+20:37:48 vetted uid269584 D2 -> SURVIVOR | kills:  | missing: 
+20:37:48 vetted uid1374460 D2 -> YOUNG | kills:  | missing: 
+20:37:49 vetted uid1613134 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.69 mag fainter in G (5.0" PA34 G15.98 dG+1.69) | missing: 
+20:37:49 vetted uid1528618 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:37:50 vetted uid2074984 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:37:50 vetted uid844587 D2 -> YOUNG | kills:  | missing: 
+20:37:51 vetted uid1356608 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:37:51 vetted uid1837155 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:37:52 vetted uid1376645 D2 -> YOUNG | kills:  | missing: 
+20:37:53 vetted uid1989676 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.77 mag fainter in G (2.5" PA153 G16.47 dG+2.77) | missing: 
+20:37:53 vetted uid1627666 D2 -> YOUNG | kills:  | missing: 
+20:37:54 vetted uid1078155 D2 -> YOUNG | kills:  | missing: 
+20:37:54 vetted uid1791181 D2 -> YOUNG | kills:  | missing: 
+20:37:55 vetted uid1572724 D2 -> YOUNG | kills:  | missing: 
+20:37:56 vetted uid1817699 D2 -> YOUNG | kills:  | missing: 
+20:37:56 vetted uid438254 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.67 mag fainter in G (4.4" PA40 G17.73 dG+2.67) | missing: 
+20:37:57 vetted uid55937 D2 -> SURVIVOR | kills:  | missing: 
+20:37:57 vetted uid1646554 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:37:58 vetted uid1016323 D2 -> YOUNG | kills:  | missing: 
+20:37:59 vetted uid1789599 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:37:59 vetted uid1516508 D2 -> YOUNG | kills:  | missing: 
+20:38:00 vetted uid1553860 D2 -> YOUNG | kills:  | missing: 
+20:38:00 vetted uid1169402 D2 -> YOUNG | kills:  | missing: 
+20:38:01 vetted uid1180376 D2 -> YOUNG | kills:  | missing: 
+20:38:01 vetted uid310080 D2 -> YOUNG | kills:  | missing: 
+20:38:02 vetted uid1508447 D2 -> YOUNG | kills:  | missing: 
+20:38:02 vetted uid712994 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:38:03 vetted uid1020396 D2 -> YOUNG | kills:  | missing: 
+20:39:26 vetted uid2331494 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.19 mag fainter in G (2.2" PA79 G17.51 dG+2.19; 4.7" PA10 G19.26 dG+3.94; 4.9" PA294 G20.31 dG+4.99; 5.0" PA136 G20.33 dG+ | missing: 
+20:39:27 vetted uid1630021 D2 -> YOUNG | kills:  | missing: 
+20:39:27 vetted uid1018261 D2 -> YOUNG | kills:  | missing: 
+20:39:28 vetted uid1424151 D2 -> YOUNG | kills:  | missing: 
+20:39:28 vetted uid1685096 D2 -> YOUNG | kills:  | missing: 
+20:39:29 vetted uid1722578 D2 -> KILLED | kills: cataclysmic variable / X-ray binary in SIMBAD (CV*, V* V650 Ori) | missing: 
+20:39:29 vetted uid1096024 D2 -> YOUNG | kills:  | missing: 
+20:39:30 vetted uid1117149 D2 -> YOUNG | kills:  | missing: 
+20:39:30 vetted uid560552 D2 -> SURVIVOR | kills:  | missing: 
+20:39:31 vetted uid979261 D2 -> YOUNG | kills:  | missing: 
+20:39:32 vetted uid1717828 D2 -> YOUNG | kills:  | missing: 
+20:39:32 vetted uid1749579 D2 -> YOUNG | kills:  | missing: 
+20:39:33 vetted uid1574722 D2 -> YOUNG | kills:  | missing: 
+20:39:33 vetted uid909402 D2 -> YOUNG | kills:  | missing: 
+20:39:34 vetted uid1393011 D2 -> YOUNG | kills:  | missing: 
+20:39:34 vetted uid1363385 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 1.55 mag fainter in G (2.7" PA128 G16.52 dG+1.55) | missing: 
+20:39:35 vetted uid1471333 D2 -> SURVIVOR | kills:  | missing: 
+20:39:35 vetted uid1639002 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 2.11 mag fainter in G (2.7" PA288 G17.17 dG+2.11; 3.6" PA233 G20.97 dG+5.90; 9.0" PA282 G20.06 dG+5.00) | missing: ASAS-SN change at onset (no camera spans the onset)
+20:39:36 vetted uid1273358 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.13 mag fainter in G (2.4" PA110 G14.59 dG+0.13; 8.0" PA10 G20.34 dG+5.89; 8.6" PA140 G17.65 dG+3.20) | missing: 
+20:39:36 vetted uid1454537 D2 -> YOUNG | kills:  | missing: 
+20:39:37 vetted uid1797726 D2 -> YOUNG | kills:  | missing: 
+20:39:37 vetted uid1761616 D2 -> YOUNG | kills:  | missing: 
+20:39:38 vetted uid1284783 D2 -> YOUNG | kills:  | missing: 
+20:39:38 vetted uid1116479 D2 -> YOUNG | kills:  | missing: ASAS-SN (no source)
+20:39:39 vetted uid1192683 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:39:40 vetted uid1493976 D2 -> YOUNG | kills:  | missing: 
+20:39:40 vetted uid1806829 D2 -> YOUNG | kills:  | missing: 
+20:39:41 vetted uid1763891 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only 0.75 mag fainter in G (1.2" PA201 G19.75 dG+5.19; 2.9" PA200 G20.63 dG+6.06; 4.4" PA63 G15.31 dG+0.75; 6.2" PA80 G16.29 dG+ | missing: 
+20:39:41 vetted uid1581737 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:39:42 vetted uid1790675 D2 -> KILLED | kills: blend: Gaia neighbour within 6" only -0.53 mag fainter in G (3.0" PA219 G15.00 dG-0.53) | galaxy/QSO within 6" in SIMBAD: V* IW Ori B [G] 0.0"; V* IW Ori A [G]  | missing: 
+20:39:57 vetted uid2209125 D2 -> YOUNG | kills:  | missing: ASAS-SN change at onset (no camera spans the onset)
+20:39:57 vetted uid1804779 D2 -> YOUNG | kills:  | missing: 
+20:39:58 vetted uid869035 D2 -> YOUNG | kills:  | missing: 
+20:39:59 vetted uid1643271 D2 -> YOUNG | kills:  | missing: 
+20:39:59 vetted J060000 CONTROL -> SURVIVOR | kills:  | missing: 
+20:40:00 vetted V836 Tau CONTROL -> YOUNG | kills:  | missing: 
+20:43:46 vetted uid2307394 D2 -> SURVIVOR | kills:  | missing: 
+20:44:27 vetted uid2186439 D2 -> SURVIVOR | kills:  | missing: 
+20:44:31 vetted uid2131980 D2 -> KILLED | kills: galaxy/QSO within 6" in SIMBAD: V* V475 Ori [G] 0.0" | missing: ASAS-SN (no source)
+20:44:36 vetted uid2139690 D2 -> SURVIVOR | kills:  | missing: 
+20:45:28 vetted uid2128363 D2 -> SURVIVOR | kills:  | missing: 
+20:45:28 {"mode": "far", "n_targets": 201, "counts": {"YOUNG": 138, "KILLED": 32, "SURVIVOR": 31}, "controls": [["ASASSN-21qj", "PASS", "category SURVIVOR, SIMBAD 2MASS J08152329-3859234 (10 refs), field z 57.3, missing: none"], ["J060000", "PASS", "category SURVIVOR, largest ASAS-SN seasonal dimming 0.35 mag at MJD 58864"], ["V836 Tau", "PASS", "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"]], "minutes": 13.6}
