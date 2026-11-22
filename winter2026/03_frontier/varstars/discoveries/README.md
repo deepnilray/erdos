@@ -40,3 +40,7 @@ The VizieR copies were read from the CfA mirror and may lag the live VSX. **Sear
 | Plots | B_GaiaDR3_1355878947229358336_seasons.png, B_ZTF_overview.png |
 
 Labels: the variability and periods are VERIFIED from ZTF data. "New" is VERIFIED only against the catalogues listed above. The physical classifications are CONJECTURED.
+
+## Submission log
+- 2026-11-22 16:45 UTC: Star A submitted to VSX by Deepnil Ray as ZTF J164226.77+392523.3. Status "New", awaiting moderator review.
+- Star B: not yet submitted (VSX allows one submission per day).
