@@ -20,7 +20,7 @@ The VizieR copies were read from the CfA mirror and may lag the live VSX. **Sear
 | Other IDs | ZTF DR24 oid 723207300001757 (r), 723107300006279 (g), 723307300002238 (i); AllWISE J164226.77+392522.9 |
 | Gaia DR3 | G 16.77, BP-RP 2.89, Teff 3280 K, parallax 7.37 +- 0.04 mas (~136 pc), RUWE 1.01, no NSS solution |
 | Period | **1.27476 d** (+- ~0.00005). Same period in g, r and i. Folding at 2P gives equal minima (17.409 vs 17.414 +- 0.003 r), so P is not doubled. |
-| Amplitude | r 17.27-17.42 (median 17.33; binned peak-to-peak 0.13); g 18.69-18.93 (0.13); i 15.72-15.83 (0.08) |
+| Range for VSX (binned mean curve) | r 17.29-17.42; g 18.76-18.90. Individual points (5-95 %): r 17.27-17.42, g 18.69-18.93, i 15.72-15.83 |
 | Epoch of maximum | HJD 2458198.731 (r) |
 | Coherence | stable phase and amplitude over 7.5 yr (2018-2025, ~2150 cycles) |
 | Suggested VSX type | ROT (BY Dra-type spot modulation of an M dwarf). An ellipsoidal binary at 2P = 2.5495 d is less likely given RUWE 1.0 and equal minima. |
