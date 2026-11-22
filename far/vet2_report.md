@@ -1,6 +1,6 @@
 # vet2 report: far target list (final)
 
-Generated 2026-11-22 11:23 UTC; 201 targets; machine-generated, the plots in plots/ still need a look by eye.
+Generated 2026-11-22 15:17 UTC; 201 targets; machine-generated, the plots in plots/ still need a look by eye.
 
 Kill rules: field-control z < 5 (detector-1 and list targets); centroid jump > 3 sigma toward a Gaia neighbour; Gaia neighbour within 6" with dG < 3; baseline W1 < 8; SIMBAD CV / confirmed eclipsing binary (counterpart within 3"); SIMBAD galaxy/QSO within 6"; young star (SIMBAD Y*O, Y*?, TT*, TT?, Or*, Ae*, Ae?, pr* within 5" or Gaia variability class YSO) kills detector-1/list targets and labels detector-2 targets 'known/likely young star'. Flags (not kills): 'not plain dust' (optical brightening at the infrared onset in >= 2 ASAS-SN cameras, none dimming, median < -0.015 mag), SIMBAD '?' candidate types, RUWE, NSS, ext_flg, colour classes.
 
@@ -12,9 +12,9 @@ Kill rules: field-control z < 5 (detector-1 and list targets); centroid jump > 3
 | J060000 | PASS | category SURVIVOR, largest ASAS-SN seasonal dimming 0.35 mag at MJD 58864 |
 | V836 Tau | PASS | young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83) |
 
-Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
+Counts: {'YOUNG': 145, 'KILLED': 30, 'SURVIVOR': 26}
 
-## Survivors (24)
+## Survivors (26)
 
 ### uid269584  [D2]  SURVIVOR
 - position 81.02729 +34.27504; Gaia DR3 182736942750800256; G 11.57, BP-RP 0.83, plx 3.58 mas; plot `plots/uid269584.png`
@@ -31,7 +31,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 ### uid456710  [D2]  SURVIVOR
 - position 266.00230 -29.70248; Gaia DR3 4057049442363660800; G 12.77, BP-RP 1.13, plx 3.36 mas; plot `plots/uid456710.png`
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 9 visits, 91 points; baseline W1 9.21, W1-W2 0.360; onset between MJD 60186 and 60386
-- detector 2: excess 0.418 mag, z 25.5, jitter ratio 7.7
+- detector 2: excess 0.417 mag, z 23.4, jitter ratio 7.7
 - field control: target step +0.107 (W1 +0.078); neighbours N=33, median +0.049, robust sigma 0.050, max +0.196; z = 1.2
 - centroid: jump at onset 0.203" +- 0.157 (1.3 sigma, PA 50); largest consecutive-visit jump 0.319"; rms 0.136"; toward neighbour: 8.2" PA40 G19.7 (angle 9 deg); expected shift if a neighbour were the source: 8.2" G19.7: 0.77"
 - AllWISE 2010: W1-W2 0.339, W2-W3 0.192 (W3 S/N -3.0), W3-W4 3.165 (W4 S/N -2.6), ext_flg 0, ph_qual AAUU: W3 S/N < 5: no W2-W3 class; W1-W2 > 0.25
@@ -52,19 +52,6 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1091 points, cameras bF(g,321); bf(V,216); bj(g,361); bn(g,193); change at onset (after-before, per-camera median) n/a mag; largest seasonal dimming 0.04 mag at MJD 60008
 - dust: excess flux W1 2.30 mJy, W2 2.58 mJy, T = 1144 K (16-84%: 1059-1238) 
 - checks missing: ASAS-SN change at onset (no camera spans the onset)
-
-### uid1864315  [D2]  SURVIVOR
-- position 86.18883 +0.34121; Gaia DR3 3219218111661194368; G 13.50, BP-RP 1.47, plx 2.44 mas; plot `plots/uid1864315.png`
-- flags: 1.60 mag above the main sequence at its colour
-- NEOWISE: score refetch 0.64 (stored 0.64, reproduced True); dW2 0.259, dW1 0.186, 20 visits, 233 points; baseline W1 10.23, W1-W2 0.224; onset between MJD 58380 and 58538
-- detector 2: excess 0.285 mag, z 12.9, jitter ratio 32.7
-- field control: target step +1.045 (W1 +0.780); neighbours N=72, median -0.005, robust sigma 0.011, max +0.028; z = 91.4
-- centroid: jump at onset 0.020" +- 0.018 (1.1 sigma, PA 228); largest consecutive-visit jump 0.063"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: 7.1" G20.3: 4.39"
-- AllWISE 2010: W1-W2 0.241, W2-W3 0.873 (W3 S/N 31.4), W3-W4 3.266 (W4 S/N 24.5), ext_flg 0, ph_qual AAAA: weak W3 excess (0.5 < W2-W3 < 1.0)
-- Gaia: RUWE 1.08, ipd_frac_multi_peak 0, NSS none, Teff 4836 K, logg 4.15, H-alpha pEW -0.270 nm, varclass RS(0.59); M_G 5.44, -1.60 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 7.1" PA284 G20.27 dG+6.77
-- SIMBAD (10"): Gaia DR2 3219218111661194368 [*; *] 0.01" refs=3
-- ASAS-SN: 1004 points, cameras bB(g,89); bF(g,152); bb(V,181); bj(g,200, d=-0.028); bn(g,140); br(g,168, d=-0.005); cB(g,74); change at onset (after-before, per-camera median) -0.016 mag; largest seasonal dimming 0.03 mag at MJD 58152
-- dust: excess flux W1 7.45 mJy, W2 6.43 mJy, T = 1620 K (16-84%: 1537-1711) 
 
 ### ASASSN-21qj (uid3303105)  [CONTROL+D1]  SURVIVOR
 - position 123.84704 -38.98983; Gaia DR3 5539970601632026752; G 13.37, BP-RP 0.81, plx 1.76 mas; plot `plots/ASASSN-21qj_uid3303105_.png`
@@ -91,6 +78,18 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 739 points, cameras bB(g,132, d=+0.008); bb(V,194); br(g,344, d=+0.008); cB(g,69); change at onset (after-before, per-camera median) +0.008 mag; largest seasonal dimming 0.08 mag at MJD 59352
 - dust: excess flux W1 164.30 mJy, W2 107.02 mJy, T = 3353 K (16-84%: 2949-3915) 
 
+### uid2015396  [D1]  SURVIVOR
+- position 221.65121 +31.17950; Gaia DR3 1283261877869284096; G 15.00, BP-RP 1.38, plx 2.38 mas; plot `plots/uid2015396.png`
+- flags: centroid jump 0.153" (3.2 sigma, PA 59) not toward a Gaia neighbour | SIMBAD candidate type(s) Bz?,Q? (BWE 1444+3123): uncertain, not a kill | not plain dust: optical brightening -0.040 mag (per-camera -0.025,-0.040,-0.106,-0.072,-0.035) together with the infrared rise
+- NEOWISE: score refetch 10.97 (stored 10.97, reproduced True); dW2 0.550, dW1 0.245, 13 visits, 135 points; baseline W1 12.46, W1-W2 0.016; onset between MJD 59756 and 59962
+- field control: target step +0.524 (W1 +0.229); neighbours N=13, median -0.006, robust sigma 0.018, max +0.036; z = 29.8
+- centroid: jump at onset 0.153" +- 0.048 (3.2 sigma, PA 59); largest consecutive-visit jump 0.280"; rms 0.083"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.063, W2-W3 1.237 (W3 S/N 10.9), W3-W4 1.919 (W4 S/N 2.6), ext_flg 0, ph_qual AAAC: W3 excess only (W2-W3 > 1.0; debris-disk-like or blend)
+- Gaia: RUWE 1.00, ipd_frac_multi_peak 0, NSS none, Teff nan K, logg nan, H-alpha pEW -0.083 nm, varclass none; M_G 6.89, +0.10 mag vs sequence (on the sequence); neighbours within 10": none
+- SIMBAD (10"): BWE 1444+3123 [Bz?; Bz?,Q?,Rad,gam] 0.88" refs=18
+- ASAS-SN: 1159 points, cameras bC(g,231, d=-0.025); bG(g,102, d=-0.040); bc(V,290); bg(V,30); bk(g,132, d=-0.106); bo(g,118, d=-0.072); bs(g,256, d=-0.035); change at onset (after-before, per-camera median) -0.040 mag; largest seasonal dimming 0.03 mag at MJD 60540
+- dust: excess flux W1 0.93 mJy, W2 1.45 mJy, T = 846 K (16-84%: 820-872) 
+
 ### uid239897  [D2]  SURVIVOR
 - position 222.73717 +36.20318; Gaia DR3 1293509154439630464; G 14.04, BP-RP 1.46, plx 3.62 mas; plot `plots/uid239897.png`
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -108,7 +107,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 110.89912 -33.16840; Gaia DR3 5592473072135280640; G 14.33, BP-RP 1.58, plx 3.90 mas; plot `plots/uid55937.png`
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.43 (stored 0.43, reproduced True); dW2 0.032, dW1 0.025, 14 visits, 169 points; baseline W1 11.30, W1-W2 0.344; onset between MJD 59668 and 60035
-- detector 2: excess 0.398 mag, z 16.5, jitter ratio 5.9
+- detector 2: excess 0.398 mag, z 15.7, jitter ratio 5.9
 - field control: target step +0.178 (W1 +0.087); neighbours N=154, median -0.002, robust sigma 0.009, max +0.037; z = 19.4
 - centroid: jump at onset 0.011" +- 0.023 (0.5 sigma, PA 179); largest consecutive-visit jump 0.054"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.260, W2-W3 1.766 (W3 S/N 33.5), W3-W4 1.345 (W4 S/N 5.4), ext_flg 0, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -146,7 +145,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 122.68027 -55.75373; Gaia DR3 5319098678618296192; G 14.92, BP-RP 1.67, plx 2.63 mas; plot `plots/uid1458786.png`
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.085 mag, one camera only) | largest seasonal optical dimming 0.28 mag (MJD 57062)
 - NEOWISE: score refetch 0.66 (stored 0.66, reproduced True); dW2 0.075, dW1 0.113, 21 visits, 411 points; baseline W1 9.99, W1-W2 0.789; onset between MJD 57725 and 57887
-- detector 2: excess 0.834 mag, z 29.7, jitter ratio 9.4
+- detector 2: excess 0.835 mag, z 29.7, jitter ratio 9.4
 - field control: target step +0.113 (W1 +0.110); neighbours N=107, median -0.004, robust sigma 0.008, max +0.107; z = 14.3
 - centroid: jump at onset 0.014" +- 0.026 (0.6 sigma, PA 307); largest consecutive-visit jump 0.074"; rms 0.041"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.755, W2-W3 2.495 (W3 S/N 73.8), W3-W4 2.019 (W4 S/N 42.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -159,7 +158,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 280.04305 +23.47269; Gaia DR3 4532694083738109824; G 14.77, BP-RP 1.56, plx 2.73 mas; plot `plots/uid1277809.png`
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 244 points; baseline W1 11.55, W1-W2 0.483; onset between MJD 59837 and 60037
-- detector 2: excess 0.539 mag, z 23.1, jitter ratio 6.0
+- detector 2: excess 0.539 mag, z 22.2, jitter ratio 6.0
 - field control: target step +0.163 (W1 +0.071); neighbours N=127, median +0.000, robust sigma 0.012, max +0.036; z = 13.7
 - centroid: jump at onset 0.008" +- 0.020 (0.4 sigma, PA 297); largest consecutive-visit jump 0.037"; rms 0.034"; toward neighbour: none; expected shift if a neighbour were the source: 8.7" G17.3: 1.21"
 - AllWISE 2010: W1-W2 0.485, W2-W3 2.091 (W3 S/N 36.2), W3-W4 0.834 (W4 S/N 5.0), ext_flg 0, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -173,7 +172,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 58.48789 +35.04418; Gaia DR3 218942765440887936; G 13.62, BP-RP 1.60, plx 2.52 mas; plot `plots/uid1678383.png`
 - flags: 1.73 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.055 mag after the infrared onset (debris transit signature)
 - NEOWISE: score refetch 2.11 (stored 2.11, reproduced True); dW2 0.214, dW1 0.152, 21 visits, 217 points; baseline W1 10.00, W1-W2 0.377; onset between MJD 57068 and 57261
-- detector 2: excess 0.430 mag, z 17.1, jitter ratio 7.6
+- detector 2: excess 0.430 mag, z 16.6, jitter ratio 7.6
 - field control: target step +0.139 (W1 +0.175); neighbours N=79, median -0.003, robust sigma 0.010, max +0.111; z = 13.7
 - centroid: jump at onset 0.015" +- 0.014 (1.1 sigma, PA 349); largest consecutive-visit jump 0.044"; rms 0.023"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.430, W2-W3 1.812 (W3 S/N 53.4), W3-W4 2.479 (W4 S/N 26.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -186,7 +185,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 35.42480 +62.01116; Gaia DR3 513833673802372736; G 13.99, BP-RP 1.39, plx 3.51 mas; plot `plots/uid325718.png`
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 9 visits, 95 points; baseline W1 11.35, W1-W2 0.948; onset between MJD 57986 and 58144
-- detector 2: excess 1.011 mag, z 51.1, jitter ratio 7.8
+- detector 2: excess 1.011 mag, z 48.7, jitter ratio 7.8
 - field control: target step +0.161 (W1 +0.004); neighbours N=199, median -0.006, robust sigma 0.014, max +0.162; z = 11.9
 - centroid: jump at onset 0.444" +- 0.185 (2.4 sigma, PA 181); largest consecutive-visit jump 0.331"; rms 0.389"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 1.083, W2-W3 1.507 (W3 S/N 22.3), W3-W4 2.809 (W4 S/N 21.4), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -199,7 +198,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 92.32085 -15.13572; Gaia DR3 2993153951148830336; G 13.32, BP-RP 1.01, plx 2.83 mas; plot `plots/uid1103309.png`
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 2.00 (stored 2.00, reproduced True); dW2 0.179, dW1 0.130, 19 visits, 195 points; baseline W1 10.88, W1-W2 0.758; onset between MJD 60004 and 60213
-- detector 2: excess 0.809 mag, z 56.2, jitter ratio 4.5
+- detector 2: excess 0.809 mag, z 54.6, jitter ratio 4.5
 - field control: target step +0.112 (W1 +0.107); neighbours N=93, median -0.007, robust sigma 0.012, max +0.078; z = 10.0
 - centroid: jump at onset 0.022" +- 0.026 (0.8 sigma, PA 82); largest consecutive-visit jump 0.089"; rms 0.038"; toward neighbour: none; expected shift if a neighbour were the source: 2.0" G20.1: 0.19"
 - AllWISE 2010: W1-W2 0.743, W2-W3 2.058 (W3 S/N 50.1), W3-W4 1.442 (W4 S/N 17.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -207,6 +206,19 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - SIMBAD (10"): TIC 408967891 [; ] 0.10" refs=1; 2MASS J06091701-1508085 [*; *,MIR,NIR] 0.10" refs=1; Gaia DR3 2993153951145272192 [*; *] 1.97" refs=1
 - ASAS-SN: 1556 points, cameras bA(g,133, d=+0.011); bE(g,224, d=-0.026); ba(V,151); be(V,223); bi(g,403, d=+0.006); bm(g,251, d=-0.018); bq(g,171, d=-0.008); change at onset (after-before, per-camera median) -0.008 mag; largest seasonal dimming 0.04 mag at MJD 57724
 - dust: excess flux W1 1.56 mJy, W2 2.22 mJy, T = 911 K (16-84%: 855-976) 
+
+### uid2105741  [D2]  SURVIVOR
+- position 1.27252 +59.65045; Gaia DR3 423255218711266176; G 14.15, BP-RP 1.65, plx 2.35 mas; plot `plots/uid2105741.png`
+- flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.49 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.218 mag, one camera only) | largest seasonal optical dimming 0.53 mag (MJD 60638)
+- NEOWISE: score refetch 1.27 (stored 1.27, reproduced True); dW2 0.333, dW1 0.271, 16 visits, 168 points; baseline W1 9.17, W1-W2 0.512; onset between MJD 57405 and 57598
+- detector 2: excess 0.561 mag, z 20.5, jitter ratio 19.3
+- field control: target step +0.088 (W1 +0.107); neighbours N=196, median -0.003, robust sigma 0.012, max +0.026; z = 7.4
+- centroid: jump at onset 0.021" +- 0.026 (0.8 sigma, PA 340); largest consecutive-visit jump 0.046"; rms 0.035"; toward neighbour: none; expected shift if a neighbour were the source: 1.5" G18.4: 0.11"; 9.0" G20.3: 0.70"
+- AllWISE 2010: W1-W2 0.765, W2-W3 1.870 (W3 S/N 69.1), W3-W4 2.739 (W4 S/N 43.7), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.36, ipd_frac_multi_peak 0, NSS none, Teff nan K, logg nan, H-alpha pEW -0.174 nm, varclass none; M_G 6.00, -1.49 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 1.5" PA130 G18.35 dG+4.21; 9.0" PA48 G20.25 dG+6.11
+- SIMBAD (10"): V* V956 Cas [V*; *,NIR,V*] 0.11" refs=6
+- ASAS-SN: 638 points, cameras bB(g,112); bb(V,191, d=-0.218); br(g,260); cB(g,75); change at onset (after-before, per-camera median) -0.218 mag; largest seasonal dimming 0.53 mag at MJD 60638
+- dust: excess flux W1 17.16 mJy, W2 15.18 mJy, T = 1557 K (16-84%: 1454-1677) 
 
 ### uid137313  [D2]  SURVIVOR
 - position 330.31742 -28.50241; Gaia DR3 6617669842852419712; G 13.04, BP-RP 1.06, plx 3.77 mas; plot `plots/uid137313.png`
@@ -221,11 +233,24 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1157 points, cameras bE(g,256); be(V,244, d=-0.004); bi(g,275); bm(g,229); bq(g,153); change at onset (after-before, per-camera median) -0.004 mag; largest seasonal dimming 0.02 mag at MJD 59848
 - dust: excess flux W1 0.69 mJy, W2 0.67 mJy, T = 1377 K (16-84%: 1139-1747) 
 
+### uid2013931  [D2]  SURVIVOR
+- position 94.49329 -10.03932; Gaia DR3 3004530769758177280; G 13.00, BP-RP 0.90, plx 2.38 mas; plot `plots/uid2013931.png`
+- flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- NEOWISE: score refetch 0.74 (stored 0.74, reproduced True); dW2 0.030, dW1 0.017, 21 visits, 191 points; baseline W1 11.11, W1-W2 0.584; onset between MJD 57099 and 57293
+- detector 2: excess 0.629 mag, z 49.4, jitter ratio 3.6
+- field control: target step +0.039 (W1 +0.005); neighbours N=89, median -0.006, robust sigma 0.010, max +0.034; z = 4.8
+- centroid: jump at onset 0.025" +- 0.028 (0.9 sigma, PA 97); largest consecutive-visit jump 0.061"; rms 0.036"; toward neighbour: none; expected shift if a neighbour were the source: 8.1" G17.8: 0.29"
+- AllWISE 2010: W1-W2 0.639, W2-W3 3.457 (W3 S/N 59.1), W3-W4 1.822 (W4 S/N 30.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 0.97, ipd_frac_multi_peak 0, NSS none, Teff 5722 K, logg 4.38, H-alpha pEW -0.757 nm, varclass none; M_G 4.88, -0.14 mag vs sequence (on the sequence); neighbours within 10": 8.1" PA4 G17.76 dG+4.77
+- SIMBAD (10"): Gaia DR3 3004530769758177280 [*; *] 0.10" refs=1
+- ASAS-SN: 1632 points, cameras bC(g,150); bG(g,273); bc(V,148, d=-0.005); be(V,46, d=-0.017); bg(V,183); bk(g,381); bo(g,274); bs(g,177); change at onset (after-before, per-camera median) -0.011 mag; largest seasonal dimming 0.05 mag at MJD 59536
+- dust: excess flux W1 0.71 mJy, W2 0.73 mJy, T = 1262 K (16-84%: 1059-1561) 
+
 ### uid342028  [D2]  SURVIVOR
 - position 225.72799 -14.21404; Gaia DR3 6308812594204740352; G 12.51, BP-RP 1.08, plx 3.49 mas; plot `plots/uid342028.png`
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 21 visits, 163 points; baseline W1 10.23, W1-W2 0.430; onset between MJD 59779 and 59981
-- detector 2: excess 0.485 mag, z 29.7, jitter ratio 4.7
+- detector 2: excess 0.485 mag, z 29.6, jitter ratio 4.7
 - field control: target step +0.058 (W1 +0.029); neighbours N=35, median -0.003, robust sigma 0.013, max +0.032; z = 4.6
 - centroid: jump at onset 0.007" +- 0.013 (0.5 sigma, PA 239); largest consecutive-visit jump 0.046"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.429, W2-W3 1.517 (W3 S/N 50.4), W3-W4 0.921 (W4 S/N 8.5), ext_flg 0, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -238,7 +263,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 110.95000 -25.63462; Gaia DR3 5616572649029724416; G 11.61, BP-RP 1.11, plx 2.62 mas; plot `plots/uid1474845.png`
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 2.21 mag above the main sequence at its colour
 - NEOWISE: score refetch 0.89 (stored 0.89, reproduced True); dW2 0.030, dW1 0.003, 13 visits, 107 points; baseline W1 9.58, W1-W2 0.171; onset between MJD 57317 and 57482
-- detector 2: excess 0.228 mag, z 14.0, jitter ratio 3.1
+- detector 2: excess 0.227 mag, z 13.2, jitter ratio 3.1
 - field control: target step +0.057 (W1 +0.006); neighbours N=100, median -0.003, robust sigma 0.021, max +0.218; z = 2.8
 - centroid: jump at onset 0.029" +- 0.023 (1.2 sigma, PA 64); largest consecutive-visit jump 0.078"; rms 0.031"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.061, W2-W3 1.091 (W3 S/N 31.9), W3-W4 4.350 (W4 S/N 38.3), ext_flg 1, ph_qual AAAA: W3 excess only (W2-W3 > 1.0; debris-disk-like or blend)
@@ -252,7 +277,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 274.26638 +64.56526; Gaia DR3 2161325369818713984; G 11.45, BP-RP 0.71, plx 3.65 mas; plot `plots/uid220308.png`
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.99 (stored 0.99, reproduced True); dW2 0.146, dW1 0.078, 20 visits, 2456 points; baseline W1 9.67, W1-W2 0.576; onset between MJD 57143 and 57325
-- detector 2: excess 0.607 mag, z 60.7, jitter ratio 3.9
+- detector 2: excess 0.606 mag, z 60.6, jitter ratio 3.9
 - field control: target step +0.002 (W1 -0.001); neighbours N=39, median -0.009, robust sigma 0.005, max +0.002; z = 2.1
 - centroid: jump at onset 0.010" +- 0.014 (0.7 sigma, PA 142); largest consecutive-visit jump 0.055"; rms 0.022"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.585, W2-W3 2.610 (W3 S/N 72.2), W3-W4 0.675 (W4 S/N 33.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -279,7 +304,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 263.44908 -32.48313; Gaia DR3 4054634399450679552; G 15.07, BP-RP 1.66, plx 2.56 mas; plot `plots/uid1599936.png`
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association)
 - NEOWISE: score refetch 0.10 (stored 0.10, reproduced True); dW2 0.006, dW1 0.012, 9 visits, 87 points; baseline W1 10.22, W1-W2 0.468; onset between MJD 56733 and 57274
-- detector 2: excess 0.515 mag, z 18.6, jitter ratio 4.0
+- detector 2: excess 0.516 mag, z 18.7, jitter ratio 4.0
 - field control: target step +0.056 (W1 -0.026); neighbours N=84, median +0.026, robust sigma 0.034, max +0.149; z = 0.9
 - centroid: jump at onset 0.101" +- 0.093 (1.1 sigma, PA 282); largest consecutive-visit jump 0.114"; rms 0.095"; toward neighbour: none; expected shift if a neighbour were the source: 1.1" G18.1: 0.06"
 - AllWISE 2010: W1-W2 0.470, W2-W3 0.684 (W3 S/N -2.7), W3-W4 2.320 (W4 S/N -2.0), ext_flg 1, ph_qual AAUU: W3 S/N < 5: no W2-W3 class; W1-W2 > 0.25
@@ -293,7 +318,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 223.47277 -34.35772; Gaia DR3 6202580185915202560; G 13.45, BP-RP 1.13, plx 3.02 mas; plot `plots/uid838651.png`
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 18 visits, 136 points; baseline W1 11.23, W1-W2 0.254; onset between MJD 57959 and 58161
-- detector 2: excess 0.312 mag, z 19.1, jitter ratio 3.5
+- detector 2: excess 0.311 mag, z 17.5, jitter ratio 3.5
 - field control: target step +0.009 (W1 +0.002); neighbours N=73, median -0.003, robust sigma 0.019, max +0.050; z = 0.6
 - centroid: jump at onset 0.045" +- 0.020 (2.3 sigma, PA 4); largest consecutive-visit jump 0.049"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: 4.2" G20.8: 0.03"
 - AllWISE 2010: W1-W2 0.262, W2-W3 2.049 (W3 S/N 33.2), W3-W4 1.104 (W4 S/N 5.9), ext_flg 0, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -319,7 +344,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - position 111.14968 -44.66924; Gaia DR3 5511851313304664704; G 15.63, BP-RP 1.96, plx 2.62 mas; plot `plots/uid1471333.png`
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.156 mag (per-camera -0.158,-0.173,-0.155,-0.080,-0.202,-0.122) together with the infrared rise | largest seasonal optical dimming 0.26 mag (MJD 58512)
 - NEOWISE: score refetch 2.40 (stored 2.40, reproduced True); dW2 0.299, dW1 0.232, 10 visits, 123 points; baseline W1 9.62, W1-W2 0.583; onset between MJD 58579 and 59310
-- detector 2: excess 0.584 mag, z 14.2, jitter ratio 11.7
+- detector 2: excess 0.585 mag, z 14.2, jitter ratio 11.7
 - field control: target step -0.052 (W1 -0.051); neighbours N=93, median -0.002, robust sigma 0.008, max +0.326; z = -6.2
 - centroid: jump at onset 0.506" +- 0.307 (1.6 sigma, PA 109); largest consecutive-visit jump 0.994"; rms 0.329"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.661, W2-W3 2.410 (W3 S/N 62.2), W3-W4 2.177 (W4 S/N 30.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -328,14 +353,14 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 2533 points, cameras bE(g,364, d=-0.158); bF(g,354, d=-0.173); be(V,282); bf(V,215); bi(g,412, d=-0.155); bj(g,400, d=-0.080); bm(g,340, d=-0.202); bn(g,166, d=-0.122); change at onset (after-before, per-camera median) -0.156 mag; largest seasonal dimming 0.26 mag at MJD 58512
 - dust: excess flux W1 13.06 mJy, W2 12.96 mJy, T = 1318 K (16-84%: 1173-1518) 
 
-## Known/likely young stars (detector 2) (148)
+## Known/likely young stars (detector 2) (145)
 
 ### uid1355017  [D2]  YOUNG
 - position 313.27661 +74.84301; Gaia DR3 2277845423082083200; G 11.98, BP-RP 1.36, plx 2.68 mas; plot `plots/uid1355017.png`
 - **young:** SIMBAD young-star types Or*,Y*O (GSC 04472-00143) | Gaia DR3 variability class YSO(0.38)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 2.62 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 3.26 (stored 3.26, reproduced True); dW2 1.508, dW1 1.573, 21 visits, 554 points; baseline W1 9.19, W1-W2 0.519; onset between MJD 58137 and 58343
-- detector 2: excess 0.582 mag, z 30.2, jitter ratio 11.2
+- detector 2: excess 0.582 mag, z 28.6, jitter ratio 11.2
 - field control: target step +1.577 (W1 +1.570); neighbours N=65, median -0.004, robust sigma 0.009, max +0.027; z = 177.8
 - centroid: jump at onset 0.011" +- 0.020 (0.6 sigma, PA 52); largest consecutive-visit jump 0.088"; rms 0.030"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.538, W2-W3 2.490 (W3 S/N 76.6), W3-W4 2.382 (W4 S/N 54.9), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -349,7 +374,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types TT*,Y*O (Haro 5-5)
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.592 mag (per-camera -0.657,-0.810,-0.592,+0.006,-0.467) together with the infrared rise | largest seasonal optical dimming 0.50 mag (MJD 59436)
 - NEOWISE: score refetch 4.11 (stored 4.11, reproduced True); dW2 0.528, dW1 0.521, 21 visits, 213 points; baseline W1 11.19, W1-W2 0.589; onset between MJD 59473 and 59631
-- detector 2: excess 0.602 mag, z 15.4, jitter ratio 11.9
+- detector 2: excess 0.603 mag, z 15.4, jitter ratio 11.9
 - field control: target step +1.361 (W1 +1.291); neighbours N=81, median +0.000, robust sigma 0.013, max +0.144; z = 102.0
 - centroid: jump at onset 0.017" +- 0.020 (0.9 sigma, PA 130); largest consecutive-visit jump 0.109"; rms 0.037"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.548, W2-W3 2.535 (W3 S/N 55.9), W3-W4 2.286 (W4 S/N 26.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -377,7 +402,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* BB Ori)
 - flags: centroid jump 0.145" (5.3 sigma, PA 279) not toward a Gaia neighbour | 2.30 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.624 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.86 mag (MJD 60046)
 - NEOWISE: score refetch 2.16 (stored 2.16, reproduced True); dW2 0.414, dW1 0.290, 20 visits, 170 points; baseline W1 9.38, W1-W2 0.355; onset between MJD 59473 and 59631
-- detector 2: excess 0.398 mag, z 13.7, jitter ratio 16.2
+- detector 2: excess 0.399 mag, z 13.7, jitter ratio 16.2
 - field control: target step +1.207 (W1 +0.979); neighbours N=116, median +0.006, robust sigma 0.018, max +0.565; z = 66.1
 - centroid: jump at onset 0.145" +- 0.028 (5.3 sigma, PA 279); largest consecutive-visit jump 0.136"; rms 0.058"; toward neighbour: none; expected shift if a neighbour were the source: 8.5" G14.9: 5.71"
 - AllWISE 2010: W1-W2 0.312, W2-W3 1.949 (W3 S/N 48.6), W3-W4 2.038 (W4 S/N 25.2), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -391,7 +416,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** Gaia DR3 variability class YSO(0.34)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.63 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.216 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.36 mag (MJD 57448)
 - NEOWISE: score refetch 2.67 (stored 2.67, reproduced True); dW2 0.697, dW1 0.708, 13 visits, 127 points; baseline W1 9.88, W1-W2 0.760; onset between MJD 57856 and 58059
-- detector 2: excess 0.773 mag, z 19.8, jitter ratio 20.5
+- detector 2: excess 0.774 mag, z 19.8, jitter ratio 20.5
 - field control: target step +0.843 (W1 +0.722); neighbours N=170, median -0.007, robust sigma 0.013, max +0.029; z = 63.7
 - centroid: jump at onset 0.044" +- 0.030 (1.5 sigma, PA 35); largest consecutive-visit jump 0.053"; rms 0.038"; toward neighbour: none; expected shift if a neighbour were the source: 8.2" G19.2: 4.42"
 - AllWISE 2010: W1-W2 0.699, W2-W3 1.971 (W3 S/N 71.6), W3-W4 1.717 (W4 S/N 37.4), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -405,7 +430,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types TT*,Y*?,Y*O (Kiso A-0975  47)
 - flags: 0.94 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.36 mag (MJD 60639)
 - NEOWISE: score refetch 3.33 (stored 3.33, reproduced True); dW2 0.382, dW1 0.349, 20 visits, 222 points; baseline W1 9.42, W1-W2 0.426; onset between MJD 57807 and 58006
-- detector 2: excess 0.481 mag, z 20.3, jitter ratio 11.2
+- detector 2: excess 0.481 mag, z 19.1, jitter ratio 11.2
 - field control: target step +0.512 (W1 +0.427); neighbours N=43, median -0.001, robust sigma 0.008, max +0.333; z = 62.9
 - centroid: jump at onset 0.024" +- 0.016 (1.5 sigma, PA 300); largest consecutive-visit jump 0.052"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.500, W2-W3 1.644 (W3 S/N 61.6), W3-W4 2.119 (W4 S/N 38.5), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -419,7 +444,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (UCAC4 453-010343)
 - flags: 1.40 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.049 mag, one camera only) | largest seasonal optical dimming 0.27 mag (MJD 58182)
 - NEOWISE: score refetch 1.59 (stored 1.59, reproduced True); dW2 0.919, dW1 0.692, 20 visits, 184 points; baseline W1 10.29, W1-W2 0.793; onset between MJD 57086 and 57280
-- detector 2: excess 0.822 mag, z 24.3, jitter ratio 13.0
+- detector 2: excess 0.823 mag, z 24.4, jitter ratio 13.0
 - field control: target step +0.612 (W1 +0.452); neighbours N=61, median -0.005, robust sigma 0.011, max +0.018; z = 55.5
 - centroid: jump at onset 0.023" +- 0.019 (1.2 sigma, PA 274); largest consecutive-visit jump 0.095"; rms 0.038"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.778, W2-W3 2.477 (W3 S/N 73.7), W3-W4 2.487 (W4 S/N 43.5), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -447,7 +472,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (Haro 5-72)
 - flags: 1.75 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.12 mag (MJD 59650)
 - NEOWISE: score refetch 0.04 (stored 0.04, reproduced True); dW2 0.010, dW1 0.012, 20 visits, 209 points; baseline W1 9.69, W1-W2 0.277; onset between MJD 58535 and 58742
-- detector 2: excess 0.332 mag, z 14.0, jitter ratio 21.9
+- detector 2: excess 0.332 mag, z 13.2, jitter ratio 21.9
 - field control: target step +0.681 (W1 +0.569); neighbours N=89, median +0.003, robust sigma 0.013, max +0.302; z = 50.8
 - centroid: jump at onset 0.028" +- 0.015 (1.9 sigma, PA 315); largest consecutive-visit jump 0.047"; rms 0.020"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.265, W2-W3 1.950 (W3 S/N 53.8), W3-W4 2.090 (W4 S/N 28.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -461,7 +486,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (EM* LkHA  337) | Gaia DR3 variability class YSO(0.54)
 - flags: 1.35 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +1.226 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 1.03 mag (MJD 58152)
 - NEOWISE: score refetch 3.19 (stored 3.19, reproduced True); dW2 0.968, dW1 0.820, 20 visits, 191 points; baseline W1 9.08, W1-W2 0.571; onset between MJD 57816 and 58018
-- detector 2: excess 0.616 mag, z 22.0, jitter ratio 21.6
+- detector 2: excess 0.617 mag, z 22.0, jitter ratio 21.6
 - field control: target step +0.668 (W1 +0.626); neighbours N=93, median -0.009, robust sigma 0.013, max +0.023; z = 50.7
 - centroid: jump at onset 0.001" +- 0.014 (0.1 sigma, PA 80); largest consecutive-visit jump 0.086"; rms 0.035"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.605, W2-W3 2.066 (W3 S/N 72.7), W3-W4 2.138 (W4 S/N 35.1), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -475,7 +500,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types TT*,Y*O (Haro 5-8) | Gaia DR3 variability class YSO(0.21)
 - flags: 1.94 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.213 mag, one camera only) | largest seasonal optical dimming 0.15 mag (MJD 56645)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 21 visits, 223 points; baseline W1 10.00, W1-W2 0.597; onset between MJD 56729 and 56921
-- detector 2: excess 0.587 mag, z 13.7, jitter ratio 8.9
+- detector 2: excess 0.587 mag, z 14.2, jitter ratio 8.9
 - field control: target step +0.882 (W1 +0.749); neighbours N=106, median -0.001, robust sigma 0.019, max +0.164; z = 47.6
 - centroid: jump at onset 0.039" +- 0.022 (1.8 sigma, PA 46); largest consecutive-visit jump 0.073"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.479, W2-W3 1.806 (W3 S/N 44.5), W3-W4 2.063 (W4 S/N 24.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -483,21 +508,6 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - SIMBAD (10"): Haro 5-8 [TT*; *,Em*,NIR,TT*,V*,V*?,Y*O] 0.03" refs=39
 - ASAS-SN: 1458 points, cameras bC(g,157); bG(g,216); ba(V,49); bc(V,151, d=-0.213); be(V,38); bg(V,151); bk(g,310); bo(g,221); bs(g,165); change at onset (after-before, per-camera median) -0.213 mag; largest seasonal dimming 0.15 mag at MJD 56645
 - dust: excess flux W1 15.52 mJy, W2 17.38 mJy, T = 1143 K (16-84%: 1123-1162) 
-
-### uid1373972  [D2]  YOUNG
-- position 82.59108 +9.92732; Gaia DR3 3338223134220001152; G 15.12, BP-RP 2.19, plx 2.67 mas; plot `plots/uid1373972.png`
-- **young:** SIMBAD young-star types Y*O (2MASS J05302185+0955383)
-- flags: 1.79 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.34 mag (MJD 58024)
-- NEOWISE: score refetch 1.36 (stored 1.36, reproduced True); dW2 0.354, dW1 0.194, 20 visits, 224 points; baseline W1 9.33, W1-W2 0.585; onset between MJD 58377 and 58535
-- detector 2: excess 0.553 mag, z 12.9, jitter ratio 14.4
-- field control: target step +0.600 (W1 +0.493); neighbours N=88, median +0.000, robust sigma 0.015, max +0.155; z = 39.5
-- centroid: jump at onset 0.022" +- 0.021 (1.0 sigma, PA 114); largest consecutive-visit jump 0.057"; rms 0.030"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.601, W2-W3 2.175 (W3 S/N 67.6), W3-W4 2.538 (W4 S/N 41.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.18, ipd_frac_multi_peak 0, NSS none, Teff nan K, logg nan, H-alpha pEW -0.670 nm, varclass none; M_G 7.25, -1.79 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
-- SIMBAD (10"): 2MASS J05302185+0955383 [Y*O; *,MIR,NIR,Y*O,ev] 0.06" refs=8
-- ASAS-SN: 493 points, cameras bA(g,126); bE(g,58); ba(V,145); bi(g,71); bm(g,40); bq(g,53); change at onset (after-before, per-camera median) n/a mag; largest seasonal dimming 0.34 mag at MJD 58024
-- dust: excess flux W1 26.91 mJy, W2 39.23 mJy, T = 894 K (16-84%: 881-906) 
-- checks missing: ASAS-SN change at onset (no camera spans the onset)
 
 ### uid416674  [D2]  YOUNG
 - position 63.57807 +11.97018; Gaia DR3 3304172564776041728; G 12.10, BP-RP 1.51, plx 3.41 mas; plot `plots/uid416674.png`
@@ -518,7 +528,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (1RXS J054806.1+083523) | Gaia DR3 variability class YSO(0.41)
 - flags: 1.84 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 203 points; baseline W1 10.29, W1-W2 0.582; onset between MJD 56732 and 56924
-- detector 2: excess 0.599 mag, z 15.6, jitter ratio 17.1
+- detector 2: excess 0.600 mag, z 15.6, jitter ratio 17.1
 - field control: target step +0.575 (W1 +0.379); neighbours N=107, median +0.001, robust sigma 0.015, max +0.047; z = 38.7
 - centroid: jump at onset 0.032" +- 0.027 (1.2 sigma, PA 319); largest consecutive-visit jump 0.077"; rms 0.031"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.552, W2-W3 2.120 (W3 S/N 59.6), W3-W4 1.858 (W4 S/N 26.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -547,7 +557,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types TT*,Y*O ([W96]  4771-1051) | Gaia DR3 variability class YSO(0.35)
 - flags: 2.34 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.14 mag (MJD 56645)
 - NEOWISE: score refetch 1.01 (stored 1.01, reproduced True); dW2 0.193, dW1 0.120, 21 visits, 225 points; baseline W1 9.72, W1-W2 0.558; onset between MJD 57647 and 57812
-- detector 2: excess 0.602 mag, z 21.2, jitter ratio 10.4
+- detector 2: excess 0.603 mag, z 21.2, jitter ratio 10.4
 - field control: target step +0.511 (W1 +0.366); neighbours N=113, median -0.003, robust sigma 0.016, max +0.668; z = 33.0
 - centroid: jump at onset 0.016" +- 0.012 (1.4 sigma, PA 282); largest consecutive-visit jump 0.067"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.488, W2-W3 2.533 (W3 S/N 76.6), W3-W4 2.153 (W4 S/N 34.2), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -556,27 +566,12 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1231 points, cameras bC(g,157); bG(g,221); ba(V,51); bc(V,151, d=-0.061); be(V,38); bg(V,152, d=+4.470); bk(g,231); bo(g,159); bs(g,71); change at onset (after-before, per-camera median) +2.204 mag; largest seasonal dimming 0.14 mag at MJD 56645
 - dust: excess flux W1 10.86 mJy, W2 14.62 mJy, T = 956 K (16-84%: 930-982) 
 
-### uid835189  [D2]  YOUNG
-- position 78.18641 -1.09027; Gaia DR3 3215349651798096768; G 12.98, BP-RP 1.38, plx 3.02 mas; plot `plots/uid835189.png`
-- **young:** SIMBAD young-star types Y*? (UCAC4 445-008861)
-- flags: 1.41 mag above the main sequence at its colour
-- NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 18 visits, 210 points; baseline W1 10.15, W1-W2 0.187; onset between MJD 56720 and 56912
-- detector 2: excess 0.250 mag, z 12.8, jitter ratio 14.4
-- field control: target step +0.370 (W1 +0.233); neighbours N=56, median -0.002, robust sigma 0.012, max +0.050; z = 31.3
-- centroid: jump at onset 0.021" +- 0.032 (0.7 sigma, PA 316); largest consecutive-visit jump 0.080"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.113, W2-W3 0.929 (W3 S/N 32.5), W3-W4 3.568 (W4 S/N 25.9), ext_flg 0, ph_qual AAAA: weak W3 excess (0.5 < W2-W3 < 1.0)
-- Gaia: RUWE 1.25, ipd_frac_multi_peak 1, NSS none, Teff 4717 K, logg 4.17, H-alpha pEW -0.200 nm, varclass none; M_G 5.38, -1.41 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
-- SIMBAD (10"): UCAC4 445-008861 [Y*?; *,NIR,Y*?] 0.02" refs=5
-- ASAS-SN: 0 points, cameras n/a; change at onset (after-before, per-camera median) n/a mag; largest seasonal dimming n/a mag at MJD n/a
-- dust: excess flux W1 5.20 mJy, W2 5.28 mJy, T = 1282 K (16-84%: 1219-1350) 
-- checks missing: ASAS-SN (no source)
-
 ### uid1627666  [D2]  YOUNG
 - position 82.51589 +12.02268; Gaia DR3 3340882749767481216; G 14.34, BP-RP 2.00, plx 2.55 mas; plot `plots/uid1627666.png`
 - **young:** SIMBAD young-star types Or*,Y*O ([DM99] 113) | Gaia DR3 variability class YSO(0.34)
 - flags: 2.09 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.152 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.26 mag (MJD 57065)
 - NEOWISE: score refetch 1.04 (stored 1.04, reproduced True); dW2 0.294, dW1 0.385, 16 visits, 150 points; baseline W1 9.63, W1-W2 0.669; onset between MJD 58377 and 58534
-- detector 2: excess 0.663 mag, z 15.7, jitter ratio 11.4
+- detector 2: excess 0.663 mag, z 16.0, jitter ratio 11.4
 - field control: target step +0.482 (W1 +0.444); neighbours N=109, median -0.005, robust sigma 0.016, max +0.118; z = 29.9
 - centroid: jump at onset 0.043" +- 0.034 (1.3 sigma, PA 154); largest consecutive-visit jump 0.089"; rms 0.036"; toward neighbour: none; expected shift if a neighbour were the source: 4.3" G20.2: 1.53"
 - AllWISE 2010: W1-W2 0.599, W2-W3 1.999 (W3 S/N 64.4), W3-W4 1.692 (W4 S/N 26.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -604,7 +599,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* HS Ori) | Gaia DR3 variability class YSO(0.36)
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.20 mag (MJD 59251)
 - NEOWISE: score refetch 1.29 (stored 1.29, reproduced True); dW2 0.244, dW1 0.173, 20 visits, 183 points; baseline W1 10.52, W1-W2 0.830; onset between MJD 59108 and 59263
-- detector 2: excess 0.893 mag, z 44.7, jitter ratio 14.9
+- detector 2: excess 0.893 mag, z 43.0, jitter ratio 14.9
 - field control: target step +0.468 (W1 +0.418); neighbours N=90, median -0.001, robust sigma 0.016, max +0.231; z = 28.8
 - centroid: jump at onset 0.038" +- 0.028 (1.4 sigma, PA 73); largest consecutive-visit jump 0.083"; rms 0.041"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.892, W2-W3 2.341 (W3 S/N 50.2), W3-W4 1.994 (W4 S/N 26.2), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -632,7 +627,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (UCAC4 223-017496) | Gaia DR3 variability class YSO(0.16)
 - flags: 1.47 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.85 (stored 1.85, reproduced True); dW2 0.240, dW1 0.168, 21 visits, 311 points; baseline W1 10.22, W1-W2 0.293; onset between MJD 57143 and 57338
-- detector 2: excess 0.348 mag, z 14.8, jitter ratio 6.9
+- detector 2: excess 0.348 mag, z 14.0, jitter ratio 6.9
 - field control: target step +0.243 (W1 +0.193); neighbours N=144, median -0.006, robust sigma 0.009, max +0.051; z = 27.9
 - centroid: jump at onset 0.006" +- 0.012 (0.5 sigma, PA 141); largest consecutive-visit jump 0.026"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: 4.1" G20.6: 0.81"; 8.6" G16.2: 1.73"
 - AllWISE 2010: W1-W2 0.297, W2-W3 1.884 (W3 S/N 56.8), W3-W4 1.977 (W4 S/N 24.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -641,20 +636,6 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1390 points, cameras bE(g,423); be(V,231); bi(g,525); bm(g,211); change at onset (after-before, per-camera median) n/a mag; largest seasonal dimming 0.04 mag at MJD 60458
 - dust: excess flux W1 3.97 mJy, W2 4.15 mJy, T = 1236 K (16-84%: 1156-1327) 
 - checks missing: ASAS-SN change at onset (no camera spans the onset)
-
-### uid1870684  [D2]  YOUNG
-- position 84.82849 -2.51479; Gaia DR3 3216488814564157440; G 13.80, BP-RP 1.89, plx 2.44 mas; plot `plots/uid1870684.png`
-- **young:** SIMBAD young-star types TT*,Y*O (Haro 5-21) | Gaia DR3 variability class YSO(0.01)
-- flags: 2.42 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.19 mag (MJD 59291)
-- NEOWISE: score refetch 1.19 (stored 1.19, reproduced True); dW2 0.191, dW1 0.200, 21 visits, 224 points; baseline W1 9.81, W1-W2 0.486; onset between MJD 58536 and 58743
-- detector 2: excess 0.499 mag, z 12.8, jitter ratio 15.6
-- field control: target step +0.408 (W1 +0.390); neighbours N=118, median +0.001, robust sigma 0.015, max +0.119; z = 27.5
-- centroid: jump at onset 0.017" +- 0.017 (1.0 sigma, PA 66); largest consecutive-visit jump 0.049"; rms 0.031"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.390, W2-W3 1.630 (W3 S/N 54.9), W3-W4 1.924 (W4 S/N 20.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.09, ipd_frac_multi_peak 0, NSS none, Teff nan K, logg nan, H-alpha pEW -0.695 nm, varclass YSO(0.01); M_G 5.73, -2.42 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
-- SIMBAD (10"): Haro 5-21 [TT*; *,Em*,LM*,NIR,TT*,X,Y*O,ev] 0.03" refs=41
-- ASAS-SN: 1223 points, cameras bC(g,151, d=-0.015); bG(g,213, d=+0.460); bc(V,151); be(V,38); bg(V,153); bk(g,276, d=-0.131); bo(g,87, d=-0.023); bs(g,154, d=+0.488); change at onset (after-before, per-camera median) -0.015 mag; largest seasonal dimming 0.19 mag at MJD 59291
-- dust: excess flux W1 12.58 mJy, W2 11.37 mJy, T = 1503 K (16-84%: 1439-1573) 
 
 ### uid1159910  [D2]  YOUNG
 - position 79.80651 -3.40349; Gaia DR3 3213527348713890560; G 12.21, BP-RP 1.28, plx 2.80 mas; plot `plots/uid1159910.png`
@@ -675,7 +656,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (Gaia DR3 5512928765979700352)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | Gaia ipd_frac_multi_peak 41% (resolved double?) | 1.92 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.93 (stored 1.93, reproduced True); dW2 0.278, dW1 0.248, 21 visits, 478 points; baseline W1 9.54, W1-W2 0.332; onset between MJD 57156 and 57349
-- detector 2: excess 0.380 mag, z 14.0, jitter ratio 13.9
+- detector 2: excess 0.381 mag, z 14.0, jitter ratio 13.9
 - field control: target step +0.188 (W1 +0.309); neighbours N=131, median -0.003, robust sigma 0.007, max +0.021; z = 25.8
 - centroid: jump at onset 0.007" +- 0.013 (0.5 sigma, PA 257); largest consecutive-visit jump 0.044"; rms 0.021"; toward neighbour: none; expected shift if a neighbour were the source: 1.0" G16.6: 0.17"; 8.2" G20.2: 1.31"
 - AllWISE 2010: W1-W2 0.353, W2-W3 2.117 (W3 S/N 68.3), W3-W4 1.842 (W4 S/N 40.7), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -690,7 +671,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (Haro 5-17)
 - flags: 1.79 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.11 mag (MJD 58484)
 - NEOWISE: score refetch 3.34 (stored 3.34, reproduced True); dW2 0.397, dW1 0.418, 20 visits, 207 points; baseline W1 9.32, W1-W2 0.547; onset between MJD 57283 and 57448
-- detector 2: excess 0.604 mag, z 26.6, jitter ratio 11.6
+- detector 2: excess 0.604 mag, z 26.0, jitter ratio 11.6
 - field control: target step +0.432 (W1 +0.340); neighbours N=96, median -0.005, robust sigma 0.017, max +0.056; z = 25.1
 - centroid: jump at onset 0.014" +- 0.023 (0.6 sigma, PA 198); largest consecutive-visit jump 0.068"; rms 0.034"; toward neighbour: 5.5" PA201 G21.0 (angle 3 deg); expected shift if a neighbour were the source: 5.5" G21.0: 1.81"
 - AllWISE 2010: W1-W2 0.613, W2-W3 2.419 (W3 S/N 73.4), W3-W4 1.859 (W4 S/N 42.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -718,7 +699,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* V534 Ori) | Gaia DR3 variability class YSO(0.49)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.63 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.168 mag (per-camera -0.092,-0.168,-0.177,-0.037,-0.192) together with the infrared rise | largest seasonal optical dimming 0.22 mag (MJD 57647)
 - NEOWISE: score refetch 1.82 (stored 1.82, reproduced True); dW2 0.315, dW1 0.242, 20 visits, 209 points; baseline W1 8.66, W1-W2 0.638; onset between MJD 58895 and 59102
-- detector 2: excess 0.701 mag, z 36.4, jitter ratio 13.3
+- detector 2: excess 0.701 mag, z 34.9, jitter ratio 13.3
 - field control: target step +0.325 (W1 +0.307); neighbours N=52, median -0.005, robust sigma 0.013, max +0.229; z = 24.7
 - centroid: jump at onset 0.035" +- 0.026 (1.3 sigma, PA 104); largest consecutive-visit jump 0.084"; rms 0.037"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.672, W2-W3 2.033 (W3 S/N 68.4), W3-W4 1.706 (W4 S/N 36.9), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -732,7 +713,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*? (UCAC4 813-029498) | Gaia DR3 variability class YSO(0.55)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.29 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.286 mag (per-camera -0.309,-0.263) together with the infrared rise | largest seasonal optical dimming 0.36 mag (MJD 58266)
 - NEOWISE: score refetch 4.97 (stored 4.97, reproduced True); dW2 0.659, dW1 0.453, 21 visits, 394 points; baseline W1 10.58, W1-W2 0.619; onset between MJD 58336 and 58494
-- detector 2: excess 0.614 mag, z 14.5, jitter ratio 13.1
+- detector 2: excess 0.614 mag, z 14.8, jitter ratio 13.1
 - field control: target step +0.267 (W1 +0.120); neighbours N=79, median -0.003, robust sigma 0.011, max +0.023; z = 24.3
 - centroid: jump at onset 0.044" +- 0.021 (2.1 sigma, PA 135); largest consecutive-visit jump 0.071"; rms 0.035"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.607, W2-W3 2.277 (W3 S/N 65.5), W3-W4 1.792 (W4 S/N 30.0), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -746,7 +727,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (IRAS 05231-0701)
 - flags: 1.67 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.074 mag (per-camera -0.074,-0.074) together with the infrared rise | largest seasonal optical dimming 0.16 mag (MJD 56904)
 - NEOWISE: score refetch 1.82 (stored 1.82, reproduced True); dW2 0.307, dW1 0.257, 19 visits, 188 points; baseline W1 8.24, W1-W2 0.430; onset between MJD 57444 and 57643
-- detector 2: excess 0.479 mag, z 35.7, jitter ratio 13.9
+- detector 2: excess 0.479 mag, z 32.3, jitter ratio 13.9
 - field control: target step +0.266 (W1 +0.282); neighbours N=49, median -0.005, robust sigma 0.011, max +0.024; z = 24.3
 - centroid: jump at onset 0.027" +- 0.015 (1.8 sigma, PA 71); largest consecutive-visit jump 0.052"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.407, W2-W3 1.883 (W3 S/N 68.0), W3-W4 3.187 (W4 S/N 56.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -760,7 +741,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*?,Y*O (V* V1416 Ori) | Gaia DR3 variability class YSO(0.25)
 - flags: 1.61 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.042 mag (per-camera -0.042,-0.005,-0.055,-0.032,-0.065) together with the infrared rise
 - NEOWISE: score refetch 1.89 (stored 1.90, reproduced True); dW2 0.328, dW1 0.168, 21 visits, 192 points; baseline W1 10.73, W1-W2 0.526; onset between MJD 58535 and 58741
-- detector 2: excess 0.550 mag, z 15.5, jitter ratio 17.1
+- detector 2: excess 0.551 mag, z 15.5, jitter ratio 17.1
 - field control: target step +0.393 (W1 +0.126); neighbours N=103, median +0.000, robust sigma 0.016, max +0.193; z = 24.1
 - centroid: jump at onset 0.028" +- 0.029 (1.0 sigma, PA 215); largest consecutive-visit jump 0.073"; rms 0.039"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.607, W2-W3 2.800 (W3 S/N 48.0), W3-W4 1.623 (W4 S/N 30.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -774,7 +755,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* V2715 Ori) | Gaia DR3 variability class YSO(0.65)
 - flags: 1.80 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.13 (stored 0.14, reproduced True); dW2 0.021, dW1 0.030, 21 visits, 206 points; baseline W1 9.52, W1-W2 0.302; onset between MJD 60205 and 60362
-- detector 2: excess 0.365 mag, z 18.6, jitter ratio 15.1
+- detector 2: excess 0.365 mag, z 17.6, jitter ratio 15.1
 - field control: target step +0.288 (W1 +0.246); neighbours N=68, median -0.002, robust sigma 0.013, max +0.324; z = 22.4
 - centroid: jump at onset 0.017" +- 0.025 (0.7 sigma, PA 290); largest consecutive-visit jump 0.055"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.321, W2-W3 2.314 (W3 S/N 66.3), W3-W4 2.813 (W4 S/N 41.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -789,7 +770,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (TYC 4467-324-1) | Gaia DR3 variability class YSO(0.20)
 - flags: 2.40 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.033 mag (per-camera -0.043,-0.024) together with the infrared rise
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 22 visits, 413 points; baseline W1 8.35, W1-W2 0.550; onset between MJD 59584 and 59791
-- detector 2: excess 0.607 mag, z 37.2, jitter ratio 7.3
+- detector 2: excess 0.607 mag, z 34.8, jitter ratio 7.3
 - field control: target step +0.167 (W1 +0.102); neighbours N=119, median +0.004, robust sigma 0.007, max +0.039; z = 22.0
 - centroid: jump at onset 0.014" +- 0.015 (0.9 sigma, PA 338); largest consecutive-visit jump 0.058"; rms 0.025"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.497, W2-W3 2.472 (W3 S/N 79.2), W3-W4 1.931 (W4 S/N 63.2), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -803,7 +784,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (PEP 12)
 - flags: 2.06 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 21 visits, 205 points; baseline W1 9.32, W1-W2 0.447; onset between MJD 57806 and 58005
-- detector 2: excess 0.481 mag, z 15.0, jitter ratio 5.9
+- detector 2: excess 0.482 mag, z 15.1, jitter ratio 5.9
 - field control: target step +0.230 (W1 +0.226); neighbours N=68, median -0.008, robust sigma 0.011, max +0.085; z = 20.7
 - centroid: jump at onset 0.008" +- 0.015 (0.5 sigma, PA 251); largest consecutive-visit jump 0.063"; rms 0.029"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.428, W2-W3 1.881 (W3 S/N 63.4), W3-W4 2.305 (W4 S/N 40.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -826,26 +807,12 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 2587 points, cameras bB(g,88); bC(g,177); bF(g,205); bG(g,210); ba(V,35); bb(V,155, d=-0.026); bc(V,115, d=-0.033); be(V,40); bg(V,187, d=-0.134); bj(g,270); bk(g,297); bn(g,239); bo(g,237); br(g,170); bs(g,162); change at onset (after-before, per-camera median) -0.033 mag; largest seasonal dimming 0.11 mag at MJD 60341
 - dust: excess flux W1 6.78 mJy, W2 5.92 mJy, T = 1591 K (16-84%: 1425-1803) 
 
-### uid1689905  [D2]  YOUNG
-- position 84.21611 -5.14330; Gaia DR3 3017395090173068800; G 14.33, BP-RP 1.87, plx 2.52 mas; plot `plots/uid1689905.png`
-- **young:** SIMBAD young-star types Or*,TT*,TT?,Y*O (V* V852 Ori)
-- flags: 1.75 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.124 mag (per-camera -0.171,-0.144,-0.112,-0.124,-0.118) together with the infrared rise | largest seasonal optical dimming 0.11 mag (MJD 58873)
-- NEOWISE: score refetch 0.85 (stored 0.85, reproduced True); dW2 0.139, dW1 0.134, 19 visits, 199 points; baseline W1 9.93, W1-W2 0.468; onset between MJD 58900 and 59109
-- detector 2: excess 0.485 mag, z 12.7, jitter ratio 14.3
-- field control: target step +0.314 (W1 +0.398); neighbours N=100, median -0.003, robust sigma 0.016, max +0.197; z = 20.3
-- centroid: jump at onset 0.006" +- 0.019 (0.3 sigma, PA 116); largest consecutive-visit jump 0.076"; rms 0.032"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.563, W2-W3 1.201 (W3 S/N 27.9), W3-W4 1.427 (W4 S/N 11.5), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.08, ipd_frac_multi_peak 0, NSS none, Teff 5554 K, logg 4.23, H-alpha pEW -0.615 nm, varclass none; M_G 6.34, -1.75 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
-- SIMBAD (10"): V* V852 Ori [TT*; *,Em*,Er*,MIR,NIR,Or*,Rad,TT*,TT?,V*,Y*O] 0.02" refs=47
-- ASAS-SN: 1494 points, cameras bA(g,152, d=-0.171); bE(g,220, d=-0.144); ba(V,179); be(V,195); bi(g,340, d=-0.112); bm(g,238, d=-0.124); bq(g,170, d=-0.118); change at onset (after-before, per-camera median) -0.124 mag; largest seasonal dimming 0.11 mag at MJD 58873
-- dust: excess flux W1 7.45 mJy, W2 7.04 mJy, T = 1410 K (16-84%: 1331-1499) 
-
 ### uid1284783  [D2]  YOUNG
 - position 84.61071 -2.20486; Gaia DR3 3216517706809394560; G 15.39, BP-RP 1.86, plx 2.72 mas; plot `plots/uid1284783.png`
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* V2730 Ori) | Gaia DR3 variability class YSO(0.53)
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-1.124 mag, one camera only) | largest seasonal optical dimming 0.55 mag (MJD 57022)
 - NEOWISE: score refetch 2.22 (stored 2.22, reproduced True); dW2 0.328, dW1 0.133, 21 visits, 218 points; baseline W1 10.33, W1-W2 0.513; onset between MJD 57089 and 57283
-- detector 2: excess 0.531 mag, z 14.1, jitter ratio 13.9
+- detector 2: excess 0.532 mag, z 14.1, jitter ratio 13.9
 - field control: target step +0.295 (W1 +0.139); neighbours N=104, median -0.004, robust sigma 0.016, max +0.201; z = 19.2
 - centroid: jump at onset 0.024" +- 0.016 (1.5 sigma, PA 355); largest consecutive-visit jump 0.058"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.873, W2-W3 1.900 (W3 S/N 58.4), W3-W4 1.487 (W4 S/N 13.5), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -872,7 +839,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (WRAY 15-218) | Gaia DR3 variability class YSO(0.03)
 - flags: 1.09 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.20 mag (MJD 60439)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 18 visits, 159 points; baseline W1 9.17, W1-W2 0.487; onset between MJD 56980 and 57148
-- detector 2: excess 0.549 mag, z 26.5, jitter ratio 13.7
+- detector 2: excess 0.549 mag, z 26.4, jitter ratio 13.7
 - field control: target step +0.213 (W1 +0.233); neighbours N=188, median -0.005, robust sigma 0.011, max +0.028; z = 19.0
 - centroid: jump at onset 0.012" +- 0.013 (1.0 sigma, PA 357); largest consecutive-visit jump 0.059"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: 3.1" G20.5: 0.55"; 6.1" G17.7: 1.09"; 7.2" G18.3: 1.28"; 8.0" G19.4: 1.42"; 8.2" G17.3: 1.46"
 - AllWISE 2010: W1-W2 0.563, W2-W3 1.994 (W3 S/N 76.8), W3-W4 1.711 (W4 S/N 42.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -882,12 +849,26 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - dust: excess flux W1 8.82 mJy, W2 9.58 mJy, T = 1183 K (16-84%: 1056-1339) 
 - checks missing: ASAS-SN change at onset (no camera spans the onset)
 
+### uid1959195  [D2]  YOUNG
+- position 84.27603 +0.14864; Gaia DR3 3222331207036336000; G 13.27, BP-RP 1.49, plx 2.41 mas; plot `plots/uid1959195.png`
+- **young:** SIMBAD young-star types TT*,Y*?,Y*O (Kiso A-0904  52)
+- flags: 1.88 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.10 mag (MJD 60316)
+- NEOWISE: score refetch 0.61 (stored 0.61, reproduced True); dW2 0.100, dW1 0.060, 21 visits, 214 points; baseline W1 9.59, W1-W2 0.344; onset between MJD 57088 and 57283
+- detector 2: excess 0.404 mag, z 18.2, jitter ratio 14.3
+- field control: target step +0.205 (W1 +0.192); neighbours N=75, median -0.005, robust sigma 0.011, max +0.089; z = 18.8
+- centroid: jump at onset 0.016" +- 0.021 (0.8 sigma, PA 342); largest consecutive-visit jump 0.045"; rms 0.034"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.380, W2-W3 1.882 (W3 S/N 57.4), W3-W4 2.434 (W4 S/N 35.2), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.02, ipd_frac_multi_peak 0, NSS none, Teff nan K, logg nan, H-alpha pEW -0.771 nm, varclass RS(0.54); M_G 5.18, -1.88 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
+- SIMBAD (10"): Kiso A-0904  52 [TT*; *,Em*,NIR,TT*,Y*?,Y*O] 0.01" refs=11
+- ASAS-SN: 1919 points, cameras bA(g,161); bC(g,151); bE(g,178); ba(V,259, d=+0.023); bc(V,151, d=+0.026); be(V,94, d=+0.011); bi(g,286); bm(g,212); bo(g,163); bq(g,131); bs(g,133); change at onset (after-before, per-camera median) +0.023 mag; largest seasonal dimming 0.10 mag at MJD 60316
+- dust: excess flux W1 5.18 mJy, W2 5.92 mJy, T = 1120 K (16-84%: 1037-1213) 
+
 ### uid1374460  [D2]  YOUNG
 - position 83.85204 -6.02956; Gaia DR3 3017184808564584192; G 15.97, BP-RP 1.83, plx 2.67 mas; plot `plots/uid1374460.png`
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* NS Ori)
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.25 mag (MJD 57044)
 - NEOWISE: score refetch 3.00 (stored 3.00, reproduced True); dW2 0.564, dW1 0.465, 19 visits, 172 points; baseline W1 11.21, W1-W2 0.566; onset between MJD 57088 and 57447
-- detector 2: excess 0.589 mag, z 16.4, jitter ratio 9.6
+- detector 2: excess 0.590 mag, z 16.5, jitter ratio 9.6
 - field control: target step +0.374 (W1 +0.340); neighbours N=150, median -0.008, robust sigma 0.020, max +0.370; z = 18.7
 - centroid: jump at onset 0.013" +- 0.021 (0.6 sigma, PA 331); largest consecutive-visit jump 0.062"; rms 0.033"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.584, W2-W3 2.260 (W3 S/N 12.2), W3-W4 2.433 (W4 S/N 17.5), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -915,7 +896,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O ([DM99] 214) | Gaia DR3 variability class YSO(0.68)
 - flags: 1.69 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.055 mag, one camera only)
 - NEOWISE: score refetch 4.23 (stored 4.23, reproduced True); dW2 0.314, dW1 0.279, 21 visits, 204 points; baseline W1 10.29, W1-W2 0.319; onset between MJD 57284 and 57449
-- detector 2: excess 0.374 mag, z 15.7, jitter ratio 7.2
+- detector 2: excess 0.374 mag, z 14.8, jitter ratio 7.2
 - field control: target step +0.169 (W1 +0.138); neighbours N=92, median -0.002, robust sigma 0.009, max +0.049; z = 18.4
 - centroid: jump at onset 0.012" +- 0.011 (1.0 sigma, PA 69); largest consecutive-visit jump 0.059"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: 9.2" G16.8: 1.33"
 - AllWISE 2010: W1-W2 0.314, W2-W3 2.369 (W3 S/N 58.3), W3-W4 2.624 (W4 S/N 41.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -971,7 +952,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* V573 Ori)
 - flags: 0.81 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.58 mag (MJD 60012)
 - NEOWISE: score refetch 3.24 (stored 3.24, reproduced True); dW2 0.650, dW1 0.668, 20 visits, 198 points; baseline W1 10.26, W1-W2 0.602; onset between MJD 58535 and 58742
-- detector 2: excess 0.653 mag, z 25.0, jitter ratio 18.3
+- detector 2: excess 0.654 mag, z 24.8, jitter ratio 18.3
 - field control: target step +0.388 (W1 +0.323); neighbours N=113, median -0.003, robust sigma 0.021, max +0.793; z = 18.2
 - centroid: jump at onset 0.011" +- 0.018 (0.6 sigma, PA 135); largest consecutive-visit jump 0.066"; rms 0.029"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.558, W2-W3 1.424 (W3 S/N 10.4), W3-W4 2.116 (W4 S/N 7.9), ext_flg 0, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -985,7 +966,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (Haro 4-260) | Gaia DR3 variability class YSO(0.12)
 - flags: 1.49 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.078 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.34 mag (MJD 57621)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 16 visits, 194 points; baseline W1 9.19, W1-W2 0.524; onset between MJD 56918 and 57086
-- detector 2: excess 0.537 mag, z 13.7, jitter ratio 17.6
+- detector 2: excess 0.538 mag, z 13.7, jitter ratio 17.6
 - field control: target step +0.234 (W1 +0.246); neighbours N=54, median -0.001, robust sigma 0.013, max +0.076; z = 17.6
 - centroid: jump at onset 0.038" +- 0.017 (2.2 sigma, PA 265); largest consecutive-visit jump 0.038"; rms 0.025"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.566, W2-W3 1.919 (W3 S/N 65.2), W3-W4 2.150 (W4 S/N 37.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -999,7 +980,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (Brun 141; Gaia DR3 3017214873335520896) | Gaia DR3 variability class YSO(0.55)
 - flags: 2.07 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.62 (stored 0.62, reproduced True); dW2 0.092, dW1 0.062, 21 visits, 202 points; baseline W1 8.51, W1-W2 0.328; onset between MJD 59630 and 59837
-- detector 2: excess 0.386 mag, z 23.6, jitter ratio 10.7
+- detector 2: excess 0.385 mag, z 21.8, jitter ratio 10.7
 - field control: target step +0.272 (W1 +0.190); neighbours N=86, median +0.001, robust sigma 0.016, max +0.292; z = 17.4
 - centroid: jump at onset 0.002" +- 0.020 (0.1 sigma, PA 44); largest consecutive-visit jump 0.085"; rms 0.038"; toward neighbour: none; expected shift if a neighbour were the source: 3.8" G15.4: 0.84"
 - AllWISE 2010: W1-W2 0.338, W2-W3 2.268 (W3 S/N 66.6), W3-W4 2.056 (W4 S/N 42.6), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1027,7 +1008,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (V* BH Ori)
 - flags: 2.22 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.38 mag (MJD 59858)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 21 visits, 242 points; baseline W1 9.03, W1-W2 0.345; onset between MJD 56730 and 56921
-- detector 2: excess 0.402 mag, z 17.5, jitter ratio 9.2
+- detector 2: excess 0.402 mag, z 16.9, jitter ratio 9.2
 - field control: target step +0.286 (W1 +0.315); neighbours N=67, median +0.003, robust sigma 0.016, max +0.062; z = 17.4
 - centroid: jump at onset 0.018" +- 0.017 (1.0 sigma, PA 322); largest consecutive-visit jump 0.039"; rms 0.023"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.347, W2-W3 1.971 (W3 S/N 68.0), W3-W4 2.754 (W4 S/N 40.4), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1042,7 +1023,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (UCAC4 516-012684)
 - flags: 0.86 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.53 (stored 1.53, reproduced True); dW2 0.138, dW1 0.152, 20 visits, 170 points; baseline W1 10.89, W1-W2 0.756; onset between MJD 57281 and 57446
-- detector 2: excess 0.748 mag, z 17.5, jitter ratio 7.6
+- detector 2: excess 0.748 mag, z 18.0, jitter ratio 7.6
 - field control: target step +0.191 (W1 +0.156); neighbours N=86, median -0.001, robust sigma 0.011, max +0.026; z = 17.3
 - centroid: jump at onset 0.012" +- 0.020 (0.6 sigma, PA 281); largest consecutive-visit jump 0.048"; rms 0.037"; toward neighbour: none; expected shift if a neighbour were the source: 6.6" G21.0: 1.06"; 7.3" G17.6: 1.18"
 - AllWISE 2010: W1-W2 0.706, W2-W3 1.344 (W3 S/N 38.0), W3-W4 1.147 (W4 S/N 7.1), ext_flg 0, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1056,7 +1037,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or* (V* V531 Ori) | Gaia DR3 variability class YSO(0.68)
 - flags: 1.88 mag above the main sequence at its colour | optical dimming +0.113 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.26 mag (MJD 59281)
 - NEOWISE: score refetch 1.50 (stored 1.50, reproduced True); dW2 0.215, dW1 0.161, 21 visits, 220 points; baseline W1 8.61, W1-W2 0.391; onset between MJD 57640 and 57805
-- detector 2: excess 0.454 mag, z 23.6, jitter ratio 12.7
+- detector 2: excess 0.454 mag, z 23.3, jitter ratio 12.7
 - field control: target step +0.246 (W1 +0.178); neighbours N=53, median -0.004, robust sigma 0.015, max +0.349; z = 16.9
 - centroid: jump at onset 0.012" +- 0.018 (0.7 sigma, PA 115); largest consecutive-visit jump 0.042"; rms 0.025"; toward neighbour: 5.8" PA139 G20.3 (angle 24 deg); expected shift if a neighbour were the source: 5.8" G20.3: 1.19"
 - AllWISE 2010: W1-W2 0.405, W2-W3 0.780 (W3 S/N 64.1), W3-W4 2.808 (W4 S/N 35.5), ext_flg 0, ph_qual AAAA: weak W3 excess (0.5 < W2-W3 < 1.0)
@@ -1065,12 +1046,27 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1444 points, cameras bC(g,183); bG(g,213); bc(V,119, d=+0.131); be(V,40); bg(V,187, d=+0.094); bk(g,299); bo(g,241); bs(g,162); change at onset (after-before, per-camera median) +0.113 mag; largest seasonal dimming 0.26 mag at MJD 59281
 - dust: excess flux W1 21.46 mJy, W2 21.49 mJy, T = 1304 K (16-84%: 1230-1388) 
 
+### uid2074984  [D2]  YOUNG
+- position 85.32719 -7.43925; Gaia DR3 3016017333372618240; G 15.09, BP-RP 1.84, plx 2.36 mas; plot `plots/uid2074984.png`
+- **young:** SIMBAD young-star types Y*?,Y*O (Haro 4-485)
+- flags: 1.07 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.23 mag (MJD 59167)
+- NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 21 visits, 227 points; baseline W1 10.03, W1-W2 0.576; onset between MJD 56922 and 57089
+- detector 2: excess 0.598 mag, z 16.4, jitter ratio 10.3
+- field control: target step +0.162 (W1 +0.172); neighbours N=64, median -0.007, robust sigma 0.010, max +0.058; z = 16.3
+- centroid: jump at onset 0.026" +- 0.017 (1.5 sigma, PA 73); largest consecutive-visit jump 0.063"; rms 0.038"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.578, W2-W3 2.370 (W3 S/N 58.2), W3-W4 1.882 (W4 S/N 30.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.19, ipd_frac_multi_peak 0, NSS none, Teff 3825 K, logg 4.23, H-alpha pEW -2.386 nm, varclass none; M_G 6.96, -1.07 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
+- SIMBAD (10"): Haro 4-485 [Y*O; *,Em*,MIR,NIR,Y*?,Y*O] 0.01" refs=21
+- ASAS-SN: 981 points, cameras bB(g,93); bF(g,180); ba(V,28); bb(V,125); bf(V,139); bj(g,241); bn(g,23); br(g,152); change at onset (after-before, per-camera median) n/a mag; largest seasonal dimming 0.23 mag at MJD 59167
+- dust: excess flux W1 4.47 mJy, W2 3.81 mJy, T = 1650 K (16-84%: 1420-2001) 
+- checks missing: ASAS-SN change at onset (no camera spans the onset)
+
 ### uid1694582  [D2]  YOUNG
 - position 84.81338 +9.83455; Gaia DR3 3336450446597891584; G 11.55, BP-RP 1.08, plx 2.52 mas; plot `plots/uid1694582.png`
 - **young:** SIMBAD young-star types Y*O (SS  30)
 - flags: 2.26 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.016 mag (per-camera -0.011,-0.020) together with the infrared rise
 - NEOWISE: score refetch 0.61 (stored 0.61, reproduced True); dW2 0.055, dW1 0.071, 21 visits, 215 points; baseline W1 8.63, W1-W2 0.326; onset between MJD 58379 and 58537
-- detector 2: excess 0.381 mag, z 23.4, jitter ratio 7.9
+- detector 2: excess 0.381 mag, z 23.2, jitter ratio 7.9
 - field control: target step +0.233 (W1 +0.236); neighbours N=94, median +0.000, robust sigma 0.014, max +0.052; z = 16.1
 - centroid: jump at onset 0.005" +- 0.018 (0.3 sigma, PA 61); largest consecutive-visit jump 0.041"; rms 0.028"; toward neighbour: 3.1" PA92 G19.1 (angle 32 deg); expected shift if a neighbour were the source: 2.1" G18.5: 0.41"; 3.1" G19.1: 0.61"; 8.7" G17.6: 1.68"
 - AllWISE 2010: W1-W2 0.297, W2-W3 2.295 (W3 S/N 69.9), W3-W4 2.179 (W4 S/N 46.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1084,7 +1080,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (EM* LkHA  334) | Gaia DR3 variability class YSO(0.69)
 - flags: 2.33 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.25 mag (MJD 59133)
 - NEOWISE: score refetch 3.76 (stored 3.76, reproduced True); dW2 0.224, dW1 0.240, 21 visits, 211 points; baseline W1 8.27, W1-W2 0.562; onset between MJD 57287 and 57452
-- detector 2: excess 0.595 mag, z 18.3, jitter ratio 5.2
+- detector 2: excess 0.596 mag, z 18.3, jitter ratio 5.2
 - field control: target step +0.187 (W1 +0.144); neighbours N=96, median -0.002, robust sigma 0.012, max +0.123; z = 15.9
 - centroid: jump at onset 0.008" +- 0.018 (0.4 sigma, PA 294); largest consecutive-visit jump 0.045"; rms 0.039"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.619, W2-W3 1.849 (W3 S/N 77.1), W3-W4 1.734 (W4 S/N 44.2), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1099,7 +1095,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*O (IRAS 05497+0102) | Gaia DR3 variability class YSO(0.76)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 2.56 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.43 (stored 0.43, reproduced True); dW2 0.074, dW1 0.090, 12 visits, 173 points; baseline W1 8.37, W1-W2 0.487; onset between MJD 58539 and 58904
-- detector 2: excess 0.539 mag, z 21.2, jitter ratio 13.1
+- detector 2: excess 0.540 mag, z 20.7, jitter ratio 13.1
 - field control: target step +0.195 (W1 +0.215); neighbours N=97, median -0.002, robust sigma 0.013, max +0.042; z = 15.6
 - centroid: jump at onset 0.025" +- 0.025 (1.0 sigma, PA 249); largest consecutive-visit jump 0.058"; rms 0.025"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.487, W2-W3 1.837 (W3 S/N 63.1), W3-W4 3.204 (W4 S/N 50.8), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1113,7 +1109,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*?,Y*O (Kiso A-0903 176) | Gaia DR3 variability class YSO(0.57)
 - flags: 1.07 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.04 (stored 1.04, reproduced True); dW2 0.134, dW1 0.128, 20 visits, 240 points; baseline W1 9.51, W1-W2 0.532; onset between MJD 58167 and 58376
-- detector 2: excess 0.574 mag, z 19.5, jitter ratio 7.6
+- detector 2: excess 0.575 mag, z 19.6, jitter ratio 7.6
 - field control: target step +0.184 (W1 +0.131); neighbours N=81, median -0.007, robust sigma 0.013, max +0.123; z = 15.1
 - centroid: jump at onset 0.006" +- 0.017 (0.4 sigma, PA 213); largest consecutive-visit jump 0.053"; rms 0.024"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.539, W2-W3 1.888 (W3 S/N 61.6), W3-W4 2.095 (W4 S/N 40.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1128,7 +1124,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (2MASS J08082235-4710594) | Gaia DR3 variability class YSO(0.50)
 - flags: 1.27 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.17 mag (MJD 58084)
 - NEOWISE: score refetch 0.80 (stored 0.80, reproduced True); dW2 0.111, dW1 0.184, 18 visits, 236 points; baseline W1 9.45, W1-W2 0.573; onset between MJD 59695 and 59904
-- detector 2: excess 0.605 mag, z 18.6, jitter ratio 7.5
+- detector 2: excess 0.606 mag, z 18.7, jitter ratio 7.5
 - field control: target step +0.214 (W1 +0.192); neighbours N=182, median +0.003, robust sigma 0.014, max +0.071; z = 15.0
 - centroid: jump at onset 0.007" +- 0.022 (0.3 sigma, PA 326); largest consecutive-visit jump 0.078"; rms 0.031"; toward neighbour: none; expected shift if a neighbour were the source: 2.8" G18.1: 0.50"
 - AllWISE 2010: W1-W2 0.546, W2-W3 1.183 (W3 S/N 64.3), W3-W4 2.061 (W4 S/N 34.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1156,7 +1152,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types TT*,Y*O (Haro 5-38)
 - flags: 2.90 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.034 mag (per-camera -0.027,-0.037,-0.036,-0.034,-0.004) together with the infrared rise
 - NEOWISE: score refetch 1.66 (stored 1.67, reproduced True); dW2 0.312, dW1 0.268, 20 visits, 199 points; baseline W1 8.77, W1-W2 0.554; onset between MJD 59110 and 59265
-- detector 2: excess 0.591 mag, z 18.7, jitter ratio 15.1
+- detector 2: excess 0.592 mag, z 18.8, jitter ratio 15.1
 - field control: target step +0.277 (W1 +0.214); neighbours N=112, median -0.001, robust sigma 0.019, max +0.053; z = 14.7
 - centroid: jump at onset 0.023" +- 0.020 (1.1 sigma, PA 164); largest consecutive-visit jump 0.074"; rms 0.032"; toward neighbour: none; expected shift if a neighbour were the source: 9.1" G20.9: 2.04"
 - AllWISE 2010: W1-W2 0.521, W2-W3 1.746 (W3 S/N 63.0), W3-W4 1.700 (W4 S/N 39.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1165,26 +1161,26 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1403 points, cameras bC(g,159, d=-0.027); bG(g,223, d=-0.037); bc(V,151); be(V,38); bg(V,153); bk(g,305, d=-0.036); bo(g,215, d=-0.034); bs(g,159, d=-0.004); change at onset (after-before, per-camera median) -0.034 mag; largest seasonal dimming 0.05 mag at MJD 58729
 - dust: excess flux W1 21.98 mJy, W2 26.29 mJy, T = 1067 K (16-84%: 1022-1116) 
 
-### uid984249  [D2]  YOUNG
-- position 81.04666 +3.58933; Gaia DR3 3236174230229658240; G 13.83, BP-RP 1.67, plx 2.91 mas; plot `plots/uid984249.png`
-- **young:** SIMBAD young-star types TT*,Y*O (CVSO 662)
-- flags: centroid jump 0.042" (3.1 sigma, PA 280) not toward a Gaia neighbour | 1.40 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.32 mag (MJD 58709)
-- NEOWISE: score refetch 1.83 (stored 1.83, reproduced True); dW2 0.223, dW1 0.287, 20 visits, 220 points; baseline W1 10.14, W1-W2 0.312; onset between MJD 57085 and 57280
-- detector 2: excess 0.358 mag, z 12.8, jitter ratio 11.5
-- field control: target step +0.165 (W1 +0.187); neighbours N=57, median -0.005, robust sigma 0.012, max +0.019; z = 14.3
-- centroid: jump at onset 0.042" +- 0.013 (3.1 sigma, PA 280); largest consecutive-visit jump 0.028"; rms 0.023"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.276, W2-W3 1.841 (W3 S/N 52.7), W3-W4 2.161 (W4 S/N 27.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.18, ipd_frac_multi_peak 1, NSS none, Teff 4449 K, logg 4.13, H-alpha pEW -0.092 nm, varclass none; M_G 6.15, -1.40 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
-- SIMBAD (10"): CVSO 662 [TT*; *,MIR,NIR,TT*,Y*O] 0.02" refs=19
-- ASAS-SN: 1238 points, cameras bA(g,167); bE(g,179); ba(V,210, d=+0.007); be(V,56); bi(g,286); bm(g,209); bq(g,131); change at onset (after-before, per-camera median) +0.007 mag; largest seasonal dimming 0.32 mag at MJD 58709
-- dust: excess flux W1 5.55 mJy, W2 4.55 mJy, T = 1772 K (16-84%: 1550-2079) 
+### uid1911695  [D2]  YOUNG
+- position 85.49918 +0.59084; Gaia DR3 3219454845962435328; G 12.51, BP-RP 1.35, plx 2.42 mas; plot `plots/uid1911695.png`
+- **young:** SIMBAD young-star types Y*?,Y*O (2MASS J05415980+0035270)
+- flags: 2.28 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.066 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.57 mag (MJD 58152)
+- NEOWISE: score refetch 0.76 (stored 0.76, reproduced True); dW2 0.104, dW1 0.065, 20 visits, 232 points; baseline W1 8.70, W1-W2 0.357; onset between MJD 57449 and 57648
+- detector 2: excess 0.420 mag, z 20.9, jitter ratio 7.9
+- field control: target step +0.170 (W1 +0.138); neighbours N=75, median -0.003, robust sigma 0.012, max +0.031; z = 14.5
+- centroid: jump at onset 0.016" +- 0.012 (1.4 sigma, PA 112); largest consecutive-visit jump 0.048"; rms 0.027"; toward neighbour: 1.8" PA121 G19.6 (angle 10 deg); expected shift if a neighbour were the source: 1.8" G19.6: 0.26"
+- AllWISE 2010: W1-W2 0.363, W2-W3 1.835 (W3 S/N 67.5), W3-W4 1.842 (W4 S/N 40.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.14, ipd_frac_multi_peak 0, NSS none, Teff 5394 K, logg 3.79, H-alpha pEW -0.247 nm, varclass none; M_G 4.43, -2.28 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 1.8" PA121 G19.61 dG+7.10
+- SIMBAD (10"): 2MASS J05415980+0035270 [Y*O; *,NIR,Y*?,Y*O] 0.02" refs=14
+- ASAS-SN: 1014 points, cameras bB(g,99); bF(g,151); bb(V,181, d=+0.066); bj(g,197); bn(g,133); br(g,177); cB(g,76); change at onset (after-before, per-camera median) +0.066 mag; largest seasonal dimming 0.57 mag at MJD 58152
+- dust: excess flux W1 8.54 mJy, W2 11.35 mJy, T = 967 K (16-84%: 880-1069) 
 
 ### uid1604479  [D2]  YOUNG
 - position 83.85466 -6.79903; Gaia DR3 3016548431848965888; G 13.94, BP-RP 1.53, plx 2.56 mas; plot `plots/uid1604479.png`
 - **young:** SIMBAD young-star types Or*,Y*O (V* NT Ori) | Gaia DR3 variability class YSO(0.43)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.20 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.48 mag (MJD 59514)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 196 points; baseline W1 9.04, W1-W2 0.613; onset between MJD 58377 and 58535
-- detector 2: excess 0.671 mag, z 29.9, jitter ratio 22.2
+- detector 2: excess 0.671 mag, z 29.7, jitter ratio 22.2
 - field control: target step +0.254 (W1 +0.281); neighbours N=95, median -0.007, robust sigma 0.019, max +0.138; z = 14.1
 - centroid: jump at onset 0.025" +- 0.017 (1.5 sigma, PA 154); largest consecutive-visit jump 0.069"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.563, W2-W3 1.663 (W3 S/N 57.8), W3-W4 1.923 (W4 S/N 26.9), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1212,7 +1208,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* V543 Ori) | Gaia DR3 variability class YSO(0.24)
 - flags: 1.74 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.26 mag (MJD 58885)
 - NEOWISE: score refetch 0.98 (stored 0.98, reproduced True); dW2 0.155, dW1 0.127, 20 visits, 211 points; baseline W1 9.53, W1-W2 0.420; onset between MJD 59263 and 59473
-- detector 2: excess 0.457 mag, z 14.5, jitter ratio 15.8
+- detector 2: excess 0.458 mag, z 14.6, jitter ratio 15.8
 - field control: target step +0.186 (W1 +0.119); neighbours N=77, median -0.003, robust sigma 0.014, max +0.053; z = 13.4
 - centroid: jump at onset 0.004" +- 0.013 (0.3 sigma, PA 88); largest consecutive-visit jump 0.063"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.380, W2-W3 1.873 (W3 S/N 59.9), W3-W4 2.123 (W4 S/N 27.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1226,7 +1222,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (2MASS J22131219+7332585) | Gaia DR3 variability class YSO(0.81)
 - flags: 1.97 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.16 mag (MJD 60438)
 - NEOWISE: score refetch 0.01 (stored 0.01, reproduced True); dW2 0.002, dW1 0.003, 10 visits, 100 points; baseline W1 8.75, W1-W2 0.446; onset between MJD 60165 and 60324
-- detector 2: excess 0.484 mag, z 15.5, jitter ratio 13.0
+- detector 2: excess 0.485 mag, z 15.6, jitter ratio 13.0
 - field control: target step +0.199 (W1 +0.234); neighbours N=84, median +0.007, robust sigma 0.014, max +0.053; z = 13.3
 - centroid: jump at onset 0.147" +- 0.224 (0.7 sigma, PA 176); largest consecutive-visit jump 0.137"; rms 0.101"; toward neighbour: none; expected shift if a neighbour were the source: 1.8" G17.8: 0.31"; 2.5" G18.6: 0.41"
 - AllWISE 2010: W1-W2 0.412, W2-W3 1.853 (W3 S/N 68.4), W3-W4 2.190 (W4 S/N 42.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1240,7 +1236,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* AW Ori) | Gaia DR3 variability class YSO(0.45)
 - flags: 1.65 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +1.028 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 1.41 mag (MJD 60406)
 - NEOWISE: score refetch 3.04 (stored 3.04, reproduced True); dW2 0.267, dW1 0.078, 20 visits, 182 points; baseline W1 9.37, W1-W2 0.450; onset between MJD 59473 and 59631
-- detector 2: excess 0.495 mag, z 17.6, jitter ratio 8.4
+- detector 2: excess 0.496 mag, z 17.6, jitter ratio 8.4
 - field control: target step +0.215 (W1 -0.060); neighbours N=123, median +0.003, robust sigma 0.016, max +0.565; z = 13.0
 - centroid: jump at onset 0.026" +- 0.016 (1.6 sigma, PA 276); largest consecutive-visit jump 0.030"; rms 0.029"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.506, W2-W3 1.730 (W3 S/N 54.1), W3-W4 1.840 (W4 S/N 29.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1249,12 +1245,26 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1155 points, cameras bA(g,130, d=+1.447); bE(g,166, d=+1.147); ba(V,163); be(V,194); bi(g,195, d=+0.725); bm(g,169); bq(g,138, d=+0.909); change at onset (after-before, per-camera median) +1.028 mag; largest seasonal dimming 1.41 mag at MJD 60406
 - dust: excess flux W1 10.22 mJy, W2 15.02 mJy, T = 888 K (16-84%: 840-944) 
 
+### uid1988767  [D2]  YOUNG
+- position 84.68362 -11.23644; Gaia DR3 3010160441090944128; G 11.10, BP-RP 0.86, plx 2.39 mas; plot `plots/uid1988767.png`
+- **young:** SIMBAD young-star types Y*O (IRAS 05363-1115)
+- flags: 1.80 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- NEOWISE: score refetch 0.99 (stored 0.99, reproduced True); dW2 0.148, dW1 0.120, 21 visits, 220 points; baseline W1 8.93, W1-W2 0.488; onset between MJD 57447 and 57647
+- detector 2: excess 0.530 mag, z 46.1, jitter ratio 11.8
+- field control: target step +0.189 (W1 +0.207); neighbours N=45, median -0.003, robust sigma 0.015, max +0.025; z = 13.0
+- centroid: jump at onset 0.013" +- 0.018 (0.7 sigma, PA 47); largest consecutive-visit jump 0.072"; rms 0.032"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.503, W2-W3 2.667 (W3 S/N 72.1), W3-W4 1.831 (W4 S/N 53.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.13, ipd_frac_multi_peak 0, NSS none, Teff 5846 K, logg 3.75, H-alpha pEW 0.032 nm, varclass none; M_G 3.00, -1.80 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
+- SIMBAD (10"): IRAS 05363-1115 [Y*O; *,IR,NIR,Y*O] 0.02" refs=2
+- ASAS-SN: 1494 points, cameras bC(g,124); bG(g,256); ba(V,27); bc(V,112, d=+0.029); be(V,35); bg(V,214, d=+0.028); bk(g,339); bo(g,263); bs(g,124); change at onset (after-before, per-camera median) +0.028 mag; largest seasonal dimming 0.04 mag at MJD 60311
+- dust: excess flux W1 13.60 mJy, W2 11.49 mJy, T = 1681 K (16-84%: 1520-1888) 
+
 ### uid1078155  [D2]  YOUNG
 - position 329.63689 +80.33781; Gaia DR3 2285488987399269376; G 13.20, BP-RP 1.56, plx 2.85 mas; plot `plots/uid1078155.png`
 - **young:** SIMBAD young-star types Y*? (UCAC4 852-015443) | Gaia DR3 variability class YSO(0.56)
 - flags: centroid jump 0.065" (4.4 sigma, PA 130) not toward a Gaia neighbour | AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.77 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.062 mag, one camera only)
 - NEOWISE: score refetch 0.55 (stored 0.55, reproduced True); dW2 0.083, dW1 0.082, 11 visits, 115 points; baseline W1 9.11, W1-W2 0.334; onset between MJD 59453 and 59612
-- detector 2: excess 0.390 mag, z 16.8, jitter ratio 14.1
+- detector 2: excess 0.390 mag, z 16.1, jitter ratio 14.1
 - field control: target step +0.127 (W1 +0.121); neighbours N=43, median +0.003, robust sigma 0.010, max +0.038; z = 12.8
 - centroid: jump at onset 0.065" +- 0.015 (4.4 sigma, PA 130); largest consecutive-visit jump 0.075"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.343, W2-W3 1.564 (W3 S/N 63.7), W3-W4 2.195 (W4 S/N 39.2), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1268,7 +1278,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*O (UCAC4 414-008437) | Gaia DR3 variability class YSO(0.14)
 - flags: 1.43 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.20 mag (MJD 59828)
 - NEOWISE: score refetch 0.37 (stored 0.37, reproduced True); dW2 0.034, dW1 0.006, 10 visits, 129 points; baseline W1 9.62, W1-W2 0.409; onset between MJD 57642 and 58006
-- detector 2: excess 0.462 mag, z 18.6, jitter ratio 7.9
+- detector 2: excess 0.463 mag, z 18.0, jitter ratio 7.9
 - field control: target step +0.108 (W1 +0.044); neighbours N=39, median -0.007, robust sigma 0.009, max +0.019; z = 12.8
 - centroid: jump at onset 0.014" +- 0.024 (0.6 sigma, PA 277); largest consecutive-visit jump 0.038"; rms 0.021"; toward neighbour: none; expected shift if a neighbour were the source: 9.8" G17.3: 0.92"
 - AllWISE 2010: W1-W2 0.466, W2-W3 1.548 (W3 S/N 53.6), W3-W4 1.448 (W4 S/N 17.6), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1282,7 +1292,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O ([DM99] 249)
 - flags: 2.24 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.08 (stored 1.08, reproduced True); dW2 0.173, dW1 0.198, 20 visits, 214 points; baseline W1 9.26, W1-W2 0.535; onset between MJD 58902 and 59111
-- detector 2: excess 0.566 mag, z 17.3, jitter ratio 12.1
+- detector 2: excess 0.567 mag, z 17.3, jitter ratio 12.1
 - field control: target step +0.184 (W1 +0.263); neighbours N=127, median -0.006, robust sigma 0.015, max +0.582; z = 12.8
 - centroid: jump at onset 0.007" +- 0.020 (0.3 sigma, PA 80); largest consecutive-visit jump 0.088"; rms 0.030"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.628, W2-W3 1.316 (W3 S/N 51.0), W3-W4 1.162 (W4 S/N 13.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1297,7 +1307,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (Kiso A-0905   2)
 - flags: 1.08 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.26 mag (MJD 58598)
 - NEOWISE: score refetch 1.00 (stored 1.00, reproduced True); dW2 0.171, dW1 0.245, 20 visits, 193 points; baseline W1 10.91, W1-W2 0.655; onset between MJD 57451 and 57651
-- detector 2: excess 0.646 mag, z 15.1, jitter ratio 14.6
+- detector 2: excess 0.646 mag, z 15.6, jitter ratio 14.6
 - field control: target step +0.154 (W1 +0.183); neighbours N=101, median -0.005, robust sigma 0.013, max +0.036; z = 12.7
 - centroid: jump at onset 0.041" +- 0.024 (1.7 sigma, PA 13); largest consecutive-visit jump 0.100"; rms 0.036"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.651, W2-W3 2.854 (W3 S/N 56.3), W3-W4 1.975 (W4 S/N 31.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1311,7 +1321,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* V448 Ori)
 - flags: 1.89 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.38 (stored 0.38, reproduced True); dW2 0.107, dW1 0.096, 18 visits, 156 points; baseline W1 9.94, W1-W2 0.618; onset between MJD 57282 and 57446
-- detector 2: excess 0.648 mag, z 19.5, jitter ratio 26.4
+- detector 2: excess 0.649 mag, z 19.6, jitter ratio 26.4
 - field control: target step +0.188 (W1 +0.165); neighbours N=113, median -0.005, robust sigma 0.016, max +0.121; z = 12.3
 - centroid: jump at onset 0.031" +- 0.019 (1.6 sigma, PA 187); largest consecutive-visit jump 0.071"; rms 0.029"; toward neighbour: none; expected shift if a neighbour were the source: 7.4" G20.9: 1.18"
 - AllWISE 2010: W1-W2 0.484, W2-W3 2.175 (W3 S/N 36.1), W3-W4 1.657 (W4 S/N 18.2), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1325,7 +1335,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (Gaia DR3 5518967386922303616) | Gaia DR3 variability class YSO(0.78)
 - flags: 1.89 mag above the main sequence at its colour | largest seasonal optical dimming 0.30 mag (MJD 57448)
 - NEOWISE: score refetch 1.16 (stored 1.16, reproduced True); dW2 0.171, dW1 0.140, 21 visits, 316 points; baseline W1 8.40, W1-W2 0.474; onset between MJD 58436 and 58593
-- detector 2: excess 0.537 mag, z 27.5, jitter ratio 14.0
+- detector 2: excess 0.537 mag, z 25.9, jitter ratio 14.0
 - field control: target step +0.113 (W1 +0.053); neighbours N=147, median -0.003, robust sigma 0.010, max +0.044; z = 12.1
 - centroid: jump at onset 0.011" +- 0.021 (0.5 sigma, PA 188); largest consecutive-visit jump 0.069"; rms 0.026"; toward neighbour: 9.3" PA195 G19.6 (angle 6 deg); expected shift if a neighbour were the source: 7.2" G17.9: 0.71"; 9.3" G19.6: 0.92"
 - AllWISE 2010: W1-W2 0.469, W2-W3 0.936 (W3 S/N 67.8), W3-W4 2.121 (W4 S/N 40.4), ext_flg 0, ph_qual AAAA: weak W3 excess (0.5 < W2-W3 < 1.0)
@@ -1339,7 +1349,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (Haro 5-34) | Gaia DR3 variability class YSO(0.34)
 - flags: 2.33 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.12 (stored 1.12, reproduced True); dW2 0.146, dW1 0.067, 21 visits, 223 points; baseline W1 9.43, W1-W2 0.486; onset between MJD 58536 and 58743
-- detector 2: excess 0.519 mag, z 16.1, jitter ratio 6.5
+- detector 2: excess 0.520 mag, z 16.1, jitter ratio 6.5
 - field control: target step +0.141 (W1 +0.141); neighbours N=81, median -0.002, robust sigma 0.012, max +0.119; z = 12.1
 - centroid: jump at onset 0.017" +- 0.019 (0.9 sigma, PA 103); largest consecutive-visit jump 0.051"; rms 0.034"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.470, W2-W3 2.375 (W3 S/N 71.9), W3-W4 1.530 (W4 S/N 35.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1354,7 +1364,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* V561 Ori)
 - flags: centroid jump 0.123" (4.2 sigma, PA 92) not toward a Gaia neighbour | in the Gaia DR3 QSO candidate table (low purity) | AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.35 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.21 mag (MJD 58180)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 194 points; baseline W1 9.63, W1-W2 0.593; onset between MJD 58742 and 58899
-- detector 2: excess 0.595 mag, z 14.5, jitter ratio 12.4
+- detector 2: excess 0.596 mag, z 14.6, jitter ratio 12.4
 - field control: target step +0.133 (W1 +0.100); neighbours N=114, median -0.004, robust sigma 0.011, max +0.075; z = 11.9
 - centroid: jump at onset 0.123" +- 0.029 (4.2 sigma, PA 92); largest consecutive-visit jump 0.165"; rms 0.049"; toward neighbour: none; expected shift if a neighbour were the source: 8.5" G14.6: 0.98"
 - AllWISE 2010: W1-W2 0.604, W2-W3 2.404 (W3 S/N 56.8), W3-W4 2.014 (W4 S/N 33.3), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1368,7 +1378,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (Haro 4-487)
 - flags: 1.82 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.61 (stored 0.61, reproduced True); dW2 0.060, dW1 0.073, 21 visits, 268 points; baseline W1 10.22, W1-W2 0.544; onset between MJD 57648 and 57813
-- detector 2: excess 0.583 mag, z 18.9, jitter ratio 9.7
+- detector 2: excess 0.584 mag, z 18.9, jitter ratio 9.7
 - field control: target step +0.143 (W1 +0.037); neighbours N=61, median -0.004, robust sigma 0.013, max +0.024; z = 11.7
 - centroid: jump at onset 0.015" +- 0.014 (1.1 sigma, PA 245); largest consecutive-visit jump 0.057"; rms 0.031"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.510, W2-W3 2.483 (W3 S/N 61.0), W3-W4 1.911 (W4 S/N 31.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1383,7 +1393,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*?,Y*O (V* V1165 Ori)
 - flags: 1.19 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.201 mag (per-camera -0.183,-0.229,-0.205,-0.197) together with the infrared rise | largest seasonal optical dimming 0.22 mag (MJD 59187)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 21 visits, 217 points; baseline W1 10.42, W1-W2 0.334; onset between MJD 59994 and 60204
-- detector 2: excess 0.386 mag, z 15.0, jitter ratio 10.5
+- detector 2: excess 0.386 mag, z 14.8, jitter ratio 10.5
 - field control: target step +0.179 (W1 +0.135); neighbours N=71, median -0.002, robust sigma 0.016, max +0.062; z = 11.6
 - centroid: jump at onset 0.014" +- 0.021 (0.7 sigma, PA 117); largest consecutive-visit jump 0.056"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.352, W2-W3 2.218 (W3 S/N 49.2), W3-W4 1.984 (W4 S/N 23.4), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1397,7 +1407,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types TT*,Y*O (Kiso A-0903  80) | Gaia DR3 variability class YSO(0.55)
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.201 mag, one camera only) | largest seasonal optical dimming 0.24 mag (MJD 59262)
 - NEOWISE: score refetch 1.20 (stored 1.20, reproduced True); dW2 0.155, dW1 0.130, 20 visits, 174 points; baseline W1 10.13, W1-W2 0.407; onset between MJD 57085 and 57279
-- detector 2: excess 0.446 mag, z 14.6, jitter ratio 12.5
+- detector 2: excess 0.447 mag, z 14.7, jitter ratio 12.5
 - field control: target step +0.161 (W1 +0.146); neighbours N=58, median -0.007, robust sigma 0.014, max +0.109; z = 11.6
 - centroid: jump at onset 0.029" +- 0.017 (1.7 sigma, PA 41); largest consecutive-visit jump 0.033"; rms 0.029"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.440, W2-W3 1.446 (W3 S/N 48.3), W3-W4 1.942 (W4 S/N 17.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1406,26 +1416,12 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1112 points, cameras bB(g,84); bF(g,152); bb(V,297, d=-0.201); bf(V,55); bj(g,198); bn(g,204); br(g,122); change at onset (after-before, per-camera median) -0.201 mag; largest seasonal dimming 0.24 mag at MJD 59262
 - dust: excess flux W1 3.87 mJy, W2 3.49 mJy, T = 1507 K (16-84%: 1352-1706) 
 
-### uid880869  [D2]  YOUNG
-- position 83.10743 -0.61483; Gaia DR3 3220694442244758784; G 14.16, BP-RP 1.80, plx 2.98 mas; plot `plots/uid880869.png`
-- **young:** SIMBAD young-star types Or*,TT*,Y*O (Kiso A-0904   4) | Gaia DR3 variability class YSO(0.60)
-- flags: 1.35 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.068 mag (per-camera -0.195,-0.009,-0.102,-0.017,-0.068) together with the infrared rise | largest seasonal optical dimming 0.18 mag (MJD 57824)
-- NEOWISE: score refetch 0.88 (stored 0.88, reproduced True); dW2 0.144, dW1 0.062, 21 visits, 213 points; baseline W1 9.78, W1-W2 0.399; onset between MJD 58741 and 58899
-- detector 2: excess 0.428 mag, z 12.6, jitter ratio 14.0
-- field control: target step +0.167 (W1 +0.104); neighbours N=106, median -0.002, robust sigma 0.015, max +0.061; z = 11.4
-- centroid: jump at onset 0.031" +- 0.015 (2.0 sigma, PA 244); largest consecutive-visit jump 0.062"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.448, W2-W3 2.010 (W3 S/N 51.5), W3-W4 2.291 (W4 S/N 26.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.16, ipd_frac_multi_peak 0, NSS none, Teff 5784 K, logg 4.31, H-alpha pEW -2.604 nm, varclass YSO(0.60); M_G 6.54, -1.35 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
-- SIMBAD (10"): Kiso A-0904   4 [TT*; *,Em*,NIR,Opt,Or*,TT*,V*,Y*O] 0.03" refs=42
-- ASAS-SN: 1300 points, cameras bC(g,148, d=-0.195); bG(g,222, d=-0.009); ba(V,51); bc(V,151); be(V,38); bg(V,146); bk(g,257, d=-0.102); bo(g,154, d=-0.017); bs(g,133, d=-0.068); change at onset (after-before, per-camera median) -0.068 mag; largest seasonal dimming 0.18 mag at MJD 57824
-- dust: excess flux W1 3.95 mJy, W2 4.17 mJy, T = 1224 K (16-84%: 1095-1379) 
-
 ### uid909402  [D2]  YOUNG
 - position 83.83334 -0.28097; Gaia DR3 3220792887190091136; G 15.81, BP-RP 2.01, plx 2.96 mas; plot `plots/uid909402.png`
 - **young:** SIMBAD young-star types TT*,Y*O (2MASS J05352000-0016514)
 - flags: in the Gaia DR3 QSO candidate table (low purity) | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.33 mag (MJD 58084)
 - NEOWISE: score refetch 0.45 (stored 0.45, reproduced True); dW2 0.048, dW1 0.032, 20 visits, 215 points; baseline W1 11.25, W1-W2 0.605; onset between MJD 57282 and 57447
-- detector 2: excess 0.598 mag, z 14.0, jitter ratio 8.0
+- detector 2: excess 0.598 mag, z 14.4, jitter ratio 8.0
 - field control: target step +0.128 (W1 +0.121); neighbours N=87, median -0.007, robust sigma 0.012, max +0.113; z = 11.4
 - centroid: jump at onset 0.028" +- 0.016 (1.8 sigma, PA 344); largest consecutive-visit jump 0.072"; rms 0.036"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.580, W2-W3 2.260 (W3 S/N 43.4), W3-W4 2.141 (W4 S/N 18.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1439,7 +1435,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (Haro 5-71)
 - flags: 1.82 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.14 mag (MJD 58194)
 - NEOWISE: score refetch 1.37 (stored 1.37, reproduced True); dW2 0.083, dW1 0.062, 21 visits, 214 points; baseline W1 8.91, W1-W2 0.364; onset between MJD 57088 and 57282
-- detector 2: excess 0.418 mag, z 17.2, jitter ratio 5.8
+- detector 2: excess 0.418 mag, z 16.4, jitter ratio 5.8
 - field control: target step +0.122 (W1 +0.083); neighbours N=94, median -0.003, robust sigma 0.011, max +0.093; z = 11.3
 - centroid: jump at onset 0.024" +- 0.013 (1.9 sigma, PA 61); largest consecutive-visit jump 0.029"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.341, W2-W3 2.086 (W3 S/N 57.3), W3-W4 2.253 (W4 S/N 36.5), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1453,7 +1449,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* V505 Ori)
 - flags: 1.59 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.210 mag (per-camera -0.132,-0.289) together with the infrared rise | largest seasonal optical dimming 0.28 mag (MJD 60520)
 - NEOWISE: score refetch 0.44 (stored 0.43, reproduced True); dW2 0.058, dW1 0.037, 21 visits, 230 points; baseline W1 8.82, W1-W2 0.627; onset between MJD 57448 and 57647
-- detector 2: excess 0.644 mag, z 16.8, jitter ratio 13.0
+- detector 2: excess 0.645 mag, z 16.8, jitter ratio 13.0
 - field control: target step +0.159 (W1 +0.161); neighbours N=113, median -0.003, robust sigma 0.015, max +0.686; z = 10.9
 - centroid: jump at onset 0.004" +- 0.017 (0.3 sigma, PA 337); largest consecutive-visit jump 0.054"; rms 0.025"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.559, W2-W3 1.817 (W3 S/N 63.2), W3-W4 2.025 (W4 S/N 36.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1461,20 +1457,6 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - SIMBAD (10"): V* V505 Ori [TT*; *,Em*,NIR,Or*,TT*,V*,Y*O] 0.02" refs=65; WBIS J053826.8-024514.0 [LM*; LM*,NIR] 7.70" refs=1
 - ASAS-SN: 1449 points, cameras bC(g,151); bG(g,218); ba(V,50); bc(V,150, d=-0.132); be(V,38); bg(V,150, d=-0.289); bk(g,311); bo(g,223); bs(g,158); change at onset (after-before, per-camera median) -0.210 mag; largest seasonal dimming 0.28 mag at MJD 60520
 - dust: excess flux W1 15.30 mJy, W2 12.98 mJy, T = 1667 K (16-84%: 1394-2078) 
-
-### uid991402  [D2]  YOUNG
-- position 340.91377 +75.10840; Gaia DR3 2231524617408985472; G 12.83, BP-RP 1.50, plx 2.91 mas; plot `plots/uid991402.png`
-- **young:** SIMBAD young-star types Or*,Y*O (GSC 04601-03483; Gaia DR3 2231524617408985728) | Gaia DR3 variability class YSO(0.43)
-- flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.95 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- NEOWISE: score refetch 0.98 (stored 0.98, reproduced True); dW2 0.210, dW1 0.151, 21 visits, 512 points; baseline W1 9.25, W1-W2 0.231; onset between MJD 57250 and 57417
-- detector 2: excess 0.290 mag, z 13.1, jitter ratio 17.0
-- field control: target step +0.097 (W1 +0.104); neighbours N=114, median -0.002, robust sigma 0.009, max +0.104; z = 10.7
-- centroid: jump at onset 0.110" +- 0.045 (2.4 sigma, PA 234); largest consecutive-visit jump 0.079"; rms 0.102"; toward neighbour: none; expected shift if a neighbour were the source: 5.0" G16.7: 0.43"; 5.5" G19.7: 0.47"
-- AllWISE 2010: W1-W2 0.283, W2-W3 2.317 (W3 S/N 75.1), W3-W4 2.665 (W4 S/N 43.0), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.31, ipd_frac_multi_peak 0, NSS none, Teff 4827 K, logg 4.11, H-alpha pEW -0.228 nm, varclass YSO(0.43); M_G 5.15, -1.95 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 5.0" PA65 G16.66 dG+3.83; 5.5" PA175 G19.67 dG+6.84
-- SIMBAD (10"): GSC 04601-03483 [Or*; *,IR,NIR,Or*,Y*O] 0.11" refs=13; Gaia DR3 2231524617408985728 [Y*O; *,Y*O] 4.94" refs=3
-- ASAS-SN: 533 points, cameras bB(g,119); bb(V,163, d=-0.000); br(g,251); change at onset (after-before, per-camera median) -0.000 mag; largest seasonal dimming 0.05 mag at MJD 58028
-- dust: excess flux W1 9.22 mJy, W2 8.35 mJy, T = 1499 K (16-84%: 1372-1654) 
 
 ### uid1616401  [D2]  YOUNG
 - position 83.25932 -5.44034; Gaia DR3 3209420947662499712; G 11.93, BP-RP 1.21, plx 2.55 mas; plot `plots/uid1616401.png`
@@ -1495,7 +1477,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* CH Ori)
 - flags: 1.52 mag above the main sequence at its colour | not plain dust: optical brightening -0.087 mag (per-camera -0.094,-0.081) together with the infrared rise | largest seasonal optical dimming 0.21 mag (MJD 56892)
 - NEOWISE: score refetch 1.48 (stored 1.48, reproduced True); dW2 0.232, dW1 0.169, 20 visits, 187 points; baseline W1 9.77, W1-W2 0.538; onset between MJD 57282 and 57447
-- detector 2: excess 0.554 mag, z 14.4, jitter ratio 12.6
+- detector 2: excess 0.555 mag, z 14.4, jitter ratio 12.6
 - field control: target step +0.217 (W1 +0.216); neighbours N=124, median -0.007, robust sigma 0.021, max +0.574; z = 10.4
 - centroid: jump at onset 0.027" +- 0.023 (1.2 sigma, PA 291); largest consecutive-visit jump 0.095"; rms 0.039"; toward neighbour: none; expected shift if a neighbour were the source: 8.5" G16.9: 1.54"
 - AllWISE 2010: W1-W2 0.505, W2-W3 1.729 (W3 S/N 2.0), W3-W4 2.159 (W4 S/N 2.6), ext_flg 0, ph_qual AAUC: W3 S/N < 5: no W2-W3 class; W1-W2 > 0.25
@@ -1509,7 +1491,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*?,Y*O (V* AU Ori)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.20 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.35 mag (MJD 60565)
 - NEOWISE: score refetch 0.52 (stored 0.52, reproduced True); dW2 0.047, dW1 0.067, 18 visits, 183 points; baseline W1 10.21, W1-W2 0.470; onset between MJD 59473 and 59631
-- detector 2: excess 0.501 mag, z 15.2, jitter ratio 6.8
+- detector 2: excess 0.502 mag, z 15.2, jitter ratio 6.8
 - field control: target step +0.221 (W1 +0.198); neighbours N=140, median +0.002, robust sigma 0.021, max +0.396; z = 10.2
 - centroid: jump at onset 0.032" +- 0.022 (1.4 sigma, PA 309); largest consecutive-visit jump 0.080"; rms 0.034"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.498, W2-W3 2.466 (W3 S/N 56.6), W3-W4 2.412 (W4 S/N 38.7), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1538,7 +1520,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (UCAC4 427-010287)
 - flags: 1.24 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 2.68 (stored 2.68, reproduced True); dW2 0.257, dW1 0.313, 20 visits, 215 points; baseline W1 10.78, W1-W2 0.505; onset between MJD 57448 and 57647
-- detector 2: excess 0.547 mag, z 18.7, jitter ratio 9.2
+- detector 2: excess 0.548 mag, z 18.7, jitter ratio 9.2
 - field control: target step +0.138 (W1 +0.236); neighbours N=58, median -0.003, robust sigma 0.014, max +0.574; z = 10.0
 - centroid: jump at onset 0.019" +- 0.018 (1.1 sigma, PA 334); largest consecutive-visit jump 0.058"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: 9.6" G17.6: 1.15"
 - AllWISE 2010: W1-W2 0.550, W2-W3 2.508 (W3 S/N 51.1), W3-W4 1.739 (W4 S/N 13.6), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1553,7 +1535,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* V449 Ori)
 - flags: 1.56 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.17 mag (MJD 59324)
 - NEOWISE: score refetch 0.34 (stored 0.34, reproduced True); dW2 0.055, dW1 0.048, 19 visits, 183 points; baseline W1 9.32, W1-W2 0.702; onset between MJD 57646 and 57811
-- detector 2: excess 0.724 mag, z 19.9, jitter ratio 14.8
+- detector 2: excess 0.725 mag, z 19.9, jitter ratio 14.8
 - field control: target step +0.106 (W1 +0.036); neighbours N=88, median -0.003, robust sigma 0.011, max +0.058; z = 9.8
 - centroid: jump at onset 0.014" +- 0.025 (0.5 sigma, PA 161); largest consecutive-visit jump 0.071"; rms 0.039"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.675, W2-W3 2.214 (W3 S/N 63.1), W3-W4 1.894 (W4 S/N 37.4), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1596,7 +1578,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (2MASS J05335048+1054491) | Gaia DR3 variability class YSO(0.23)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.54 mag above the main sequence at its colour
 - NEOWISE: score refetch 0.39 (stored 0.39, reproduced True); dW2 0.053, dW1 0.044, 20 visits, 223 points; baseline W1 10.66, W1-W2 0.313; onset between MJD 57646 and 57811
-- detector 2: excess 0.365 mag, z 14.2, jitter ratio 12.0
+- detector 2: excess 0.365 mag, z 13.9, jitter ratio 12.0
 - field control: target step +0.111 (W1 +0.126); neighbours N=95, median -0.007, robust sigma 0.013, max +0.034; z = 9.4
 - centroid: jump at onset 0.159" +- 0.064 (2.5 sigma, PA 23); largest consecutive-visit jump 0.349"; rms 0.116"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.320, W2-W3 0.810 (W3 S/N 22.7), W3-W4 1.734 (W4 S/N 5.7), ext_flg 1, ph_qual AAAB: weak W3 excess (0.5 < W2-W3 < 1.0)
@@ -1624,7 +1606,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* HH Ori)
 - flags: 3.33 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.151 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 1.04 mag (MJD 57804)
 - NEOWISE: score refetch 1.22 (stored 1.22, reproduced True); dW2 0.170, dW1 0.185, 18 visits, 187 points; baseline W1 8.49, W1-W2 0.763; onset between MJD 57280 and 57445
-- detector 2: excess 0.818 mag, z 34.1, jitter ratio 5.8
+- detector 2: excess 0.818 mag, z 32.3, jitter ratio 5.8
 - field control: target step +0.122 (W1 +0.154); neighbours N=72, median -0.004, robust sigma 0.014, max +0.067; z = 9.2
 - centroid: jump at onset 0.027" +- 0.019 (1.4 sigma, PA 232); largest consecutive-visit jump 0.053"; rms 0.034"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.789, W2-W3 2.984 (W3 S/N 74.3), W3-W4 1.623 (W4 S/N 59.6), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1638,7 +1620,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* V2664 Ori) | Gaia DR3 variability class YSO(0.53)
 - flags: centroid jump 0.052" (4.5 sigma, PA 19) not toward a Gaia neighbour | Gaia ipd_frac_multi_peak 52% (resolved double?) | 1.67 mag above the main sequence at its colour
 - NEOWISE: score refetch 2.94 (stored 2.94, reproduced True); dW2 0.119, dW1 0.133, 19 visits, 187 points; baseline W1 10.08, W1-W2 0.364; onset between MJD 57646 and 57811
-- detector 2: excess 0.415 mag, z 15.9, jitter ratio 3.9
+- detector 2: excess 0.416 mag, z 15.8, jitter ratio 3.9
 - field control: target step +0.157 (W1 +0.234); neighbours N=106, median -0.002, robust sigma 0.017, max +0.264; z = 9.2
 - centroid: jump at onset 0.052" +- 0.012 (4.5 sigma, PA 19); largest consecutive-visit jump 0.049"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.371, W2-W3 0.655 (W3 S/N 0.5), W3-W4 2.409 (W4 S/N 1.3), ext_flg 0, ph_qual AAUU: W3 S/N < 5: no W2-W3 class; W1-W2 > 0.25
@@ -1646,20 +1628,6 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - SIMBAD (10"): V* V2664 Ori [TT*; *,MIR,NIR,Or*,TT*,V*,Y*O] 0.02" refs=34
 - ASAS-SN: 1470 points, cameras bA(g,155); bE(g,218); ba(V,179, d=+0.029); be(V,195, d=-0.017); bi(g,321); bm(g,239); bq(g,163); change at onset (after-before, per-camera median) +0.006 mag; largest seasonal dimming 0.06 mag at MJD 57707
 - dust: excess flux W1 4.88 mJy, W2 3.00 mJy, T = 4463 K (16-84%: 3166-8000) 
-
-### uid1549324  [D2]  YOUNG
-- position 83.10680 +12.60979; Gaia DR3 3341024964724305152; G 13.93, BP-RP 1.71, plx 2.58 mas; plot `plots/uid1549324.png`
-- **young:** SIMBAD young-star types Or*,Y*O (Haro 6-65) | Gaia DR3 variability class YSO(0.42)
-- flags: 1.67 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.104 mag, one camera only) | largest seasonal optical dimming 0.22 mag (MJD 60044)
-- NEOWISE: score refetch 0.90 (stored 0.90, reproduced True); dW2 0.075, dW1 0.060, 18 visits, 160 points; baseline W1 9.84, W1-W2 0.346; onset between MJD 57282 and 57447
-- detector 2: excess 0.386 mag, z 12.8, jitter ratio 7.6
-- field control: target step +0.159 (W1 +0.160); neighbours N=105, median -0.006, robust sigma 0.019, max +0.129; z = 8.9
-- centroid: jump at onset 0.022" +- 0.016 (1.4 sigma, PA 157); largest consecutive-visit jump 0.068"; rms 0.030"; toward neighbour: none; expected shift if a neighbour were the source: 6.3" G20.9: 0.85"
-- AllWISE 2010: W1-W2 0.331, W2-W3 2.073 (W3 S/N 52.3), W3-W4 2.064 (W4 S/N 30.5), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.02, ipd_frac_multi_peak 0, NSS none, Teff 5020 K, logg 4.17, H-alpha pEW -1.413 nm, varclass YSO(0.42); M_G 5.99, -1.67 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 6.3" PA280 G20.89 dG+6.95
-- SIMBAD (10"): Haro 6-65 [Or*; *,Em*,NIR,Or*,V*,Y*O] 0.05" refs=29
-- ASAS-SN: 863 points, cameras bD(g,201); bH(g,111); bd(V,170, d=-0.104); bl(g,182); bp(g,94); bt(g,105); change at onset (after-before, per-camera median) -0.104 mag; largest seasonal dimming 0.22 mag at MJD 60044
-- dust: excess flux W1 3.57 mJy, W2 2.51 mJy, T = 2533 K (16-84%: 1960-3709) 
 
 ### uid1427668  [D2]  YOUNG
 - position 83.83302 +10.04348; Gaia DR3 3338005877593749120; G 15.17, BP-RP 2.19, plx 2.65 mas; plot `plots/uid1427668.png`
@@ -1680,7 +1648,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*?,Y*O (Kiso A-0975  86) | Gaia DR3 variability class YSO(0.26)
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.50 mag (MJD 57116)
 - NEOWISE: score refetch 0.74 (stored 0.74, reproduced True); dW2 0.143, dW1 0.193, 15 visits, 204 points; baseline W1 10.88, W1-W2 0.558; onset between MJD 57809 and 58011
-- detector 2: excess 0.609 mag, z 23.4, jitter ratio 15.6
+- detector 2: excess 0.610 mag, z 23.1, jitter ratio 15.6
 - field control: target step +0.124 (W1 +0.145); neighbours N=58, median -0.003, robust sigma 0.014, max +0.042; z = 8.8
 - centroid: jump at onset 0.009" +- 0.022 (0.4 sigma, PA 144); largest consecutive-visit jump 0.102"; rms 0.032"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.472, W2-W3 2.516 (W3 S/N 51.3), W3-W4 1.808 (W4 S/N 21.1), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1694,7 +1662,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O ([DM99] 122) | Gaia DR3 variability class YSO(0.45)
 - flags: 1.62 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.51 (stored 0.51, reproduced True); dW2 0.073, dW1 0.088, 21 visits, 218 points; baseline W1 9.86, W1-W2 0.324; onset between MJD 57446 and 57646
-- detector 2: excess 0.387 mag, z 20.1, jitter ratio 10.4
+- detector 2: excess 0.387 mag, z 19.9, jitter ratio 10.4
 - field control: target step +0.086 (W1 +0.134); neighbours N=97, median -0.003, robust sigma 0.010, max +0.026; z = 8.5
 - centroid: jump at onset 0.005" +- 0.013 (0.4 sigma, PA 273); largest consecutive-visit jump 0.068"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.343, W2-W3 2.548 (W3 S/N 60.5), W3-W4 1.927 (W4 S/N 30.5), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1717,12 +1685,26 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1392 points, cameras bC(g,156); bG(g,223); bc(V,151, d=-0.118); be(V,38); bg(V,152, d=+0.022); bk(g,296); bo(g,216); bs(g,160); change at onset (after-before, per-camera median) -0.048 mag; largest seasonal dimming 0.19 mag at MJD 58729
 - dust: excess flux W1 3.10 mJy, W2 4.03 mJy, T = 987 K (16-84%: 715-1662) 
 
+### uid1990636  [D2]  YOUNG
+- position 83.43026 -1.14298; Gaia DR3 3217625915746195328; G 13.05, BP-RP 1.56, plx 2.39 mas; plot `plots/uid1990636.png`
+- **young:** SIMBAD young-star types Or*,TT*,Y*?,Y*O (Haro 5-67) | Gaia DR3 variability class YSO(0.68)
+- flags: Gaia ipd_frac_multi_peak 51% (resolved double?) | 2.31 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.11 mag (MJD 58355)
+- NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 192 points; baseline W1 8.75, W1-W2 0.492; onset between MJD 57447 and 57646
+- detector 2: excess 0.548 mag, z 22.6, jitter ratio 17.4
+- field control: target step +0.115 (W1 +0.122); neighbours N=78, median -0.002, robust sigma 0.014, max +0.039; z = 8.3
+- centroid: jump at onset 0.014" +- 0.014 (1.0 sigma, PA 94); largest consecutive-visit jump 0.081"; rms 0.031"; toward neighbour: none; expected shift if a neighbour were the source: 0.8" G16.0: 0.08"
+- AllWISE 2010: W1-W2 0.469, W2-W3 2.105 (W3 S/N 72.9), W3-W4 2.178 (W4 S/N 37.2), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.23, ipd_frac_multi_peak 51, NSS none, Teff 5894 K, logg 3.84, H-alpha pEW -1.511 nm, varclass YSO(0.68); M_G 4.94, -2.31 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 0.8" PA353 G16.05 dG+3.00
+- SIMBAD (10"): Haro 5-67 [TT*; *,Em*,NIR,Or*,TT*,V*,Y*?,Y*O] 0.02" refs=27
+- ASAS-SN: 1444 points, cameras bC(g,149); bG(g,218); ba(V,50); bc(V,135, d=-0.039); be(V,38); bg(V,153, d=-0.007); bk(g,310); bo(g,234); bs(g,157); change at onset (after-before, per-camera median) -0.023 mag; largest seasonal dimming 0.11 mag at MJD 58355
+- dust: excess flux W1 1.59 mJy, W2 2.80 mJy, T = 776 K (16-84%: 573-1077) 
+
 ### uid1614572  [D2]  YOUNG
 - position 83.90185 -5.56977; Gaia DR3 3017346127547506048; G 14.32, BP-RP 2.05, plx 2.55 mas; plot `plots/uid1614572.png`
 - **young:** SIMBAD young-star types Or*,TT*,TT?,Y*O (V* V568 Ori) | Gaia DR3 variability class YSO(0.19)
 - flags: 2.25 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.56 (stored 0.56, reproduced True); dW2 0.169, dW1 0.206, 19 visits, 174 points; baseline W1 9.84, W1-W2 0.589; onset between MJD 58168 and 58377
-- detector 2: excess 0.575 mag, z 13.4, jitter ratio 18.3
+- detector 2: excess 0.575 mag, z 13.6, jitter ratio 18.3
 - field control: target step +0.260 (W1 +0.360); neighbours N=112, median -0.001, robust sigma 0.032, max +0.349; z = 8.1
 - centroid: jump at onset 0.046" +- 0.023 (2.0 sigma, PA 22); largest consecutive-visit jump 0.092"; rms 0.032"; toward neighbour: 8.8" PA345 G20.6 (angle 37 deg); expected shift if a neighbour were the source: 8.2" G19.5: 1.74"; 8.3" G18.2: 1.77"; 8.8" G20.6: 1.88"
 - AllWISE 2010: W1-W2 0.577, W2-W3 2.013 (W3 S/N 8.9), W3-W4 2.712 (W4 S/N -0.3), ext_flg 0, ph_qual AABU: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1736,7 +1718,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,TT?,Y*O (V* AO Ori) | Gaia DR3 variability class YSO(0.22)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.73 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.34 mag (MJD 60413)
 - NEOWISE: score refetch 3.63 (stored 3.63, reproduced True); dW2 0.318, dW1 0.226, 18 visits, 156 points; baseline W1 9.49, W1-W2 0.622; onset between MJD 59631 and 59995
-- detector 2: excess 0.630 mag, z 15.7, jitter ratio 8.4
+- detector 2: excess 0.631 mag, z 15.8, jitter ratio 8.4
 - field control: target step +0.248 (W1 +0.243); neighbours N=89, median +0.004, robust sigma 0.030, max +0.432; z = 8.1
 - centroid: jump at onset 0.012" +- 0.022 (0.5 sigma, PA 52); largest consecutive-visit jump 0.053"; rms 0.035"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.655, W2-W3 2.104 (W3 S/N 26.6), W3-W4 2.348 (W4 S/N 15.1), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1750,7 +1732,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,TT?,Y*O (V* V354 Ori)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 0.92 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.28 mag (MJD 60409)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 19 visits, 193 points; baseline W1 9.73, W1-W2 0.582; onset between MJD 58377 and 58535
-- detector 2: excess 0.574 mag, z 13.5, jitter ratio 10.6
+- detector 2: excess 0.574 mag, z 13.8, jitter ratio 10.6
 - field control: target step +0.184 (W1 +0.113); neighbours N=118, median -0.003, robust sigma 0.024, max +0.550; z = 7.9
 - centroid: jump at onset 0.014" +- 0.022 (0.6 sigma, PA 168); largest consecutive-visit jump 0.061"; rms 0.039"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.548, W2-W3 1.706 (W3 S/N 31.5), W3-W4 2.369 (W4 S/N 13.6), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1764,7 +1746,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (Haro 5-22)
 - flags: 1.72 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.14 mag (MJD 60552)
 - NEOWISE: score refetch 1.33 (stored 1.33, reproduced True); dW2 0.194, dW1 0.158, 21 visits, 214 points; baseline W1 9.67, W1-W2 0.543; onset between MJD 57283 and 57448
-- detector 2: excess 0.584 mag, z 19.5, jitter ratio 14.1
+- detector 2: excess 0.585 mag, z 19.5, jitter ratio 14.1
 - field control: target step +0.111 (W1 +0.187); neighbours N=98, median -0.005, robust sigma 0.015, max +0.395; z = 7.8
 - centroid: jump at onset 0.035" +- 0.015 (2.4 sigma, PA 305); largest consecutive-visit jump 0.070"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.564, W2-W3 2.534 (W3 S/N 68.6), W3-W4 2.111 (W4 S/N 38.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1778,7 +1760,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (V* V1188 Ori)
 - flags: 1.33 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.56 mag (MJD 60680)
 - NEOWISE: score refetch 1.00 (stored 1.00, reproduced True); dW2 0.205, dW1 0.202, 21 visits, 241 points; baseline W1 10.11, W1-W2 0.586; onset between MJD 58536 and 58743
-- detector 2: excess 0.593 mag, z 14.7, jitter ratio 12.0
+- detector 2: excess 0.594 mag, z 14.8, jitter ratio 12.0
 - field control: target step +0.119 (W1 +0.059); neighbours N=65, median +0.000, robust sigma 0.016, max +0.117; z = 7.6
 - centroid: jump at onset 0.007" +- 0.020 (0.4 sigma, PA 360); largest consecutive-visit jump 0.067"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.613, W2-W3 2.168 (W3 S/N 56.2), W3-W4 1.952 (W4 S/N 25.6), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1806,7 +1788,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*O (HD 294268)
 - flags: centroid jump 0.050" (5.1 sigma, PA 69) not toward a Gaia neighbour | 1.57 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.064 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.44 mag (MJD 56542)
 - NEOWISE: score refetch 0.51 (stored 0.51, reproduced True); dW2 0.083, dW1 0.058, 21 visits, 209 points; baseline W1 8.56, W1-W2 0.315; onset between MJD 57089 and 57283
-- detector 2: excess 0.347 mag, z 34.6, jitter ratio 12.5
+- detector 2: excess 0.347 mag, z 34.5, jitter ratio 12.5
 - field control: target step +0.111 (W1 +0.118); neighbours N=98, median -0.003, robust sigma 0.015, max +0.295; z = 7.5
 - centroid: jump at onset 0.050" +- 0.010 (5.1 sigma, PA 69); largest consecutive-visit jump 0.097"; rms 0.024"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.291, W2-W3 4.195 (W3 S/N 73.2), W3-W4 2.794 (W4 S/N 68.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1820,7 +1802,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* DL Ori) | Gaia DR3 variability class YSO(0.39)
 - flags: 2.79 mag above the main sequence at its colour | AllWISE 2010 Class I-like colour cuts (W1-W2 > 1.0, W2-W3 > 2.0)
 - NEOWISE: score refetch 3.78 (stored 3.78, reproduced True); dW2 0.304, dW1 0.171, 21 visits, 214 points; baseline W1 8.04, W1-W2 1.155; onset between MJD 58015 and 58170
-- detector 2: excess 1.211 mag, z 52.1, jitter ratio 7.3
+- detector 2: excess 1.211 mag, z 49.9, jitter ratio 7.3
 - field control: target step +0.175 (W1 +0.148); neighbours N=86, median -0.006, robust sigma 0.025, max +0.398; z = 7.3
 - centroid: jump at onset 0.062" +- 0.031 (2.0 sigma, PA 136); largest consecutive-visit jump 0.166"; rms 0.053"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 1.112, W2-W3 3.070 (W3 S/N 70.1), W3-W4 2.211 (W4 S/N 73.4), ext_flg 0, ph_qual AAAA: Class I-like colour cuts (W1-W2 > 1.0, W2-W3 > 2.0)
@@ -1834,7 +1816,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* YY Ori; [SRB2015] p10) | Gaia DR3 variability class YSO(0.48)
 - flags: 1.75 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.19 mag (MJD 58702)
 - NEOWISE: score refetch 0.36 (stored 0.35, reproduced True); dW2 0.045, dW1 0.019, 20 visits, 184 points; baseline W1 8.66, W1-W2 0.471; onset between MJD 58741 and 58899
-- detector 2: excess 0.533 mag, z 26.5, jitter ratio 10.3
+- detector 2: excess 0.533 mag, z 25.7, jitter ratio 10.3
 - field control: target step +0.128 (W1 +0.083); neighbours N=148, median -0.002, robust sigma 0.018, max +0.203; z = 7.2
 - centroid: jump at onset 0.001" +- 0.022 (0.0 sigma, PA 162); largest consecutive-visit jump 0.058"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.516, W2-W3 1.293 (W3 S/N 38.8), W3-W4 1.825 (W4 S/N 23.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1848,7 +1830,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* V381 Ori) | Gaia DR3 variability class YSO(0.47)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.59 mag above the main sequence at its colour
 - NEOWISE: score refetch 0.16 (stored 0.16, reproduced True); dW2 0.070, dW1 0.090, 20 visits, 191 points; baseline W1 8.90, W1-W2 0.378; onset between MJD 58014 and 58168
-- detector 2: excess 0.434 mag, z 26.6, jitter ratio 34.3
+- detector 2: excess 0.434 mag, z 25.7, jitter ratio 34.3
 - field control: target step +0.109 (W1 +0.114); neighbours N=97, median -0.007, robust sigma 0.016, max +0.113; z = 7.1
 - centroid: jump at onset 0.044" +- 0.029 (1.5 sigma, PA 87); largest consecutive-visit jump 0.075"; rms 0.044"; toward neighbour: none; expected shift if a neighbour were the source: 8.5" G16.3: 0.81"; 8.7" G20.3: 0.83"
 - AllWISE 2010: W1-W2 0.306, W2-W3 0.365 (W3 S/N 14.6), W3-W4 3.493 (W4 S/N 10.1), ext_flg 1, ph_qual AAAA: photosphere-like (W2-W3 < 0.5)
@@ -1862,7 +1844,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*? (UCAC4 704-006265)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.79 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.075 mag, one camera only)
 - NEOWISE: score refetch 0.76 (stored 0.76, reproduced True); dW2 0.110, dW1 0.087, 21 visits, 255 points; baseline W1 9.69, W1-W2 0.370; onset between MJD 59789 and 59949
-- detector 2: excess 0.428 mag, z 19.1, jitter ratio 13.0
+- detector 2: excess 0.428 mag, z 19.0, jitter ratio 13.0
 - field control: target step +0.110 (W1 +0.079); neighbours N=102, median +0.000, robust sigma 0.016, max +0.214; z = 7.1
 - centroid: jump at onset 0.023" +- 0.019 (1.2 sigma, PA 211); largest consecutive-visit jump 0.062"; rms 0.031"; toward neighbour: 4.7" PA206 G19.7 (angle 5 deg); expected shift if a neighbour were the source: 4.7" G19.7: 0.45"; 6.6" G16.5: 0.64"; 6.9" G19.2: 0.66"
 - AllWISE 2010: W1-W2 0.407, W2-W3 1.479 (W3 S/N 65.4), W3-W4 1.528 (W4 S/N 24.7), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1876,7 +1858,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* V594 Ori) | Gaia DR3 variability class YSO(0.46)
 - flags: 2.10 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.124 mag after the infrared onset (debris transit signature)
 - NEOWISE: score refetch 1.25 (stored 1.25, reproduced True); dW2 0.208, dW1 0.075, 21 visits, 203 points; baseline W1 9.86, W1-W2 0.434; onset between MJD 58536 and 58742
-- detector 2: excess 0.482 mag, z 17.6, jitter ratio 15.3
+- detector 2: excess 0.483 mag, z 17.6, jitter ratio 15.3
 - field control: target step +0.146 (W1 +0.148); neighbours N=113, median -0.004, robust sigma 0.021, max +0.240; z = 7.0
 - centroid: jump at onset 0.016" +- 0.014 (1.1 sigma, PA 277); largest consecutive-visit jump 0.056"; rms 0.029"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.384, W2-W3 2.306 (W3 S/N 59.0), W3-W4 2.424 (W4 S/N 37.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1890,7 +1872,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* BD Ori) | Gaia DR3 variability class YSO(0.39)
 - flags: 1.84 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.059 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.44 mag (MJD 59157)
 - NEOWISE: score refetch 0.97 (stored 0.97, reproduced True); dW2 0.090, dW1 0.166, 20 visits, 191 points; baseline W1 9.51, W1-W2 0.373; onset between MJD 58013 and 58168
-- detector 2: excess 0.436 mag, z 22.1, jitter ratio 7.7
+- detector 2: excess 0.436 mag, z 21.0, jitter ratio 7.7
 - field control: target step +0.127 (W1 +0.126); neighbours N=110, median -0.003, robust sigma 0.019, max +0.189; z = 6.9
 - centroid: jump at onset 0.027" +- 0.019 (1.4 sigma, PA 136); largest consecutive-visit jump 0.062"; rms 0.031"; toward neighbour: 5.1" PA121 G18.8 (angle 15 deg); expected shift if a neighbour were the source: 5.1" G18.8: 0.57"
 - AllWISE 2010: W1-W2 0.341, W2-W3 1.381 (W3 S/N 44.4), W3-W4 1.658 (W4 S/N 19.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1899,12 +1881,26 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1518 points, cameras bA(g,158); bE(g,220); ba(V,180, d=+0.058); be(V,195, d=+0.061); bi(g,343, d=+0.052); bm(g,250); bq(g,172, d=+0.454); change at onset (after-before, per-camera median) +0.059 mag; largest seasonal dimming 0.44 mag at MJD 59157
 - dust: excess flux W1 6.87 mJy, W2 5.16 mJy, T = 2131 K (16-84%: 1828-2578) 
 
+### uid2071762  [D2]  YOUNG
+- position 88.62470 -5.98103; Gaia DR3 3019475842902440832; G 12.52, BP-RP 1.52, plx 2.36 mas; plot `plots/uid2071762.png`
+- **young:** SIMBAD young-star types Y*? (2MASS J05542992-0558516) | Gaia DR3 variability class YSO(0.23)
+- flags: 2.78 mag above the main sequence at its colour | not plain dust: optical brightening -0.044 mag (per-camera -0.055,-0.045,-0.031,-0.031,+0.005,-0.044,-0.092) together with the infrared rise
+- NEOWISE: score refetch 0.33 (stored 0.33, reproduced True); dW2 0.053, dW1 -0.030, 21 visits, 222 points; baseline W1 8.87, W1-W2 0.245; onset between MJD 59635 and 59845
+- detector 2: excess 0.303 mag, z 13.6, jitter ratio 9.2
+- field control: target step +0.060 (W1 -0.012); neighbours N=68, median -0.002, robust sigma 0.009, max +0.031; z = 6.7
+- centroid: jump at onset 0.016" +- 0.018 (0.9 sigma, PA 241); largest consecutive-visit jump 0.041"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.249, W2-W3 1.829 (W3 S/N 63.8), W3-W4 2.229 (W4 S/N 43.2), ext_flg 0, ph_qual AAAA: W3 excess only (W2-W3 > 1.0; debris-disk-like or blend)
+- Gaia: RUWE 1.12, ipd_frac_multi_peak 0, NSS none, Teff 5215 K, logg 3.67, H-alpha pEW -0.279 nm, varclass YSO(0.23); M_G 4.39, -2.78 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
+- SIMBAD (10"): 2MASS J05542992-0558516 [Y*?; *,NIR,Y*?] 0.10" refs=1
+- ASAS-SN: 1926 points, cameras bA(g,150, d=-0.055); bB(g,97); bE(g,138, d=-0.045); ba(V,127); bb(V,129); be(V,143); bf(V,142); bi(g,264, d=-0.031); bj(g,260, d=-0.031); bm(g,149, d=+0.005); bq(g,159, d=-0.044); br(g,168, d=-0.092); change at onset (after-before, per-camera median) -0.044 mag; largest seasonal dimming 0.06 mag at MJD 59672
+- dust: excess flux W1 5.39 mJy, W2 7.98 mJy, T = 883 K (16-84%: 802-974) 
+
 ### uid1665622  [D2]  YOUNG
 - position 83.92964 -4.41548; Gaia DR3 3209637139137932288; G 13.12, BP-RP 1.67, plx 2.53 mas; plot `plots/uid1665622.png`
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* BO Ori) | Gaia DR3 variability class YSO(0.37)
 - flags: binary type in SIMBAD (SB*, V* BO Ori) | 2.43 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.24 (stored 1.24, reproduced True); dW2 0.155, dW1 0.181, 21 visits, 180 points; baseline W1 8.75, W1-W2 0.629; onset between MJD 57447 and 57646
-- detector 2: excess 0.674 mag, z 23.9, jitter ratio 9.6
+- detector 2: excess 0.675 mag, z 24.0, jitter ratio 9.6
 - field control: target step +0.137 (W1 +0.153); neighbours N=124, median -0.004, robust sigma 0.021, max +0.168; z = 6.7
 - centroid: jump at onset 0.039" +- 0.018 (2.2 sigma, PA 321); largest consecutive-visit jump 0.088"; rms 0.032"; toward neighbour: none; expected shift if a neighbour were the source: 8.6" G18.2: 1.02"
 - AllWISE 2010: W1-W2 0.613, W2-W3 2.479 (W3 S/N 73.0), W3-W4 1.827 (W4 S/N 46.0), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1918,7 +1914,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,TT?,Y*O (V* YZ Ori) | Gaia DR3 variability class YSO(0.40)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.59 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.19 mag (MJD 59627)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 19 visits, 176 points; baseline W1 10.08, W1-W2 0.577; onset between MJD 57646 and 57811
-- detector 2: excess 0.606 mag, z 18.0, jitter ratio 4.9
+- detector 2: excess 0.607 mag, z 18.0, jitter ratio 4.9
 - field control: target step +0.181 (W1 +0.181); neighbours N=150, median -0.002, robust sigma 0.029, max +0.169; z = 6.3
 - centroid: jump at onset 0.010" +- 0.013 (0.8 sigma, PA 276); largest consecutive-visit jump 0.039"; rms 0.023"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.611, W2-W3 2.093 (W3 S/N 40.3), W3-W4 1.932 (W4 S/N 22.5), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1946,7 +1942,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (TYC  114-2239-1)
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 2.08 mag (MJD 58441)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 21 visits, 213 points; baseline W1 9.35, W1-W2 0.901; onset between MJD 59840 and 59995
-- detector 2: excess 0.935 mag, z 91.4, jitter ratio 3.7
+- detector 2: excess 0.934 mag, z 91.4, jitter ratio 3.7
 - field control: target step +0.085 (W1 +0.071); neighbours N=91, median +0.002, robust sigma 0.014, max +0.234; z = 5.9
 - centroid: jump at onset 0.025" +- 0.019 (1.3 sigma, PA 98); largest consecutive-visit jump 0.133"; rms 0.048"; toward neighbour: none; expected shift if a neighbour were the source: 2.1" G16.8: 0.16"
 - AllWISE 2010: W1-W2 0.889, W2-W3 2.235 (W3 S/N 68.6), W3-W4 1.753 (W4 S/N 39.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1974,7 +1970,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (2MASS J08075546-4707460) | Gaia DR3 variability class YSO(0.20)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.47 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.37 (stored 0.37, reproduced True); dW2 0.077, dW1 0.078, 14 visits, 167 points; baseline W1 9.90, W1-W2 0.335; onset between MJD 57152 and 57346
-- detector 2: excess 0.398 mag, z 20.6, jitter ratio 16.9
+- detector 2: excess 0.398 mag, z 19.3, jitter ratio 16.9
 - field control: target step +0.058 (W1 +0.085); neighbours N=200, median -0.005, robust sigma 0.011, max +0.227; z = 5.8
 - centroid: jump at onset 0.037" +- 0.022 (1.7 sigma, PA 120); largest consecutive-visit jump 0.073"; rms 0.037"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.319, W2-W3 1.508 (W3 S/N 63.8), W3-W4 2.797 (W4 S/N 42.3), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -1989,7 +1985,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types TT*,TT?,Y*?,Y*O (Kiso A-0903 195) | Gaia DR3 variability class YSO(0.52)
 - flags: 1.30 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.061 mag, one camera only) | largest seasonal optical dimming 0.25 mag (MJD 60603)
 - NEOWISE: score refetch 0.87 (stored 0.87, reproduced True); dW2 0.142, dW1 0.190, 21 visits, 239 points; baseline W1 9.96, W1-W2 0.431; onset between MJD 57087 and 57281
-- detector 2: excess 0.464 mag, z 14.3, jitter ratio 13.5
+- detector 2: excess 0.465 mag, z 14.3, jitter ratio 13.5
 - field control: target step +0.052 (W1 +0.109); neighbours N=82, median -0.003, robust sigma 0.010, max +0.028; z = 5.5
 - centroid: jump at onset 0.009" +- 0.015 (0.6 sigma, PA 18); largest consecutive-visit jump 0.044"; rms 0.025"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.371, W2-W3 1.929 (W3 S/N 58.5), W3-W4 2.228 (W4 S/N 28.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2003,7 +1999,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* AV Ori) | Gaia DR3 variability class YSO(0.45)
 - flags: binary type in SIMBAD (**, V* AV Ori) | 2.06 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.69 mag (MJD 56618)
 - NEOWISE: score refetch 0.23 (stored 0.23, reproduced True); dW2 0.029, dW1 0.069, 20 visits, 192 points; baseline W1 8.61, W1-W2 0.558; onset between MJD 58899 and 59109
-- detector 2: excess 0.590 mag, z 18.1, jitter ratio 11.0
+- detector 2: excess 0.591 mag, z 18.1, jitter ratio 11.0
 - field control: target step +0.060 (W1 +0.106); neighbours N=103, median +0.000, robust sigma 0.011, max +0.233; z = 5.4
 - centroid: jump at onset 0.017" +- 0.037 (0.5 sigma, PA 49); largest consecutive-visit jump 0.084"; rms 0.053"; toward neighbour: none; expected shift if a neighbour were the source: 6.1" G17.0: 0.33"
 - AllWISE 2010: W1-W2 0.507, W2-W3 1.412 (W3 S/N 48.4), W3-W4 1.695 (W4 S/N 17.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2017,7 +2013,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (EM* LkHA  336) | Gaia DR3 variability class YSO(0.61)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 2.73 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.22 mag (MJD 59226)
 - NEOWISE: score refetch 0.40 (stored 0.40, reproduced True); dW2 0.021, dW1 -0.069, 18 visits, 156 points; baseline W1 8.24, W1-W2 0.587; onset between MJD 57093 and 57287
-- detector 2: excess 0.576 mag, z 13.4, jitter ratio 3.6
+- detector 2: excess 0.576 mag, z 13.8, jitter ratio 3.6
 - field control: target step +0.055 (W1 +0.049); neighbours N=94, median -0.006, robust sigma 0.012, max +0.893; z = 5.1
 - centroid: jump at onset 0.109" +- 0.050 (2.2 sigma, PA 299); largest consecutive-visit jump 0.166"; rms 0.067"; toward neighbour: none; expected shift if a neighbour were the source: 5.8" G17.0: 0.29"
 - AllWISE 2010: W1-W2 0.618, W2-W3 2.569 (W3 S/N 68.3), W3-W4 2.609 (W4 S/N 47.1), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2026,12 +2022,26 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 2092 points, cameras bA(g,203); bB(g,100); bE(g,161); bF(g,147); ba(V,170, d=+0.019); bb(V,181, d=-0.002); bi(g,268); bj(g,201); bm(g,146); bn(g,137); bq(g,157); br(g,154); cB(g,67); change at onset (after-before, per-camera median) +0.008 mag; largest seasonal dimming 0.22 mag at MJD 59226
 - dust: excess flux W1 5.93 mJy, W2 3.54 mJy, T = 5487 K (16-84%: 1775-8000) 
 
+### uid2072594  [D2]  YOUNG
+- position 84.32853 -0.34492; Gaia DR3 3217794965658580608; G 13.47, BP-RP 1.46, plx 2.36 mas; plot `plots/uid2072594.png`
+- **young:** SIMBAD young-star types Or*,TT*,Y*?,Y*O (Haro 5-79) | Gaia DR3 variability class YSO(0.43)
+- flags: 1.65 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.050 mag after the infrared onset (debris transit signature)
+- NEOWISE: score refetch 0.89 (stored 0.89, reproduced True); dW2 0.098, dW1 0.129, 19 visits, 199 points; baseline W1 9.64, W1-W2 0.333; onset between MJD 57647 and 57812
+- detector 2: excess 0.394 mag, z 18.2, jitter ratio 9.0
+- field control: target step +0.062 (W1 +0.073); neighbours N=105, median +0.000, robust sigma 0.013, max +0.124; z = 4.6
+- centroid: jump at onset 0.031" +- 0.012 (2.5 sigma, PA 189); largest consecutive-visit jump 0.054"; rms 0.030"; toward neighbour: none; expected shift if a neighbour were the source: 6.7" G19.0: 0.37"
+- AllWISE 2010: W1-W2 0.301, W2-W3 1.884 (W3 S/N 55.9), W3-W4 2.301 (W4 S/N 32.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.06, ipd_frac_multi_peak 0, NSS none, Teff nan K, logg nan, H-alpha pEW -0.691 nm, varclass YSO(0.43); M_G 5.33, -1.65 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 6.7" PA20 G19.03 dG+5.56
+- SIMBAD (10"): Haro 5-79 [TT*; *,Em*,NIR,Or*,TT*,Y*?,Y*O] 0.04" refs=21
+- ASAS-SN: 1379 points, cameras bC(g,151); bG(g,221); ba(V,51); bc(V,151, d=+0.048); be(V,38); bg(V,153, d=+0.053); bk(g,300); bo(g,173); bs(g,141); change at onset (after-before, per-camera median) +0.050 mag; largest seasonal dimming 0.04 mag at MJD 58819
+- dust: excess flux W1 6.34 mJy, W2 3.70 mJy, T = 6749 K (16-84%: 3914-8000) 
+
 ### uid1616156  [D2]  YOUNG
 - position 83.96928 -5.08489; Gaia DR3 3209530280351892096; G 11.35, BP-RP 1.10, plx 2.55 mas; plot `plots/uid1616156.png`
 - **young:** SIMBAD young-star types Or*,Y*O (V* V815 Ori) | Gaia DR3 variability class YSO(0.79)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 2.51 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.21 (stored 0.21, reproduced True); dW2 0.027, dW1 -0.016, 19 visits, 160 points; baseline W1 8.00, W1-W2 0.328; onset between MJD 58899 and 59109
-- detector 2: excess 0.384 mag, z 23.6, jitter ratio 9.5
+- detector 2: excess 0.384 mag, z 22.5, jitter ratio 9.5
 - field control: target step +0.126 (W1 +0.116); neighbours N=110, median -0.008, robust sigma 0.030, max +0.294; z = 4.4
 - centroid: jump at onset 0.026" +- 0.019 (1.4 sigma, PA 105); largest consecutive-visit jump 0.114"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: 2.8" G15.8: 0.30"
 - AllWISE 2010: W1-W2 0.353, W2-W3 1.832 (W3 S/N 39.4), W3-W4 2.424 (W4 S/N 25.2), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2045,7 +2055,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* AL Ori) | Gaia DR3 variability class YSO(0.28)
 - flags: 1.41 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.067 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.12 mag (MJD 56618)
 - NEOWISE: score refetch 1.59 (stored 1.59, reproduced True); dW2 0.129, dW1 0.109, 17 visits, 159 points; baseline W1 10.13, W1-W2 0.465; onset between MJD 57811 and 58013
-- detector 2: excess 0.510 mag, z 18.1, jitter ratio 7.6
+- detector 2: excess 0.511 mag, z 18.1, jitter ratio 7.6
 - field control: target step +0.151 (W1 +0.128); neighbours N=62, median -0.011, robust sigma 0.039, max +0.438; z = 4.1
 - centroid: jump at onset 0.037" +- 0.025 (1.5 sigma, PA 59); largest consecutive-visit jump 0.076"; rms 0.034"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.503, W2-W3 3.147 (W3 S/N 16.0), W3-W4 3.616 (W4 S/N 9.5), ext_flg 0, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2059,7 +2069,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* V1001 Ori) | Gaia DR3 variability class YSO(0.55)
 - flags: 2.16 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.79 (stored 0.79, reproduced True); dW2 0.139, dW1 0.095, 20 visits, 183 points; baseline W1 9.50, W1-W2 0.382; onset between MJD 59473 and 59631
-- detector 2: excess 0.435 mag, z 17.5, jitter ratio 9.7
+- detector 2: excess 0.435 mag, z 16.9, jitter ratio 9.7
 - field control: target step +0.072 (W1 +0.070); neighbours N=144, median +0.005, robust sigma 0.016, max +0.778; z = 4.1
 - centroid: jump at onset 0.015" +- 0.017 (0.9 sigma, PA 173); largest consecutive-visit jump 0.072"; rms 0.030"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.457, W2-W3 1.906 (W3 S/N 48.6), W3-W4 2.070 (W4 S/N 32.1), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2068,12 +2078,26 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1204 points, cameras bA(g,149, d=+0.025); bE(g,215, d=-0.037); ba(V,141); be(V,194); bi(g,207); bm(g,161); bq(g,137, d=-0.061); change at onset (after-before, per-camera median) -0.037 mag; largest seasonal dimming 0.08 mag at MJD 60651
 - dust: excess flux W1 6.42 mJy, W2 5.80 mJy, T = 1504 K (16-84%: 1356-1690) 
 
+### uid1928292  [D2]  YOUNG
+- position 84.79800 -2.51850; Gaia DR3 3216488844628237056; G 14.51, BP-RP 1.98, plx 2.42 mas; plot `plots/uid1928292.png`
+- **young:** SIMBAD young-star types Or*,TT*,Y*O (Haro 5-20)
+- flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.98 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.40 mag (MJD 58125)
+- NEOWISE: score refetch 0.26 (stored 0.26, reproduced True); dW2 0.089, dW1 0.102, 21 visits, 223 points; baseline W1 9.88, W1-W2 0.708; onset between MJD 57089 and 57283
+- detector 2: excess 0.706 mag, z 17.0, jitter ratio 31.7
+- field control: target step +0.075 (W1 +0.063); neighbours N=128, median -0.005, robust sigma 0.020, max +0.341; z = 4.0
+- centroid: jump at onset 0.019" +- 0.017 (1.1 sigma, PA 45); largest consecutive-visit jump 0.061"; rms 0.029"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.641, W2-W3 2.695 (W3 S/N 66.0), W3-W4 2.064 (W4 S/N 26.5), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.27, ipd_frac_multi_peak 0, NSS none, Teff 6035 K, logg 4.24, H-alpha pEW -1.004 nm, varclass none; M_G 6.43, -1.98 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
+- SIMBAD (10"): Haro 5-20 [TT*; *,Em*,NIR,Or*,RR*,TT*,V*,Y*O,ev] 0.03" refs=43
+- ASAS-SN: 591 points, cameras bC(g,137); bG(g,83); bc(V,149, d=+0.162); be(V,38, d=-0.047); bg(V,152); bs(g,32); change at onset (after-before, per-camera median) +0.058 mag; largest seasonal dimming 0.40 mag at MJD 58125
+- dust: excess flux W1 3.42 mJy, W2 4.51 mJy, T = 973 K (16-84%: 902-1057) 
+
 ### uid1749579  [D2]  YOUNG
 - position 84.66781 -2.50516; Gaia DR3 3216491151026233472; G 14.01, BP-RP 1.96, plx 2.49 mas; plot `plots/uid1749579.png`
 - **young:** SIMBAD young-star types TT*,Y*O (Haro 5-13)
 - flags: 2.35 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.17 mag (MJD 56550)
 - NEOWISE: score refetch 1.12 (stored 1.12, reproduced True); dW2 0.055, dW1 0.092, 21 visits, 223 points; baseline W1 9.94, W1-W2 0.594; onset between MJD 58378 and 58536
-- detector 2: excess 0.595 mag, z 14.5, jitter ratio 4.3
+- detector 2: excess 0.596 mag, z 14.5, jitter ratio 4.3
 - field control: target step +0.065 (W1 +0.044); neighbours N=117, median +0.002, robust sigma 0.016, max +0.509; z = 3.9
 - centroid: jump at onset 0.010" +- 0.018 (0.5 sigma, PA 241); largest consecutive-visit jump 0.057"; rms 0.029"; toward neighbour: 9.6" PA255 G17.5 (angle 14 deg); expected shift if a neighbour were the source: 9.6" G17.5: 0.56"
 - AllWISE 2010: W1-W2 0.558, W2-W3 2.303 (W3 S/N 67.7), W3-W4 2.063 (W4 S/N 30.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2082,26 +2106,12 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1325 points, cameras bC(g,151); bG(g,223, d=-0.073); ba(V,50); bc(V,151); be(V,38); bg(V,153); bk(g,180, d=+0.273); bo(g,225, d=-0.038); bs(g,154, d=+0.003); change at onset (after-before, per-camera median) -0.018 mag; largest seasonal dimming 0.17 mag at MJD 56550
 - dust: excess flux W1 1.75 mJy, W2 2.14 mJy, T = 1044 K (16-84%: 897-1239) 
 
-### uid1701898  [D2]  YOUNG
-- position 83.82441 -4.74793; Gaia DR3 3209578074747777792; G 13.90, BP-RP 1.75, plx 2.51 mas; plot `plots/uid1701898.png`
-- **young:** SIMBAD young-star types Or*,TT*,Y*O (V* V559 Ori) | Gaia DR3 variability class YSO(0.55)
-- flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.85 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.11 mag (MJD 60413)
-- NEOWISE: score refetch 0.83 (stored 0.83, reproduced True); dW2 0.085, dW1 0.034, 19 visits, 178 points; baseline W1 9.62, W1-W2 0.381; onset between MJD 58168 and 58377
-- detector 2: excess 0.416 mag, z 13.1, jitter ratio 8.7
-- field control: target step +0.111 (W1 +0.038); neighbours N=102, median -0.008, robust sigma 0.034, max +0.478; z = 3.5
-- centroid: jump at onset 0.015" +- 0.018 (0.8 sigma, PA 98); largest consecutive-visit jump 0.034"; rms 0.031"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.349, W2-W3 1.350 (W3 S/N 22.3), W3-W4 3.223 (W4 S/N 10.6), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.01, ipd_frac_multi_peak 0, NSS none, Teff 5330 K, logg 4.18, H-alpha pEW -0.890 nm, varclass YSO(0.55); M_G 5.90, -1.85 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
-- SIMBAD (10"): V* V559 Ori [TT*; *,Em*,MIR,NIR,Opt,Or*,Rad,TT*,V*,X,Y*O] 0.02" refs=50
-- ASAS-SN: 1166 points, cameras bA(g,146); bE(g,212); ba(V,136); be(V,194); bi(g,236, d=+0.142); bm(g,146, d=-0.076); bq(g,96, d=-0.005); change at onset (after-before, per-camera median) -0.005 mag; largest seasonal dimming 0.11 mag at MJD 60413
-- dust: excess flux W1 2.21 mJy, W2 3.85 mJy, T = 782 K (16-84%: 707-868) 
-
 ### uid1357327  [D2]  YOUNG
 - position 83.65061 -6.09298; Gaia DR3 3017163539886560768; G 14.72, BP-RP 1.68, plx 2.68 mas; plot `plots/uid1357327.png`
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* XX Ori) | Gaia DR3 variability class YSO(0.35)
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.102 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.25 mag (MJD 57974)
 - NEOWISE: score refetch 0.59 (stored 0.59, reproduced True); dW2 0.075, dW1 0.138, 20 visits, 183 points; baseline W1 10.17, W1-W2 0.484; onset between MJD 57087 and 57282
-- detector 2: excess 0.528 mag, z 18.4, jitter ratio 9.8
+- detector 2: excess 0.529 mag, z 18.4, jitter ratio 9.8
 - field control: target step +0.063 (W1 +0.088); neighbours N=127, median -0.003, robust sigma 0.019, max +0.177; z = 3.4
 - centroid: jump at onset 0.010" +- 0.019 (0.5 sigma, PA 259); largest consecutive-visit jump 0.115"; rms 0.033"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.491, W2-W3 1.812 (W3 S/N 42.9), W3-W4 1.881 (W4 S/N 23.1), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2115,7 +2125,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (V* V1304 Ori) | Gaia DR3 variability class YSO(0.53)
 - flags: 2.90 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.09 (stored 1.09, reproduced True); dW2 0.092, dW1 0.062, 21 visits, 189 points; baseline W1 8.15, W1-W2 0.615; onset between MJD 57089 and 57283
-- detector 2: excess 0.633 mag, z 16.8, jitter ratio 5.8
+- detector 2: excess 0.634 mag, z 16.8, jitter ratio 5.8
 - field control: target step +0.050 (W1 +0.045); neighbours N=58, median -0.007, robust sigma 0.017, max +0.227; z = 3.3
 - centroid: jump at onset 0.043" +- 0.017 (2.5 sigma, PA 105); largest consecutive-visit jump 0.060"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.603, W2-W3 2.330 (W3 S/N 73.7), W3-W4 1.942 (W4 S/N 50.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2129,7 +2139,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT?,Y*O (V* V415 Ori)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 2.87 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.17 mag (MJD 57614)
 - NEOWISE: score refetch 1.46 (stored 1.46, reproduced True); dW2 0.163, dW1 0.147, 10 visits, 94 points; baseline W1 8.39, W1-W2 0.581; onset between MJD 58377 and 58535
-- detector 2: excess 0.567 mag, z 13.2, jitter ratio 9.5
+- detector 2: excess 0.567 mag, z 13.4, jitter ratio 9.5
 - field control: target step +0.104 (W1 +0.156); neighbours N=82, median +0.001, robust sigma 0.032, max +0.232; z = 3.3
 - centroid: jump at onset 0.013" +- 0.029 (0.4 sigma, PA 145); largest consecutive-visit jump 0.073"; rms 0.033"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.595, W2-W3 2.647 (W3 S/N 37.1), W3-W4 2.927 (W4 S/N 9.5), ext_flg 1, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2143,7 +2153,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* V608 Ori)
 - flags: 1.76 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.120 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.17 mag (MJD 60201)
 - NEOWISE: score refetch 0.18 (stored 0.18, reproduced True); dW2 0.030, dW1 0.004, 21 visits, 208 points; baseline W1 9.15, W1-W2 0.559; onset between MJD 58901 and 59110
-- detector 2: excess 0.579 mag, z 15.7, jitter ratio 13.3
+- detector 2: excess 0.580 mag, z 15.7, jitter ratio 13.3
 - field control: target step +0.044 (W1 +0.073); neighbours N=112, median -0.002, robust sigma 0.016, max +0.462; z = 3.0
 - centroid: jump at onset 0.008" +- 0.025 (0.3 sigma, PA 3); largest consecutive-visit jump 0.058"; rms 0.032"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.593, W2-W3 2.087 (W3 S/N 66.1), W3-W4 2.116 (W4 S/N 38.6), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2171,7 +2181,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT?,Y*O (V* IV Ori)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.61 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.11 mag (MJD 56892)
 - NEOWISE: score refetch 0.40 (stored 0.41, reproduced True); dW2 0.052, dW1 0.047, 20 visits, 179 points; baseline W1 9.47, W1-W2 0.491; onset between MJD 58899 and 59108
-- detector 2: excess 0.527 mag, z 16.7, jitter ratio 7.2
+- detector 2: excess 0.528 mag, z 16.8, jitter ratio 7.2
 - field control: target step +0.066 (W1 +0.098); neighbours N=133, median -0.001, robust sigma 0.024, max +0.471; z = 2.8
 - centroid: jump at onset 0.055" +- 0.031 (1.8 sigma, PA 66); largest consecutive-visit jump 0.040"; rms 0.042"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.464, W2-W3 2.148 (W3 S/N 59.3), W3-W4 3.204 (W4 S/N 21.3), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2185,7 +2195,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*O (2MASS J05304136+1030325)
 - flags: 2.26 mag above the main sequence at its colour
 - NEOWISE: score refetch 1.41 (stored 1.41, reproduced True); dW2 0.106, dW1 0.126, 21 visits, 215 points; baseline W1 8.99, W1-W2 0.191; onset between MJD 57446 and 57646
-- detector 2: excess 0.248 mag, z 15.2, jitter ratio 7.0
+- detector 2: excess 0.248 mag, z 14.1, jitter ratio 7.0
 - field control: target step +0.024 (W1 +0.047); neighbours N=103, median -0.003, robust sigma 0.010, max +0.086; z = 2.6
 - centroid: jump at onset 0.029" +- 0.016 (1.9 sigma, PA 289); largest consecutive-visit jump 0.017"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: 4.3" G19.7: 0.10"
 - AllWISE 2010: W1-W2 0.167, W2-W3 0.766 (W3 S/N 47.0), W3-W4 2.752 (W4 S/N 30.6), ext_flg 0, ph_qual AAAA: weak W3 excess (0.5 < W2-W3 < 1.0)
@@ -2199,7 +2209,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (EM* StHA   37) | Gaia DR3 variability class YSO(0.28)
 - flags: 2.58 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 213 points; baseline W1 8.09, W1-W2 0.421; onset between MJD 58006 and 58164
-- detector 2: excess 0.484 mag, z 25.1, jitter ratio 8.4
+- detector 2: excess 0.484 mag, z 23.4, jitter ratio 8.4
 - field control: target step +0.034 (W1 -0.021); neighbours N=51, median -0.004, robust sigma 0.016, max +0.081; z = 2.4
 - centroid: jump at onset 0.021" +- 0.015 (1.4 sigma, PA 212); largest consecutive-visit jump 0.054"; rms 0.024"; toward neighbour: none; expected shift if a neighbour were the source: 7.0" G20.5: 0.21"
 - AllWISE 2010: W1-W2 0.435, W2-W3 2.431 (W3 S/N 72.0), W3-W4 2.179 (W4 S/N 48.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2208,20 +2218,6 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 0 points, cameras n/a; change at onset (after-before, per-camera median) n/a mag; largest seasonal dimming n/a mag at MJD n/a
 - dust: excess flux W1 -8.97 mJy, W2 -6.00 mJy, T = n/a K (16-84%: n/a-n/a) no W2 excess flux after onset
 - checks missing: ASAS-SN (no source)
-
-### uid1435420  [D2]  YOUNG
-- position 82.52106 -2.25645; Gaia DR3 3217043964857566464; G 14.04, BP-RP 1.60, plx 2.64 mas; plot `plots/uid1435420.png`
-- **young:** SIMBAD young-star types TT*,Y*? (2MASS J05300505-0215231)
-- flags: 1.20 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.069 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.10 mag (MJD 58190)
-- NEOWISE: score refetch 0.58 (stored 0.58, reproduced True); dW2 0.098, dW1 0.130, 20 visits, 217 points; baseline W1 10.94, W1-W2 0.285; onset between MJD 57645 and 57810
-- detector 2: excess 0.338 mag, z 13.5, jitter ratio 6.2
-- field control: target step +0.026 (W1 +0.083); neighbours N=73, median +0.000, robust sigma 0.011, max +0.069; z = 2.3
-- centroid: jump at onset 0.025" +- 0.021 (1.2 sigma, PA 242); largest consecutive-visit jump 0.018"; rms 0.034"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.251, W2-W3 2.540 (W3 S/N 37.9), W3-W4 2.319 (W4 S/N 24.2), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.16, ipd_frac_multi_peak 0, NSS none, Teff 5202 K, logg 4.28, H-alpha pEW -3.725 nm, varclass none; M_G 6.15, -1.20 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
-- SIMBAD (10"): 2MASS J05300505-0215231 [TT*; *,Em*,NIR,TT*,Y*?] 0.03" refs=10
-- ASAS-SN: 2426 points, cameras bD(g,166); bG(g,222); bH(g,203); ba(V,50); bd(V,156, d=+0.069); be(V,37); bf(V,34); bg(V,153, d=+0.057); bh(V,152, d=+0.089); bk(g,310); bl(g,316); bo(g,232); bp(g,221); bt(g,174); change at onset (after-before, per-camera median) +0.069 mag; largest seasonal dimming 0.10 mag at MJD 58190
-- dust: excess flux W1 1.10 mJy, W2 0.55 mJy, T = 8000 K (16-84%: 7873-8000) ratio bluer than an 8000 K blackbody (not dust-like)
 
 ### uid1505343  [D2]  YOUNG
 - position 83.15619 -5.21142; Gaia DR3 3209492072320894080; G 14.83, BP-RP 2.12, plx 2.61 mas; plot `plots/uid1505343.png`
@@ -2242,7 +2238,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* RV Ori)
 - flags: 1.84 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.26 mag (MJD 58126)
 - NEOWISE: score refetch 0.44 (stored 0.44, reproduced True); dW2 0.045, dW1 0.044, 21 visits, 203 points; baseline W1 9.64, W1-W2 0.309; onset between MJD 57089 and 57283
-- detector 2: excess 0.358 mag, z 13.2, jitter ratio 7.7
+- detector 2: excess 0.359 mag, z 13.2, jitter ratio 7.7
 - field control: target step +0.031 (W1 +0.016); neighbours N=117, median -0.006, robust sigma 0.016, max +0.377; z = 2.3
 - centroid: jump at onset 0.018" +- 0.024 (0.7 sigma, PA 277); largest consecutive-visit jump 0.082"; rms 0.028"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.318, W2-W3 1.649 (W3 S/N 51.7), W3-W4 2.984 (W4 S/N 36.6), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2251,12 +2247,26 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1392 points, cameras bC(g,157); bG(g,223); bc(V,151, d=+0.087); be(V,38, d=-0.026); bg(V,152); bk(g,294); bo(g,217); bs(g,160); change at onset (after-before, per-camera median) +0.031 mag; largest seasonal dimming 0.26 mag at MJD 58126
 - dust: excess flux W1 1.97 mJy, W2 1.45 mJy, T = 2236 K (16-84%: 1392-6843) 
 
+### uid2027333  [D2]  YOUNG
+- position 86.64178 +9.91437; Gaia DR3 3336303180759424640; G 13.70, BP-RP 1.79, plx 2.38 mas; plot `plots/uid2027333.png`
+- **young:** SIMBAD young-star types Y*O (1RXS J054634.2+095452) | Gaia DR3 variability class YSO(0.53)
+- flags: 2.29 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.154 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.34 mag (MJD 57319)
+- NEOWISE: score refetch 1.18 (stored 1.18, reproduced True); dW2 0.045, dW1 0.051, 20 visits, 188 points; baseline W1 9.11, W1-W2 0.699; onset between MJD 57091 and 57285
+- detector 2: excess 0.730 mag, z 22.0, jitter ratio 3.2
+- field control: target step +0.025 (W1 +0.053); neighbours N=122, median -0.005, robust sigma 0.014, max +0.029; z = 2.2
+- centroid: jump at onset 0.031" +- 0.030 (1.0 sigma, PA 324); largest consecutive-visit jump 0.109"; rms 0.044"; toward neighbour: none; expected shift if a neighbour were the source: 1.7" G16.9: 0.04"; 4.1" G19.2: 0.09"
+- AllWISE 2010: W1-W2 0.701, W2-W3 2.408 (W3 S/N 76.8), W3-W4 1.699 (W4 S/N 44.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.14, ipd_frac_multi_peak 0, NSS none, Teff 4895 K, logg 4.12, H-alpha pEW -0.406 nm, varclass YSO(0.53); M_G 5.58, -2.29 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 1.7" PA211 G16.88 dG+3.19; 4.1" PA69 G19.17 dG+5.47
+- SIMBAD (10"): 1RXS J054634.2+095452 [Y*O; *,MIR,NIR,X,Y*O] 0.05" refs=12; Gaia DR3 3336303180759424512 [*; *] 1.72" refs=1
+- ASAS-SN: 913 points, cameras bB(g,111); bF(g,139); bb(V,197, d=+0.154); bj(g,220); bn(g,123); br(g,123); change at onset (after-before, per-camera median) +0.154 mag; largest seasonal dimming 0.34 mag at MJD 57319
+- dust: excess flux W1 3.73 mJy, W2 3.49 mJy, T = 1427 K (16-84%: 1130-2021) 
+
 ### uid1493976  [D2]  YOUNG
 - position 83.56914 -3.95624; Gaia DR3 3215869922660573568; G 12.91, BP-RP 1.39, plx 2.61 mas; plot `plots/uid1493976.png`
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (V* V1937 Ori)
 - flags: 1.82 mag above the main sequence at its colour | not plain dust: optical brightening -0.053 mag (per-camera -0.035,-0.045,-0.061,-0.072) together with the infrared rise
 - NEOWISE: score refetch 0.86 (stored 0.86, reproduced True); dW2 0.088, dW1 0.088, 21 visits, 208 points; baseline W1 9.68, W1-W2 0.227; onset between MJD 57447 and 57646
-- detector 2: excess 0.290 mag, z 14.7, jitter ratio 8.9
+- detector 2: excess 0.290 mag, z 14.0, jitter ratio 8.9
 - field control: target step +0.012 (W1 +0.043); neighbours N=76, median -0.006, robust sigma 0.010, max +0.034; z = 1.8
 - centroid: jump at onset 0.014" +- 0.014 (1.0 sigma, PA 265); largest consecutive-visit jump 0.025"; rms 0.023"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.231, W2-W3 1.614 (W3 S/N 50.2), W3-W4 3.224 (W4 S/N 36.6), ext_flg 0, ph_qual AAAA: W3 excess only (W2-W3 > 1.0; debris-disk-like or blend)
@@ -2279,26 +2289,12 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 928 points, cameras bA(g,183); bE(g,120); ba(V,154, d=-0.047); bi(g,230); bm(g,122); bq(g,119); change at onset (after-before, per-camera median) -0.047 mag; largest seasonal dimming 0.19 mag at MJD 60644
 - dust: excess flux W1 -0.19 mJy, W2 -2.04 mJy, T = n/a K (16-84%: n/a-n/a) no W2 excess flux after onset
 
-### uid1701005  [D2]  YOUNG
-- position 83.88427 -4.78261; Gaia DR3 3209574810572628352; G 14.61, BP-RP 2.18, plx 2.51 mas; plot `plots/uid1701005.png`
-- **young:** SIMBAD young-star types Or*,Y*O (V* V565 Ori) | Gaia DR3 variability class YSO(0.17)
-- flags: 2.41 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.056 mag (per-camera -0.057,-0.056,-0.024) together with the infrared rise
-- NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 18 visits, 174 points; baseline W1 9.18, W1-W2 0.592; onset between MJD 58168 and 58377
-- detector 2: excess 0.560 mag, z 13.0, jitter ratio 8.9
-- field control: target step +0.024 (W1 +0.035); neighbours N=101, median -0.009, robust sigma 0.035, max +0.478; z = 0.9
-- centroid: jump at onset 0.035" +- 0.038 (0.9 sigma, PA 173); largest consecutive-visit jump 0.094"; rms 0.062"; toward neighbour: none; expected shift if a neighbour were the source: 9.0" G19.0: 0.20"
-- AllWISE 2010: W1-W2 0.511, W2-W3 2.213 (W3 S/N 21.3), W3-W4 2.135 (W4 S/N 11.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.10, ipd_frac_multi_peak 0, NSS none, Teff 6321 K, logg 4.20, H-alpha pEW -1.964 nm, varclass YSO(0.17); M_G 6.62, -2.41 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 9.0" PA7 G19.04 dG+4.43
-- SIMBAD (10"): V* V565 Ori [Or*; *,Em*,MIR,NIR,Or*,V*,X,Y*O] 0.03" refs=40; V* V2514 Ori [Or*; *,MIR,NIR,Or*,V*,Y*O] 8.99" refs=20
-- ASAS-SN: 1145 points, cameras bA(g,149); bE(g,213); ba(V,141); be(V,194); bi(g,188, d=-0.057); bm(g,157, d=-0.056); bq(g,103, d=-0.024); change at onset (after-before, per-camera median) -0.056 mag; largest seasonal dimming 0.03 mag at MJD 57805
-- dust: excess flux W1 1.48 mJy, W2 2.46 mJy, T = 810 K (16-84%: 637-1064) 
-
 ### uid1356608  [D2]  YOUNG
 - position 56.42745 +34.77553; Gaia DR3 218336625295850624; G 13.84, BP-RP 1.65, plx 2.68 mas; plot `plots/uid1356608.png`
 - **young:** Gaia DR3 variability class YSO(0.20)
 - flags: 1.52 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.09 (stored 1.09, reproduced True); dW2 0.144, dW1 0.102, 21 visits, 218 points; baseline W1 9.18, W1-W2 0.400; onset between MJD 57425 and 57626
-- detector 2: excess 0.447 mag, z 16.3, jitter ratio 11.6
+- detector 2: excess 0.448 mag, z 16.3, jitter ratio 11.6
 - field control: target step +0.006 (W1 +0.016); neighbours N=89, median -0.003, robust sigma 0.011, max +0.029; z = 0.9
 - centroid: jump at onset 0.014" +- 0.012 (1.2 sigma, PA 274); largest consecutive-visit jump 0.061"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.469, W2-W3 1.139 (W3 S/N 58.1), W3-W4 1.729 (W4 S/N 18.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2313,7 +2309,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*? (WISEA J061633.49+223110.4)
 - flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.57 (stored 0.57, reproduced True); dW2 0.030, dW1 0.017, 11 visits, 98 points; baseline W1 12.21, W1-W2 0.952; onset between MJD 58545 and 58909
-- detector 2: excess 0.992 mag, z 33.0, jitter ratio 3.8
+- detector 2: excess 0.993 mag, z 33.0, jitter ratio 3.8
 - field control: target step +0.017 (W1 +0.009); neighbours N=183, median +0.009, robust sigma 0.020, max +0.099; z = 0.4
 - centroid: jump at onset 0.297" +- 0.119 (2.5 sigma, PA 24); largest consecutive-visit jump 0.285"; rms 0.171"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.929, W2-W3 2.793 (W3 S/N 27.9), W3-W4 1.267 (W4 S/N 7.5), ext_flg 3, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2322,26 +2318,12 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 828 points, cameras bD(g,194, d=+0.019); bH(g,93); bd(V,187); bl(g,165, d=+0.006); bp(g,55); bt(g,134, d=+0.053); change at onset (after-before, per-camera median) +0.019 mag; largest seasonal dimming 0.08 mag at MJD 57048
 - dust: excess flux W1 0.03 mJy, W2 0.22 mJy, T = 412 K (16-84%: 150-631) 
 
-### uid1547585  [D2]  YOUNG
-- position 83.62313 -4.75075; Gaia DR3 3209600855254363520; G 15.81, BP-RP 2.00, plx 2.59 mas; plot `plots/uid1547585.png`
-- **young:** SIMBAD young-star types Or*,Y*O (V* BV Ori)
-- flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.38 mag (MJD 58159)
-- NEOWISE: score refetch 0.54 (stored 0.54, reproduced True); dW2 0.141, dW1 0.137, 20 visits, 177 points; baseline W1 10.52, W1-W2 0.549; onset between MJD 58168 and 58377
-- detector 2: excess 0.543 mag, z 12.8, jitter ratio 18.8
-- field control: target step -0.000 (W1 +0.033); neighbours N=148, median -0.005, robust sigma 0.027, max +0.198; z = 0.2
-- centroid: jump at onset 0.043" +- 0.018 (2.3 sigma, PA 67); largest consecutive-visit jump 0.050"; rms 0.032"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.548, W2-W3 2.257 (W3 S/N 22.8), W3-W4 2.190 (W4 S/N 12.3), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.18, ipd_frac_multi_peak 0, NSS none, Teff nan K, logg nan, H-alpha pEW -1.120 nm, varclass none; M_G 7.88, -0.59 mag vs sequence (on the sequence); neighbours within 10": none
-- SIMBAD (10"): V* BV Ori [Or*; *,Em*,MIR,NIR,Or*,V*,V*?,Y*O] 0.01" refs=34
-- ASAS-SN: 748 points, cameras bA(g,62); bE(g,111); ba(V,124, d=-0.014); be(V,118); bi(g,194, d=+0.191); bm(g,43, d=-0.340); bq(g,96, d=-0.624); change at onset (after-before, per-camera median) -0.177 mag; largest seasonal dimming 0.38 mag at MJD 58159
-- dust: excess flux W1 1.62 mJy, W2 1.90 mJy, T = 1092 K (16-84%: 984-1226) 
-
 ### uid1486857  [D2]  YOUNG
 - position 0.26380 +47.02299; Gaia DR3 387155327088745728; G 13.25, BP-RP 1.55, plx 2.62 mas; plot `plots/uid1486857.png`
 - **young:** SIMBAD young-star types Y*? (UCAC4 686-000123) | Gaia DR3 variability class YSO(0.48)
 - flags: 1.90 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 22 visits, 246 points; baseline W1 9.00, W1-W2 0.431; onset between MJD 58680 and 58840
-- detector 2: excess 0.487 mag, z 21.1, jitter ratio 13.2
+- detector 2: excess 0.487 mag, z 20.4, jitter ratio 13.2
 - field control: target step -0.041 (W1 -0.042); neighbours N=82, median -0.011, robust sigma 0.016, max +0.041; z = -1.8
 - centroid: jump at onset 0.007" +- 0.021 (0.3 sigma, PA 138); largest consecutive-visit jump 0.084"; rms 0.034"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.402, W2-W3 2.113 (W3 S/N 69.0), W3-W4 1.917 (W4 S/N 38.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2355,7 +2337,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*? (2MASS J08523126-4310586) | Gaia DR3 variability class YSO(0.10)
 - flags: 1.83 mag above the main sequence at its colour
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 16 visits, 167 points; baseline W1 9.01, W1-W2 0.329; onset between MJD 57161 and 57355
-- detector 2: excess 0.392 mag, z 20.3, jitter ratio 16.1
+- detector 2: excess 0.392 mag, z 19.0, jitter ratio 16.1
 - field control: target step -0.028 (W1 +0.018); neighbours N=182, median -0.006, robust sigma 0.011, max +0.134; z = -1.9
 - centroid: jump at onset 0.029" +- 0.015 (1.9 sigma, PA 32); largest consecutive-visit jump 0.040"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.342, W2-W3 0.617 (W3 S/N 40.7), W3-W4 2.646 (W4 S/N 31.7), ext_flg 0, ph_qual AAAA: weak W3 excess (0.5 < W2-W3 < 1.0)
@@ -2384,7 +2366,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* AZ Ori)
 - flags: 3.29 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.72 mag (MJD 59629)
 - NEOWISE: score refetch 0.05 (stored 0.05, reproduced True); dW2 0.008, dW1 0.020, 19 visits, 189 points; baseline W1 8.95, W1-W2 0.443; onset between MJD 58899 and 59109
-- detector 2: excess 0.470 mag, z 13.7, jitter ratio 14.5
+- detector 2: excess 0.471 mag, z 13.7, jitter ratio 14.5
 - field control: target step -0.058 (W1 -0.050); neighbours N=113, median -0.004, robust sigma 0.021, max +0.314; z = -2.6
 - centroid: jump at onset 0.008" +- 0.017 (0.4 sigma, PA 222); largest consecutive-visit jump 0.062"; rms 0.026"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.481, W2-W3 2.224 (W3 S/N 43.7), W3-W4 2.087 (W4 S/N 27.4), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2398,7 +2380,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*?,Y*O (UCAC4 449-011147) | Gaia DR3 variability class YSO(0.73)
 - flags: 2.96 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.30 (stored 0.30, reproduced True); dW2 0.019, dW1 0.027, 20 visits, 199 points; baseline W1 8.14, W1-W2 0.444; onset between MJD 57447 and 57647
-- detector 2: excess 0.479 mag, z 15.1, jitter ratio 4.9
+- detector 2: excess 0.480 mag, z 15.1, jitter ratio 4.9
 - field control: target step -0.047 (W1 -0.057); neighbours N=105, median -0.003, robust sigma 0.015, max +0.065; z = -3.0
 - centroid: jump at onset 0.012" +- 0.023 (0.5 sigma, PA 89); largest consecutive-visit jump 0.042"; rms 0.031"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.435, W2-W3 2.230 (W3 S/N 52.3), W3-W4 1.631 (W4 S/N 28.6), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2422,7 +2404,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1456 points, cameras bC(g,155); bG(g,219); ba(V,51); bc(V,151, d=-0.308); be(V,38, d=+0.027); bg(V,153); bk(g,308); bo(g,220); bs(g,161); change at onset (after-before, per-camera median) -0.140 mag; largest seasonal dimming 0.60 mag at MJD 58885
 - dust: excess flux W1 12.55 mJy, W2 5.32 mJy, T = 8000 K (16-84%: 8000-8000) ratio bluer than an 8000 K blackbody (not dust-like)
 
-## Killed (29)
+## Killed (30)
 
 ### uid1894418  [D1+D2]  KILLED
 - position 86.12184 -1.37132; Gaia DR3 3218175740278049664; G 14.06, BP-RP 2.04, plx 2.43 mas; plot `plots/uid1894418.png`
@@ -2438,6 +2420,20 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1418 points, cameras bC(g,155); bG(g,222); bc(V,151, d=-2.581); be(V,38); bg(V,153, d=-2.607); bk(g,310); bo(g,224); bs(g,165); change at onset (after-before, per-camera median) -2.594 mag; largest seasonal dimming 0.34 mag at MJD 57647
 - dust: excess flux W1 3782.66 mJy, W2 5736.22 mJy, T = 866 K (16-84%: 817-924) 
 
+### uid1918148  [D1]  KILLED
+- position 82.66003 -5.42880; Gaia DR3 3209455719717625216; G 14.77, BP-RP 2.04, plx 2.42 mas; plot `plots/uid1918148.png`
+- **KILL:** young star (SIMBAD young-star types Or*,TT*,Y*?,Y*O (V* V538 Ori)): disk variability expected, not an afterglow candidate
+- **young:** SIMBAD young-star types Or*,TT*,Y*?,Y*O (V* V538 Ori)
+- flags: binary type in SIMBAD (SB*, V* V538 Ori) | 1.89 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.226 mag (per-camera -0.281,-0.172) together with the infrared rise | largest seasonal optical dimming 0.19 mag (MJD 56241)
+- NEOWISE: score refetch 14.53 (stored 14.53, reproduced True); dW2 1.280, dW1 1.123, 20 visits, 190 points; baseline W1 10.70, W1-W2 0.428; onset between MJD 57086 and 57281
+- field control: target step +1.135 (W1 +0.964); neighbours N=60, median -0.005, robust sigma 0.013, max +0.043; z = 87.9
+- centroid: jump at onset 0.027" +- 0.017 (1.6 sigma, PA 100); largest consecutive-visit jump 0.126"; rms 0.036"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.420, W2-W3 2.070 (W3 S/N 45.9), W3-W4 2.043 (W4 S/N 23.4), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.33, ipd_frac_multi_peak 0, NSS none, Teff 3819 K, logg 4.09, H-alpha pEW -2.035 nm, varclass none; M_G 6.69, -1.89 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
+- SIMBAD (10"): V* V538 Ori [TT*; *,Em*,Er*,MIR,NIR,Or*,SB*,TT*,V*,Y*?,Y*O] 0.02" refs=20
+- ASAS-SN: 1498 points, cameras bA(g,157); bE(g,218); ba(V,177, d=-0.281); be(V,193, d=-0.172); bi(g,340); bm(g,244); bq(g,169); change at onset (after-before, per-camera median) -0.226 mag; largest seasonal dimming 0.19 mag at MJD 56241
+- dust: excess flux W1 17.03 mJy, W2 19.22 mJy, T = 1133 K (16-84%: 1117-1150) 
+
 ### uid1722578  [D2]  KILLED
 - position 82.78675 +9.75762; Gaia DR3 3338170078487804288; G 15.45, BP-RP 2.07, plx 2.50 mas; plot `plots/uid1722578.png`
 - **KILL:** cataclysmic variable / X-ray binary in SIMBAD (CV*, V* V650 Ori)
@@ -2452,6 +2448,35 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - SIMBAD (10"): V* V650 Ori [CV*; *,CV*,MIR,NIR,Opt,V*,Y*?,Y*O] 0.03" refs=34
 - ASAS-SN: 782 points, cameras bA(g,170, d=-0.688); bE(g,103, d=-0.879); ba(V,147); bi(g,177, d=-0.791); bm(g,91, d=-0.903); bq(g,94, d=-0.769); change at onset (after-before, per-camera median) -0.791 mag; largest seasonal dimming 0.47 mag at MJD 58022
 - dust: excess flux W1 18.14 mJy, W2 18.18 mJy, T = 1302 K (16-84%: 1262-1346) 
+
+### uid1991772  [D1]  KILLED
+- position 85.62757 -8.54869; Gaia DR3 3012342181396446080; G 12.88, BP-RP 1.52, plx 2.39 mas; plot `plots/uid1991772.png`
+- **KILL:** young star (SIMBAD young-star types Or*,Y*?,Y*O (2MASS J05423061-0832552); Gaia DR3 variability class YSO(0.58)): disk variability expected, not an afterglow candidate
+- **young:** SIMBAD young-star types Or*,Y*?,Y*O (2MASS J05423061-0832552) | Gaia DR3 variability class YSO(0.58)
+- flags: centroid jump 0.074" (4.0 sigma, PA 103) not toward a Gaia neighbour | 2.37 mag above the main sequence at its colour
+- NEOWISE: score refetch 40.63 (stored 40.63, reproduced True); dW2 1.059, dW1 0.880, 20 visits, 201 points; baseline W1 10.11, W1-W2 0.012; onset between MJD 58170 and 58379
+- field control: target step +0.948 (W1 +0.663); neighbours N=75, median -0.001, robust sigma 0.016, max +0.358; z = 58.2
+- centroid: jump at onset 0.074" +- 0.018 (4.0 sigma, PA 103); largest consecutive-visit jump 0.057"; rms 0.030"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.368, W2-W3 0.730 (W3 S/N 55.6), W3-W4 3.840 (W4 S/N 52.4), ext_flg 0, ph_qual AAAA: weak W3 excess (0.5 < W2-W3 < 1.0)
+- Gaia: RUWE 1.01, ipd_frac_multi_peak 0, NSS none, Teff 5311 K, logg 4.08, H-alpha pEW -0.045 nm, varclass YSO(0.58); M_G 4.78, -2.37 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
+- SIMBAD (10"): 2MASS J05423061-0832552 [Or*; *,MIR,NIR,Or*,X,Y*?,Y*O] 0.01" refs=28
+- ASAS-SN: 1511 points, cameras bC(g,129); bG(g,254); ba(V,27); bc(V,119, d=+0.063); be(V,35); bg(V,214, d=+0.038); bk(g,346, d=+0.013); bo(g,259, d=+0.011); bs(g,128, d=+0.022); change at onset (after-before, per-camera median) +0.022 mag; largest seasonal dimming 0.06 mag at MJD 58431
+- dust: excess flux W1 23.54 mJy, W2 22.16 mJy, T = 1416 K (16-84%: 1384-1449) 
+
+### uid1987032  [D2]  KILLED
+- position 62.70490 +38.07936; Gaia DR3 226027159377149440; G 14.20, BP-RP 2.11, plx 2.39 mas; plot `plots/uid1987032.png`
+- **KILL:** eclipsing binary in SIMBAD (EB*, ZTF J041049.17+380445.7)
+- **young:** SIMBAD young-star types Y*?,Y*O (ZTF J041049.17+380445.7)
+- flags: 2.70 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.135 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.12 mag (MJD 57780)
+- NEOWISE: score refetch 3.16 (stored 3.16, reproduced True); dW2 0.548, dW1 0.470, 21 visits, 193 points; baseline W1 9.25, W1-W2 0.801; onset between MJD 57265 and 57430
+- detector 2: excess 0.778 mag, z 18.1, jitter ratio 15.5
+- field control: target step +0.432 (W1 +0.365); neighbours N=87, median +0.001, robust sigma 0.012, max +0.071; z = 36.4
+- centroid: jump at onset 0.029" +- 0.025 (1.2 sigma, PA 213); largest consecutive-visit jump 0.089"; rms 0.040"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.752, W2-W3 2.365 (W3 S/N 73.9), W3-W4 1.810 (W4 S/N 43.4), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.12, ipd_frac_multi_peak 0, NSS none, Teff nan K, logg nan, H-alpha pEW -1.534 nm, varclass none; M_G 6.10, -2.70 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": none
+- SIMBAD (10"): ZTF J041049.17+380445.7 [EB*; *,EB*,Em*,FIR,NIR,Y*?,Y*O] 0.19" refs=11
+- ASAS-SN: 531 points, cameras bC(g,266); bc(V,174, d=+0.135); bs(g,91); change at onset (after-before, per-camera median) +0.135 mag; largest seasonal dimming 0.12 mag at MJD 57780
+- dust: excess flux W1 32.46 mJy, W2 45.57 mJy, T = 922 K (16-84%: 905-939) 
 
 ### uid1090282  [D1]  KILLED
 - position 281.80894 +19.66649; Gaia DR3 4518641122550725504; G 13.24, BP-RP 1.17, plx 2.84 mas; plot `plots/uid1090282.png`
@@ -2472,7 +2497,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*?,Y*O (Kiso A-0904 168; 2MASS J05452713-0039502) | Gaia DR3 variability class YSO(0.47)
 - flags: 2.32 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.50 (stored 0.50, reproduced True); dW2 0.043, dW1 0.119, 21 visits, 195 points; baseline W1 8.83, W1-W2 0.508; onset between MJD 57814 and 58016
-- detector 2: excess 0.552 mag, z 19.3, jitter ratio 7.0
+- detector 2: excess 0.553 mag, z 19.3, jitter ratio 7.0
 - field control: target step +0.221 (W1 +0.271); neighbours N=62, median -0.006, robust sigma 0.011, max +0.124; z = 19.7
 - centroid: jump at onset 0.102" +- 0.106 (1.0 sigma, PA 355); largest consecutive-visit jump 0.192"; rms 0.147"; toward neighbour: 3.4" PA21 G14.7 (angle 26 deg); expected shift if a neighbour were the source: 3.4" G14.7: 0.63"
 - AllWISE 2010: W1-W2 0.501, W2-W3 1.663 (W3 S/N 41.7), W3-W4 1.630 (W4 S/N 18.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2502,7 +2527,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,Y*O (V* V447 Ori)
 - flags: binary type in SIMBAD (**, V* V447 Ori) | 1.31 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.39 mag (MJD 60044)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 21 visits, 184 points; baseline W1 9.38, W1-W2 0.447; onset between MJD 58899 and 59108
-- detector 2: excess 0.488 mag, z 16.4, jitter ratio 7.2
+- detector 2: excess 0.489 mag, z 16.4, jitter ratio 7.2
 - field control: target step +0.247 (W1 +0.212); neighbours N=89, median +0.005, robust sigma 0.015, max +0.227; z = 16.3
 - centroid: jump at onset 0.103" +- 0.097 (1.1 sigma, PA 324); largest consecutive-visit jump 0.502"; rms 0.167"; toward neighbour: none; expected shift if a neighbour were the source: 5.0" G16.0: 1.02"
 - AllWISE 2010: W1-W2 0.517, W2-W3 2.339 (W3 S/N 46.7), W3-W4 2.066 (W4 S/N 19.4), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2517,7 +2542,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (Haro 5-64; Gaia DR3 3217634162083288320)
 - flags: binary type in SIMBAD (**,SB*, NAME Haro 5-64A) | 1.40 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.98 (stored 0.97, reproduced True); dW2 0.098, dW1 0.116, 20 visits, 224 points; baseline W1 9.75, W1-W2 0.498; onset between MJD 58899 and 59108
-- detector 2: excess 0.519 mag, z 14.1, jitter ratio 8.5
+- detector 2: excess 0.520 mag, z 14.2, jitter ratio 8.5
 - field control: target step +0.175 (W1 +0.138); neighbours N=76, median -0.001, robust sigma 0.012, max +0.025; z = 14.4
 - centroid: jump at onset 0.018" +- 0.020 (0.9 sigma, PA 308); largest consecutive-visit jump 0.050"; rms 0.027"; toward neighbour: none; expected shift if a neighbour were the source: 2.4" G14.6: 0.36"; 8.0" G20.3: 1.19"; 8.6" G17.7: 1.27"
 - AllWISE 2010: W1-W2 0.495, W2-W3 1.644 (W3 S/N 58.1), W3-W4 1.989 (W4 S/N 27.8), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2532,7 +2557,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Y*O (Kiso A-0832   3)
 - flags: binary type in SIMBAD (**, Gaia DR3 3320081948274119936) | in the Gaia DR3 QSO candidate table (low purity) | Gaia ipd_frac_multi_peak 22% (resolved double?) | 2.39 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.28 (stored 1.28, reproduced True); dW2 0.159, dW1 0.146, 21 visits, 190 points; baseline W1 9.11, W1-W2 0.609; onset between MJD 57092 and 57286
-- detector 2: excess 0.639 mag, z 19.2, jitter ratio 7.0
+- detector 2: excess 0.640 mag, z 19.3, jitter ratio 7.0
 - field control: target step +0.134 (W1 +0.130); neighbours N=91, median -0.004, robust sigma 0.011, max +0.043; z = 12.4
 - centroid: jump at onset 0.037" +- 0.022 (1.7 sigma, PA 2); largest consecutive-visit jump 0.068"; rms 0.035"; toward neighbour: none; expected shift if a neighbour were the source: 1.2" G14.9: 0.13"
 - AllWISE 2010: W1-W2 0.647, W2-W3 2.639 (W3 S/N 73.0), W3-W4 1.605 (W4 S/N 38.6), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2548,7 +2573,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,TT?,Y*O (V* IW Ori B; V* IW Ori; V* IW Ori A)
 - flags: binary type in SIMBAD (**, V* IW Ori B) | AllWISE ext_flg = 1 (extended or 2MASS XSC association) | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 182 points; baseline W1 9.21, W1-W2 0.473; onset between MJD 59995 and 60204
-- detector 2: excess 0.496 mag, z 13.8, jitter ratio 11.1
+- detector 2: excess 0.497 mag, z 13.8, jitter ratio 11.1
 - field control: target step +0.292 (W1 +0.281); neighbours N=119, median -0.001, robust sigma 0.026, max +0.317; z = 11.3
 - centroid: jump at onset 0.106" +- 0.091 (1.2 sigma, PA 9); largest consecutive-visit jump 0.285"; rms 0.155"; toward neighbour: none; expected shift if a neighbour were the source: 3.0" G15.0: 0.70"
 - AllWISE 2010: W1-W2 0.485, W2-W3 2.049 (W3 S/N 30.2), W3-W4 3.358 (W4 S/N 0.9), ext_flg 1, ph_qual AAAU: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2557,27 +2582,12 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1493 points, cameras bA(g,153, d=+0.009); bE(g,219, d=+0.010); ba(V,179); be(V,195); bi(g,342, d=+0.029); bm(g,244, d=+0.011); bq(g,161, d=+0.039); change at onset (after-before, per-camera median) +0.011 mag; largest seasonal dimming 0.04 mag at MJD 57083
 - dust: excess flux W1 4.55 mJy, W2 3.91 mJy, T = 1634 K (16-84%: 1339-2107) 
 
-### uid1608482  [D2]  KILLED
-- position 83.66609 -5.50186; Gaia DR3 3017268921203932032; G 15.00, BP-RP 1.88, plx 2.56 mas; plot `plots/uid1608482.png`
-- **KILL:** blend: Gaia neighbour within 6" only 0.53 mag fainter in G (3.0" PA39 G15.53 dG+0.53) | galaxy/QSO within 6" in SIMBAD: V* IW Ori A [G] 0.0"; V* IW Ori B [G] 3.0"
-- **young:** SIMBAD young-star types Or*,TT*,TT?,Y*O (V* IW Ori A; V* IW Ori; V* IW Ori B)
-- flags: binary type in SIMBAD (**, V* IW Ori A) | AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.08 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 182 points; baseline W1 9.21, W1-W2 0.473; onset between MJD 59995 and 60204
-- detector 2: excess 0.488 mag, z 12.6, jitter ratio 11.1
-- field control: target step +0.292 (W1 +0.281); neighbours N=119, median -0.001, robust sigma 0.027, max +0.317; z = 11.0
-- centroid: jump at onset 0.106" +- 0.091 (1.2 sigma, PA 9); largest consecutive-visit jump 0.285"; rms 0.155"; toward neighbour: 3.0" PA39 G15.5 (angle 30 deg); expected shift if a neighbour were the source: 3.0" G15.5: 0.70"
-- AllWISE 2010: W1-W2 0.485, W2-W3 2.049 (W3 S/N 30.2), W3-W4 3.358 (W4 S/N 0.9), ext_flg 1, ph_qual AAAU: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.06, ipd_frac_multi_peak 0, NSS none, Teff 3601 K, logg 4.00, H-alpha pEW -1.388 nm, varclass none; M_G 7.04, -1.08 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 3.0" PA39 G15.53 dG+0.53
-- SIMBAD (10"): V* IW Ori A [Or*; *,Em*,G,NIR,Or*,TT?,V*,Y*O] 0.03" refs=27; V* IW Ori [TT*; *,**,MIR,Or*,TT*,V*,V*?,X,Y*O] 1.29" refs=27; V* IW Ori B [Or*; *,**,Em*,G,Ir*,NIR,Or*,TT?,V*,Y*O] 2.97" refs=17
-- ASAS-SN: 1500 points, cameras bA(g,153, d=+0.020); bE(g,219, d=+0.030); ba(V,179); be(V,195); bi(g,344, d=+0.031); bm(g,245, d=+0.005); bq(g,165, d=+0.051); change at onset (after-before, per-camera median) +0.030 mag; largest seasonal dimming 0.03 mag at MJD 59252
-- dust: excess flux W1 4.55 mJy, W2 3.91 mJy, T = 1634 K (16-84%: 1339-2107) 
-
 ### uid1639002  [D2]  KILLED
 - position 128.80091 -50.51295; Gaia DR3 5322740776530753280; G 15.06, BP-RP 1.73, plx 2.54 mas; plot `plots/uid1639002.png`
 - **KILL:** blend: Gaia neighbour within 6" only 2.11 mag fainter in G (2.7" PA288 G17.17 dG+2.11; 3.6" PA233 G20.97 dG+5.90; 9.0" PA282 G20.06 dG+5.00)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.69 (stored 0.69, reproduced True); dW2 0.115, dW1 0.055, 18 visits, 234 points; baseline W1 11.35, W1-W2 0.407; onset between MJD 57164 and 57358
-- detector 2: excess 0.444 mag, z 14.2, jitter ratio 12.2
+- detector 2: excess 0.445 mag, z 14.2, jitter ratio 12.2
 - field control: target step +0.101 (W1 +0.060); neighbours N=190, median -0.001, robust sigma 0.009, max +0.050; z = 11.0
 - centroid: jump at onset 0.022" +- 0.021 (1.0 sigma, PA 23); largest consecutive-visit jump 0.105"; rms 0.060"; toward neighbour: none; expected shift if a neighbour were the source: 2.7" G17.2: 0.24"; 3.6" G21.0: 0.32"; 9.0" G20.1: 0.80"
 - AllWISE 2010: W1-W2 0.379, W2-W3 2.566 (W3 S/N 44.8), W3-W4 0.998 (W4 S/N 7.7), ext_flg 1, ph_qual AAAB: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2593,7 +2603,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* AX Ori) | Gaia DR3 variability class YSO(0.22)
 - flags: binary type in SIMBAD (**, V* AX Ori) | AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.93 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | largest seasonal optical dimming 0.14 mag (MJD 59998)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 179 points; baseline W1 8.83, W1-W2 0.626; onset between MJD 60204 and 60362
-- detector 2: excess 0.661 mag, z 20.8, jitter ratio 11.5
+- detector 2: excess 0.662 mag, z 20.8, jitter ratio 11.5
 - field control: target step +0.281 (W1 +0.270); neighbours N=114, median -0.004, robust sigma 0.027, max +0.262; z = 10.7
 - centroid: jump at onset 0.178" +- 0.084 (2.1 sigma, PA 214); largest consecutive-visit jump 0.105"; rms 0.101"; toward neighbour: none; expected shift if a neighbour were the source: 3.6" G16.3: 0.83"
 - AllWISE 2010: W1-W2 0.637, W2-W3 1.636 (W3 S/N 60.5), W3-W4 1.870 (W4 S/N 33.7), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2622,7 +2632,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **KILL:** blend: Gaia neighbour within 6" only 1.98 mag fainter in G (4.1" PA347 G17.31 dG+1.98) | galaxy/QSO within 6" in SIMBAD: 6C 102716+745713 [AGN,BLL,Bla,G,QSO,Sy1] 4.1"
 - flags: optical dimming +0.070 mag after the infrared onset (debris transit signature)
 - NEOWISE: score refetch 1.27 (stored 1.27, reproduced True); dW2 0.184, dW1 0.093, 20 visits, 379 points; baseline W1 11.78, W1-W2 0.471; onset between MJD 59143 and 59300
-- detector 2: excess 0.526 mag, z 22.2, jitter ratio 8.0
+- detector 2: excess 0.526 mag, z 20.9, jitter ratio 8.0
 - field control: target step +0.062 (W1 +0.049); neighbours N=31, median +0.001, robust sigma 0.006, max +0.028; z = 10.4
 - centroid: jump at onset 0.142" +- 0.116 (1.2 sigma, PA 17); largest consecutive-visit jump 0.165"; rms 0.132"; toward neighbour: 4.1" PA347 G17.3 (angle 31 deg); expected shift if a neighbour were the source: 4.1" G17.3: 0.22"
 - AllWISE 2010: W1-W2 -0.048, W2-W3 0.801 (W3 S/N 0.7), W3-W4 3.322 (W4 S/N -0.6), ext_flg 0, ph_qual AAUU: W3 S/N < 5: no W2-W3 class
@@ -2636,7 +2646,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **KILL:** centroid jump 0.394" (5.2 sigma) at the onset toward a neighbour: 4.4" PA147 G19.6 (angle 3 deg)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association)
 - NEOWISE: score refetch 0.86 (stored 0.86, reproduced True); dW2 0.256, dW1 0.216, 7 visits, 60 points; baseline W1 8.61, W1-W2 0.648; onset between MJD 58560 and 59291
-- detector 2: excess 0.711 mag, z 36.9, jitter ratio 21.4
+- detector 2: excess 0.711 mag, z 35.3, jitter ratio 21.4
 - field control: target step +0.274 (W1 +0.274); neighbours N=141, median -0.007, robust sigma 0.029, max +0.068; z = 9.7
 - centroid: jump at onset 0.394" +- 0.076 (5.2 sigma, PA 144); largest consecutive-visit jump 0.267"; rms 0.131"; toward neighbour: 4.4" PA147 G19.6 (angle 3 deg); expected shift if a neighbour were the source: 4.4" G19.6: 0.98"
 - AllWISE 2010: W1-W2 0.692, W2-W3 0.764 (W3 S/N 15.8), W3-W4 0.123 (W4 S/N 2.2), ext_flg 1, ph_qual AAAC: weak W3 excess (0.5 < W2-W3 < 1.0)
@@ -2651,7 +2661,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types TT*,Y*?,Y*O (Kiso A-0975  87)
 - flags: binary type in SIMBAD (**, Kiso A-0975  87) | AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.38 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.63 (stored 0.63, reproduced True); dW2 0.076, dW1 0.057, 16 visits, 163 points; baseline W1 9.80, W1-W2 0.458; onset between MJD 57808 and 58009
-- detector 2: excess 0.510 mag, z 19.8, jitter ratio 11.2
+- detector 2: excess 0.510 mag, z 19.5, jitter ratio 11.2
 - field control: target step +0.106 (W1 +0.095); neighbours N=43, median -0.002, robust sigma 0.012, max +0.032; z = 9.1
 - centroid: jump at onset 0.082" +- 0.151 (0.5 sigma, PA 206); largest consecutive-visit jump 0.334"; rms 0.152"; toward neighbour: 3.1" PA192 G16.2 (angle 14 deg); expected shift if a neighbour were the source: 3.1" G16.2: 0.29"; 8.3" G19.1: 0.78"
 - AllWISE 2010: W1-W2 0.442, W2-W3 2.047 (W3 S/N 57.3), W3-W4 2.054 (W4 S/N 29.0), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2666,7 +2676,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,Y*O (V* BW Ori; 2MASS J05345386-0623526)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.18 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.087 mag (per-camera -0.087,-0.119,+0.003,-0.020,-0.140) together with the infrared rise | largest seasonal optical dimming 0.23 mag (MJD 59841)
 - NEOWISE: score refetch 1.81 (stored 1.81, reproduced True); dW2 0.133, dW1 0.178, 20 visits, 191 points; baseline W1 9.29, W1-W2 0.544; onset between MJD 58741 and 58899
-- detector 2: excess 0.598 mag, z 24.3, jitter ratio 6.8
+- detector 2: excess 0.598 mag, z 23.3, jitter ratio 6.8
 - field control: target step +0.132 (W1 +0.104); neighbours N=119, median +0.003, robust sigma 0.015, max +0.291; z = 8.7
 - centroid: jump at onset 0.051" +- 0.056 (0.9 sigma, PA 60); largest consecutive-visit jump 0.153"; rms 0.111"; toward neighbour: none; expected shift if a neighbour were the source: 3.4" G14.4: 0.39"
 - AllWISE 2010: W1-W2 0.516, W2-W3 1.832 (W3 S/N 44.1), W3-W4 1.992 (W4 S/N 29.0), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2681,7 +2691,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT?,Y*O (V* AR Ori A; V* AR Ori) | Gaia DR3 variability class YSO(0.36)
 - flags: centroid jump 0.077" (3.4 sigma, PA 61) away from the neighbour(s) 2.0" PA240 G14.4, as expected when the target itself brightens in a blended WISE PSF | binary type in SIMBAD (**, V* AR Ori A) | 1.88 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.30 (stored 0.30, reproduced True); dW2 0.025, dW1 0.029, 19 visits, 165 points; baseline W1 9.00, W1-W2 0.437; onset between MJD 58013 and 58168
-- detector 2: excess 0.489 mag, z 19.0, jitter ratio 8.3
+- detector 2: excess 0.489 mag, z 18.7, jitter ratio 8.3
 - field control: target step +0.246 (W1 +0.155); neighbours N=106, median -0.006, robust sigma 0.030, max +0.481; z = 8.4
 - centroid: jump at onset 0.077" +- 0.023 (3.4 sigma, PA 61); largest consecutive-visit jump 0.042"; rms 0.040"; toward neighbour: none; expected shift if a neighbour were the source: 2.0" G14.4: 0.41"
 - AllWISE 2010: W1-W2 0.473, W2-W3 1.132 (W3 S/N 28.8), W3-W4 1.567 (W4 S/N 1.8), ext_flg 0, ph_qual AAAU: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2711,7 +2721,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT?,Y*O (V* V976 Ori)
 - flags: 2.19 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | not plain dust: optical brightening -0.100 mag (per-camera -0.065,-0.065,-0.142,-0.100,-0.166) together with the infrared rise
 - NEOWISE: score refetch 1.06 (stored 1.06, reproduced True); dW2 0.116, dW1 0.066, 20 visits, 191 points; baseline W1 9.14, W1-W2 0.491; onset between MJD 59995 and 60204
-- detector 2: excess 0.535 mag, z 18.7, jitter ratio 10.9
+- detector 2: excess 0.536 mag, z 18.8, jitter ratio 10.9
 - field control: target step +0.193 (W1 +0.085); neighbours N=112, median +0.000, robust sigma 0.032, max +0.292; z = 6.0
 - centroid: jump at onset 0.018" +- 0.019 (1.0 sigma, PA 25); largest consecutive-visit jump 0.066"; rms 0.025"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 0.495, W2-W3 2.055 (W3 S/N 26.4), W3-W4 2.691 (W4 S/N -0.6), ext_flg 3, ph_qual AAAU: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2720,13 +2730,28 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1508 points, cameras bA(g,157, d=-0.065); bE(g,220, d=-0.065); ba(V,176); be(V,195); bi(g,341, d=-0.142); bm(g,250, d=-0.100); bq(g,169, d=-0.166); change at onset (after-before, per-camera median) -0.100 mag; largest seasonal dimming 0.07 mag at MJD 59498
 - dust: excess flux W1 11.22 mJy, W2 13.30 mJy, T = 1076 K (16-84%: 1025-1132) 
 
+### uid1989676  [D2]  KILLED
+- position 112.84104 -46.96217; Gaia DR3 5507467904041566592; G 13.70, BP-RP 1.78, plx 2.39 mas; plot `plots/uid1989676.png`
+- **KILL:** blend: Gaia neighbour within 6" only 2.77 mag fainter in G (2.5" PA153 G16.47 dG+2.77)
+- **young:** SIMBAD young-star types Or*,Y*?,Y*O ([RP93] 4)
+- flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 2.24 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | possible optical brightening at onset (-0.164 mag, one camera only) | largest seasonal optical dimming 0.17 mag (MJD 60622)
+- NEOWISE: score refetch 0.45 (stored 0.45, reproduced True); dW2 0.055, dW1 -0.027, 21 visits, 374 points; baseline W1 9.13, W1-W2 0.495; onset between MJD 58219 and 58428
+- detector 2: excess 0.528 mag, z 16.1, jitter ratio 8.8
+- field control: target step +0.064 (W1 +0.042); neighbours N=103, median -0.002, robust sigma 0.011, max +0.226; z = 5.9
+- centroid: jump at onset 0.240" +- 0.085 (2.8 sigma, PA 338); largest consecutive-visit jump 0.398"; rms 0.117"; toward neighbour: none; expected shift if a neighbour were the source: 2.5" G16.5: 0.14"
+- AllWISE 2010: W1-W2 0.638, W2-W3 1.398 (W3 S/N 67.1), W3-W4 1.539 (W4 S/N 26.4), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.06, ipd_frac_multi_peak 0, NSS none, Teff 4960 K, logg 4.11, H-alpha pEW -0.733 nm, varclass none; M_G 5.60, -2.24 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 2.5" PA153 G16.47 dG+2.77
+- SIMBAD (10"): [RP93] 4 [Or*; *,Em*,NIR,Or*,Y*?,Y*O] 0.16" refs=6; Gaia DR3 5507467904038766976 [*; *] 2.64" refs=2
+- ASAS-SN: 1315 points, cameras bF(g,396); bf(V,227, d=-0.164); bj(g,494); bn(g,198); change at onset (after-before, per-camera median) -0.164 mag; largest seasonal dimming 0.17 mag at MJD 60622
+- dust: excess flux W1 -0.18 mJy, W2 3.62 mJy, T = 150 K (16-84%: 150-379) W1 excess <= 0: colder than ~150 K (upper limit)
+
 ### uid1565407  [D2]  KILLED
 - position 83.96024 -5.86160; Gaia DR3 3017196486578194688; G 14.41, BP-RP 1.66, plx 2.58 mas; plot `plots/uid1565407.png`
 - **KILL:** blend: Gaia neighbour within 6" only -0.40 mag fainter in G (0.9" PA150 G14.02 dG-0.40)
 - **young:** SIMBAD young-star types Or*,Y*O (V* OU Ori; V* OU Ori A)
 - flags: 1.05 mag above the main sequence at its colour
 - NEOWISE: score refetch 0.13 (stored 0.13, reproduced True); dW2 0.013, dW1 0.027, 20 visits, 185 points; baseline W1 9.77, W1-W2 0.321; onset between MJD 57646 and 57811
-- detector 2: excess 0.368 mag, z 13.3, jitter ratio 6.2
+- detector 2: excess 0.369 mag, z 13.3, jitter ratio 6.2
 - field control: target step +0.146 (W1 +0.028); neighbours N=132, median -0.002, robust sigma 0.027, max +0.352; z = 5.6
 - centroid: jump at onset 0.013" +- 0.016 (0.8 sigma, PA 156); largest consecutive-visit jump 0.050"; rms 0.032"; toward neighbour: 0.9" PA150 G14.0 (angle 6 deg); expected shift if a neighbour were the source: 0.9" G14.0: 0.11"
 - AllWISE 2010: W1-W2 0.293, W2-W3 0.071 (W3 S/N 2.4), W3-W4 3.447 (W4 S/N 7.1), ext_flg 0, ph_qual AACB: W3 S/N < 5: no W2-W3 class; W1-W2 > 0.25
@@ -2742,7 +2767,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V401 Ori)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 1.91 mag above the main sequence at its colour | AllWISE 2010 Class I-like colour cuts (W1-W2 > 1.0, W2-W3 > 2.0)
 - NEOWISE: score refetch 1.65 (stored 1.65, reproduced True); dW2 0.244, dW1 0.154, 15 visits, 110 points; baseline W1 8.74, W1-W2 0.540; onset between MJD 59109 and 59473
-- detector 2: excess 0.569 mag, z 16.9, jitter ratio 10.9
+- detector 2: excess 0.570 mag, z 17.0, jitter ratio 10.9
 - field control: target step +0.234 (W1 +0.220); neighbours N=103, median +0.002, robust sigma 0.044, max +0.180; z = 5.3
 - centroid: jump at onset 0.040" +- 0.018 (2.2 sigma, PA 353); largest consecutive-visit jump 0.100"; rms 0.036"; toward neighbour: none; expected shift if a neighbour were the source: n/a
 - AllWISE 2010: W1-W2 1.073, W2-W3 3.000 (W3 S/N 16.8), W3-W4 3.034 (W4 S/N nan), ext_flg 1, ph_qual AAAZ: Class I-like colour cuts (W1-W2 > 1.0, W2-W3 > 2.0)
@@ -2758,7 +2783,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **young:** SIMBAD young-star types Or*,TT*,TT?,Y*O (V* IM Ori)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.81 (stored 0.81, reproduced True); dW2 0.072, dW1 -0.032, 18 visits, 169 points; baseline W1 10.51, W1-W2 0.384; onset between MJD 58377 and 58535
-- detector 2: excess 0.420 mag, z 13.3, jitter ratio 6.3
+- detector 2: excess 0.421 mag, z 13.3, jitter ratio 6.3
 - field control: target step +0.134 (W1 +0.139); neighbours N=126, median -0.005, robust sigma 0.027, max +0.550; z = 5.2
 - centroid: jump at onset 0.041" +- 0.041 (1.0 sigma, PA 115); largest consecutive-visit jump 0.122"; rms 0.077"; toward neighbour: none; expected shift if a neighbour were the source: 5.5" G17.7: 0.64"
 - AllWISE 2010: W1-W2 0.456, W2-W3 2.582 (W3 S/N 39.4), W3-W4 2.820 (W4 S/N 24.5), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2782,37 +2807,6 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - ASAS-SN: 1098 points, cameras bB(g,93); bF(g,187); ba(V,30); bb(V,129, d=+0.124); bf(V,143); bj(g,250); bn(g,107); br(g,159); change at onset (after-before, per-camera median) +0.124 mag; largest seasonal dimming 0.35 mag at MJD 60055
 - dust: excess flux W1 -2.46 mJy, W2 -1.80 mJy, T = n/a K (16-84%: n/a-n/a) no W2 excess flux after onset
 
-### uid875307  [D2]  KILLED
-- position 85.17870 -1.78713; Gaia DR3 3216648548696357376; G 11.37, BP-RP 1.13, plx 2.99 mas; plot `plots/uid875307.png`
-- **KILL:** centroid jump 0.232" (3.2 sigma) at the onset toward a neighbour: 3.7" PA196 G12.9 (angle 9 deg) | blend: Gaia neighbour within 6" only 1.51 mag fainter in G (3.7" PA196 G12.88 dG+1.51)
-- **young:** SIMBAD young-star types Y*?,Y*O (2MASS J05404289-0147136; 2MASS J05404281-0147171) | Gaia DR3 variability class YSO(0.27)
-- flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 2.27 mag above the main sequence at its colour
-- NEOWISE: score refetch 1.54 (stored 1.54, reproduced True); dW2 0.135, dW1 0.101, 20 visits, 186 points; baseline W1 8.74, W1-W2 0.158; onset between MJD 57448 and 57648
-- detector 2: excess 0.216 mag, z 13.0, jitter ratio 7.0
-- field control: target step +0.083 (W1 +0.041); neighbours N=44, median -0.003, robust sigma 0.022, max +0.348; z = 3.9
-- centroid: jump at onset 0.232" +- 0.073 (3.2 sigma, PA 188); largest consecutive-visit jump 0.222"; rms 0.124"; toward neighbour: 3.7" PA196 G12.9 (angle 9 deg); expected shift if a neighbour were the source: 3.7" G12.9: 0.27"
-- AllWISE 2010: W1-W2 0.229, W2-W3 1.098 (W3 S/N 3.5), W3-W4 2.179 (W4 S/N -0.1), ext_flg 1, ph_qual AABU: W3 S/N < 5: no W2-W3 class
-- Gaia: RUWE 1.09, ipd_frac_multi_peak 0, NSS none, Teff 5238 K, logg 3.78, H-alpha pEW 0.051 nm, varclass YSO(0.27); M_G 3.75, -2.27 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 3.7" PA196 G12.88 dG+1.51
-- SIMBAD (10"): 2MASS J05404289-0147136 [Y*O; *,NIR,Y*O] 0.04" refs=8; GSC 04767-01392 [*; *] 2.29" refs=1; 2MASS J05404281-0147171 [Y*O; *,NIR,Y*?,Y*O] 3.65" refs=12
-- ASAS-SN: 0 points, cameras ; change at onset (after-before, per-camera median) n/a mag; largest seasonal dimming n/a mag at MJD n/a
-- dust: excess flux W1 2.15 mJy, W2 3.85 mJy, T = 768 K (16-84%: 608-975) 
-- checks missing: ASAS-SN change at onset (no camera spans the onset)
-
-### uid1791791  [D2]  KILLED
-- position 81.53953 +11.39327; Gaia DR3 3339313403076972800; G 13.43, BP-RP 1.82, plx 2.47 mas; plot `plots/uid1791791.png`
-- **KILL:** blend: Gaia neighbour within 6" only 2.49 mag fainter in G (4.4" PA71 G15.92 dG+2.49)
-- **young:** SIMBAD young-star types Or*,Y*?,Y*O (Haro 6-42; Gaia DR3 3339313398781967616)
-- flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | 2.58 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- NEOWISE: score refetch 0.10 (stored 0.10, reproduced True); dW2 0.015, dW1 0.027, 19 visits, 176 points; baseline W1 8.91, W1-W2 0.423; onset between MJD 59107 and 59262
-- detector 2: excess 0.447 mag, z 12.6, jitter ratio 14.4
-- field control: target step +0.042 (W1 +0.030); neighbours N=84, median +0.002, robust sigma 0.016, max +0.052; z = 2.4
-- centroid: jump at onset 0.018" +- 0.036 (0.5 sigma, PA 147); largest consecutive-visit jump 0.128"; rms 0.064"; toward neighbour: none; expected shift if a neighbour were the source: 4.4" G15.9: 0.16"
-- AllWISE 2010: W1-W2 0.486, W2-W3 1.728 (W3 S/N 65.5), W3-W4 2.094 (W4 S/N 32.3), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.02, ipd_frac_multi_peak 0, NSS none, Teff nan K, logg nan, H-alpha pEW -0.571 nm, varclass RS(0.10); M_G 5.39, -2.58 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 4.4" PA71 G15.92 dG+2.49
-- SIMBAD (10"): Haro 6-42 [Or*; *,Em*,NIR,Or*,V*,Y*?,Y*O,ev] 0.04" refs=25; Gaia DR3 3339313398781967616 [Y*?; *,Y*?] 4.35" refs=6
-- ASAS-SN: 829 points, cameras bB(g,80, d=+0.014); bF(g,112, d=-0.002); bb(V,170); bj(g,217, d=-0.011); bn(g,121, d=+0.017); br(g,129, d=+0.019); change at onset (after-before, per-camera median) +0.014 mag; largest seasonal dimming 0.02 mag at MJD 60243
-- dust: excess flux W1 10.95 mJy, W2 7.56 mJy, T = 2706 K (16-84%: 2147-3770) 
-
 ### uid1763891  [D2]  KILLED
 - position 147.34330 -60.12873; Gaia DR3 5257080553484632448; G 14.56, BP-RP 1.43, plx 2.49 mas; plot `plots/uid1763891.png`
 - **KILL:** blend: Gaia neighbour within 6" only 0.75 mag fainter in G (1.2" PA201 G19.75 dG+5.19; 2.9" PA200 G20.63 dG+6.06; 4.4" PA63 G15.31 dG+0.75; 6.2" PA80 G16.29 dG+1.73; 7.5" PA322 G20.67 dG+6.11; 8.0" PA138 G20.39 dG+5.83; 8.3" PA5 G20.71 dG+6.15; 9.6" PA203 G20.33 dG+5.77)
@@ -2832,7 +2826,7 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - **KILL:** blend: Gaia neighbour within 6" only 2.16 mag fainter in G (2.1" PA37 G19.53 dG+4.58; 2.8" PA22 G20.43 dG+5.48; 3.1" PA238 G18.28 dG+3.34; 3.9" PA176 G20.69 dG+5.75; 4.6" PA231 G17.10 dG+2.16; 5.8" PA89 G20.58 dG+5.64; 7.8" PA179 G19.69 dG+4.74; 8.5" PA27 G18.40 dG+3.46; 9.4" PA175 G19.94 dG+5.00)
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association) | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 16 visits, 114 points; baseline W1 9.69, W1-W2 0.571; onset between MJD 60187 and 60387
-- detector 2: excess 0.625 mag, z 26.0, jitter ratio 4.1
+- detector 2: excess 0.626 mag, z 24.7, jitter ratio 4.1
 - field control: target step +0.048 (W1 +0.014); neighbours N=73, median +0.018, robust sigma 0.047, max +0.179; z = 0.6
 - centroid: jump at onset 0.262" +- 0.111 (2.4 sigma, PA 41); largest consecutive-visit jump 0.344"; rms 0.171"; toward neighbour: 2.1" PA37 G19.5 (angle 3 deg); 2.8" PA22 G20.4 (angle 19 deg); 8.5" PA27 G18.4 (angle 13 deg); expected shift if a neighbour were the source: 2.1" G19.5: 0.09"; 2.8" G20.4: 0.12"; 3.1" G18.3: 0.13"; 3.9" G20.7: 0.17"; 4.6" G17.1: 0.20"; 5.8" G20.6: 0.25"; 7.8" G19.7: 0.33"; 8.5" G18.4: 0.36"; 9.4" G19.9: 0.40"
 - AllWISE 2010: W1-W2 0.502, W2-W3 1.316 (W3 S/N 12.1), W3-W4 3.261 (W4 S/N 20.3), ext_flg 1, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
@@ -2842,18 +2836,18 @@ Counts: {'YOUNG': 148, 'KILLED': 29, 'SURVIVOR': 24}
 - dust: excess flux W1 0.43 mJy, W2 1.76 mJy, T = 493 K (16-84%: 150-771) 
 - checks missing: ASAS-SN (no source)
 
-### uid896516  [D2]  KILLED
-- position 81.17100 +1.91070; Gaia DR3 3222286505017306240; G 14.86, BP-RP 2.01, plx 2.97 mas; plot `plots/uid896516.png`
-- **KILL:** eclipsing binary in SIMBAD (EB*, Kiso A-0903 109)
-- **young:** SIMBAD young-star types TT*,Y*O (Kiso A-0903 109)
-- flags: 1.26 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.435 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.60 mag (MJD 58442)
-- NEOWISE: score refetch 0.95 (stored 0.95, reproduced True); dW2 0.189, dW1 0.268, 21 visits, 221 points; baseline W1 9.77, W1-W2 0.548; onset between MJD 57085 and 57279
-- detector 2: excess 0.541 mag, z 12.7, jitter ratio 9.2
-- field control: target step -0.042 (W1 -0.067); neighbours N=94, median -0.004, robust sigma 0.010, max +0.026; z = -3.7
-- centroid: jump at onset 0.016" +- 0.017 (0.9 sigma, PA 242); largest consecutive-visit jump 0.083"; rms 0.031"; toward neighbour: none; expected shift if a neighbour were the source: n/a
-- AllWISE 2010: W1-W2 0.572, W2-W3 1.869 (W3 S/N 61.7), W3-W4 2.017 (W4 S/N 29.9), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE 1.28, ipd_frac_multi_peak 1, NSS none, Teff nan K, logg nan, H-alpha pEW -2.377 nm, varclass none; M_G 7.23, -1.26 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 8.4" PA178 G18.34 dG+3.48
-- SIMBAD (10"): Kiso A-0903 109 [TT*; *,EB*,Em*,NIR,TT*,Y*O] 0.02" refs=34; Gaia DR3 3222286500721462784 [*; *] 8.40" refs=2
-- ASAS-SN: 1236 points, cameras bA(g,168); bE(g,178); ba(V,210, d=+0.435); be(V,56); bi(g,282); bm(g,212); bq(g,130); change at onset (after-before, per-camera median) +0.435 mag; largest seasonal dimming 0.60 mag at MJD 58442
-- dust: excess flux W1 6.18 mJy, W2 5.77 mJy, T = 1431 K (16-84%: 1223-1728) 
+### uid1967034  [D2]  KILLED
+- position 85.92534 +10.03906; Gaia DR3 3336492915234886912; G 13.64, BP-RP 1.73, plx 2.40 mas; plot `plots/uid1967034.png`
+- **KILL:** blend: Gaia neighbour within 6" only 2.59 mag fainter in G (1.3" PA9 G16.23 dG+2.59)
+- **young:** SIMBAD young-star types Or*,Y*?,Y*O (Gaia DR2 3336492915234886912; [DM99] 234)
+- flags: binary type in SIMBAD (**, Gaia DR2 3336492915234886912) | 2.17 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.080 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.18 mag (MJD 60407)
+- NEOWISE: score refetch 0.26 (stored 0.26, reproduced True); dW2 0.045, dW1 0.018, 20 visits, 204 points; baseline W1 9.37, W1-W2 0.493; onset between MJD 57449 and 57649
+- detector 2: excess 0.531 mag, z 17.0, jitter ratio 16.0
+- field control: target step -0.029 (W1 -0.066); neighbours N=93, median -0.001, robust sigma 0.010, max +0.065; z = -2.9
+- centroid: jump at onset 0.009" +- 0.013 (0.7 sigma, PA 87); largest consecutive-visit jump 0.090"; rms 0.033"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- AllWISE 2010: W1-W2 0.491, W2-W3 1.236 (W3 S/N 56.5), W3-W4 1.386 (W4 S/N 15.3), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- Gaia: RUWE 1.12, ipd_frac_multi_peak 0, NSS none, Teff 4756 K, logg 4.11, H-alpha pEW -0.260 nm, varclass none; M_G 5.54, -2.17 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 1.3" PA9 G16.23 dG+2.59
+- SIMBAD (10"): Gaia DR2 3336492915234886912 [Or*; *,Or*,Y*?] 0.04" refs=13; [DM99] 234 [Y*O; *,**,MIR,NIR,Y*O] 0.05" refs=11; Gaia DR2 3336492915232557312 [*; *] 1.28" refs=6
+- ASAS-SN: 940 points, cameras bA(g,183); bE(g,120); ba(V,156, d=+0.080); bi(g,236); bm(g,122); bq(g,123); change at onset (after-before, per-camera median) +0.080 mag; largest seasonal dimming 0.18 mag at MJD 60407
+- dust: excess flux W1 2.30 mJy, W2 3.61 mJy, T = 842 K (16-84%: 733-973) 
 
