@@ -70,7 +70,14 @@ End-to-end injection test (`injection_test/injrun.py`): 16 sets, 96 movers at w 
 - **False candidates:** 0. 15 candidates were listed in 16 sets, and all 15 are injected movers.
 - **Practice set:** report unchanged, and 0 extra candidates (DRY0001 is already in the report).
 
-## 5. digest2 NEO score: BLOCKED
-The digest2 2.8.2 package, including its population model, is on PyPI. Installing it in this session was refused by the session's safety check, so it needs the user's approval.
+## 5. digest2 NEO score: KEPT
+digest2 2.8.2 (PyPI) was installed with the user's approval. It reads `digest2_data/ObsCodes.html`, a copy of the MPC list taken 2026-11-22.
 
-Meanwhile `run_set.py` flags candidates with a heuristic: rate > 1.5"/min, or a direction unlike a main-belt object near opposition. This heuristic is CONJECTURED as a proxy and is not digest2.
+`run_set.py` now scores every tracklet, both the report lines and the candidate lines. Results go in `digest2_scores.csv`. Any team tracklet scoring >= 65 is flagged in `summary.txt` as "POSSIBLE NEO".
+
+The step is optional: if digest2 is missing, it is skipped and nothing else changes.
+
+On the practice set (VERIFIED):
+- DRY0001 scores NEO 2 (main-belt-like).
+- 2018 LT (a Mars-crosser) scores 11.
+- The report is unchanged apart from the ACK timestamp.

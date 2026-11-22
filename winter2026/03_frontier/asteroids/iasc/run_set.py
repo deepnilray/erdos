@@ -134,6 +134,20 @@ def main():
             fig.suptitle(f"{r_['id']} ({r_['method']}) S/N {r_['score']} rate {r_['rate_arcsec_min']}\"/min {r_['known'] or ''} {r_['neo_flag']}", fontsize=8)
             plt.tight_layout(); plt.savefig(os.path.join(a.out, f"{r_['id']}.png"), dpi=80); plt.close()
     except Exception as e: print("plot error", e)
+    # digest2 (MPC's NEO-likelihood score) on every tracklet: report lines + candidate lines. Optional: skipped if unavailable.
+    d2 = {}
+    try:
+        os.environ.setdefault("DIGEST2_OBSCODES", os.path.join(HERE, "digest2_data", "ObsCodes.html"))
+        from digest2 import Digest2
+        allobs = [l for l in open(os.path.join(a.out, "MPCReport.txt")).read().splitlines() if len(l) == 80 and l[14] == "C"] + lines
+        p = os.path.join(a.out, "digest2_input.obs"); open(p, "w").write("\n".join(allobs) + "\n")
+        with Digest2() as dg:
+            for res in dg.classify_file(p): d2[res.designation.strip()] = (float(res.noid.NEO), float(res.raw.NEO), float(res.noid.MB1))
+        with open(os.path.join(a.out, "digest2_scores.csv"), "w", newline="") as fh:
+            wr = csv.writer(fh); wr.writerow(["designation", "NEO_noid", "NEO_raw", "MB1_noid"])
+            for k, v in d2.items(): wr.writerow([k] + [f"{x:.1f}" for x in v])
+    except Exception as e:
+        print("digest2 skipped:", repr(e))
     # summary
     kn_lk = [t for t in lk if t["known"]]; un_lk = [t for t in lk if not t["known"]]
     txt = [f"Image set: {a.folder} ({n} images)",
@@ -142,6 +156,10 @@ def main():
            "For each candidate: open its PNG, then mark the object in Astrometrica on every image. If it is real, add its",
            "lines from candidates_MPC.txt (or Astrometrica's own measurement) to the report before submitting.",
            "Known objects SkyBoT lists on the chip: " + (", ".join(f"{k['name']} V{k['V']}" for k in known) or "none")]
+    if d2:
+        hot = [k for k, v in d2.items() if v[0] >= 65 and k.startswith(team)]
+        txt.append("digest2 NEO scores (MPC's NEO-likelihood score, 0-100; the MPC treats >= 65 as a likely NEO): " + ", ".join(f"{k} {v[0]:.0f}" for k, v in d2.items()))
+        if hot: txt.append("POSSIBLE NEO: " + ", ".join(hot) + " - confirm in Astrometrica and submit to IASC quickly; NEOs need fast follow-up.")
     open(os.path.join(a.out, "summary.txt"), "w").write("\n".join(txt) + "\n"); print("\n".join(txt))
 
 if __name__ == "__main__":
