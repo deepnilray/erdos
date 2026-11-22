@@ -44,3 +44,4 @@ Labels: the variability and periods are VERIFIED from ZTF data. "New" is VERIFIE
 ## Submission log
 - 2026-11-22 16:45 UTC: Star A submitted to VSX by Deepnil Ray as ZTF J164226.77+392523.3. Status "New", awaiting moderator review.
 - Star B: not yet submitted (VSX allows one submission per day).
+- 2026-11-22 18:22 UTC: VSX revision history shows revision 1 by "Admin, VSX", checked as the approved revision ("Initial database population."). This looks like approval, to be confirmed on the star's VSX page.
