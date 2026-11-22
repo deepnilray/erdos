@@ -60,6 +60,11 @@ THIRD_FRAC = 0.35
 #  - and the per-image scatter must look like noise plus seeing changes: std <= max(STD_ABS, STD_REL x mean)
 STD_ABS, STD_REL = 1.8, 0.65
 
+TEMPLATE = os.environ.get("SYNTH_TEMPLATE", "0") == "1"          # PS1 deep-stack static template (opt-in until scored)
+TEMPLATE_NO_STARMASK = os.environ.get("SYNTH_TEMPLATE_NOSTAR", "0") == "1"   # with a template, mask only star cores
+TEMPLATE_CACHE = os.environ.get("SYNTH_TEMPLATE_CACHE", "/tmp/ps1_template_cache")
+CORE_MASK_SNR = 300
+
 def many(n): return n > 4
 
 def coord_map(w_from, w_to, shape, step=64):
@@ -95,16 +100,37 @@ def prepare(folder):
     rms0 = 1.4826 * np.nanmedian(np.abs(med - np.nanmedian(med)))
     lo = np.nanmin(stack, axis=0); lo = np.where(np.isfinite(lo), lo, 0)     # static = bright in EVERY image (a mover is not)
     star = ndimage.binary_dilation(lo > STAR_MASK_SNR * rms0, iterations=6)
-    Z = []
+    core = ndimage.binary_dilation(lo > CORE_MASK_SNR * rms0, iterations=2)     # only saturated-ish cores (template mode)
+    tinfo = []
+    if TEMPLATE and ims[0]["style"] in ("iasc", "warp"):
+        # PS1 3pi deep-stack template replaces the median-of-n static estimate where it has coverage:
+        # cleaner star removal (near-star movers) and no self-overlap bias for slow movers
+        import template as TP
+        try:
+            Tm = TP.build(w0, shape, TEMPLATE_CACHE)
+            med_t = []
+            for k in range(n):
+                mdl, inf = TP.model_for(A[k], M[k], Tm); tinfo.append(inf)
+                if mdl is None: med_t.append(None); continue
+                if inf["frame_blur"]: A[k] = ndimage.gaussian_filter(A[k], inf["frame_blur"])
+                med_t.append(mdl)
+            if all(m is not None for m in med_t):
+                meds = [np.where(np.isfinite(m), m, med) for m in med_t]
+            else: meds = None
+        except Exception as e:
+            tinfo.append(dict(ok=False, error=repr(e))); meds = None
+    else: meds = None
+    Z = []; Rk = []
     pix = H.pixel_scale_deg(ims[0]["hdr"], ims[0]["style"]) * 3600
     fwhm = PSF_FWHM if PSF_FWHM else float(np.median([im["hdr"].get("SEEING", 2.0) * im["hdr"].get("PIXSCALE", pix) for im in ims]))
     psf_sig = fwhm / 2.355 / pix    # PS1: ~1.3" FWHM in px
     for k in range(n):
-        r = A[k] - med; r[M[k] | bad | star] = 0
+        r = A[k] - (meds[k] if meds is not None else med); r[M[k] | bad | (star if not (meds is not None and TEMPLATE_NO_STARMASK) else core)] = 0
         s = 1.4826 * np.median(np.abs(r[r != 0])); r /= s
+        Rk.append(r.astype(np.float32))
         f = ndimage.gaussian_filter(r, psf_sig)
         f /= 1.4826 * np.median(np.abs(f[r != 0]))
-        f[M[k] | bad | star] = 0
+        f[M[k] | bad | (star if not (meds is not None and TEMPLATE_NO_STARMASK) else core)] = 0
         Z.append(f[::BIN, ::BIN].astype(np.float32))
     Z = np.array(Z)
     neg = sum(ndimage.uniform_filter((z < -4).astype(np.float32), CLUTTER_BOX) * CLUTTER_BOX ** 2 for z in Z)
@@ -112,7 +138,8 @@ def prepare(folder):
     T = np.array([im["t"].mjd for im in ims]) * 1440.0
     Tref = T.mean() if many(n) else T[0]
     return dict(ims=ims, D=D, Z=Z, T=T - Tref, tref_jd=Tref / 1440.0 + 2400000.5, w0=w0, cen=cen, rad=rad, clutter_frac=float(clutter.mean()), psf_fwhm=fwhm,
-                scale=H.pixel_scale_deg(ims[0]["hdr"], ims[0]["style"]) * 3600 * BIN, masked=clutter)
+                scale=H.pixel_scale_deg(ims[0]["hdr"], ims[0]["style"]) * 3600 * BIN, masked=clutter, template=tinfo,
+                R=Rk, Rmask=[M[k] | bad | star for k in range(n)], psf_sigma_px=psf_sig)
 
 def search(P, order=None):
     Z, T = P["Z"], P["T"].copy()
