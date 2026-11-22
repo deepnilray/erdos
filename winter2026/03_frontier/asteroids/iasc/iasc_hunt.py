@@ -286,7 +286,7 @@ def measure(folder, gaia_fn=None, verbose=True):
     for im in ims:
         det = detect(im); w, q = refine_wcs(im, det, gaia); sky = w.pixel_to_world(det["x"], det["y"])
         mag = q["zp"] - 2.5 * np.log10(det["flux"])
-        D.append(dict(sky=sky, mag=mag, snr=det["flux"] / det["ferr"], x=det["x"], y=det["y"], w=w, sub=det["sub"], gap=det["gap"], ab=det["a"] / det["b"]))
+        D.append(dict(sky=sky, mag=mag, snr=det["flux"] / det["ferr"], x=det["x"], y=det["y"], w=w, sub=det["sub"], gap=det["gap"], ab=det["a"] / det["b"], zp=q["zp"]))
         try: stats = image_stats(im, det, w, q, det["good_area_px"], scale * 3600)
         except Exception as e: stats = dict(stats_error=str(e))
         info.append(dict(file=im["file"], mjd=im["t"].mjd, n_det=len(det["x"]), style=im["style"], **q, **stats))

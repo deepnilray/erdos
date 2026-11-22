@@ -41,3 +41,36 @@ Injection test, 25 trials planned (21 completed), 126 movers at 1.25-15"/min, w 
 
 - **False fast tracklets:** 0 in 21 trials, and 0 on the real practice set.
 - **Gain:** for fast movers (the NEO regime), the combined search reaches about 0.7 mag deeper than the linker alone. At w 21-22 it finds 16/33 against 3/33.
+
+## 4. One command, `run_set.py`, with PSF-fitted candidate positions: KEPT (VERIFIED)
+`python3 -I run_set.py <folder> <out> --team ABC` runs the linker, synth and the fast search. It writes:
+- `MPCReport.txt`: byte-identical to the linker report. On the practice set it holds 2018 LT and DRY0001.
+- `candidates_review.csv`, `candidates_MPC.txt` and cutouts for the faint and fast candidates.
+- `summary.txt`.
+
+Each candidate's position in every image comes from an elliptical-Gaussian fit to the original frame.
+
+End-to-end injection test (`injection_test/injrun.py`): 16 sets, 96 movers at w 19.5-22.3 and 0.1-10"/min. The real report files are parsed and compared with the truth.
+
+| rate | w | n | found | in MPCReport | as candidate |
+|---|---|---|---|---|---|
+| 0.1-1.25 | 19.5-20.5 | 26 | 26 | 26 | 0 |
+| 0.1-1.25 | 20.5-21 | 13 | 13 | 13 | 0 |
+| 0.1-1.25 | 21-21.5 | 12 | 10 | 9 | 1 |
+| 0.1-1.25 | 21.5-22 | 11 | 9 | 1 | 8 |
+| 0.1-1.25 | 22-22.3 | 9 | 1 | 0 | 1 |
+| 1.25-10 | 19.5-20.5 | 11 | 11 | 10 | 1 |
+| 1.25-10 | 20.5-21 | 3 | 3 | 1 | 2 |
+| 1.25-10 | 21-21.5 | 6 | 3 | 1 | 2 |
+| 1.25-10 | > 21.5 | 5 | 0 | 0 | 0 |
+
+- **Positions against the truth:**
+  - Linker lines: median 0.04", worst 0.72".
+  - PSF-fitted candidate lines: median 0.10", worst 0.34".
+- **False candidates:** 0. 15 candidates were listed in 16 sets, and all 15 are injected movers.
+- **Practice set:** report unchanged, and 0 extra candidates (DRY0001 is already in the report).
+
+## 5. digest2 NEO score: BLOCKED
+The digest2 2.8.2 package, including its population model, is on PyPI. Installing it in this session was refused by the session's safety check, so it needs the user's approval.
+
+Meanwhile `run_set.py` flags candidates with a heuristic: rate > 1.5"/min, or a direction unlike a main-belt object near opposition. This heuristic is CONJECTURED as a proxy and is not digest2.
