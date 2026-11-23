@@ -2,9 +2,9 @@
  "mode": "far",
  "n_targets": 201,
  "counts": {
-  "YOUNG": 138,
-  "KILLED": 32,
-  "SURVIVOR": 31
+  "YOUNG": 136,
+  "KILLED": 33,
+  "SURVIVOR": 32
  },
  "controls": [
   [
@@ -23,5 +23,5 @@
    "young: SIMBAD young-star types Or*,TT*,TT?,Y*?,Y*O (V* V836 Tau) | Gaia DR3 variability class YSO(0.83)"
   ]
  ],
- "minutes": 9.6
+ "minutes": 12.5
 }
