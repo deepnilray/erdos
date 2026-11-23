@@ -1,5 +1,12 @@
 # Giant-impact afterglow hunt: log
 
+## 2026-11-23 (Claude): flash detector for Gaia DR4 built; DR4-day run scheduled
+Verdict: flash/flash.py VALIDATED on simulated Gaia-cadence light curves (0 of 6,000 nulls near threshold; >= 1 % flashes with
+tau >= 300 d recovered at G <= 15, >= 5 % at G 17; blind to tau of a few days). See flash/README.md. Far search about 86 % done
+(IRSA 503s this morning); new far hits 1991772 and 1918148 lie in Orion (likely young), 1090282 (RA 281.8, Dec +19.7) unexplained.
+Scheduled task (2 Dec 18:40 IST): DR4 light curves for all candidates, flash run to about 2 kpc, dipper/fade side scan, prior-art.
+Next: real-data null test of flash.py on DR3 epoch photometry (Gaia TAP from Actions), then DR4.
+
 ## 2026-11-20, evening (Claude): automated vetting (vet2) built and validated; far search on track
 Verdict: every candidate now gets the full manual checklist automatically (vet2/vet2.py, workflow giant_impacts_vet2.yml, results on
 branch impacts-vet2). On the near list it reproduces every manual result: controls pass (ASASSN-21qj survives and is found in
