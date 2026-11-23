@@ -1,6 +1,6 @@
 # vet2 report: far target list (final)
 
-Generated 2026-11-23 12:47 UTC; 201 targets; machine-generated, the plots in plots/ still need a look by eye.
+Generated 2026-11-23 15:13 UTC; 201 targets; machine-generated, the plots in plots/ still need a look by eye.
 
 Kill rules: field-control z < 5 (detector-1 and list targets); centroid jump > 3 sigma toward a Gaia neighbour; Gaia neighbour within 6" with dG < 3; baseline W1 < 8; SIMBAD CV / confirmed eclipsing binary (counterpart within 3"); SIMBAD galaxy/QSO within 6"; young star (SIMBAD Y*O, Y*?, TT*, TT?, Or*, Ae*, Ae?, pr* within 5" or Gaia variability class YSO) kills detector-1/list targets and labels detector-2 targets 'known/likely young star'. Flags (not kills): 'not plain dust' (optical brightening at the infrared onset in >= 2 ASAS-SN cameras, none dimming, median < -0.015 mag), SIMBAD '?' candidate types, RUWE, NSS, ext_flg, colour classes.
 
