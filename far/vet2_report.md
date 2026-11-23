@@ -1,6 +1,6 @@
 # vet2 report: far target list (final)
 
-Generated 2026-11-23 15:13 UTC; 201 targets; machine-generated, the plots in plots/ still need a look by eye.
+Generated 2026-11-23 16:04 UTC; 201 targets; machine-generated, the plots in plots/ still need a look by eye.
 
 Kill rules: field-control z < 5 (detector-1 and list targets); centroid jump > 3 sigma toward a Gaia neighbour; Gaia neighbour within 6" with dG < 3; baseline W1 < 8; SIMBAD CV / confirmed eclipsing binary (counterpart within 3"); SIMBAD galaxy/QSO within 6"; young star (SIMBAD Y*O, Y*?, TT*, TT?, Or*, Ae*, Ae?, pr* within 5" or Gaia variability class YSO) kills detector-1/list targets and labels detector-2 targets 'known/likely young star'. Flags (not kills): 'not plain dust' (optical brightening at the infrared onset in >= 2 ASAS-SN cameras, none dimming, median < -0.015 mag), SIMBAD '?' candidate types, RUWE, NSS, ext_flg, colour classes.
 
@@ -115,19 +115,17 @@ Counts: {'YOUNG': 136, 'SURVIVOR': 33, 'KILLED': 32}
 - dust: excess flux W1 0.93 mJy, W2 1.45 mJy, T = 846 K (16-84%: 820-872) 
 
 ### uid2841489  [D2]  SURVIVOR
-- position 295.16188 -36.33728; Gaia DR3 6740145645665091584; G n/a, BP-RP n/a, plx n/a mas; plot `plots/uid2841489.png`
+- position 295.16188 -36.33728; Gaia DR3 6740145645665091584; G 15.98, BP-RP 1.63, plx 2.12 mas; plot `plots/uid2841489.png`
 - flags: AllWISE ext_flg = 1 (extended or 2MASS XSC association)
 - NEOWISE: score refetch 0.00 (stored 0.00, reproduced True); dW2 0.000, dW1 0.000, 20 visits, 159 points; baseline W1 11.67, W1-W2 0.603; onset between MJD 59113 and 59316
 - detector 2: excess 0.655 mag, z 23.2, jitter ratio 10.6
 - field control: target step +0.396 (W1 +0.231); neighbours N=53, median +0.002, robust sigma 0.015, max +0.041; z = 26.6
-- centroid: jump at onset 0.028" +- 0.025 (1.1 sigma, PA 320); largest consecutive-visit jump 0.071"; rms 0.042"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- centroid: jump at onset 0.028" +- 0.025 (1.1 sigma, PA 320); largest consecutive-visit jump 0.071"; rms 0.042"; toward neighbour: none; expected shift if a neighbour were the source: 9.8" G20.8: 2.99"
 - AllWISE 2010: W1-W2 0.548, W2-W3 0.830 (W3 S/N 14.2), W3-W4 1.534 (W4 S/N 0.0), ext_flg 1, ph_qual AAAU: weak W3 excess (0.5 < W2-W3 < 1.0)
-- Gaia: RUWE n/a, ipd_frac_multi_peak n/a, NSS none, Teff n/a K, logg n/a, H-alpha pEW n/a nm, varclass none; M_G n/a, n/a mag vs sequence (n/a); neighbours within 10": none
+- Gaia: RUWE 0.98, ipd_frac_multi_peak 0, NSS none, Teff 4502 K, logg 4.50, H-alpha pEW 0.044 nm, varclass none; M_G 7.61, +0.18 mag vs sequence (on the sequence); neighbours within 10": 9.8" PA173 G20.78 dG+4.79
 - SIMBAD (10"): no object
 - ASAS-SN: 989 points, cameras bF(g,257, d=+0.026); bf(V,222); bj(g,313, d=+0.027); bn(g,197, d=-0.021); change at onset (after-before, per-camera median) +0.026 mag; largest seasonal dimming 0.06 mag at MJD 59368
 - dust: excess flux W1 0.09 mJy, W2 0.22 mJy, T = 630 K (16-84%: 293-1033) 
-- checks missing: gaia
-- errors: gaia: RuntimeError('gea.esac.esa.int: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE')
 
 ### uid239897  [D2]  SURVIVOR
 - position 222.73717 +36.20318; Gaia DR3 1293509154439630464; G 14.04, BP-RP 1.46, plx 3.62 mas; plot `plots/uid239897.png`
@@ -365,19 +363,17 @@ Counts: {'YOUNG': 136, 'SURVIVOR': 33, 'KILLED': 32}
 - checks missing: ASAS-SN (no source)
 
 ### uid3081407  [D2]  SURVIVOR
-- position 339.49816 +39.98879; Gaia DR3 1932356883700224512; G n/a, BP-RP n/a, plx n/a mas; plot `plots/uid3081407.png`
-- flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
+- position 339.49816 +39.98879; Gaia DR3 1932356883700224512; G 12.41, BP-RP 1.25, plx 2.05 mas; plot `plots/uid3081407.png`
+- flags: 2.41 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
 - NEOWISE: score refetch 1.16 (stored 1.16, reproduced True); dW2 0.135, dW1 0.135, 22 visits, 249 points; baseline W1 9.30, W1-W2 0.297; onset between MJD 57370 and 57560
 - detector 2: excess 0.358 mag, z 18.0, jitter ratio 11.0
 - field control: target step +0.015 (W1 -0.029); neighbours N=90, median -0.002, robust sigma 0.010, max +0.091; z = 1.6
-- centroid: jump at onset 0.026" +- 0.019 (1.3 sigma, PA 250); largest consecutive-visit jump 0.059"; rms 0.036"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- centroid: jump at onset 0.026" +- 0.019 (1.3 sigma, PA 250); largest consecutive-visit jump 0.059"; rms 0.036"; toward neighbour: none; expected shift if a neighbour were the source: 3.1" G16.6: 0.04"
 - AllWISE 2010: W1-W2 0.311, W2-W3 1.494 (W3 S/N 63.4), W3-W4 1.550 (W4 S/N 23.5), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE n/a, ipd_frac_multi_peak n/a, NSS none, Teff n/a K, logg n/a, H-alpha pEW n/a nm, varclass none; M_G n/a, n/a mag vs sequence (n/a); neighbours within 10": none
+- Gaia: RUWE 1.08, ipd_frac_multi_peak 1, NSS none, Teff 5468 K, logg 4.04, H-alpha pEW -0.110 nm, varclass RS(0.74); M_G 3.97, -2.41 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 3.1" PA157 G16.59 dG+4.19
 - SIMBAD (10"): Gaia DR3 1932356883700224512 [*; *] 0.07" refs=3; Gaia DR3 1932356883700224640 [*; *] 3.05" refs=2
 - ASAS-SN: 1525 points, cameras bB(g,114); bC(g,308); bb(V,185, d=-0.009); bc(V,307, d=+0.004); br(g,306); bs(g,284); cB(g,21); change at onset (after-before, per-camera median) -0.003 mag; largest seasonal dimming 0.04 mag at MJD 57896
 - dust: excess flux W1 8.66 mJy, W2 4.58 mJy, T = 8000 K (16-84%: 7911-8000) ratio bluer than an 8000 K blackbody (not dust-like)
-- checks missing: gaia
-- errors: gaia: RuntimeError('gea.esac.esa.int: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE')
 
 ### uid1599936  [D2]  SURVIVOR
 - position 263.44908 -32.48313; Gaia DR3 4054634399450679552; G 15.07, BP-RP 1.66, plx 2.56 mas; plot `plots/uid1599936.png`
@@ -688,20 +684,18 @@ Counts: {'YOUNG': 136, 'SURVIVOR': 33, 'KILLED': 32}
 - dust: excess flux W1 44.62 mJy, W2 29.72 mJy, T = 3066 K (16-84%: 2620-3741) 
 
 ### uid2903029  [D2]  YOUNG
-- position 339.26366 +40.08845; Gaia DR3 1932403097548149248; G n/a, BP-RP n/a, plx n/a mas; plot `plots/uid2903029.png`
-- **young:** SIMBAD young-star types TT*,Y*? (ATO J339.2636+40.0884)
-- flags: AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.207 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.77 mag (MJD 59532)
+- position 339.26366 +40.08845; Gaia DR3 1932403097548149248; G 12.76, BP-RP 1.33, plx 2.10 mas; plot `plots/uid2903029.png`
+- **young:** SIMBAD young-star types TT*,Y*? (ATO J339.2636+40.0884) | Gaia DR3 variability class YSO(0.39)
+- flags: 2.28 mag above the main sequence at its colour | AllWISE 2010 Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0) | optical dimming +0.207 mag after the infrared onset (debris transit signature) | largest seasonal optical dimming 0.77 mag (MJD 59532)
 - NEOWISE: score refetch 1.44 (stored 1.44, reproduced True); dW2 0.288, dW1 0.248, 21 visits, 265 points; baseline W1 8.96, W1-W2 0.402; onset between MJD 57011 and 57196
 - detector 2: excess 0.465 mag, z 22.2, jitter ratio 13.6
 - field control: target step +0.316 (W1 +0.323); neighbours N=91, median -0.001, robust sigma 0.011, max +0.135; z = 28.5
-- centroid: jump at onset 0.011" +- 0.014 (0.8 sigma, PA 45); largest consecutive-visit jump 0.033"; rms 0.025"; toward neighbour: none; expected shift if a neighbour were the source: n/a
+- centroid: jump at onset 0.011" +- 0.014 (0.8 sigma, PA 45); largest consecutive-visit jump 0.033"; rms 0.025"; toward neighbour: none; expected shift if a neighbour were the source: 4.4" G20.4: 1.11"
 - AllWISE 2010: W1-W2 0.398, W2-W3 2.017 (W3 S/N 70.4), W3-W4 2.064 (W4 S/N 45.7), ext_flg 0, ph_qual AAAA: Class II-like colour cuts (W1-W2 > 0.25, W2-W3 > 1.0)
-- Gaia: RUWE n/a, ipd_frac_multi_peak n/a, NSS none, Teff n/a K, logg n/a, H-alpha pEW n/a nm, varclass none; M_G n/a, n/a mag vs sequence (n/a); neighbours within 10": none
+- Gaia: RUWE 1.27, ipd_frac_multi_peak 0, NSS none, Teff 5522 K, logg 4.06, H-alpha pEW -0.365 nm, varclass YSO(0.39); M_G 4.37, -2.28 mag vs sequence (above the sequence (brighter than stars of the same colour: pre-main-sequence or unresolved binary)); neighbours within 10": 4.4" PA159 G20.38 dG+7.62
 - SIMBAD (10"): ATO J339.2636+40.0884 [TT*; *,NIR,Opt,TT*,V*,Y*?] 0.08" refs=9
 - ASAS-SN: 1533 points, cameras bB(g,122); bC(g,309); bb(V,188, d=+0.233); bc(V,306, d=+0.180); br(g,311); bs(g,276); cB(g,21); change at onset (after-before, per-camera median) +0.207 mag; largest seasonal dimming 0.77 mag at MJD 59532
 - dust: excess flux W1 24.27 mJy, W2 20.85 mJy, T = 1632 K (16-84%: 1541-1734) 
-- checks missing: gaia
-- errors: gaia: RuntimeError('gea.esac.esa.int: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE')
 
 ### uid1159910  [D2]  YOUNG
 - position 79.80651 -3.40349; Gaia DR3 3213527348713890560; G 12.21, BP-RP 1.28, plx 2.80 mas; plot `plots/uid1159910.png`
