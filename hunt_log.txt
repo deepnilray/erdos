@@ -1,0 +1,1113 @@
+10:02:29 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+10:02:29 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+10:12:04 gaia pool rows: 3366478 from 144 strips
+10:12:05 after main-sequence cut: 3303105
+10:12:23 pool 3303107, done 0, to do 825776
+12:14:26 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+12:14:26 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+12:20:19 gaia pool rows: 3366478 from 144 strips
+12:20:20 after main-sequence cut: 3303105
+12:20:50 pool 3303107, done 360, to do 825416
+15:47:21 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:47:21 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:48:29 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:48:32 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:48:33 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:48:33 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:49:10 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:49:12 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:49:13 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:49:13 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+15:55:25 upload join failed (attempt 3/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/async/28991877?WAIT=59
+15:56:55 chunk falls back to per-source cones
+16:50:16 cone failed 154227 DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+17:36:07 processed this run: 41639
+17:36:08 remaining in this shard: 783777
+17:36:08 scored: 41999 | with light curve: 36521
+17:36:08 VALIDATION ASASSN-21qj: []
+17:36:08 VALIDATION NGC2547-ID8: []
+17:36:08 score > 5: 0  (and reddening dW2-dW1>0.05: 0)
+17:36:08 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+17:36:08 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+17:36:08 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+17:36:08 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+17:36:08 candidates written: 0
+17:36:08 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+17:37:00 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+17:37:00 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+17:46:38 gaia pool rows: 3366478 from 144 strips
+17:46:39 after main-sequence cut: 3303105
+17:47:02 pool 3303107, done 41999, to do 783777
+19:39:00 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+19:39:00 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+19:50:15 gaia pool rows: 3366478 from 144 strips
+19:50:15 after main-sequence cut: 3303105
+19:50:40 pool 3303107, done 62879, to do 762897
+00:59:59 processed this run: 63060
+00:59:59 remaining in this shard: 699837
+00:59:59 scored: 125939 | with light curve: 108737
+01:00:00 VALIDATION ASASSN-21qj: []
+01:00:00 VALIDATION NGC2547-ID8: []
+01:00:00 score > 5: 0  (and reddening dW2-dW1>0.05: 0)
+01:00:00 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+01:00:00 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+01:00:00 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+01:00:00 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+01:00:00 candidates written: 0
+01:00:00 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+01:00:52 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+01:00:52 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+01:07:41 gaia pool rows: 3366478 from 144 strips
+01:07:42 after main-sequence cut: 3303105
+01:08:12 pool 3303107, done 125939, to do 699837
+05:11:34 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:11:36 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:14 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:12:16 upload join failed (attempt 2/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:13:53 upload join failed (attempt 3/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/async
+05:14:13 upload join failed (attempt 3/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/async
+05:14:23 upload join failed (attempt 3/3): DALServiceError: 504 Server Error: Gateway Time-out for url: https://irsa.ipac.caltech.edu/TAP/async
+05:15:11 upload join failed (attempt 3/3): DALServiceError: HTTPSConnectionPool(host='irsa.ipac.caltech.edu', port=443): Read timed out. (read timeout=10)
+05:15:11 upload join failed (attempt 3/3): DALServiceError: HTTPSConnectionPool(host='irsa.ipac.caltech.edu', port=443): Read timed out. (read timeout=10)
+05:15:17 upload join failed (attempt 3/3): DALServiceError: HTTPSConnectionPool(host='irsa.ipac.caltech.edu', port=443): Read timed out. (read timeout=10)
+05:15:17 upload join failed (attempt 3/3): DALServiceError: HTTPSConnectionPool(host='irsa.ipac.caltech.edu', port=443): Read timed out. (read timeout=10)
+05:15:23 chunk falls back to per-source cones
+05:15:43 chunk falls back to per-source cones
+05:15:53 chunk falls back to per-source cones
+05:16:41 chunk falls back to per-source cones
+05:16:41 chunk falls back to per-source cones
+05:16:47 chunk falls back to per-source cones
+05:16:47 chunk falls back to per-source cones
+05:55:47 cone failed 698935 DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+06:56:27 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+06:56:27 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+07:03:26 gaia pool rows: 3366478 from 144 strips
+07:03:27 after main-sequence cut: 3303105
+07:03:58 pool 3303107, done 174479, to do 651297
+08:17:59 upload join failed (attempt 1/3): DALQueryError: UsageFault: BAD_REQUEST: slurmstepd-localhost: error: *** JOB 29103511 ON localhost CANCELLED AT 2026-11-21T00:17:57 DUE TO TIME LIMIT ***
+08:17:59 upload join failed (attempt 1/3): DALQueryError: UsageFault: BAD_REQUEST: slurmstepd-localhost: error: *** JOB 29103508 ON localhost CANCELLED AT 2026-11-21T00:17:57 DUE TO TIME LIMIT ***
+08:25:56 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+08:25:56 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+08:25:56 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+09:41:09 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+09:41:11 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+09:41:11 upload join failed (attempt 1/3): DALQueryError: TransientFault: INTERNAL_SERVER_ERROR: Job ran but timed out.
+12:18:52 processed this run: 58380
+12:18:53 remaining in this shard: 592918
+12:18:53 scored: 232859 | with light curve: 200751
+12:18:53 VALIDATION ASASSN-21qj: []
+12:18:53 VALIDATION NGC2547-ID8: []
+12:18:53 score > 5: 0  (and reddening dW2-dW1>0.05: 0)
+12:18:53 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+12:18:53 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+12:18:53 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+12:18:53 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+12:18:53 candidates written: 0
+12:18:53 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+12:19:47 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+12:19:47 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+12:24:37 gaia pool rows: 3366478 from 144 strips
+12:24:38 after main-sequence cut: 3303105
+12:25:02 pool 3303107, done 232858, to do 592918
+17:41:26 processed this run: 64860
+17:41:27 remaining in this shard: 528059
+17:41:27 scored: 297719 | with light curve: 256195
+17:41:27 VALIDATION ASASSN-21qj: []
+17:41:27 VALIDATION NGC2547-ID8: []
+17:41:27 score > 5: 0  (and reddening dW2-dW1>0.05: 0)
+17:41:27 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+17:41:27 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+17:41:27 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+17:41:27 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+17:41:27 candidates written: 0
+17:41:27 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+17:42:23 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+17:42:23 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+17:47:55 gaia pool rows: 3366478 from 144 strips
+17:47:56 after main-sequence cut: 3303105
+17:48:27 pool 3303107, done 297717, to do 528059
+23:04:09 processed this run: 60000
+23:04:09 remaining in this shard: 468060
+23:04:10 scored: 357719 | with light curve: 307340
+23:04:10 VALIDATION ASASSN-21qj: []
+23:04:10 VALIDATION NGC2547-ID8: []
+23:04:10 score > 5: 1  (and reddening dW2-dW1>0.05: 0)
+23:04:10 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+23:04:10 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+23:04:10 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+23:04:10 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+23:04:10 candidates written: 0
+23:04:10 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+23:04:57 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+23:04:57 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+23:10:56 gaia pool rows: 3366478 from 144 strips
+23:10:57 after main-sequence cut: 3303105
+23:11:26 pool 3303107, done 357716, to do 468060
+04:25:09 processed this run: 61380
+04:25:10 remaining in this shard: 406681
+04:25:10 scored: 419099 | with light curve: 359399
+04:25:10 VALIDATION ASASSN-21qj: []
+04:25:10 VALIDATION NGC2547-ID8: []
+04:25:10 score > 5: 1  (and reddening dW2-dW1>0.05: 0)
+04:25:10 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+04:25:10 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+04:25:10 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+04:25:10 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+04:25:10 candidates written: 0
+04:25:10 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+04:26:04 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+04:26:04 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+04:34:46 gaia pool rows: 3366478 from 144 strips
+04:34:47 after main-sequence cut: 3303105
+04:35:19 pool 3303107, done 419095, to do 406681
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:03 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+09:46:26 processed this run: 56220
+09:46:27 remaining in this shard: 350462
+09:46:28 scored: 475319 | with light curve: 407010
+09:46:28 VALIDATION ASASSN-21qj: []
+09:46:28 VALIDATION NGC2547-ID8: []
+09:46:28 score > 5: 1  (and reddening dW2-dW1>0.05: 0)
+09:46:28 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+09:46:28 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+09:46:28 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+09:46:28 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+09:46:28 candidates written: 0
+09:46:28 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+09:47:23 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+09:47:23 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+09:58:11 gaia pool rows: 3366478 from 144 strips
+09:58:12 after main-sequence cut: 3303105
+09:58:36 pool 3303107, done 475314, to do 350462
+15:08:21 processed this run: 56760
+15:08:22 remaining in this shard: 293703
+15:08:23 scored: 532079 | with light curve: 455077
+15:08:23 VALIDATION ASASSN-21qj: []
+15:08:23 VALIDATION NGC2547-ID8: []
+15:08:23 score > 5: 3  (and reddening dW2-dW1>0.05: 1)
+15:08:23 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+15:08:23 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+15:08:23 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+15:08:23 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+15:08:23 candidates written: 0
+15:08:23 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+15:09:44 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+15:09:44 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+15:19:38 gaia pool rows: 3366478 from 144 strips
+15:19:39 after main-sequence cut: 3303105
+15:20:09 pool 3303107, done 532073, to do 293703
+20:30:59 processed this run: 52980
+20:31:00 remaining in this shard: 240724
+20:31:00 scored: 585059 | with light curve: 499587
+20:31:00 VALIDATION ASASSN-21qj: []
+20:31:00 VALIDATION NGC2547-ID8: []
+20:31:00 score > 5: 4  (and reddening dW2-dW1>0.05: 2)
+20:31:00 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+20:31:00 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+20:31:00 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+20:31:00 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+20:31:01 candidates written: 0
+20:31:01 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+20:31:51 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+20:31:51 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+20:40:10 gaia pool rows: 3366478 from 144 strips
+20:40:11 after main-sequence cut: 3303105
+20:40:29 pool 3303107, done 585052, to do 240724
+01:53:08 processed this run: 60420
+01:53:09 remaining in this shard: 180305
+01:53:09 scored: 645479 | with light curve: 550370
+01:53:09 VALIDATION ASASSN-21qj: []
+01:53:09 VALIDATION NGC2547-ID8: []
+01:53:09 score > 5: 4  (and reddening dW2-dW1>0.05: 2)
+01:53:09 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+01:53:09 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+01:53:09 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+01:53:09 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+01:53:09 candidates written: 0
+01:53:09 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+01:54:07 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+01:54:07 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+01:59:21 gaia pool rows: 3366478 from 144 strips
+01:59:22 after main-sequence cut: 3303105
+01:59:54 pool 3303107, done 645471, to do 180305
+05:08:55 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:08:55 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:08:55 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:08:55 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:08:55 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:08:55 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:08:55 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+05:08:55 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+07:15:17 processed this run: 61140
+07:15:18 remaining in this shard: 119166
+07:15:19 scored: 706619 | with light curve: 601667
+07:15:19 VALIDATION ASASSN-21qj: []
+07:15:19 VALIDATION NGC2547-ID8: []
+07:15:19 score > 5: 4  (and reddening dW2-dW1>0.05: 2)
+07:15:19 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+07:15:19 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+07:15:19 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+07:15:19 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+07:15:19 candidates written: 0
+07:15:19 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+07:16:14 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+07:16:14 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+07:21:57 gaia pool rows: 3366478 from 144 strips
+07:21:57 after main-sequence cut: 3303105
+07:22:19 pool 3303107, done 706610, to do 119166
+08:32:01 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:01 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:01 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:01 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:01 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:01 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:01 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:01 upload join failed (attempt 1/3): DALServiceError: 502 Server Error: Proxy Error for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:31 upload join failed (attempt 2/3): DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:31 upload join failed (attempt 2/3): DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:31 upload join failed (attempt 2/3): DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:31 upload join failed (attempt 2/3): DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:31 upload join failed (attempt 2/3): DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:31 upload join failed (attempt 2/3): DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:31 upload join failed (attempt 2/3): DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+08:32:31 upload join failed (attempt 2/3): DALServiceError: 503 Server Error: Service Unavailable for url: https://irsa.ipac.caltech.edu/TAP/sync
+12:36:20 processed this run: 64740
+12:36:20 remaining in this shard: 54427
+12:36:21 scored: 771359 | with light curve: 655882
+12:36:21 VALIDATION ASASSN-21qj: []
+12:36:21 VALIDATION NGC2547-ID8: []
+12:36:21 score > 5: 4  (and reddening dW2-dW1>0.05: 2)
+12:36:21 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+12:36:21 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+12:36:21 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+12:36:21 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+12:36:21 candidates written: 0
+12:36:21 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
+12:38:19 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+12:38:19 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+12:38:20 strip 0.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:38:36 strip 0.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:38:51 strip 0.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:39:07 strip 0.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:39:23 strip 2.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:39:39 strip 2.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:39:54 strip 2.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:40:10 strip 2.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:40:26 strip 5.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:40:42 strip 5.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:40:57 strip 5.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:41:13 strip 5.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:41:29 strip 7.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:41:45 strip 7.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:42:00 strip 7.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:42:16 strip 7.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:42:32 strip 10.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:42:48 strip 10.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:43:04 strip 10.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:43:20 strip 10.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:43:36 strip 12.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:43:51 strip 12.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:44:07 strip 12.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:44:23 strip 12.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:44:39 strip 15.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:44:54 strip 15.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:45:10 strip 15.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:45:26 strip 15.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:45:42 strip 17.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:45:58 strip 17.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:46:13 strip 17.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:46:29 strip 17.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:46:44 strip 20.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:47:00 strip 20.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:47:16 strip 20.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:47:32 strip 20.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:47:47 strip 22.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:48:03 strip 22.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:48:19 strip 22.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:48:35 strip 22.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:48:51 strip 25.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:49:06 strip 25.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:49:22 strip 25.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:49:37 strip 25.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:49:53 strip 27.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:50:09 strip 27.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:50:24 strip 27.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:50:40 strip 27.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:50:56 strip 30.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:51:11 strip 30.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:51:27 strip 30.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:51:43 strip 30.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:51:58 strip 32.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:52:14 strip 32.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:52:29 strip 32.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:52:45 strip 32.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:53:01 strip 35.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:53:17 strip 35.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:53:33 strip 35.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:53:49 strip 35.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:54:04 strip 37.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:54:20 strip 37.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:54:36 strip 37.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:54:51 strip 37.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:55:07 strip 40.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:55:23 strip 40.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:55:39 strip 40.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:55:55 strip 40.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:56:11 strip 42.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:56:26 strip 42.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:56:42 strip 42.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:56:58 strip 42.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:57:13 strip 45.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:57:29 strip 45.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:57:45 strip 45.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:58:01 strip 45.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:58:16 strip 47.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:58:32 strip 47.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:58:47 strip 47.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:59:03 strip 47.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:59:19 strip 50.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:59:35 strip 50.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+12:59:50 strip 50.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:00:06 strip 50.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:00:22 strip 52.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:00:38 strip 52.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:00:53 strip 52.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:01:09 strip 52.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:01:25 strip 55.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:01:40 strip 55.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:01:56 strip 55.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:02:12 strip 55.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:02:28 strip 57.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:02:43 strip 57.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:02:59 strip 57.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:03:15 strip 57.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:03:30 strip 60.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:03:46 strip 60.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:04:02 strip 60.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:04:18 strip 60.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:04:34 strip 62.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:04:49 strip 62.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:05:05 strip 62.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:05:21 strip 62.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:05:37 strip 65.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:05:52 strip 65.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:06:08 strip 65.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:06:23 strip 65.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:06:39 strip 67.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:06:55 strip 67.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:07:10 strip 67.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:07:26 strip 67.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:07:42 strip 70.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:07:57 strip 70.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:08:13 strip 70.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:08:29 strip 70.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:08:44 strip 72.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:09:00 strip 72.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:09:16 strip 72.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:09:32 strip 72.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:09:47 strip 75.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:10:03 strip 75.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:10:19 strip 75.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:10:34 strip 75.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:10:50 strip 77.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:11:06 strip 77.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:11:22 strip 77.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:11:37 strip 77.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:11:53 strip 80.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:12:08 strip 80.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:12:24 strip 80.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:12:40 strip 80.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:12:55 strip 82.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:13:11 strip 82.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:13:27 strip 82.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:13:42 strip 82.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:13:58 strip 85.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:14:14 strip 85.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:14:29 strip 85.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:14:45 strip 85.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:15:01 strip 87.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:15:16 strip 87.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:15:32 strip 87.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:15:48 strip 87.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:16:03 strip 90.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:16:19 strip 90.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:16:35 strip 90.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:16:51 strip 90.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:17:07 strip 92.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:17:23 strip 92.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:17:39 strip 92.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:17:55 strip 92.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:18:10 strip 95.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:18:26 strip 95.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:18:41 strip 95.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:18:57 strip 95.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:19:13 strip 97.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:19:28 strip 97.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:19:44 strip 97.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:20:00 strip 97.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:20:16 strip 100.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:20:31 strip 100.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:20:47 strip 100.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:21:03 strip 100.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:21:19 strip 102.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:21:35 strip 102.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:21:50 strip 102.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:22:06 strip 102.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:22:22 strip 105.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:22:37 strip 105.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:22:53 strip 105.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:23:09 strip 105.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:23:24 strip 107.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:23:40 strip 107.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:23:56 strip 107.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:24:11 strip 107.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:24:27 strip 110.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:24:43 strip 110.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:24:59 strip 110.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:25:14 strip 110.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:25:30 strip 112.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:25:46 strip 112.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:26:01 strip 112.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:26:17 strip 112.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:26:33 strip 115.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:26:48 strip 115.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:27:04 strip 115.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:27:20 strip 115.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:27:36 strip 117.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:27:52 strip 117.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:28:07 strip 117.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:28:23 strip 117.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:28:39 strip 120.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:28:55 strip 120.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:29:11 strip 120.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:29:27 strip 120.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:29:42 strip 122.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:29:58 strip 122.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:30:14 strip 122.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:30:30 strip 122.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:30:46 strip 125.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:31:01 strip 125.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:31:17 strip 125.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:31:33 strip 125.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:31:48 strip 127.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:32:04 strip 127.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:32:20 strip 127.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:32:36 strip 127.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:32:51 strip 130.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:33:07 strip 130.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:33:23 strip 130.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:33:38 strip 130.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:33:54 strip 132.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:34:09 strip 132.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:34:25 strip 132.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:34:41 strip 132.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:34:56 strip 135.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:35:12 strip 135.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:35:27 strip 135.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:35:43 strip 135.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:35:59 strip 137.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:36:14 strip 137.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:36:30 strip 137.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:36:46 strip 137.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:37:02 strip 140.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:37:17 strip 140.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:37:33 strip 140.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:37:49 strip 140.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:38:05 strip 142.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:38:21 strip 142.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:38:37 strip 142.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:38:52 strip 142.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:39:08 strip 145.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:39:23 strip 145.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:39:39 strip 145.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:39:54 strip 145.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:40:10 strip 147.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:40:26 strip 147.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:40:42 strip 147.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:40:57 strip 147.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:41:13 strip 150.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:41:29 strip 150.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:41:45 strip 150.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:42:01 strip 150.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:42:17 strip 152.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:42:32 strip 152.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:42:48 strip 152.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:43:04 strip 152.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:43:20 strip 155.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:43:35 strip 155.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:43:51 strip 155.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:44:07 strip 155.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:44:22 strip 157.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:44:38 strip 157.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:44:53 strip 157.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:45:09 strip 157.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:45:25 strip 160.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:45:41 strip 160.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:45:57 strip 160.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:46:12 strip 160.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:46:28 strip 162.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:46:43 strip 162.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:46:59 strip 162.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:47:15 strip 162.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:47:30 strip 165.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:47:46 strip 165.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:48:01 strip 165.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:48:17 strip 165.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:48:32 strip 167.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:48:48 strip 167.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:49:04 strip 167.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:49:19 strip 167.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:49:35 strip 170.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:49:50 strip 170.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:50:06 strip 170.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:50:22 strip 170.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:50:37 strip 172.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:50:53 strip 172.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:51:08 strip 172.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:51:24 strip 172.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:51:40 strip 175.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:51:55 strip 175.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:52:11 strip 175.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:52:26 strip 175.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:52:42 strip 177.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:52:58 strip 177.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:53:14 strip 177.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:53:30 strip 177.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:53:45 strip 180.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:54:01 strip 180.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:54:17 strip 180.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:54:33 strip 180.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:54:48 strip 182.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:55:04 strip 182.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:55:20 strip 182.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:55:36 strip 182.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:55:51 strip 185.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:56:07 strip 185.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:56:22 strip 185.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:56:38 strip 185.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:56:53 strip 187.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:57:09 strip 187.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:57:25 strip 187.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:57:41 strip 187.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:57:57 strip 190.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:58:12 strip 190.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:58:28 strip 190.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:58:44 strip 190.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:59:00 strip 192.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:59:15 strip 192.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:59:31 strip 192.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+13:59:47 strip 192.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:00:02 strip 195.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:00:18 strip 195.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:00:33 strip 195.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:00:49 strip 195.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:01:05 strip 197.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:01:20 strip 197.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:01:36 strip 197.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:01:52 strip 197.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:02:08 strip 200.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:02:24 strip 200.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:02:40 strip 200.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:02:56 strip 200.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:03:12 strip 202.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:03:28 strip 202.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:03:43 strip 202.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:03:59 strip 202.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:04:15 strip 205.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:04:30 strip 205.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:04:46 strip 205.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:05:02 strip 205.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:05:17 strip 207.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:05:33 strip 207.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:05:49 strip 207.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:06:05 strip 207.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:06:21 strip 210.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:06:36 strip 210.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:06:52 strip 210.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:07:08 strip 210.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:07:23 strip 212.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:07:39 strip 212.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:07:56 strip 212.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:08:11 strip 212.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:08:27 strip 215.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:08:42 strip 215.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:08:58 strip 215.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:09:14 strip 215.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:09:29 strip 217.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:09:45 strip 217.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:10:00 strip 217.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:10:16 strip 217.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:10:32 strip 220.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:10:47 strip 220.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:11:03 strip 220.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:11:19 strip 220.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:11:34 strip 222.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:11:50 strip 222.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:12:06 strip 222.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:12:21 strip 222.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:12:37 strip 225.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:12:53 strip 225.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:13:08 strip 225.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:13:24 strip 225.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:13:40 strip 227.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:13:55 strip 227.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:14:11 strip 227.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:14:27 strip 227.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:14:42 strip 230.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:14:58 strip 230.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:15:14 strip 230.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:15:29 strip 230.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:15:45 strip 232.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:16:01 strip 232.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:16:17 strip 232.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:16:33 strip 232.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:16:48 strip 235.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:17:04 strip 235.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:17:20 strip 235.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:17:36 strip 235.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:17:52 strip 237.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:18:07 strip 237.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:18:23 strip 237.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:18:39 strip 237.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:18:54 strip 240.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:19:10 strip 240.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:19:26 strip 240.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:19:42 strip 240.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:19:58 strip 242.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:20:14 strip 242.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:20:30 strip 242.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:20:45 strip 242.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:21:01 strip 245.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:21:17 strip 245.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:21:33 strip 245.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:21:48 strip 245.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:22:04 strip 247.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:22:20 strip 247.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:22:36 strip 247.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:22:52 strip 247.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:23:07 strip 250.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:23:23 strip 250.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:23:39 strip 250.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:23:55 strip 250.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:24:10 strip 252.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:24:26 strip 252.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:24:42 strip 252.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:24:58 strip 252.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:25:14 strip 255.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:25:29 strip 255.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:25:45 strip 255.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:26:01 strip 255.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:26:16 strip 257.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:26:32 strip 257.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:26:48 strip 257.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:27:04 strip 257.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:27:20 strip 260.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:27:35 strip 260.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:27:51 strip 260.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:28:06 strip 260.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:28:22 strip 262.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:28:38 strip 262.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:28:53 strip 262.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:29:09 strip 262.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:29:25 strip 265.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:29:40 strip 265.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:29:56 strip 265.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:30:11 strip 265.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:30:27 strip 267.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:30:43 strip 267.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:30:58 strip 267.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:31:14 strip 267.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:31:29 strip 270.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:31:45 strip 270.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:32:00 strip 270.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:32:16 strip 270.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:32:32 strip 272.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:32:47 strip 272.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:33:03 strip 272.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:33:19 strip 272.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:33:34 strip 275.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:33:50 strip 275.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:34:05 strip 275.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:34:21 strip 275.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:34:37 strip 277.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:34:53 strip 277.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:35:09 strip 277.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:35:24 strip 277.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:35:40 strip 280.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:35:56 strip 280.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:36:11 strip 280.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:36:27 strip 280.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:36:43 strip 282.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:36:59 strip 282.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:37:14 strip 282.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:37:30 strip 282.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:37:45 strip 285.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:38:01 strip 285.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:38:17 strip 285.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:38:33 strip 285.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:38:48 strip 287.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:39:04 strip 287.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:39:19 strip 287.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:39:35 strip 287.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:39:51 strip 290.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:40:07 strip 290.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:40:22 strip 290.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:40:38 strip 290.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:40:54 strip 292.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:41:10 strip 292.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:41:25 strip 292.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:41:41 strip 292.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:41:56 strip 295.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:42:12 strip 295.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:42:27 strip 295.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:42:43 strip 295.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:42:59 strip 297.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:43:15 strip 297.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:43:31 strip 297.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:43:46 strip 297.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:44:02 strip 300.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:44:18 strip 300.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:44:33 strip 300.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:44:49 strip 300.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:45:04 strip 302.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:45:20 strip 302.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:45:36 strip 302.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:45:51 strip 302.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:46:07 strip 305.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:46:23 strip 305.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:46:38 strip 305.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:46:54 strip 305.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:47:09 strip 307.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:47:25 strip 307.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:47:41 strip 307.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:47:57 strip 307.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:48:12 strip 310.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:48:28 strip 310.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:48:44 strip 310.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:48:59 strip 310.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:49:15 strip 312.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:49:31 strip 312.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:49:47 strip 312.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:50:02 strip 312.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:50:18 strip 315.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:50:33 strip 315.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:50:49 strip 315.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:51:05 strip 315.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:51:21 strip 317.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:51:36 strip 317.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:51:52 strip 317.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:52:08 strip 317.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:52:24 strip 320.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:52:39 strip 320.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:52:55 strip 320.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:53:10 strip 320.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:53:26 strip 322.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:53:42 strip 322.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:53:58 strip 322.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:54:13 strip 322.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:54:29 strip 325.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:54:44 strip 325.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:55:00 strip 325.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:55:16 strip 325.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:55:31 strip 327.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:55:47 strip 327.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:56:03 strip 327.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:56:19 strip 327.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:56:34 strip 330.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:56:50 strip 330.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:57:06 strip 330.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:57:22 strip 330.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:57:37 strip 332.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:57:53 strip 332.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:58:09 strip 332.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:58:25 strip 332.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:58:41 strip 335.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:58:56 strip 335.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:59:12 strip 335.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:59:28 strip 335.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:59:44 strip 337.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+14:59:59 strip 337.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:00:15 strip 337.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:00:31 strip 337.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:00:46 strip 340.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:01:02 strip 340.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:01:18 strip 340.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:01:33 strip 340.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:01:49 strip 342.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:02:05 strip 342.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:02:20 strip 342.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:02:36 strip 342.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:02:52 strip 345.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:03:07 strip 345.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:03:23 strip 345.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:03:39 strip 345.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:03:54 strip 347.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:04:10 strip 347.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:04:26 strip 347.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:04:42 strip 347.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:04:57 strip 350.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:05:13 strip 350.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:05:29 strip 350.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:05:44 strip 350.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:06:00 strip 352.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:06:15 strip 352.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:06:31 strip 352.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:06:47 strip 352.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:07:02 strip 355.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:07:18 strip 355.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:07:33 strip 355.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:07:49 strip 355.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:08:05 strip 357.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:08:20 strip 357.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:08:36 strip 357.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:08:52 strip 357.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+Traceback (most recent call last):
+  File "/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/hunt.py", line 264, in <module>
+    pool = build_pool(); VALIDU.update(int(u) for u, c in zip(pool["uid"], pool["cluster"]) if str(c).startswith("VALID:"))
+           ^^^^^^^^^^^^
+  File "/home/runner/work/erdos/erdos/winter2026/03_frontier/giant_impacts/hunt.py", line 55, in build_pool
+    t = vstack(parts); log("gaia pool rows:", len(t), "from", len(parts), "strips")
+        ^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/astropy/table/operations.py", line 714, in vstack
+    tables = _get_list_of_tables(tables)  # validates input
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/astropy/table/operations.py", line 65, in _get_list_of_tables
+    raise ValueError("no values provided to stack.")
+ValueError: no values provided to stack.
+15:10:56 cluster pool unavailable: RuntimeError('cluster pool disabled (VizieR unreachable from Actions on 2026-11-17)') -> Gaia DR3 nearby main-sequence pool
+15:10:56 gaia pool query (POOL=far): SELECT source_id, ra, dec, phot_g_mean_mag AS gmag, bp_rp AS bprp, parallax AS plx FROM gaiadr3.gaia_source WHERE parallax BETWEEN 2 AND 4 AND parallax_over_error > 10 AND phot_g_mean_mag BETWEEN 8 AND 16 AND bp_rp BETWEEN 0.55 AND 2.2 AND ruwe < 1.4
+15:10:57 strip 0.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:11:13 strip 0.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:11:29 strip 0.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:11:45 strip 0.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:12:00 strip 2.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:12:16 strip 2.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:12:32 strip 2.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:12:47 strip 2.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:13:03 strip 5.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:13:19 strip 5.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:13:35 strip 5.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:13:50 strip 5.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:14:06 strip 7.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:14:22 strip 7.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:14:38 strip 7.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:14:54 strip 7.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:15:10 strip 10.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:15:26 strip 10.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:15:42 strip 10.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:15:58 strip 10.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:16:14 strip 12.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:16:29 strip 12.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:16:45 strip 12.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:17:01 strip 12.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:17:16 strip 15.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:17:32 strip 15.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:17:48 strip 15.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:18:04 strip 15.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:18:20 strip 17.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:18:36 strip 17.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:18:51 strip 17.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:19:07 strip 17.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:19:23 strip 20.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:19:39 strip 20.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:19:55 strip 20.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:20:11 strip 20.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:20:26 strip 22.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:20:42 strip 22.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:20:59 strip 22.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:21:15 strip 22.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:21:30 strip 25.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:21:46 strip 25.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:22:02 strip 25.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:22:17 strip 25.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:22:33 strip 27.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:22:49 strip 27.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:23:05 strip 27.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:23:21 strip 27.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:23:37 strip 30.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:23:53 strip 30.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:24:09 strip 30.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:24:25 strip 30.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:24:41 strip 32.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:24:57 strip 32.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:25:13 strip 32.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:25:28 strip 32.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:25:44 strip 35.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:26:00 strip 35.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:26:16 strip 35.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:26:32 strip 35.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:26:47 strip 37.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:27:03 strip 37.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:27:19 strip 37.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:27:35 strip 37.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:27:50 strip 40.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:28:06 strip 40.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:28:22 strip 40.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:28:37 strip 40.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:28:53 strip 42.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:29:09 strip 42.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:29:25 strip 42.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:29:40 strip 42.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:29:56 strip 45.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:30:12 strip 45.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:30:28 strip 45.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:30:43 strip 45.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:30:59 strip 47.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:31:15 strip 47.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:31:31 strip 47.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:31:47 strip 47.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:32:02 strip 50.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:32:18 strip 50.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:32:34 strip 50.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:32:49 strip 50.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:33:05 strip 52.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:33:21 strip 52.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:33:37 strip 52.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:33:52 strip 52.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:34:08 strip 55.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:34:24 strip 55.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:34:40 strip 55.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:34:55 strip 55.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:35:11 strip 57.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:35:27 strip 57.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:35:43 strip 57.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:35:59 strip 57.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:36:15 strip 60.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:36:31 strip 60.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:36:46 strip 60.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:37:02 strip 60.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:37:18 strip 62.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:37:34 strip 62.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:37:49 strip 62.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:38:05 strip 62.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:38:21 strip 65.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:38:37 strip 65.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:38:52 strip 65.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:39:08 strip 65.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:39:24 strip 67.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:39:40 strip 67.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:39:55 strip 67.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:40:11 strip 67.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:40:27 strip 70.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:40:43 strip 70.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:40:59 strip 70.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:41:14 strip 70.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:41:30 strip 72.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:41:46 strip 72.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:42:02 strip 72.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:42:17 strip 72.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:42:33 strip 75.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:42:49 strip 75.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:43:04 strip 75.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:43:20 strip 75.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:43:36 strip 77.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:43:52 strip 77.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:44:08 strip 77.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:44:23 strip 77.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:44:39 strip 80.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:44:55 strip 80.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:45:11 strip 80.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:45:26 strip 80.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:45:42 strip 82.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:45:58 strip 82.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:46:14 strip 82.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:46:30 strip 82.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:46:45 strip 85.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:47:01 strip 85.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:47:17 strip 85.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:47:32 strip 85.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:47:48 strip 87.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:48:04 strip 87.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:48:20 strip 87.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:48:36 strip 87.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:48:52 strip 90.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:49:08 strip 90.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:49:23 strip 90.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:49:39 strip 90.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:49:55 strip 92.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:50:11 strip 92.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:50:27 strip 92.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:50:43 strip 92.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:50:59 strip 95.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:51:14 strip 95.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:51:30 strip 95.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:51:46 strip 95.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:52:02 strip 97.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:52:18 strip 97.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:52:34 strip 97.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:52:50 strip 97.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:53:05 strip 100.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:53:21 strip 100.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:53:37 strip 100.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:53:53 strip 100.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:54:09 strip 102.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:54:25 strip 102.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:54:40 strip 102.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:54:56 strip 102.5 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:55:12 strip 105.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:55:28 strip 105.0 failed: DALFormatError: E19: None:1:0: E19: File does not appear to be a VOTABLE
+15:59:54 gaia pool rows: 2452307 from 102 strips
+15:59:55 after main-sequence cut: 2406164
+16:00:18 pool 2406166, done 771349, to do 1
+16:00:25 processed this run: 1
+16:00:26 remaining in this shard: -169809
+16:00:26 scored: 771360 | with light curve: 655883
+16:00:26 VALIDATION ASASSN-21qj: []
+16:00:26 VALIDATION NGC2547-ID8: []
+16:00:26 score > 5: 4  (and reddening dW2-dW1>0.05: 2)
+16:00:26 score > 8: 0  (and reddening dW2-dW1>0.05: 0)
+16:00:26 score > 12: 0  (and reddening dW2-dW1>0.05: 0)
+16:00:26 score > 20: 0  (and reddening dW2-dW1>0.05: 0)
+16:00:26 score > 40: 0  (and reddening dW2-dW1>0.05: 0)
+16:00:26 candidates written: 0
+16:00:26 Empty DataFrame
+Columns: [uid, cluster, logage, gmag, bprp, ra, dec, score, dW2, dW1, start, nvis, base_w1w2]
+Index: []
